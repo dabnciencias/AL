@@ -1,0 +1,45 @@
+# Here we asume you are chrooted into the partition from a LiveOS or have logged in as root after a normal GRUB boot
+
+# Install necessary programs for configuration and basic functionality
+Pacman -S vi vim networkmanager xorg xfce4 firefox git
+
+# Create another user with a respective home directory
+useradd -m diek
+
+# Set user password
+passwd diek
+[passwd]
+[passwd]
+
+# Add user to the wheel group
+usermod -aG wheel diek
+
+# Uncomment the line "...to allow members of group wheel to execute any command" in the visudo file (line 82)
+visudo
+
+# Login as new user
+exit
+diek
+[passwd]
+
+# Create a ".xsession" file that only says "startxfce4" in the newly created home directory
+vim /home/diek/.xsession
+  <Esc>i
+  startxfce4<Esc>:x!<Enter>
+  
+ # Make xsession an executable file
+ sudo chmod u+x .xsession
+ [passwd]
+ 
+ # Reboot and you should be ready to go!
+reboot
+
+# Install yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+
+# Install ranger (vim-like file browser), zathura (vim-like reader) and LaTeX stuff
+yay -S ranger zathura zathura-djvu zathura-pdf-mupdf texlive-most texlive-lang vim-pathogen vim-live-latex-preview
+
+# You're all set and ready to go!
