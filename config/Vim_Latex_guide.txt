@@ -1,0 +1,69 @@
+Install vim:
+    "sudo pacman -S vim" for Arch based distros (Manjaro, ArchLabs, etc)
+    "sudo apt install --assume-yes vim" for Debian based distros (Ubuntu, Mint, etc)
+
+Install LaTeX:
+    "sudo pacman -S texlive-most texlive-lang" for Arch based distros
+    "sudo apt-get install texlive-full" for Debian " "
+
+Install vim plugins for LaTeX:
+    1. Edit the .vimrc file in the home directory with vim ("vim ~/.vimrc)
+    2. Copy the following at the beginning of the .vimrc file
+         
+         if empty(glob('~/.vim/autoload/plug.vim'))
+             silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+                  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+             autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+         endif
+          
+         call plug#begin()
+          
+         Plug 'lervag/vimtex'
+         let g:tex_flavor='latex'
+         let g:vimtex_view_method='zathura'
+         12 let g:vimtex_quickfix_mode=0
+          
+         Plug 'KeitaNakamura/tex-conceal.vim'
+         set conceallevel=2
+         let g:tex_conceal='abdmg'
+          
+         Plug 'SirVer/ultisnips'
+         let g:UltiSnipsExpandTrigger="<tab>"
+         let g:UltiSnipsJumpForwardTrigger="<tab>"
+         let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+          
+         call plug#end()
+
+    3. Save and exit the .vimrc file (:x!)
+    4. Change directory to the 2020-II directory ("cd .../AL/2020-II")
+    5. Open a .tex file with vim (e.g., "vim apuntes.tex")
+    6. Go to command mode (pressing the <Esc> key) and enter the command ":PlugUpdate". The plugins "vimtex", "tex-conceal.vim" and "ultisnips" should be installed and/or updated in this step. Exit the update screen with the command ":q"
+    7. Install and/or update Python3 (needed for the UltiSnips plugin):
+        "sudo pacman -S python3" for Arch based distros
+        "sudo apt-get install python3" for Debian " "
+    8. Read https://castel.dev/post/lecture-notes-1/ for ideas on how to use the vimtex, tex-conceal and ultisnips plugins. When editing a tex file in vim, you can compile it by going into command mode and typing "\ll"
+    9. (Optional) Take a look at the vimtex documentation at https://github.com/lervag/vimtex
+
+To edit/program/copy python3 snippets:
+    1. Enter a .tex document with vim (e.g. "vim .../Al/2020-II/apuntes.tex") and, in command mode, type the command ":UltiSnipsEdit"; this opens a tex.snippets file in vim for you to edit
+    2. Program your snippets. You can take inspiration from those in the ".../AL/config/tex.snippets"
+    3. Save and exit with ":x!" in command mode.
+
+To make vim more easy to navigate:
+    1. Edit your own .vimrc file with "vim ~/.vimrc" and add the following lines
+        syntax on
+         
+        set ttyfast
+         
+        set number
+        highlight LineNr ctermfg=green
+         
+        Show UTF-8 characters
+        set autoindent
+        set smartindent
+        set tabstop=4
+        set shiftwidth=4
+        set expandtab
+        set encoding=utf-8
+         
+    2. Save and exit with ":x!". The next time you use vim, the line numbers should appear on the left side of the screen highlited in green, and vim should detect syntax in .tex files

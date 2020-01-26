@@ -1,0 +1,378 @@
+snippet template "Basic template" b
+\documentclass[a4paper]{article}
+\usepackage[margin=1.5cm]{geomtery}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{textcomp}
+\usepackage{tikz}
+
+\decimalpoint
+\setcounter{section}{-1}
+\hypersetup{
+    colorlinks=true,
+	linkcolor=red,
+	filecolor=magtenta,
+	urlcolor=orange,
+}
+
+% figure support
+\usepackage{import}
+\usepackage{xifthen}
+\pdfminorversion=7
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\incfig}[1]{%
+	\def\svgwidth{\columnwidth}
+	\import{./figures/}{#1.pdf_tex}
+}
+
+\pdfsuppresswarningpagegroup=1
+
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcomannd{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
+
+snippet beg "begin{} / end{}" bA
+\begin{$1}
+    $0
+\end{$1}
+endsnippet
+
+snippet table "Table environment" b
+\begin{table}[${1:htpb}]
+	\centering
+	\caption{${2:caption}}
+	\label{tab:${3:label}}
+	\begin{tabular}{${5:c}}
+	$0${5/((?<=.)c|l|r)|./(?1: & )/g}
+	\end{tabular}
+\end{table}
+endsnippet
+
+snippet fig "Figure environment" b
+\begin{figure}[${1:htpb}]
+	\centering
+	${2:\includegraphics[width=0.8\textwidth]{$3}}
+	\caption{${4:$3}}
+	\label{fig:${5:${3/\W+/-/g}}}
+\end{figure}
+endsnippet
+
+snippet enum "Enumerate" bA
+\begin{enumerate}
+	\item $0
+\end{enumerate}
+endsnippet
+
+snippet item "Itemize" b
+\begin{itemize}
+	\item $0
+\end{itemize}
+endsnippet
+
+# snippet it "item" b
+# averiguar cómo ir al final de la línea y dar enter
+# \item
+# endsnippet
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$2
+endsnippet
+
+snippet dm "Math" wA
+\[
+$1
+.\] $0
+endsnippet
+
+priority 10
+snippet "bar" "bar" riA
+\overline{$1}$0
+endsnippet
+
+priority 100
+snippet "([a-zA-Z])bar" "bar postfix" riA
+\overline{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10
+snippet "hat" "hat" riA
+\hat{$1}$0
+endsnippet
+
+priority 100
+snippet "([a-zA-Z])hat" "hat postfix" riA
+\hat{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 10 
+snippet "vec" "vec" riA
+\vec{$1}$0
+endsnippet
+
+priority 100
+snippet "([a-zA-Z])vec" "vec postfix" riA
+\vec{`!p snip.rv=match.group(1)`}
+endsnippet 
+
+priority 10
+snippet "sqrt" "sqrt" riA
+\sqrt{$1}$0
+endsnippet
+
+priority 100
+snippet "([a-zA-Z])sqrt" "sqrt postfix" riA
+\sqrt{`!p snip.rv=match.group(1)`}
+endsnippet 
+
+snippet "frac" "frac" riA
+\frac{$1}{$2}$0
+endsnippet
+
+snippet ddx "derivative" iA
+\frac{d$1}{d$2} $0
+endsnippet
+
+snippet idx "integral" iA
+\int_{$1}^{$2} $3 d$4 $0
+endsnippet
+
+snippet mbf "math bold" iA
+\mathbf{$1}$0
+endsnippet
+
+snippet deg "degree symbol" b
+^\circ
+endsnippet
+
+snippet proj "projection onto" b
+P_{$1}($2) $0
+endsnippet
+
+snippet scal "scalar product" b
+($1,$2) $0
+endsnippet
+
+snippet sp "span" b
+\langle $1 \rangle $0
+endsnippet
+
+snippet imp "implies" Ai
+\implies
+endsnippet
+
+snippet iff "iff" Ai
+\iff
+endsnippet
+
+snippet eqv "equiv" Ai
+\equivalent
+endsnippet
+
+snippet neq "not equal to" Ai
+\neq
+endsnippet
+
+snippet pmat "pmat" iA
+\begin{pmatrix} $1 \end{pmatrix} $0
+endsnippet
+
+snippet bmat "bmat" iA
+\begin{bmatrix} $1 \end{bmatrix} $0
+endsnippet
+
+snippet to "to" b
+\to
+endsnippet
+
+snippet _ "subscript" b
+_{$1}$0
+endsnippet
+
+snippet leq "leq" iA
+\le 
+endsnippet
+
+snippet geq "geq" iA
+\ge 
+endsnippet
+
+snippet EE "geq" iA
+\exists 
+endsnippet
+
+snippet AA "forall" iA
+\forall 
+endsnippet
+
+snippet plot "Plot" w
+\begin{figure}[$1]
+	\centering
+	\begin{tikzpicture}
+		\begin{axis}[
+			xmin= ${2:-10}, xmax= ${3:10},
+			ymin= ${4:-10}, ymax= ${5:10}.
+			axis lines = middle]
+
+			\addplot[domain=$2:$3, samples=${6:100}]{$7};
+		\end{axis}
+	\end{tikzpicture}
+	\caption{$8}
+	\label{${9:$8}}
+\end{figure}
+endsnippet
+
+snippet x "times" b
+\times 
+endsnippet
+	
+snippet . "cdot" b
+\cdot
+endsnippet
+
+snippet norm "norm" b
+\|\|$1\|\|$0
+endsnippet
+
+snippet set "set" b
+\\{$1\\} $0
+endsnippet
+
+snippet notin "not in" iA
+\notin
+endsnippet
+
+snippet noin "no indent" iA
+\noindent
+endsnippet
+
+snippet UU "cap" b
+\cap 
+endsnippet
+
+snippet II "cup" b
+\cup 
+endsnippet
+
+snippet RR "real" iA
+\mathbb{R}
+endsnippet
+
+snippet CC "complex" iA
+\mathbb{C}
+endsnippet
+
+snippet cvec "column vector" iA
+\begin{bmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{bmatrix}^T $0
+endsnippet
+
+snippet bf "bold text" b
+\textbf{$1} $0
+endsnippet
+
+snippet em "emphasis/italics" b
+\emph{$1} $0
+endsnippet
+
+snippet un "underline" b
+\underline{$1} $0
+endsnippet
+
+snippet ov "overline" b
+\overline{$1}{$0}
+endsnippet
+
+snippet fn "footnote" b
+\footnote{$1.}$0
+endsnippet
+
+snippet lab "label" b
+\label{$1}$0
+endsnippet
+
+snippet cap "caption" b
+\caption{$1}$0
+endsnippet
+
+snippet ref "reference" b
+\ref{$1}$0
+endsnippet
+
+snippet url "url" b
+\url{$1}$0
+endsnippet
+
+snippet hs "horizontal space" iA
+\hspace{$1} $0
+endsnippet
+
+snippet vs "vertical space" iA
+\vspace{$1} $0
+endsnippet
+
+snippet - "textemdash" b
+\textemdash
+endsnippet
+
+snippet tw "textwidth" b
+\textwidth
+endsnippet
+
+snippet chap "chapter" b
+\chapter{$1} \label{$2} $0
+endsnippet
+
+snippet sec "section" b
+\section{$1} \label {$2} $0
+endsnippet
+
+snippet ssec "subsection" b
+\subsection{$1} \label{$2} $0
+endsnippet
+
+snippet sssec "subsubsection" b
+\subsubsection{$1} \label {$2} $0
+endsnippet
+
+
+
