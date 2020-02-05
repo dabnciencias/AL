@@ -16,6 +16,9 @@
 \usepackage{multirow}
 \usepackage{hyperref}
 \usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usetikzlibrary{babel}
 \hypersetup{
     colorlinks=true,
     linkcolor=red,
@@ -50,17 +53,19 @@ Lic. en Física Biomédica \\ Universidad Nacional Autónoma de México}
 
 \maketitle
 
-\section{Introducción}
+%\section{Introducción}
 
-La presente planeación del curso de Álgebra Lineal para la Licenciatura en Física Biomédica fue realizada tomando en cuenta el programa de la asignatura existente\footnote{El cual puede ser consultado en la página \url{http://www.fciencias.unam.mx/asignaturas/1330.pdf}.}, así como la retroalimentación del mismo por parte de estudiantes de las dos primeras generaciones de la licenciatura.
+\section{Cronograma tentativo y bibliografía}
+
+%La presente planeación del curso de Álgebra Lineal para la Licenciatura en Física Biomédica fue realizada tomando en cuenta el programa de la asignatura existente\footnote{El cual puede ser consultado en la página \url{http://www.fciencias.unam.mx/asignaturas/1330.pdf}.}, así como la retroalimentación del mismo por parte de estudiantes de las dos primeras generaciones de la licenciatura.
 
 %Al inicio del curso se procurará hacer un mayor énfasis en las estrechas relaciones existentes entre el álgebra lineal y el cálculo vectorial ya que, actualmente, se sugiere que las materias de Álgebra Lineal y Cálculo Avanzado se cursen simultáneamente. Además, durante todo el curso, se buscará sentar bases teóricas sólidas para diversas aplicaciones que serán útiles en materias posteriores del plan de estudios, tales como Ecuaciones Diferenciales (e.g., matrices, determinantes, eigenvalores y eigenvectores para aplicarse en sistemas de ecuaciones diferenciales), Matemáticas Avanzadas (e.g., bases ortogonales y ortonormales de funciones para ser aplicado en funciones especiales), Introducción a la Física Cuántica/Mecánica Cuántica (e.g., espacios de Hilbert, espacios duales y operadores hermitianos para aplicarse en el formalismo de la Mecánica Cuántica) e Imagenología Biomédica (e.g., matrices, transformaciones lineales y transformaciones rígidas para ser aplicado a procesamiento digital de imágenes).
 
-Durante el curso, se buscará sentar bases teóricas sólidas de álgebra lineal para diversas aplicaciones que serán útiles en materias posteriores del plan de estudios, tales como Ecuaciones Diferenciales/Matemáticas Avanzadas, Introducción a la Física Cuántica/Mecánica Cuántica, Algoritmos Computacionales/Física Computacional, entre otras.
+%Durante el curso, se buscará sentar bases teóricas sólidas de álgebra lineal para diversas aplicaciones que serán útiles en materias posteriores del plan de estudios, tales como Ecuaciones Diferenciales/Matemáticas Avanzadas, Introducción a la Física Cuántica/Mecánica Cuántica, Algoritmos Computacionales/Física Computacional, entre otras.
 
-\subsection{Forma de evaluación}
+%\subsection{Forma de evaluación}
 
-Será discutida y acordada con el grupo.
+%Será discutida y acordada con el grupo.
 
 %Debido a la gran cantidad de temas que se deben ver en el curso, la evaluación será por medio de tareas semanales (que se entregarán todos los días lunes, a partir del segundo lunes de clases) y 5 exámenes parciales, los cuales durarán una hora. Los porcentajes correspondientes a estos dos rubros se definirán con el grupo al inicio del curso. Algunas tareas incluirán ejercicios extra para subir calificación, y los exámenes con calificación menor a 6 podrán ser corregidos por l@s estudiantes y reentregados \textbf{el próximo lunes de clases} para tener posibilidad de subir calificación. 
 
@@ -68,21 +73,19 @@ Será discutida y acordada con el grupo.
 
 %Para definir la calificación final del curso, en los casos donde la calificación obtenida sea muy cercana a la calificación siguiente, se tomará en cuenta el esfuerzo extra realizado por cada estudiante durante el semestre mediante la entrega de correcciones de exámenes y/o ejercicios extra en tareas para definir un posible cambio.
 
-
-
-\newpage
+%\newpage
 \subsection{Cronograma tentativo del curso}
 
 \begin{table}[ht]
     \centering
     \begin{tabularx}{\linewidth}{|c|X|}
     \hline Semana & Temas \\
-    \hline 1 & Campos, espacios vectoriales, interpretación geométrica de las operaciones de los espacios vectoriales y subespacios vectoriales \\
+    \hline 1 & Campos, espacios vectoriales, interpretación geométrica de las operaciones esenciales de los espacios vectoriales y subespacios vectoriales \\
     \hline 2 & Producto escalar (punto), norma, interpretación geométrica del producto escalar: proyecciones y ortogonalidad, producto vectorial (cruz)* y triple producto escalar* \\
     \hline 3 & Combinaciones lineales, subespacio generado y conjunto generador, dependencia e independencia lineal \\
     \hline 4 & Bases, dimensión, ortogonalización y ortonormalización \\
-    \hline 5 & Definición de transformación lineal y espacio de transformaciones lineales, núcleo e imagen de una transformación lineal \\
-    \hline 6 & Composición de transformaciones lineales, transformación inversa y representación matricial de una transformación lineal \\
+    \hline 5 & Definición de transformación lineal y espacio de transformaciones lineales, núcleo e imagen de una transformación lineal, nulidad y rango \\
+    \hline 6 & Composición de transformaciones lineales, transformación lineal inversa y representación matricial de una transformación lineal \\
     \hline 7 & Espacios vectoriales de matrices, matriz de proyección y matriz de cambio de base \\
     \hline 8 & Definición y propiedades del determinante y la traza de una matriz \\
     \hline 9 & Matriz inversa e invertibilidad de matrices \\
@@ -102,14 +105,14 @@ Será discutida y acordada con el grupo.
 \subsection{Bibliografía recomendada para el curso} \label{Bibliografía}
 
 \begin{itemize}
-    \item S. H. Friedberg, \textit{Linear Algebra}, 4ta ed. - es el texto básico para este tipo de cursos.
-    \item S. Lang, \textit{Introduction to Linear Algebra}, 2da ed. (Springer, 1986, EUA) - otro texto básico que cubre la muchos de los temas del curso y complementa el Friedberg.
-    \item S. Lang, \textit{Linear Algebra}, 3a ed. (Springer, 1987, EUA) - no es tan básico como \textit{Introduction to Linear Algebra}, pero sirve para \textit{repasar} temas básicos y aprender algunos más avanzados.
-    \item M. Vujičić, \textit{Linear Algebra Thoroughly Explained} (Springer, 2008, EUA) - este texto va de lo más básico a lo más avanzado y servirá para ver algunos temas importantes con especial detenimiento.
-    \item D. Poole, \textit{Linear Algebra: A Modern Introduction}, 4ta ed. (Cengage Learning, 2015, EUA) - este texto básico ve los temas a través de diversos ejemplos y aplicaciones; es útil para las personas que quieran ver algunas aplicaciones de los conceptos al mismo tiempo que los aprenden.
+    \item S. H. Friedberg, \emph{Linear Algebra}, 4ta ed. - es el texto básico para este tipo de cursos.
+    \item S. Lang, \emph{Introduction to Linear Algebra}, 2da ed. (Springer, 1986, EUA) - otro texto básico que cubre la muchos de los temas del curso y complementa el Friedberg.
+    \item S. Lang, \emph{Linear Algebra}, 3a ed. (Springer, 1987, EUA) - no es tan básico como \emph{Introduction to Linear Algebra}, pero sirve para \emph{repasar} temas básicos y aprender algunos más avanzados.
+    \item M. Vujičić, \emph{Linear Algebra Thoroughly Explained} (Springer, 2008, EUA) - este texto va de lo más básico a lo más avanzado y servirá para ver algunos temas importantes con especial detenimiento.
+    \item D. Poole, \emph{Linear Algebra: A Modern Introduction}, 4ta ed. (Cengage Learning, 2015, EUA) - este texto básico ve los temas a través de diversos ejemplos y aplicaciones; es útil para las personas que quieran ver algunas aplicaciones de los conceptos al mismo tiempo que los aprenden.
 \end{itemize}{}
 
-Les sugiero que hojeen \textit{todos} los libros recomendados al inicio del curso, y que consulten los de su agrado constantemente durante el mismo, o bien, busquen otros que les sirvan mejor para aprender.
+Les sugiero que hojeen \emph{todos} los libros recomendados al inicio del curso, y que consulten los de su agrado constantemente durante el mismo, o bien, busquen otros que les sirvan mejor para aprender.
 
 \subsection{Otros recursos educativos}
 
@@ -123,8 +126,9 @@ No sólo se aprende de libros; hay que aprovechar todo el contenido que ofrece e
 
 Además, en el último piso del edificio P, del lado del Auditorio Alberto Barajas Celis, se encuentra el Taller de Matemáticas donde hay estudiantes de últimos semestres disponibles para ayudarte con tus dudas; puedes ir de forma individual o en grupo.
 
-\subsection{Notación}
-
+%\subsection{Notación}
+\newpage
+\textbf{Notación}
 \begin{tcolorbox} \label{Notación}
 \centering
 \begin{tabular}{cc}
@@ -151,13 +155,13 @@ Además, en el último piso del edificio P, del lado del Auditorio Alberto Baraj
     $l.i.$ & Conjunto linealmente independiente \\ \\
     $l.d.$ & Conjunto linealmente dependiente \\ \\ \\
 
-    $dim(V)$ & Dimensión del espacio vectorial $V$ \\ \\
+    $\text{dim}(V)$ & Dimensión del espacio vectorial $V$ \\ \\
 
 \end{tabular}
 \end{tcolorbox}
 
 \newpage
-\section{Campos, espacios vectoriales, interpretación geométrica de las operaciones de los espacios vectoriales y subespacios vectoriales}
+\section{Campos, espacios vectoriales, interpretación geométrica de las operaciones esenciales de los espacios vectoriales y subespacios vectoriales}
 
 \subsection{Campos}
 Uno de los conceptos más fundamentales del álgebra lineal es el de espacio vectorial; sin embargo, para definir formalmente un espacio vectorial se requiere de una estructura algebráica conocida como campo \textemdash el ejemplo más común siendo el \emph{campo de los números reales}. Esta estructura quizá la viste explícitamente en tu curso de Álgebra y/o implícitamente en tu curso de Cálculo I (a través de los \textit{axiomas de campo} \textemdash o de cuerpo\textemdash\hspace{1.5mm} \textit{para los números reales}); sin embargo, aquí mencionaremos su definición y los dos ejemplos de campos que más utilizaremos durante este curso (el campo de los números reales y el de los complejos) antes de definir los espacios vectoriales.
@@ -189,7 +193,7 @@ El conjunto de los números reales $\mathbb{R}$ junto con las operaciones de sum
 
 \subsubsection{El campo complejo} \label{Ejem:Campo_complejo}
 
-El conjunto de los números complejos se define como $\mathbb{C} \equiv \{a+ib\hspace{1.5mm}|\hspace{1.5mm}a,b\in\mathbb{R}\}$\footnote{Notemos que, por definición, el conjunto $\mathbb{R}$ es subconjunto de $\mathbb{C}$, i.e., $\mathbb{R}\subset\mathbb{C}$.}, donde $i\equiv+\sqrt{-1}$. Definiendo la suma entre números complejos como $(a+ib)+(q+ir)\equiv(a+q) + i(b+r)$, la multiplicación entre números complejos como\footnote{Nótese que esta definición es simplemente el resultado de desarrollar $(a+ib)(c+id)$ como un producto de dos binomios.} $(a+ib)(q+ir)\equiv (aq-br) + i(ar+bq)$ y apoyándonos en el campo real, podemos comprobar que estas dos operaciones junto con el conjunto $\mathbb{C}$ forman un campo. A continuación, demostraremos que el conjunto $\mathbb{C}$ con las dos operaciones definidas previamente cumplen las primeras tres propiedades de los campos enlistadas en la sección \ref{Def:Campo}.
+El conjunto de los números complejos se define como $\mathbb{C} \equiv \{a+ib\hspace{1.5mm}|\hspace{1.5mm}a,b\in\mathbb{R}\}$\footnote{Notemos que, por definición, el conjunto $\mathbb{R}$ es subconjunto de $\mathbb{C}$, i.e., $\mathbb{R}\subset\mathbb{C}$.}, donde $i\equiv+\sqrt{-1}$. Definiendo la suma entre números complejos como $(a+ib)+(q+ir)\equiv(a+q) + i(b+r)$, la multiplicación entre números complejos como\footnote{Nótese que esta definición es simplemente el resultado de desarrollar $(a+ib)(c+id)$ como un producto de dos binomios.} $(a+ib)(q+ir)\equiv (aq-br) + i(ar+bq)$ y apoyándonos en el campo real, podemos comprobar que estas dos operaciones junto con el conjunto $\mathbb{C}$ forman un campo. A los números complejos de la forma $0+ia, a\in\mathbb{R}$ se les conoce como números \emph{imaginarios} o \emph{laterales}\footnote{El mismísimo Gauss hubiera preferido este segundo nombre, ya que creía que era mucho más intuitivo, y que llamarlos \emph{imaginarios} les dotaba de una opacidad misteriosa e innecesaria. Sugiero ver este video introductorio (o la serie completa, llamada \emph{Imaginary Numbers Are Real}) para perderles el miedo: \url{https://www.youtube.com/watch?v=T647CGsuOVU}.}. A continuación, demostraremos que el conjunto $\mathbb{C}$ con las dos operaciones definidas previamente cumplen las primeras tres propiedades de los campos enlistadas en la sección \ref{Def:Campo}.
 
 Sean $a,b,q,r,s,t$ elementos del campo $\mathbb{R}$ tal que $a+ib, q+ir, s+it\in\mathbb{C}.$
 
@@ -197,7 +201,7 @@ Ya que $a,b,q,r$ pertenecen al campo $\mathbb{R}$, entonces las sumas y multipli
 
 Nuevamente, ya que $a,b,r,q,s,t$ pertenecen al campo $\mathbb{R}$, entonces las sumas y multiplicaciones entre estos elementos son asociativas. Por ende, tenemos que $$(a+ib)+((q+ir)+(s+it))=(a+ib)+((q+s)+i(r+t))=(a+q+s)+i(b+r+t)=$$ $$((a+q)+i(b+r))+(s+it)=((a+ib)+(q+ir))+(s+it),$$ por lo cual la suma en $\mathbb{C}$ es asociativa, y que $$(a+ib)((q+ir)(s+it))=(a+ib)((qs-rt)+i(qt+rs))=((a(qs-rt)-b(qt+rs))+i(a(qt+rs)+b(qs-rt))=$$ $$(aqs-art-bqt-brs)+i(aqt+ars+bqs-brt)=(aqs-brs-art-bqt)+i(aqt-brt+ars+bqs)=$$ $$((aq-br)s-(ar+bq)t)+i((aq-br)t+(ar+bq)s)=((aq-br)+i(ar+bq))(s+it)=((a+ib)(q+ir))(s+it)),$$\noindent por lo cual concluimos que la multiplicación también es asociativa.
 
-Por otro lado, recordando la definición de $\mathbb{C}=\{a+ib\hspace{1.5mm}|\hspace{1.5mm}a,b\in\mathbb{R}\}$ vemos que, en particular, $0+i0\in\mathbb{C}$ y $1+i0\in\mathbb{C}$. Observemos que $$(a+ib)+(0+i0)=((a+0)+i(b+0))=(a+ib),$$ por lo cual existe un elemento identidad de la suma (neutro aditivo) en este campo, y que $$(1+i0)(q+ir)=(1q-0r+i(1r+0q))=((q-0)+i(r+0))=(q+ir),$$ \noindent por lo cual también existe un elemento identidad de la multiplicación (neutro multiplicativo); por simplicidad, escribimos $0+i0$ como $0$ y $1+i0$ como $1$: son exactamente los mismos elementos neutros del campo real. Las últimas tres propiedades de la definición de campo de la sección \ref{Def:Campo} se demuestran de manera similar, y se dejan como ejercicio. A este campo se le conoce como el \emph{campo de los números complejos} o \emph{campo complejo}.
+Por otro lado, recordando la definición de $\mathbb{C}=\{a+ib\hspace{1.5mm}|\hspace{1.5mm}a,b\in\mathbb{R}\}$ vemos que, en particular, $0+i0\in\mathbb{C}$ y $1+i0\in\mathbb{C}$. Observemos que $$(a+ib)+(0+i0)=((a+0)+i(b+0))=(a+ib),$$ por lo cual existe un elemento identidad de la suma (neutro aditivo) en este campo, y que $$(1+i0)(q+ir)=(1q-0r+i(1r+0q))=((q-0)+i(r+0))=(q+ir),$$ \noindent por lo cual también existe un elemento identidad de la multiplicación (neutro multiplicativo); por simplicidad, escribimos $0+i0$ como $0$ y $1+i0$ como $1$: se pueden identifiicar con los elementos neutros del campo real. Las últimas tres propiedades de la definición de campo de la sección \ref{Def:Campo} se demuestran de manera similar, y se dejan como ejercicio. A este campo se le conoce como el \emph{campo de los números complejos} o \emph{campo complejo}.
 
 Observemos que prácticamente todas las operaciones que realizamos en nuestra vida cotidiana como calcular fechas, dar o recibir cambio, aproximar áreas, repartir comida, etc., toman lugar en un campo. Es decir, las ideas intuitivas que nos formamos durante la educación básica de que la suma siempre debe ser conmutativa y asociativa \textemdash al igual que la multiplicación\textemdash\hspace{0.5mm}, que existe la resta y la división, que el $0$ y el $1$ son números \emph{especiales} en cierto sentido y que siempre se cumple la propiedad de distributividad, son un \emph{hecho} para cualquier estructura de campo. Sin embargo, estas mismas ideas intuitivas \emph{no siempre se cumplen en otros tipos de estructuras algebráicas}\textemdash algunas de las cuales veremos más adelante\textemdash\hspace{0.5mm}, ¡así que no te confíes!
 
@@ -228,13 +232,12 @@ Un espacio vectorial es una estructura algebráica abstracta que cumple una seri
 \hspace{2.5mm} A los elementos $a,b \in K$ del campo utilizado para definir el espacio vectorial se les llama \textit{escalares} y los elementos $\mathbf{u},\mathbf{v},\mathbf{w}\in V$ que cumplen todas las propiedades anteriores son llamados \textit{vectores}. A las propiedades anteriores también se les conoce como \textit{axiomas de espacio vectorial}.
 
 \end{tcolorbox}
- 
 
 Partiendo de esta definición, podemos hacer varias observaciones:
 
 \begin{itemize}
-    \item La definición matemática de \textit{vectores} como \textit{elementos cualesquiera de un conjunto V que \textemdash junto con un campo $K$\textemdash\hspace{0.5mm} cumplen las propiedades de un espacio vectorial} es muy distinta a la definición de vector como \textit{elemento con magnitud, dirección y sentido (y, más precisamente, que además es invariante bajo rotaciones propias e impropias)} utilizada en algunas áreas de la física, siendo la primera definición más general.
-    \item La definición de \textit{espacio vectorial} incluye dos operaciones \textit{nuevas} (con respecto a las operaciones de campo) con una importante diferencia entre ellas: una es sólamente entre los elementos del conjunto $V$ (adición o suma vectorial) y, la otra, entre los elementos del conjunto $V$ y el campo $K$ (producto de un vector por un escalar)\footnote{Más adelante veremos otras operaciones que se pueden definir entre vectores y escalares, pero las dos que hemos visto hasta ahora son las únicas necesarias para \textit{definir} los espacios vectoriales.}. Sin embargo, \emph{ambas dan como resultado un vector en $V$}.
+    \item La definición matemática de \textit{vectores} como \textit{elementos cualesquiera de un conjunto V que \textemdash junto con un campo $K$ y las operaciones $+:V\times V\to V$ (suma vectorial) y $\hspace{1mm} \cdot:K\times V\to V$ (producto de un vector por un escalar) \textemdash\hspace{0.5mm} cumplen las propiedades de un espacio vectorial} es muy distinta a la definición de vector como \textit{elemento con magnitud, dirección y sentido (y, más precisamente, que además es invariante bajo rotaciones propias e impropias)} utilizada en algunas áreas de la física, siendo la primera definición más general.
+    \item La definición de \textit{espacio vectorial} incluye dos operaciones \textit{nuevas} (con respecto a las operaciones de campo) con una importante diferencia entre ellas: una es sólamente entre los elementos del conjunto $V$ (adición o suma vectorial) y, la otra, entre los elementos del conjunto $V$ y el campo $K$ (producto de un vector por un escalar)\footnote{Más adelante veremos otras operaciones que se pueden definir entre vectores y escalares, pero las dos que hemos visto hasta ahora son las únicas necesarias para \textit{definir} los espacios vectoriales. Por ende, más adelante podremos referirnos a ellas como las operaciones \emph{esenciales} de los espacios vectoriales.}. Sin embargo, \emph{ambas dan como resultado un vector en $V$}.
     \item Así como la definición de \textit{campo} incluye un conjunto $K$ con dos operaciones (suma y producto) entre sus elementos que cumplen propiedades específicas, la definición de \textit{espacio vectorial} incluye un conjunto $V$ y un campo $K$ con dos operaciones (suma vectorial y producto de un vector por un escalar) entre sus elementos que cumplen propiedades específicas. Por simplicidad, al campo se le denota como $K$ y al espacio vectorial, como $V$.
     
 \end{itemize}{}
@@ -253,11 +256,11 @@ El espacio vectorial de $\mathbb{R}^3$ sobre $\mathbb{R}$ se define de manera an
 
 El conjunto obtenido al realizar un producto cartesiano de un número entero positivo $n$ de conjuntos $\mathbb{R}$ ($\mathbb{R}\times\mathbb{R}\times...\times\mathbb{R} = \mathbb{R}^n$) sobre el campo $\mathbb{R}$ también es un espacio vectorial. Sus elementos vectoriales son de la forma $\mathbf{v} = \begin{bmatrix}v_1&v_2& ... & v_n\end{bmatrix}^T, \hspace{1.5mm} v_i \in \mathbb{R}, \hspace{1.5mm} i \in \{1,2,...,n\}$ y son conocidos como \textit{n-tuplas}\footnote{Nótese que inclusive en el caso $n=1$ el conjunto $\mathbb{R}$ sobre sí mismo forma un espacio vectorial. Es decir, en este caso, $\mathbb{R}$ funciona como conjunto vectorial y como campo.}. Las operaciones entre los vectores de $\mathbb{R}^n$ y con los escalares en $\mathbb{R}$ se definen de manera análoga al ejemplo de $\mathbb{R}^2$. A este tipo de espacios vectoriales les llamamos \textit{espacios vectoriales reales}, de acuerdo con la definición siguiente:
 
+\vspace{1.5mm} 
+
 \begin{tcolorbox}
 \underline{Def.} Un \textit{espacio vectorial real} es aquel definido sobre el campo $\mathbb{R}$ (campo real) o, equivalentemente, aquel donde los escalares son números reales.
 \end{tcolorbox}{}
-
-\vspace{3mm}
 
 El conjunto de todas las funciones polinomiales de una variable real de grado $n$ (i.e., con regla de correspondencia de la forma $f(x) = c_1 x^1 + c_2 x^2 + ... + c_n x^n, \hspace{1.5mm} c_i \in \mathbb{R}, \hspace{1.5mm} i \in \{1,2,...,n\}$) y con un mismo dominio $\mathcal{D}$ forma un espacio vectorial sobre el campo $\mathbb{R}$. Aquí, las definiciones de suma vectorial y de producto de un vector por un escalar se siguen naturalmente de la definición de la suma de funciones $(f+g)(x)\equiv f(x)+g(x)$ y del producto de una función arbitraria $f(x)$ por una función constante $a$, respectivamente, vistas en cálculo \textemdash las cuales aplican para la intersecciones de los dominios. El elemento identidad de la suma vectorial (neutro aditivo) es la función constante cero $f(x)=0\hspace{2.5mm} \forall\hspace{0.5mm}x\in\mathcal{D}$ y el inverso aditivo de una función $g(x)$ es $-g(x)$. Observemos que, en este caso, los \textit{vectores} de nuestro espacio vectorial \textit{son funciones} (en particular, en este ejemplo, son funciones polinomiales).
 
@@ -269,6 +272,7 @@ El conjunto de todas las funciones de una variable real derivables y con derivad
 
 El conjunto $\mathbb{C}\times\mathbb{C}$ ($\mathbb{C}^2$) sobre el campo $\mathbb{C}$ también es un espacio vectorial. Sus vectores son de la forma $\begin{bmatrix}a+ib&c+id\end{bmatrix}^T$ con $a,b,c,d\in\mathbb{R}$ e $i\equiv+\sqrt{-1}$ (ya que esto implica que $a+ib, c+id\in\mathbb{C}$, es decir, que sus entradas son complejas). El elemento identidad de la suma vectorial es $\mathbf{0}=\begin{bmatrix}0+i0&0+i0\end{bmatrix}^T$ y el del producto de un vector por un escalar es $1 + i0\in\mathbb{C}$; las operaciones en $\mathbb{C}^2$ y $\mathbb{C}$ se definen como las del ejemplo de $\mathbb{R}^2$ y $\mathbb{R}$. Análogamente, el conjunto $\mathbb{C}^n$ sobre el campo $\mathbb{C}$ es un espacio vectorial: sus vectores tienen $n$ entradas complejas y sus escalares también son complejos. A este tipo de espacio vectorial le llamamos \textit{espacio vectorial complejo}, de acuerdo a la siguiente definición:
 
+\vspace{1.5mm} 
 \begin{tcolorbox}
 \underline{Def.} Un \textit{espacio vectorial complejo} es aquel definido sobre el campo $\mathbb{C}$ (campo complejo) o, equivalentemente, aquel donde los escalares son números complejos.
 \end{tcolorbox}{}
@@ -280,7 +284,7 @@ Para ver más ejemplos de espacios vectoriales pueden revisar, por ejemplo, \tex
 
 \subsubsection{Algunos teoremas de espacios vectoriales} \label{Teo:Espacios_vectoriales} 
 
-\begin{teorema} 1
+\begin{teorema} {1.2.3.1}
 Sean $\mathbf{x},\mathbf{y},\mathbf{z}$ vectores de $V$ tales que $\mathbf{x}+\mathbf{z}=\mathbf{y}+\mathbf{z}$, entonces $\mathbf{x}=\mathbf{y}$.
 
 \begin{proof}
@@ -291,7 +295,7 @@ Ya que $\mathbf{z}$ es un vector de $V\implies$ $\exists\hspace{2mm} \mathbf{-z}
 A este teorema se le conoce como \emph{Ley de cancelación para la suma vectorial} y con él se puede demostrar la unicidad del nuetro aditivo y de los inversos aditivos.
 \end{teorema}
 
-\begin{teorema} 2
+\begin{teorema} {1.2.3.2}
 Sea $V$ sobre $K$ un espacio vectorial arbitrario con $\mathbf{v}\in V$ y $a\in K$, entonces se verifica que:
 
 \begin{enumerate}
@@ -302,7 +306,7 @@ Sea $V$ sobre $K$ un espacio vectorial arbitrario con $\mathbf{v}\in V$ y $a\in 
 
 \begin{proof}
 \begin{enumerate}
-    \item $0\mathbf{v}+0\mathbf{v}=(0+0)\mathbf{v}=0\mathbf{v}=0\mathbf{v}+\mathbf{0}\iff0\mathbf{v}=\mathbf{0}$, donde se aplicaron las propiedades de distributividad del producto de un vector por un escalar con respecto a la suma \emph{escalar}, existencia del neutro aditivo y la ley de cancelación de la suma vectorial (Teorema 1).
+    \item $0\mathbf{v}+0\mathbf{v}=(0+0)\mathbf{v}=0\mathbf{v}=0\mathbf{v}+\mathbf{0}\iff0\mathbf{v}=\mathbf{0}$, donde se aplicaron las propiedades de distributividad del producto de un vector por un escalar con respecto a la suma \emph{escalar}, existencia del neutro aditivo y la ley de cancelación de la suma vectorial (Teorema 1.2.3.1).
     \item $a\mathbf{0}+a\mathbf{0}=a(\mathbf{0}+\mathbf{0})=a\mathbf{0}=a\mathbf{0}+\mathbf{0}\iff a\mathbf{0}=\mathbf{0}$, donde se aplicaron las propiedades de distributividad del producto de un vector por un escalar con respecto a la adición \emph{vectorial}, existencia del neutro aditivo y la ley de cancelación de la suma vectorial.
     \item Por el primer inciso y por distributividad, $\mathbf{0} = (0)\mathbf{v} = (a+(-a))\mathbf{v}=a\mathbf{v}+(-a)\mathbf{v}$\footnote{La existencia de $-a\in K$ está asegurada ya que $K$ es un campo (ver sección \ref{Def:Campo}).}, por lo cual $a\mathbf{v}+(-a)\mathbf{v}=\mathbf{0}$. Por otro lado, por la propiedad de cerradura del producto de un vector por un escalar $a\mathbf{v}\in V$ y, por la existencia de inversos aditivos, $\exists\hspace{1mm}-(a\mathbf{v})\in V$ tal que $a\mathbf{v}+[-(a\mathbf{v})]=\mathbf{0}$. Por lo tanto, tenemos que $\mathbf{0}=\mathbf{0}\iff a\mathbf{v}+(-a)\mathbf{v}=a\mathbf{v}+[-(a\mathbf{v})]\iff (-a)\mathbf{v}=-(a\mathbf{v})$ por la ley de cancelación. En particular, $(-1)\mathbf{v}=-\mathbf{v}$; por la propiedad de compatibilidad del producto de un vector por un escalar con el producto entre escalares, se sigue que $a(-\mathbf{v})=a[(-1)\mathbf{v}]=[a(-1)]\mathbf{v}=(-a)\mathbf{v}=-(a\mathbf{v})$.
 \end{enumerate}
@@ -310,72 +314,133 @@ Sea $V$ sobre $K$ un espacio vectorial arbitrario con $\mathbf{v}\in V$ y $a\in 
 \end{teorema}
 
 
-\subsection{Interpretación geométrica de las operaciones de los espacios vectoriales} \label{Subsec:Interpretación_geométrica_de_las_operaciones_de_los_espacios_vectoriales} 
+\subsection{Interpretación geométrica de las operaciones esenciales de los espacios vectoriales} \label{Subsec:Interpretación_geométrica_de_las_operaciones_de_los_espacios_vectoriales} 
 
-Como se mencionó en una nota al final de la sección \ref{Ejem:Espacios_vectoriales}, podemos desarrollar nuestra intuición sobre muchos temas del álgebra lineal trabajando en espacios vectoriales \emph{visualizables}, para luego extender esa intuición a espacios vectoriales más generales. Por ende, ahora haremos hincapié en la interpretacción geométrica de las operaciones de suma vectorial y producto de un vector por un escalar en los espacios vectoriales reales $\mathbb{R}^2$ y $\mathbb{R}^3$, así como en el espacio vectorial complejo $\mathbb{C}$. A continuación, retomaremos muchas de las ideas presentadas en la sección anteriormente mencionada.
+Como se mencionó en una nota al final de la sección \ref{Ejem:Espacios_vectoriales} \hspace{1.5mm}\textemdash de la cual retomaremos muchas ideas a continuación\textemdash, podemos desarrollar nuestra intuición sobre muchos temas del álgebra lineal trabajando en espacios vectoriales \emph{visualizables}, para luego extenderla a espacios vectoriales más generales. Por ende, ahora haremos hincapié en la interpretacción geométrica de las operaciones de suma vectorial y producto de un vector por un escalar en los espacios vectoriales reales $\mathbb{R}^2$ y $\mathbb{R}^3$, así como en el espacio vectorial complejo $\mathbb{C}$. Antes de empezar, necesitamos recordar la siguiente definición.
+
+\vspace{1.5mm}
+
+\begin{tcolorbox}
+ \underline{Def.} Un \emph{par ordenado} (o \emph{$2$-tupla}) es un par de números $(a,b)$ en donde el orden de los números importa; mátematicamente, decimos que el par ordenado $(a,b)\neq (b,a)\iff b\neq a$\footnote{Observemos que esto implicaría que $(a,b)=(b,a)\iff b=a$, lo cual tiene sentido ya que, si ambos números son el mismo, es imposible distinguir el orden. Esta es una definición equivalente de par ordenado.}.
+\end{tcolorbox}{}
 
 \subsubsection{En el espacio vectorial real \texorpdfstring{$\mathbb{R}^2$}{TEXT}} \label{Ejem:En_R^2}
 
-Cada vector $\begin{bmatrix}a&b\end{bmatrix}^T \in \mathbb{R}^2$ tiene una correspondencia uno a uno (o \emph{biunívoca}) con una flecha en el plano cartesiano que tiene cola en el origen y punta en la coordenada $(a,b)$ correspondiente.
+En geometría analítica aprendimos que, con la ayuda de un sistema de coordenadas, podemos formar una correspondencia uno a uno (o \emph{biunívoca}) entre los pares ordenados $(a,b)$ de entradas reales\footnote{Es decir, con $a,b\in\mathbb{R}$.} y los puntos del plano cartesiano $\mathbb{R}\times\mathbb{R}$. En particular, si tomamos el sistema de coordenadas cartesianas, entonces a cualquier par ordenado de entradas reales $(a,b)$ le corresponde un punto en el plano cartesiano $\mathbb{R}\times\mathbb{R}$ con coordenadas cartesianas $(a,b)$, y vice versa. De manera análoga, en álgebra lineal, cada vector $\begin{bmatrix}a&b\end{bmatrix}^T \in \mathbb{R}^2$ tiene una correspondencia biunívoca con una flecha en el plano cartesiano que tiene cola en el origen y punta en la coordenada cartesiana $(a,b)$ correspondiente. Ambas correspondencias se muestran en la Figura \ref{fig:Correspondencias_del_plano_cartesiano}.
 
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}
-
-    Recordemos que tanto los vectores de $\mathbb{R}^2$ como las coordenadas del plano cartesiano representan \emph{pares ordenados} o  \emph{2-tuplas}. Por definición, si $a\neq b$, entonces el par ordenado $(a,b)\neq(b,a)$ \textemdash es decir, que no importan sólo los valores de $a$ y $b$, sino también su \textit{orden} cuando sus valores no son iguales. En el caso de los vectores, esto se muestra claramente en la siguiente Figura.
-
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}{}
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=1}]
+        \draw[thick,<->] (-4,0) -- (4,0);
+        \draw[thick,<->] (0,-4) -- (0,4);
+        \draw[step=1cm,gray,very thin,dashed] (-3.9,-3.9) grid (3.9,3.9);
+        \foreach \x in {1,2,3}
+            \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
+        \foreach \y in {1,2,3}
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+        \foreach \x in {-3,-2,-1}
+            \draw (\x cm, 1pt) -- (\x cm, -1pt);
+        \foreach \y in {-3,-2,-1}
+            \draw (1pt,\y cm) -- (-1pt,\y cm);
+        \filldraw[black] (0,0) circle (2pt) node[] at (-0.6,0.35) {\small{$(0,0)$}};
+        \filldraw[orange] (2,3) circle (2pt) node[anchor=south east] {$(2,3)$};
+        \draw[red,very thick,->] (0,0) -- (2,3) node[] at (3,2.5) {$\begin{bmatrix} 2 & 3 \end{bmatrix}^T$};
+        \filldraw[green] (-3.5,-2) circle (2pt) node[anchor=south east]{$(-3.5,-2)$};
+        \draw[blue,very thick,->] (0,0) -- (-3.5,-2) node[] at (-2,-2.5) {$\begin{bmatrix} -3.5 & -2 \end{bmatrix}^T$};
+    \end{tikzpicture}
+    \caption{Ejemplo de representación de pares ordenados y vectores en el plano cartesiano. Los pares ordenados $(-3.5,-2)$ y $(2,3)$ se representan mediante puntos que corresponden precisamente a las coordenadas cartesianas $(-3.5,-2)$ y $(2,3)$, respectivamente, mientras que los vectores $\protect\begin{bmatrix} -3.5 & -2 \protect\end{bmatrix}^T$ y $\protect\begin{bmatrix} 2 & 3 \protect\end{bmatrix}^T$ son representados por flechas que tienen su cola en el origen del plano cartesiano y su punta en las coordenadas $(-3.5,-2)$ y $(2,3)$, respectivamente.} 
+    \label{fig:Correspondencias_del_plano_cartesiano}
+\end{figure}
 
 \vspace{3mm}
 \textbf{Suma vectorial}
 \vspace{3mm}
 
-En este espacio, la suma vectorial se define como $\begin{bmatrix}a&b\end{bmatrix}^T+\begin{bmatrix}c&d\end{bmatrix}^T\equiv\begin{bmatrix}a+c&b+d\end{bmatrix}^T$. Podemos calcular, por ejemplo, la suma $\begin{bmatrix}2&1\end{bmatrix}^T+\begin{bmatrix}1&3\end{bmatrix}^T=\begin{bmatrix}3&4\end{bmatrix}^T$.
+    En este espacio, la suma vectorial se define como $\begin{bmatrix}a&b\end{bmatrix}^T+\begin{bmatrix}c&d\end{bmatrix}^T\equiv\begin{bmatrix}a+c&b+d\end{bmatrix}^T$. Podemos calcular, por ejemplo, la suma $\begin{bmatrix}2&1\end{bmatrix}^T+\begin{bmatrix}1&3\end{bmatrix}^T=\begin{bmatrix}3&4\end{bmatrix}^T$. Los tres vectores mencionados se muestran en la Figura \ref{fig:Suma_vectorial}.
 
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}{}
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[thick,scale=1.6, every node/.style={scale=1}]
+        \draw[thick,->] (0,0) -- (4.5,0);
+        \draw[thick,->] (0,0) -- (0,4.5);
+        \draw[step=1cm,gray,thin,dashed] (0,0) grid (4.4,4.4);
+        \foreach \x in {0,1,2,3,4}
+            \draw (\x cm,1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+        \foreach \y in {1,2,3,4}
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+        
+            \draw[red,very thick,->] (0,0) -- (2,1) node[] at (2.05,0.5){$\begin{bmatrix} 2 & 1 \end{bmatrix}^T$};
+            \draw[blue,very thick,->] (0,0) -- (1,3) node[] at (0.55,3) {$\begin{bmatrix} 1 & 3 \end{bmatrix}^T$};
+            \draw[violet,very thick,->] (0,0) -- (3,4) node[] at (3,4.2) {$\begin{bmatrix} 3 & 4 \end{bmatrix}^T$};
+            \draw[] node[] at (4.2,4.2) {\textbf{a)}};
+            \draw[black,thick,->]  (5,2) -- (5.5,2);
+    \end{tikzpicture} \hspace{0.5cm} \begin{tikzpicture}[thick,scale=1.6, every node/.style={scale=1}]
+        \draw[thick,->] (0,0) -- (4.5,0);
+        \draw[thick,->] (0,0) -- (0,4.5);
+        \draw[step=1cm,gray,thin,dashed] (0,0) grid (4.4,4.4);
+        \foreach \x in {0,1,2,3,4}
+            \draw (\x cm,1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+        \foreach \y in {1,2,3,4}
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+            \draw[red,very thick,->] (0,0) -- (2,1) node[] at (2.05,0.5){$\begin{bmatrix} 2 & 1 \end{bmatrix}^T$};
+            \draw[blue,dashed,->] (2,1) -- (3,4) node[] at (3,2.4) {$\begin{bmatrix} 1 & 3 \end{bmatrix}^T$};
+            \draw[blue,very thick,->] (0,0) -- (1,3) node[] at (0.55,3) {$\begin{bmatrix} 1 & 3 \end{bmatrix}^T$};
+            \draw[red,dashed,->] (1,3) -- (3,4) node[] at (1.7,3.8) {$\begin{bmatrix} 2 & 1 \end{bmatrix}^T$};
+            \draw[violet,very thick,->] (0,0) -- (3,4) node[] at (3,4.2) {$\begin{bmatrix} 3 & 4 \end{bmatrix}^T$};
+            \draw[] node[] at (4.2,4.2) {\textbf{b)}};
+    \end{tikzpicture}
+        \caption{Interpretación geométrica de la suma vectorial en el espacio vectorial real $\protect\mathbb{R}^2$. En la figura $\textbf{a)}$ se observan los vectores $\protect\begin{bmatrix} 1 & 3 \protect\end{bmatrix}^T$ y $\protect\begin{bmatrix} 2 & 1 \protect\end{bmatrix}^T$, así como el vector resultante de la suma de los dos anteriores, $\protect\begin{bmatrix} 3 & 4 \protect\end{bmatrix}^T$. En la figura $\textbf{b)}$ observamos la llamada \emph{Ley del paralelogramo} para la suma de dos vectores.}
+    \label{fig:Suma_vectorial}
+\end{figure}
 
-    Observemos que, visualmente, esto corresponde a trazar uno de los vectores en el plano cartesiano y luego trazar el otro colocando la cola en la punta del vector anterior, como si ése fuese su origen. Nótese que no importa cuál vector trazamos primero y cuál después, lo cual concuerda con la conmutatividad de la suma vectorial (esta misma analogía visual es válida para la suma de tres o más vectores de $\mathbb{R}^2$); a esto se le conoce como la \textit{Ley del paralelogramo}. En particular, $\forall\hspace{0.5mm} \mathbf{v} \in \mathbb{R}^2$, $\mathbf{0}+\mathbf{v}=\mathbf{v}$, lo cual concuerda con el hecho de que el vector $\mathbf{v}$ corresponda a una flecha con cola en el origen.
-
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}{}
+    Observemos que, visualmente, esto corresponde a trazar uno de los vectores en el plano cartesiano y luego trazar el otro colocando la cola en la punta del vector anterior, como si ése fuese su origen. Nótese que no importa cuál vector trazamos primero y cuál después, lo cual concuerda con la conmutatividad de la suma vectorial (esta misma interpretación geométrica es válida para la suma de tres o más vectores de $\mathbb{R}^2$: basta irlos sumando de dos en dos vectores); a esto se le conoce como la \textit{Ley del paralelogramo}. En particular, $\forall\hspace{0.5mm} \mathbf{v} \in \mathbb{R}^2$, $\mathbf{0}+\mathbf{v}=\mathbf{v}$, lo cual concuerda con el hecho de que el vector $\mathbf{v}$ corresponda a una flecha con cola en el origen.
 
 \vspace{3mm}
 \textbf{Producto de un vector por un escalar}
 \vspace{3mm}
 
-Además, en este espacio, el producto de un vector por un escalar se define como $c\begin{bmatrix}a&b\end{bmatrix}^T\equiv\begin{bmatrix}ca&cb\end{bmatrix}^T$. Podemos calcular, por ejemplo, los productos $(\frac{1}{2})\begin{bmatrix}2&1\end{bmatrix}^T=\begin{bmatrix}1&0.5\end{bmatrix}^T$ y $(-1.2)\begin{bmatrix}1&3\end{bmatrix}^T=\begin{bmatrix}-1.2&-3.6\end{bmatrix}^T$. La representación gráfica de estas operaciones se muestra en la siguiente figura.
+        En este espacio, el producto de un vector por un escalar se define como $c\begin{bmatrix}a&b\end{bmatrix}^T\equiv\begin{bmatrix}ca&cb\end{bmatrix}^T$. Podemos calcular, por ejemplo, los productos $(\frac{1}{2})\begin{bmatrix}2&2\end{bmatrix}^T=\begin{bmatrix}1&1\end{bmatrix}^T$ y $(-1.2)\begin{bmatrix}1&3\end{bmatrix}^T=\begin{bmatrix}-1.2&-3.6\end{bmatrix}^T$. La representación gráfica de estas operaciones se muestra en la Figura \ref{fig:Producto_de_un_vector_por_un_escalar}.
 
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}{}
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=1}]
+        \draw[thick,<->] (-4,0) -- (4,0);
+        \draw[thick,<->] (0,-4) -- (0,4);
+        \draw[step=1cm,gray,thin,dashed] (-3.9,-3.9) grid (3.9,3.9);
+        \foreach \x in {1,2,3,4}
+            \draw (\x cm,1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+        \foreach \y in {1,2,3,4}
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+            \draw[red,very thick,->] (0,0) -- (2,2) node[anchor=west] {$\begin{bmatrix} 2 & 2 \end{bmatrix}^T$};
+            \draw[blue,very thick,->,opacity=0.7] (0,0) -- (1,3) node[anchor=south west] {$\begin{bmatrix} 1 & 3 \end{bmatrix}^T$};
+            \draw[black,thick,->]  (5,0) -- (5.7,0);
+            \draw[] node[] at (3.5,3.5) {\textbf{a)}};
+            \end{tikzpicture} \hspace{0.5mm} \begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=1}]
+        \draw[thick,<->] (-4,0) -- (4,0);
+        \draw[thick,<->] (0,-4) -- (0,4);
+        \draw[step=1cm,gray,thin,dashed] (-3.9,-3.9) grid (3.9,3.9);
+        \foreach \x in {1,2,3,4}
+            \draw (\x cm,1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+        \foreach \y in {1,2,3,4}
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+            \draw[red,very thick,opacity=0.7,->] (0,0) -- (1,1) node[] at (2.1,0.65) {$\begin{bmatrix} 1 & 1 \end{bmatrix}^T$};
+            \draw[blue,very thick,->] (0,0) -- (-1.2,-3.6) node[] at (-3,-3.4) {$\begin{bmatrix} -1.2 & -3.6 \end{bmatrix}^T$};
+            \draw[red,thin,dashed,->] (0,0) -- (2,2); 
+            \draw[blue,thin,dashed,->,opacity=0.7] (0,0) -- (1,3); 
+            \draw[] node[] at (3.5,3.5) {\textbf{b)}};
+    \end{tikzpicture}
+    \caption{Interpretación geométrica del producto de un vector por un escalar en el espacio vectorial real $\mathbb{R}^2$. Comparando las figuras $\textbf{a)}$ y $\textbf{b)}$ observamos que, en caso de que se multiplique a un vector de $\mathbb{R}^2$ por un escalar de $\mathbb{R}$, es posible que la longtitud del vector cambie y que su sentido se invierta, pero su dirección no cambia.}
+    \label{fig:Producto_de_un_vector_por_un_escalar}
+\end{figure}
 
-    Como podemos observar, el primer producto redujo la longitud del vector sin cambiar su sentido, mientras que el segundo producto aumentó la longitud del vector, a la vez que invirtió su sentido; sin embargo, en ambos casos, el producto de un vector por un escalar no cambió la \emph{dirección} de los vectores\textemdash es decir, los mantuvo en la misma \emph{línea}. En general, si el escalar $c\in\mathbb{R}$ que multiplica al vector tiene $|c|>1$, lo \emph{alarga}; si tiene $|c|<1$, lo acorta; finalmente, si tiene $|c|=1$, no cambia su longitud. Por este cambio de longitud es que al producto de un vector por un escalar también se le conoce por el nombre \emph{reescalamiento}. Además, si $c>0$, el vector mantiene su misma dirección y sentido (sigue en la misma línea y apunta hacia el mismo lado) mientras que, si $c<0$, el vector conserva su dirección pero se invierte su sentido (sigue en la misma línea pero apunta hacia el lado opuesto); si $c=0$ entonces el vector automáticamente se convierte en el vector nulo $\begin{bmatrix}0&0\end{bmatrix}^T$, como se demostró algebráicamente en el primer inciso del Teorema 2. Para visualizar las operaciones de adición vectorial y producto de un vector por un escalar de forma interactiva, recomiendo la sección \textbf{Vector Algebra and Geometry} de \url{https://textbooks.math.gatech.edu/ila/vectors.html}, así como la ilustración interactiva \url{http://immersivemath.com/ila/ch02_vectors/ch02.html#fig_vec_scaling}.
+
+    Como podemos observar, el primer producto redujo la longitud del vector sin cambiar su sentido, mientras que el segundo producto aumentó la longitud del vector, a la vez que invirtió su sentido; sin embargo, en ambos casos, el producto de un vector por un escalar no cambió la \emph{dirección} de los vectores\textemdash es decir, los mantuvo en la misma \emph{línea}. En general, si el escalar $c\in\mathbb{R}$ que multiplica al vector tiene $|c|>1$, lo \emph{alarga}; si tiene $|c|<1$, lo acorta; finalmente, si tiene $|c|=1$, no cambia su longitud. Por este cambio de longitud es que al producto de un vector por un escalar también se le conoce por el nombre \emph{reescalamiento}. Además, si $c>0$, el vector mantiene su misma dirección y sentido (sigue en la misma línea y apunta hacia el mismo lado) mientras que, si $c<0$, el vector conserva su dirección pero se invierte su sentido (sigue en la misma línea pero apunta hacia el lado opuesto); si $c=0$ entonces el vector automáticamente se convierte en el vector nulo $\begin{bmatrix}0&0\end{bmatrix}^T$, como se demostró algebráicamente en el primer inciso del Teorema 1.2.3.2. Para visualizar las operaciones de adición vectorial y producto de un vector por un escalar de forma interactiva, recomiendo la sección \textbf{Vector Algebra and Geometry} de \url{https://textbooks.math.gatech.edu/ila/vectors.html}, así como la ilustración interactiva \url{http://immersivemath.com/ila/ch02_vectors/ch02.html#fig_vec_scaling}.
 
     Así, en general, si combinamos las operaciones de suma vectorial y producto de un vector por un escalar, visualmente lo que estaremos haciendo será \emph{combinar líneas} con diferentes longitudes, direcciones y sentidos en el plano cartesiano. 
 
 \vspace{3mm}
 
-Nota: El vector nulo $\mathbf{0}=\begin{bmatrix}0&0\end{bmatrix}^T$ (también llamado \emph{vector origen}) no tiene longitud, ya que es el único donde la cola y la punta de su flecha coinciden. Además, se dice que tampoco tiene dirección ni sentido\footnote{Alternativamente, se dice que tiene \emph{todas las direcciones} y \emph{todos los sentidos simultáneamente}: en la práctica, ambas interpretaciones son equivalentes, pero la primera puede ser más fácil de asimilar.}. Si asumimos que este vector no tiene longitud, dirección ni sentido, entonces queda claro por qué cualquier reescalamiento de este vector no lo modifica, como se demostró en el segundo inciso del Teorema 2.
+Nota: El vector nulo $\mathbf{0}=\begin{bmatrix}0&0\end{bmatrix}^T$ (también llamado \emph{vector origen}) no tiene longitud, ya que es el único donde la cola y la punta de su flecha coinciden. Además, se dice que tampoco tiene dirección ni sentido\footnote{Alternativamente, se dice que tiene \emph{todas las direcciones} y \emph{todos los sentidos simultáneamente}: en la práctica, ambas interpretaciones son equivalentes, pero la primera puede ser más fácil de asimilar.}. Si asumimos que este vector no tiene longitud, dirección ni sentido, entonces queda claro por qué cualquier reescalamiento de este vector no lo modifica, como se demostró en el segundo inciso del Teorema 1.2.3.2.
 
 \subsubsection{En el espacio vectorial real \texorpdfstring{$\mathbb{R}^3$}{TEXT}}
 
@@ -383,58 +448,70 @@ La suma vectorial y el producto de un vector por un escalar (o \emph{reescalamie
 
 \subsubsection{En el espacio vectorial complejo \texorpdfstring{$\mathbb{C}$}{TEXT}}
 
-Como hemos visto, el plano cartesiano nos sirve para representar vectores con dos entradas reales. De manera similar, el \emph{plano complejo} \textemdash con un eje de números \emph{reales} (por convención, el horizontal) y otro eje perpendicular a él con números \emph{imaginarios}\footnote{Los números imaginarios son aquellos números complejos con la parte real igual a cero, i.e. $0+ib=ib\in\mathbb{C}$, donde $b$ es un número real. En otras palabras, son el resultado de multiplicar el número imaginario $i$ por cualquier número real.}\textemdash\hspace{0.5mm} nos sirve para representar vectores con una entrada compleja. Así, cada vector de una entrada compleja $\begin{bmatrix}a+ib\end{bmatrix}$ tiene una correspondencia uno a uno con una flecha con cola en el origen del plano y flecha en la coordenada $(a,ib)$ del plano complejo, la cual corresponde a, desde el origen, moverse $a$ unidades sobre el eje real y $b$ unidades sobre el eje imaginario.
+Como hemos visto, el plano cartesiano nos sirve para representar vectores con dos entradas reales. De manera similar, el \emph{plano complejo} \textemdash con un eje de números \emph{reales} (por convención, el horizontal) y otro eje perpendicular a él de números \emph{imaginarios}\footnote{Los números imaginarios son aquellos números complejos con la parte real igual a cero, i.e. $0+ib=ib\in\mathbb{C}$, donde $b$ es un número real. En otras palabras, son el resultado de multiplicar el número imaginario $i$ por cualquier número real.}\textemdash\hspace{0.5mm} nos sirve para representar vectores con una entrada compleja. Así, cada vector de una entrada compleja $\begin{bmatrix}a+ib\end{bmatrix}$ con $a,b\in\mathbb{R}$ tiene una correspondencia uno a uno con una flecha con cola en el origen del plano y flecha en la coordenada $(a,ib)$ del plano complejo, la cual corresponde a, desde el origen, moverse $a$ unidades sobre el eje real y $b$ unidades sobre el eje imaginario.
 
 \vspace{3mm}
 \textbf{Suma vectorial}
 \vspace{3mm}
 
-De la definición de suma vectorial $\begin{bmatrix}a+ib\end{bmatrix}+\begin{bmatrix}c+id\end{bmatrix}\equiv\begin{bmatrix}(a+c)+(b+d)i\end{bmatrix}$ se sigue que la suma vectorial entre vectores de $\mathbb{C}$ tenga la misma interpretación geométrica que aquella entre vectores de $\mathbb{R}^2$. Por ejemplo, si calculamos $\begin{bmatrix}1+2i\end{bmatrix}+\begin{bmatrix}3+2i\end{bmatrix}=\begin{bmatrix}4+4i\end{bmatrix}$, podemos representarlo visulamente en la siguiente Figura.
+De la definición de suma vectorial $\begin{bmatrix}a+ib\end{bmatrix}+\begin{bmatrix}c+id\end{bmatrix}\equiv\begin{bmatrix}(a+c)+(b+d)i\end{bmatrix}$ se deduce que la suma vectorial entre vectores de $\mathbb{C}$ tiene la misma interpretación geométrica que aquella entre vectores de $\mathbb{R}^2$. Por ejemplo, si calculamos $\begin{bmatrix}1+2i\end{bmatrix}+\begin{bmatrix}3+2i\end{bmatrix}=\begin{bmatrix}4+4i\end{bmatrix}$, podemos representarlo visulamente en la Figura \ref{fig:Suma_vectorial_compleja}.
 
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}{}
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \draw[thick,->] (0,0) -- (5,0);
+        \draw[thick,->] (0,0) -- (0,5);
+        \draw[step=1cm,gray,thin,dashed] (0,0) grid (4.9,4.9);
+        \foreach \x in {1,2,3,4}
+            \draw (\x cm,1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+        \draw (1pt, 1cm) -- (-1pt, 1 cm) node[anchor=east] {$i$};
+        \foreach \y in {2,3,4}
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y i$};
+            \draw[blue,very thick,->] (0,0) -- (1,2) node[] at (0.8,2.6) {$\begin{bmatrix} 1 & 2i \end{bmatrix}^T$};
+            \draw[red,thin,dashed,->] (1,2) -- (4,4) node[] at (2.4,3.8) {$\begin{bmatrix} 3 & 2i \end{bmatrix}^T$};
+            \draw[red,very thick,->] (0,0) -- (3,2) node[] at (3.1,1.2) {$\begin{bmatrix} 3 & 2i \end{bmatrix}^T$};
+            \draw[blue,thin,dashed,->] (3,2) -- (4,4) node[] at (4.2,2.6) {$\begin{bmatrix} 1 & 2i \end{bmatrix}^T$};
+        \draw[violet,very thick,->] (0,0) -- (4,4) node[anchor=south west] {$\begin{bmatrix} 4 & 4i \end{bmatrix}^T$};
+    \end{tikzpicture}
+    \caption{Interpretación geométrica de la suma vectorial en el espacio vectorial complejo $\mathbb{C}$. Observamos que, al igual que en el caso del espacio vectorial real $\mathbb{R}^2$, se cumple la \emph{Ley del paralelogramo}.}
+    \label{fig:Suma_vectorial_compleja}
+\end{figure}
+
+
 
 \vspace{3mm}
 \textbf{Producto de un vector por un escalar}
 \vspace{3mm}
 
-Por definición, el producto de un vector por un escalar es $(q+ir)\begin{bmatrix}s+it\end{bmatrix}\equiv\begin{bmatrix}(qs-rt)+(qt+rs)i\end{bmatrix}$.
+Por definición, el producto de un vector por un escalar es $(q+ir)\begin{bmatrix}s+it\end{bmatrix}\equiv\begin{bmatrix}(qs-rt)+i(qt+rs)\end{bmatrix}$.
 
-Notemos que, en particular, si la parte imaginaria del escalar es nula (i.e., si $r=0$), entonces el escalar es un número real y el producto resultante es $(q)\begin{bmatrix}s+it\end{bmatrix}\equiv\begin{bmatrix}(qs)+(qt)i\end{bmatrix}$, por lo cual geométricamente sólo se produce un reescalamiento completamente análogo al discutido en la sección \ref{Ejem:En_R^2}.
+Notemos que, en particular, si la parte imaginaria del escalar es nula (i.e., si $r=0$), entonces el escalar es un número real y el producto resultante es $(q)\begin{bmatrix}s+it\end{bmatrix}\equiv\begin{bmatrix}(qs)+(qt)i\end{bmatrix}$, por lo cual geométricamente sólo se produce un reescalamiento totalmente análogo al discutido en la sección \ref{Ejem:En_R^2}.
 
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}{}
+En cambio, ahora observemos qué sucede si la parte real del escalar es nula y la parte imaginaria es igual a $1$ (i.e., si multiplicamos por el escalar $i$). Tomemos, por ejemplo, al vector $\begin{bmatrix}2+2i\end{bmatrix}$. Al hacer el producto de este vector por $i$ obtenemos $\begin{bmatrix}-2+2i\end{bmatrix}$. Si, en cambio, hacemos el producto de este mismo vector por el escalar $-i$, obtenemos como resultado $(-i)\begin{bmatrix}2+2i\end{bmatrix}=\begin{bmatrix}2-2i\end{bmatrix}$. Ambas operaciones se muestran de manera visual en la Figura \ref{fig:Producto_de_un_vector_complejo_por_i}.
 
-    En cambio, ahora observemos qué sucede si la parte real del escalar es nula y la parte imaginaria es igual a $1$ (i.e., si $q=0$ y $r=1$). Tomemos, por ejemplo, el vector $\begin{bmatrix}2+2i\end{bmatrix}$. Al hacer el producto de este vector por el escalar $i$ obtenemos $\begin{bmatrix}-2+2i\end{bmatrix}$. Si, en cambio, hacemos el producto de este mismo vector por el escalar $-i$, obtenemos como resultado $(-i)\begin{bmatrix}2+2i\end{bmatrix}=\begin{bmatrix}2-2i\end{bmatrix}$. Ambas operaciones se muestran de manera visual en la siguiente Figura.
-
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}{}
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}
+        \draw[thick,<->] (-3.5,0) -- (3.5,0);
+        \draw[thick,<->] (0,-3.5) -- (0,3.5);
+        \draw[step=1cm,gray,thin,dashed] (-3.4,-3.4) grid (3.4,3.4);
+        \foreach \x in {1,2}
+            \draw (\x cm,1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+            \draw (1pt,1 cm) -- (-1pt,1 cm) node[anchor=east] {$i$};
+            \draw (1pt,2 cm) -- (-1pt,2 cm) node[anchor=east] {$2i$};
+            \draw[darkgray,very thick,opacity=0.8,->] (0,0) -- (2,2) node[anchor=south west] {$\begin{bmatrix} 2 & 2i \end{bmatrix}^T$};
+            \draw[gray,very thick,opacity=0.9,->] (0,0) -- (-2,2) node[anchor=south east] {$\begin{bmatrix} -2 & 2i \end{bmatrix}^T$};
+            \draw[darkgray,very thick,->] (0,0) -- (2,-2) node[anchor=north west] {$\begin{bmatrix} 2 & -2i \end{bmatrix}^T$};
+    \end{tikzpicture}
+    \caption{Interpretación geométrica del producto de un vector complejo por los números imaginarios $i$ y $-i$. En este caso, nuestro vector base es $\protect\begin{bmatrix} 2 & 2i \protect\end{bmatrix}^T$. El producto de  este vector por el escalar $i$ resulta en el vector $\protect\begin{bmatrix} -2 & 2i \end{bmatrix}^T$, lo cual puede ser interpretado geométricamente como una rotación discreta de $\frac{\pi}{2}$ radianes. Así observamos que, en cambio, el producto de nuestro vector base $\protect\begin{bmatrix} 2 & 2i \protect\end{bmatrix}^T$ por $-i$ se puede interpretar geométricamente como una rotación discreta de $-\frac{\pi}{2}$ radianes.}
+    \label{fig:Producto_de_un_vector_complejo_por_i}
+\end{figure}
 
    Aquí vemos que hacer el producto de un vector por el escalar $i$ \emph{equivale a hacer una rotación de $90^\circ$ ó $\frac{\pi}{2}$ radianes}. Análogamente, el producto de un vector por el escalar $-i$ equivale a hacer una rotación de $-90^\circ$ ó $-\frac{\pi}{2}$ radianes. Esto tiene sentido ya que $-i=-1(i)=i(-1)$ lo cual implica que, debido a la compatibilidad del producto de un vector por un escalar con el producto entre escalares, es lo mismo multiplicar un vector por $(-i)$ a multiplicarlo por $i$ y después por -1, o vice versa: el razonamiento geométrico correspondiente es que da lo mismo rotar un vector $-\frac{\pi}{2}$ radianes a rotarlo $\frac{\pi}{2}$ radianes y después invertir su sentido, o primero invertir su sentido y después rotarlo $\frac{\pi}{2}$ radianes. 
 
 ¿Y si multiplicamos un vector de $\mathbb{C}$ por un escalar $ai$ con $a\neq 0,1$? Ya que $ai[b + ic]=[-ac+i(ab)]=a[-c+ib]=a(i[b+ic])$ \textemdash es decir, por la compatibilidad entre productos\textemdash\hspace{0.5mm} podemos deducir que hacer el producto de un vector complejo por un número imaginario arbitrario $ai$ tendrá dos consecuencias: rotarlo de acuerdo a $i$ ($\frac{\pi}{2}$ radianes a contrarreloj) y reescalarlo de acuerdo al valor de $a$ (invirtiendo el sentido si $a<0$). En este último caso donde $a$ es negativo, ya que $ai=|a|(-i)=(-i)|a| \hspace{3mm}\forall\hspace{1.5mm} a<0$, también podríamos pensar que se rota al vector complejo de acuerdo a $-i$ ($\frac{\pi}{2}$ radianes en el sentido de las manecillas) y se reescala de acuerdo al valor absoluto de $a$: ambos razonamientos son equivalentes.
 
 Dicho lo anterior, estamos listos para el caso más general: multiplicar un vector complejo $\begin{bmatrix}s+it\end{bmatrix}$ por un escalar complejo $q+ir$ con $q,r\neq0$ \emph{reescalará} el vector en el plano complejo y lo \emph{rotará} en el sentido correspondiente al signo de $r$. Es decir que, en los espacios vectoriales complejos, los escalares no sólamente pueden \emph{reescalar} vectores, sino que también los pueden \emph{rotar}\footnote{El asunto de las \emph{magnitudes específicas} de estos reescalamientos y rotaciones \textemdash el cual se complica para escalares complejos en general\textemdash\hspace{0.5mm} será precisado más adelante.}.
-
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}{}
-
 
 \subsection{Subespacios vectoriales}
 
@@ -466,7 +543,7 @@ Observemos que:
 
 \subsubsection{Ejemplos de subespacios vectoriales}
 
-El conjunto de todos los pares ordenados $\{\begin{bmatrix} x_1&x_2\end{bmatrix}^T\mathop |\mathop x_1,x_2\in\mathbb{R}\mathop\land\mathop x_1=x_2\}$ es un subespacio vectorial del espacio vectorial real $\mathbb{R}^2$ (o $\mathbb{R}\times \mathbb{R}$).
+El conjunto de todos los pares ordenados $\{\begin{bmatrix} x_1&x_2\end{bmatrix}^T\mathop |\mathop x_1,x_2\in\mathbb{R}\mathop\land\mathop x_1=x_2\}$ es un subespacio vectorial en el espacio vectorial real $\mathbb{R}^2$ (o $\mathbb{R}\times \mathbb{R}$).
 
 \vspace{3mm}
 
@@ -484,17 +561,17 @@ El conjunto de todas las funciones reales de clase $C^{\infty}$ es un subespacio
 
 \subsubsection{Algunos teoremas de subespacios vectoriales} \label{Teo:Subespacios_vectoriales}
 
-\begin{teorema} 3 Cualquier intersección de dos subespacios vectoriales de $V$ es un subespacio vectorial de $V$.
+\begin{teorema} {1.4.3.1} Cualquier intersección de dos subespacios vectoriales de $V$ es un subespacio vectorial de $V$.
 
 \begin{proof}
     Sea $V$ sobre $K$ un espacio vectorial y sea $C$ una colección de subespacios vectoriales de $V$ (definidos sobre el mismo campo $K$). Sea $W$ la intersección de los conjuntos vectoriales de $C$. Entonces, ya que cada subespacio vectorial en $C$ contiene al neutro aditivo de $V$, $\mathbf{0}\in W$. Además, sea $a\in K$ y sean $\mathbf{u},\mathbf{v}\in W$, entonces $\mathbf{u},\mathbf{v}$ están en todos los subespacios de la colección $C$, cada uno de los cuales es cerrado por la adición vectorial y por el producto de un vector por un escalar, de donde se sigue que $a\mathbf{u}, a\mathbf{v}$ y $\mathbf{u}+\mathbf{v}$ están en todos los subespacios, por lo cual también están en $W$. Por lo tanto, por la definición de la sección \ref{Def:Subespacio_vectorial}, $W$ es un subespacio vectorial de $V$.
 \end{proof}
 \end{teorema}
 
-\begin{teorema} 4 Sea $Z$ un subespacio vectorial de $W$ y sea $W$, a su vez, subespacio vectorial de $V$. Entonces $Z$ es un subespacio vectorial de $V$.
+\begin{teorema} {1.4.3.2} Sea $Z$ un subespacio vectorial de $W$ y sea $W$, a su vez, subespacio vectorial de $V$. Entonces $Z$ es un subespacio vectorial de $V$.
 \end{teorema}
 
-\noindent La demostración del Teorema 4 se deja como ejercicio. Este último teorema nos muestra otra analogía válida entre subconjuntos y subespacios vectoriales, ya que si $A \subset B$ y $B\subset C \implies A\subset C$.
+\noindent La demostración del Teorema 1.4.3.2 se deja como ejercicio. Este último teorema nos muestra otra analogía válida entre subconjuntos y subespacios vectoriales, ya que si $A \subset B$ y $B\subset C \implies A\subset C$.
 
 \subsubsection{Suma y suma directa de espacios vectoriales}
 
@@ -523,41 +600,40 @@ Volveremos a esta idea de \emph{descomponer un espacio vectorial como una suma d
 \subsubsection{Campos}
 
 \begin{enumerate}
-    \item Demuestra que el conjunto $\mathbb{C}$ junto con las operaciones de suma y multiplicación definidas en la sección \ref{Ejem:Campo_complejo} cumplen las últimas tres propiedades de la definición de campo de la sección \ref{Def:Campo} para finalmente demostrar que forman un campo.
+    \item Demuestra que el conjunto $\mathbb{C}$ junto con las operaciones de suma y multiplicación definidas en la sección \ref{Ejem:Campo_complejo} cumplen las últimas tres propiedades de la definición de campo de la sección \ref{Def:Campo} para finalmente demostrar que estas tres cosas juntas (el conjunto $\mathbb{C}$ y las dos operaciones mencionadas) forman un campo. (0.5 ptos. extra)*
 \end{enumerate}
 
 \subsubsection{Espacios vectoriales} \label{Ejer:Espacios_vectoriales}
 
-\begin{enumerate} 
+\begin{enumerate}
 %    \item En la definición de espacio vectorial de la sección \ref{Def:Espacio_vectorial} no se especifica que los resultados de las operaciones $\mathbf{u}+\mathbf{v}$ (en la propiedad de \textit{cerradura de la adición}) ni $a\mathbf{v}$ (en \textit{cerradura del producto de un vector por un escalar}) sean únicos. Tampoco se especifica que el elemento identidad de la adición ($\mathbf{0}$), el elemento identidad del producto de un vector por un escalar ($1$), ni los elementos inversos de la adición de cada vector $\mathbf{v}$ ($-\mathbf{v}$) sean únicos. Demuestra que todos los elementos mencionados anteriormente son únicos. 
-    \item Sea $K$ un campo arbitrario. ¿Siempre puede definirse un espacio vectorial de $K$ (como conjunto vectorial) sobre sí mismo (como campo)? Si sí, demuéstralo. Si no, da un contraejemplo (nota: repasa los axiomas de campo y ten cuidado con la notación que decidas emplear).
-    \item Explica por qué \textbf{no} puede existir un espacio vectorial con vectores reales en $\mathbb{R}^n$ sobre el campo $\mathbb{C}$, pero sí puede haber un espacio vectorial con vectores complejos en $\mathbb{C}^n$ sobre el campo $\mathbb{R}$.
-    \item Sea $K$ un campo arbitrario. Demuestra que $K\times K\times ...\times K=K^n, n\in\mathbb{N}$ sobre $K$ es un espacio vectorial.
+    \item Sea $K$ un campo arbitrario. ¿Siempre puede definirse un espacio vectorial de $K$ (como conjunto vectorial) sobre sí mismo (como campo)? Si sí, demuéstralo. Si no, da un contraejemplo (nota: repasa los axiomas de campo y ten cuidado con tu notación). (1 pto.)
+    \item Explica por qué \textbf{no} puede existir un espacio vectorial con vectores reales en $\mathbb{R}^n$ sobre el campo $\mathbb{C}$, pero sí puede haber un espacio vectorial con vectores complejos en $\mathbb{C}^n$ sobre el campo $\mathbb{R}$. (1 pto.)
+    \item Sea $K$ un campo arbitrario. Demuestra que $K\times K\times ...\times K=K^n, n\in\mathbb{N}$ sobre $K$ es un espacio vectorial. (0.5 ptos. extra)*
 \end{enumerate}
 
 \subsubsection{Interpretacción geométrica de los espacios vectoriales}
 
 \begin{enumerate}
-    \item Holi
-    \item Crayoli
+        \item Define las variables $a,b,c,d,e\in\mathbb{R}$ de acuerdo a los últimos 5 dígitos de tu número de cuenta. Calcula algebráicamente al vector $\begin{bmatrix}a & b\end{bmatrix}^T+c\begin{bmatrix}d & e\end{bmatrix}^T$ y muestra gráficamente al vector resultante aplicando la Ley del paralelogramo. (1 pto.)
+                \item Como vimos en la sección \ref{Subsec:Interpretación_geométrica_de_las_operaciones_de_los_espacios_vectoriales}, la suma de dos vectores $\mathbf{v},\mathbf{u}\in\mathbb{R}^2$ sobre $\mathbb{R}$ se puede representar geométricamente con ayuda de un paralelogramo en el plano cartesiano, en donde la diagonal del paralelogramo que sale del origen es igual al vector resultante de la suma $\mathbf{u}+\mathbf{v}$ ó $\mathbf{v}+\mathbf{u}$ (ver, e.g< la Figura \ref{fig:Suma_vectorial}). Muestra intuitivamente que si transportamos a la \emph{otra} diagonal del paralelogramo hasta el origen (lo cual se puede hacer de dos maneras distintas), obtenemos la representación del vector resultante de la resta $\mathbf{u}-\mathbf{v}$ ó $\mathbf{v}-\mathbf{u}$. (1 pto.)
+                        \item Muestra intuitivamente que el punto de intersección de las diagonales del paralelogramo mencionado en el ejercicio anterior es igual a la punta del vector $\frac{1}{2}(\vec{u}+\vec{v})$. (1 pto.)
+                                \item Elige los dos últimos dígitos de tu número de cuenta y llámalos $q$ y $r$, respectivamente. Al segundo y tercer dígito de tu número de cuenta, llámalos $s$ y $t$. Dibuja el vector complejo $\begin{bmatrix} q + ir \end{bmatrix}^T\in\mathbb{C}$ en el plano complejo. Explica qué le pasaría a este vector si realizáramos su producto por los escalares complejos $s+it$, $-s+it$, $s-it$ y $s+it$. (1 pto.)
 \end{enumerate}
 
 \subsubsection{Subespacios vectoriales}
 
 \begin{enumerate}
-    \item En la página 17 del libro \textit{Linear Algebra} de Friedberg, la definición de un subespacio vectorial incluye una cuarta propiedad que deben cumplir (la de existencia de inversos aditivos), la cual no incluí en las notas del curso, ya que es redundante. Explica por qué se puede desechar esta cuarta propiedad sin afectar la definición de subespacio vectorial (nota: ver, por ejemplo, la definición de subespacios vectoriales dada en la página 91 de \textit{Introduction to Linear Algebra} de Lang, que no incluye dicha propiedad).
-    \item Demuestra que el conjunto $\{(a,2a,3a)\in\mathbb{R}^3\mathop|\mathop a\in\mathbb{R}\}$ sobre el campo $\mathbb{R}$ es un subespacio vectorial de $\mathbb{R}^3$. ¿Qué representa este conjunto visualmente en $\mathbb{R}^3$?
-    \item Demuestra que el espacio vectorial de todas las funciones de una variable real que son derivables y tienen derivada continua (de clase $C^1$) sobre $\mathbb{R}$ es un subespacio vectorial del espacio vectorial de todas las funciones reales continuas (de clase $C^0$) de una variable sobre $\mathbb{R}$. ¿Cómo generalizarías este resultado a que las de clase $C^i$ formen un subespacio de las de clase $C^n$ con $i>n$ sobre el mismo campo $\mathbb{R}$? Argumenta.
-    \item Demuestra que el espacio vectorial de todas las funciones polinomiales de una variable real de grado $n$ es un subespacio vectorial del espacio vectorial de todas las funciones reales de una variable de clase $C^m$ para toda $n \geq m$.
-    \item Demuestra el Teorema 4 (ver sección \ref{Teo:Subespacios_vectoriales}).
+    \item En la página 17 del libro \textit{Linear Algebra} de Friedberg, la definición de un subespacio vectorial incluye una cuarta propiedad que deben cumplir (la de existencia de inversos aditivos), la cual no incluí en las notas del curso, ya que es redundante. Explica por qué se puede desechar esta cuarta propiedad sin afectar la definición de subespacio vectorial (nota: ver, por ejemplo, la definición de subespacios vectoriales dada en la página 91 de \textit{Introduction to Linear Algebra} de Lang, que no incluye dicha propiedad). (1 pto.)
+    \item Demuestra que el conjunto $\{(a,2a,3a)\in\mathbb{R}^3\mathop|\mathop a\in\mathbb{R}\}$ sobre el campo $\mathbb{R}$ es un subespacio vectorial de $\mathbb{R}^3$. ¿Qué representa este conjunto visualmente en $\mathbb{R}^3$? (1 pto.)
+    \item Demuestra que el espacio vectorial de todas las funciones polinomiales de una variable real de grado $n$ es un subespacio vectorial del espacio vectorial de todas las funciones reales de una variable de clase $C^m$ para toda $n \geq m$. (1 pto.)
+    \item Demuestra que el espacio vectorial de todas las funciones de una variable real que son derivables y tienen derivada continua (de clase $C^1$) sobre $\mathbb{R}$ es un subespacio vectorial del espacio vectorial de todas las funciones reales continuas (de clase $C^0$) de una variable sobre $\mathbb{R}$. ¿Cómo generalizarías este resultado a que las de clase $C^i$ formen un subespacio de las de clase $C^n$ con $i>n$ sobre el mismo campo $\mathbb{R}$? Argumenta. (0.5 ptos. extra)*
+    \item Demuestra el Teorema 1.4.3.2 (ver sección \ref{Teo:Subespacios_vectoriales}). (1 pto.)
 \end{enumerate}
 
 
 \newpage
 \section{Producto escalar (punto), norma, interpretación geométrica del producto escalar: proyecciones y ortogonalidad, producto vectorial (cruz)* y triple producto escalar*}
-
-
-
 
 \subsection{Producto escalar (punto)}
 
@@ -572,7 +648,7 @@ Volveremos a esta idea de \emph{descomponer un espacio vectorial como una suma d
     $(\mathbf{u},\mathbf{v})=\overline{(\mathbf{v},\mathbf{u})},$ \\ \\
 \end{tabular}
 
-donde la barra $\overline{(\mathbf{v},\mathbf{u})}$ denota el complejo conjugado de $(\mathbf{v},\mathbf{u})$\footnote{Recordemos que, en general, nuestro campo $K$ puede ser complejo; en ese caso, el producto escalar en $V$ le asignará a cada par ordenado de dos vectores de $V$ un escalar complejo $c\in\mathbb{C}$.}. Si además, se cumple la propiedad
+donde la barra $\overline{(\mathbf{v},\mathbf{u})}$ denota el complejo conjugado de $(\mathbf{v},\mathbf{u})$\footnote{Recordemos que, en general, nuestro campo $K$ puede ser complejo; en ese caso, el producto escalar en $V$ le asignará a cada par ordenado de dos vectores de $V$ un escalar complejo $c\in\mathbb{C}$.}. Si, además, se cumple la propiedad
 
 \begin{tabular}{l}
     \\
@@ -590,7 +666,7 @@ A partir de la definición, observemos lo siguiente:
 
 \begin{itemize}
     \item Las primeras dos propiedades juntas nos dicen que $(\mathbf{u}+a\mathbf{w},\mathbf{v}) = (\mathbf{u},\mathbf{v})+a(\mathbf{w},\mathbf{v})$. Para referirnos a esta propriedad específica en lenguaje matemático, decimos que el producto escalar es una operación \textit{lineal\footnote{Como debes sospechar, el concepto de operación \emph{lineal} es fundamental para el álgebra \emph{lineal}, y lo veremos con más detalle en las secciones de transformaciones y operadores lineales.} en la primera entrada}.
-    \item La tercera propiedad nos dice que, si el campo es real, el producto escalar es una operación conmutativa, es decir, que si $K=\mathbb{R}\implies(\mathbf{u},\mathbf{v})=(\mathbf{v},\mathbf{u})$. En cambio, si el campo es complejo, el producto escalar es no conmutativo.
+    \item La tercera propiedad nos dice que, si el campo es real, el producto escalar es una operación conmutativa, es decir, que si $K=\mathbb{R}\implies(\mathbf{u},\mathbf{v})=(\mathbf{v},\mathbf{u})$. En cambio, si el campo es complejo, en general, el producto escalar es no conmutativo.
     \item Las primeras tres propiedades juntas nos dicen que, si el espacio vectorial está definido sobre un campo complejo, entonces $(\mathbf{u},\mathbf{v}+a\mathbf{w}) = (\mathbf{u},\mathbf{v})+\overline{a}(\mathbf{u},\mathbf{w})$, donde $\overline{a}$ (ó $a^*$) denota el complejo conjugado del escalar complejo $a$. Esto nos dice que, si el campo es complejo, el producto escalar es una operación \textit{antilineal\footnote{Este concepto también se verá con mayor detenimiento más adelante.} en la segunda entrada}. En cambio, si el campo es real, entonces el producto escalar es lineal en ambas entradas.
     \item Para un producto escalar positivo definido, el único vector que puede tener como resultado el escalar $0$ al hacer producto escalar consigo mismo es el vector nulo $\mathbf{0}$ (el neutro aditivo que vimos en las secciones \ref{Def:Espacio_vectorial} y \ref{Def:Subespacio_vectorial}).
 \end{itemize}
@@ -662,9 +738,9 @@ A partir de la definición anterior se puede demostrar que, al igual que el prod
 \begin{proof}
     Por definición de norma tenemos que $||\mathbf{0}||=0$. Sea $\mathbf{v}\in V$ tal que $\mathbf{v}\neq\mathbf{0};$ ya que la norma distingue al vector nulo, entonces $||\mathbf{v}||\neq 0.$ Por definición de espacio vectorial, $\exists\hspace{1mm} \mathbf{-v}\in V$ tal que $\mathbf{v}+(-\mathbf{v})=\mathbf{0}\implies ||\mathbf{v}+(-\mathbf{v})||=||\mathbf{0}||=0$. Ya que la norma cumple la desigualdad del triángulo por definición, tenemos que $$0=||\mathbf{0}||=||\mathbf{v}+(-\mathbf{v})||\leq ||\mathbf{v}||+||\mathbf{-v}||\implies 0\leq ||\mathbf{v}||+||\mathbf{-v}||.$$
 
-    Además, por definición, la norma es escalable de forma absoluta, por lo cual $$0\leq ||\mathbf{v}||+||-\mathbf{v}||=||\mathbf{v}||+|-1|\hspace{0.5mm} ||\mathbf{v}||=2||\mathbf{v}||.$$
+\noindent Además, por definición, la norma es escalable de forma absoluta, por lo cual $$0\leq ||\mathbf{v}||+||-\mathbf{v}||=||\mathbf{v}||+|-1|\hspace{0.5mm} ||\mathbf{v}||=||\mathbf{v}||+||\mathbf{v}||=2||\mathbf{v}||.$$
 
-    Ya que $||\mathbf{v}||\neq 0$, entonces $2||\mathbf{v}||\geq 0\implies ||\mathbf{v}||>0,$ como se quería demostrar.
+\noindent Ya que $||\mathbf{v}||\neq 0$, el resultado anterior $2||\mathbf{v}||\geq 0\implies ||\mathbf{v}||>0,$ como se quería demostrar.
 
 \end{proof}
 
@@ -700,39 +776,38 @@ También, en un espacio vectorial real de funciones reales con integral finita e
 
 \subsubsection{Desigualdad de Cauchy-Schwarz} \label{Teo:Cauchy-Schwarz} 
 
-El proceso anterior de obtener una norma a partir de un producto escalar se puede generalizar para cualquier producto escalar positivo definido (ver la sección \ref{Ejer:Norma}), tanto para espacios vectoriales reales como complejos; entonces, se dice que este tipo de normas son \emph{inducidas} por un producto escalar positivo definido. En general, las normas de este tipo serán las más recurrentes durante este curso, aunque veremos otros tipos de normas no inducidas por productos escalares más adelante. El primer paso necesario para demostrar este resultado general es la llamada \emph{desigualdad de Cauchy-Schwarz}, que enunciamos a continuación como teorema.
+El proceso anterior de obtener una norma a partir de un producto escalar se puede generalizar para cualquier producto escalar positivo definido (ver la sección \ref{Ejer:Norma}), tanto para espacios vectoriales reales como complejos; entonces, se dice que este tipo de normas son \emph{inducidas} por un producto escalar positivo definido. En general, las normas de este tipo serán las más recurrentes durante este curso, aunque también veremos otros tipos de normas no inducidas por productos escalares más adelante. El primer paso necesario para demostrar este resultado general es la llamada \emph{desigualdad de Cauchy-Schwarz}, que enunciamos a continuación como teorema.
 
-\begin{teorema} 5 
+\begin{teorema} {2.2.3.1} 
 
     Sea $(.\hspace{0.5mm},.):V\times V\rightarrow K$ un producto escalar positivo definido y sea $||\cdot ||:V\rightarrow K$ una función definida tal que $||\mathbf{u}||=+\sqrt{(\mathbf{u},\mathbf{u})}$\footnote{Con la ayuda de este teorema, se puede demostrar que esta función $||\cdot ||$ cumple con todas las propiedades de una norma, dadas en la sección \ref{Def:Norma}. Ésta es la llamada \emph{norma euclideana} generalizada.}, entonces se cumple que $|(\mathbf{u},\mathbf{v})|\leq ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||$.
 
 \begin{proof}
-    Si $\mathbf{v}=\mathbf{0}$, la demostración se cumple trivialmente. Supongamos que $\mathbf{v}\neq\mathbf{0}$. Sabemos que para cualquier $a\in K$ se cumple que $0\leq ||\mathbf{u}-a\mathbf{v}||^2 = (\mathbf{u}-a\mathbf{v},\mathbf{u}-a\mathbf{v})= (\mathbf{u},\mathbf{u}-a\mathbf{v})-a(\mathbf{v},\mathbf{u}-a\mathbf{v})=(\mathbf{u},\mathbf{u})-a^*(\mathbf{u},\mathbf{v})-a((\mathbf{v},\mathbf{u})-a^*(\mathbf{v},\mathbf{v}))=(\mathbf{u},\mathbf{u})-a^*(\mathbf{u},\mathbf{v})-a(\mathbf{v},\mathbf{u})+aa^*(\mathbf{v},\mathbf{v})$. En particular, tomando $a=\frac{(\mathbf{u},\mathbf{v})}{(\mathbf{v},\mathbf{v})}$ y sustituyendo en la desigualdad anterior, obtenemos que $0\leq(\mathbf{u},\mathbf{u})-\frac{(\mathbf{v},\mathbf{u})}{(\mathbf{v},\mathbf{v})}(\mathbf{u},\mathbf{v})-\frac{(\mathbf{u},\mathbf{v})}{(\mathbf{v},\mathbf{v})}(\mathbf{v},\mathbf{u})+\frac{(\mathbf{u},\mathbf{v})}{(\mathbf{v},\mathbf{v})}\frac{(\mathbf{v},\mathbf{u})}{(\mathbf{v},\mathbf{v})}(\mathbf{v},\mathbf{v})=(\mathbf{u},\mathbf{u})-2\frac{(\mathbf{u},\mathbf{v})(\mathbf{v},\mathbf{u})}{(\mathbf{v},\mathbf{v})}+\frac{(\mathbf{u},\mathbf{v})(\mathbf{v},\mathbf{u})}{(\mathbf{v},\mathbf{v})}=||\mathbf{u}||^2-\frac{|(\mathbf{u},\mathbf{v})|^2}{||\mathbf{v}||^2}\implies 0\leq ||\mathbf{u}||^2-\frac{|(\mathbf{u},\mathbf{v})|^2}{||\mathbf{v}||^2}\implies \frac{|(\mathbf{u},\mathbf{v})|^2}{||\mathbf{v}||^2}\leq ||\mathbf{u}||^2\implies |(\mathbf{u},\mathbf{v})|^2\leq ||\mathbf{u}||^2\hspace{0.5mm}||\mathbf{v}||^2\implies |(\mathbf{u},\mathbf{v})|\leq ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}|| $.
+    Si $\mathbf{v}=\mathbf{0}$, la demostración se cumple trivialmente. Supongamos que $\mathbf{v}\neq\mathbf{0}$. 
+
+    Sabemos que para cualquier $a\in K$ se cumple que $$0\leq ||\mathbf{u}-a\mathbf{v}||^2 = (\mathbf{u}-a\mathbf{v},\mathbf{u}-a\mathbf{v})= (\mathbf{u},\mathbf{u}-a\mathbf{v})-a(\mathbf{v},\mathbf{u}-a\mathbf{v})=$$ $$(\mathbf{u},\mathbf{u})-a^*(\mathbf{u},\mathbf{v})-a((\mathbf{v},\mathbf{u})-a^*(\mathbf{v},\mathbf{v}))=(\mathbf{u},\mathbf{u})-a^*(\mathbf{u},\mathbf{v})-a(\mathbf{v},\mathbf{u})+aa^*(\mathbf{v},\mathbf{v}).$$ \noindent En particular, tomando $a=\frac{(\mathbf{u},\mathbf{v})}{(\mathbf{v},\mathbf{v})}$ y sustituyendo en la desigualdad anterior, obtenemos que $$0\leq(\mathbf{u},\mathbf{u})-\frac{(\mathbf{v},\mathbf{u})}{(\mathbf{v},\mathbf{v})}(\mathbf{u},\mathbf{v})-\frac{(\mathbf{u},\mathbf{v})}{(\mathbf{v},\mathbf{v})}(\mathbf{v},\mathbf{u})+\frac{(\mathbf{u},\mathbf{v})}{(\mathbf{v},\mathbf{v})}\frac{(\mathbf{v},\mathbf{u})}{(\mathbf{v},\mathbf{v})}(\mathbf{v},\mathbf{v})=$$ $$(\mathbf{u},\mathbf{u})-2\frac{(\mathbf{u},\mathbf{v})(\mathbf{v},\mathbf{u})}{(\mathbf{v},\mathbf{v})}+\frac{(\mathbf{u},\mathbf{v})(\mathbf{v},\mathbf{u})}{(\mathbf{v},\mathbf{v})}=||\mathbf{u}||^2-\frac{|(\mathbf{u},\mathbf{v})|^2}{||\mathbf{v}||^2}\implies$$ $$0\leq ||\mathbf{u}||^2-\frac{|(\mathbf{u},\mathbf{v})|^2}{||\mathbf{v}||^2}\implies \frac{|(\mathbf{u},\mathbf{v})|^2}{||\mathbf{v}||^2}\leq ||\mathbf{u}||^2\implies|(\mathbf{u},\mathbf{v})|^2\leq ||\mathbf{u}||^2\hspace{0.5mm}||\mathbf{v}||^2\implies|(\mathbf{u},\mathbf{v})|\leq ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||.$$
 
 \end{proof}
 
 \end{teorema}
 
-
-
 \subsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}\label{Subsec:Interpretación_geométrica_del_producto_escalar} 
 
-Como quizás aprendiste en tus cursos de Geometría Analítica y/o Mecánica Vectorial, el producto escalar entre vectores de $\mathbb{R}^2$ tiene una definición geométrica dada por $$(\mathbf{u},\mathbf{v})\equiv ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos{\theta},$$ \noindent donde $\theta$ es el ángulo positivo más chico entre $\mathbf{u}$ y $\mathbf{v}$; esta definición es equivalente a la algebráica dada al principio de la sección \ref{Ejem:Producto_escalar}. El producto $||\mathbf{v}||\cos{\theta}$ es igual a la proyección del vector $\mathbf{v}$ sobre el vector $\mathbf{u}$, lo cual puede escribirse como $P_{\mathbf{u}}(\mathbf{v})$, por lo cual podemos abreviar la expresión anterior como $(\mathbf{u},\mathbf{v})=||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})$. 
+\subsubsection{Producto escalar y proyecciones}
 
-Observemos que, ya que tanto $\cos\theta$ como las normas $||\mathbf{u}||$ y $||\mathbf{v}||$ en este espacio vectorial son números reales, entonces su producto es conmutativo, por lo cual $(\mathbf{u},\mathbf{v})=||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos\theta = ||\mathbf{v}||\hspace{0.5mm}||\mathbf{u}||\cos\theta=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u})=(\mathbf{v},\mathbf{u})$. Esto no es más que la propiedad conmutativa del producto escalar en un espacio vectorial real \textemdash visto desde un punto de vista geométrico.
+Como quizás aprendiste en tus cursos de Geometría Analítica y/o Mecánica Vectorial, el producto escalar entre vectores de $\mathbb{R}^2$ tiene una definición geométrica dada por $$(\mathbf{u},\mathbf{v})\equiv ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos{\theta},$$ \noindent donde $\theta$ es el ángulo positivo más chico entre $\mathbf{u}$ y $\mathbf{v}$; esta definición es equivalente a la algebráica dada al principio de la sección \ref{Ejem:Producto_escalar}. El producto $||\mathbf{v}||\cos{\theta}$ es igual a la proyección del vector $\mathbf{v}$ sobre el vector $\mathbf{u}$, lo cual puede escribirse como $P_{\mathbf{u}}(\mathbf{v})$, por lo cual podemos abreviar la expresión anterior como $$(\mathbf{u},\mathbf{v})=||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v}).$$ 
 
-Ahora imaginemos que tenemos dos vectores $\mathbf{u},\mathbf{v}\in\mathbb{R}^2$ de la misma magnitud (i.e., $||\mathbf{u}||=||\mathbf{v}||$) trazados en el plano cartesiano. En este caso, la bisectriz del ángulo que los separa traza un eje de simetría. Si trazamos la proyección de cada uno de los vectores sobre el otro, veremos de forma más intuitiva que $||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u})$, con lo cual reafirmamos que el producto escalar conmuta. Supongamos ahora que reescalamos alguno de los vectores, digamos $\mathbf{u}$, al doble de su longitud \textemdash efectivamente duplicando así su norma\textemdash\hspace{0.5mm}, y llamamos a este nuevo vector $\mathbf{u}'$. Entonces, algebráicamente vemos que $(\mathbf{u}',\mathbf{v})=||\mathbf{u}'||P_{\mathbf{u}}(\mathbf{v})=2||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=2(\mathbf{u},\mathbf{v})$. Geométricamente, podemos ver esto como que $(\mathbf{u}',\mathbf{v})=(2||\mathbf{u}||)P_{\mathbf{u}}(\mathbf{v})$ o, equivalentemente, que $(\mathbf{u}',\mathbf{v})=||\mathbf{u}||(2P_{\mathbf{u}}(\mathbf{v}))$; esto se muestra en la Figura FIGURA. Observemos que la elección del vector reescalado fue arbitraria \textemdash de haber reescalado $\mathbf{v}$ por $2$ en vez de $\mathbf{u}$, hubiéramos obtenido el mismo resultado. La discusión anterior es simplemente la interpretación geométrica del hecho de que $(2\mathbf{u},\mathbf{v})=2(\mathbf{u},\mathbf{v})=(\mathbf{u},2\mathbf{v})$ en espacios vectoriales reales.
+Observemos que, ya que tanto $\cos\theta$ como las normas $||\mathbf{u}||$ y $||\mathbf{v}||$ son números reales, entonces $$(\mathbf{u},\mathbf{v})=||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos\theta = ||\mathbf{v}||\hspace{0.5mm}||\mathbf{u}||\cos\theta=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u})=(\mathbf{v},\mathbf{u}).$$\noindent Esto no es más que la propiedad conmutativa del producto escalar en un espacio vectorial real \textemdash visto desde un punto de vista geométrico.
 
-%\begin{figure}
-%    \centering
-%    \includegraphics{}
-%    \caption{Caption}
-%    \label{fig:my_label}
-%\end{figure}
+Ahora imaginemos que tenemos dos vectores $\mathbf{u},\mathbf{v}\in\mathbb{R}^2$ de la misma magnitud (i.e., $||\mathbf{u}||=||\mathbf{v}||$) trazados en el plano cartesiano. En este caso, la bisectriz del ángulo que los separa traza un eje de simetría. Si trazamos la proyección de cada uno de los vectores sobre el otro, veremos de forma más intuitiva que $$||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u}),$$ con lo cual reafirmamos que el producto escalar conmuta. Supongamos ahora que reescalamos alguno de los vectores, digamos $\mathbf{u}$, al doble de su longitud \textemdash efectivamente duplicando así su norma\textemdash\hspace{0.5mm}, y llamamos a este nuevo vector $\mathbf{u}'$. Entonces, algebráicamente vemos que $$(\mathbf{u}',\mathbf{v})=||\mathbf{u}'||P_{\mathbf{u}}(\mathbf{v})=2||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=2(\mathbf{u},\mathbf{v}).$$ \noindent Geométricamente, podemos ver esto como que $(\mathbf{u}',\mathbf{v})=(2||\mathbf{u}||)P_{\mathbf{u}}(\mathbf{v})$ o, equivalentemente, que $(\mathbf{u}',\mathbf{v})=||\mathbf{u}||(2P_{\mathbf{u}}(\mathbf{v}))\footnote{Este mismo argumento se expone de forma animada en el siguiente video: \url{https://www.youtube.com/watch?v=LyGKycYT2v0&list=PL_w8oSr1JpVCZ5pKXHKz6PkjGCbPbSBYv&index=11&t=255s}.}.$ Observemos que la elección del vector reescalado fue arbitraria \textemdash de haber reescalado $\mathbf{v}$ por $2$ en vez de $\mathbf{u}$, hubiéramos obtenido el mismo resultado. La discusión anterior es simplemente la interpretación geométrica del hecho de que $(2\mathbf{u},\mathbf{v})=2(\mathbf{u},\mathbf{v})=(\mathbf{u},2\mathbf{v})$ en espacios vectoriales reales.
 
-Similarmente, la interpretación geométrica del hecho de que $(\mathbf{u}+\mathbf{v},\mathbf{w})=(\mathbf{u},\mathbf{w})+(\mathbf{v},\mathbf{w})$ ó $(\mathbf{w},\mathbf{u}+\mathbf{v})=(\mathbf{w},\mathbf{u})+(\mathbf{w},\mathbf{v})$ se puede ver directamente de la Ley del paralelogramo, como se muestra en la Figura FIGURA.
+Similarmente, la interpretación geométrica del hecho de que $(\mathbf{u}+\mathbf{v},\mathbf{w})=(\mathbf{u},\mathbf{w})+(\mathbf{v},\mathbf{w})$ ó $(\mathbf{w},\mathbf{u}+\mathbf{v})=(\mathbf{w},\mathbf{u})+(\mathbf{w},\mathbf{v})$ se puede ver directamente de la Ley del paralelogramo. 
+
+\subsubsection{Ortogonalidad}
 
 Por otro lado, ya que $\cos(\frac{\pi}{2})=0$, podemos ver directamente que, si dos vectores en $\mathbb{R}^2$ son perpendiculares entre sí en el plano, su producto escalar será cero. Esto significaría que la proyección de cualquiera de estos vectores sobre el otro sería nula \textemdash lo cual, en el plano cartesiano, es sinónimo de que los vectores sean perpendiculares\textemdash \hspace{0.5mm}; más generalmente, a esta propiedad se le conoce como \emph{ortogonalidad}, y siempre se asocia con un producto escalar nulo por razones que veremos más adelante.
+
+\vspace{2mm}
 
 \begin{tcolorbox} \label{Def:Vectores_ortogonales_y_subconjunto_ortogonal}
     \underline{Def.} Se dice que dos vectores $\mathbf{u}, \mathbf{v}\in V$ son \emph{ortogonales} si su producto escalar es nulo (i.e., si la proyección de cualquiera de los vectores sobre el otro es cero). Matemáticamente, esto se escribe como $\mathbf{u}\perp\mathbf{v}\iff(\mathbf{u},\mathbf{v})=0$ \hspace{0.5mm} ó, equivalentemente, $\mathbf{u}\perp\mathbf{v}\iff P_{\mathbf{u}}(\mathbf{v})=0=P_{\mathbf{v}}(\mathbf{u})$\footnote{Observemos que esta definición también aplica para espacios vectoriales complejos, ya que $0^*=0$.}.
@@ -744,7 +819,11 @@ Por otro lado, ya que $\cos(\frac{\pi}{2})=0$, podemos ver directamente que, si 
 
 Por ejemplo, en $\mathbb{R}^3, \begin{bmatrix} 2 & 3 & 1 \end{bmatrix}^T\perp\begin{bmatrix} -4 & 2 & 2 \end{bmatrix}^T$, ó $\begin{bmatrix} 2 & 3 & 1 \end{bmatrix}^T\perp\begin{bmatrix} -8 & 4 & 4 \end{bmatrix}^T$; además, el subconjunto $\{\begin{bmatrix} 5  & 0 & 0 \end{bmatrix}^T, \begin{bmatrix} 0 & 7 & 0 \end{bmatrix}^T, \begin{bmatrix} 0 & 0 & -4 \end{bmatrix}^T\}$ es ortogonal. En cambio, en el espacio de funciones polinomiales reales $P^2$ restringido al intervalo $[-1,1]$, donde definimos el producto escalar como $(f,g)\equiv \int_{-1}^{1}f(x)g(x)\hspace{1mm} dx$, el conjunto $\{1,x,\frac{1}{2}(3x^2-1)\}$ es ortogonal (¿podrás comprobarlo?).
 
+\subsubsection{Vectores unitarios}
+
 Nótese por la definición dada en \ref{Def:Vectores_ortogonales_y_subconjunto_ortogonal} y las propiedades del producto escalar que, si dos vectores son ortogonales, entonces reescalar cualquiera de ellos no afecta a su ortogonalidad. Además, notemos que la definición geométrica del producto escalar para vectores en $\mathbb{R}^2$ se simplifica cuando la norma de los vectores es uno. De hecho, como veremos más adelante, este tipo de vectores en general pueden simplificar muchas expresiones de operaciones realizadas en espacios vectoriales, por lo cual les damos un nombre especial.
+
+\vspace{2mm}
 
 \begin{tcolorbox} \label{Def:Vector_unitario_y_subconjunto_ortonormal} 
     \underline{Def.} Decimos que un vector $\mathbf{v}\in V$ es \emph{unitario} cuando su norma es igual a uno, i.e., si y sólo si $||\mathbf{v}||=1.$ Los vectores unitarios suelen denotarse con una cuña encima de la letra, e.g. $\hat{i}, \hat{j}, \hat{k}, \hat{v}, \hat{u}$, etc.
@@ -756,9 +835,26 @@ Nótese por la definición dada en \ref{Def:Vectores_ortogonales_y_subconjunto_o
 
 Por ejemplo, el vector $\begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}^T$ es unitario en $\mathbb{R}^2 (\text{ó}\hspace{1mm} \mathbb{C}^2)$, mientras que los vectores $\begin{bmatrix} -1 & i \end{bmatrix}^T$ y $\begin{bmatrix} -i & 1 \end{bmatrix}^T$ son unitarios en $\mathbb{C}^2.$
 
-    Por último, notemos que si $\mathbf{v}\in V$ es un vector arbitrario no unitario distinto al vector nulo, entonces el vector $\frac{\mathbf{v}}{||\mathbf{v}||}$ \emph{es} unitario. Por ello, a este proceso de multiplicar un vector no nulo y no unitario por el inverso multiplicativo de su norma se le conoce como \emph{normalización}. Además, ya que por la definición de Norma $||c\mathbf{v}||=|c|\hspace{0.5mm} ||\mathbf{v}||$, entonces, si hacemos el producto de un vector unitario por cualquier escalar de valor absoluto igual a uno, obtendremos nuevamente un vector unitario.
+Por último, notemos que si $\mathbf{v}\in V$ es un vector arbitrario no unitario distinto al vector nulo, entonces el vector $$\mathbf{v}'=\frac{\mathbf{v}}{||\mathbf{v}||}$$ \emph{es} unitario, i.e., tiene norma igual a uno. Por ello, a este proceso de multiplicar un vector no nulo y no unitario por el inverso multiplicativo de su norma se le conoce como \emph{normalización}. Además, ya que por la definición de norma $||c\mathbf{v}||=|c|\hspace{0.5mm} ||\mathbf{v}||$ entonces, si hacemos el producto de un vector unitario por cualquier escalar de valor absoluto igual a uno (i.e., con $|c|=1$), obtendremos nuevamente un vector unitario.
 
- \subsubsection{Producto vectorial (cruz)*} 
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=1}]
+        \draw[thick,<->] (0,0) -- (6,0);
+        \draw[thick,<->] (0,0) -- (0,6);
+        \draw[step=1cm,gray,very thin,dashed] (0,0) grid (5.9,5.9);
+        \foreach \x in {1,2,3,4,5}
+            \draw (\x cm,1pt) -- (\x cm,-1pt) node[anchor=north] {$\x$};
+        \foreach \y in {1,2,3,4,5}
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+        \draw[red,thin,dashed,->] (0,0) -- (3,3) node[] at (3.5,3.5) {$\begin{bmatrix} 3 & 3 \end{bmatrix}^T$};
+        \draw[red,very thick,->] (0,0) -- (0.71,0.71) node[] at (3.8,0.6) {$\begin{bmatrix} \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \end{bmatrix}^T=\frac{1}{\sqrt{18}}\begin{bmatrix}3&3\end{bmatrix}^T$};
+    \end{tikzpicture}
+        \caption{Ejemplo de \emph{normalización} del vector $\begin{bmatrix}3&3\end{bmatrix}^T\in\mathbb{R}^2$. Ya que la norma de este vector es igual a $\sqrt{3^2+3^2}=\sqrt{18},$ hacemos su producto por el escalar $\frac{1}{\sqrt{18}}$ \textemdash el inverso multiplicativo de $\sqrt{18}$ en el campo real\textemdash\hspace{0.5mm}  y obtenemos al vector resultante $\begin{bmatrix}\frac{1}{\sqrt{2}}&\frac{1}{\sqrt{2}}\end{bmatrix}^T$, que tiene el mismo sentido y dirección que $\begin{bmatrix}3&3\end{bmatrix}^T$, pero con norma igual a uno.}
+    \label{fig:Correspondencias_del_plano_cartesiano}
+\end{figure}
+
+ \subsection{Producto vectorial (cruz)*} 
 
 El producto vectorial es una operación de gran utilidad, principalmente en algunas ramas de la física clásica (en las cuales se trabaja con vectores en $\mathbb{R}^3$), y tiene una interpretación geométrica bastante rica, por lo cual se menciona brevemente en estas notas. En esta sección también se mencionan por primera vez los temas de matrices, determinantes y vectores canónicos, los cuales asumo que ya debes conocer, aunque más adelante en el curso los repasaremos.
 
@@ -781,7 +877,7 @@ $$\mathbf{r}\times\mathbf{s} = \text{det} \begin{vmatrix} \mathbf{i}&\mathbf{j}&
 
 \noindent donde $\mathbf{i},\mathbf{j}$ y $\mathbf{k}$ son los vectores canónicos de $\mathbb{R}^3$ $(1,0,0)$, $(0,1,0)$ y $(0,0,1)$, respectivamente.
 
-Geométricamente, si nombramos como $\theta$ el menor ángulo de separación positivo entre dos vectores $\mathbf{r}$ y $\mathbf{s}\in\mathbb{R}^3$, entonces podemos hacer la definición equivalente $\mathbf{r}\times\mathbf{s}=||\mathbf{r}|| \hspace{0.5mm}  ||\mathbf{s}||\sin\theta$. En este caso, la magnitud del vector resultante de hacer el producto vectorial $\mathbf{r}\times\mathbf{s}$ se interpreta como la magnitud del área del paralelepípedo formado por los vectores $\mathbf{r}$ y $\mathbf{s}$. De aquí se sigue que el producto vectorial de dos vectores ortogonales sea igual al producto de sus normas, mientras que el producto cruz de dos vectores colineales sea $0$ (en particular, el producto cruz de cualquier vector consigo mismo es igual a $0$). Además, de ambas definiciones (algebráica y geométrica) se sigue que el producto vectorial de cualquier vector en $\mathbb{R}^3$ con el vector nulo ($\mathbf{0}$) sea $\mathbf{0}$.
+Geométricamente, si nombramos como $\theta$ el menor ángulo de separación positivo entre dos vectores $\mathbf{r}$ y $\mathbf{s}\in\mathbb{R}^3$, entonces podemos hacer la definición equivalente $\mathbf{r}\times\mathbf{s}=||\mathbf{r}|| \hspace{0.5mm}  ||\mathbf{s}||\sin\theta$. En este caso, la magnitud del vector resultante de hacer el producto vectorial $\mathbf{r}\times\mathbf{s}$ se interpreta como la magnitud del área del paralelogramo formado por los vectores $\mathbf{r}$ y $\mathbf{s}$. De aquí se sigue que el producto vectorial de dos vectores ortogonales sea igual al producto de sus normas, mientras que el producto cruz de dos vectores colineales sea $0$ (en particular, el producto cruz de cualquier vector consigo mismo es igual a $0$). Además, de ambas definiciones (algebráica y geométrica) se sigue que el producto vectorial de cualquier vector en $\mathbb{R}^3$ con el vector nulo ($\mathbf{0}$) sea $\mathbf{0}$.
 
 \subsubsection{Propiedades del producto vectorial (cruz)} \label{Prop:Producto_vectorial}
 
@@ -839,44 +935,39 @@ Nota: también se puede definir un \emph{triple producto vectorial} entre tres v
 \subsubsection{Producto escalar} \label{Ejer:Producto_escalar} 
 
 \begin{enumerate}
-    \item Calcula los productos escalares posibles entre las funciones $f(x)=\frac{x}{40.5}$, $g(x)=\frac{x^2}{243}$ y $h(x)=\frac{1}{9}$ en el intervalo $[0,9]$ (sin contar productos escalares de la forma $(f,f)$). 
-    \item Explica por qué no se puede definir un producto escalar de la forma $(f,g)=\int_a^b f(x)g(x)dx$ para funciones integrables $f$ y $g$ con integrales con valor infinito en $[a,b]$. 
-    \item Sea $\mathbb{C}^2$ un espacio vectorial complejo con $\mathbf{q},\mathbf{r}\in\mathbb{C}^2$. Explica cuál(es) de las propiedades de la sección \ref{Prop:Producto_escalar} no se cumpliría(n) si definiéramos el producto escalar en este espacio vectorial ingenuamente como $\mathbf{q}\cdot\mathbf{r}=\sum_{i=1}^n q_ir_i$ (nótese que esta misma definición de producto escalar nos generaría problemas al intentar usarla para definir una norma en este espacio).
+\item Sean las funciones $f(x)=\frac{x}{40.5}$, $g(x)=\frac{x^2}{243}$ y $h(x)=\frac{1}{9}$ definidas con dominio $[0,9]$. Calcula el producto escalar entre estas funciones en ese dominio (sin contar productos escalares de la forma $(f,f)$) utilizando la definición vista en la sección \ref{Ejem:Producto_escalar}. (1 pto.)
+    \item Explica por qué no se puede definir un producto escalar de la forma $(f,g)=\int_a^b f(x)g(x)dx$ para funciones integrables $f$ y $g$ con integrales con valor infinito en $[a,b]$. (1 pto.)
+    \item Sea $\mathbb{C}^2$ un espacio vectorial complejo con $\mathbf{q},\mathbf{r}\in\mathbb{C}^2$. Explica cuál(es) de las propiedades de la sección \ref{Prop:Producto_escalar} no se cumpliría(n) si definiéramos el producto escalar en este espacio vectorial ingenuamente como $\mathbf{q}\cdot\mathbf{r}=\sum_{i=1}^n q_ir_i$ (nótese que esta misma definición de producto escalar nos generaría problemas al intentar usarla para definir una norma en este espacio). (1 pto.)
 \end{enumerate}
 
 \subsubsection{Norma} \label{Ejer:Norma}
 
 \begin{enumerate}
-    \item Calcula la norma de las funciones dadas en el primer ejercicio de la sección \ref{Ejer:Producto_escalar}. 
-    \item ¿El conjunto $\{(x_1,x_2,...,x_n)\mathop|\mathop x_i\in\mathbb{R} \land ||(x_1,x_2,...,x_n)||\leq1\}$ puede formar un espacio vectorial sobre el campo $\mathbb{R}$? Argumenta.
-    \item Argumenta e ilustra la interpretación geométrica de la desigualdad de Cauchy-Schwarz para dos vectores cualesquiera de $\mathbb{R}^2$ (ver sección \ref{Teo:Cauchy-Schwarz}).
-    \item Demuestra la desigualdad del triángulo $||\mathbf{a}+\mathbf{b}|| \leq ||\mathbf{a}||+||\mathbf{b}||$ para cualesquiera dos vectores en un espacio $V$ con producto escalar positivo definido donde la norma $||\mathbf{a}||\equiv+\sqrt{(\mathbf{a},\mathbf{a})}\hspace{3mm}\forall\hspace{1.5mm} \mathbf{a}\in V$ (pista: usa la desigualdad de Cauchy-Schwarz)\footnote{Con esto habrás demostrado que a partir de cualquier producto escalar positivo definido $(\mathbf{a},\mathbf{b})$ se puede definir una norma como $||\mathbf{a}|| = +\sqrt{(\mathbf{a},\mathbf{a})}$}. Argumenta e ilustra su interpretación geométrica para dos vectores cualesquiera de $\mathbb{R}^2$.
+    \item Calcula la norma de las funciones dadas en el primer ejercicio de la sección \ref{Ejer:Producto_escalar}. (Nota: utiliza la norma inducida por ese mismo producto escalar.) (1 pto.)
+    \item ¿El conjunto $\{(x_1,x_2,...,x_n)\mathop|\mathop x_i\in\mathbb{R} \land ||(x_1,x_2,...,x_n)||\leq1\}$ puede formar un espacio vectorial sobre el campo real? Argumenta. (1 pto.)
+    \item Argumenta e ilustra la interpretación geométrica de la desigualdad de Cauchy-Schwarz para dos vectores cualesquiera de $\mathbb{R}^2$ (Nota: ver sección \ref{Teo:Cauchy-Schwarz}). (1 pto.)
+    \item Demuestra la desigualdad del triángulo $||\mathbf{a}+\mathbf{b}|| \leq ||\mathbf{a}||+||\mathbf{b}||$ para cualesquiera dos vectores en un espacio $V$ con producto escalar positivo definido donde la norma $||\mathbf{a}||\equiv+\sqrt{(\mathbf{a},\mathbf{a})}\hspace{3mm}\forall\hspace{1.5mm} \mathbf{a}\in V$ (pista: usa la desigualdad de Cauchy-Schwarz)\footnote{Con esto habrás demostrado que a partir de cualquier producto escalar positivo definido $(\mathbf{a},\mathbf{b})$ se puede definir una norma como $||\mathbf{a}|| = +\sqrt{(\mathbf{a},\mathbf{a})}$}. Argumenta e ilustra su interpretación geométrica para dos vectores cualesquiera de $\mathbb{R}^2$. (1 pto.)
 \end{enumerate}
 
 \subsubsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}
 \begin{enumerate}
-    \item 
+    \item Sea $\mathbf{v}\in\mathbb{R}^2$ no-nulo. Prueba que el conjunto $\{\mathbf{u}\in\mathbb{R}^2\hspace{0.5mm} |\hspace{0.5mm} (\mathbf{u},\mathbf{v)=0}\}$ es una recta que pasa por el origen y llévala a una expresión de la forma $ax+by=c.$ (1 pto.)
+    \item Sean $\mathbf{v}=\begin{bmatrix} v_1 & v_2 \end{bmatrix}^T, \mathbf{u}=\begin{bmatrix}u_1 & u_2 \end{bmatrix}^T$ vectores del espacio real $\mathbb{R}^2.$ Deduce que $\mathbf{u}\cdot\mathbf{v}=u_1v_1+u_2v_2=||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||$. (Nota: supon que ambos vectores son no nulos y encuentra al escalar $k\in\mathbb{R}$ tal que $(\mathbf{u},\mathbf{u}-k\mathbf{v})=0$. ¿Por qué es especial este escalar?) (1 pto.)
+    \item Define a los vectores $\mathbf{u}=\begin{bmatrix} a_1 & a_2 \end{bmatrix}^T, \mathbf{v}=\begin{bmatrix} a_3 & a_4\end{bmatrix}^T$ y $\mathbf{w}=\begin{bmatrix} a_5 & a_6\end{bmatrix}^T\in\mathbb{R}^2,$ donde $a_i$ corresponde al $i$-ésimo dígito de tu número de cuenta. Explica gométricamente el hecho de que $(\mathbf{u}+\mathbf{v},\mathbf{w})=(\mathbf{u},\mathbf{w})+(\mathbf{v},\mathbf{w})$, en términos de las proyecciones discutidas en la sección \ref{Subsec:Interpretación_geométrica_del_producto_escalar} (Nota: recuerda la Ley del paralelogramo). (1 pto.)
 \end{enumerate}
-
-
 
 \subsubsection{Producto vectorial (cruz)*}
 
 \begin{enumerate}
-    \item Demuestra la identidad de Jacobi para el producto vectorial $\mathbf{r}\times(\mathbf{s}\times\mathbf{t})+\mathbf{s}\times(\mathbf{t}\times\mathbf{r})+\mathbf{t}\times(\mathbf{r}\times\mathbf{s}) = \mathbf{0}$.
-    \item Da una definición de un producto cruz entre vectores de $\mathbb{C}^3$ tal que se mantengan las propiedades vistas en la sección \ref{Prop:Producto_vectorial}.
+    \item Demuestra las propiedades del producto vectorial de la sección \ref{Prop:Producto_vectorial}. Además, da una interpretación geométrica para la primera, tercera y cuarta propiedad enlistadas. (Nota: si quieres hacer estas demostraciones utilizando una notación condensada, te recomiendo investigar acerca del símbolo de Levi-Civita el cual, junto con la delta de Kronecker, facilitan la escritura de muchas demostraciones de cálculo vectorial, entre otras áreas de las matemáticas.) (1.5 ptos. extra)*
+%    \item Da una definición de un producto cruz entre vectores de $\mathbb{C}^3$ tal que se mantengan las propiedades vistas en la sección \ref{Prop:Producto_vectorial}.
 \end{enumerate}
 
 \subsubsection{Triple producto escalar*}
 
 \begin{enumerate}
-    \item Demuestra las propiedades del triple producto escalar de la sección \ref{Prop:Triple_producto_escalar}.
-    \item Calcula el triple producto escalar $\mathbf{u}\cdot\mathbf{v}\times\mathbf{w}$ con $\mathbf{u} = (1,3,6)$, $\mathbf{v}=(2,-5,13)$ y $\mathbf{w}=(7,21,42)$.
+    \item Demuestra las propiedades del triple producto escalar de la sección \ref{Prop:Triple_producto_escalar}. (0.5 ptos. extra)*
 \end{enumerate}{}
-
-
-
-\vspace{5cm}
 
 \begin{tcolorbox}
 \begin{center}
@@ -936,7 +1027,7 @@ Para dar algunos ejemplos, si elegimos cualquier vector $\mathbf{v}\in\mathbb{R}
 
 A continuación, veremos un teorema que será de gran importancia en las secciones posteriores.
 
-\begin{teorema} 6
+\begin{teorema} {3.2.1} 
 Sea $V$ un espacio vectorial, $S\subset V$ un conjunto de vectores de $V$ y $\mathbf{v}\in V$ un vector arbitrario. Si $S'=S\cup\{\mathbf{v}\}$, entonces $\langle S \rangle = \langle S' \rangle \iff v\in\langle S \rangle.$
 
 \begin{proof}
@@ -975,7 +1066,7 @@ Como ya mencionamos, si un vector $\mathbf{v}_n\in V$ es linealmente \emph{depen
 
 \subsubsection{Algunos teoremas sobre dependencia e independencia lineal} \label{Teo:Dependencia_e_independencia_lineal} 
 
-\begin{teorema} 7
+\begin{teorema} {3.3.3.1} 
 
     Sea $V$ un espacio vectorial y $\mathbf{v_1}, \mathbf{v_2}, ..., \mathbf{v}_n$ vectores linealmente independientes de $V$. Sean $c_1, c_2, ..., c_n\in K$ y $d_1, d_2, ..., d_n\in K$ tales que $$c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_n\mathbf{v}_n=d_1\mathbf{v}_1+d_2\mathbf{v}_2+...+d_n\mathbf{v}_n,$$ entonces se tiene que $c_i=d_1\hspace{3mm}\forall\hspace{1.5mm}i\in\{1,2, ..., n\}$.
 
@@ -989,13 +1080,13 @@ Como ya mencionamos, si un vector $\mathbf{v}_n\in V$ es linealmente \emph{depen
 
 \end{teorema}
 
-\begin{teorema} 8
+\begin{teorema} {3.3.3.2} 
 
     Sea $V$ un espacio vectorial y $S_1,S_2$ subespacios tales que $S_1\subseteq S_2\subseteq V$. Si $S_2$ es linealmente independiente, entonces $S_1$ también es linealmente independiente.
 
 \begin{proof}
 
-    Sean $S_1=\{\mathbf{v}_1,\mathbf{v}_2, ..., \mathbf{v}_k\}$ y $S_2=\{\mathbf{v}_1,\mathbf{v}_2, ..., \mathbf{v}_n\}$ con $k\leq n$. Ya que por hipótesis $S_2$ es $l.i.$, por definición se cumple que $$c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_n\mathbf{v}_n=\mathbf{0}\iff c_i=0\hspace{3mm}\forall\hspace{1.5mm}  i\in\{1,2, ..., n\}.$$ Si $k=n$ entonces $S_1$ también es l.i. trivialmente. Supongamos que $k<n$. Entonces, por el Teorema 2 (ver sección \ref{Teo:Espacios_vectoriales}), $0\mathbf{v}_{k+1}+...+0\mathbf{v}_n=\mathbf{0}$ por lo cual lo anterior implica que $$c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_k\mathbf{v}_k=\mathbf{0}\iff c_i=0\hspace{3mm}\forall\hspace{1.5mm}  i\in\{1,2, ...,k\}.$$ Por lo tanto, por definición, $S_1$ también es $l.i$.
+    Sean $S_1=\{\mathbf{v}_1,\mathbf{v}_2, ..., \mathbf{v}_k\}$ y $S_2=\{\mathbf{v}_1,\mathbf{v}_2, ..., \mathbf{v}_n\}$ con $k\leq n$. Ya que por hipótesis $S_2$ es $l.i.$, por definición se cumple que $$c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_n\mathbf{v}_n=\mathbf{0}\iff c_i=0\hspace{3mm}\forall\hspace{1.5mm}  i\in\{1,2, ..., n\}.$$ Si $k=n$ entonces $S_1$ también es l.i. trivialmente. Supongamos que $k<n$. Entonces, por el Teorema 1.2.3.2 (ver sección \ref{Teo:Espacios_vectoriales}), $0\mathbf{v}_{k+1}+...+0\mathbf{v}_n=\mathbf{0}$ por lo cual lo anterior implica que $$c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_k\mathbf{v}_k=\mathbf{0}\iff c_i=0\hspace{3mm}\forall\hspace{1.5mm}  i\in\{1,2, ...,k\}.$$ Por lo tanto, por definición, $S_1$ también es $l.i$.
 
 \end{proof}
 
@@ -1003,7 +1094,7 @@ Este teorema nos dice que si removemos un vector de un conjunto linealmente inde
 
 \end{teorema}
 
-\begin{teorema} 9
+\begin{teorema} {3.3.3.3}
 
 Sea $V$ un espacio vectorial sobre un campo $K$ y $L\subset V$ un conjunto con $n$ elementos linealmente independientes entre sí. Entonces, para cualquier $\mathbf{v}\in V$, el conjunto $L'\equiv L\cup \{\mathbf{v}\}$ es $l.i. \iff \mathbf{v}\notin \langle L \rangle$.
 
@@ -1037,7 +1128,7 @@ Por otro lado, supongamos que $L'$ es linealmente dependiente. Entonces, existe 
 \subsubsection{Dependencia e independencia lineal}
 
 \begin{enumerate}
-    \item  
+    \item Sea $V$ un espacio vectorial y $S_1\subseteq S_2\subseteq V$. Demuestra que si $S_1$ es linealmente dependiente, entonces $S_2$ es linealmente dependiente. 
 \end{enumerate}
 
 
@@ -1046,7 +1137,7 @@ Por otro lado, supongamos que $L'$ es linealmente dependiente. Entonces, existe 
 
 \subsection{Bases}
 
-Como hemos visto en secciones anteriores, cualquier vector de un espacio vectorial se puede expresar como combinación lineal de otros vectores de ese mismo espacio\footnote{De lo contrario, se violarían las propiedades de cerradura vistas en la sección \ref{Def:Espacio_vectorial}.}. Cuando trabajamos en un espacio vectorial $V$, resulta conveniente tener un conjunto de vectores $B\subset V$ con el cual se pueda expresar a \emph{cualquier vector del espacio vectorial} $V$ de forma \emph{única} \textemdash lo cual se logra, precisamente, a través de una combinación lineal única de los vectores del conjunto $B$. Tomando en cuenta el Teorema 7 (sec. \ref{Teo:Dependencia_e_independencia_lineal}), vemos que los conjuntos linealmente independientes son buenos candidatos para lograr que las expresiones mediante combinaciones lineales sean \emph{únicas}, por lo cual pediremos que $B$ sea linealmente independiente; además, ya que queremos ser capaces de expresar a \emph{cualquier} vector arbitrario de $V$ como combinación lineal única de los de $B$, sería necesario que el conjunto linealmente independiente $B$ generara a todos los vectores de $V$. A los conjuntos que cumplen ambas propiedades se le conoce como una \emph{base} para el espacio en cuestión.
+Como hemos visto en secciones anteriores, cualquier vector de un espacio vectorial se puede expresar como combinación lineal de otros vectores de ese mismo espacio\footnote{De lo contrario, se violarían las propiedades de cerradura vistas en la sección \ref{Def:Espacio_vectorial}.}. Cuando trabajamos en un espacio vectorial $V$, resulta conveniente tener un conjunto de vectores $B\subset V$ con el cual se pueda expresar a \emph{cualquier vector del espacio vectorial} $V$ de forma \emph{única} \textemdash lo cual se logra, precisamente, a través de una combinación lineal única de los vectores del conjunto $B$. Tomando en cuenta el Teorema 3.3.3.1 (sec. \ref{Teo:Dependencia_e_independencia_lineal}), vemos que los conjuntos linealmente independientes son buenos candidatos para lograr que las expresiones mediante combinaciones lineales sean \emph{únicas}, por lo cual pediremos que $B$ sea linealmente independiente; además, ya que queremos ser capaces de expresar a \emph{cualquier} vector arbitrario de $V$ como combinación lineal única de los de $B$, sería necesario que el conjunto linealmente independiente $B$ generara a todos los vectores de $V$. A los conjuntos que cumplen ambas propiedades se le conoce como una \emph{base} para el espacio en cuestión.
 
 \subsubsection{Definición de base} \label{Def:Base}
 
@@ -1067,12 +1158,43 @@ Los conjuntos $\{\begin{bmatrix} 2 & 0 \end{bmatrix}^T, \begin{bmatrix} 0, & -3 
 
 Cualquier conjunto de la forma $\{c_n x^n\hspace{0.5mm}|\hspace{0.5mm}n\in\mathbb{N}\cup\{0\}, c_n\in \mathbb{R}\}$ es una base del espacio vectorial de las funciones polinomiales de grado $n$.
 
+\begin{teorema} {4.1.1}
+    Sea $V$ un espacio vectorial generado por un conjunto $G$ con $n$ vectores, y sea $L$ un subconjunto linealmente independiente de $V$ con $m$ vectores. Entonces $m\le n$ y existe un subconjunto $H\subseteq G$ que contiene $n-m$ vectores tal que $L\cup H$ genera a $V$.
 
-\subsection{Dimensión}
+    \begin{proof}
+        Esta demostración se hará por inducción.
 
-Como quizá habrás notado en la sección anterior, pareciera que todas las bases de un mismo espacio vectorial tienen el mismo número de elementos. A continuación, demostraremos este hecho.
+    \vspace{3mm} 
+    \textbf{Base inductiva}
+    Sea $m=0$, entonces $L=\emptyset$. Si tomamos $H=G$ obtenemos el resultado deseado.
 
-\begin{teorema} {10} 
+    \vspace{3mm} 
+    \textbf{Hipótesis de inducción}
+    Supongamos que la hipótesis del teorema se cumple para algún $m\ge 0$.
+
+    \vspace{3mm} 
+    \textbf{Paso inductivo}
+    Sea $L=\{\mathbf{v}_1,...,\mathbf{v}_{m+1}\}$ un subconjunto linealmente independiente de $V$. Por el Teorema 3.3.3.2, el conjunto $\{\mathbf{v}_1,...,\mathbf{v}_m\}$ es l.i., por lo cual podemos aplicar la hipótesis de inducción y concluir que $m\le n$ y que existe un subconjunto $\{\mathbf{u}_1,...,\mathbf{u}_{n-m}\}$ de $G$ tal que $\{\mathbf{v}_1,...,\mathbf{v}_m\}\cup\{\mathbf{u}_1,...,\mathbf{u}_{n-m}\}$ genera a $V$. Por lo tanto, existen escalares $a_1,...,a_m,b_1,...,b_{n-m}$ tales que \[
+        a_1\mathbf{v}_1+...+a_m\mathbf{v}_m+b_1\mathbf{u}_1+...+b_{n-m}\mathbf{u}_{n-m}=\mathbf{v}_{m+1}.
+    .\] 
+
+    Observemos que, ya que $L$ es linealmente independiente, $n-m>0\implies n>m\implies n\ge m+1$. Además, alguna $b_i$ debe ser distinta de cero, por lo cual podemos despejarla. Suponiendo, por ejemplo, que $b_1\neq 0$, tenemos que \[
+        \mathbf{u}_1=\frac{-a_1}{b_1}\mathbf{v}_1+...+\frac{-a_m}{b_1}\mathbf{v}_m+\frac{-b_2}{b_1}\mathbf{u}_2+...+\frac{-b_{n-m}}{b_1}\mathbf{u}_{n-m}
+    .\] 
+
+    Sea $H=\{\mathbf{u}_2,...,\mathbf{u}_{n-m}\}$. Entonces, ya que $\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_2,...,\mathbf{u}_{n-m}\in\langle L\cup H\rangle$ \textemdash lo cual también implica que $\mathbf{u}_1\in\langle L\cup H\rangle$\textemdash\hspace{0.5mm} tenemos que $\{\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_1,...,\mathbf{u}_{n-m}\}\subseteq\langle L\cup H\rangle.$
+
+    En particular, el hecho de que $\{\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_1,...,\mathbf{u}_{n-m}\}\subseteq\langle L\cup H\rangle$ genere a $V$ implica que $\langle L\cup H\rangle=V.$ Ya que $H$ es un subconjunto de $G$ con $(n-m)-1=n-(m+1)$ vectores, el teorema se cumple para $m+1$, terminando así nuestra demostración.
+
+    \end{proof}
+\end{teorema}
+
+
+\subsection{Dimensión} \label{Subsec:Dimensión}
+
+Como quizá habrás notado en los ejemplos de la sección anterior, pareciera que todas las bases de un mismo espacio vectorial tienen el mismo número de elementos. A continuación, demostraremos este hecho.
+
+\begin{teorema} {4.2.1} 
 
     Sean $B=\{\mathbf{b}_1,\mathbf{b}_2, ..., \mathbf{b}_n\}$ y $B'=\{\mathbf{b'}_1,\mathbf{b'}_2, ..., \mathbf{b'}_{n'}\}$ bases de $V$, entonces $n=n'$.
 
@@ -1104,55 +1226,60 @@ El hecho de que todas las bases de un mismo espacio vectorial tengan el mismo n�
 
 \begin{tcolorbox}
 
-    \underline{Def.} La \emph{dimensión} de un espacio vectorial $V$ es igual al número de elementos (i.e., la cardinalidad) de cualquiera de sus bases. Si cualquier base de $V$ tiene un número finito $n$ de elementos, decimos que $V$ es un \emph{espacio de dimensión finita} y escribimos esto como $dim(V)=n$; de lo contrario decimos que $V$ es un espacio de dimensión \emph{infinita}\footnote{En el resto de estas notas, supondremos que los espacios vectoriales mencionados tienen dimensión finita, a menos que se indique lo contrario.}.
+    \underline{Def.} La \emph{dimensión} de un espacio vectorial $V$ es igual al número de elementos (i.e., la cardinalidad) de cualquiera de sus bases. Si cualquier base de $V$ tiene un número finito $n$ de elementos, decimos que $V$ es un \emph{espacio de dimensión finita} y escribimos esto como $\text{dim}(V)=n$; de lo contrario decimos que $V$ es un espacio de dimensión \emph{infinita}\footnote{En el resto de estas notas, supondremos que los espacios vectoriales mencionados tienen dimensión finita, a menos que se indique lo contrario.}.
 
 \end{tcolorbox}
 
 
-\begin{teorema} {11}
-Sea $V$ un espacio vectorial de dimensión finita, entonces cualquier subespacio de $V$ tiene dimensión finita.
+\begin{teorema} {4.2.2}
+    Sea $V$ un espacio vectorial de dimensión finita y $W$ un subespacio de $V$, entonces W tiene dimensión finita y $\text{dim}(W)\le \text{dim}(V).$ 
 
 \begin{proof}
+
+    Sea $\text{dim}(V)=n.$ Si $W=\{\mathbf{0}_W\} \implies \text{dim}(W)=0\le n.$ Consideremos ahora que $W$ contiene a un vector no nulo $\mathbf{x}_1$, entonces el conjunto $\{\mathbf{x}_1\}$ es linealmente independiente. Supongamos que seguimos agregando más vectores $\mathbf{x}_2,...,\mathbf{x}_k$ a este conjunto de tal forma que $\{\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_k\}$ sea linealmente independiente. Ya que ningún subconjunto de $V$ linealmente independiente puede tener más de $n$ elementos, este proceso debe detenerse para algún $k\le n.$ De acuerdo al Teorema 3.3.3.3, este conjunto genera a $W$, por lo cual forma una base de $W$, de donde concluimos que $\text{dim}(W)=k\le n.$
 
 \end{proof}
 
-
 \end{teorema}
 
-En los teoremas anteriores demostramos que si $dim(V)=n$ entonces cualquer base de $V$ tiene precisamente $n$ elementos, y que cualquier subespacio vectorial tiene dimensión finita. Resulta, además, que en este caso cualquier conjunto de $n$ vectores linealmente independientes de $V$ es también una base para $V$\textemdash es decir, que también genera a todo el espacio $V$, como veremos en el siguiente corolario. 
+En los teoremas anteriores demostramos que si $\text{dim}(V)=n$ entonces cualquer base de $V$ tiene precisamente $n$ elementos, y que cualquier subespacio vectorial tiene dimensión finita. Resulta, además, que en este caso cualquier conjunto de $n$ vectores linealmente independientes de $V$ es también una base para $V$\textemdash es decir, que también genera a todo el espacio $V$, como veremos en el siguiente teorema. 
 
-\begin{corolario} {10.1}
+\begin{teorema} {4.2.3}
 
-    Sea $V$ un espacio vectorial. Si $dim(V)=n$ entonces cualquier conjunto de $n$ vectores linealmente independientes de $V$ es una base de $V$.
+    Sea $V$ un espacio vectorial. Si $\text{dim}(V)=n$ entonces cualquier conjunto de $n$ vectores linealmente independientes de $V$ es una base de $V$.
 
 \begin{proof}
 
-    Esta prueba se hará por contradicción. Sea $V$ un espacio vectorial con $dim(V)=n, \hspace{1.5mm} n\in\mathbb{N}$ y $B=\{\mathbf{b}_1, ..., \mathbf{b}_n\}\subset V$ un conjunto de $n$ vectores de $V$ que son linealmente independientes entre sí.
+    Esta prueba se hará por contradicción. Sea $V$ un espacio vectorial con $\text{dim}(V)=n, \hspace{1.5mm} n\in\mathbb{N}$ y $B=\{\mathbf{b}_1, ..., \mathbf{b}_n\}\subset V$ un conjunto de $n$ vectores de $V$ que son linealmente independientes entre sí.
 
-    Supongamos que $\langle B \rangle \neq V$, es decir, que $\exists\hspace{1.5mm} \mathbf{b}_{n+1}\in V$ tal que éste no puede ser expresado como combinación lineal de los vectores de $B$. Por definición, entonces dicho vector es linealmente independiente de los vectores de $B$. Por lo tanto, podemos definir al conjunto $B'\equiv\{\mathbf{b}_1, ...,\mathbf{b}_n, \mathbf{b}_{n+1}\}$, que tiene $n+1$ elementos linealmente independientes entre sí. Supongamos que, ahora sí, $\langle B' \rangle = V$. En ese caso, $B'$ cumpliría con las propiedades necesarias para ser una base de $V$. Sin embargo, ya que $dim(V)=n$, por lo demostrado en el Teorema 10 hemos llegado a una contradicción, ya que cualquier base de $V$ debe tener exactamente $n$ elementos.
+    Supongamos que $\langle B \rangle \neq V$, es decir, que $\exists\hspace{1.5mm} \mathbf{b}_{n+1}\in V$ tal que éste no puede ser expresado como combinación lineal de los vectores de $B$. Por definición, entonces dicho vector es linealmente independiente de los vectores de $B$. Por lo tanto, podemos definir al conjunto $B'\equiv\{\mathbf{b}_1, ...,\mathbf{b}_n, \mathbf{b}_{n+1}\}$, que tiene $n+1$ elementos linealmente independientes entre sí. Supongamos que, ahora sí, $\langle B' \rangle = V$. En ese caso, $B'$ cumpliría con las propiedades necesarias para ser una base de $V$. Sin embargo, ya que $\text{dim}(V)=n$, por lo demostrado en el Teorema 4.2.1 hemos llegado a una contradicción, ya que cualquier base de $V$ debe tener exactamente $n$ elementos.
     
     Ya que la hipótesis $\langle B \rangle \neq V$ fue la que nos llevó a esta contradicción, entonces tenemos que $\langle B \rangle = V$, por lo cual $B$ \textemdash un conjunto arbitrario de $n$ elementos linealmente independientes de $V$\textemdash \hspace{1mm} \emph{es} una base.
 
 \end{proof}
 
+\end{teorema}
+
+\begin{corolario}{4.2}
+    De los dos teoremas anteriores podemos concluir que si $W$ es un subespacio vectorial de $V$ y $\text{dim}(W)=\text{dim}(V)\implies W=V.$
 \end{corolario}
 
 Para terminar esta sección, veremos algunas formas en las cuales se pueden construir bases de un espacio vectorial de dimensión $n$ a partir de conjuntos linealmente independientes con menos de $n$ elementos, o de conjuntos linealmente dependientes que generan $V$ y tienen más de $n$ elementos.
 
-\begin{teorema} {11}
+\begin{teorema} {4.2.3.4}
 Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto linealmente dependiente que genera a $V$ puede reducirse hasta convertirse en una base de $V$.
 
 \begin{proof}
-    Sea $D$ un conjunto linealmente dependiente tal que $\langle D \rangle =V$. Ya que $D$ es linealmente dependiente, entonces existe un vector $\mathbf{v}$ que puede ser expresado como combinación lineal de los demás por lo cual, definiendo $D'=D\setminus\{\mathbf{v}\}$ tenemos que $\mathbf{v}\in\langle D' \rangle.$ Por el Teorema 6 de la sección \ref{Espacio_generado_y_conjunto_generador} sabemos que $\langle D' \rangle =\langle D \rangle =V$. Si el conjunto generador $D'$ no es linealmente independiente, podemos seguir retirando vectores de la misma forma sin afectar su espacio generado hasta obtener un conjunto linealmente independiente que genera a $V$, i.e., una base para $V$.
+    Sea $D$ un conjunto linealmente dependiente tal que $\langle D \rangle =V$. Ya que $D$ es linealmente dependiente, entonces existe un vector $\mathbf{v}$ que puede ser expresado como combinación lineal de los demás por lo cual, definiendo $D'=D\setminus\{\mathbf{v}\}$ tenemos que $\mathbf{v}\in\langle D' \rangle.$ Por el Teorema 3.2.1 de la sección \ref{Espacio_generado_y_conjunto_generador} sabemos que $\langle D' \rangle =\langle D \rangle =V$. Si el conjunto generador $D'$ no es linealmente independiente, podemos seguir retirando vectores de la misma forma sin afectar su espacio generado hasta obtener un conjunto linealmente independiente que genera a $V$, i.e., una base para $V$.
 \end{proof}
 
 \end{teorema}
 
-\begin{teorema} {12}
+\begin{teorema} {4.2.3.5}
 Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto linealmente independiente con menos de $n$ elementos no genera a $V$, pero puede extenderse hasta convertirse en una base de $V$.
 
 \begin{proof}
-Sea $L$ un conjunto linealmente independiente con $m$ elementos, donde $m<n$. Entonces $L$ no genera a $V$ ya que, de lo contrario, sería una base de $V$, lo cual contradice al Teorema 10. Sea $S$ un conjunto generador de $V$. Ya que $L$ no genera a $V$, debe haber algún vector en $\mathbf{v}\in S$ tal que $\mathbf{v}\notin \langle L \rangle$. Definimos ahora al conjunto $L'=L\cup \{\mathbf{v}\}$ el cual, por el Teorema 9 de la sección \ref{Teo:Dependencia_e_independencia_lineal}, es linealmente independiente. Si $L'$ no genera a $V$, podemos repetir el proceso hasta llegar a un conjunto linealmente independiente que genera a $V$, i.e., una base para $V$.
+Sea $L$ un conjunto linealmente independiente con $m$ elementos, donde $m<n$. Entonces $L$ no genera a $V$ ya que, de lo contrario, sería una base de $V$, lo cual contradice al Teorema 4.2.1. Sea $S$ un conjunto generador de $V$. Ya que $L$ no genera a $V$, debe haber algún vector en $\mathbf{v}\in S$ tal que $\mathbf{v}\notin \langle L \rangle$. Definimos ahora al conjunto $L'=L\cup \{\mathbf{v}\}$ el cual, por el Teorema 3.3.3.3 de la sección \ref{Teo:Dependencia_e_independencia_lineal}, es linealmente independiente. Si $L'$ no genera a $V$, podemos repetir el proceso hasta llegar a un conjunto linealmente independiente que genera a $V$, i.e., una base para $V$.
 \end{proof}
 
 \end{teorema}
@@ -1179,7 +1306,7 @@ A esto se le conoce como un proceso de \emph{ortogonalización}. Observemos que,
 
 Antes de ver cómo podemos construir bases ortogonales y ortonormales, el siguiente teorema y corolario nos ayudarán a comenzar a entender su utilidad.
 
-\begin{teorema} {13}
+\begin{teorema} {4.3.1.1}
  ea $V$ sobre $K$ un espacio vectorial con producto escalar y $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}$ un subconjunto ortogonal de $V$ con $\mathbf{v}_i\neq\mathbf{0}\hspace{3mm}\forall\hspace{1.5mm} 1\leq i\leq n.$ Si $\mathbf{u}\in \langle S \rangle \implies$ $$\mathbf{u} = \sum_{i=1}^n \frac{(\mathbf{u},\mathbf{v}_i)}{||\mathbf{v}_i||^2}\mathbf{v}_i.$$
 
 \begin{proof}
@@ -1190,11 +1317,11 @@ Antes de ver cómo podemos construir bases ortogonales y ortonormales, el siguie
 
 \end{teorema}
 
-\begin{corolario} {13.1}
+\begin{corolario} {4.3.1}
 Sea $V$ sobre $K$ un espacio vectorial con producto interior y $S$ un subconjunto ortogonal con vectores no nulos, entonces $S$ es linealmente independiente.
 
 \begin{proof}
-    Supongamos que $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}.$ Fijamos nuestra atención en la combinación lineal $\sum_{i=1}^n c_i\mathbf{v}_i=\mathbf{0}$, con $c_i\in K$. Aplicando el Teorema 13 con $\mathbf{u}=\mathbf{0}$ tenemos que $c_i=\frac{(\mathbf{0},\mathbf{v}_i)}{||\mathbf{v}_i||^2}=0\hspace{3mm}\forall\hspace{1.5mm}  c_i\implies S$ es linealmente independiente.
+    Supongamos que $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}.$ Fijamos nuestra atención en la combinación lineal $\sum_{i=1}^n c_i\mathbf{v}_i=\mathbf{0}$, con $c_i\in K$. Aplicando el Teorema 4.3.1.1 con $\mathbf{u}=\mathbf{0}$ tenemos que $c_i=\frac{(\mathbf{0},\mathbf{v}_i)}{||\mathbf{v}_i||^2}=0\hspace{3mm}\forall\hspace{1.5mm}  c_i\implies S$ es linealmente independiente.
 \end{proof}
 
 Este corolario y el teorema del cual se desprende nos dicen que los conjuntos ortogonales son buenos candidatos para bases, ya que son linealmente independientes y el cálculo de los coeficientes $c_i$ es sumamente sencillo. En particular, aplicando el Corolario 10.1 a los conjuntos ortogonales vemos que, si $V$ es un espacio vectorial de dimensión $n$, entonces cualquier conjunto ortogonal de $n$ vectores es una base de $V$. 
@@ -1204,7 +1331,7 @@ Así como a partir de cualquier conjunto linealmente independiente de un espacio
 
 \subsubsection{Teorema de Gram-Schmidt} \label{Teo:Gram-Schmidt}
 
-\begin{teorema} {14 (Gram-Schmidt)}
+\begin{teorema} {4.3.2.1 (Gram-Schmidt)}
     Sea $V$ sobre $K$ un espacio vectorial y $S=\{\mathbf{u}_1, ..., \mathbf{u}_n\}$ un subconjunto linealmente independiente de $V$. Si definimos al conjunto $S'=\{\mathbf{v}_1, ..., \mathbf{v}_n\}$ de tal forma que $\mathbf{v}_1=\mathbf{u}_1$ y $$\mathbf{v}_k=\mathbf{u}_k-\sum_{j=1}^{k-1}\frac{(\mathbf{u}_k,\mathbf{v}_j)}{||\mathbf{v}_j||^2} \mathbf{v}_j,\hspace{3mm 2\leq k\leq n},$$ entonces $S'$ es un subconjunto ortogonal de $V$ tal que $\langle S' \rangle = \langle S \rangle.$
 
 \begin{proof}
@@ -1256,13 +1383,14 @@ Finalmente, por construcción $S'_k\subseteq \langle S_k \rangle$, lo cual tambi
 \subsubsection{Ortogonalización y ortonormalización}
 
 
-\section{Definición de transformación lineal y espacio de transformaciones lineales, núcleo e imagen de una transformación lineal}
+\newpage
+\section{Definición de transformación lineal y espacio de transformaciones lineales, núcleo e imagen de una transformación lineal, nulidad y rango}
 
 \subsection{Definición de transformación lineal y espacio de transformaciones lineales}
 
 Recordemos de la sección \ref{Def:Espacio_vectorial} que las dos operaciones que definen a los espacios vectoriales son la suma vectorial y el producto de un vector por un escalar. Cuando una operación arbitraria es compatible con las dos operaciones mencionadas anteriormente, se dice que tiene \emph{propiedades lineales}, o bien, que es una \emph{operación lineal} (e.g., la operación de producto escalar es \emph{lineal en la primera entrada}, como vimos en la sección \ref{Def:Producto_escalar}). 
 
-En general, se pueden definir funciones arbitrarias que vayan de un espacio vectorial $V$ a sí mismo, o de $V$ a un espacio vectorial distinto $W$. A aquellas funciones que, además, sean compatibles con las dos operaciones mencionadas anteriormente, se les conoce como \emph{transformaciones lineales}.
+En general, se pueden definir funciones arbitrarias que vayan de un espacio vectorial $V$ a un espacio vectorial $W$ (admitiendo la posibilidad de que $V=W$). A aquellas de estas funciones que, además, sean compatibles con las operaciones de suma vectorial y producto de un vector por un escalar, se les conoce como \emph{transformaciones lineales}.
 
 \subsubsection{Definición de transformación lineal}
 \begin{tcolorbox} \label{Def:Transformación_lineal} 
@@ -1273,54 +1401,148 @@ En general, se pueden definir funciones arbitrarias que vayan de un espacio vect
 
 \subsubsection{Ejemplos de transformaciones lineales}
 
-En $P^n$, el espacio de funciones polinomiales reales de grado $\leq n$, la derivada $\frac{d}{dx}:P^n\to P^{n-1}$ es una transformación lineal. Por otro lado, si restringimos a los polinomios de $P^n$ a un intervalo $[a,b]$, entonces la integral $\int_a^b dx:P^n\to P^{n+1}$ también es una transformación lineal. Ambos hechos se desprenden de las propiedades $\frac{d}{dx}(cf(x))=c\frac{d}{dx}f(x), \hspace{1.5mm} \frac{d}{dx}(f(x)+g(x))=\frac{d}{dx}f(x)+\frac{d}{dx}g(x), \hspace{1.5mm} \int cf(x) dx=c\int f(x) dx$ y $\int f(x)+g(x) dx = \int f(x) dx + \int g(x) dx$ vistas en tus cursos de Cálculo I y II, las cuales eran llamadas, apropiadamente, \emph{propiedades lineales de la derivada y la integral}.
+En cualquier espacio vectorial $V$, la transformación identidad $I_V:V\to V$ dada por $I_V(\mathbf{x})=\mathbf{x}, \hspace{2mm}\forall\hspace{1.5mm}\mathbf{x}\in V$ es una transformación lineal. Además, para cualesquiera dos espacios vectoriales $V$ y $W$, la transformación lineal $T_0:V\to W$ dada por $T_0(\mathbf{v})=\mathbf{0}_W, \hspace{2mm}\forall\hspace{1.5mm}\mathbf{x}\in V$, donde $\mathbf{0}_W$ es el vector nulo de $W$, es una transformación lineal. 
 
-Ejemplo especial: Sea $V$ un espacio vectorial real con producto escalar. Entonces, por lo observado en la sección \ref{Def:Producto_escalar}, en este caso el producto escalar es una operación lineal \emph{en ambas entradas}, también conocida como \emph{transformación bilineal} o, simplemente, \emph{forma bilineal}.
+En los espacios vectoriales reales $\mathbb{R}^2$ y $\mathbb{R}^3$, las reflexiones con respecto a los ejes y al origen del plano cartesiano son transformaciones lineales. En general, esto se cumple también para $\mathbb{R}^n, n\in\mathbb{N}$ \textemdash aunque para $n\ge 4$ no sea fácil de visualizar. Además, se cumple para los espacios vectoriales complejos $\mathbb{C}^n, n\in\mathbb{N}.$ 
+
+En $P^n$, el espacio vectorial real de funciones polinomiales reales de grado $\leq n$, la derivada $\frac{d}{dx}:P^n\to P^{n-1}$ es una transformación lineal. Por otro lado, si restringimos a los polinomios de $P^n$ a un intervalo $[a,b]$, entonces la integral $\int_a^b dx:P^n\to P^{n+1}$ también es una transformación lineal. Ambos hechos se desprenden de las propiedades $$\frac{d}{dx}(cf(x))=c\frac{d}{dx}f(x), \hspace{1.5mm} \frac{d}{dx}(f(x)+g(x))=\frac{d}{dx}f(x)+\frac{d}{dx}g(x),$$ $$\int cf(x) dx=c\int f(x) dx\hspace{2.5mm}\text{y}\hspace{2mm} \int f(x)+g(x) dx = \int f(x) dx + \int g(x) dx,$$ vistas en tus cursos de Cálculo I y II, las cuales eran llamadas, apropiadamente, \emph{propiedades lineales de la derivada y la integral}.
+
+Sea $V$ un espacio vectorial real con producto escalar. Entonces, por lo observado en la sección \ref{Def:Producto_escalar}, en este caso el producto escalar es una operación lineal \emph{en ambas entradas}, también conocida como \emph{transformación bilineal} o, simplemente, \emph{forma bilineal}.
 
 \subsubsection{Espacio de transformaciones lineales}
 
-Sean $V$ y $W$ espacios vectoriales sobre el mismo campo $K$ y $T_1:V\to W, T_2:V\to W$ transformaciones lineales. Definimos la suma de las transformaciones lineales $T_1$ y $T_2$ como $(T_1+T_2)(\mathbf{x})=T_1(\mathbf{x})+T_2(\mathbf{x})$. Observemos ahora lo siguiente: si definimos a $T'(\mathbf{x})\equiv c(T(\mathbf{x})), c\in K$, entonces por definición $$T'(a\mathbf{v})=c(T(a\mathbf{v}))=c(aT(\mathbf{v}))=caT(\mathbf{v})=a(c(T(\mathbf{v})a))=aT'(\mathbf{v}).$$ Esto significa que \emph{la suma de dos transformaciones lineales es una transformación lineal} y que \emph{el producto de una transformación lineal por un escalar es una transformación lineal}. Por lo tanto, \emph{el conjunto de todas las transformaciones lineales de V a W forma un espacio vectorial sobre K}. 
+Sean $V$ y $W$ espacios vectoriales sobre el mismo campo $K$ y $T_1:V\to W, T_2:V\to W$ transformaciones lineales. Definimos la suma de las transformaciones lineales $T_1$ y $T_2$ como $(T_1+T_2)(\mathbf{x})=T_1(\mathbf{x})+T_2(\mathbf{x})$. Observemos entonces que \[
+    (T_1+T_2)(\mathbf{u}+\mathbf{v})=T_1(\mathbf{u}+\mathbf{v})+T_2(\mathbf{u}+\mathbf{v})=T_1(\mathbf{u})+T_1(\mathbf{v})+T_2(\mathbf{u})+T_2(\mathbf{v})
+;\] ya que los vectores de $W$ conmutan bajo la adición vectorial, entonces \[
+(T_1+T_2)(\mathbf{u}+\mathbf{v})=T_1(\mathbf{u})+T_2(\mathbf{u})+T_1(\mathbf{v})+T_2(\mathbf{v})=(T_1+T_2)(\mathbf{u})+(T_1+T_2)(\mathbf{v})
+.\] Notemos, además, que si definimos a $T'(\mathbf{x})\equiv c(T(\mathbf{x})), c\in K$, entonces por definición $$T'(a\mathbf{v})=c(T(a\mathbf{v}))=c(aT(\mathbf{v}))=caT(\mathbf{v})=a(c(T(\mathbf{v})a))=aT'(\mathbf{v}).$$ Esto significa que la suma de dos transformaciones lineales de $V$ a $W$ \emph{es una transformación lineal de $V$ a $W$}, y que el producto de una transformación lineal de $V$ a $W$ por un escalar del campo $K$ \emph{es también una transformación lineal de $V$ a $W$}. Por lo tanto, \emph{el conjunto de todas las transformaciones lineales de V a W forma un espacio vectorial sobre K}. 
 
 \subsection{Núcleo e imagen de una transformación lineal}
 
-Para entender mejor cómo actúa una transformación lineal dada sobre un espacio vectorial, prestamos atención en dos subconjuntos especiales.
+Para entender mejor cómo actúa una transformación lineal dada sobre un espacio vectorial, enfocamos ahora nuestra atención en dos subconjuntos especiales.
 
 \begin{tcolorbox} \label{Def:Nucleo_e_imagen_de_una_transformación_lineal} 
- Sean $V$ y $W$ espacios vectoriales y $T:V\to W$ una transformación lineal.
+ 
+    \underline{Def.} Sean $V$, $W$ espacios vectoriales sobre $K$ y $T:V\to W$ una transformación lineal. Definimos al \emph{núcleo} o \emph{espacio nulo} de $T$ como el conjunto de todos los vectores de $V$ que son enviados por $T$ al vector nulo de $W$. Matemáticamente\footnote{La notación $kerT$ empleada es la estándar y proviene del inglés, en donde al núcleo de una transformación lineal se le conoce como su \emph{kernel}.}, $$kerT=\{ \mathbf{v}\in V\hspace{1mm}|\hspace{1mm}T(\mathbf{v})=\mathbf{0}_W\}.$$ 
 
-    \underline{Def.} Definimos al \emph{núcleo de T} como el conjunto de todos los vectores de $V$ que son enviados por $T$ al vector nulo de $W$. Matemáticamente, $$núcT=\{ \mathbf{v}\in V\hspace{1mm}|\hspace{1mm}T(\mathbf{v})=\mathbf{0}\}.$$ Los vectores contenidos en el núcleo de una transformación lineal $T$ son análogos a las raíces de una función polinomial $p(x)$.
+    \vspace{3mm} 
 
-    \underline{Def.} Definimos a la \emph{imagen de T} como el conjunto de todos los vectores en $W$ obtenidos al aplicar la transformación lineal $T$ a los vectores de $V$, es decir, $$imT=\{\mathbf{w}\in W\hspace{1mm} |\hspace{1mm} T(\mathbf{v})=\mathbf{w}, \mathbf{v}\in V\}.$$ Esta definición es totalmente análoga a la definición de la imagen de una función real.
+    \underline{Def.} Definimos a la \emph{imagen de T} como el conjunto de todos los vectores en $W$ obtenidos al aplicar la transformación lineal $T$ a los vectores de $V$, es decir, $$imT=\{\mathbf{w}\in W\hspace{1mm} |\hspace{1mm} T(\mathbf{v})=\mathbf{w}, \mathbf{v}\in V\}.$$
+
 \end{tcolorbox}
 
-Por definición de transformación lineal, tanto el núcleo como la imagen de una transformación lineal $T:V\to W$ son subespacios vectoriales; en particular, $núcT$ es un subespacio vectorial de $V$, mientras que $imT$ es un subespacio vectorial de $W$.
+Observemos de la definición que el núcleo de una transformación lineal $kerT$ es, en cierta forma, análogo al conjunto de las raíces de una función polinomial $p(x)$, mientras que la definición de la imagen $imT$ es totalmente análoga a la definición de la imagen de una función real. Además, por definición de transformación lineal, si $T:V\to W$ es una transformación lineal, entonces $T(\mathbf{0}_V)=\mathbf{0}_W$.
 
-El resultado más relevante de la imagen y el núcleo de una transformación lineal es la llamada \emph{fórmula de la dimensión}, que se demuestra a continuación.
+El siguiente teorema nos muestra un hecho interesante que se desprende a partir de las definiciones de $kerT$ e $imT$.
 
-\begin{teorema} {15}
-<++>
+\begin{teorema} {5.2.1}
+   Sean $V,W$ espacios vectoriales y $T:V\to W$ una transformación lineal, entonces $kerT$ e $imT$ son subespacios vectoriales de $V$ y $W$, respectivamente.
+   \begin{proof}
+       Sean $\mathbf{0}_V, \mathbf{0}_W$ los vectores nulos de $V$ y $W$, respectivamente. Ya que $T(\mathbf{0}_V)=\mathbf{0}_W$, tenemos que $\mathbf{0}_V\in kerT.$ Sean $\mathbf{u}, \mathbf{v} \in kerT$ y $a\in K$, entonces $$T(\mathbf{u}+\mathbf{v})=T(\mathbf{u})+T(\mathbf{v})=\mathbf{0}_W+\mathbf{0}_W=\mathbf{0}_W,\hspace{3mm} T(c\mathbf{u})=cT(\mathbf{u})=c\mathbf{0}_W=\mathbf{0}_W,$$ \noindent lo cual implica que $\mathbf{u}+\mathbf{v},c\mathbf{u}\in kerT,$ por lo cual $kerT$ es un subespacio vectorial de $V$.
+
+       Por otro lado, $T(\mathbf{0}_V)=\mathbf{0}_W\implies \mathbf{0}_W\in imT.$ Sean $\mathbf{x}, \mathbf{y}\in imT$ y $c\in K$. Por lo tanto, existen $\mathbf{u}, \mathbf{v}\in V$ tal que $T(\mathbf{u})=\mathbf{x}$ y $T(\mathbf{v})=\mathbf{y}.$ Entonces, por definición de transformación lineal, $$T(\mathbf{u}+\mathbf{v})=T(\mathbf{u})+T(\mathbf{v})=\mathbf{x}+\mathbf{y}, \hspace{3mm} T(c\mathbf{u})=cT(\mathbf{u})=c\mathbf{x},$$ lo cual implica que $\mathbf{x}+\mathbf{y}, c\mathbf{x}\in imT$, por lo cual $imT$ es un subespacio vectorial de $W$.
+
+   \end{proof}
+\end{teorema}
+
+A continuación, veremos un teorema que nos muestra cómo encontrar un conjunto generador de $imT$ para cualquier transformación lineal $T$, a partir del cual podemos construir una base para $imT$.
+
+\begin{teorema}{5.2.2}
+    Sean $V$ y $W$ sobre $K$ espacios vectoriales, y $T:V\to W$ una transformación lineal. Si $B=\{\mathbf{v}_1,...,\mathbf{v}_n\}$ es una base de para $V$, entonces \[
+        \langle T(B) \rangle = \langle \{T(\mathbf{v}_1),...,T(\mathbf{v}_n)\}\rangle = imT
+    .\] 
 
 \begin{proof}
-<++>
+    Ya que $\mathbf{v}_i\in V\implies T(\mathbf{v}_i)\hspace{2mm} \forall i.$ Además, ya que $imT$ es un subespacio vectorial de $W$, sus elementos son cerrados por la suma vectorial y el producto de vectores por escalares; es decir, cualquier combinación lineal de vectores de $imT$ resulta en un vector de $imT\implies \langle T(B)\rangle \subseteq imT.$
+
+    Por otro lado, sea $\mathbf{w}\in imT\implies \mathbf{w}=T(\mathbf{v})$ para algún $\mathbf{v}\in V.$ Ya que $B$ es base de $V$, existen coeficientes $c_i\in K$ tales que  \[
+        \mathbf{v}=\sum_{i=1}^n c_i\mathbf{v}_i
+    .\] 
+
+    \noindent Ya que T es lineal, se sigue que \[
+        \mathbf{w} =T(\mathbf{v})=\sum_{i=1}^n c_iT(\mathbf{v}_i)\in \langle T(B) \rangle \implies imT \subseteq \langle T(B)\rangle
+    .\] \noindent De lo anterior, concluimos que $\langle T(B) \rangle = \langle \{T(\mathbf{v}_1),...,T(\mathbf{v}_n)\}\rangle = imT.$
+
 \end{proof}
-<++>
 
 \end{teorema}
 
-<++>
+A partir de la definición de $kerT$ podemos, además, demostrar un criterio interesante para ver cuándo una transformación lineal $T:V\to W$ es inyectiva (es decir, que a cada vector de $\mathbf{v}\in V$ le corresponda sólo un vector de $\mathbf{w}\in W$ tal que $T(\mathbf{v})=\mathbf{w}.$ 
+
+\begin{teorema}{4.2.3}
+    
+    Sean $V$ y $W$ espacios vectoriales, y $T:V\to W$ una transformación lineal. Entonces, $T$ es inyectiva sí y sólo si $kerT=\{\mathbf{0}_V\}.$
+
+    \begin{proof}
+        Supongamos que $T$ es inyectiva y que $\mathbf{x}\in kerT\implies T(\mathbf{x})=\mathbf{0}_W=T(\mathbf{0}_W)\implies \mathbf{x}=\mathbf{0}_V,$ ya que estamos suponiendo que $T$ es inyectiva. Por lo tanto, $kerT=\{\mathbf{0}_V\}.$
+
+        Por otro lado, supongamos que $kerT=\{\mathbf{0}_V\}$ y que $T(\mathbf{x})=T(\mathbf{y})\implies T(\mathbf{x})-T(\mathbf{y})=\mathbf{0}_W\implies T(\mathbf{x}-\mathbf{y})=\mathbf{0}_W\implies \mathbf{x}-\mathbf{y}\in kerT\implies \mathbf{x}-\mathbf{y}=\mathbf{0}_v\implies \mathbf{x}=\mathbf{y},$ por lo cual T es inyectiva.
+
+    \end{proof}
+\end{teorema}
+
+
+\subsection{Nulidad y rango}
+
+\begin{tcolorbox}
+    \underline{Def.} Sean $V,W$ espacios vectoriales, $T:V\to W$ una transformación lineal, y $kerT, imT$ subespacios de dimensión finita de $V$ y $W$, respectivamente, entonces a la dimensión de $kerT$ la llamamos la \emph{nulidad} de T y a la dimensión de $imT$, el \emph{rango} de T. 
+\end{tcolorbox}
+
+El resultado más relevante de la imagen y el núcleo de una transformación lineal es la llamada \emph{fórmula de la dimensión}, que se demuestra a continuación.
+
+\begin{teorema} {5.3.1}
+    Sean $V,W$ espacios vectoriales de dimensión finita y $T:V\to W$ una transformación lineal, entonces la $\text{nulidad}(T)+\text{rango}(T)=\text{dim}(V).$
+
+\begin{proof}
+    Sea $\text{dim}(V)=n, \text{dim}(kerT)=k,$ y $N=\{\mathbf{v}_1, ..., \mathbf{v}_k\}$ una base para el $kerT$. Claramente, la $\text{nulidad}(T)=k.$ Por el Teorema 4.2.3.5 de la sección \ref{Subsec:Dimensión}, sabemos que podemos extender a $N$ hasta formar una base $\{\mathbf{v}_1, ..., \mathbf{v}_k, \mathbf{v}_{k+1}, ..., \mathbf{v}_n\}$ de $V$. Ahora demostraremos que $S=\{T(\mathbf{v}_{k+1}), ...,T(\mathbf{v}_n)\}$ es una base de la $imT$.
+
+
+
+    Observemos que $$imT=\langle \{T(\mathbf{v}_1),T(\mathbf{v}_2),...,T(\mathbf{v}_n)\} \rangle = \langle \{\mathbf{0}_W,...,\mathbf{0}_W,T(\mathbf{v}_{k+1}),...,T(\mathbf{v}_n)\}\rangle = \langle \{T(\mathbf{v}_{k+1}),...,T(\mathbf{v}_n)\} = \langle S \rangle. $$ \noindent Por lo cual $S$ genera a $imT$. Ahora sólo falta demostrar que es un conjunto linealmente independiente. Supongamos que existen coeficiente $b_{k+1},...,b_n\in K$ tales que \[
+        \sum_{i=k+1}^n b_iT(\mathbf{v}_i)=\mathbf{0}_W \implies T\bigg(\sum b_i\mathbf{v}_i \bigg) = \mathbf{0}_W \implies \sum_{i=k+1}^n b_i\mathbf{v}_i \in kerT
+    .\] \noindent Ya que $N$ es una base para $kerT$, deben existir coeficientes $c_1,...,c_k\in F$ tales que \[
+    \sum_{i=1}^k c_i\mathbf{v}_i = \sum_{i=k+1}^n b_i\mathbf{v}_i \iff \sum_{i=1}^k (-c_i)\mathbf{v}_i + \sum_{i=k+1}^n b_i \mathbf{v}_i = \mathbf{0}_W
+    .\] \noindent Ya que $B$ es base de $V$, tenemos que $b_i=0\hspace{2mm} \forall i,$ por lo cual concluimos que $S$ es linealmente independiente y, en particular, que es una base de $imT$.
+
+    Finalmente, tenemos que $\text{rango}(T) = n-k\implies \text{nulidad}(T)+\text{rango}(T)=\text{dim}(V).$
+\end{proof}
+
+\end{teorema}
+
+El resultado anterior es relevante porque nos ayuda a determinar fácilmente cuándo una transformación lineal es biyectiva, como se verá en el siguiente teorema.
+
+\begin{teorema} {5.3.2}
+    Sean $V$ y $W$ sobre $K$ espacios vectoriales de dimensión finta, y $T:V\to W$ una transformación lineal. Entonces, los enunciados siguientes son equivalentes:
+
+    \hspace{3mm} a) T is inyectiva
+
+    \hspace{3mm} b) T es suprayectiva
+
+    \hspace{3mm} c) $\text{rango}(T)=\text{dim}(V).$
+
+\begin{proof}
+    Por el Teorema 4.2.3, sabemos que $T$ es inyectiva si y sólo si $kerT=\{\mathbf{0}_V\}$, i.e., si el núcleo de $T$ es un espacio de dimensión cero, lo cual implica que $\text{nulidad}(T)=0.$ De la fórmula de la dimensión, tenemos que $\text{nulidad}(T)+\text{rango}(T)=\text{dim}(V)\implies \text{rango}(T)=\text{dim}(V)\iff \text{dim}(imT)=\text{dim}(V).$ 
+\end{proof}
+
+\end{teorema}
+
 
 \subsection{Ejercicios de repaso}
 
 \subsubsection{Definición de transformación lineal y espacio de transformaciones lineales}
 \begin{itemize}
-    \item 
+    \item Demuestra que en cualquier espacio vectorial arbitrario $V$ sobre $K$ el producto de un vector por un escalar arbitrario $a\in K$ es una operación lineal.
+    \item Demuestra ahora que, en general, la operación de suma vectorial con un vector arbitrario $\mathbf{v}\in V$ no es una operación lineal. ¿En qué caso sí lo es?
+    \item Demuestra que para toda transformación lineal $T:V\to W$, $T(\mathbf{0}_V)=\mathbf{0}_W.$
+    Sean $V$ sobre $K$ y $W$ sobre $F$ espacios vectoriales, y sea $T:V\to W$ una función que lleva vectores de $V$ a vectores de $W$. ¿Cómo debe ser la relación entre los campos $W$ y $F$ para que exista la posibilidad de que $T$ sea una transformación lineal? (0.5 ptos. extra)*
 \end{itemize}
 
 \subsubsection{Núcleo e imagen de una transformación lineal}
 \begin{itemize}
-    \item Sea $T:V\to W$. Demuestra que $núcT$ es un subespacio vectorial de $V$ y que $imT$ es un subespacio vectorial de $W$ (no des por hecho que son espacios vectoriales).
+    \item Sea $T:V\to W$ una transformación lineal arbitraria. Demuestra que $kerT$ es un subespacio vectorial de $V$ y que $imT$ es un subespacio vectorial de $W$ (puedes dar por hecho que $V$ y $W$ son espacios vectoriales).
 \end{itemize}
 
+\section{Composición de transformaciones lineales, transformación lineal inversa y representación matricial de una transformación lineal}
 
 
 
