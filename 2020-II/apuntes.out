@@ -52,7 +52,7 @@
 \BOOKMARK [3][-]{subsubsection.2.6.5}{Triple producto escalar*}{subsection.2.6}% 52
 \BOOKMARK [1][-]{section.3}{Combinaciones lineales, subespacio generado y conjunto generador, dependencia e independencia lineal}{}% 53
 \BOOKMARK [2][-]{subsection.3.1}{Combinaciones lineales}{section.3}% 54
-\BOOKMARK [2][-]{subsection.3.2}{Espacio generado y conjunto generador}{section.3}% 55
+\BOOKMARK [2][-]{subsection.3.2}{Subspacio generado y conjunto generador}{section.3}% 55
 \BOOKMARK [2][-]{subsection.3.3}{Dependencia e independencia lineal}{section.3}% 56
 \BOOKMARK [3][-]{subsubsection.3.3.1}{Definici\363n de dependencia e independencia lineal}{subsection.3.3}% 57
 \BOOKMARK [3][-]{subsubsection.3.3.2}{Interpretaci\363n geom\351trica de la dependencia e independencia lineal}{subsection.3.3}% 58
@@ -65,11 +65,11 @@
 \BOOKMARK [2][-]{subsection.4.1}{Bases}{section.4}% 65
 \BOOKMARK [3][-]{subsubsection.4.1.1}{Definici\363n de base}{subsection.4.1}% 66
 \BOOKMARK [3][-]{subsubsection.4.1.2}{Ejemplos de bases}{subsection.4.1}% 67
-\BOOKMARK [2][-]{subsection.4.2}{Dimensi\363n}{section.4}% 68
-\BOOKMARK [2][-]{subsection.4.3}{Ortogonalizaci\363n y ortonormalizaci\363n}{section.4}% 69
-\BOOKMARK [3][-]{subsubsection.4.3.1}{Definiciones}{subsection.4.3}% 70
-\BOOKMARK [3][-]{subsubsection.4.3.2}{Teorema de Gram-Schmidt}{subsection.4.3}% 71
-\BOOKMARK [3][-]{subsubsection.4.3.3}{Ejemplos de ortogonalizaci\363n y ortonormalizaci\363n}{subsection.4.3}% 72
+\BOOKMARK [3][-]{subsubsection.4.1.3}{Teorema de reemplazamiento}{subsection.4.1}% 68
+\BOOKMARK [2][-]{subsection.4.2}{Dimensi\363n}{section.4}% 69
+\BOOKMARK [2][-]{subsection.4.3}{Ortogonalizaci\363n y ortonormalizaci\363n}{section.4}% 70
+\BOOKMARK [3][-]{subsubsection.4.3.1}{Definiciones}{subsection.4.3}% 71
+\BOOKMARK [3][-]{subsubsection.4.3.2}{Teorema de Gram-Schmidt}{subsection.4.3}% 72
 \BOOKMARK [2][-]{subsection.4.4}{Ejercicios de repaso}{section.4}% 73
 \BOOKMARK [3][-]{subsubsection.4.4.1}{Bases}{subsection.4.4}% 74
 \BOOKMARK [3][-]{subsubsection.4.4.2}{Dimensi\363n}{subsection.4.4}% 75
@@ -82,6 +82,9 @@
 \BOOKMARK [2][-]{subsection.5.2}{N\372cleo e imagen de una transformaci\363n lineal}{section.5}% 82
 \BOOKMARK [2][-]{subsection.5.3}{Nulidad y rango}{section.5}% 83
 \BOOKMARK [2][-]{subsection.5.4}{Ejercicios de repaso}{section.5}% 84
-\BOOKMARK [3][-]{subsubsection.5.4.1}{Definici\363n de transformaci\363n lineal y espacio de transformaciones lineales}{subsection.5.4}% 85
-\BOOKMARK [3][-]{subsubsection.5.4.2}{N\372cleo e imagen de una transformaci\363n lineal}{subsection.5.4}% 86
-\BOOKMARK [1][-]{section.6}{Composici\363n de transformaciones lineales, transformaci\363n lineal inversa y representaci\363n matricial de una transformaci\363n lineal}{}% 87
+\BOOKMARK [1][-]{section.6}{Composici\363n de transformaciones lineales, transformaci\363n lineal inversa y representaci\363n matricial de una transformaci\363n lineal}{}% 85
+\BOOKMARK [2][-]{subsection.6.1}{Composici\363n de transformaciones lineales}{section.6}% 86
+\BOOKMARK [2][-]{subsection.6.2}{Transformaci\363n lineal inversa}{section.6}% 87
+\BOOKMARK [2][-]{subsection.6.3}{Representaci\363n de un vector en una base ordenada}{section.6}% 88
+\BOOKMARK [2][-]{subsection.6.4}{Representaci\363n matricial de una transformaci\363n lineal}{section.6}% 89
+\BOOKMARK [2][-]{subsection.6.5}{Ejercicios de repaso}{section.6}% 90

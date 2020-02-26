@@ -85,7 +85,7 @@ Lic. en Física Biomédica \\ Universidad Nacional Autónoma de México}
     \hline 3 & Combinaciones lineales, subespacio generado y conjunto generador, dependencia e independencia lineal \\
     \hline 4 & Bases, dimensión, ortogonalización y ortonormalización \\
     \hline 5 & Definición de transformación lineal y espacio de transformaciones lineales, núcleo e imagen de una transformación lineal, nulidad y rango \\
-    \hline 6 & Composición de transformaciones lineales, transformación lineal inversa y representación matricial de una transformación lineal \\
+    \hline 6 & Composición de transformaciones lineales, transformación lineal inversa, representación de un vector en una base ordenada y representación matricial de una transformación lineal \\
     \hline 7 & Espacios vectoriales de matrices, matriz de proyección y matriz de cambio de base \\
     \hline 8 & Definición y propiedades del determinante y la traza de una matriz \\
     \hline 9 & Matriz inversa e invertibilidad de matrices \\
@@ -128,6 +128,7 @@ Además, en el último piso del edificio P, del lado del Auditorio Alberto Baraj
 
 %\subsection{Notación}
 \newpage
+
 \textbf{Notación}
 \begin{tcolorbox} \label{Notación}
 \centering
@@ -314,7 +315,7 @@ Sea $V$ sobre $K$ un espacio vectorial arbitrario con $\mathbf{v}\in V$ y $a\in 
 \end{teorema}
 
 
-\subsection{Interpretación geométrica de las operaciones esenciales de los espacios vectoriales} \label{Subsec:Interpretación_geométrica_de_las_operaciones_de_los_espacios_vectoriales} 
+\subsection{Interpretación geométrica de las operaciones esenciales de los espacios vectoriales} \label{Subsec:Interpretación_geométrica_de_las_operaciones_de_los_espacios_vectoriales}
 
 Como se mencionó en una nota al final de la sección \ref{Ejem:Espacios_vectoriales} \hspace{1.5mm}\textemdash de la cual retomaremos muchas ideas a continuación\textemdash, podemos desarrollar nuestra intuición sobre muchos temas del álgebra lineal trabajando en espacios vectoriales \emph{visualizables}, para luego extenderla a espacios vectoriales más generales. Por ende, ahora haremos hincapié en la interpretacción geométrica de las operaciones de suma vectorial y producto de un vector por un escalar en los espacios vectoriales reales $\mathbb{R}^2$ y $\mathbb{R}^3$, así como en el espacio vectorial complejo $\mathbb{C}$. Antes de empezar, necesitamos recordar la siguiente definición.
 
@@ -454,7 +455,7 @@ Como hemos visto, el plano cartesiano nos sirve para representar vectores con do
 \textbf{Suma vectorial}
 \vspace{3mm}
 
-De la definición de suma vectorial $\begin{bmatrix}a+ib\end{bmatrix}+\begin{bmatrix}c+id\end{bmatrix}\equiv\begin{bmatrix}(a+c)+(b+d)i\end{bmatrix}$ se deduce que la suma vectorial entre vectores de $\mathbb{C}$ tiene la misma interpretación geométrica que aquella entre vectores de $\mathbb{R}^2$. Por ejemplo, si calculamos $\begin{bmatrix}1+2i\end{bmatrix}+\begin{bmatrix}3+2i\end{bmatrix}=\begin{bmatrix}4+4i\end{bmatrix}$, podemos representarlo visulamente en la Figura \ref{fig:Suma_vectorial_compleja}.
+De la definición de suma vectorial $\begin{bmatrix}a+ib\end{bmatrix}^T+\begin{bmatrix}c+id\end{bmatrix}^T\equiv\begin{bmatrix}(a+c)+(b+d)i\end{bmatrix}^T$ se deduce que la suma vectorial entre vectores de $\mathbb{C}$ tiene la misma interpretación geométrica que aquella entre vectores de $\mathbb{R}^2$. Por ejemplo, si calculamos $\begin{bmatrix}1+2i\end{bmatrix}^T+\begin{bmatrix}3+2i\end{bmatrix}^T=\begin{bmatrix}4+4i\end{bmatrix}^T$, podemos representarlo visulamente en la Figura \ref{fig:Suma_vectorial_compleja}.
 
 \begin{figure}[h!]
     \centering
@@ -483,11 +484,11 @@ De la definición de suma vectorial $\begin{bmatrix}a+ib\end{bmatrix}+\begin{bma
 \textbf{Producto de un vector por un escalar}
 \vspace{3mm}
 
-Por definición, el producto de un vector por un escalar es $(q+ir)\begin{bmatrix}s+it\end{bmatrix}\equiv\begin{bmatrix}(qs-rt)+i(qt+rs)\end{bmatrix}$.
+Por definición, el producto de un vector por un escalar es $(q+ir)\begin{bmatrix}s+it\end{bmatrix}^T\equiv\begin{bmatrix}(qs-rt)+i(qt+rs)\end{bmatrix}^T$.
 
-Notemos que, en particular, si la parte imaginaria del escalar es nula (i.e., si $r=0$), entonces el escalar es un número real y el producto resultante es $(q)\begin{bmatrix}s+it\end{bmatrix}\equiv\begin{bmatrix}(qs)+(qt)i\end{bmatrix}$, por lo cual geométricamente sólo se produce un reescalamiento totalmente análogo al discutido en la sección \ref{Ejem:En_R^2}.
+Notemos que, en particular, si la parte imaginaria del escalar es nula (i.e., si $r=0$), entonces el escalar es un número real y el producto resultante es $(q)\begin{bmatrix}s+it\end{bmatrix}^T\equiv\begin{bmatrix}(qs)+(qt)i\end{bmatrix}^T$, por lo cual geométricamente sólo se produce un reescalamiento totalmente análogo al discutido en la sección \ref{Ejem:En_R^2}.
 
-En cambio, ahora observemos qué sucede si la parte real del escalar es nula y la parte imaginaria es igual a $1$ (i.e., si multiplicamos por el escalar $i$). Tomemos, por ejemplo, al vector $\begin{bmatrix}2+2i\end{bmatrix}$. Al hacer el producto de este vector por $i$ obtenemos $\begin{bmatrix}-2+2i\end{bmatrix}$. Si, en cambio, hacemos el producto de este mismo vector por el escalar $-i$, obtenemos como resultado $(-i)\begin{bmatrix}2+2i\end{bmatrix}=\begin{bmatrix}2-2i\end{bmatrix}$. Ambas operaciones se muestran de manera visual en la Figura \ref{fig:Producto_de_un_vector_complejo_por_i}.
+En cambio, ahora observemos qué sucede si la parte real del escalar es nula y la parte imaginaria es igual a $1$ (i.e., si multiplicamos por el escalar $i$). Tomemos, por ejemplo, al vector $\begin{bmatrix}2+2i\end{bmatrix}^T$. Al hacer el producto de este vector por $i$ obtenemos $\begin{bmatrix}-2+2i\end{bmatrix}^T$. Si, en cambio, hacemos el producto de este mismo vector por el escalar $-i$, obtenemos como resultado $(-i)\begin{bmatrix}2+2i\end{bmatrix}^T=\begin{bmatrix}2-2i\end{bmatrix}^T$. Ambas operaciones se muestran de manera visual en la Figura \ref{fig:Producto_de_un_vector_complejo_por_i}.
 
 \begin{figure}[h!]
     \centering
@@ -509,9 +510,9 @@ En cambio, ahora observemos qué sucede si la parte real del escalar es nula y l
 
    Aquí vemos que hacer el producto de un vector por el escalar $i$ \emph{equivale a hacer una rotación de $90^\circ$ ó $\frac{\pi}{2}$ radianes}. Análogamente, el producto de un vector por el escalar $-i$ equivale a hacer una rotación de $-90^\circ$ ó $-\frac{\pi}{2}$ radianes. Esto tiene sentido ya que $-i=-1(i)=i(-1)$ lo cual implica que, debido a la compatibilidad del producto de un vector por un escalar con el producto entre escalares, es lo mismo multiplicar un vector por $(-i)$ a multiplicarlo por $i$ y después por -1, o vice versa: el razonamiento geométrico correspondiente es que da lo mismo rotar un vector $-\frac{\pi}{2}$ radianes a rotarlo $\frac{\pi}{2}$ radianes y después invertir su sentido, o primero invertir su sentido y después rotarlo $\frac{\pi}{2}$ radianes. 
 
-¿Y si multiplicamos un vector de $\mathbb{C}$ por un escalar $ai$ con $a\neq 0,1$? Ya que $ai[b + ic]=[-ac+i(ab)]=a[-c+ib]=a(i[b+ic])$ \textemdash es decir, por la compatibilidad entre productos\textemdash\hspace{0.5mm} podemos deducir que hacer el producto de un vector complejo por un número imaginario arbitrario $ai$ tendrá dos consecuencias: rotarlo de acuerdo a $i$ ($\frac{\pi}{2}$ radianes a contrarreloj) y reescalarlo de acuerdo al valor de $a$ (invirtiendo el sentido si $a<0$). En este último caso donde $a$ es negativo, ya que $ai=|a|(-i)=(-i)|a| \hspace{3mm}\forall\hspace{1.5mm} a<0$, también podríamos pensar que se rota al vector complejo de acuerdo a $-i$ ($\frac{\pi}{2}$ radianes en el sentido de las manecillas) y se reescala de acuerdo al valor absoluto de $a$: ambos razonamientos son equivalentes.
+   ¿Y si multiplicamos un vector de $\mathbb{C}$ por un escalar $ai$ con $a\neq 0,1$? Ya que $ai\begin{bmatrix}b + ic\end{bmatrix}^T=\begin{bmatrix}-ac+i(ab)\end{bmatrix}^T=a\begin{bmatrix}-c+ib\end{bmatrix}^T=a(i\begin{bmatrix}b+ic\end{bmatrix}^T)$ \textemdash es decir, por la compatibilidad entre productos\textemdash\hspace{0.5mm} podemos deducir que hacer el producto de un vector complejo por un número imaginario arbitrario $ai$ tendrá dos consecuencias: rotarlo de acuerdo a $i$ ($\frac{\pi}{2}$ radianes a contrarreloj) y reescalarlo de acuerdo al valor de $a$ (invirtiendo el sentido si $a<0$). En este último caso donde $a$ es negativo, ya que $ai=|a|(-i)=(-i)|a| \hspace{3mm}\forall\hspace{1.5mm} a<0$, también podríamos pensar que se rota al vector complejo de acuerdo a $-i$ ($\frac{\pi}{2}$ radianes en el sentido de las manecillas) y se reescala de acuerdo al valor absoluto de $a$: ambos razonamientos son equivalentes.
 
-Dicho lo anterior, estamos listos para el caso más general: multiplicar un vector complejo $\begin{bmatrix}s+it\end{bmatrix}$ por un escalar complejo $q+ir$ con $q,r\neq0$ \emph{reescalará} el vector en el plano complejo y lo \emph{rotará} en el sentido correspondiente al signo de $r$. Es decir que, en los espacios vectoriales complejos, los escalares no sólamente pueden \emph{reescalar} vectores, sino que también los pueden \emph{rotar}\footnote{El asunto de las \emph{magnitudes específicas} de estos reescalamientos y rotaciones \textemdash el cual se complica para escalares complejos en general\textemdash\hspace{0.5mm} será precisado más adelante.}.
+Dicho lo anterior, estamos listos para el caso más general: multiplicar un vector complejo $\begin{bmatrix}s+it\end{bmatrix}^T$ por un escalar complejo $q+ir$ con $q,r\neq0$ \emph{reescalará} el vector en el plano complejo y lo \emph{rotará} en el sentido correspondiente al signo de $r$. Es decir que, en los espacios vectoriales complejos, los escalares no sólamente pueden \emph{reescalar} vectores, sino que también los pueden \emph{rotar}\footnote{El asunto de las \emph{magnitudes específicas} de estos reescalamientos y rotaciones \textemdash el cual se complica para escalares complejos en general\textemdash\hspace{0.5mm} será precisado más adelante.}.
 
 \subsection{Subespacios vectoriales}
 
@@ -536,7 +537,7 @@ En ciertas formas \emph{específicas}, las cuales iremos detallando, los subespa
 Observemos que:
 
 \begin{itemize}
-    \item Ya que cualquier subespacio vectorial es un espacio vectorial, entonces cualquier subespacio vectorial puede tener subespacios vectoriales subsecuentes\footnote{Esto es más o menos similar al hecho de que cualquier subconjunto puede o no tener subconjuntos subsecuentes.}.
+    \item Ya que cualquier subespacio vectorial es un espacio vectorial, entonces cualquier subespacio vectorial puede tener subespacios vectoriales subsecuentes\footnote{Esto es más o menos similar al hecho de que cualquier subconjunto puede tener subconjuntos subsecuentes.}.
     \item La definición de subespacio vectorial sólo incluye tres propiedades. Esto nos indica que, ya que $W$ es subconjunto de $V$ y ambos espacios vectoriales están definidos sobre el mismo campo $K$, si $W$ cumple explícitamente las tres propiedades mencionadas, las demás propiedades de un espacio vectorial se siguen trivialmente.
     \item Para todo espacio vectorial $V$, $V$ y $\{\mathbf{0}\}$ son subespacios vectoriales de $V$\footnote{Aquí se sobreentiende que los conjuntos $V$ y $\{\mathbf{0}\}$ están definidos como espacios vectoriales sobre el mismo campo $K$ y que $\{\mathbf{0}\}$ representa al espacio vectorial que sólo tiene al vector nulo de $V$ como vector.}.
 \end{itemize}{}
@@ -618,7 +619,7 @@ Volveremos a esta idea de \emph{descomponer un espacio vectorial como una suma d
         \item Define las variables $a,b,c,d,e\in\mathbb{R}$ de acuerdo a los últimos 5 dígitos de tu número de cuenta. Calcula algebráicamente al vector $\begin{bmatrix}a & b\end{bmatrix}^T+c\begin{bmatrix}d & e\end{bmatrix}^T$ y muestra gráficamente al vector resultante aplicando la Ley del paralelogramo. (1 pto.)
                 \item Como vimos en la sección \ref{Subsec:Interpretación_geométrica_de_las_operaciones_de_los_espacios_vectoriales}, la suma de dos vectores $\mathbf{v},\mathbf{u}\in\mathbb{R}^2$ sobre $\mathbb{R}$ se puede representar geométricamente con ayuda de un paralelogramo en el plano cartesiano, en donde la diagonal del paralelogramo que sale del origen es igual al vector resultante de la suma $\mathbf{u}+\mathbf{v}$ ó $\mathbf{v}+\mathbf{u}$ (ver, e.g< la Figura \ref{fig:Suma_vectorial}). Muestra intuitivamente que si transportamos a la \emph{otra} diagonal del paralelogramo hasta el origen (lo cual se puede hacer de dos maneras distintas), obtenemos la representación del vector resultante de la resta $\mathbf{u}-\mathbf{v}$ ó $\mathbf{v}-\mathbf{u}$. (1 pto.)
                         \item Muestra intuitivamente que el punto de intersección de las diagonales del paralelogramo mencionado en el ejercicio anterior es igual a la punta del vector $\frac{1}{2}(\vec{u}+\vec{v})$. (1 pto.)
-                                \item Elige los dos últimos dígitos de tu número de cuenta y llámalos $q$ y $r$, respectivamente. Al segundo y tercer dígito de tu número de cuenta, llámalos $s$ y $t$. Dibuja el vector complejo $\begin{bmatrix} q + ir \end{bmatrix}^T\in\mathbb{C}$ en el plano complejo. Explica qué le pasaría a este vector si realizáramos su producto por los escalares complejos $s+it$, $-s+it$, $s-it$ y $s+it$. (1 pto.)
+                                \item Elige los dos últimos dígitos de tu número de cuenta y llámalos $q$ y $r$, respectivamente. Al segundo y tercer dígito de tu número de cuenta, llámalos $s$ y $t$. Dibuja el vector complejo $\begin{bmatrix} q + ir \end{bmatrix}^T\in\mathbb{C}$ en el plano complejo. Explica qué le pasaría a este vector si realizáramos su producto por los escalares complejos $s+it$, $-s+it$, $s-it$ y $-s-it$. (1 pto.)
 \end{enumerate}
 
 \subsubsection{Subespacios vectoriales}
@@ -633,7 +634,7 @@ Volveremos a esta idea de \emph{descomponer un espacio vectorial como una suma d
 
 
 \newpage
-\section{Producto escalar (punto), norma, interpretación geométrica del producto escalar: proyecciones y ortogonalidad, producto vectorial (cruz)* y triple producto escalar*}
+\section{Producto escalar (punto), norma, interpretación geométrica del producto escalar: proyecciones y ortogonalidad, producto vectorial (cruz)* y triple producto escalar*} \label{Sec:2}
 
 \subsection{Producto escalar (punto)}
 
@@ -793,15 +794,25 @@ El proceso anterior de obtener una norma a partir de un producto escalar se pued
 
 \subsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}\label{Subsec:Interpretación_geométrica_del_producto_escalar} 
 
-\subsubsection{Producto escalar y proyecciones}
+\subsubsection{Producto escalar y proyecciones} \label{Subsec:Producto_escalar_y_proyecciones}
 
-Como quizás aprendiste en tus cursos de Geometría Analítica y/o Mecánica Vectorial, el producto escalar entre vectores de $\mathbb{R}^2$ tiene una definición geométrica dada por $$(\mathbf{u},\mathbf{v})\equiv ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos{\theta},$$ \noindent donde $\theta$ es el ángulo positivo más chico entre $\mathbf{u}$ y $\mathbf{v}$; esta definición es equivalente a la algebráica dada al principio de la sección \ref{Ejem:Producto_escalar}. El producto $||\mathbf{v}||\cos{\theta}$ es igual a la proyección del vector $\mathbf{v}$ sobre el vector $\mathbf{u}$, lo cual puede escribirse como $P_{\mathbf{u}}(\mathbf{v})$, por lo cual podemos abreviar la expresión anterior como $$(\mathbf{u},\mathbf{v})=||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v}).$$ 
+Como quizás aprendiste en tus cursos de Geometría Analítica y/o Mecánica Vectorial, el producto escalar entre vectores de $\mathbb{R}^2$ tiene una definición geométrica dada por $$(\mathbf{u},\mathbf{v})\equiv ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos{\theta},$$ \noindent donde $\theta$ es el ángulo positivo más chico entre $\mathbf{u}$ y $\mathbf{v}$; esta definición es equivalente a la algebráica dada al principio de la sección \ref{Ejem:Producto_escalar}. El producto $||\mathbf{v}||\cos{\theta}$ es igual a la proyección del vector $\mathbf{v}$ sobre el vector $\mathbf{u}$, lo cual puede escribirse como $P_{\mathbf{u}}(\mathbf{v})$, por lo cual podemos abreviar la expresión anterior como $$(\mathbf{u},\mathbf{v})=||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v}) \implies P_{\mathbf{u}}(\mathbf{v})=\frac{(\mathbf{u},\mathbf{v})}{||\mathbf{u}||}.$$ 
 
 Observemos que, ya que tanto $\cos\theta$ como las normas $||\mathbf{u}||$ y $||\mathbf{v}||$ son números reales, entonces $$(\mathbf{u},\mathbf{v})=||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos\theta = ||\mathbf{v}||\hspace{0.5mm}||\mathbf{u}||\cos\theta=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u})=(\mathbf{v},\mathbf{u}).$$\noindent Esto no es más que la propiedad conmutativa del producto escalar en un espacio vectorial real \textemdash visto desde un punto de vista geométrico.
 
 Ahora imaginemos que tenemos dos vectores $\mathbf{u},\mathbf{v}\in\mathbb{R}^2$ de la misma magnitud (i.e., $||\mathbf{u}||=||\mathbf{v}||$) trazados en el plano cartesiano. En este caso, la bisectriz del ángulo que los separa traza un eje de simetría. Si trazamos la proyección de cada uno de los vectores sobre el otro, veremos de forma más intuitiva que $$||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u}),$$ con lo cual reafirmamos que el producto escalar conmuta. Supongamos ahora que reescalamos alguno de los vectores, digamos $\mathbf{u}$, al doble de su longitud \textemdash efectivamente duplicando así su norma\textemdash\hspace{0.5mm}, y llamamos a este nuevo vector $\mathbf{u}'$. Entonces, algebráicamente vemos que $$(\mathbf{u}',\mathbf{v})=||\mathbf{u}'||P_{\mathbf{u}}(\mathbf{v})=2||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=2(\mathbf{u},\mathbf{v}).$$ \noindent Geométricamente, podemos ver esto como que $(\mathbf{u}',\mathbf{v})=(2||\mathbf{u}||)P_{\mathbf{u}}(\mathbf{v})$ o, equivalentemente, que $(\mathbf{u}',\mathbf{v})=||\mathbf{u}||(2P_{\mathbf{u}}(\mathbf{v}))\footnote{Este mismo argumento se expone de forma animada en el siguiente video: \url{https://www.youtube.com/watch?v=LyGKycYT2v0&list=PL_w8oSr1JpVCZ5pKXHKz6PkjGCbPbSBYv&index=11&t=255s}.}.$ Observemos que la elección del vector reescalado fue arbitraria \textemdash de haber reescalado $\mathbf{v}$ por $2$ en vez de $\mathbf{u}$, hubiéramos obtenido el mismo resultado. La discusión anterior es simplemente la interpretación geométrica del hecho de que $(2\mathbf{u},\mathbf{v})=2(\mathbf{u},\mathbf{v})=(\mathbf{u},2\mathbf{v})$ en espacios vectoriales reales.
 
 Similarmente, la interpretación geométrica del hecho de que $(\mathbf{u}+\mathbf{v},\mathbf{w})=(\mathbf{u},\mathbf{w})+(\mathbf{v},\mathbf{w})$ ó $(\mathbf{w},\mathbf{u}+\mathbf{v})=(\mathbf{w},\mathbf{u})+(\mathbf{w},\mathbf{v})$ se puede ver directamente de la Ley del paralelogramo. 
+
+\vspace{3mm}
+
+Sin embargo, al generalizar esta operación de \emph{proyectar un vector sobre otro (no nulo)} a cualquier tipo de espacios vectoriales nos encontramos con un problema: en general, el producto escalar no es conmutativo, por lo cual debemos decidir de qué manera precisa definiremos a esta operación. Por razones que veremos más adelante, la definición que resulta más conveniente es la siguiente:
+
+\begin{tcolorbox}
+    \underline{Def.} Sean $\mathbf{u},\mathbf{v}$ vectores de un espacio vectorial $V$ arbitrario tal que $\mathbf{u}$ es distinto al vector nulo. Definimos a la operación $P_{\mathbf{u}}(\hspace{0.5mm}\cdot\hspace{0.5mm} ):V\to K$, conocida como la \emph{proyección del vector} $\mathbf{v}$ \emph{sobre el vector} $\mathbf{u}$, como \[
+        P_{\mathbf{u}}(\mathbf{v}) \equiv \frac{(\mathbf{v},\mathbf{u})}{||\mathbf{u}||}
+    .\]
+\end{tcolorbox}
 
 \subsubsection{Ortogonalidad}
 
@@ -952,7 +963,7 @@ Nota: también se puede definir un \emph{triple producto vectorial} entre tres v
 \subsubsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}
 \begin{enumerate}
     \item Sea $\mathbf{v}\in\mathbb{R}^2$ no-nulo. Prueba que el conjunto $\{\mathbf{u}\in\mathbb{R}^2\hspace{0.5mm} |\hspace{0.5mm} (\mathbf{u},\mathbf{v)=0}\}$ es una recta que pasa por el origen y llévala a una expresión de la forma $ax+by=c.$ (1 pto.)
-    \item Sean $\mathbf{v}=\begin{bmatrix} v_1 & v_2 \end{bmatrix}^T, \mathbf{u}=\begin{bmatrix}u_1 & u_2 \end{bmatrix}^T$ vectores del espacio real $\mathbb{R}^2.$ Deduce que $\mathbf{u}\cdot\mathbf{v}=u_1v_1+u_2v_2=||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||$. (Nota: supon que ambos vectores son no nulos y encuentra al escalar $k\in\mathbb{R}$ tal que $(\mathbf{u},\mathbf{u}-k\mathbf{v})=0$. ¿Por qué es especial este escalar?) (1 pto.)
+    \item Sean $\mathbf{v}=\begin{bmatrix} v_1 & v_2 \end{bmatrix}^T, \mathbf{u}=\begin{bmatrix}u_1 & u_2 \end{bmatrix}^T$ vectores del espacio real $\mathbb{R}^2.$ Deduce que $\mathbf{u}\cdot\mathbf{v}=u_1v_1+u_2v_2=||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos(\theta)$, donde $\theta$ es el ángulo mínimo entre ambos vectores en el plano cartesiano. (Nota: supon que ambos vectores son no nulos y encuentra al escalar $k\in\mathbb{R}$ tal que $(\mathbf{u},\mathbf{u}-k\mathbf{v})=0$. ¿Por qué es especial este escalar?) (1 pto.)
     \item Define a los vectores $\mathbf{u}=\begin{bmatrix} a_1 & a_2 \end{bmatrix}^T, \mathbf{v}=\begin{bmatrix} a_3 & a_4\end{bmatrix}^T$ y $\mathbf{w}=\begin{bmatrix} a_5 & a_6\end{bmatrix}^T\in\mathbb{R}^2,$ donde $a_i$ corresponde al $i$-ésimo dígito de tu número de cuenta. Explica gométricamente el hecho de que $(\mathbf{u}+\mathbf{v},\mathbf{w})=(\mathbf{u},\mathbf{w})+(\mathbf{v},\mathbf{w})$, en términos de las proyecciones discutidas en la sección \ref{Subsec:Interpretación_geométrica_del_producto_escalar} (Nota: recuerda la Ley del paralelogramo). (1 pto.)
 \end{enumerate}
 
@@ -1013,13 +1024,13 @@ Así, vemos que en un espacio vectorial $V$ arbitrario es posible expresar cualq
 
 Siguiendo la discusión de la sección \ref{Subsec:Interpretación_geométrica_de_las_operaciones_de_los_espacios_vectoriales}, donde se plantearon por separado las interpretaciones geométricas de las operaciones de suma entre vectores y producto de un vector por un escalar, podemos pensar que, si combinamos ambas operaciones, la operación resultante se puede interpretar como una combinación de flechas rectas reescaladas (y/o rotadas, si el espacio vectorial es complejo y el escalar tiene una parte imaginaria no nula), cada una con su propia longitud, dirección y sentido, a las cuales aplicamos la Ley del paralelogramo para obtener una nueva flecha (o línea) como resultado. Precisamente por ello es que a está operación general se le conoce como \emph{combinación lineal}.
 
-\subsection{Espacio generado y conjunto generador} \label{Espacio_generado_y_conjunto_generador}
+\subsection{Subspacio generado y conjunto generador} \label{Espacio_generado_y_conjunto_generador}
 
 Sea $V$ sobre $K$ un espacio vectorial y $\mathbf{v}_1, \mathbf{v}_2, ... , \mathbf{v}_n\in V$ vectores. Si tomamos un conjunto de estos vectores, digamos, $G=\{\mathbf{v}_1, \mathbf{v}_2\}$, podemos también definir el conjunto de todos los vectores que se pueden generar a través de combinaciones lineales de los vectores de $G$ como $\{a\mathbf{v}_1+b\mathbf{v}_2\hspace{0.5mm}|\hspace{0.5mm}a,b\in K\}$. Este nuevo conjunto cumple con todas las propiedades de un espacio vectorial, y este hecho es generalizable a cualquier conjunto $G$ con un número finito de elementos, lo cual motiva la definición siguiente. 
 
 \begin{tcolorbox} \label{Def:Espacio_generado_y_conjunto_generador}
 
-    \underline{Def.} Sea $V$ sobre $K$ un espacio vectorial y $G\subset V$. Entonces, definimos $$\langle G\rangle \equiv \{c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_n\mathbf{v}_n\hspace{0.5mm}|\hspace{0.5mm}c_i\in K, \mathbf{v}_i\in G\}\subseteq V.$$ A $G$ se le conoce como el \emph{conjunto generador} y a $\langle G \rangle$, como el \emph{subespacio generado} por $G$ ya que, por definición, cumple con todas las propiedades de un espacio vectorial y además, por cerradura de $V$, cualquier vector generado por $G$ es elemento de $V$\footnote{Nótese por la definición que, dependiendo de cómo sea el conjunto $G$, es posible que $\langle G \rangle =V$.}. Si $G$ consiste de un sólo vector $\mathbf{g}$, podemos escribir el generado de $G$ como $\langle \mathbf{g} \rangle$.
+    \underline{Def.} Sea $V$ sobre $K$ un espacio vectorial y $G\subset V$. Entonces, definimos $$\langle G\rangle \equiv \{c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_n\mathbf{v}_n\hspace{0.5mm}|\hspace{0.5mm}c_i\in K, \mathbf{v}_i\in G\}\subseteq V.$$ A $G$ se le conoce como el \emph{conjunto generador} y a $\langle G \rangle$, como el \emph{subespacio generado} por $G$ ya que, por definición, cumple con todas las propiedades de un espacio vectorial y además, por cerradura de $V$, cualquier vector generado por $G$ es elemento de $V$\footnote{Nótese por la definición que, dependiendo de cómo sea el conjunto $G$, es posible que $\langle G \rangle =V$.}. Por completez, definimos $\langle \emptyset \rangle = \{\mathbf{0}\}.$ Si $G$ consiste de un sólo vector $\mathbf{g}$, podemos escribir el generado de $G$ como $\langle \mathbf{g} \rangle$.
 
 \end{tcolorbox}
 
@@ -1116,19 +1127,29 @@ Por otro lado, supongamos que $L'$ es linealmente dependiente. Entonces, existe 
 \subsubsection{Combinaciones lineales}
 
 \begin{enumerate}
-    \item Problema sobre círculo unitario en $\mathbb{C}$.
+    \item Demuestra que si tenemos tres vectores $\mathbf{u}, \mathbf{v}$ y $\mathbf{w}$ no nulos y ortogonales entre sí, entonces no puede haber una combinación lineal de dos de ellos que dé como resultado el tercero (nota: repasa la definición de ortogonalidad y las propiedades del producto escalar vistas en la sección \ref{Sec:2}.) (1 pto.)
+    \item Da un ejemplo de la demostración anterior en $\mathbb{R}^3$, e interpreta este resultado geométricamente (nota: recuerda la relación entre el producto escalar y las proyecciones.) (1 pto.)
 \end{enumerate}
 
 \subsubsection{Subespacio generado y conjunto generador}
 
 \begin{enumerate}
-    \item Sea $\mathbf{c}$ un vector arbitrario del espacio vectorial complejo $\mathbb{C}$. Da una interpretación geométrica para $\langle \mathbf{c} \rangle$ (nota: recuerda que en este caso $K=\mathbb{C}$).
+    \item Sea $a\in\mathbb{R}$ un vector arbitrario del espacio vectorial real $\mathbb{R}$. Demuestra que este espacio vectorial sólo tiene subespacios vectoriales triviales. ¿Quiénes son los valores $a\in\mathbb{R}$ que generan a estos subespacios, en cada caso? (1 pto.)
+    \item Sea $G=\{\begin{bmatrix} 3 & 0 & 3 \end{bmatrix}^T, \begin{bmatrix} -\frac{1}{2} & 0 & \frac{1}{2} \end{bmatrix}^T\}\subset\mathbb{R}^3.$ Escribe a $\langle G \rangle$ algebráicamente y descríbelo geométricamente. ¿A qué espacio vectorial real que conoces se parece? (1 pto.)
+    \item Sea $\mathbf{c}$ un vector arbitrario del espacio vectorial complejo $\mathbb{C}$. Da una interpretación geométrica para $\langle \mathbf{c} \rangle$ (nota: recuerda que, en este caso, $K=\mathbb{C}$; además, te sugiero que primero escribas a $\langle \mathbf{c}\rangle$ algebráicamente y, a partir de ahí, busques interpretarlo geométricamente.). (1 pto.)
+    \item Sea $F=\{x^0,x^1,x^2,...,x^n\}$ con $n\in\mathbb{N}$ un conjunto de funciones reales de una variable real. ¿Quién es, entonces, $\langle F \rangle$? (1 pto.)
 \end{enumerate}
 
 \subsubsection{Dependencia e independencia lineal}
 
 \begin{enumerate}
-    \item Sea $V$ un espacio vectorial y $S_1\subseteq S_2\subseteq V$. Demuestra que si $S_1$ es linealmente dependiente, entonces $S_2$ es linealmente dependiente. 
+    \item Sea $n_i$ el $i$-ésimo dígito de tu número de cuenta. Determina si los vectores $\begin{bmatrix} n_1 + i(n_2) \end{bmatrix}^T$ y $\begin{bmatrix} n_3 + i(n_4) \end{bmatrix}^T \in \mathbb{C}$ son linealmente dependientes o independientes y muéstralo gráficamente en el plano complejo. (1 pto.)
+    \item Repite el mismo ejercicio para los vectores reales $\begin{bmatrix} n_1 & n_4 & n_7 \end{bmatrix}^T, \begin{bmatrix} n_2 & n_5 & n_8 \end{bmatrix}^T$ y $\begin{bmatrix} n_3 & n_6 & n_9 \end{bmatrix}^T\in\mathbb{R}^3.$ ¿Cuál es el conjunto linealmente dependiente más grande que puedes armar con estos vectores, sin considerar los subespacios generados por éstos? ¿Qué hay del conjunto linealmente independiente más grande? (1 pto.)
+    \item Sea $V$ un espacio vectorial y $S_1\subseteq S_2\subseteq V$. Demuestra que si $S_1$ es linealmente dependiente, entonces $S_2$ es linealmente dependiente. (1 pto.)
+    \item Sean las funciones $p_1(x) = 3x^2-x, p_2(x) = x^3+5, p_3(x)=4x+1, p_4(x)=4x^3+4x+16$ vectores de $P^4$, el espacio vectorial real de funciones polinomiales de grado $n\le 4.$ ¿Cuáles son los tres conjuntos de tres vectores linealmente independientes que podemos formar a partir de estos cuatro vectores? (1 pto.) 
+    \item Da un ejemplo de un conjunto de tres vectores en $\mathbb{R}^3$ linealmente independientes y ortogonales entre sí, donde todas las entradas de dichos vectores sean distintas de cero. (0.5 ptos. extra)*
+    \item Describe con tus palabras y con los conceptos vistos en clase el procedimiento que seguiste para resolver el ejercicio 3.4.3.5 (1 pto. extra)*
+    
 \end{enumerate}
 
 
@@ -1137,7 +1158,7 @@ Por otro lado, supongamos que $L'$ es linealmente dependiente. Entonces, existe 
 
 \subsection{Bases}
 
-Como hemos visto en secciones anteriores, cualquier vector de un espacio vectorial se puede expresar como combinación lineal de otros vectores de ese mismo espacio\footnote{De lo contrario, se violarían las propiedades de cerradura vistas en la sección \ref{Def:Espacio_vectorial}.}. Cuando trabajamos en un espacio vectorial $V$, resulta conveniente tener un conjunto de vectores $B\subset V$ con el cual se pueda expresar a \emph{cualquier vector del espacio vectorial} $V$ de forma \emph{única} \textemdash lo cual se logra, precisamente, a través de una combinación lineal única de los vectores del conjunto $B$. Tomando en cuenta el Teorema 3.3.3.1 (sec. \ref{Teo:Dependencia_e_independencia_lineal}), vemos que los conjuntos linealmente independientes son buenos candidatos para lograr que las expresiones mediante combinaciones lineales sean \emph{únicas}, por lo cual pediremos que $B$ sea linealmente independiente; además, ya que queremos ser capaces de expresar a \emph{cualquier} vector arbitrario de $V$ como combinación lineal única de los de $B$, sería necesario que el conjunto linealmente independiente $B$ generara a todos los vectores de $V$. A los conjuntos que cumplen ambas propiedades se le conoce como una \emph{base} para el espacio en cuestión.
+Como hemos visto en secciones anteriores, cualquier vector de un espacio vectorial se puede expresar como combinación lineal de otros vectores de ese mismo espacio\footnote{De lo contrario, se violarían las propiedades de cerradura vistas en la sección \ref{Def:Espacio_vectorial}.}. Cuando trabajamos en un espacio vectorial $V$, resulta conveniente tener un conjunto de vectores $B\subset V$ con el cual se pueda expresar a \emph{cualquier vector del espacio vectorial} $V$ de forma \emph{única} \textemdash lo cual se logra, precisamente, a través de una combinación lineal única de los vectores del conjunto $B$. Tomando en cuenta el Teorema 3.3.3.1 (sec. \ref{Teo:Dependencia_e_independencia_lineal}), vemos que los conjuntos linealmente independientes son buenos candidatos para lograr que las expresiones mediante combinaciones lineales sean \emph{únicas}, por lo cual pediremos que $B$ sea linealmente independiente; además, ya que queremos ser capaces de expresar a \emph{cualquier} vector arbitrario de $V$ como combinación lineal \emph{única} de los vectores de $B$, sería necesario que el conjunto linealmente independiente $B$ generara a \emph{todos} los vectores de $V$. A cualquier conjunto que cumpla ambas propiedades se le conoce como una \emph{base} para el espacio vectorial en cuestión.
 
 \subsubsection{Definición de base} \label{Def:Base}
 
@@ -1147,16 +1168,21 @@ Como hemos visto en secciones anteriores, cualquier vector de un espacio vectori
 
 \end{tcolorbox}
 
-Nótese por la definición que, ya que muchos conjuntos de vectores distintos pueden ser linealmente independientes y generar a un mismo espacio vectorial, un espacio vectorial puede tener muchas bases distintas. Esto implica que cualquier vector arbitrario de un espacio vectorial puede ser expresado a través de diferentes combinaciones lineales (correspondientes a distintas bases del espacio, y únicas para cada base). Dicho de otra forma, dado un espacio vectorial con más de una base, cualquier vector de ese espacio puede ser \emph{representado en las distintas bases} de ese espacio\footnote{El tema de las \emph{representaciones} es de gran interés en algunas ramas de las matemáticas y sus aplicaciones son de suma importancia en varias áreas de la física. En este curso, lo veremos sobre todo en las secciones de representación de una transformación lineal, representación de una matriz en distintas bases y representaciones de un operador lineal.}.
+Nótese por la definición que, ya que muchos conjuntos de vectores distintos pueden ser linealmente independientes y generar a un mismo espacio vectorial, un espacio vectorial puede tener muchas bases distintas. Esto implica que cualquier vector arbitrario de un espacio vectorial puede ser expresado a través de diferentes combinaciones lineales (correspondientes a distintas bases del espacio, y únicas para cada base). Dicho de otra forma, dado un espacio vectorial con más de una base, cualquier vector de ese espacio puede ser \emph{representado en las distintas bases} de ese espacio\footnote{El tema de las \emph{representaciones} es de gran interés en algunas ramas de las matemáticas y sus aplicaciones son de suma importancia en varias áreas de la física. En este curso, lo veremos sobre todo en las secciones de representación matricial de una transformación lineal, representación de una matriz en distintas bases y representaciones de un operador lineal en distintos espacios vectoriales.}.
 
 \subsubsection{Ejemplos de bases} \label{Ejem:Bases}
 
-El conjunto $\{1\}$ es una base para el espacio vectorial complejo $\mathbb{C}.$
+El conjunto $\{1\}$ es una base para el espacio vectorial complejo $\mathbb{C}.$ De hecho, si cambiamos a $1$ en el conjunto anterior por cualquier número complejo no nulo, también tendremos una base para el espacio complejo $\mathbb{C}$ (¿a qué propiedades se debe esto?). 
+\vspace{3mm}
 
 Los conjuntos $\{\begin{bmatrix} 2 & 0 \end{bmatrix}^T, \begin{bmatrix} 0, & -3 \end{bmatrix}^T\}, \{\begin{bmatrix} 3 & 3 \end{bmatrix}^T, \begin{bmatrix} -3 & 3 \end{bmatrix}^T\}$ y $\{\begin{bmatrix} 1 & 0 \end{bmatrix}^T,\begin{bmatrix} 0 & 1 \end{bmatrix}^T\}$ son bases de $\mathbb{R}^2$.
-
+\vspace{3mm}
 
 Cualquier conjunto de la forma $\{c_n x^n\hspace{0.5mm}|\hspace{0.5mm}n\in\mathbb{N}\cup\{0\}, c_n\in \mathbb{R}\}$ es una base del espacio vectorial de las funciones polinomiales de grado $n$.
+
+\subsubsection{Teorema de reemplazamiento}
+
+A continuación, veremos un importante teorema que nos ayudará a construir bases más adelante.
 
 \begin{teorema} {4.1.1}
     Sea $V$ un espacio vectorial generado por un conjunto $G$ con $n$ vectores, y sea $L$ un subconjunto linealmente independiente de $V$ con $m$ vectores. Entonces $m\le n$ y existe un subconjunto $H\subseteq G$ que contiene $n-m$ vectores tal que $L\cup H$ genera a $V$.
@@ -1170,29 +1196,32 @@ Cualquier conjunto de la forma $\{c_n x^n\hspace{0.5mm}|\hspace{0.5mm}n\in\mathb
 
     \vspace{3mm} 
     \textbf{Hipótesis de inducción}
-    Supongamos que la hipótesis del teorema se cumple para algún $m\ge 0$.
+    Supongamos que la hipótesis del teorema se cumple para $L=\{\mathbf{v}_1,...,\mathbf{v}_m\}$ con $m>0$.
 
     \vspace{3mm} 
     \textbf{Paso inductivo}
-    Sea $L=\{\mathbf{v}_1,...,\mathbf{v}_{m+1}\}$ un subconjunto linealmente independiente de $V$. Por el Teorema 3.3.3.2, el conjunto $\{\mathbf{v}_1,...,\mathbf{v}_m\}$ es l.i., por lo cual podemos aplicar la hipótesis de inducción y concluir que $m\le n$ y que existe un subconjunto $\{\mathbf{u}_1,...,\mathbf{u}_{n-m}\}$ de $G$ tal que $\{\mathbf{v}_1,...,\mathbf{v}_m\}\cup\{\mathbf{u}_1,...,\mathbf{u}_{n-m}\}$ genera a $V$. Por lo tanto, existen escalares $a_1,...,a_m,b_1,...,b_{n-m}$ tales que \[
+    Ahora debemos demostrar que, bajo la hipótesis de inducción (donde el teorema se cumple para alguna $m>0$), el teorema se debe cumplir para $m+1$.\vspace{3mm}
+    
+     Sea $L=\{\mathbf{v}_1,...,\mathbf{v}_{m+1}\}$ un subconjunto linealmente independiente de $V$. Por el Teorema 3.3.3.2, el conjunto $\{\mathbf{v}_1,...,\mathbf{v}_m\}$ es l.i., por lo cual podemos aplicar la hipótesis de inducción y concluir que $m\le n$ y que existe un subconjunto $\{\mathbf{u}_1,...,\mathbf{u}_{n-m}\}\subset G$ tal que $\{\mathbf{v}_1,...,\mathbf{v}_m\}\cup\{\mathbf{u}_1,...,\mathbf{u}_{n-m}\}$ genera a $V$. Por lo tanto, existen escalares $a_1,...,a_m,b_1,...,b_{n-m}$ tales que \[
         a_1\mathbf{v}_1+...+a_m\mathbf{v}_m+b_1\mathbf{u}_1+...+b_{n-m}\mathbf{u}_{n-m}=\mathbf{v}_{m+1}.
     .\] 
 
-    Observemos que, ya que $L$ es linealmente independiente, $n-m>0\implies n>m\implies n\ge m+1$. Además, alguna $b_i$ debe ser distinta de cero, por lo cual podemos despejarla. Suponiendo, por ejemplo, que $b_1\neq 0$, tenemos que \[
+    Observemos que, ya que $L$ es linealmente independiente, $n-m>0\implies n>m\implies n\ge m+1$. Además, alguna $b_i$ debe ser distinta de cero, por lo cual podemos despejarla (de lo contrario, estaríamos contradiciendo la hipótesis de inducción, que nos asegura que $\{\mathbf{v}_1,...,\mathbf{v}_m\}$ es l.i.). Suponiendo, por ejemplo, que $b_1\neq 0$, tenemos que \[
         \mathbf{u}_1=\frac{-a_1}{b_1}\mathbf{v}_1+...+\frac{-a_m}{b_1}\mathbf{v}_m+\frac{-b_2}{b_1}\mathbf{u}_2+...+\frac{-b_{n-m}}{b_1}\mathbf{u}_{n-m}
     .\] 
 
-    Sea $H=\{\mathbf{u}_2,...,\mathbf{u}_{n-m}\}$. Entonces, ya que $\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_2,...,\mathbf{u}_{n-m}\in\langle L\cup H\rangle$ \textemdash lo cual también implica que $\mathbf{u}_1\in\langle L\cup H\rangle$\textemdash\hspace{0.5mm} tenemos que $\{\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_1,...,\mathbf{u}_{n-m}\}\subseteq\langle L\cup H\rangle.$
+    Por lo cual $\mathbf{u}_1$ puede ser expresado como combinación lineal de los vectores $\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_2,...,\mathbf{u}_{n-m}.$ Sea $H=\{\mathbf{u}_2,...,\mathbf{u}_{n-m}\}$, entonces $L\cup H=\{\mathbf{v}_1,...,\mathbf{v}_{m+1},\mathbf{u}_2,...,\mathbf{u}_{n-m}\}$ y trivialmente tenemos que $\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_2,...,\mathbf{u}_{n-m}\in\langle L\cup H\rangle$ \textemdash lo cual también implica que $\mathbf{u}_1\in\langle L\cup H\rangle$. Por lo tanto, tenemos que $\{\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_1,...,\mathbf{u}_{n-m}\}\subseteq\langle L\cup H\rangle.$
 
-    En particular, el hecho de que $\{\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_1,...,\mathbf{u}_{n-m}\}\subseteq\langle L\cup H\rangle$ genere a $V$ implica que $\langle L\cup H\rangle=V.$ Ya que $H$ es un subconjunto de $G$ con $(n-m)-1=n-(m+1)$ vectores, el teorema se cumple para $m+1$, terminando así nuestra demostración.
+    Recordando que por hipótesis de inducción $\{\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_1,...,\mathbf{u}_{n-m}\}$ genera a $V$, entonces el hecho de que esté contenido en $L\cup H$ implica necesariamente que $\langle L\cup H\rangle=V.$ Finalmente, ya que $H$ es un subconjunto de $G$ con $(n-m)-1=n-(m+1)$ vectores, el teorema se cumple para $m+1$, terminando así nuestra demostración.
 
     \end{proof}
 \end{teorema}
 
+El teorema anterior se conoce como el teorema de \emph{reemplazamiento} ya que, partiendo de un conjunto linealmente independiente $L$ y otro conjunto $H$ que juntos cumplen $\langle L\cup H \rangle=V$ (sin que $L\cup H$ sea necesariamente l.i.), lo que estamos haciendo con cada paso consecutivo de la inducción es reemplazar a los vectores de $H$ por vectores que podemos añadir a $L$ tal que este conjunto siga siendo linealmente independiente y se siga cumpliendo que la unión de ambos genere a $V$. De esta forma, $L$ es un conjunto linealmente independiente que va creciendo y que cada vez necesita a menos vectores de $H$ para poder, a través de la unión generar a $V$. ¿Qué pasará cuando $L$ sea un conjunto linealmente independiente que no necesita a ningún vector de $H$ para generar a $V$\footnote{Recuerda para qué dijimos que nos serviría este teorema.}?. 
 
 \subsection{Dimensión} \label{Subsec:Dimensión}
 
-Como quizá habrás notado en los ejemplos de la sección anterior, pareciera que todas las bases de un mismo espacio vectorial tienen el mismo número de elementos. A continuación, demostraremos este hecho.
+Como quizá notaste en los ejemplos de la sección anterior, pareciera que todas las bases de un mismo espacio vectorial tienen el mismo número de elementos. A continuación, demostraremos este hecho.
 
 \begin{teorema} {4.2.1} 
 
@@ -1230,13 +1259,14 @@ El hecho de que todas las bases de un mismo espacio vectorial tengan el mismo n�
 
 \end{tcolorbox}
 
+Observemos que esta definición \emph{algebráica} de dimensión difiere de las definiciones geométricas y físicas usuales de dimensión. Por ejemplo, a pesar de que el espacio vectorial complejo $\mathbb{C}$ se represente en el plano cartesiano \textemdash el cual tiene dimensión geométrica $2$\textemdash\hspace{0.5mm}, este espacio vectorial es de dimensión (algebráica) $1$, como vimos en los ejemplos de la sección \ref{Ejem:Bases}. Otra observación es que la dimensión de un espacio vectorial no sólo depende del conjunto vectorial, sino también del campo sobre el cual se define (por ejemplo, el espacio vectorial $\mathbb{C}$ sobre $\mathbb{R}$ no puede tener dimensión $1$: ¿podrías demostrarlo?).
 
 \begin{teorema} {4.2.2}
     Sea $V$ un espacio vectorial de dimensión finita y $W$ un subespacio de $V$, entonces W tiene dimensión finita y $\text{dim}(W)\le \text{dim}(V).$ 
 
 \begin{proof}
 
-    Sea $\text{dim}(V)=n.$ Si $W=\{\mathbf{0}_W\} \implies \text{dim}(W)=0\le n.$ Consideremos ahora que $W$ contiene a un vector no nulo $\mathbf{x}_1$, entonces el conjunto $\{\mathbf{x}_1\}$ es linealmente independiente. Supongamos que seguimos agregando más vectores $\mathbf{x}_2,...,\mathbf{x}_k$ a este conjunto de tal forma que $\{\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_k\}$ sea linealmente independiente. Ya que ningún subconjunto de $V$ linealmente independiente puede tener más de $n$ elementos, este proceso debe detenerse para algún $k\le n.$ De acuerdo al Teorema 3.3.3.3, este conjunto genera a $W$, por lo cual forma una base de $W$, de donde concluimos que $\text{dim}(W)=k\le n.$
+    Sea $\text{dim}(V)=n.$ Si $W=\{\mathbf{0}\} \implies \text{dim}(W)=0\le n.$ Consideremos ahora que $W$ contiene a un vector no nulo $\mathbf{x}_1$, entonces el conjunto $\{\mathbf{x}_1\}$ es linealmente independiente. Supongamos que seguimos agregando más vectores $\mathbf{x}_2,...,\mathbf{x}_k$ de $W$ al conjunto $\{\mathbf{x}_1\} $ de tal forma que $\{\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_k\}$ sea linealmente independiente. Ya que $\text{dim}(V)=n,$ entonces cualquier base de $V$ tiene $n$ elementos. Esto implica que ningún subconjunto de $V$ linealmente independiente puede tener más de $n$ elementos, por lo cual el proceso anterior debe detenerse para algún $k\le n.$ De acuerdo al Teorema 3.3.3.3, este conjunto genera a $W$, por lo cual forma una base de $W$, de donde concluimos que $\text{dim}(W)=k\le n.$
 
 \end{proof}
 
@@ -1250,11 +1280,13 @@ En los teoremas anteriores demostramos que si $\text{dim}(V)=n$ entonces cualque
 
 \begin{proof}
 
-    Esta prueba se hará por contradicción. Sea $V$ un espacio vectorial con $\text{dim}(V)=n, \hspace{1.5mm} n\in\mathbb{N}$ y $B=\{\mathbf{b}_1, ..., \mathbf{b}_n\}\subset V$ un conjunto de $n$ vectores de $V$ que son linealmente independientes entre sí.
+    Esta prueba se hará por contradicción. 
 
-    Supongamos que $\langle B \rangle \neq V$, es decir, que $\exists\hspace{1.5mm} \mathbf{b}_{n+1}\in V$ tal que éste no puede ser expresado como combinación lineal de los vectores de $B$. Por definición, entonces dicho vector es linealmente independiente de los vectores de $B$. Por lo tanto, podemos definir al conjunto $B'\equiv\{\mathbf{b}_1, ...,\mathbf{b}_n, \mathbf{b}_{n+1}\}$, que tiene $n+1$ elementos linealmente independientes entre sí. Supongamos que, ahora sí, $\langle B' \rangle = V$. En ese caso, $B'$ cumpliría con las propiedades necesarias para ser una base de $V$. Sin embargo, ya que $\text{dim}(V)=n$, por lo demostrado en el Teorema 4.2.1 hemos llegado a una contradicción, ya que cualquier base de $V$ debe tener exactamente $n$ elementos.
+    Sea $V$ un espacio vectorial con $\text{dim}(V)=n, \hspace{1.5mm} n\in\mathbb{N}$ y $B=\{\mathbf{b}_1, ..., \mathbf{b}_n\}\subset V$ un conjunto de $n$ vectores de $V$ que son linealmente independientes entre sí.
+
+    Supongamos que $\langle B \rangle \neq V$, es decir, que $\exists\hspace{1.5mm} \mathbf{b}_{n+1}\in V$ tal que éste no puede ser expresado como combinación lineal de los vectores de $B$. Por definición, entonces dicho vector es linealmente independiente de los vectores de $B$. Por lo tanto, podemos definir al conjunto $B'\equiv\{\mathbf{b}_1, ...,\mathbf{b}_n, \mathbf{b}_{n+1}\}$, que tiene $n+1$ elementos linealmente independientes entre sí. Supongamos que, ahora sí, $\langle B' \rangle = V$; en ese caso, por definición, $B'$ sería una base de $V$. Sin embargo, ya que $\text{dim}(V)=n$, por lo demostrado en el Teorema 4.2.1 hemos llegado a una contradicción, ya que cualquier base de $V$ debe tener exactamente $n$ elementos.
     
-    Ya que la hipótesis $\langle B \rangle \neq V$ fue la que nos llevó a esta contradicción, entonces tenemos que $\langle B \rangle = V$, por lo cual $B$ \textemdash un conjunto arbitrario de $n$ elementos linealmente independientes de $V$\textemdash \hspace{1mm} \emph{es} una base.
+    Ya que la suposición $\langle B \rangle \neq V$ fue la que nos llevó a esta contradicción, tenemos que $\langle B \rangle = V$, por lo cual $B$ \textemdash un conjunto arbitrario de $n$ elementos linealmente independientes de $V$\textemdash \hspace{1mm} \emph{es} una base de $V$.
 
 \end{proof}
 
@@ -1267,10 +1299,10 @@ En los teoremas anteriores demostramos que si $\text{dim}(V)=n$ entonces cualque
 Para terminar esta sección, veremos algunas formas en las cuales se pueden construir bases de un espacio vectorial de dimensión $n$ a partir de conjuntos linealmente independientes con menos de $n$ elementos, o de conjuntos linealmente dependientes que generan $V$ y tienen más de $n$ elementos.
 
 \begin{teorema} {4.2.3.4}
-Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto linealmente dependiente que genera a $V$ puede reducirse hasta convertirse en una base de $V$.
+    Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto finito linealmente dependiente que genera a $V$ puede reducirse hasta convertirse en una base de $V$.
 
 \begin{proof}
-    Sea $D$ un conjunto linealmente dependiente tal que $\langle D \rangle =V$. Ya que $D$ es linealmente dependiente, entonces existe un vector $\mathbf{v}$ que puede ser expresado como combinación lineal de los demás por lo cual, definiendo $D'=D\setminus\{\mathbf{v}\}$ tenemos que $\mathbf{v}\in\langle D' \rangle.$ Por el Teorema 3.2.1 de la sección \ref{Espacio_generado_y_conjunto_generador} sabemos que $\langle D' \rangle =\langle D \rangle =V$. Si el conjunto generador $D'$ no es linealmente independiente, podemos seguir retirando vectores de la misma forma sin afectar su espacio generado hasta obtener un conjunto linealmente independiente que genera a $V$, i.e., una base para $V$.
+    Sea $D$ un conjunto finito linealmente dependiente tal que $\langle D \rangle =V$. Ya que $D$ es linealmente dependiente, entonces existe un vector $\mathbf{v}$ que puede ser expresado como combinación lineal de los demás por lo cual, definiendo $D'=D\setminus\{\mathbf{v}\}$ tenemos que $\mathbf{v}\in\langle D' \rangle$, donde claramente $D'$ también es finito. Por el Teorema 3.2.1 de la sección \ref{Espacio_generado_y_conjunto_generador} sabemos que $\langle D' \rangle =\langle D \rangle =V$. Si el conjunto generador $D'$ no es linealmente independiente, podemos seguir retirando vectores de la misma forma sin afectar su espacio generado hasta obtener un conjunto linealmente independiente que genera a $V$, es decir, una base para $V$.
 \end{proof}
 
 \end{teorema}
@@ -1279,7 +1311,7 @@ Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto line
 Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto linealmente independiente con menos de $n$ elementos no genera a $V$, pero puede extenderse hasta convertirse en una base de $V$.
 
 \begin{proof}
-Sea $L$ un conjunto linealmente independiente con $m$ elementos, donde $m<n$. Entonces $L$ no genera a $V$ ya que, de lo contrario, sería una base de $V$, lo cual contradice al Teorema 4.2.1. Sea $S$ un conjunto generador de $V$. Ya que $L$ no genera a $V$, debe haber algún vector en $\mathbf{v}\in S$ tal que $\mathbf{v}\notin \langle L \rangle$. Definimos ahora al conjunto $L'=L\cup \{\mathbf{v}\}$ el cual, por el Teorema 3.3.3.3 de la sección \ref{Teo:Dependencia_e_independencia_lineal}, es linealmente independiente. Si $L'$ no genera a $V$, podemos repetir el proceso hasta llegar a un conjunto linealmente independiente que genera a $V$, i.e., una base para $V$.
+Sea $L$ un conjunto linealmente independiente con $m$ elementos, donde $m<n$. Entonces $L$ no genera a $V$ ya que, de lo contrario, sería una base de $V$ y tendríamos dos bases de $V$ con diferente cardinalidad, lo cual contradice al Teorema 4.2.1. Sea $S$ un conjunto generador de $V$. Ya que $L$ no genera a $V$, debe haber algún vector en $\mathbf{v}\in S$ tal que $\mathbf{v}\notin \langle L \rangle$. Definimos ahora al conjunto $L'=L\cup \{\mathbf{v}\}$ el cual, por el Teorema 3.3.3.3 de la sección \ref{Teo:Dependencia_e_independencia_lineal}, es linealmente independiente. Si $L'$ no genera a $V$, podemos repetir el proceso hasta llegar a un conjunto linealmente independiente que genera a $V$, i.e., una base para $V$.
 \end{proof}
 
 \end{teorema}
@@ -1288,7 +1320,7 @@ Sabiendo que un mismo espacio vectorial puede tener muchas bases diferentes \tex
 
 \subsection{Ortogonalización y ortonormalización}
 
-Recordemos de la sección \ref{Subsec:Interpretación_geométrica_del_producto_escalar} que dos vectores $\mathbf{u}$ y $\mathbf{v}$ son ortogonales si $(\mathbf{u},\mathbf{v})=0$. Supongamos que este no es el caso, i.e., que $(\mathbf{u},\mathbf{v})\neq 0$. Existe una manera de modificar cualquiera de los vectores de tal forma que se vuelva ortogonal al otro: simplemente definimos $\mathbf{u'}=\mathbf{u}-(\mathbf{u},\mathbf{v})\frac{\mathbf{v}}{||\mathbf{v}||^2}$ y comprobamos que $$(\mathbf{u'},\mathbf{v})=\big(\mathbf{u}-(\mathbf{u},\mathbf{v})\frac{\mathbf{v}}{||\mathbf{v}||^2},\mathbf{v}\big)=(\mathbf{u},\mathbf{v})-\big(\frac{(\mathbf{u},\mathbf{v})}{||\mathbf{v}||^2}\mathbf{v},\mathbf{v}\big)=(\mathbf{u},\mathbf{v})-\frac{(\mathbf{u},\mathbf{v})}{(\mathbf{v},\mathbf{v})}(\mathbf{v},\mathbf{v})=(\mathbf{u},\mathbf{v})-(\mathbf{u},\mathbf{v})\cdot 1=0.$$ 
+Recordemos de la sección \ref{Subsec:Interpretación_geométrica_del_producto_escalar} que dos vectores $\mathbf{u}$ y $\mathbf{v}$ son ortogonales si $(\mathbf{u},\mathbf{v})=0$. Supongamos que este no es el caso, i.e., que $(\mathbf{u},\mathbf{v})\neq 0$\footnote{Aquí implícitamente estamos asumiendo que $\mathbf{u}$ y $\mathbf{v}$ son vectores no nulos ya que, por definición, el producto escalar \emph{distingue} al vector nulo (ver sección \ref{Def:Producto_escalar}).}. Existe una manera de modificar cualquiera de los vectores de tal forma que se vuelva ortogonal al otro: simplemente definimos $\mathbf{u'}=\mathbf{u}-(\mathbf{u},\mathbf{v})\frac{\mathbf{v}}{||\mathbf{v}||^2}$ y comprobamos que $$(\mathbf{u'},\mathbf{v})=\big(\mathbf{u}-(\mathbf{u},\mathbf{v})\frac{\mathbf{v}}{||\mathbf{v}||^2},\mathbf{v}\big)=(\mathbf{u},\mathbf{v})-\big(\frac{(\mathbf{u},\mathbf{v})}{||\mathbf{v}||^2}\mathbf{v},\mathbf{v}\big)=(\mathbf{u},\mathbf{v})-\frac{(\mathbf{u},\mathbf{v})}{(\mathbf{v},\mathbf{v})}(\mathbf{v},\mathbf{v})=(\mathbf{u},\mathbf{v})-(\mathbf{u},\mathbf{v})\cdot 1=0.$$ 
 
 A esto se le conoce como un proceso de \emph{ortogonalización}. Observemos que, si $\mathbf{v}$ es un vector unitario (i.e., si $||\mathbf{v}||=1$) entonces la definición de $\mathbf{u'}$ se reduce a $\mathbf{u'}=\mathbf{u}-(\mathbf{u},\mathbf{v})\mathbf{v}$, simplificando el proceso. Por razones que irán quedando más claras con la experiencia, a menudo es conveniente trabajar con bases de vectores que sean ortogonales entre sí y, en casos específicos, que además sean unitarios, por lo cual damos las siguientes definiciones..
 
@@ -1296,7 +1328,7 @@ A esto se le conoce como un proceso de \emph{ortogonalización}. Observemos que,
 
 \begin{tcolorbox}
 
-    \underline{Def.} Sea $O=\{\mathbf{o}_1, \mathbf{o}_2, ..., \mathbf{o}_n\}$ una base de un espacio vectorial $V$. Decimos que $O$ es una \emph{base ortogonal} si cada uno de sus vectores es ortogonal a todos los demás, i.e., si $(\mathbf{o}_i,\mathbf{o}_j)=0\hspace{3mm}\forall\hspace{1.5mm} o_i, o_j\in O, i\neq j$.
+    \underline{Def.} Sea $O=\{\mathbf{o}_1, \mathbf{o}_2, ..., \mathbf{o}_n\}$ una base de un espacio vectorial $V$. Decimos que $O$ es una \emph{base ortogonal} si cada uno de sus vectores es ortogonal a todos los demás, i.e., si $(\mathbf{o}_i,\mathbf{o}_j)=0\hspace{3mm}\forall\hspace{1.5mm} \mathbf{o}_i, \mathbf{o}_j\in O, \hspace{1.5mm} i\neq j$.
 
 \vspace{3mm}
 
@@ -1307,13 +1339,19 @@ A esto se le conoce como un proceso de \emph{ortogonalización}. Observemos que,
 Antes de ver cómo podemos construir bases ortogonales y ortonormales, el siguiente teorema y corolario nos ayudarán a comenzar a entender su utilidad.
 
 \begin{teorema} {4.3.1.1}
- ea $V$ sobre $K$ un espacio vectorial con producto escalar y $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}$ un subconjunto ortogonal de $V$ con $\mathbf{v}_i\neq\mathbf{0}\hspace{3mm}\forall\hspace{1.5mm} 1\leq i\leq n.$ Si $\mathbf{u}\in \langle S \rangle \implies$ $$\mathbf{u} = \sum_{i=1}^n \frac{(\mathbf{u},\mathbf{v}_i)}{||\mathbf{v}_i||^2}\mathbf{v}_i.$$
+Sea $V$ sobre $K$ un espacio vectorial con producto escalar y $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}$ un subconjunto ortogonal de $V$ con $\mathbf{v}_i\neq\mathbf{0}\hspace{3mm}\forall\hspace{1.5mm} 1\leq i\leq n.$ Si $\mathbf{u}\in \langle S \rangle \implies$ $$\mathbf{u} = \sum_{i=1}^n \frac{(\mathbf{u},\mathbf{v}_i)}{||\mathbf{v}_i||^2}\mathbf{v}_i.$$
 
 \begin{proof}
-    Ya que $\mathbf{u}\in\langle S \rangle \implies \mathbf{u}=c_1\mathbf{v}_1+...+c_n\mathbf{v}_n=\sum_{i=1}^n c_i\mathbf{v}_i$ para algunos coeficientes $c_i\in K$. Para ver precisamente quiénes son esos coeficientes $c_i$, observemos que para $1\leq j\leq n$ $$(\mathbf{u},\mathbf{v}_j)=\big ( \sum_{i=1}^n c_i\mathbf{v}_i, \mathbf{v}_j \big ).$$ \noindent Aplicando las propiedades del producto escalar y la definición de conjunto ortogonal, tenemos que $$(\mathbf{u},\mathbf{v}_j)=\sum_{i=1}^n (c_i\mathbf{v}_i, \mathbf{v}_j)= \sum_{i=1}^n c_i(\mathbf{v}_i,\mathbf{v}_j)=c_j(\mathbf{v}_j,\mathbf{v}_j)=c_j||\mathbf{v}_j||^2. $$ Podemos despejar lo anterior para obtener $c_j=\frac{(\mathbf{u},\mathbf{v}_j)}{||\mathbf{v}_j||^2}.$
+    Ya que $\mathbf{u}\in\langle S \rangle \implies \mathbf{u}=c_1\mathbf{v}_1+...+c_n\mathbf{v}_n=\sum_{i=1}^n c_i\mathbf{v}_i$ para algunos coeficientes $c_i\in K$. Para ver precisamente quiénes son esos coeficientes $c_i$, observemos que para $1\leq j\leq n$ $$(\mathbf{u},\mathbf{v}_j)=\big ( \sum_{i=1}^n c_i\mathbf{v}_i, \mathbf{v}_j \big ).$$ \noindent Aplicando las propiedades del producto escalar y la definición de conjunto ortogonal, tenemos que $$(\mathbf{u},\mathbf{v}_j)=\sum_{i=1}^n (c_i\mathbf{v}_i, \mathbf{v}_j)= \sum_{i=1}^n c_i(\mathbf{v}_i,\mathbf{v}_j)=c_j(\mathbf{v}_j,\mathbf{v}_j)=c_j||\mathbf{v}_j||^2\iff c_j||\mathbf{v}_j||^2=(\mathbf{u},\mathbf{v}_j)\iff c_j=\frac{(\mathbf{u},\mathbf{v}_j)}{||\mathbf{v}_j||^2}.$$ Sustityuendo, tenemos que \[
+        \mathbf{u}=\sum_{i=1}^n c_i \mathbf{v}_i=\sum_{i=1}^n \frac{(\mathbf{u},\mathbf{v}_i)}{||\mathbf{v}_i||^2}\mathbf{v}_i
+    ,\] \noindent como se quería demostrar originalmente. 
 \end{proof}
 
-    Nótese que, en particular, si el conjunto $S$ es \emph{ortonormal}, entonces $c_j=(\mathbf{u},\mathbf{v}_j)\mathbf{v}_j$.
+Habíamos visto con anterioridad que cualquier vector puede ser expresado como una combinación lineal única de elementos de su base; sin embargo, no habíamos entrado en detalles sobre cómo obtener los coeficientes necesarios para esto más allá de plantear y resolver un sistema de ecuaciones. Si aplicamos el teorema anterior a una base ortogonal $O$ de un espacio vectorial $V$, entonces $\forall\hspace{1.5mm} \mathbf{u}\in V $ tenemos una \emph{receta} para obtener directamente los coeficientes necesarios para expresar a $\mathbf{v}$ como combinación lineal de los vectores de $O$: de ahí viene la utilidad de las bases ortogonales.
+
+    Nótese que, en particular, si el conjunto $S$ es \emph{ortonormal}, entonces $c_j=(\mathbf{u},\mathbf{v}_j)\mathbf{v}_j$ en la demostración anterior y el resultado que obtuvimos se reduce a \[
+        \mathbf{u} = \sum_{i=1}^n (\mathbf{u},\mathbf{v}_i)\mathbf{v}_i
+    .\] \noindent Por lo tanto, si aplicamos el Teorema 4.3.1.1 a una base ortonormal $N$, los coeficientes mencionados en el párrafo anterior son simplemente el producto escalar del vector $\mathbf{u}$ con cada vector de la base ortonormal.
 
 \end{teorema}
 
@@ -1324,10 +1362,10 @@ Sea $V$ sobre $K$ un espacio vectorial con producto interior y $S$ un subconjunt
     Supongamos que $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}.$ Fijamos nuestra atención en la combinación lineal $\sum_{i=1}^n c_i\mathbf{v}_i=\mathbf{0}$, con $c_i\in K$. Aplicando el Teorema 4.3.1.1 con $\mathbf{u}=\mathbf{0}$ tenemos que $c_i=\frac{(\mathbf{0},\mathbf{v}_i)}{||\mathbf{v}_i||^2}=0\hspace{3mm}\forall\hspace{1.5mm}  c_i\implies S$ es linealmente independiente.
 \end{proof}
 
-Este corolario y el teorema del cual se desprende nos dicen que los conjuntos ortogonales son buenos candidatos para bases, ya que son linealmente independientes y el cálculo de los coeficientes $c_i$ es sumamente sencillo. En particular, aplicando el Corolario 10.1 a los conjuntos ortogonales vemos que, si $V$ es un espacio vectorial de dimensión $n$, entonces cualquier conjunto ortogonal de $n$ vectores es una base de $V$. 
+Observemos que este corolario es una genearlización del primer ejerrcicio de repaso de la sección 3. Además, este corolario y el teorema del cual se desprende nos dicen que los conjuntos ortogonales son buenos candidatos para bases, ya que son linealmente independientes y el cálculo de los coeficientes $c_i$ es sumamente sencillo. En particular, aplicando este corolario a los conjuntos ortogonales vemos que, si $V$ es un espacio vectorial de dimensión $n$, entonces cualquier conjunto ortogonal de $n$ vectores es una base de $V$ (ver teorema 4.2.3). 
 \end{corolario}
 
-Así como a partir de cualquier conjunto linealmente independiente de un espacio vectorial $V$ se puede construir una base para $V$ se puede, además, realizar un proceso de \emph{ortogonalización} u \emph{ortonormalización} de esa misma base. La demostración de este hecho\textemdash quetambién nos deletrea el proceso a seguir para lograrlo\textemdash \hspace{0.5mm} se conoce como el Teorema de Gram-Schmidt.
+Así como a partir de cualquier conjunto linealmente independiente de un espacio vectorial $V$ se puede construir una base para $V$ se puede, además, realizar un proceso de \emph{ortogonalización} u \emph{ortonormalización} de esa misma base. La demostración de este hecho\textemdash que también nos deletrea el proceso a seguir para lograrlo\textemdash \hspace{0.5mm} se conoce como el Teorema de Gram-Schmidt.
 
 \subsubsection{Teorema de Gram-Schmidt} \label{Teo:Gram-Schmidt}
 
@@ -1343,11 +1381,11 @@ Si $n=1$, entonces el teorema se demuestra trivialmente, ya que $S'=S$, por lo c
 
     \vspace{3mm}
 \textbf{Hipótesis de inducción}
-    Supongamos que el conjunto $S'_{k-1}=\{\mathbf{v}_1, ..., \mathbf{v}_{k-1}\}$ ha sido construido siguiendo el proceso descrito al inicio de la demostración y que cumple las propiedades deseadas, es decir, que es un conjunto ortogonal tal que $\langle S'_{k-1} \rangle = \langle S_{k-1} \rangle.$
+Supongamos que el conjunto $S'_{k-1}=\{\mathbf{v}_1, ..., \mathbf{v}_{k-1}\}$ ha sido construido siguiendo el proceso descrito en el planteamiento del teorema y que cumple las propiedades deseadas, es decir, que es un conjunto ortogonal tal que $\langle S'_{k-1} \rangle = \langle S_{k-1} \rangle,$ donde $S_{k-1}$ es linealmente independiente.
 
     \vspace{3mm} 
 \textbf{Paso inductivo}
-    Ahora, sea $S'_k=\{\mathbf{v}_1, ..., \mathbf{v}_{k-1}, \mathbf{v}_k\}$ tal que $$\mathbf{v}_k=\mathbf{u}_k-\sum_{j=1}^{k-1}\frac{(\mathbf{u}_k,\mathbf{v}_j)}{||\mathbf{v}_j||^2}\mathbf{v}_j.$$
+    Sea $S_k$ un conjunto linealmente independiente y $S'_k=\{\mathbf{v}_1, ..., \mathbf{v}_{k-1}, \mathbf{v}_k\}$ tal que $$\mathbf{v}_k=\mathbf{u}_k-\sum_{j=1}^{k-1}\frac{(\mathbf{u}_k,\mathbf{v}_j)}{||\mathbf{v}_j||^2}\mathbf{v}_j.$$
 
     Si $\mathbf{v}_k=\mathbf{0}$ entonces la ecuación anterior implicaría que $\mathbf{u}_k\in\langle S'_{k-1} \rangle = \langle S_{k-1} \rangle,$ lo cual contradice el hecho de que $S_k$ es un conjunto linealmente independiente, por lo cual forzozamente $\mathbf{v}_k\neq\mathbf{0}.$ 
 
@@ -1356,32 +1394,37 @@ Si $n=1$, entonces el teorema se demuestra trivialmente, ya que $S'=S$, por lo c
 Finalmente, por construcción $S'_k\subseteq \langle S_k \rangle$, lo cual también implica que $\langle S'_k \rangle \subseteq \langle S_k \rangle;$ análogamente, por la forma en que construimos $S'_k$, $S_k\subseteq \langle S'_k \rangle$, lo cual implica que $\langle S_k \rangle \subseteq \langle S'_k \rangle.$ Juntando ambos resultados, concluimos que $\langle S_k \rangle = \langle S'_k \rangle ,$ como queríamos demostrar.
 
 \end{proof}
-    Aplicando este teorema a bases, nos dice que a partir de una base arbitraria $B$ de un espacio vectorial $V$, se puede construir una base ortogonal $O$ para ese mismo espacio $V$, sólo hace falta escoger algún vector $\mathbf{b}_1\in B$ con el cual definir $\mathbf{o}_1\equiv\mathbf{b}_1$ y después seguir el procedimiento descrito en el teorema. En particular, se podría modificar ligeramente el procedimiento definiendo al primer vector de la nueva base como un vector unitario. Supongamos que definimos un nuevo conjunto generador $N$ con $\mathbf{n}_1=\frac{\mathbf{b}_1}{||\mathbf{b}_1||^2}$ y después, cada vez que obtenemos un nuevo vector ortogonal a los anteriores siguiendo el proceso de Gram-Schmidt, lo normalizamos antes de añadirlo a $N$: en este caso, el conjunto generador resultante será una base \emph{ortonormal} de $V$.
+    Aplicando este teorema a bases, nos dice que a partir de una base arbitraria $B$ de un espacio vectorial $V$, se puede construir una base ortogonal $O$ para ese mismo espacio $V$: sólo hace falta escoger algún vector $\mathbf{b}_1\in B$ con el cual definir $\mathbf{o}_1\equiv\mathbf{b}_1$ y después seguir el procedimiento descrito en el teorema. 
+
+    Además, observemos que se podría modificar ligeramente el procedimiento seguido en el teorema anterior definiendo al primer vector de la nueva base como un vector unitario. Es más, supongamos que definimos un nuevo conjunto generador $N$ con $\mathbf{n}_1=\frac{\mathbf{b}_1}{||\mathbf{b}_1||^2}$ y después, cada vez que obtenemos un nuevo vector ortogonal a los anteriores siguiendo el proceso del Teorema 4.3.2.1, lo normalizamos antes de añadirlo a $N$: en este caso, el conjunto generador resultante será una base \emph{ortonormal} de $V$. Es decir, podríamos hacer un Teorema de Gram-Scmidt \emph{modificado} de tal forma que a partir de cualquier subconjunto linealmente independiente podamos generar un subconjunto ortonormal que genere al mismo subespacio que el anterior. Aplicado a bases, estaríamos asegurando que a partir de cualquier base $B$ de un espacio vectorial $V$, se puede construir una base ortonormal para $V$, además de detallar el proceso mediante el cual se contstruye dicha base ortonormal.  
 
 \end{teorema}
 
-\subsubsection{Ejemplos de ortogonalización y ortonormalización} 
-
-
-
+%\subsubsection{Ejemplos de ortogonalización y ortonormalización} 
 
 \subsection{Ejercicios de repaso}
 
 \subsubsection{Bases}
-\begin{itemize}
-    \item Sea $K$ un campo arbitrario. En el ejercicio $1.5.2.4$ de la sección \ref{Ejer:Espacios_vectoriales} demostraste que $K\times K\times ...\times K=K^n, n\in\mathbb{N}$ era un espacio vectorial. Sea $\mathbf{e}_1=\begin{bmatrix} 1 & 0 & 0 & 0 & ... & 0 \end{bmatrix}^T, \mathbf{e}_2=\begin{bmatrix} 0 & 1 & 0 & 0 & ... & 0 \end{bmatrix}^T, ..., \mathbf{e}_n = \begin{bmatrix} 0 & 0 & 0 & 0 & ... & 1 \end{bmatrix}^T$. Demuestra que $\{\mathbf{e}_1, \mathbf{e}_2, ..., \mathbf{e}_n$ es una base para $K^n$. Nótese que esta base es ortonormal; a esta base se le conoce como la \emph{base canónica} del espacio vectorial $K^n$.
-\end{itemize}
-
-
+\begin{enumerate}
+    \item Sea $K$ un campo arbitrario. En el ejercicio $1.5.2.4$ de la sección \ref{Ejer:Espacios_vectoriales} demostraste que $K\times K\times ...\times K=K^n, n\in\mathbb{N}$ era un espacio vectorial sobre $K$. Sea $\mathbf{e}_1=\begin{bmatrix} 1 & 0 & 0 & 0 & ... & 0 \end{bmatrix}^T, \mathbf{e}_2=\begin{bmatrix} 0 & 1 & 0 & 0 & ... & 0 \end{bmatrix}^T, ..., \mathbf{e}_n = \begin{bmatrix} 0 & 0 & 0 & 0 & ... & 1 \end{bmatrix}^T$. Demuestra que $\{\mathbf{e}_1, \mathbf{e}_2, ..., \mathbf{e}_n\}$ es una base para $K^n$ sobre $K$. En particular, demuestra que es una base ortonormal. A esta base se le conoce como la \emph{base canónica} del espacio vectorial $K^n$ sobre $K$.  (1.25 ptos.)
+    \item Sea $d_i$ el $i$-ésimo dígito de tu número de cuenta. Considera el conjunto $\{\begin{bmatrix} d_1&d_2&d_3 \end{bmatrix}^T, \begin{bmatrix} d_4&d_5&d_6 \end{bmatrix}^T,\\ \begin{bmatrix} d_7&d_8&d_9 \end{bmatrix}^T\}$. ¿Forma una base para $\mathbb{R}^3$? Si sí lo es, demuéstralo. Si no, demuestra por qué no es base de $\mathbb{R}^3$ y realiza las modificaciones necesarias para obtener una base de $\mathbb{R}$. (1.25 ptos.)
+    \item Sea $B$ la base que obtuviste en el ejercicio anterior. Expresa a los vectores $\begin{bmatrix} d_9&d_8&d_7 \end{bmatrix}^T , \begin{bmatrix} d_6&d_5&d_4 \end{bmatrix}^T , \\ \begin{bmatrix} d_3&d_2&d_1 \end{bmatrix}^T \in \mathbb{R}^3$ como combinaciones lineales de los vectores de $B$. (1.25 ptos.)
+\end{enumerate}
 
 \subsubsection{Dimensión}
-\begin{itemize}
-    \item Sea $V$ un espacio vectorial de dimensión $n$ y $D$ un conjunto linealmente dependiente tal que $\langle D \rangle =V$. Demuestra que $D$ tiene más de $n$ elementos.
-\end{itemize}
+\begin{enumerate}
+    \item Sea $V$ un espacio vectorial de dimensión $n$ y $D$ un conjunto linealmente dependiente tal que $\langle D \rangle =V$. Demuestra que $D$ tiene más de $n$ elementos. (1.25 ptos.)
+    \item Demuestra que cualquier base del espacio vectorial $\mathbb{C}$ sobre $\mathbb{R}$ debe tener más de un elemento y que, por lo tanto, la $\text{dim}((\mathbb{C},\mathbb{C}))\neq \text{dim}((\mathbb{C},\mathbb{R})).$ (1.25 ptos.)
+    \item Da un ejemplo distinto a $\mathbb{C}$ en donde la dimensión (algebráica) de un espacio vectorial no corresponda con la dimensión (geométrica) de su representación geométrica. Además, da un ejemplo distinto al del ejercicio anterior en donde la dimensión de un espacio vectorial cambie según el campo sobre el cual está definido. (1.25 ptos.)
+\end{enumerate}
 
 
 \subsubsection{Ortogonalización y ortonormalización}
-
+\begin{enumerate}
+    \item Sea $B$ la base que obtuviste del ejercicio 4.4.1.2. Aplica el Teorema de Gram-Schmidt y construye una base ortogonal de $\mathbb{R}^3$ a partir de $B$. (1.25 ptos.)
+    \item Aplica el Teorema de Gram-Schmidt \emph{modificado} y construye una base ortonormal a partir de $B$. (1.25 ptos.)
+\item Sea $P_0(x)=1, P_1(x)=x, P_2(x)=\frac{3x^2-1}{2}, P_3(x)=\frac{5x^3-3x}{2}.$ Demuestra que el conjunto $\{P_0,P_1,P_2,P_3\}$ es una base del espacio vectorial $P^3$ y dice si es ortogonal y/o ortonormal en el intervalo $[-1,1]$ (nota: tendrás que utilizar la definición de producto escalar para funciones vista en la sección \ref{Ejem:Producto_escalar}). (1.5 ptos. extra)*
+\end{enumerate}
 
 \newpage
 \section{Definición de transformación lineal y espacio de transformaciones lineales, núcleo e imagen de una transformación lineal, nulidad y rango}
@@ -1399,23 +1442,61 @@ En general, se pueden definir funciones arbitrarias que vayan de un espacio vect
     Si juntamos ambas propiedades, podemos observar que las transformaciones lineales son compatibles con las combinaciones lineales: $$T\big ( \sum_{i=1}^n c_i\mathbf{v}_i \big ) = T(c_1\mathbf{v}_1+...+c_n\mathbf{v}_n)=T(c_1\mathbf{v}_1)+...+T(c_n\mathbf{v}_n)=c_1 T(\mathbf{v}_1)+...+c_n T(\mathbf{v}_n)=\sum_{i=1}^n c_i T(\mathbf{v}_i),$$ lo cual se demuestra fácilmente por inducción.  
 \end{tcolorbox}
 
-\subsubsection{Ejemplos de transformaciones lineales}
+\subsubsection{Ejemplos de transformaciones lineales} \label{Ejem:Transformaciones_lineales}
 
-En cualquier espacio vectorial $V$, la transformación identidad $I_V:V\to V$ dada por $I_V(\mathbf{x})=\mathbf{x}, \hspace{2mm}\forall\hspace{1.5mm}\mathbf{x}\in V$ es una transformación lineal. Además, para cualesquiera dos espacios vectoriales $V$ y $W$, la transformación lineal $T_0:V\to W$ dada por $T_0(\mathbf{v})=\mathbf{0}_W, \hspace{2mm}\forall\hspace{1.5mm}\mathbf{x}\in V$, donde $\mathbf{0}_W$ es el vector nulo de $W$, es una transformación lineal. 
+\textbf{Identidad} 
 
-En los espacios vectoriales reales $\mathbb{R}^2$ y $\mathbb{R}^3$, las reflexiones con respecto a los ejes y al origen del plano cartesiano son transformaciones lineales. En general, esto se cumple también para $\mathbb{R}^n, n\in\mathbb{N}$ \textemdash aunque para $n\ge 4$ no sea fácil de visualizar. Además, se cumple para los espacios vectoriales complejos $\mathbb{C}^n, n\in\mathbb{N}.$ 
+En cualquier espacio vectorial $V$, la transformación identidad $I_V:V\to V$ dada por $I_V(\mathbf{x})=\mathbf{x}, \hspace{2mm}\forall\hspace{1.5mm}\mathbf{x}\in V$ es una transformación lineal. 
+\vspace{3mm}
 
-En $P^n$, el espacio vectorial real de funciones polinomiales reales de grado $\leq n$, la derivada $\frac{d}{dx}:P^n\to P^{n-1}$ es una transformación lineal. Por otro lado, si restringimos a los polinomios de $P^n$ a un intervalo $[a,b]$, entonces la integral $\int_a^b dx:P^n\to P^{n+1}$ también es una transformación lineal. Ambos hechos se desprenden de las propiedades $$\frac{d}{dx}(cf(x))=c\frac{d}{dx}f(x), \hspace{1.5mm} \frac{d}{dx}(f(x)+g(x))=\frac{d}{dx}f(x)+\frac{d}{dx}g(x),$$ $$\int cf(x) dx=c\int f(x) dx\hspace{2.5mm}\text{y}\hspace{2mm} \int f(x)+g(x) dx = \int f(x) dx + \int g(x) dx,$$ vistas en tus cursos de Cálculo I y II, las cuales eran llamadas, apropiadamente, \emph{propiedades lineales de la derivada y la integral}.
+\textbf{Producto por un escalar} 
 
-Sea $V$ un espacio vectorial real con producto escalar. Entonces, por lo observado en la sección \ref{Def:Producto_escalar}, en este caso el producto escalar es una operación lineal \emph{en ambas entradas}, también conocida como \emph{transformación bilineal} o, simplemente, \emph{forma bilineal}.
+Sea $V$ sobre $K$ un espacio vectorial con $\mathbf{v} \in V$ y $a\in K$. Definimos a la transformación lineal $T_a:V\to V$ como $T_a(\mathbf{v}) = a\mathbf{v}$ y observamos que $\forall \hspace{1.5mm} \mathbf{v}, \mathbf{u}\in V, \hspace{3mm} \forall\hspace{1.5mm} b\in K$ tenemos que \[
+    T_a(b\mathbf{u}+\mathbf{v})=a(b\mathbf{u}+\mathbf{v})=a(b\mathbf{u})+a\mathbf{v}=b(a\mathbf{u})+a\mathbf{v}=b(T_a(\mathbf{u}))+bT_a(\mathbf{v})
+,\] \noindent por lo cual $T_a$ es una transformación lineal $\forall \hspace{1.5mm} a\in K.$ En particular, $T_0$ es una transformación lineal que envía a todos los vectores de $V$ al vector nulo de $V$, conocida como la \emph{transformación nula}.
+\vspace{3mm}
+
+\textbf{Rotaciones en dos dimensiones} 
+
+Sea $\mathbf{v}=\begin{bmatrix} v_1&v_2 \end{bmatrix}^T$ un vector de $\mathbb{R}^2$ que forma un ángulo $\alpha$ con el eje horizontal del plano cartesiano. Entonces, la transformación $T_{\theta}:\mathbb{R}^2\to \mathbb{R}^2$ dada por \[
+T_{\theta}(\mathbf{v}) = \begin{bmatrix}\sqrt{v_1^2 + v_2^2}\cos(\alpha+\theta)&\hspace{3mm} \sqrt{v_1^2 + v_2^2}\sin(\alpha+\theta) \end{bmatrix}^T = \begin{bmatrix} v_1\cos\theta-v_2\sin\theta &\hspace{3mm}  v_1\sin\theta + v_2\cos\theta \end{bmatrix}^T, 
+\] \noindent para cualquier ángulo $\theta$, es una transformación lineal. Geométricamente, lo que hace esta transformación lineal es rotar $\theta$ grados a cualquier vector $\mathbf{v}\in \mathbb{R}^2$.
+\vspace{3mm}
+
+\textbf{Reflexiones} 
+
+En $\mathbb{R}^3$, las reflexiones con respecto a los ejes $\hat{x},\hat{y}$ y $\hat{z}$, los planos $\hat{x}\hat{y}, \hat{y}\hat{z}, \hat{x}\hat{z}$ y el origen $O$ del espacio cartesiano son transformaciones lineales. Podemos definirlas como sigue: \[
+    T_{\hat{x}}(\mathbf{v}) = \begin{bmatrix} v_1&-v_2&-v_3 \end{bmatrix}^T; \hspace{3mm} T_{\hat{y}}(\mathbf{v})=\begin{bmatrix} -v_1&v_2&-v_3 \end{bmatrix}^T; \hspace{3mm} T_{\hat{z}}(\mathbf{v}) = \begin{bmatrix} -v_1 & -v_2 & v_3 \end{bmatrix}^T
+    ;\]\[ T_{\hat{x}\hat{y}}(\mathbf{v})=\begin{bmatrix} v_1&v_2&-v_3 \end{bmatrix}^T; \hspace{3mm}  T_{\hat{y}\hat{z}}(\mathbf{v}) = \begin{bmatrix} -v_1&v_2&v_3 \end{bmatrix}^T; \hspace{3mm} T_{\hat{x}\hat{z}} = \begin{bmatrix} v_1&-v_2&v_3 \end{bmatrix}^T; \hspace{3mm}  T_O(\mathbf{v})=\begin{bmatrix} -v_1&-v_2&-v_3 \end{bmatrix}^T 
+.\] \noindent En general, esto se cumple también para $\mathbb{R}^n, n\in\mathbb{N}$ definiendo las transformaciones de manera análoga \textemdash aunque para $n\ge 4$ no sea fácil de visualizar. Además, se cumple para los espacios vectoriales complejos $\mathbb{C}^n, n\in\mathbb{N}.$ 
+\vspace{3mm}
+
+\textbf{Proyecciones}
+
+Recordando la definición algebráica de la proyección $\mathbf{u}$ sobre $\mathbf{v}$ dada en la sección \ref{Subsec:Producto_escalar_y_proyecciones} \[
+    P_{\mathbf{u}}(\mathbf{v}) = \frac{(\mathbf{v},\mathbf{u})}{||\mathbf{u}||}
+,\] \noindent donde $\mathbf{u}\neq\mathbf{0},$ observemos que $\forall \hspace{1.5mm} a\in K, \hspace{3mm} \forall\hspace{1.5mm}\mathbf{v},\mathbf{w}\in V$ se cumple que \[
+P_{\mathbf{u}}(a\mathbf{v}+\mathbf{w})=\frac{(a\mathbf{v}+\mathbf{w},\mathbf{u})}{||\mathbf{u}||} = \frac{a(\mathbf{v},\mathbf{u})+(\mathbf{w},\mathbf{u})}{||\mathbf{u}||} = a\frac{(\mathbf{v},\mathbf{u})}{||\mathbf{u}||}+\frac{(\mathbf{w},\mathbf{u})}{||\mathbf{u}||}=a P_{\mathbf{u}}(\mathbf{v})+P_{\mathbf{u}}(\mathbf{w})  
+;\] \noindent es decir que, en general, la proyección de un vector sobre otro es una transformación lineal (¿a qué propiedades del producto escalar se debe esto?).
+
+\vspace{3mm}
+
+\textbf{Derivadas e integrales} 
+
+En $P^n$, el espacio vectorial real de funciones polinomiales reales de grado $\leq n$, la derivada $\frac{d}{dx}:P^n\to P^{n-1}$ es una transformación lineal. Por otro lado, si restringimos a los polinomios de $P^n$ a un intervalo $[a,b]$, entonces la integral $\int_a^b dx:P^n\to P^{n+1}$ también es una transformación lineal. Ambos hechos se desprenden de las propiedades $$\frac{d}{dx}(cf(x))=c\frac{d}{dx}f(x), \hspace{1.5mm} \frac{d}{dx}(f(x)+g(x))=\frac{d}{dx}f(x)+\frac{d}{dx}g(x),$$ $$\int cf(x) dx=c\int f(x) dx\hspace{2.5mm}\text{y}\hspace{2mm} \int f(x)+g(x) dx = \int f(x) dx + \int g(x) dx,$$ vistas en tus cursos de Cálculo I y II, las cuales eran llamadas, apropiadamente, \emph{propiedades lineales de la derivada y la integral}, y son válidas para funciones derivables y/o integrables, en cada caso.
+\vspace{3mm}
+
+\textbf{Producto escalar} 
+
+Sea $V$ un espacio vectorial real con producto escalar. Entonces, por lo observado en la sección \ref{Def:Producto_escalar}, en este caso el producto escalar es una operación lineal \emph{en ambas entradas}, también conocida como \emph{transformación bilineal} o, simplemente, \emph{forma bilineal}. Si $V$ es un espacio vectorial complejo, entonces $T_{\mathbf{u}}:V\to \mathbb{C}$ dada por $T_{\mathbf{u}}(\mathbf{v})=(\mathbf{v},\mathbf{u})$ es una transformación lineal.
 
 \subsubsection{Espacio de transformaciones lineales}
 
-Sean $V$ y $W$ espacios vectoriales sobre el mismo campo $K$ y $T_1:V\to W, T_2:V\to W$ transformaciones lineales. Definimos la suma de las transformaciones lineales $T_1$ y $T_2$ como $(T_1+T_2)(\mathbf{x})=T_1(\mathbf{x})+T_2(\mathbf{x})$. Observemos entonces que \[
+Sean $V$ y $W$ espacios vectoriales sobre el mismo campo $K$, y sean $T_1:V\to W,\hspace{1.5mm} T_2:V\to W$ transformaciones lineales. Definimos la suma de las transformaciones lineales $T_1$ y $T_2$ como $(T_1+T_2)(\mathbf{x})=T_1(\mathbf{x})+T_2(\mathbf{x})$. Observemos entonces que \[
     (T_1+T_2)(\mathbf{u}+\mathbf{v})=T_1(\mathbf{u}+\mathbf{v})+T_2(\mathbf{u}+\mathbf{v})=T_1(\mathbf{u})+T_1(\mathbf{v})+T_2(\mathbf{u})+T_2(\mathbf{v})
-;\] ya que los vectores de $W$ conmutan bajo la adición vectorial, entonces \[
+.\] Ya que los vectores de $W$ conmutan bajo la adición vectorial, entonces \[
 (T_1+T_2)(\mathbf{u}+\mathbf{v})=T_1(\mathbf{u})+T_2(\mathbf{u})+T_1(\mathbf{v})+T_2(\mathbf{v})=(T_1+T_2)(\mathbf{u})+(T_1+T_2)(\mathbf{v})
-.\] Notemos, además, que si definimos a $T'(\mathbf{x})\equiv c(T(\mathbf{x})), c\in K$, entonces por definición $$T'(a\mathbf{v})=c(T(a\mathbf{v}))=c(aT(\mathbf{v}))=caT(\mathbf{v})=a(c(T(\mathbf{v})a))=aT'(\mathbf{v}).$$ Esto significa que la suma de dos transformaciones lineales de $V$ a $W$ \emph{es una transformación lineal de $V$ a $W$}, y que el producto de una transformación lineal de $V$ a $W$ por un escalar del campo $K$ \emph{es también una transformación lineal de $V$ a $W$}. Por lo tanto, \emph{el conjunto de todas las transformaciones lineales de V a W forma un espacio vectorial sobre K}. 
+.\] Notemos, además, que si definimos a $T'(\mathbf{x})\equiv c(T(\mathbf{x})), c\in K$, entonces por definición $$T'(a\mathbf{v})=c(T(a\mathbf{v}))=c(aT(\mathbf{v}))=caT(\mathbf{v})=a(c(T(\mathbf{v})a))=aT'(\mathbf{v}).$$ Esto significa que la suma de dos transformaciones lineales de $V$ a $W$ \emph{es una transformación lineal de $V$ a $W$}, y que el producto de una transformación lineal de $V$ a $W$ por un escalar del campo $K$ \emph{es también una transformación lineal de $V$ a $W$}. Por lo tanto, \emph{el conjunto de todas las transformaciones lineales de V a W forma un espacio vectorial sobre K}. El inverso aditivo de una transformación lineal $T:V\to W$ es simplemente $-T:V\to W,$ y el vector nulo de este espacio vectorial de transformaciones lineales corresponde a la transformación nula $T_0$ (ver sección \ref{Ejem:Transformaciones_lineales}).
 
 \subsection{Núcleo e imagen de una transformación lineal}
 
@@ -1526,24 +1607,189 @@ El resultado anterior es relevante porque nos ayuda a determinar fácilmente cu�
 
 \end{teorema}
 
-
 \subsection{Ejercicios de repaso}
 
-\subsubsection{Definición de transformación lineal y espacio de transformaciones lineales}
-\begin{itemize}
-    \item Demuestra que en cualquier espacio vectorial arbitrario $V$ sobre $K$ el producto de un vector por un escalar arbitrario $a\in K$ es una operación lineal.
-    \item Demuestra ahora que, en general, la operación de suma vectorial con un vector arbitrario $\mathbf{v}\in V$ no es una operación lineal. ¿En qué caso sí lo es?
-    \item Demuestra que para toda transformación lineal $T:V\to W$, $T(\mathbf{0}_V)=\mathbf{0}_W.$
-    Sean $V$ sobre $K$ y $W$ sobre $F$ espacios vectoriales, y sea $T:V\to W$ una función que lleva vectores de $V$ a vectores de $W$. ¿Cómo debe ser la relación entre los campos $W$ y $F$ para que exista la posibilidad de que $T$ sea una transformación lineal? (0.5 ptos. extra)*
-\end{itemize}
+Próximamente...
 
-\subsubsection{Núcleo e imagen de una transformación lineal}
-\begin{itemize}
-    \item Sea $T:V\to W$ una transformación lineal arbitraria. Demuestra que $kerT$ es un subespacio vectorial de $V$ y que $imT$ es un subespacio vectorial de $W$ (puedes dar por hecho que $V$ y $W$ son espacios vectoriales).
-\end{itemize}
+%\subsubsection{Definición de transformación lineal y espacio de transformaciones lineales}
+%\begin{enumerate}
+%%    \item Demuestra que en cualquier espacio vectorial arbitrario $V$ sobre $K$ el producto de un vector por un escalar arbitrario $a\in K$ es una operación lineal.
+%    \item Sea $V$ sobre $K$ un espacio vectorial y $\mathbf{v}\in V$. Definimos una función $T_{\mathbf{v}}:V\to V$ con regla de correspondencia $T_{\mathbf{v}}(\mathbf{u}) = \mathbf{u}+\mathbf{v}$ para todo $\mathbf{u}\in V$. Demuestra que, en general, esto es una transformación lineal. ¿En qué caso sí lo es?
+%    \item Demuestra que para cualquier transformación lineal $T:V\to W$, $T(\mathbf{0}_V)=\mathbf{0}_W.$
+%    \item Sea $d_i$ el $i$-\emph{ésimo} dígito de tu número de cuenta. Sean $\mathbf{u}=\begin{bmatrix} d_1&d_2 \end{bmatrix}^T, \mathbf{v}=\begin{bmatrix} d_3&d_4 \end{bmatrix}^T, \mathbf{w}=\begin{bmatrix} d_5&d_6 \end{bmatrix}^T$ vectores de $\mathbb{R}^2$, y $d_7\in \mathbb{R}$ un escalar. Muestra algebráicamente que $P_{\mathbf{u}}(d_7\mathbf{v}+\mathbf{w})=d_7 P_{\mathbf{u}}(\mathbf{v})+P_{\mathbf{u}}(\mathbf{w})$ y da una interpretacción geométrica para este resultado (Nota: si para $\mathbf{u}$ obtienes al vector nulo, puedes cambiar alguna de sus entradas; además, te sugiero repasar la sección \ref{Subsec:Producto_escalar_y_proyecciones} para la interpretación geométrica).
+%    \item Demuestra que la función $T_{\theta}:\mathbb{R}^2\to\mathbb{R}^2$ definida en la sección \ref{Ejem:Transformaciones_lineales} es una transformación lineal. Dado el vector $\mathbf{u}=\begin{bmatrix} d_8 & d_9 \end{bmatrix}^T$, calcula $T_{\frac{\pi}{3}}(\mathbf{u})$ y dibuja a ambos vectores en el plano cartesiano. 
+%    \item Sean $V$ sobre $K$ y $W$ sobre $F$ espacios vectoriales, y sea $T:V\to W$ una función que lleva vectores de $V$ a vectores de $W$. ¿Cómo debe ser la relación entre los campos $W$ y $F$ para que exista la posibilidad de que $T$ sea una transformación lineal? (0.5 ptos. extra)*
+%\end{enumerate}
+%
+%\subsubsection{Núcleo e imagen de una transformación lineal}
+%\begin{enumerate}
+%    \item Sea $T:V\to W$ una transformación lineal arbitraria. Demuestra que $kerT$ es un subespacio vectorial de $V$ y que $imT$ es un subespacio vectorial de $W$ (puedes dar por hecho que $V$ y $W$ son espacios vectoriales).
+%\end{enumerate}
+%
+%\subsubsection{Nulidad y rango}
+
+\newpage
 
 \section{Composición de transformaciones lineales, transformación lineal inversa y representación matricial de una transformación lineal}
 
+\subsection{Composición de transformaciones lineales}
+
+Recordarás de tus cursos de cálculo que si tenemos dos funciones reales de variable real, entonces podemos definir una operación llamada \emph{composición de funciones}, denotada por el símbolo $\circ$, tal que para todas las funciones reales de variable real $f$ y $g$ se tiene una nueva función dada por $(f\circ g)(x) = f(g(x)).$ Además, si $g:D_g\to Y$ y $f:D_f\to Z$ entonces, para que la función $f\circ g$ esté bien definida, necesitamos que $\text{Im}(g)\subseteq D_f$, lo cual se logra restringiendo el dominio de $G$ a todos los números reales para los cuales $\text{Im}(g)\in D_f$. Esta idea fácilmente se puede generalizar a funciones vectoriales de variable vectorial.
+
+En particular, como hemos visto, las transformaciones lineales no son más que funciones que van de espacio vectorial a espacio vectorial (i.e., funciones vectoriales de variable vectorial) que, además, son compatibles con la suma vectorial y el producto de un vector por un escalar. Por ende, dada la discusión anterior, nos debería parecer natural definir la composición de transformaciones lineales como sigue:
+\vspace{3mm}
+
+\begin{tcolorbox} \label{Def:Composición_de_transformaciones_lineales}
+\underline{Def.} Sean $T_1: V\to W$ y $T_2: W\to Z$ transformaciones lineales, entonces definimos la \emph{composición de las transformaciones lineales} $T_2$ y $T_1$ como\footnote{En esta definición se sobreentiende que los espacios vectoriales $V, W$ y $Z$ están definidos sobre un mismo campo $K$, pero vale la pena preguntarnos: ¿qué problemas podríamos tener si esto no fuera así?} \[T_2\circ T_1:V\to Z, \hspace{5mm} (T_2\circ T_1)(\mathbf{v}) = T_2(T_1(\mathbf{v})), \hspace{5mm} \mathbf{v}\in V.\]
+
+\end{tcolorbox}
+
+La observación más crucial que podemos hacer a partir de la definición anterior es que, $\forall \hspace{1.5mm} a\in K$ y $\forall \hspace{1.5mm} \mathbf{u},\mathbf{v}\in V$, tenemos que \[(T_2\circ T_1)(a\mathbf{u}+\mathbf{v})=T_2(T_1(a\mathbf{u}+\mathbf{v}))=T_2(aT_1(\mathbf{u})+T_1(\mathbf{v})) = aT_2(T_1(\mathbf{u}))+T_2(T_1(\mathbf{v})),\] \noindent es decir, que la composición de transformaciones lineales \emph{es nuevamente una transformación lineal}.
+
+Por ejemplo, sean $\mathbf{v}\in V$ y $a,b\in K$, y sean $T_a$ y $T_b$ transformaciones lineales de $V$ a $V$ definidas como en la sección \ref{Ejem:Transformaciones_lineales}, entonces podemos componerlas como \[
+    (T_a\circ T_b)(\mathbf{v})=T_a(T_b(\mathbf{v}))=T_a(b\mathbf{v})=a(b\mathbf{v})
+.\] \noindent En este caso particular, observemos que $T_a\circ T_b = T_b\circ T_a$ (¿a qué propiedades de los espacios vectoriales se debe esto?). 
+
+En cambio, si pensamos en las reflexiones de $\mathbb{R}^3$ definidas en la sección \ref{Ejem:Transformaciones_lineales}, observamos que \[
+    T_{\hat{x}}=T_{\hat{x}\hat{y}}\circ T_{\hat{x}\hat{z}}=T_{\hat{x}\hat{z}}\circ T_{\hat{x}\hat{y}}, \hspace{5mm} T_{\hat{y}}=T_{\hat{x}\hat{y}}\circ T_{\hat{y}\hat{z}}=T_{\hat{y}\hat{z}}\circ T_{\hat{x}\hat{y}},\hspace{5mm} T_{\hat{z}}=T_{\hat{x}\hat{z}}\circ T_{\hat{y}\hat{z}}=T_{\hat{y}\hat{z}}\circ T_{\hat{x}\hat{z}},
+\] \[
+T_O=T_{\hat{y}\hat{z}}\circ T_{\hat{x}\hat{z}} \circ T_{\hat{x}\hat{y}}, \hspace{5mm} T_{\hat{x}}\circ T_{\hat{x}} = T_{\hat{y}}\circ T_{\hat{y}} = T_{\hat{z}}\circ T_{\hat{z}} = T_O \circ T_O = ... = I_{\mathbb{R}^3}
+.\] De la última equivalencia notamos algo interesante: cualquier reflexión compuesta consigo misma da como resultado la identidad. ¿Será posible esto mismo para otros tipos de transformaciones lineales? Más generalmente, ¿para toda transformación lineal existirá una transformación lineal tal que al componerlas se obtenga la identidad, sin importar en qué orden se componen? La búsqueda de las respuestas a estas preguntas motivan la nuestra sección.
+
+\subsection{Transformación lineal inversa}
+
+Siguiendo con la analogía de transformaciones lineales con funciones (dado que en realidad son funciones de un cierto tipo específico), definimos la transformación lineal inversa:
+
+\begin{tcolorbox}
+\underline{Def.} Sea $T:V\to W$ una transformación lineal, entonces decimos que $T^{-1}:W\to V$ es su transformación lineal inversa si $\forall\hspace{1.5mm} \mathbf{v}\in V, \mathbf{w}\in W$ se cumple que \[(T^{-1}\circ T)(\mathbf{v})=\mathbf{v}\hspace{3mm} \text{y} \hspace{3mm} (T\circ T^{-1})(\mathbf{w})=\mathbf{w}.\]
+
+Dicho de otro modo, $T:V\to W$ y $T^{-1}:W\to V$ son transformaciones lineales inversas si y sólo si \[T^{-1}\circ T=I_V \hspace{3mm} \text{y} \hspace{3mm} T\circ T^{-1}=I_W,\] \noindent donde $I_V$ y $I_W$ son las funciones identidad en los espacios vectoriales $V$ y $W$, respectivamente.
+
+\end{tcolorbox}{}
+
+Por ejemplo, recordando  la transformación lineal $T_a(\mathbf{v})=a\mathbf{v}$ de la sección \ref{Ejem:Transformaciones_lineales} vemos que si $a\neq 0$, entonces la transformación lineal $T_{a^{-1}}$ es su transformación lineal inversa\footnote{Aquí vale la pena preguntarnos: ¿cómo se relaciona esto con los axiomas de campo \emph{y} de los espacios vectoriales?.}. Claramente, la transformación nula $T_0$ no tiene ninguna inversa, por lo cual no todas las transformaciones lineales tienen inversas. 
+
+Si pensamos en las reflexiones en $\mathbb{R}^3$, entonces cualquiera de ellas \emph{es su propia inversa}, como observamos al final de la sección anterior. Esto tiene sentido geométricamente ya que, si reflejamos a un vector con respecto a un cierto eje/plano/origen dos veces seguidas, volvemos a nuestro vector original. En general, las reflexiones en $\mathbb{R}^n$ son transformaciones lineales que, compuestas consigo mismas en cualquier orden, dan la identidad. Adoptando la notación $T\circ T=T^2$, donde $T:V\to V$, entonces las transformaciones lineales que cumplen $T^2=I_V$, donde $I_V$ es la identidad del espacio vectorial $V$ en cuestión, se llaman transformaciones lineales \emph{involutivas}. En particular, para cualquier espacio vectorial $V$, la transformación identidad en ese espacio es una transformación lineal involutiva.
+
+\subsection{Representación de un vector en una base ordenada}
+
+Al trabajar en un espacio vectorial $V$, vimos anteriormente que resulta conveniente tener un conjunto de vectores con los cuales podamos expresar a todos los vectores de $V$ mediante una combinación lineal única; a este conjunto le llamamos una \emph{base} de $V$. También hablamos de cómo es posible que un espacio vectorial tenga diferentes bases, por lo cual los vectores del espacio pueden ser \emph{representados} de diferentes formas. Antes de meternos más a fondo en el tema de las representaciones, para mayor comodidad, les exigiremos una propiedad adicional a las bases: un orden.
+
+\begin{tcolorbox}
+    \underline{Def.} Sea $V$ un espacio vectorial, entonces una \emph{base ordenada} de $V$ es un conjunto generador de $V$ linealmente independiente donde sus elementos están dotados de un orden. Denotamos a una base ordenada de $n$ elementos como una $n-$tupla ordenada. Mientras que las bases \[
+        \{\mathbf{b}_1, \mathbf{b}_2, ...\hspace{1mm},\mathbf{b}_{n-1}, \mathbf{b}_n\} = \{\mathbf{b}_2,\mathbf{b}_{1},...\hspace{1mm},\mathbf{b}_n,\mathbf{b}_{n-1}\} = ...\hspace{1mm}   
+    ,\] \noindent etcétera, tenemos que las \emph{bases ordenadas} \[
+    (\mathbf{b}_1,\mathbf{b}_2,...\hspace{1mm},\mathbf{b}_{n-1},\mathbf{b}_n)=(\mathbf{b}_2,\mathbf{b}_1,...\hspace{1mm},\mathbf{b}_n,\mathbf{b}_{n-1})\iff\mathbf{b}_1 = \mathbf{b}_2, ...\hspace{1mm}, \mathbf{b}_{n-1} = \mathbf{b}_n 
+    .\]  
+
+\vspace{3mm}
+
+\end{tcolorbox}
+
+En particular, si tenemos una base ordenada $(\mathbf{b}_1,\mathbf{b}_2,...\hspace{1mm}, \mathbf{b}_n)$ de un espacio vectorial $V$ y un vector $\mathbf{v}\in V$ tal que \[
+\mathbf{v} = c_1\mathbf{b}_1+c_2\mathbf{b}_2+...+c_n\mathbf{b}_n,
+\] \noindent con $c_i \in K,$ entonces podemos representar al vector $\mathbf{v}$ en esta base ordenada simplemente como $$\mathbf{v}\doteq (c_1,c_2,...\hspace{1mm} ,c_n)\hspace{5mm} \text{ó} \hspace{5mm} \mathbf{v}\doteq \begin{bmatrix} c_1&c_2&...&c_n \end{bmatrix}^T,$$ \noindent en donde utilizamos el símbolo de igualdad $\doteq$ para denotar explícitamente que esto es sólamente una \emph{representación} del vector $\mathbf{v}$ en una base particular. 
+
+¿Qué significa geométricamente que una base tenga un orden? Veamos un ejemplo en $\mathbb{R}^2$: pensemos en el vector de la Figura \ref{fig:Base_ordenada}, inciso \textbf{a)}. Ya que hemos visto que los vectores ortonormales son excelentes candidatos para formar bases, nos gustaría expresar algebráicamente al vector mostrado en \textbf{a)} como combinación lineal de dos vectores ortogonales de norma uno. Dado nuestro trabajo previo en el plano cartesiano (y que sus ejes son perpendiculares), lo más natural resulta tomar a los vectores normales que apuntan en el sentido positivo en cada uno de los ejes. Sin embargo, si queremos representar a este vector como un par \emph{ordenado} de números reales (correspondientes a los coeficientes de cada elemento de la base mediante los cuales se obtiene a dicho vector como combinación lineal) surge una ambigüedad: ¿a cuál de los elementos de la base corresponderá el primer número y a cuál elemento, el segundo? Siguiendo las convenciones usuales de geometría analítica, nos inclinamos por tomar a nuestra base ordenada como $(\mathbf{e}_1,\mathbf{e}_2),$ donde $\mathbf{e}_1$ denota al vector ortonormal sobre el eje horizontal y en sentido positivo. De hecho, ¡hemos estado utilizando esta base implícitamente desde la sección \ref{Subsec:Interpretación_geométrica_de_las_operaciones_de_los_espacios_vectoriales}! El resultado de esta elección de base ordenada se muestra en la Figura \ref{fig:Base_ordenada}, inciso \textbf{b)}.
+
+\begin{figure}[h!]
+    \centering
+    \begin{tikzpicture}[thick,scale=1.6, every node/.style={scale=1}]
+        \draw[thick,->] (0,0) -- (4.5,0);
+        \draw[thick,->] (0,0) -- (0,4.5);
+        \draw[step=1cm,gray,thin,dashed] (0,0) grid (4.4,4.4);
+        \foreach \x in {0,1,2,3,4}
+            \draw (\x cm,1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+        \foreach \y in {1,2,3,4}
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+        
+            \draw[violet,very thick,->] (0,0) -- (3,4);
+            \draw[] node[] at (4.2,4.2) {\textbf{a)}};
+            \draw[black,thick,->]  (5,2) -- (5.5,2);
+            \end{tikzpicture} \hspace{5mm} \begin{tikzpicture}[thick,scale=1.6, every node/.style={scale=1}]
+        \draw[thick,->] (0,0) -- (4.5,0);
+        \draw[thick,->] (0,0) -- (0,4.5);
+        \draw[step=1cm,gray,thin,dashed] (0,0) grid (4.4,4.4);
+        \foreach \x in {0,1,2,3,4}
+            \draw (\x cm,1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+        \foreach \y in {1,2,3,4}
+            \draw (1pt,\y cm) -- (-1pt,\y cm) node[anchor=east] {$\y$};
+        
+            \draw[red,very thick,->] (0,0) -- (1,0);
+            \draw[red,very thick,->] (1,0) -- (2,0);
+            \draw[red,very thick,->] (2,0) -- (3,0) node[] at (3,0.5)  {$3\begin{bmatrix} 0&1 \end{bmatrix}^T\equiv3\mathbf{e}_1$};
+            \draw[blue,very thick,->] (0,0) -- (0,1);
+            \draw[blue,very thick,->] (0,1) -- (0,2);
+            \draw[blue,very thick,->] (0,2) -- (0,3);
+            \draw[blue,very thick,->] (0,3) -- (0,4) node[] at (1.25,4) {$4\begin{bmatrix} 0&1 \end{bmatrix}^T\equiv 4\mathbf{e}_2$};
+            \draw[violet,very thick,->] (0,0) -- (3,4) node[] at (3.25,2.5) {$\begin{bmatrix} 3&4 \end{bmatrix}^T=3\mathbf{e}_1+4\mathbf{e}_2$};
+            
+            \draw[] node[] at (4.2,4.2) {\textbf{b)}};
+        \end{tikzpicture}
+        \caption{Interpretación geométrica de una base ordenada. En el inciso \textbf{a)} se muestra a un vector de $\mathbb{R}^2$ que puede ser representado en una infinidad de bases distintas de $\mathbb{R}^2.$ En el inciso \textbf{b)}, se elige a la base canónica \emph{ordenada} $(\mathbf{e}_1,\mathbf{e}_2)$. Utilizando la notación de $2-$tuplas para denotar vectores, este vector puede representarse en esta base ordenada como $(3,4).$}
+    \label{fig:Base_ordenada}
+\end{figure}
+
+El hecho de que podamos representar a cualquier vector de $\mathbb{R}^2$ como una combinación lineal de la base ordenada $(\mathbf{e}_1,\mathbf{e}_2)$ lo podemos interpretar geométricamente como que podemos \emph{descomponer} cualquier vector \emph{en sus componentes sobre cada eje} del plano cartesiano \textemdash cada uno de los cuáles es un múltiplo de un elemento de la base antes mencionada.
+
+Extendiendo esta idea, en $\mathbb{R}^3$ la \emph{base canónica} $(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3)$ es una base ordenada y ortonormal\footnote{En libros de texto de Física, a veces esta misma base canónica ordenada de $\mathbb{R}^3$ se denota como $(\hat{i},\hat{j},\hat{k}).$}. Más generalmente, para los espacios vectoriales de $n$-tuplas reales o complejas $K^n$, la $n-$tupla $(\mathbf{e}_1,\mathbf{e}_2,...,\mathbf{e}n)$ es la base ordenada usual, ya que el hecho de que sea ortonormal resulta de gran utilidad. Cualquier $\mathbf{e}_i$ de esta base ordenada se representa \emph{en esta misma base} como una $n-$tupla que tiene un $1$ en la $i-$ésima entrada y un $0$ en las demás entradas (¿por qué?).  
+
+\subsection{Representación matricial de una transformación lineal}
+
+Supongamos que tenemos un vector $\mathbf{v}=\begin{bmatrix} v_1&v_2&...&v_n \end{bmatrix}^T\in K^n$ representado en una base ordenada arbitraria $(\mathbf{b}_1,\mathbf{b}_2,...\hspace{1mm} ,\mathbf{b}_n)$ y sea $T:K^n\to K^n$ una transformación lineal tal que $$T(\begin{bmatrix} v_1&v_2&...&v_n \end{bmatrix}^T) = \begin{bmatrix} w_1&w_2&...&w_n \end{bmatrix}^T,$$ donde el segundo vector está representado en la misma base. Ya que $T$ es lineal, tenemos que la ecuación anterior se cumple si y sólo si \[ T(v_1\mathbf{b}_1+v_2\mathbf{b}_2+...+v_n\mathbf{b}_n)= v_1T(\mathbf{b}_1)+v_2T(\mathbf{b}_2)+...+v_nT(\mathbf{b}_n)=w_1\mathbf{b}_1 + w_2\mathbf{b}_2+...+w_n\mathbf{b}_n.\] Es decir que, si conocemos cómo $T$ actúa \emph{sobre los elementos de la base}, podemos conocer cómo actúa \emph{sobre cualquier vector arbitrario representado en esa misma base}.
+\vspace{3mm}
+
+Por ejemplo, sean $T_{\hat{x}\hat{y}},T_{\hat{y}\hat{z}},T_{\hat{x}\hat{z}}$ las reflexiones por los planos $\hat{x}\hat{y},\hat{y}\hat{z}$ y $\hat{x}\hat{z}$ de $\mathbb{R}^3,$ respectivamente. Utilicemos la base canónica $(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3)$ de $\mathbb{R}^3$; por conveniencia, vamos a reetiquetarla como $(\hat{x},\hat{y},\hat{z})$. Una reflexión por el plano $\hat{x}\hat{y}$ no le hace nada a los vectores $\hat{x}$ y $\hat{y}$, pero manda a $\hat{z}$ a su inverso aditivo. Más generalmente, podemos ver que \[T_{\hat{a}\hat{b}}(\hat{a})=\hat{a}, \hspace{3mm} T_{\hat{a}\hat{b}}(\hat{b})=\hat{b}, \hspace{3mm} T_{\hat{a}\hat{b}}(\hat{c})=-\hat{c}, \hspace{5mm}\forall\hspace{1.5mm} \hat{a},\hat{b},\hat{c}, \in \{\hat{x},\hat{y},\hat{z}\},\hspace{1.5mm} \hat{a}\neq\hat{b}\neq\hat{c} \] Entonces, para cualquier vector arbitrario $\mathbf{v}=c_1\hat{a}+c_2\hat{b}+c_3\hat{c}\in\mathbb{R}^3$ con $\hat{a},\hat{b},\hat{c}, \in \{\hat{x},\hat{y},\hat{z}\},\hspace{1.5mm} \hat{a}\neq\hat{b}\neq\hat{c}$ tenemos que \[T_{\hat{a}\hat{b}}(\mathbf{v})=T_{\hat{a}\hat{b}}(c_1\hat{a}+c_2\hat{b}+c_3\hat{c})=c_1T_{\hat{a}\hat{b}}(\hat{a})+c_2T_{\hat{a}\hat{b}}(\hat{b})+c_3T_{\hat{a}\hat{b}}(\hat{c})=c_1(\hat{a})+c_2(\hat{b})+c_3(-\hat{c})=c_1\hat{a}+c_2\hat{b}-c_3\hat{c},\] lo cual coincide con lo visto en la sección \ref{Ejem:Transformaciones_lineales}. Esta misma idea se puede aplicar al resto de las reflexiones de $\mathbb{R}^3$ (con respecto al origen y cada uno de los ejes).
+
+Ahora, sea $\mathbf{v}=\begin{bmatrix}v_1&v_2&v_3\end{bmatrix}^T\in\mathbb{R}^3$ representado en la base canónica y sea $M_{\hat{x}\hat{y}}\in M_{3x3}(\mathbb{R})$ una matriz de tres por tres con entradas reales dada por \[\begin{pmatrix}a&b&c\\d&e&f\\g&h&i\end{pmatrix}.\] Queremos que al multiplicar a $\mathbf{v}$ por $M_{\hat{x}\hat{y}}$ obtengamos al vector $\begin{bmatrix}v_1&v_2&-v_3\end{bmatrix}^T$, es decir, que esta matriz refleje a $\mathbf{v}$ con respecto al plano $\hat{x}\hat{y}$. Resolviendo el sistema de ecuaciones correspondiente, vemos que \[M_{\hat{x}\hat{y}}\mathbf{v}=T_{\hat{x}\hat{y}}(\mathbf{v})\iff \begin{pmatrix}a&b&c\\d&e&f\\g&h&i\end{pmatrix}\begin{bmatrix}v_1\\v_2\\v_3\end{bmatrix}=\begin{bmatrix}v_1\\v_2\\-v_3\end{bmatrix}\iff M_{\hat{x}\hat{y}}=\begin{pmatrix}1&0&0\\0&1&0\\0&0&-1\end{pmatrix}.\] Evidentemente, $M_{\hat{x}\hat{y}}$ no es más que la representación matricial de $T_{\hat{x}\hat{y}}$ en la base canónica. De manera similar podemos obtener las representaciones matriciales de las demás reflexiones en $\mathbb{R}^3$.
+
+Ahora viene lo realmente interesante: sea $M_{ab}$ la entrada en el renglón $a$ y la columna $b$ de la matriz $M_{\hat{x}\hat{y}},$ entonces podemos observar que la ecuación \[M_{ij}=(T_{\hat{x}\hat{y}}(\mathbf{e}_j),\mathbf{e}_i) \] se verifica para todas las entradas de la matriz $M_{\hat{x}\hat{y}}$\footnote{¡Asegúrate de que estos es cierto! Este hecho no es una mera coincidencia, como veremos a continuación, pero quedará más claro si lo verificas primero.}.
+\vspace{3mm}
+
+Esta idea se puede generalizar completamente como sigue: sea $V$ sobre $K$ un espacio vectorial con una base ortogonal ordenada\footnote{Recordemos que, ya que esta base es ortogonal, entonces $(\mathbf{o}_i,\mathbf{o}_j)=0$ si $i\neq j$.} $(\mathbf{o}_1,\mathbf{o}_2,...\hspace{1mm},\mathbf{o}_n)$. Entonces las entradas $A_{ij}\in K$ de la matriz de $n\times n$ asociada a $T$ representada en esta misma base están dadas por \[A_{ij}=\big(T(\mathbf{o}_j),\mathbf{o}_i\big).\]
+
+Veamos de dónde viene esto: ya que $(\mathbf{o}_1,\mathbf{o}_2,...\hspace{1mm},\mathbf{o}_n)$ es una base de $V$, entonces $V$ tiene dimensión $n$. Sea $\mathbf{v}=\begin{bmatrix} v_1&v_2&...&v_n \end{bmatrix}^T \in V$ un vector de $n$ entradas y $A\in M_{n\times n}(K)$ una matriz de $n\times n$ entradas escalares $A_{ij}$.
+
+Pensemos ahora en la ecuación $A\mathbf{v}=T(\mathbf{v}).$ Por un lado, sabemos que podemos aplicar las propiedades lineales de $T$ y reescribir $T(\mathbf{v})$ como $v_1T(\mathbf{o}_1)+v_2T(\mathbf{o}_2)+...+v_nT(\mathbf{o}_n).$ Por el otro lado sabemos que, al multiplicar al vector $\mathbf{v}$ por la matriz $A$, la primera entrada del vector resultante será igual a hacer un producto entrada por entrada entre el vector columna $\mathbf{v}$ y el primer renglón de la matriz $A$, y después sumar todos los términos. Más precisamente, la $i$-ésima entrada del vector resultante $A\mathbf{v}$ será igual a la suma $\sum_{j=1}^n A_{ij} v_j$, por lo cual podemos escribir explícitamente al vector resultante en términos de la base ortogonal como $\sum_{j=1}^n A_{ij} v_j \mathbf{o}_i$. Hasta ahora, tenemos que \[
+    A\mathbf{v}=T(\mathbf{v}) \iff \sum_{i=1}^n \sum_{j=1}^n A_{ij} v_j \mathbf{o}_i = \sum_{j=1}^n v_j T(\mathbf{o}_j) 
+.\] 
+
+¿Qué podemos hacer ahora para igualar las expresiones de ambos lados de manera astuta? En general $T$ podría actuar sobre elementos de la base $\mathbf{o}_i$ cambiándolos a otros elementos de la base $\mathbf{o}_j, j\neq i$ (e.g., mediante rotaciones), así que no sabemos cuáles términos de la suma del lado derecho de la ecuación terminarán acompañados del elemento de la base $\mathbf{o}_i$, de tal manera que podamos igualar la ecuación término a término apoyándonos en el índice $i$. 
+
+Aquí viene la ventaja de trabajar con bases ortogonales para representar transformaciones lineales como matrices: podemos simplemente tomar el producto escalar con $\mathbf{o}_i$ de ambos lados de la ecuación. Observemos qué sucede en este caso: \[
+    A\mathbf{v}=T(\mathbf{v}) \iff \big (\sum_{i=1}^n \sum_{j=1}^n A_{ij} v_j \mathbf{o}_i, \mathbf{o}_i \big ) = \big ( \sum_{j=1}^n v_j T(\mathbf{o}_j), \mathbf{o}_i ) \iff \sum_{i=1}^n \sum_{j=1}^n A_{ij} v_j (\mathbf{o}_i,\mathbf{o}_i) = \sum_{i=j}^n v_j (T(\mathbf{o}_j),\mathbf{o}_i)
+\] \[
+\iff \sum_{i=1}^n \sum_{j=1}^n A_{ij} v_j = \sum_{j=1}^n v_j(T(\mathbf{o}_j),\mathbf{o}_i)
+.\] \noindent Ahora sólo hace falta observar que \[
+\sum_{i=1}^n \sum_{j=1}^n A_{ij} v_j = \sum_{i=1}^n \sum_{j=1}^n (v_1+v_2+...+v_n) = (v_1+v_2+...+v_n)\sum_{i=1}^n\sum_{j=1}^n A_{ij}
+\] \noindent y \[
+\sum_{j=1}^n v_j (T(\mathbf{o}_j),\mathbf{o}_i) = \sum_{j=1}^n (v_1+v_2+...+v_n) (T(\mathbf{o}_j),\mathbf{o}_i) = (v_1+v_2+...+v_n) \sum_{j=1}^n (T(\mathbf{o}_j), \mathbf{o}_i)
+,\] por lo cual, asumiendo que $\mathbf{v}$ es no nulo\footnote{Si $\mathbf{v}$ es el vector nulo, entonces la igualdad se cumple trivialmente, por lo cual ese caso ya está cubierto.}, podemos dividir cada lado entre $v_1+v_2+...+v_n$ y obtener la relación \[
+A\mathbf{v}=T(\mathbf{v}) \iff \sum_{i=1}^n \sum_{j=1}^n A_{ij} = \sum_{j=1}^n (T(\mathbf{o}_j),\mathbf{o}_i)
+.\] 
+
+Finalmente, si fijamos $i$ y $j$ en la expresión anterior, obtenemos \[
+    A_{ij} = (T(\mathbf{o}_j),\mathbf{o}_i)
+,\] donde $A$ es la representación matricial de la transformación lineal $T:V\to V$. 
+
+\subsection{Ejercicios de repaso}
+
+Próximamente...
+
+%\subsubsection{Composición de transformaciones lineales}
+%
+%\begin{enumerate}
+%    \item Sean $T_{\theta_1}, T_{\theta_2}$ rotaciones en $\mathbb{R}^2$. Demuestra que $T_{\theta_1}\circ T_{\theta_2} = T_{\theta_1+\theta_2} = T_{\theta_2+\theta_1} = T_{\theta_2}\circ T_{\theta_1}.$ Es decir, demuestra que la composición de dos rotaciones por ángulos $\theta_1$ y $\theta_2$ es igual a una sola rotación por un ángulo $\theta_1+\theta_2$, sin importar el orden en que compongas las rotaciones originales.
+%\end{enumerate}
+%
+%\subsubsection{Transformación lineal inversa}
+%
+%\subsubsection{Representación de un vector en una base ordenada}
+%\begin{enumerate}
+%    \item Pensando en la Figura \ref{fig:Base_ordenada}, imaginemos que tomamos cualesquiera otros dos vectores ortonormales de $\mathbb{R}^2$ que llamaremos $\mathbf{f}_1, \mathbf{f}_2$. Ahora, tomemos un vector no nulo $\mathbf{v}\in\mathbb{R}^2$. ¿Cómo se relacionarían las representaciones del vector $\mathbf{v}$ en las bases ordenadas $(\mathbf{e}_1,\mathbf{e}_2)$ y $(\mathbf{f}_1,\mathbf{f}_2)$. ¿Con qué transformación lineal podríamos describir esta relación? Representa a la matriz asociada a esta transformación lineal en ambas bases.
+%\end{enumerate}
+%
+%\subsubsection{Representación matricial de una transformación lineal}
 
 
 

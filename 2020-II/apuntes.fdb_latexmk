@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1580837356 "apuntes.tex" "apuntes.pdf" "apuntes" 1580837358
+["pdflatex"] 1582735009 "apuntes.tex" "apuntes.pdf" "apuntes" 1582735011
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1572595918 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1572595918 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1572595918 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -254,11 +254,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1572595918 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1580582911 4592723 b0ca0f7c98c258d79e322dcc52775680 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1580582901 8044938 5f5f912cc9a82fb08911224be2984b94 ""
-  "apuntes.aux" 1580837358 25280 0258a70fe838e29ecf8bad13246c1719 "pdflatex"
-  "apuntes.out" 1580837358 8200 02033d66df4a634b6e6436b1d3e1bdf3 "pdflatex"
-  "apuntes.tex" 1580837354 172663 ec105fb55e063a0dd5e8fa5686dc0506 ""
+  "apuntes.aux" 1582735011 27252 235511a389fc36bf43ee30374febc71f "pdflatex"
+  "apuntes.out" 1582735011 8379 6203720ff6d3f148e453ce163e1576d7 "pdflatex"
+  "apuntes.tex" 1582735007 211766 6374a314d00ff2f81ea49554e9d2f446 ""
   (generated)
-  "apuntes.log"
   "apuntes.aux"
+  "apuntes.log"
   "apuntes.pdf"
   "apuntes.out"
