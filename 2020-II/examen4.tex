@@ -1,0 +1,86 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3044, 2020-II \\ Examen parcial 4 (tarea examen) \\ Fecha de entrega: martes 12 de mayo, 16:00}
+\date{}
+\maketitle
+
+\epigraph{``\textit{Los recursos, los contactos, el dinero, los amigos... todas esas cosas vienen y van. Lo único que realmente tienes en la vida es tu educación.}''}{\textemdash mi abuelo}
+
+\epigraph{``\textit{Más vale un minuto de pend**** que una vida en duda.}''}{\textemdash mi otro abuelo}
+
+\vspace{5mm}
+\textbf{1.} Considera la matriz \[
+    M = \begin{pmatrix}0&1&0\\a&0&1\\0&1&0\end{pmatrix}
+.\] Encuentra para qué valores de $a$:
+\begin{itemize}
+    \item $M$ tiene sólo un eigenvalor,
+    \item $M$ tiene tres eigenvalores reales,
+    \item $M$ tiene tres eigenvalores complejos.
+\end{itemize}
+Determina si la matriz $M$ es diagonalizable o no para cada uno de estos tres casos y diagonalízala cuando sea posible (en términos del parámetro $a$). (2 ptos.)
+
+\vspace{5mm}
+\textbf{2.} Decimos que dos matrices $A$ y $B$ son \emph{simultáneamente diagonalizables} si existe una base $\beta$ tal que $[A]_{\beta}^{\beta}$ y $[B]_{\beta}^{\beta}$ sean matrices diagonales. Sean \[
+\sigma_0=\begin{pmatrix}1&0\\0&1\end{pmatrix}, \sigma_1=\begin{pmatrix}0&1\\1&0\end{pmatrix}, \sigma_2=\begin{pmatrix}0&-i\\i&0\end{pmatrix}, \sigma_3=\begin{pmatrix}1&0\\0&-1\end{pmatrix}
+.\] Encuentra los eigenvalores e eigenvectores de $\sigma_1$ y $\sigma_2$  y diagonalízalas. Después, responde: ¿cuáles de estas matrices $\sigma_i$ son simultáneamente diagonalizables y por qué? (2 ptos.)
+
+\vspace{5mm}
+\textbf{3.} Diagonaliza la matriz $$\begin{pmatrix} \frac{31}{9} & \frac{2}{3} & \frac{4}{9} & \frac{4}{9} \\ \\ \frac{31}{9} & \frac{23}{3} & \frac{13}{9} & \frac{20}{9} \\ \\ -\frac{10}{9} & -\frac{2}{3} & \frac{53}{9} & -\frac{14}{9} \\ \\ -1 & -2 & -3 & 3 \end{pmatrix}  .$$ (2 ptos.)
+
+\vspace{5mm}
+\textbf{4.} Sea $V$ un espacio vectorial de dimensión finita $n$ y sea $T:V\to V$ un operador lineal con eigenvalores $\lambda_i$. Demuestra que $V$ se puede descomponer como  una suma directa de los eigenespacios $E_{\lambda_i}$ de $T$ si y sólo si $T$ es diagonalizable. (2 ptos.)
+
+\vspace{5mm}
+\textbf{5.} Sea $d_i$ el $i$-ésimo dígito de tu número de cuenta. Considera el siguiente sistema lineal de ecuaciones diferenciales: $$x_1'(t) = d_2(x_2(t)) - d_3,$$ $$x_2'(t)= -d_8(x_1(t)) + d_7.$$ \noindent Argumenta si a través de un cambio de base es posible desacoplar este sistema totalmente; si no es posible, modifica alguna(s) constante(s) $d_i$ para que sí lo sea. Luego, encuentra la solución al sistema y grafícala. (Nota: tal vez necesites hacer un cambio de variable del tipo $y_i(t)=a_i x_i(t)+b_i$ antes de desacoplar el sistema, pero deberás deshacer este cambio al final para expresar la solución en términos de $x_1(t)$ y $x_2(t)$.)
+
+Suponiendo que las funciones $x_1(t)$ y $x_2(t)$ modelan las densidades poblacionales de dos agentes biológicos distintos en un ecosistema cerrado, ¿qué nos dice la solución al sistema sobre la dinámica poblacional entre estos dos agentes? (2 ptos.)
+
+\vspace{5mm}
+\textbf{Extra:} Ve el video titulado \href{https://www.youtube.com/watch?v=PFDu9oVAE-g&list=PLZHQObOWTQDPD3MizzM2xVFitgF8hE_ab&index=14}{Eigenvectors and eigenvalues | Essence of linear algebra, chapter 14} del canal de YouTube ``3Blue1Brown'', repasando los temas del módulo pausadamente, y resuelve el ejercicio que aparece al final. (1 pto. extra)*
+
+\end{document}

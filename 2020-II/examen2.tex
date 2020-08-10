@@ -1,0 +1,77 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3044, 2020-II \\ Examen parcial 2 (tarea examen) \\ Fecha de entrega: miércoles 24 de marzo, 16:00 hrs.}
+\date{}
+\maketitle
+
+%\epigraph{``\textit{Education is not the filling of a bucket, but the lighting of a fire.}''}{\textemdash William Yeats, \\ poeta irlandés}
+
+\epigraph{``\textit{Taking responsibility for education \underline{is} education. Taking responsibility for learning \underline{is} learning.}''}{\textemdash Salman Khan, \\ fundador de Khan Academy}
+
+Número de cuenta:
+
+\vspace{5mm}
+
+\noindent Sea $d_i$ el $i$-ésimo dígito de tu número de cuenta. Sean los vectores $\mathbf{u},\mathbf{v}\in\mathbb{R}^3$ representados como $\mathbf{u}\dot{=}\begin{bmatrix} d_9 & d_6 & d_3 \end{bmatrix}^T,$ $\hspace{1.5mm} \mathbf{v}\dot{=}\begin{bmatrix} -d_7 & -d_4 & d_1 \end{bmatrix}^T$ en la base ordenada canónica de $\mathbb{R}^3$. 
+
+\vspace{5mm}
+\textbf{1.} Modifica a uno de los dos vectores de tal forma que el conjunto $\{\mathbf{u},\mathbf{v}\}$ sea ortogonal. Demuestra que $\langle \{\mathbf{u},\mathbf{v}\}  \rangle$ es isomorfo a $\mathbb{R}^2$ dando la transformación lineal apropiada, así como su inversa, demostrando que ambas son lineales y que son inversas entre sí. (2.5 ptos.)
+
+\vspace{5mm}
+\textbf{2.} Ahora, demuestra que la transformación lineal que diste en el ejercicio 1 es biyectiva \textemdash y que, por tanto, ambos espacios vectoriales mencionados son isomorfos\textemdash\hspace{1mm} \emph{sin} utilizar explícitamente a su transformación lineal inversa. (2.5 ptos.)
+
+\vspace{5mm}
+\textbf{3.} Encuentra una base ordenada de $\mathbb{R}^3$ en la cual las representaciones de los vectores $\mathbf{u}$ y $\mathbf{v}$ son $3$-tuplas con sólo dos entradas no nulas. Conviértela en una base ortonormal ordenada (el orden puede ser el que tú quieras). (2.5 ptos.)
+
+\vspace{5mm}
+\textbf{4.} Representa las dos transformaciones lineales que obtuviste en el ejercicio 1 en forma matricial. Para la transformación lineal de $\langle\{\mathbf{u},\mathbf{v}\}\rangle\to \mathbb{R}^2$, represéntala primero utilizando la base ordenada que obtuviste al principio del ejercicio 3 y, después, la base ortonormal ordenada que obtuviste al final del mismo ejercicio. (2.5 ptos.)
+
+\vspace{5mm}
+\textbf{Extra:} Sean $A_1$ y $A_1'$ las representaciones matriciales de la transformación lineal de $\langle\{\mathbf{u},\mathbf{v}\}\rangle$ que obtuviste al inicio del ejercicio 4, y $A_2$ la representación matricial de la transformación inversa que obtuviste en el mismo ejercicio. Calcula la matriz resultante de los productos $A_1A_2$, $A_2A_1$, $A_1'A_2$ y $A_2A_1'$. ¿Cómo interpretas el resultado? (0.5 ptos. extra)*
+
+\end{document}

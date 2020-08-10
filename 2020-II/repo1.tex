@@ -1,0 +1,73 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3044, 2020-II \\ Reposición del examen parcial 1 (tarea examen) \\ Fecha de entrega: viernes 12 de junio, 20:00 hrs.}
+\date{}
+\maketitle
+
+\epigraph{``Nunca he permitido que la escuela interfiera con mi educación.''}{\textemdash Mark Twain, \\ escritor estadounidense}
+
+\vspace{5mm}
+\textbf{1.} Sea $L^2$ el conjunto de todas las funciones $f:\mathbb{R}\to\mathbb{R}$ tales que $$\int_{-\infty}^{\infty} f^2(x) \hspace{1mm} dx < \infty.$$
+
+\noindent Demuestra que $(L^2,\mathbb{R})$ es un espacio vectorial. (2 ptos.)
+
+\vspace{5mm}
+\textbf{2.} Siguiendo del ejercicio anterior, define una operación $(\cdot, \cdot):L^2\times L^2\to\mathbb{R}$ como $$(f,g) = \int_{-\infty}^{\infty} f(x)g(x) \hspace{1mm} dx. $$ Demuestra que es un producto escalar en $L^2$, y que a partir de él se puede definir una norma que cumple todas las propiedades necesarias. Si las funciones de $L^2$ tuvieran imágenes en $\mathbb{C}$ en vez de $\mathbb{R}$, ¿cómo podrías modificar la operación $(\cdot, \cdot)$ para que siga teniendo todas las propiedades del producto escalar? (2 ptos.)
+
+\vspace{5mm}
+\textbf{3.} Demuestra que un conjunto de vectores $L$ es linealmente independiente si y sólo si cualquier subconjunto finito de $L$ es linealmente independiente. (2 ptos.)
+
+\vspace{5mm}
+\textbf{4.} Sea $R_{\alpha}$ el conjunto de todas las matrices de $M_{n\times n}(\mathbb{C})$ con traza igual a $\alpha$, donde $\alpha\in\mathbb{R}$ y $m,n\in\mathbb{N}$. ¿Cuánto debe valer $\alpha$ para que $R_{\alpha}$ sea un subespacio vectorial de $M_{n\times n}(\mathbb{C})$? Demuéstralo. (2 ptos.)
+
+\vspace{5mm}
+\textbf{5.} Sea $V$ un espacio vectorial con producto interior. Demuestra que cualquier conjunto finito de vectores de $V$ ortogonales entre sí es linealmente independiente. (2 ptos.)
+
+
+
+\end{document}

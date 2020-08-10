@@ -1,0 +1,103 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3058, 2020-IV \\ Examen parcial 1 (tarea examen) \\ Fecha de entrega: sábado 8 de agosto, 12:00 hrs.}
+\date{}
+\maketitle
+
+\epigraph{``Si quieres llegar rápido, viaja solo. Si quieres llegar lejos, viaja acompañado.''}{\textemdash Proverbio africano}
+
+\vspace{1cm}
+\textbf{1.} Sea $(F,\mathbb{R})$ el espacio vectorial de todas las funciones reales de variable real y sea $L^2$ el conjunto de todas las funciones $f:\mathbb{R}\to\mathbb{R}$ tales que $$\int_{-\infty}^{\infty} f^2(x) \hspace{1mm} dx < \infty.$$
+
+\noindent Demuestra que $(L^2,\mathbb{R})$ es un subespacio vectorial de $(F,\mathbb{R})$. (1 pto.)
+
+\vspace{1cm}
+\textbf{2.} Sea $V$ un espacio vectorial con subespacios $W_1$ y $W_2$. Demuestra que $V$ es una suma directa de $W_1$ y $W_2$ si y sólo si todo vector $\mathbf{v}$ de $V$ puede ser expresado de manera única como $\mathbf{v}=\mathbf{x}_1+\mathbf{x}_2$, con $\mathbf{x}_1\in W_1$ y $\mathbf{x}_2\in W_2.$ (1 pto.)
+
+\vspace{1cm}
+\textbf{3.} Sea $\mathbf{c}$ un vector no nulo del espacio vectorial complejo $\mathbb{C}^n$ y $a\neq 0\in\mathbb{R}$. ¿Cómo interpretarías geométricamente el producto del vector $\mathbf{c}$ por el escalar $\frac{a}{i}?$ (0.5 ptos.)
+
+\vspace{1cm}
+\textbf{4.} Siguiendo del primer ejercicio, define una operación $\langle\cdot, \cdot\rangle:L^2\times L^2\to\mathbb{R}$ como $$\langle f,g\rangle = \int_{-\infty}^{\infty} f(x)g(x) \hspace{1mm} dx. $$ Demuestra que es un producto escalar en $L^2$. Si las funciones de $L^2$ tuvieran imágenes en $\mathbb{C}$ en vez de $\mathbb{R}$, ¿cómo podrías modificar la operación $\langle\cdot, \cdot\rangle$ para que siga teniendo todas las propiedades del producto escalar? (1 pto.)
+
+\vspace{1cm}
+\textbf{5.} Sea $(V,K)$ un espacio vectorial con producto escalar positivo definido $\langle\cdot,\cdot\rangle:V\times V\to K$. Demuestra que la función $||\cdot||:V\to K$ dada por $||\mathbf{v}||=+\sqrt{\langle\mathbf{v},\mathbf{v}\rangle}$ para todo $\mathbf{v}\in V$ es una norma en $V$. (0.5 ptos.)
+
+\vspace{1cm}
+\textbf{6.} Sea $(V,K)$ el mismo espacio vectorial con producto escalar positivo definido del ejercicio anterior. Decimos que una función $d(\cdot,\cdot):V\times V\to K$ es una \emph{métrica} si para todo $\mathbf{u},\mathbf{v},\mathbf{w}\in V:$ \[
+    d(\mathbf{u},\mathbf{v})=0 \iff \mathbf{u}=\mathbf{v}, \] \[ d(\mathbf{u},\mathbf{v})=d(\mathbf{v},\mathbf{u})
+    \] \[\text{y}\hspace{3mm} 
+d(\mathbf{u},\mathbf{w})\le d(\mathbf{u},\mathbf{v})+d(\mathbf{v},\mathbf{w})
+.\]
+
+\vspace{3mm}
+\noindent Demuestra que $d(\mathbf{u},\mathbf{v})=+\sqrt{\langle \mathbf{u},\mathbf{u}\rangle-\langle\mathbf{u},\mathbf{v}\rangle-\langle\mathbf{v},\mathbf{u}\rangle+\langle\mathbf{v},\mathbf{v}\rangle}$ para todo $\mathbf{u},\mathbf{v}\in V$ es una métrica en $V$. ¿Cómo puedes interpretar esta función geométricamente? (1 pto.)
+
+\vspace{1cm}
+\textbf{7.} Si los números de cuenta de l@s integrantes de su equipo fueran vectores de $\mathbb{R}^9$, ¿formarían un conjunto linealmente independiente? (0.5 ptos.)
+
+\vspace{1cm}
+\textbf{8.} Demuestra o da un contraejemplo: un conjunto de vectores $L$ es linealmente independiente si y sólo si cualquier subconjunto finito de $L$ es linealmente independiente. (1 pto.)
+
+\vspace{1cm}
+\textbf{9.} Demuestra o da un contraejemplo: si $S_1$ y $S_2$ son subconjuntos arbitrarios de un espacio vectorial $V$, entonces $\langle S_1\rangle+\langle S_2\rangle$ es un subespacio vectorial de $V$ y $\langle S_1\rangle+\langle S_2\rangle=\langle S_1\cup S_2\rangle.$  (1 pto.)
+
+\vspace{1cm}
+\textbf{10.} Sea $V$ un espacio vectorial con producto escalar de dimensión finita $n$. Demuestra que cualquier conjunto ortogonal de $n$ vectores es una base ortogonal de $V$. (0.5 ptos.)
+
+\vspace{1cm}
+\textbf{11.} Sean \[
+    \sigma_0 = \begin{pmatrix} 1&0\\0&1 \end{pmatrix}, \sigma_1 = \begin{pmatrix} 0&1\\1&0 \end{pmatrix}, \sigma_2 = \begin{pmatrix} 0&-i\\i&0 \end{pmatrix}, \sigma_3 = \begin{pmatrix} 1&0\\0&-1 \end{pmatrix}   
+.\] Demuestra que $\{\sigma_0, \sigma_1, \sigma_2, \sigma_3\}$ es una base de $M_{2\times 2}(\mathbb{C})$ y que, por tanto, este espacio vectorial complejo es de dimensión $4$. (1 pto.)
+
+\vspace{1cm}
+\textbf{12.} Sea $P^2([-1,1])$ el espacio vectorial real de todos los polinomios reales de grado $2$ con dominio en $[-1,1]$, dotado de un producto escalar dado por $$\langle p,q\rangle = \int_{-1}^1 p(x)q(x)\hspace{0.5mm} dx.$$ \noindent Obten una base ortonormal para este espacio vectorial y expresa a un vector arbitrario $v(x)=ax^2+bx+c\in P^2([-1,1])$ como combinación lineal de los elementos de la base que hayas obtenido. (1 pto.)
+
+
+
+\end{document}

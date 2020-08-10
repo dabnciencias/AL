@@ -44,13 +44,13 @@ inoremap jf <Esc>
 inoremap fj <Esc>
 
 " Mapping ,, to < and .. to >
-inoremap ., <
-inoremap ,. >
+inoremap -., <
+inoremap -,. >
 
 " Navigating with guides
-inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
-vnoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
-map <Tab><Tab> <Esc>/<++><Enter>"_c4l
+" inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
+" vnoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
+" map <Tab><Tab> <Esc>/<++><Enter>"_c4l
 
 " TeX shortcuts:
 
@@ -75,7 +75,7 @@ autocmd FileType tex inoremap cen<Tab> \centering<Enter>
 " autocmd FileType tex inoremap -<Tab> \textemdash<Space>
 " autocmd FileType tex inoremap noin<Tab> \noindent<Space>
 " autocmd FileType tex inoremap tw<Tab> \textwidth 
-autocmd FileType tex inoremap def<Tab> \begin{tcolorbox}<Enter>\underline{Def.}<Space><Enter>\end{tcolorbox}<Enter><Enter><++><Esc>3k$a
+autocmd FileType tex inoremap def<Tab> \begin{tcolorbox}<Enter>\underline{Def.}<Space><Enter>\end{tcolorbox}<Esc>k$a
 autocmd FileType tex inoremap not<Tab> \begin{tcolorbox}<Enter>\underline{Notación:}<Enter><Enter>\centering<Enter>\begin{tabular}{cc}<Enter>\\<Enter>$$<Space>&<Space><++><Space>\\<Space>\\<Enter>$<++>$<Space>&<Space><++><Space>\\<Enter>\end{tabular}<Enter>\end{tcolorbox}<Esc>3k2T$i
 autocmd FileType tex inoremap row<Tab> <Esc>$a<Enter>$$<Space>&<Space><++><Space>\\<Space>\\<Esc>2T$i
 

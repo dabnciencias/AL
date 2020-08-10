@@ -1,0 +1,102 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{colorlinks=true,
+            linkcolor=red,
+            filecolor=magtenta,
+            urlcolor=orange}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3044, 2020-II \\ Examen parcial 3 (tarea examen) \\ Fecha de entrega: martes 21 de abril, 16:00 hrs.}
+\date{}
+\maketitle
+
+\epigraph{``\textit{Education is not the filling of a bucket, but the lighting of a fire.}''}{\textemdash William Yeats, \\ poeta irlandés}
+
+Número de cuenta:
+
+\vspace{5mm}
+
+\noindent Sea $d_i$ el $i$-ésimo dígito de tu número de cuenta.
+
+\vspace{5mm}
+\textbf{1.} Sean \[\sigma_0=\begin{pmatrix}1&0\\0&d_2\end{pmatrix}, \sigma_1=\begin{pmatrix}0&d_2\\1&0\end{pmatrix},\sigma_2=\begin{pmatrix}0&-i\\i&0\end{pmatrix}, \sigma_3=\begin{pmatrix}1&0\\0&-d_2\end{pmatrix}.\] Demuestra que $\{\sigma_0, \sigma_1, \sigma_2, \sigma_3\}$ es base de $M_{2\times 2}(\mathbb{C})$. Además, piensa en un espacio vectorial que sea isomorfo a $M_{2\times 2}(\mathbb{C})$ (el que tú quieras) y demuestra que lo es. (2 ptos.)
+
+\vspace{5mm}
+\textbf{2.} Sean las matrices \[M_1=\begin{pmatrix}d_1&d_2 \\ d_4&d_5\end{pmatrix}, M_2=\begin{pmatrix}d_6&d_7 \\ d_8&d_9\end{pmatrix}\in M_{2\times 2}(\mathbb{R}),\] \noindent representadas en la base canónica ordenada $(\hat{i},\hat{j})$ de $\mathbb{R}^2$. Da las reglas de correspondencia de las transformaciones lineales $T_1$ y $T_2$ representadas por estas matrices, así como de la transformación $T_2\circ T_1$. Luego, da la representación matricial de $T_2\circ T_1$ en esta misma base canónica ordenada, ¿a qué producto de las matrices $M_1$ y $M_2$ es igual? (2 ptos.)
+
+\vspace{5mm}
+\textbf{3.} Modifica las matrices del ejercicio anterior mediante operaciones elementales y redefínelas como $M_1', M_2'$ de tal forma que $\text{det}(M_1')=d_3$ y $\text{det}(M_2')=-\frac{1}{d_3}$. Dibuja al cuadrado unitario formado por los vectores $\hat{i}$ y $\hat{j}$, así como el paralelogramo formado por los pares de vectores $M_1'\hat{i}$ y $M_1'\hat{j}$; $M_2'\hat{i}$ y $M_2'\hat{j}$; $M_1'M_2'\hat{i}$ y $M_1'M_2'\hat{j}$; $M_2'M_1'\hat{i}$ y $M_2'M_1'\hat{j}$. ¿Cuáles de estas matrices (transformaciones lineales) son invertibles? Argumenta a partir de los dibujos. (2 ptos.)
+
+\vspace{5mm}
+\textbf{4.} Calcula las matrices inversas $(M_1')^{-1}$ y $(M_2')^{-1}$. ¿Qué producto de estas matrices es la inversa (por ambos lados) de la matriz $(M_1'M_2')$? Arguméntalo algebráicamente y/o geométricamente (con una de las dos es suficiente), y demuéstralo mediante cálculos. (2 ptos.)
+
+\vspace{5mm}
+\textbf{5.} Sea $(\begin{bmatrix}d_2 & d_1\end{bmatrix}^T,  \begin{bmatrix}d_9 & -d_8\end{bmatrix}^T)$ un base ordenada de $\mathbb{R}^2$. Calcula la matriz de cambio de base $P$ entre las bases $(\hat{i},\hat{j})$ y $(\begin{bmatrix}d_2 & d_1\end{bmatrix}^T,  \begin{bmatrix}d_9 & -d_8\end{bmatrix}^T)$, así como $P^{-1}$. Calcula $\text{det}(P^{-1}M_1P)$ y $\text{det}(P^{-1}M_2P)$ y compáralos con $\text{det}(M_1)$ y $\text{det}(M_2)$, respectivamente. ¿Qué observas y cómo lo explicas? (2 ptos.)
+
+\vspace{5mm}
+\textbf{Extra:} Calcula el determinante, traza, inversa y determinante de la inversa de las siguientes matrices  e interprétalas geométricamente. Usa el método que se indica para uno de los valores y resuelve lo demás manualmente (i.e., sin calculadora) con el método de tu preferencia. (0.3 ptos. extra por inciso*)
+
+\vspace{5mm}
+\textbf{A)} La siguiente matriz de $3\times 3$ usando el método de Sarrus para calcular su determinante (el de la inversa, calcúlalo como gustes). 
+
+$$A = \begin{pmatrix} 
+    10 & -0.5 & 0 \\
+    10 & 0 & -7 \\ 
+    0 & -0.5 & -7 \\
+\end{pmatrix}$$ 
+
+\vspace{5mm}
+\textbf{B)} La siguiente matriz de $ 2 \times 2$ usando el método de Gauss para calcular la inversa. 
+
+$$ B = \begin{pmatrix} 
+    \frac{-\pi}{4} & \frac{-4}{\pi} \\ \\
+    \frac{-\pi}{4} & \frac{4}{\pi} \end{pmatrix}$$ 
+
+\vspace{5mm}
+\textbf{C)} La siguiente matriz de $4 \times 4$ por método de Laplace - también referido como método de Leibniz -  para su determinante (el de la inversa, calcúlalo como gustes). ¡Haz lo posible por interpretar la transformación en el híperespacio cuatridimensional! 
+
+$$ C = \begin{pmatrix} 
+    100 & 0.1 & 10 & -0.01  \\
+    1 & 10 & -0.5 & 0 \\
+    -1 & 10 & 0 & -7 \\
+    1 & 0 & -0.5 & - 7 \\
+\end{pmatrix}$$
+
+\end{document}

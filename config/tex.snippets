@@ -1,8 +1,10 @@
 snippet template "Basic template" b
 \documentclass[a4paper]{article}
-\usepackage[margin=1.5cm]{geomtery}
+
+\usepackage[margin=1.5cm]{geometry}
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage[spanish,es-tabla]{babel}
+\decimalpoint
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
@@ -10,40 +12,21 @@ snippet template "Basic template" b
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage{tcolorbox}
+\setcounter{section}{-1}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage{hyperref}
 \usepackage{braket}
-\usepackage{textcomp}
 \usepackage{tikz}
-
-\decimalpoint
-\setcounter{section}{-1}
+\usetikzlibrary{cd}
+\usepackage{pgfplots}
+\usetikzlibrary{babel}
 \hypersetup{
     colorlinks=true,
 	linkcolor=red,
 	filecolor=magtenta,
 	urlcolor=orange,
 }
-
-% figure support
-\usepackage{import}
-\usepackage{xifthen}
-\pdfminorversion=7
-\usepackage{pdfpages}
-\usepackage{transparent}
-\newcommand{\incfig}[1]{%
-	\def\svgwidth{\columnwidth}
-	\import{./figures/}{#1.pdf_tex}
-}
-
-\pdfsuppresswarningpagegroup=1
-
-\newcommand{\N}{\mathbb{N}}
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcomannd{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
 \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{teorema}[2][Teorema]{\begin{trivlist}
@@ -51,6 +34,7 @@ snippet template "Basic template" b
 \newenvironment{lemma}[2][Lemma]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{problem}[2][Problem]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
@@ -63,7 +47,12 @@ snippet template "Basic template" b
 \newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
 
 \begin{document}
-	$0
+\title{$1}
+\date{}
+\maketitle
+
+$0
+
 \end{document}
 endsnippet
 
@@ -93,7 +82,7 @@ snippet fig "Figure environment" b
 \end{figure}
 endsnippet
 
-snippet enum "Enumerate" bA
+snippet enum "Enumerate" b
 \begin{enumerate}
 	\item $0
 \end{enumerate}
@@ -126,7 +115,7 @@ $1
 endsnippet
 
 priority 10
-snippet "bar" "bar" riA
+snippet "bar" "bar" rwA
 \overline{$1}$0
 endsnippet
 
@@ -136,7 +125,7 @@ snippet "([a-zA-Z])bar" "bar postfix" riA
 endsnippet
 
 priority 10
-snippet "hat" "hat" riA
+snippet "hat" "hat" rwA
 \hat{$1}$0
 endsnippet
 
@@ -146,17 +135,36 @@ snippet "([a-zA-Z])hat" "hat postfix" riA
 endsnippet
 
 priority 10 
-snippet "vec" "vec" riA
+snippet "avec" "arrow vector" rwA
 \vec{$1}$0
 endsnippet
 
 priority 100
-snippet "([a-zA-Z])vec" "vec postfix" riA
+snippet "([a-zA-Z])avec" "arrow vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
 endsnippet 
 
 priority 10
-snippet "sqrt" "sqrt" riA
+snippet "bvec" "bold vector" rwA
+\mathbf{$1}$0
+endsnippet
+
+priority 100
+snippet "([a-zA-Z])bvec" "bold vector postfix" riA
+\mathbf{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet "cvec" "column vector" rwA
+\begin{bmatrix} $1 \end{bmatrix}^T $0
+endsnippet
+
+snippet "dvec" "draw a vector" rwA
+\draw[$1] ($2) -- ($3);
+$0
+endsnippet
+
+priority 10
+snippet "sqrt" "sqrt" rwA
 \sqrt{$1}$0
 endsnippet
 
@@ -165,52 +173,68 @@ snippet "([a-zA-Z])sqrt" "sqrt postfix" riA
 \sqrt{`!p snip.rv=match.group(1)`}
 endsnippet 
 
-snippet "frac" "frac" riA
+snippet "frac" "frac" rwA
 \frac{$1}{$2}$0
 endsnippet
 
-snippet ddx "derivative" iA
+snippet ddx "derivative" A
 \frac{d$1}{d$2} $0
 endsnippet
 
-snippet idx "integral" iA
+snippet idx "integral" A
 \int_{$1}^{$2} $3 d$4 $0
 endsnippet
 
-snippet mbf "math bold" iA
+snippet mbf "math bold" A
 \mathbf{$1}$0
 endsnippet
 
-snippet deg "degree symbol" b
+snippet deg "degree symbol" w
 ^\circ
 endsnippet
 
-snippet proj "projection onto" b
+snippet proj "projection onto" w
 P_{$1}($2) $0
 endsnippet
 
-snippet scal "scalar product" b
+snippet scal "scalar product" w
 ($1,$2) $0
 endsnippet
 
-snippet sp "span" b
+snippet span "span" wi
 \langle $1 \rangle $0
 endsnippet
 
-snippet imp "implies" Ai
+snippet imp "implies" w
 \implies
 endsnippet
 
-snippet iff "iff" Ai
-\iff
+snippet LL "L(V,W)" iA
+\mathcal{L}($1,$2) $0
 endsnippet
 
-snippet eqv "equiv" Ai
+snippet dim "dimension"
+\text{dim}($1) $0
+endsnippet
+
+snippet rango "rango"
+\text{rango}($1) $0
+endsnippet
+
+snippet nulidad "nulidad"
+\text{nulidad}($1) $0
+endsnippet
+
+snippet iff "iff" iA
+\iff 
+endsnippet
+
+snippet eqv "equiv" iA
 \equivalent
 endsnippet
 
-snippet neq "not equal to" Ai
-\neq
+snippet neq "not equal to" iA
+\neq $0
 endsnippet
 
 snippet pmat "pmat" iA
@@ -245,36 +269,23 @@ snippet AA "forall" iA
 \forall 
 endsnippet
 
-snippet plot "Plot" w
-\begin{figure}[$1]
-	\centering
-	\begin{tikzpicture}
-		\begin{axis}[
-			xmin= ${2:-10}, xmax= ${3:10},
-			ymin= ${4:-10}, ymax= ${5:10}.
-			axis lines = middle]
-
-			\addplot[domain=$2:$3, samples=${6:100}]{$7};
-		\end{axis}
-	\end{tikzpicture}
-	\caption{$8}
-	\label{${9:$8}}
-\end{figure}
+snippet node "node"
+node[$1] $2 {$3}
 endsnippet
 
-snippet x "times" b
+snippet x "times"
 \times 
 endsnippet
 	
-snippet . "cdot" b
+snippet . "cdot" w
 \cdot
 endsnippet
 
-snippet norm "norm" b
+snippet norm "norm" w
 \|\|$1\|\|$0
 endsnippet
 
-snippet set "set" b
+snippet set "set" w
 \\{$1\\} $0
 endsnippet
 
@@ -283,62 +294,82 @@ snippet notin "not in" iA
 endsnippet
 
 snippet noin "no indent" iA
-\noindent
+\noindent $0
 endsnippet
 
-snippet UU "cap" b
-\cap 
-endsnippet
-
-snippet II "cup" b
+snippet UU "cup" iA
 \cup 
 endsnippet
 
-snippet RR "real" iA
-\mathbb{R}
+snippet tleft "left triangle" iA
+\triangleleft $0
+endsnippet
+
+snippet tright "right triangle" iA
+\triangleright $0
+endsnippet
+
+snippet II "cap" iA
+\cap 
 endsnippet
 
 snippet CC "complex" iA
 \mathbb{C}
 endsnippet
 
-snippet cvec "column vector" iA
-\begin{bmatrix} ${1:x}_${2:1}\\\\ \vdots\\\\ $1_${2:n} \end{bmatrix}^T $0
+snippet RR "real" iA
+\mathbb{R}
 endsnippet
 
-snippet bf "bold text" b
+snippet ZZ "integer" iA
+\mathbb{Z}
+endsnippet
+
+snippet NN "natural" iA
+\mathbb{N}
+endsnippet
+
+snippet tbf "bold text" iA
 \textbf{$1} $0
 endsnippet
 
-snippet em "emphasis/italics" b
+snippet em "emphasis/italics"
 \emph{$1} $0
 endsnippet
 
-snippet un "underline" b
+snippet un "underline"
 \underline{$1} $0
 endsnippet
 
-snippet ov "overline" b
+snippet ov "overline"
 \overline{$1}{$0}
 endsnippet
 
-snippet fn "footnote" b
+snippet fn "footnote"
 \footnote{$1.}$0
 endsnippet
 
-snippet lab "label" b
+snippet lab "label"
 \label{$1}$0
 endsnippet
 
-snippet cap "caption" b
+snippet cap "caption"
 \caption{$1}$0
 endsnippet
 
-snippet ref "reference" b
+snippet ref "reference"
 \ref{$1}$0
 endsnippet
 
-snippet url "url" b
+snippet htar "hypertarget" iA
+\hypertarget{$1}{\textbf{$1}}$0
+endsnippet
+
+snippet hlink "hyperlink" iA
+\hyperlink{$1}{$2}$0
+endsnippet
+
+snippet url "url"
 \url{$1}$0
 endsnippet
 
@@ -347,32 +378,29 @@ snippet hs "horizontal space" iA
 endsnippet
 
 snippet vs "vertical space" iA
-\vspace{$1} $0
+\vspace{$1}
 endsnippet
 
-snippet - "textemdash" b
+snippet -- "textemdash" iA
 \textemdash
 endsnippet
 
-snippet tw "textwidth" b
+snippet tw "textwidth"
 \textwidth
 endsnippet
 
-snippet chap "chapter" b
+snippet chap "chapter"
 \chapter{$1} \label{$2} $0
 endsnippet
 
-snippet sec "section" b
-\section{$1} \label {$2} $0
+snippet sec "section"
+\section{$1} \label{$2} $0
 endsnippet
 
-snippet ssec "subsection" b
+snippet ssec "subsection"
 \subsection{$1} \label{$2} $0
 endsnippet
 
-snippet sssec "subsubsection" b
-\subsubsection{$1} \label {$2} $0
+snippet sssec "subsubsection"
+\subsubsection{$1} \label{$2} $0
 endsnippet
-
-
-
