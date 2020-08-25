@@ -1,0 +1,93 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3058, 2020-IV \\ Examen parcial 2 (tarea examen) \\ Fecha de entrega: sábado 22 de agosto, 12:00 hrs.}
+\date{}
+\maketitle
+
+\epigraph{``...self-education is, I firmly believe, the only kind of education there is. The only function of a school is to make self-education easier; failing that, it does nothing.''}{\textemdash Isaac Asimov, \\ escritor estadounidense}
+
+\vspace{1cm}
+\textbf{1.} Sean $V$ y $W$ dos espacios vectoriales arbitrarios definidos sobre un campo $K$ y $\mathcal{L}(V,W)$ el conjunto de todas las transformaciones lineales de $V$ a $W$. Demuestra que $\mathcal{L}(V,W)$ sobre $K$ es un espacio vectorial. (0.5 ptos.)
+
+\vspace{1cm}
+\textbf{2.} Sea $(V,K)$ un espacio vectorial de dimensión finita $n$ y $\beta=(\mathbf{b}_1,\mathbf{b}_2,...,\mathbf{b}_n)$ una base ordenada de $V$. Sea $[\hspace{0.5mm} \cdot\hspace{0.5mm}]_\beta:V\to K^n$ el \emph{mapeo de coordenadas en la representación de la base ordenada} $\beta$ dado por $$[\mathbf{v}]_\beta=\begin{pmatrix} c_1&c_2&...&c_n \end{pmatrix}$$ para todo $\mathbf{v}\in V$, donde los coeficientes $c_i$ son elementos del campo $K$ tales que $\mathbf{v}=c_1\mathbf{b}_1+c_2\mathbf{b}_2+...+c_n\mathbf{b}_n$. Demuestra que $[\hspace{0.5mm} \cdot\hspace{0.5mm}]_\beta$ es una transformación lineal biyectiva y que, por ende, $V$ y $K^n$ son espacios vectoriales isomorfos. (1 pto.)
+
+\vspace{1cm}
+\textbf{3.} ¿Cuál es la importancia en la demostración anterior de que $\beta$ sea un conjunto generador de $V$, sea linealmente independiente y tenga un orden? ¿Este resultado es válido para cualquier base ordenada arbitraria $\beta$ de $V$?  (0.5 ptos.)
+
+\vspace{1cm}
+\textbf{4.} ¿Qué espacios vectoriales reales o complejos $V$ son tales que sus vectores no tienen una infinidad de representaciones? ¿Se puede decir lo mismo sobre $\mathcal{L}(V)$ en esos casos? (0.5 ptos.)  
+
+\vspace{1cm}
+\textbf{5.} Sea $d_i$ el $i$-ésimo dígito del número resultante de sumar todos los números de cuenta de l@s integrantes de tu equipo. Considera la matriz $$A=\begin{pmatrix} d_1 & d_2 & d_3 \\ d_4 & d_5 & d_6 \\ d_7 & d_8 & d_{9} \end{pmatrix}.$$ Determina el rango y la nulidad de $A$, di si es invertible y calcula su determinante. (0.75 ptos.)
+
+\vspace{1cm}
+\textbf{6.} Demuestra que si una transformación es lineal sobre todos los elementos de cualquier base de un espacio vectorial de dimensión finita, entonces la transformación es lineal en todo el espacio vectorial. (0.5 ptos.)
+
+\newpage
+\textbf{7.} Sea $T:\mathbb{C}^2\to\mathbb{C}^2$ una transformación lineal tal que $T(3\mathbf{e}_1-\mathbf{e}_2)=6i\mathbf{e}_1-2i\mathbf{e}_2$ y $T(-5\mathbf{e}_1-i\mathbf{e}_2)=5i\mathbf{e}_1-\mathbf{e}_2$, donde $\eta=(\mathbf{e}_1,\mathbf{e}_2)$ es la base ordenada canónica de $\mathbb{C}^2$. Encuentra una regla de correspondencia para $T$ y calcula una expresión general para $\big([T]_\eta\big)^n,$ con $n\in\mathbb{N}$. (0.5 ptos.)
+
+\vspace{1cm}
+\textbf{8.} Sea $C(\mathbb{R},\mathbb{R})$ el espacio vectorial de todas las funciones reales de variable real continuas y sea $$T:C(\mathbb{R},\mathbb{R})\to C(\mathbb{R},\mathbb{R}) : f(x) \mapsto \frac{f(x)+f(-x)}{2}.$$ \noindent Demuestra que $T$ es una transformación lineal y explica quiénes son $\text{Ker}(T), \hspace{0.5mm} \text{Im}(T)$ y $\text{Ker}(T)\cap\text{Im}(T)$. (0.75 ptos.)
+
+\vspace{1cm}
+\textbf{9.} Siguiendo del segundo ejercicio, sea $\mathcal{L}(V)$ el espacio vectorial de todos los operadores lineales sobre $V$ y sea $[\hspace{0.5mm} \cdot\hspace{0.5mm}]_\beta:\mathcal{L}(V) \to M_{n\times n}(K)$ el \emph{mapeo de representación matricial de un operador lineal en la base ordenada} $\beta$. Demuestra que $[\hspace{0.5mm} \cdot \hspace{0.5mm}]_\beta$ es un isomorfismo entre $\mathcal{L}(V)$ y $M_{n\times n}(K)$. (1.5 ptos.)
+
+\vspace{1cm}
+\textbf{10.} Sean $V, W$ y $Z$ espacios vectoriales de dimensión finita con bases ordenadas $\alpha, \beta$ y $\gamma$, respectivamente, y sean $T:V\to W$ y $U:W\to Z$ transformaciones lineales. Demuestra que $[UT]_\alpha^\gamma=[U]_\beta^\gamma[T]_\alpha^\beta$. (0.75 ptos.)
+
+\vspace{1cm}
+\textbf{11.} Sea $K$ un campo y sean $A, B, C\in M_{n\times n}(K)$ invertibles. Demuestra que $(ABC)^{-1}=C^{-1}B^{-1}A^{-1}$. (0.5 ptos.)
+
+\vspace{1cm}
+\textbf{12.} Siguiendo del décimo ejercicio, si $\alpha'$ y $\gamma'$ son otras bases ordenadas de $V$ y $Z$, respectivamente, y además suponemos que $T$ y $U$ son transformaciones lineales invertibles, ¿cómo puedes obtener a $[T^{-1}U^{-1}]_{\gamma'}^{\alpha'}$ en términos de las matrices $[U]_\beta^\gamma$ y $[T]_\alpha^\beta$? (0.75 pto.)
+
+\vspace{1cm}
+\textbf{13.} Como ejercicio para resumir el examen, describe las diferencias entre las maneras en que se transforman las matrices (que representan transformaciones lineales y/o operadores lineales sobre espacios vectoriales de dimensión finita), las $n$-tuplas (que representan vectores de espacios vectoriales de dimensión finita) y los escalares (que son elementos de los campos con los cuales definimos a los espacios vectoriales) bajo un cambio de base ordenada, así como el porqué de cada una de ellas. (1.5 ptos.)
+
+\end{document}
