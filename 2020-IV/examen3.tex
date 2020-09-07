@@ -1,0 +1,81 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3058, 2020-IV \\ Examen parcial 3 (tarea examen) \\ Fecha de entrega: sábado 5 de septiembre, 12:00 hrs.}
+\date{}
+\maketitle
+
+\epigraph{``El estudio no se mide por el número de páginas leídas en una noche, ni por la cantidad de libros leídos en un semestre. Estudiar no es un acto de consumir ideas, sino de crearlas y recrearlas.''}{\textemdash Paulo Freire, \\ pedagogo brasileño}
+
+\vspace{5mm}
+\textbf{1. Diagonalizabilidad}
+
+Sea $(V,K)$ un espacio vectorial de dimensión finita y $T:V\to V$ un operador lineal con espectro\footnote{El conjunto de eigenvalores $\{\lambda_1,\lambda_2,...\hspace{0.5mm},\lambda_k\}$ de un operador lineal $T$ se conoce como el \emph{espectro} de $T$.} $\{\lambda_1,\lambda_2,...\hspace{0.5mm},\lambda_k\}$. Demuestra que $T$ es diagonalizable si y sólo si su polinomio característico es separable en $K$ y se cumple que $$n-\text{rango}(T-\lambda_i I) = m_i$$ para todo $1\leq i\leq k$, donde $m_i$ es la multiplicidad del eigenvalor $\lambda_i$ correspondiente. Por otro lado, demuestra que $T$ es diagonalizable si y sólo si se puede formar una base de $V$ compuesta de eigenvectores de $T$.
+
+Luego, sea $d_i$ el $i$-ésimo dígito del número resultante de sumar todos los números de cuenta de l@s integrantes de tu equipo. Supongamos que $\text{dim}(V)=3$ y que un operador lineal $T:V\to V$ actúa sobre una base $\beta=\{\mathbf{b}_1, \mathbf{b}_2,\mathbf{b}_3\}$ de $V$ como sigue: $$T(\mathbf{b}_j) = \sum_{k=1}^3 d_{j+3(k-1)}\mathbf{b}_k, \hspace{3mm} 1\leq j\leq 3.$$ Calcula el espectro de $T$, así como un conjunto de eigenvectores normales de $T$. Finalmente, a partir de la demostración anterior, determina si $T$ es diagonalizable y, en caso de que lo sea, diagonalízalo. (2 ptos.)
+
+\vspace{5mm}
+\textbf{2. Operadores de proyección}
+
+Sea $V$ un espacio vectorial. Decimos que un operador lineal $P:V\to V$ tal que $P^2 = P$ es un \emph{operador de proyección}. Demuestra que si $V$ es de dimensión finita entonces para todo operador de proyección se verifica que $$\text{Im}(P)\oplus\text{Ker}(P)=V.$$ Además, demuestra que para todo operador lineal $T:V\to V$, $T$ es un operador diagonalizable con eigenvalores $1$ y $0$ si y sólo si es un operador de proyección. (2 ptos.)
+
+\vspace{5mm}
+\textbf{3. Proyecciones ortogonales}
+
+Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar. Si $W$ es un subespacio de $V$, entonces definimos a su \emph{complemento ortogonal} como $$W^\perp = \{\mathbf{v}\in V\mid \langle \mathbf{w}, \mathbf{v}\rangle = 0\hspace{3mm}\forall\hspace{1mm}\mathbf{w}\in W\}.$$ Demuestra que $P:V\to V$ es un operador de proyección con una base de eigenvectores ortogonales si y sólo si $$\text{Im}(P) \oplus \text{Im}(P)^\perp = V = \text{Ker}(P)^\perp \oplus \text{Ker}(P).$$ Después, generaliza el resultado para cualquier operador lineal $T:V\to V$ con una base ortogonal de eigenvectores. ¿Cómo cambia la interpretación geométrica de este hecho entre operadores de proyección $P$ con base ortogonal de eigenvectores y operadores lineales más generales $T$ con base ortogonal de eigenvectores\footnote{Pista: ¿cómo se relacionan $\text{Ker}(P)$ y $\text{Im}(P)$ con los eigenespacios de $P$? ¿Sucede lo mismo para $T$?}. (2 ptos.)
+
+\vspace{5mm}
+\textbf{4. Descomposición espectral} 
+
+Sea $V$ un espacio vectorial de dimensión finita con producto escalar. Sea $T:V\to V$ un operador lineal con eigenvalores $\lambda_1, \lambda_2, ...\hspace{0.5mm}, \lambda_k$ y eigenespacios $E_{\lambda_1},E_{\lambda_2},...\hspace{0.5mm},E_{\lambda_k}$. Sea $P_{E_{\lambda_i}}$ el operador de proyección sobre el eigenespacio $E_{\lambda_i}$ para $1\leq i\leq k$. Demuestra que $T$ tiene una base de eigenvectores ortonormales si y sólo si podemos descomponer a $T$ como $$T = \lambda_1 P_{E_{\lambda_1}} + \lambda_2 P_{E_{\lambda_2}}+...+\lambda_k P_{E_{\lambda_k}}.$$ ¿Por qué es indispensable que un operador $T$ sobre un espacio vectorial de dimensión finita $V$ con producto escalar tenga una base \emph{ortogonal} de eigenvectores para que podamos hacer la descomposición espectral de la demostración anterior? Argumenta geométricamente. ¿Se podría hacer una descomposición espectral de un operador que actúe sobre un espacio vectorial \emph{sin} producto escalar? (2 ptos.)
+
+\vspace{5mm}
+\textbf{5. Diagonalizabilidad simultánea}
+
+Sean $T$ y $T'$ dos operadores lineales con espectros $\{\lambda_1,\lambda_2,...\hspace{0.5mm},\lambda_k\}$ y $\{\lambda'_1,\lambda'_2,...\hspace{0.5mm},\lambda'_k\}$, respectivamente, que actúan sobre un espacio vectorial $V$ de dimensión finita. Supongamos que para todo $E_{\lambda_i}$ se cumple que $$E_{\lambda_i}=E_{\lambda'_j}$$ para algún eigenespacio $E_{\lambda'_j}$ de $T'$. Demuestra que $T$ y $T'$ son simultáneamente diagonalizables\footnote{Nótese que no es necesario que $\lambda_i=\lambda'_j$ para que $E_{\lambda_i}=E_{\lambda'_j}.$}. (2 ptos.)
+
+\end{document}

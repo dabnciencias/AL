@@ -219,7 +219,7 @@ Un espacio vectorial es una estructura algebráica abstracta que cumple una seri
 
 \subsubsection{Definición de espacio vectorial} \label{Def:Espacio_vectorial}
 
-\begin{tcolorbox}
+\begin{tcolorbox} \label{Def:Espacio_vectorial}
 \underline{Def.} Un \textit{espacio vectorial} sobre un campo\footnote{Ver sección \ref{Def:Campo}.} $K$ es un conjunto $V$ con dos operaciones (llamadas \textit{adición} o \textit{suma vectorial} y \textit{producto de un vector por un escalar}) que satisfacen las siguientes propiedades:
 
 \begin{center}
@@ -997,17 +997,21 @@ Nota: también se puede definir un \emph{triple producto vectorial} entre tres v
 
 \hspace{2.5mm}Como seguramente habrás notado al leer los libros recomendados en la sección \ref{Bibliografía}, al producto escalar en inglés se le conoce como \emph{inner product}, y a los espacios vectoriales dotados de un producto escalar se les conoce como \emph{inner product spaces}. En español, al producto escalar también se le conoce como \emph{producto interior}; sin embargo, existe otro tipo de producto diferente al producto escalar al cual en inglés, desafortunadamente, le llaman \emph{interior product}.
 
+\vspace{5mm}
 \hspace{2.5mm}Esto significa que, en inglés, la convención es que \emph{scalar product} e \emph{interior product} sean operaciones diferentes mientras que, en español, la convención es que \emph{producto escalar} y \emph{producto interior} se refieran a la misma operación. Algunos textos en español utilizan \emph{producto interno} (en vez de producto interior) como sinónimo de \emph{producto escalar} para homologar los nombres con los utilizados en inglés pero, por ahora, las convenciones preponderantes en español e inglés no permiten una traducción directa.
 
+\vspace{5mm}
 \hspace{2.5mm}Por lo anterior, en estas notas decidí usar únicamente el nombre de \emph{producto escalar} para la operación entre dos vectores que da como resultado un escalar (la cual acostumbramos llamar \emph{producto punto} cuando esos vectores son $n$-tuplas), pero es importante que sepan que esta operación es equivalente al \emph{\underline{inner} product} de los textos en inglés.
 
-    \hspace{2.5mm} Para empeorar la situación, algunos textos en inglés se refieren a la operación de producto de un vector por un escalar como \emph{scalar multiplication} \textemdash por lo cual algunos textos en español pueden referirse a esta operación como \emph{multiplicación escalar} o, inclusive, \emph{producto escalar}\textemdash \hspace{0.5mm} mientras que otros textos utilizan el término \emph{scalar multiplication} para referirse a la multiplicación entre dos elementos del campo (escalares) que da como resultado otro elemento del campo (escalar). Por lo tanto, debemos recordar que el significado de estos términos depende del contexto en que se utilicen. 
+\vspace{5mm}
+\hspace{2.5mm} Para empeorar la situación, algunos textos en inglés se refieren a la operación de producto de un vector por un escalar como \emph{scalar multiplication} \textemdash por lo cual algunos textos en español pueden referirse a esta operación como \emph{multiplicación escalar} o, inclusive, \emph{producto escalar}\textemdash \hspace{0.5mm} mientras que otros textos utilizan el término \emph{scalar multiplication} para referirse a la multiplicación entre dos elementos del campo (escalares) que da como resultado otro elemento del campo (escalar). Por lo tanto, debemos recordar que el significado de estos términos depende del contexto en que se utilicen. 
 
-    \hspace{2.5mm} Finalmente, remarcamos que la convención de este texto: 
+\vspace{5mm}
+\hspace{2.5mm} Finalmente, remarcamos que en la convención de este texto: 
     \begin{itemize}
-        \item Los términos \emph{producto de un vector por un escalar} y \emph{reescalamiento} se emplean para referirnos a la operación realizada entre un vector del conjunto vectorial y un escalar del campo que da como resultado otro vector.
-        \item El término \emph{producto escalar} se reserva para la operación realizada entre dos vectores que da como resultado un escalar. 
-        \item El término \emph{producto entre escalares} se utiliza para referirnos a la multiplicación entre dos escalares del campo que da como resultado otro escalar del campo.
+        \item Los términos \emph{producto de un vector por un escalar} y \emph{reescalamiento} se emplean para referirnos a la operación realizada entre un vector del conjunto vectorial y un escalar del campo que da como resultado otro vector;
+        \item el término \emph{producto escalar} se reserva para la operación realizada entre dos vectores que da como resultado un escalar;
+        \item el término \emph{producto entre escalares} se utiliza para referirnos a la multiplicación entre dos escalares del campo que da como resultado otro escalar del campo.
     \end{itemize}
 
 
@@ -1436,25 +1440,128 @@ Finalmente, por construcción $S'_k\subseteq \langle S_k \rangle$, lo cual tambi
 \item Sea $P_0(x)=1, P_1(x)=x, P_2(x)=\frac{3x^2-1}{2}, P_3(x)=\frac{5x^3-3x}{2}.$ Demuestra que el conjunto $\{P_0,P_1,P_2,P_3\}$ es una base del espacio vectorial $P^3$ y di si es ortogonal y/o ortonormal en el intervalo $[-1,1]$ (Nota: tendrás que utilizar la definición de producto escalar para funciones vista en la sección \ref{Ejem:Producto_escalar}). 
 \end{enumerate}
 
-\section{} \label{} 
+\section{Transformaciones lineales y sus representaciones matriciales} \label{Sec:Transformaciones lineales y sus representaciones matriciales} 
 
-\section{} \label{}
+\section{Composición de transformaciones lineales y multiplicación de matrices} \label{Sec: Composición de transformaciones lineales y multiplicación de matrices}
 
-\section{} \label{}
+\section{Invertibilidad e isomorfismos} \label{Sec:Invertibilidad e isomorfismos}
 
-\section{} \label{}
+\section{Matriz de cambio de base} \label{Sec:Matriz de cambio de base}
 
-\section{} \label{} 
+\section{Eigenvectores y eigenvalores} \label{Sec:Eigenvectores y eigenvalores} 
 
-\section{} \label{} 
+\section{Diagonalizabilidad} \label{Sec:Diagonalizabilidad} 
 
-\section{} \label{} 
+\newpage
+\section{Introducción a sistemas lineales de ecuaciones diferenciales} \label{Sec: Sistemas lineales de ecuaciones diferenciales ordinarias} 
 
-\section{} \label{} 
+Esta pequeña sección de las notas tiene como finalidad introducir algunos de los conceptos que utilizaremos durante la segunda mitad del tercer módulo del curso, para el cual seguiremos principalmente el libro \emph{Linear Algebra: A Modern Introduction} de Poole (págs. 340-348).
+
+\subsection{Sistemas lineales de ecuaciones algebráicas}
+
+Cuando hablamos de un \emph{sistema de ecuaciones}, generalmente nos referimos a un grupo de ecuaciones que deben cumplirse simultáneamente, por ejemplo, $$x_1 + x_2 = 1,$$ $$x_1 - x_2 = 5.$$ Para este sistema de ecuaciones, decimos que tenemos dos \emph{incógnitas}, $x_1$ y $x_2$, que queremos encontrar.
+
+\vspace{3mm}
+Como sabemos, podemos formar sistemas con más ecuaciones y/o incógnitas. En general, podemos expresar un sistema de $m$ ecuaciones y $n$ incógnitas como $$f_1(x_1,x_2,...,x_n)=0$$ $$f_2(x_1,x_2,...,x_n)=0$$ $$...$$ $$f_m(x_1,x_2,...,x_n)=0,$$ donde $f_j$, con $1\leq j\leq m$, es una función arbitraria de las incógnitas $x_i$, donde $1\leq i\leq n$. Decimos que tenemos una \emph{solución} al sistema cuando encontramos los valores de las incógnitas $x_i$ para los cuales todas las ecuaciones se verifican simultáneamente. Si reordenamos las ecuaciones del sistema que aparece al inicio de esta sección, podemos ver que en ese caso $f_1(x_1,x_2)=x_1+x_2-1$ y $f_2(x_1,x_2)=x_1-x_2-5$, y que la solución al sistema es $x_1=3, x_2=-2$. Observemos que $m=2$ y $n=2$ en este caso; precisamente por esto decimos que es un sistema de dos ecuaciones con dos incógnitas.
+
+\vspace{3mm}
+Por lo regular, trabajamos con sistemas de ecuaciones en donde las funciones $f_j$ son \emph{polinomios} en las variables $x_i$; a este tipo de ecuaciones se les llama \emph{algebráicas} y, por lo tanto, en esos casos decimos que tenemos un \emph{sistema de ecuaciones algebráicas}, como el ejemplo del inicio de esta sección.
+
+\vspace{3mm}
+Cuando en una ecuación algebráica las incógnitas no aparecen elevadas a una potencia mayor a uno, decimos que la ecuación es \emph{lineal}. Análogamente, cuando en un sistema de ecuaciones algebráicas las incógnitas no aparecen elevadas a una potencia mayor a uno \textemdash o, equivalentemente, cuando todos los polinomios $f_j$ son de grado uno\textemdash\hspace{1mm} tenemos un sistema de ecuaciones algebráicas lineales; generalmente, en estos casos decimos que tenemos un \emph{sistema lineal de ecuaciones algebráicas}.
+
+\vspace{3mm}
+Lo que caracteriza a los sistemas de ecuaciones algebráicas (de los cuales los sistemas lineales de ecuaciones algebráicas son un caso particular) es que sus soluciones pueden ser números enteros, racionales, irracionales o hasta complejos, pero siempre son números; es decir, las \emph{incógnitas} de este tipo de sistemas de ecuaciones \textemdash y, por tanto, sus soluciones\textemdash\hspace{1mm} son \emph{números}. Esta es la principal diferencia entre este tipo de sistemas y los sistemas de ecuaciones \emph{diferenciales}, que veremos más adelante. Antes de eso, tenemos que entender la diferencia entre las ecuaciones algebráicas y las ecuaciones diferenciales, lo cual haremos en la siguiente sección.
+
+\subsection{Introducción a ecuaciones diferenciales (ordinarias)} \label{Subsec:Introducción a ecuaciones diferenciales ordinarias}
+
+A diferencia de una ecuación algebráica, en una ecuación \emph{diferencial} la incógnita de la ecuación \textemdash y, por lo tanto, su solución\textemdash es una \emph{función}. Por ejemplo, la ecuación $$\dot{x} + x = 0,$$ donde $\dot{x}$ representa la derivada de la función $x$ con respecto a alguna variable independiente \textemdash usualmente llamada $t$, aunque esto es sólo una etiqueta\footnote{Con \emph{etiqueta} nos referimos a que, de haber postulado que la función $x$ dependía de una variable independiente $s$, entonces la solución a la ecuación diferencial sería $x(s)=e^{-s},$ lo cual no cambia en absoluto el sentido de la ecuación ni de su solución. A este tipo de variables ``etiqueta'' acostumbramos llamarles \emph{variables mudas}.}\textemdash, tiene como solución a la función $x(t)=e^{-t}$, y dicha solución es válida para todo $t\in\mathbb{R}$ ya que en todo este intervalo se verifica que\footnote{Observemos que pudimos haber planteado esta ecuación diferencial de manera equivalente como $\dot{x}=-x$, y la solución sería la misma, ya que $\frac{d}{dt}e^{-t}=-e^{-t}$ para todo $t\in\mathbb{R}$.} $$\frac{d }{dt}e^{-t} + e^{-t} = \bigg(\frac{d}{d(-t)}e^{-t}\bigg)\bigg(\frac{d }{dt}(-t)\bigg) + e^{-t} = \big(e^{-t}\big)\big(-1\big)+e^{-t} = -e^{-t}+e^{-t}= 0.$$
+
+\vspace{3mm}
+En general, las incógnitas de las ecuaciones diferenciales pueden ser funciones de más de una variable, y en la ecuación pueden aparecer dos o más de sus derivadas parciales; a este tipo de ecuaciones diferenciales les llamamos ecuaciones diferenciales \emph{parciales}. En cambio, cuando nuestra función incógnita depende de una sola variable, decimos que tenemos una ecuación diferencial \emph{ordinaria}; éstas últimas son con las cuales trabajaremos. A continuación, formalizamos algunas definiciones que utilizaremos.
+
+\vspace{3mm}
+\begin{tcolorbox}
+\underline{Def.} Una \emph{ecuación diferencial ordinaria} es una relación entre una función incógnita $x(t)$, sus derivadas, y una variable independiente $t$. En general, podemos expresar una ecuación diferencial ordinaria como $$f\big(t,x(t),\dot{x}(t),\ddot{x}(t),...\hspace{0.5mm},x^{(n)}(t)\big)=0,$$ donde $f$ es una función arbitraria y $x^{(n)}(t)$ denota la $n$-ésima derivada de la función incógnita $x$ con respecto a su variable independiente $t$. Decimos que una función $x(t)$ es una \emph{solución} a la ecuación diferencial anterior en un intervalo $I$ si tanto $x(t)$ como sus derivadas cumplen dicha ecuación para todo $t\in I$.
+\end{tcolorbox}
+
+\vspace{2mm}
+Podemos clasificar algunos tipos de ecuaciones diferenciales ordinarias, como sigue\footnote{Observen la analogía con la forma en que clasificamos ecuaciones algebráicas (polinomiales), pero también las diferencias. Las definiciones presentadas serán relevantes para nuestros fines.}:
+
+\vspace{3mm}
+\begin{tcolorbox}
+\underline{Def.} Decimos que una ecuación diferencial ordinaria es:
+\begin{itemize}
+    \item \emph{de orden} $n$ si la derivada de mayor grado que aparece en la ecuación es de orden $n$;
+    \item \emph{lineal} si se puede escribir de la forma $$a_n(t)x^{(n)}(t)+a_{n-1}(t)x^{(n-1)}(t)+...+a_1(t)\dot{x}(t)+a_0(t)x(t)+b(t)=0$$ para funciones $a_1(t),a_2(t),...\hspace{0.5mm},a_n(t),b(t)$ dadas (que pueden, en particular, ser constantes)\footnote{En particular, si $b(t)$ es la constante cero, decimos que la ecuación es lineal \textit{homogénea}.};
+    \item \emph{autónoma} si en la ecuación no aparece la variable independiente $t$.
+\end{itemize}
+\end{tcolorbox}
+
+\subsection{Ecuaciones diferenciales (ordinarias) con condiciones inciales} \label{Subsec:Ecuaciones diferenciales (ordinarias) con condiciones iniciales}
+
+Con regularidad, nos encontramos con ecuaciones diferenciales que tienen más de una solución, e inclusive pueden tener una infinidad de ellas. Por ejemplo, regresando a la ecuación $$\dot{x} + x = 0,$$ podemos verificar que la función $x(t)=C e^{-t}$ es una solución en todo el intervalo $\mathbb{R}$ para cualquier $C\in\mathbb{R}$. Decimos entonces que $x(t)=Ce^{-t}$ es una \emph{solución general} a la ecuación diferencial anterior\footnote{Por dar otro ejemplo, podemos decir que la ecuación $\ddot{x}+x=0$ tiene como solución general a $x(t)=A\sin(t)+B\cos(t)$ en todo el intervalo $\mathbb{R}$ para cualesquiera valores $A,B\in\mathbb{R}$ (¡compruébalo!).}. En esta solución general, el valor $C$ representa un \emph{grado de libertad} de la solución, el cual puede removerse agregando una \emph{restricción} a la ecuación diferencial, la cual viene en forma de una \emph{condición inicial}.
+
+\vspace{3mm}
+Supongamos que nos piden resolver la ecuación diferencial anterior bajo la condición de que al evaluar la función en $t=0$ obtenemos un cierto valor $C_0\in\mathbb{R}$. Es decir que la solución $x(t)$, además de cumplir la ecuación diferencial, debe cumplir que $x(t)|_{t=0}=C_0.$ Partiendo de nuestra solución general, resolvemos ahora la última ecuación mostrada como sigue $$x(t)|_{t=0}=C_0\implies C e^{-t}|_{t=0}=C_0\implies C e^{0}=C_0\implies C(1)=C_0\implies C=C_0.$$ Por lo tanto, la solución a la ecuación diferencial $\dot{x}+x=0$ con condición inicial $x(0)=C_0$, donde $C_0\in\mathbb{R}$ es un valor determinado, es $x(t)=C_0 e^{-t}$. Ya que en este caso $x(t)$ sigue cumpliendo la ecuación diferencial original pero ya no tiene grados de libertad, decimos que es una \emph{solución particular} a la ecuación diferencial $\dot{x}+x=0$ sujeta a la \emph{condición inicial} $x(0)=C_0,$ con $C_0\in\mathbb{R}$.
+
+\vspace{3mm}
+\begin{tcolorbox}
+\underline{Def.} Decimos que una función $x(t)$ es una \emph{solución particular} a una ecuación diferencial ordinaria de grado uno si, además de cumplir con dicha ecuación, cumple con la \emph{condición inicial} $$x(t_0)=C_0,$$ donde $C_0$ es un valor fijo.
+\end{tcolorbox}
+
+\subsection{Sistemas lineales de ecuaciones diferenciales (ordinarias)} \label{Subsec:Sistemas lineales de ecuaciones diferenciales (ordinarias)}
+
+De forma análoga a como podemos formar sistemas de ecuaciones a partir de ecuaciones algebráicas, también podemos formarlos a partir de ecuaciones diferenciales. Por ejemplo, el sistema de ecuaciones diferenciales $$\dot{x_1} - x_2 = 0,$$ $$x_1 + \dot{x_2} = 0,$$ tiene como solución general a $x_1(t)=A\sin(t), x_2(t)=A\cos(t)$, válida en todo el intervalo $\mathbb{R}$ para cualquier $A\in\mathbb{R}$. Observemos que, en este sistema, ninguna de las incógnitas apareció elevada a una potencia mayor a uno. Por lo tanto, este sistema es un ejemplo de un \emph{sistema lineal de ecuaciones diferenciales ordinarias}.
+
+\vspace{3mm}
+\begin{tcolorbox}
+\underline{Def.} Decimos que un sistema de ecuaciones diferenciales es un \emph{sistema lineal de ecuaciones diferenciales ordinarias} si todas las ecuaciones diferenciales ordinarias del sistema son lineales en todas sus incógnitas. Usualmente, se les abrevia como \emph{sistemas lineales de ecuaciones diferenciales}.
+\end{tcolorbox}
+\vspace{3mm}
+
+Después de esta introducción, puedes continuar leyendo las págs. 273-274 del libro \emph{Linear Algebra} de Friedberg y 340-342 del libro \emph{Linear Algebra: A Modern Introduction} de Poole para ver cómo podemos aplicar herramientas de álgebra lineal (en particular, diagonalización) para resolver este tipo de sistemas. Si deseas repasar el material presente antes de continuar, te sugiero resolver los ejercicios al final de esta sección. Después, deberás resolver los ejercicios $59, 61$ y $63$ de la sección 4.6 del Poole.
+
+\subsection{Ejercicios de repaso}
+
+\subsubsection{Sistemas lineales de ecuaciones algebráicas}
+\begin{enumerate}
+    \item Realiza un cuadro comparativo con las definiciones de sistema de ecuaciones, sistema de ecuaciones algebráicas y sistema lineal de ecuaciones algebráicas. 
+    \item Escribe o argumenta por qué no puedes escribir un ejemplo de:
+    \begin{enumerate}[label=\alph*)]
+        \item una ecuación \emph{trascendental} (i.e., no algebráica);
+        \item un sistema no lineal de ecuaciones algebráicas;
+        \item un sistema lineal de ecuaciones no algebráicas.
+    \end{enumerate}
+    \item Demuestra que en una ecuación lineal homogénea con más de una incógnita el conjunto de soluciones forma un espacio vectorial. Después, generaliza el resultado para demostrar que en un sistema lineal de ecuaciones algebráicas homogéneas con menos ecuaciones que incógnitas el conjunto de soluciones forma un espacio vectorial.
+\end{enumerate}
+
+\subsubsection{Introducción a ecuaciones diferenciales (ordinarias)}
+\begin{enumerate}
+    \item Encuentra la solución general a la ecuación $\dot{x}-x=0$ en todo el intervalo $\mathbb{R}$.
+    \item Sea $C^{\infty}(\mathbb{R})$ el conjunto de todas las funciones reales de variable real con derivadas de cualquier orden y sea $\frac{d}{dt}:C^{\infty}(\mathbb{R})\to C^{\infty}(\mathbb{R})$ el operador lineal \emph{derivada}. Supongamos que $x(t)$ es un eigenvector de $\frac{d}{dt}$ con eigenvalor $\lambda,$ ¿entonces quién es $x(t)$?
+    \item Muestra que tanto la ecuación diferencial del ejemplo dado al inicio de la sección \ref{Subsec:Ecuaciones diferenciales (ordinarias) con condiciones iniciales} como su solución general son un caso particular del ejercicio anterior.
+\end{enumerate}
+
+\subsubsection{Ecuaciones diferenciales (ordinarias) con condiciones iniciales}
+\begin{enumerate}
+    \item Encuentra la solución particular a la ecuación $\dot{x}+x=0$ con la condición inicial $x(0)=5$.
+    \item Encuentra la solución particular a la ecuación $\dot{x}+x=0$ con la condición inicial $x(1)=5$.
+    \item Muestra que cualquier solución particular (es decir, sin grados de libertad) de la ecuación $\ddot{x}=g$ debe tener dos condiciones iniciales: una para la función $x(t)$ y otra para $\dot{x}(t)$. ¿De qué ecuación se trata?
+\end{enumerate}
+
+\subsubsection{Sistemas lineales de ecuaciones diferenciales (ordinarias)}
+\begin{enumerate}
+    \item Di si el siguiente sistema de ecuaciones diferenciales ordinarias es lineal, autónomo, ambos o ninguno, y explica por qué: $$\dot{x_1}+3x_2 = 0,$$ $$\dot{x_2} - x_3 = 0,$$ $$x_1-6\dot{x_3} = 0.$$
+\end{enumerate}
+
+\newpage
+\section{Modelación con sistemas lineales de ecuaciones diferenciales} \label{Sec:Modelación con sistemas lineales de ecuaciones diferenciales} 
+Para esta sección, seguiremos el libro \emph{Linear Algebra: A Modern Introduction} de Poole, págs. 342-348. Deberás realizar los ejercicios 65, 66, 67, 69, 71, 73 y 75 de la sección 4.6 del Poole, así como el ejercicio 15 de la sección 5.2 del Friedberg.
 
 \newpage
 
-\section{Complemento ortogonal, funcionales y espacio dual} \label{Sec:13} 
+\section{Funcionales y espacio dual, complemento ortogonal y proyecciones ortogonales} \label{Sec:13} 
 
 En lo que resta del curso, utilizaremos la llamada \emph{notación de bra-ket}, también conocida como \emph{notación de Dirac}, por lo que se presenta a continuación.
 
@@ -1466,7 +1573,7 @@ En lo que resta del curso, utilizaremos la llamada \emph{notación de bra-ket}, 
     \begin{tabular}{cc}
         \\
         $\ket{v}$ & vector o \emph{ket}  \\ \\
-        $\braket{u|v}$ & producto escalar o \emph{braket}  \\ \\
+        $\braket{u|v}$ & producto escalar o \emph{bra-ket}  \\ \\
         $\bra{u}$ & vector dual (funcional) o \emph{bra} \\ \\
     \end{tabular}
 \end{tcolorbox}
@@ -1481,6 +1588,46 @@ Con esta notación podemos, por ejemplo, reescribir algunos resultados que ya co
 \] \noindent y \[
 \forall \hspace{1.5mm} T:V\to V \hspace{2mm} \text{lineal, si} \hspace{2mm} A=[T]_{\beta} \implies A_{ij}=\braket{T(v_j)|v_i}
 .\] 
+
+\subsection{Funcionales y espacio dual} \label{Subsec:Funcionales_y_espacio_dual} 
+
+Como hemos visto anteriormente, si $K$ es un campo y $V$ y $W$ son dos espacios vectoriales sobre $K$, entonces $\mathcal{L}(V,W)$ \textemdash el conjunto de todas las transformaciones lineales de $V$ a $W$\textemdash\hspace{0.5mm} es un espacio vectorial sobre $K$. En particular, como vimos a inicios del curso, $(K,K)$ también es un espacio vectorial, por lo cual podemos fijar nuestra atención en el espacio vectorial $\mathcal{L}(V,K)$. En esta sección veremos el importante papel que juega este espacio vectorial; principalmente, nos enfocaremos en los espacios vectoriales con producto escalar.
+
+\vspace{3mm}
+\begin{tcolorbox}
+    \underline{Def.} Sea $(V,K)$ un espacio vectorial. Decimos que $\textbf{f}$ es un \emph{funcional lineal}, o simplemente un \emph{funcional}, si $\textbf{f}\in\mathcal{L}(V,K)$.
+
+\vspace{3mm}
+    \underline{Def.} Al espacio vectorial $\mathcal{L}(V,K)$ lo llamamos el \emph{espacio dual} de $V$, denotado por $V^*$. Por ello, a sus elementos también se les conoce como \emph{vectores duales}. 
+\end{tcolorbox}
+
+\vspace{3mm}
+\textbf{Ejemplos de funcionales} \label{Ejem:Funcionales}
+
+\vspace{3mm}
+Sea $V$ un espacio vectorial de dimensión finita, $\beta=(\mathbf{b}_1,\mathbf{b}_2,...,\mathbf{b}_n)$ una base ordenada de $V$ y $[\hspace{0.5mm} \cdot\hspace{0.5mm}]_\beta$ el \emph{mapeo de coordenadas en la representación de la base ordenada} $\beta$ dado por $$[\mathbf{v}]_\beta=\begin{pmatrix} c_1&c_2&...&c_n \end{pmatrix}$$ para todo $\mathbf{v}\in V$, donde los coeficientes $c_i$ son tales que $\mathbf{v}=c_i \mathbf{b}_i$ en notación de Einstein. Si definimos a $\textbf{f}_i(\mathbf{v})=c_i$ para toda $1\le i\le n$, entonces $\textbf{f}_i$ es un funcional sobre $V$ conocido como la \emph{función de la i-ésima coordenada en la representación de la base ordenada} $\beta$. 
+
+\vspace{3mm}
+En los espacios vectoriales de matrices cuadradas $M_{n\times n}(K)$, donde $K$ es un campo, la traza $tr(\cdot):M_{n\times n}\to K$ y el determinante $det(\cdot):M_{n\times n}\to K$ son funcionales.
+
+\vspace{3mm}
+Sea $(V,K)$ un espacio vectorial con producto escalar y $\ket{v}\in V$ un vector arbitrario, entonces la proyección escalar sobre $\ket{v}$ dada (en notación de Dirac) por $$P_{\ket{{v}}}(\ket{u}) = \frac{\braket{v|u}}{||\ket{v}||}$$ para todo $\ket{u}\in V$ es un funcional sobre $V$. 
+
+\subsection{Correspondencia entre bras y kets} \label{Subsec:Correspondencia_entre_bras_y_kets} 
+
+Sea $(V,K)$ un espacio vectorial arbitrario con producto escalar $\braket{\cdot|\cdot}:V\times V\to K$ donde, siguiendo la notación de bra-ket, la primera entrada es antilineal. Si elegimos a un vector arbitrario $\ket{v}\in V$ y lo fijamos en la entrada antilineal del producto escalar, podemos definir un funcional $\braket{v|\cdot}:V\to K$, el cual se puede escribir más sencillamente como $\bra{v}$. Ya que en notación de bra-ket a los vectores $\ket{u}$ se les llama \emph{kets} y a los productos escalares $\braket{y|x}$, \emph{bra-kets} (proveniente del inglés \emph{brackets}), a este tipo de funcionales $\bra{v}$ se les conoce como \emph{bras}.
+
+Dado que a partir de cualquier vector $\ket{v}\in V$ se puede definir un funcional $\bra{v}\in V^*$, existe una correspondencia natural entre \emph{bras} y \emph{kets}. Sin embargo, para entender bien esta correspondencia debemos observar un detalle crucial: si hacemos el producto de un ket $\ket{v}$ por un escalar $\alpha\in K$, obteniendo así el ket $\alpha\ket{v}$, entonces el bra correspondiente será $\overline{\alpha}\bra{v}$\footnote{En la notación que usábamos antes, esto se explica como que si tomamos al vector $\alpha\mathbf{v}$ y lo fijamos en la entrada antilineal del producto escalar, obtenemos el funcional $\langle\hspace{0.5mm}\cdot\hspace{0.5mm} , \alpha\mathbf{v}\rangle:V\to K$ que, como sabemos, es igual a $\overline{\alpha}\langle\hspace{0.5mm} \cdot\hspace{0.5mm} ,\mathbf{v}\rangle$.}. Es decir, la correspondencia entre bras (que son un tipo de vectores duales) y kets está dada por \[
+    \alpha\ket{v} \leftrightarrow \overline{\alpha}\bra{v}
+.\] 
+
+De esta manera, si queremos hacer el producto escalar de un vector arbitrario $\alpha_1 \ket{u}$ con otro vector $\alpha_2 \ket{v}$, podemos simplemente unir el ket $\alpha_1 \ket{u}$ con el bra correspondiente al otro vector, que sería $\overline{\alpha_2}\ket{v}$, obteniendo \[
+    \big(\overline{\alpha_2}\bra{v}\big)\big(\alpha_1\ket{u}\big) = \overline{\alpha_2}\alpha_1\braket{v|u}
+.\] Una ventaja de esta notación es que \textemdash siempre y cuando recordemos bien la correspondencia entre bras y kets mostrada en el párrafo anterior\textemdash\hspace{0.5mm} ya no tenemos que preocuparnos por cómo sacar escalares del producto escalar.
+
+Más generalmente, si $\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ es una base de $V$, entonces la correspondencia entre bras de $V^*$ y kets de $V$ puede expresarse como \[
+    \sum_{i=1}^n c_i \ket{b_i} \leftrightarrow \sum_{i=1}^n \overline{c_i}\bra{b_i}
+.\]    
 
 \subsection{Complemento ortogonal} \label{Subsec:Complemento_ortogonal} 
 
@@ -1547,51 +1694,30 @@ Para demostrar la unicidad de $\ket{u}$ y $\ket{z}$, supongamos que existen $\ke
     \end{proof}
 \end{teorema}
 
-\subsection{Funcionales y espacio dual} \label{Subsec:Funcionales_y_espacio_dual} 
+\subsection{Proyecciones ortogonales***}
 
-Como hemos visto anteriormente, si $K$ es un campo y $V$ y $W$ son dos espacios vectoriales sobre $K$, entonces $\mathcal{L}(V,W)$ \textemdash el conjunto de todas las transformaciones lineales de $V$ a $W$\textemdash\hspace{0.5mm} es un espacio vectorial sobre $K$. En particular, como vimos a inicios del curso, $(K,K)$ también es un espacio vectorial, por lo cual podemos fijar nuestra atención en el espacio vectorial $\mathcal{L}(V,K)$. En esta sección veremos el importante papel que juega este espacio vectorial; principalmente, nos enfocaremos en los espacios vectoriales con producto escalar.
 
-\vspace{3mm}
 \begin{tcolorbox}
-    \underline{Def.} Sea $(V,K)$ un espacio vectorial. Decimos que $\textbf{f}$ es un \emph{funcional lineal}, o simplemente un \emph{funcional}, si $\textbf{f}\in\mathcal{L}(V,K)$.
+\begin{center}
+    \textbf{Nota aclaratoria: \emph{Sobre bras, kets, y bra-kets...}}
+\end{center}
 
-\vspace{3mm}
-    \underline{Def.} Al espacio vectorial $\mathcal{L}(V,K)$ lo llamamos el \emph{espacio dual} de $V$, denotado por $V^*$. Por ello, a sus elementos también se les conoce como \emph{vectores duales}. 
+%EXPLICAR LA DIFERENCIA SUTIL ENTRE UNIR UN BRA Y UN KET (APLICARLE UN FUNCIONAL A UN VECTOR) Y HACER EL PRODUCTO ESCALAR ENTRE DOS KETS (UTILIZANDO UN BRA-KET).
+
+\hspace{3mm} Como hemos visto en esta sección, en un espacio vectorial $(V,K)$ los \emph{kets} $\ket{x},\ket{y},\ket{z}$, etc. son simplemente vectores de $V$, mientras que los \emph{bras} $\bra{x},\bra{y},\bra{z}$, etc. son funcionales sobre $V$, es decir, transformaciones lineales que van de $V$ a $K$.
+
+\vspace{5mm}
+\hspace{3mm} A pesar de que exista la correspondencia entre kets $\alpha\ket{x}\in V$ y bras $\overline{\alpha}\bra{x}\in V^*$ descrita en la sección \ref{Subsec:Correspondencia_entre_bras_y_kets}, debemos remarcar una diferencia sutil pero importante entre la operación de aplicarle un funcional a un vector y la operación de obtener el producto escalar entre dos vectores antes de pasar a la siguiente sección.
+
+\vspace{5mm}
+\hspace{3mm} Si $\ket{x}\in V$ y $\bra{y}\in V^*$ entonces, como $\bra{y}:V\to K$, tenemos que $$\bra{y}(\ket{x}) = \braket{y|x},$$ donde $\bra{y}$ es el vector dual correspondiente al vector $\ket{y}$. La observación crucial es esta: del lado izquierdo de la ecuación estamos aplicándole el funcional $\bra{y}$ al vector $\ket{x}$, mientras que del lado derecho estamos obteniendo el producto escalar entre el vector $\ket{x}$ (en la entrada lineal) y el vector $\ket{y}$ (en la entrada antilineal)\footnote{Inclusive l@s más atrevid@s entre ustedes se podrían animar a agregar una equivalencia más a la ecuación anterior: $\braket{y|x}=(\bra{y})\ket{x}$; es decir, podrían entretener la idea de que $\ket{x}$ sea ahora un \emph{funcional} que actúa sobre los vectores duales $\bra{y}\in V^*$ por la derecha; esto está relacionado con el hecho de que, si $V$ es un espacio de dimensión finita, entonces $(V^*)^*$ es isomorfo a $V$ \textemdash aunque no lo demostraremos en este curso.}; ambas operaciones involucran objetos distintos \textemdash la primera se realiza entre un funcional ($\bra{y}$) y un ket ($\ket{x}$), mientras que la segunda se realiza entre dos kets ($\ket{x}$ y $\ket{y}$)\textemdash\hspace{1mm} y, sin embargo, dan el mismo escalar como resultado.
+
+\vspace{5mm}
+
 \end{tcolorbox}
 
-\vspace{3mm}
-\textbf{Ejemplos de funcionales} \label{Ejem:Funcionales}
-
-\vspace{3mm}
-Sea $V$ un espacio vectorial de dimensión finita, $\beta=(\mathbf{b}_1,\mathbf{b}_2,...,\mathbf{b}_n)$ una base ordenada de $V$ y $[\hspace{0.5mm} \cdot\hspace{0.5mm}]_\beta$ el \emph{mapeo de coordenadas en la representación de la base ordenada} $\beta$ dado por $$[\mathbf{v}]_\beta=\begin{pmatrix} c_1&c_2&...&c_n \end{pmatrix}$$ para todo $\mathbf{v}\in V$, donde los coeficientes $c_i$ son tales que $\mathbf{v}=c_i \mathbf{b}_i$ en notación de Einstein. Si definimos a $\textbf{f}_i(\mathbf{v})=c_i$ para toda $1\le i\le n$, entonces $\textbf{f}_i$ es un funcional sobre $V$ conocido como la \emph{función de la i-ésima coordenada en la representación de la base ordenada} $\beta$. 
-
-\vspace{3mm}
-En los espacios vectoriales de matrices cuadradas $M_{n\times n}(K)$, donde $K$ es un campo, la traza $tr(\cdot):M_{n\times n}\to K$ y el determinante $det(\cdot):M_{n\times n}\to K$ son funcionales.
-
-\vspace{3mm}
-Sea $(V,K)$ un espacio vectorial con producto escalar y $\ket{v}\in V$ un vector arbitrario, entonces la proyección escalar sobre $\ket{v}$ dada (en notación de Dirac) por $$P_{\ket{{v}}}(\ket{u}) = \frac{\braket{v|u}}{||\ket{v}||}$$ para todo $\ket{u}\in V$ es un funcional sobre $V$. 
-
-\subsection{Correspondencia entre bras y kets} \label{Subsec:Correspondencia_entre_bras_y_kets} 
-
-Sea $(V,K)$ un espacio vectorial arbitrario con producto escalar $\braket{\cdot|\cdot}:V\times V\to K$ donde, siguiendo la notación de bra-ket, la primera entrada es antilineal. Si elegimos a un vector arbitrario $\ket{v}\in V$ y lo fijamos en la entrada antilineal del producto escalar, podemos definir un funcional $\braket{v|\cdot}:V\to K$, el cual se puede escribir más sencillamente como $\bra{v}$. Ya que en notación de bra-ket a los vectores $\ket{u}$ se les llama \emph{kets} y a los productos escalares $\braket{y|x}$, \emph{bra-kets} (proveniente del inglés \emph{brackets}), a este tipo de funcionales $\bra{v}$ se les conoce como \emph{bras}.
-
-Dado que a partir de cualquier vector $\ket{v}\in V$ se puede definir un funcional $\bra{v}\in V^*$, existe una correspondencia natural entre \emph{bras} y \emph{kets}. Sin embargo, para entender bien esta correspondencia debemos observar un detalle crucial: si hacemos el producto de un ket $\ket{v}$ por un escalar $\alpha\in K$, obteniendo así el ket $\alpha\ket{v}$, entonces el bra correspondiente será $\overline{\alpha}\bra{v}$\footnote{En la notación que usábamos antes, esto se explica como que si tomamos al vector $\alpha\mathbf{v}$ y lo fijamos en la entrada antilineal del producto escalar, obtenemos el funcional $\langle\hspace{0.5mm}\cdot\hspace{0.5mm} , \alpha\mathbf{v}\rangle:V\to K$ que, como sabemos, es igual a $\overline{\alpha}\langle\hspace{0.5mm} \cdot\hspace{0.5mm} ,\mathbf{v}\rangle$.}. Es decir, la correspondencia entre bras (que son un tipo de vectores duales) y kets está dada por \[
-    \alpha\ket{v} \leftrightarrow \overline{\alpha}\bra{v}
-.\] 
-
-De esta manera, si queremos hacer el producto escalar de un vector arbitrario $\alpha_1 \ket{u}$ con otro vector $\alpha_2 \ket{v}$, podemos simplemente unir el ket $\alpha_1 \ket{u}$ con el bra correspondiente al otro vector, que sería $\overline{\alpha_2}\ket{v}$, obteniendo \[
-    \big(\overline{\alpha_2}\bra{v}\big)\big(\alpha_1\ket{u}\big) = \overline{\alpha_2}\alpha_1\braket{v|u}
-.\] Una ventaja de esta notación es que \textemdash siempre y cuando recordemos bien la correspondencia entre bras y kets mostrada en el párrafo anterior\textemdash\hspace{0.5mm} ya no tenemos que preocuparnos por cómo sacar escalares del producto escalar.
-
-Más generalmente, si $\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ es una base de $V$, entonces la correspondencia entre bras de $V^*$ y kets de $V$ puede expresarse como \[
-    \sum_{i=1}^n c_i \ket{b_i} \leftrightarrow \sum_{i=1}^n \overline{c_i}\bra{b_i}
-.\]    
 
 \subsection{Ejercicios de repaso} \label{}
-\subsubsection{Complemento ortogonal} \label{Ejer:Complemento_ortogonal}
-\begin{enumerate}
-    \item Demuestra que para todo subespacio vectorial $W$ de un espacio vectorial $V$ de dimensión finita $n$ y con producto escalar, $V$ es igual a una suma directa de $W$ y $W^{\perp}.$ ¿Por qué es importante que $V$ tenga dimensión finita? (Nota: tendrás que demostrar las observaciones hechas al principio de la sección \ref{Subsec:Complemento_ortogonal}.)
-\end{enumerate}
 
 \subsubsection{Funcionales y espacio dual} \label{Ejer:Funcionales_y_espacio_dual}
 \begin{enumerate}
@@ -1601,11 +1727,29 @@ Más generalmente, si $\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ es una base de $V$
 \subsubsection{Correspondencia entre bras y kets} \label{Ejer:Correspondencia_entre_bras_y_kets}
 \begin{enumerate}
     \item Sea $(V,K)$ un espacio vectorial con producto escalar. Demuestra que el conjunto de todos los bras correspondientes a los vectores de $V$ forma un subespacio vectorial de $V^*$.
-    \item Demuestra que el subespacio de $V^*$ obtenido en el ejercicio ianterior es isomorfo a $V$. En otras palabras, demuestra que la correspondencia entre bras y kets dada en la sección \ref{Subsec:Correspondencia_entre_bras_y_kets} es un isomorfismo.
+    \item Demuestra que el subespacio de $V^*$ obtenido en el ejercicio anterior es isomorfo a $V$. En otras palabras, demuestra que la correspondencia entre bras y kets dada en la sección \ref{Subsec:Correspondencia_entre_bras_y_kets} es un isomorfismo.
+\end{enumerate}
+
+\subsubsection{Complemento ortogonal} \label{Ejer:Complemento_ortogonal}
+\begin{enumerate}
+    \item Demuestra que para todo subespacio vectorial $W$ de un espacio vectorial $V$ de dimensión finita $n$ y con producto escalar, $V$ es igual a una suma directa de $W$ y $W^{\perp}.$ ¿Por qué es importante que $V$ tenga dimensión finita? (Nota: tendrás que demostrar las observaciones hechas al principio de la sección \ref{Subsec:Complemento_ortogonal}.)
+\end{enumerate}
+
+\subsubsection{Proyecciones ortogonales***} \label{Ejer:Proyecciones_ortogonales}
+\begin{enumerate}
+    \item
 \end{enumerate}
 
 \newpage
-\section{Operadores lineales adjuntos} \label{Sec:14} 
+\section{Descomposición espectral y operadores adjuntos} \label{Sec:14} 
+
+\subsection{Descomposición espectral (introducción)***}
+
+Supongamos que tenemos un espacio vectorial $(V,K)$ de dimensión finita con producto escalar y un operador lineal diagonalizable $T:V\to V$ tal que sus eigenvectores forman una base \emph{ortogonal} de $V$; es decir, que se puede elegir a una base ortogonal de $V$ compuesta por eigenvectores de nuestro operador $T$. 
+
+Empezando nuestra búsqueda por hipótesis más precisas que deban cumplir operadores lineales sobre espacios vectoriales de dimensión finita con producto escalar para que les podamos aplicar la descomposición espectral, nuestra primera pista se encuentra en los operadores adjuntos, que definiremos y estudiaremos en la siguiente sección.
+
+\subsection{Operadores adjuntos}
 
 Como vimos en la sección \ref{Subsec:Correspondencia_entre_bras_y_kets}, en cualquier espacio vectorial $(V,K)$ con producto escalar podemos tomar cualquier vector $\ket{y}\in V$ y definir un funcional $\textbf{g}:V\to K$ como \[
     \textbf{g}(\ket{x})=\braket{y|x}
@@ -1639,35 +1783,138 @@ Antes de continuar, recordamos la siguiente definición.
 
 \hspace{5mm} 
 \begin{tcolorbox}
-    \underline{Def.} Decimos que una transformación lineal es un \emph{operador lineal} cuando su dominio y contradominio son el mismo espacio vectorial. Escribimos esto como $T:V\to V$ lineal.
+    \underline{Def.} Decimos que una transformación lineal es un \emph{operador lineal} cuando su dominio y contradominio son el mismo espacio vectorial. Por lo tanto, si decimos que $T$ es un operador lineal \textemdash o, simplemente, operador\textemdash \ sobre $V$, nos referimos a una transformación lineal $T:V\to V$.
 \end{tcolorbox}
-\hspace{5mm} 
 
 \begin{teorema}{14.2}
-    Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y sea $T:V\to V$ un operador lineal. Entonces existe una única función $T^*:V\to V$ tal que $\braket{y|T(x)}=\braket{T^*(y)|x}$ para toda $\ket{x},\ket{y}\in V$.
+    Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y sea $T:V\to V$ un operador lineal. Entonces existe una única función $T^*:V\to V$ tal que $\braket{y|T(x)}=\braket{T^*(y)|x}$ para toda $\ket{x},\ket{y}\in V$. Además, $T^*$ es lineal.
+    
+    \begin{proof}
+        Sea $\ket{y}\in V$. Definimos a $\textbf{g}:V\to K$ como $\textbf{g}(\ket{x})=\braket{y|T(x)}$ para todo $\ket{x}\in V.$ Primero, verificamos que $\textbf{g}$ es lineal: sean $\ket{x_1},\ket{x_2}\in V$ y $c\in K$, entonces $$\textbf{g}(c\ket{x_1}+\ket{x_2})=\braket{y|T(cx_1+x_2)}=\braket{y|cT(x_1)+T(x_2)}=\braket{y|cT(x_1)}+\braket{y|T(x_2)}$$ $$=c\braket{y|T(x_1)}+\braket{y|T(x_2)}=c\textbf{g}(\ket{x_1})+\textbf{g}(\ket{x_2}),$$ por lo que $T$ es lineal.
+        
+        Luego, aplicamos el Teorema 14.1 para obtener un vector único $\ket{y'}\in V$ tal que $\textbf{g}(\ket{x})=\braket{y'|x}$ para todo $\ket{x}\in V.$ Observemos que, por definición de $\textbf{g}$, $\braket{y|T(x)}=\braket{y'|x}$ para todo $\ket{x}\in V$. Definiendo a $T^*:V\to V$ como $T^*(\ket{y})=\ket{y'}$ tenemos que $\braket{y|T(x)}=\braket{T^*(y)|x}$, como se deseaba. Ahora, debemos demostrar que $T^*$ es lineal: sean $\ket{y_1},\ket{y_2}\in V$ y $c\in K$, entonces para todo $\ket{x}\in V$ se cumple que $$\braket{T^*(cy_1+y_2)|x}=\braket{cy_1+y_2|T(x)}=\overline{c}\braket{y_1|T(x)}+\braket{y_2|T(x)}$$ $$=\overline{c}\braket{T^*(y_1)|x}+\braket{T^*(y_2)|x}=\braket{cT^*(y_1)+T^*(y_2)|x}$$ $$\implies\braket{T^*(cy_1+y_2)|x}-\braket{cT^*(y_1)+T(y_2)|x}=0$$ $$\implies \braket{T^*(cy_1+y_2)-(cT^*(y_1)+T^*(y_2))|x}=0.$$ Como esto vale para todo $\ket{x}\in V$, entonces esto implica que $$ \ket{T^*(cy_1+y_2)-(cT^*(y_1)+T(y_2))}=\ket{0}$$ $$\implies T^*(\ket{cy_1+y_2})=cT^*(\ket{y_1})+T^*(\ket{y_2}).$$
+        
+        Finalmente, para ver que $T^*$ es única: sea $U:V\to V$ un operador lineal tal que $\braket{y|T(x)}=\braket{U(y)|x}$ para todo $\ket{x},\ket{y}\in V$, entonces $\braket{T^*(y)|x}=\braket{U(y)|x}$ para todo $\ket{x},\ket{y}\in V$, por lo que $U=T^*$.
+    \end{proof}
 \end{teorema}
 
+Como veremos dentro de poco, el operador $T^*$ descrito en el Teorema 14.2 es de gran importancia en los espacios vectoriales con producto escalar, por lo cual le damos un nombre especial.
+
+\hspace{0.5mm}
+\begin{tcolorbox} \label{Def:Operador_adjunto}
+\underline{Def.} Sea $V$ un espacio vectorial de dimensión finita y $T^*:V\to V$ el operador lineal único que para todo $\ket{x},\ket{y}\in V$ satisface la relación $$\braket{y|T(x)}=\braket{T^*(y)|x},$$ donde $T:V\to V$ es un operador lineal. Entonces, decimos que $T^*$ es el \emph{operador adjunto} de $T$.
+
+\vspace{5mm}
+\hspace{3mm} En el caso en que $V$ sea un espacio vectorial de dimensión infinita y para un operador lineal $T:V\to V$ exista otro operador lineal $T^*:V\to V$ tal que la relación anterior se cumpla, entonces nuevamente diremos que $T^*$ es el operador adjunto de $T$ \textemdash sin embargo, en este tipo de espacios vectoriales la existencia de $T^*$ no está asegurada para todo operador lineal $T$.
+\end{tcolorbox}
+\vspace{5mm}
+
+Ya que varios de los teoremas que demostraremos a continuación aplican tanto para espacios vectoriales de dimensión finita como aquellos de dimensión infinita, de ahora en adelante, cuando hagamos referencia a un operador adjunto en un espacio vectorial de dimensión infinita, asumiremos implícitamente su existencia.
+
+A continuación, demostraremos que en espacios vectoriales de dimensión finita podemos obtener la representación matricial de un operador adjunto a partir de la representación matricial del operador original de una forma muy sencilla, siempre y cuando utilicemos una base ortonormal para representar ambas matrices.
+
+% PODRÍA METER A_ij=<b_i,T(b_j)> con beta una base ortonormal como un Teorema anterior al actual Teorema 14.3
+
+\begin{teorema} {14.3}
+Sea $(V,K)$ un espacio vectorial de dimensión finita $n$ con producto escalar, $\beta=\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ una base ortonormal de $V$ y $T:V\to V$ un operador lineal. Entonces $$[T^*]_\beta=\big([T]_\beta\big)^*,$$ donde $A^*$ se define mediante la relación $A^*_{ij}=\overline{A_{ji}}$ para toda $A\in M_{n\times n}(K)$.
+\begin{proof}
+Sean $A=[T]_\beta$ y $B=[T^*]_\beta$. Si partimos del sistema de ecuaciones que define a la representación matricial $A$ y hacemos producto escalar por la izquierda en ambos lados de cada una de las ecuaciones por un elemento $\ket{b_i}$ de la base y aplicamos ortonormalidad, obtenemos la relación $$A_{ij}=\braket{b_i,T(b_j)}.$$ 
+
+Haciendo un procedimiento análogo con la representación matricial $B$, obtenemos que $$B_{ij}=\braket{b_i,T^*(b_j)},$$ de donde se sigue que $$B_{ij}=\overline{\braket{T^*(b_j),b_i}}=\overline{\braket{b_j|T(b_i)}}=\overline{A_{ji}},$$ lo cual implica que $B=A^*$, es decir, que $[T^*]_\beta=\big([T]_\beta\big)^*$.
+\end{proof}
+\end{teorema}
+
+A la luz del Teorema 14.3, damos una nueva definición, que quizá ya esperes.
+
+\vspace{5mm}
+\begin{tcolorbox}
+\underline{Def.} Sea $K$ un campo y $A\in M_{n\times n}(K)$. Decimos que $A^*\in M_{n\times n}(K)$, definida a través de la relación $$A^*_{ij}=\overline{A_{ji}},$$ es la \emph{matriz adjunta} de $A$.
+\end{tcolorbox}
+\vspace{5mm}
+
+\noindent Recordando que para matrices cuadradas $A$ la matriz transpuesta $A^T$ se define mediante la relación $$A^T_{ij}=A_{ji},$$ podemos ver que la matriz adjunta $A^*$ se obtiene mediante la transposición de la matriz $A$ y la conjugación de sus entradas, sin importar el orden en que se realicen estas dos operaciones.
+
+\subsection{Ejercicios de repaso}
+\begin{enumerate}
+    \item Sea $V$ un espacio vectorial de dimensión finita $n$ con producto escalar y $\beta=\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ una base ortonormal de $V$. Demuestra que si $T:V\to V$ es lineal, entonces $([T]_\beta)_{ij}=\braket{b_i|T(b_j)}.$
+    \item Sea $K$ un campo y $A\in M_{n\times n}(K)$. Demuestra que
+    $A^*=\overline{A^T}=(\overline{A})^T$ y, por lo tanto, que $\text{det}(A^*)=\overline{\text{det}(A)}$.
+    \item Sea $(V,K)$ un espacio vectorial con producto escalar y sean $T$ y $U$ operadores lineales sobre $V$ para los cuales existen operadores adjuntos $T^*$ y $U^*$, respectivamente. Demuestra las siguientes propiedades:
+        \begin{enumerate}[label=\alph*)]
+            \item $(T+U)^*=T^*+U^*$;
+            \item $(cT)^*=\overline{c}T^*$ para todo $c\in K$;
+            \item $(TU)^*=U^*T^*$;
+            \item $(T^*)^*=T$;
+            \item $I^*=I$.
+        \end{enumerate}
+    \item Sea $K$ un campo y sean $A,B\in M_{n\times n}(K)$. Demuestra las siguientes propiedades:
+        \begin{enumerate}[label=\alph*)]
+            \item $(A+B)^*=A^*+B^*$;
+            \item $(cA)^*=\overline{c}A^*$ para todo $c\in K$;
+            \item $(AB)^*=B^*A^*$;
+            \item $(A^*)^*=A$;
+            \item $I^*=I$.
+        \end{enumerate}
+\end{enumerate}
 
 \newpage
-\section{Operadores lineales normales y autoadjuntos} \label{Sec:15} 
+\section{Operadores normales y autoadjuntos y teorema espectral} \label{Sec:15} 
+
+\subsection{Operadores normales y autoadjuntos***}
+
+\subsection{Teorema espectral}
+
+Concluida nuestra búsqueda por hipótesis precisas necesarias para llevar a cabo la descomposición espectral, enunciamos a continuación un teorema que recopila y sintetiza muchos resultados que hemos demostrado a lo largo de este último módulo y que utiliza una inmensa cantidad de conceptos que hemos aprendido durante todo el curso. La demostración de este teorema se deja como ejercicio.
+
+\begin{teorema} {15.algo (Teorema espectral)}
+Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:V\to V$ un operador lineal con eigenvalores distintos $\lambda_1,\lambda_2,...,\lambda_k$. Supongamos que $T$ es normal si $K=\mathbb{C}$ y que $T$ es autoadjunto si $K=\mathbb{R}$. Sea $W_i$ el eigenespacio de $T$ correspondiente al eigenvalor $\lambda_i$, con $1\leq i\leq k$, y sea $T_i$ la proyección ortogonal de $V$ sobre $W_i$. Entonces, se cumple que:
+\begin{enumerate}[label=\alph*)]
+    \item $V = W_1 \oplus W_2 \oplus ... \oplus W_k$;
+    \item si $W_i'=\oplus_{j\neq i}W_j$, entonces $W_i^\perp=W_i'$;
+    \item $T_i T_j = \delta_{ij}T_i$ para $1\leq i,j\leq k$;
+    \item $I = T_1+T_2+...+T_k$;
+    \item $T = \lambda_1 T_1 + \lambda_2 T_2 + ... + \lambda_k T_k$.
+\end{enumerate}
+
+%\begin{proof}
+%\begin{enumerate}[label=\alph*)]
+ %   \item Por los teoremas 6.16 y 6.17 sabemos que $T$ es diagonalizable. Entonces, para cada eigenespacio $W_i$ podemos elegir una base ordenada $\beta_i$ tal que la unión $\beta_1\cup\beta_2\cup...\cup\beta_k$ sea una base ordenada de $V$; en otras palabras, $W_1+W_2+...+W_k=V$. Por otra parte, ya que, por definición de eigenespacios, $W_i\cap W_j=\{\mathbf{0}\}$ si $i\neq j$, tenemos que $$V = W_1 \oplus W_2 \oplus ... \oplus W_k.$$
+    %\item 
+%\end{enumerate}
+%\end{proof}
+
+\end{teorema}
+
+\subsection{Ejercicios de repaso}
+
+\subsubsection{Operadores normales y autoadjuntos}
+\begin{enumerate}
+    \item
+\end{enumerate}
+
+\subsubsection{Teorema espectral}
+
+\begin{enumerate}
+    \item Demuestra el teorema espectral.
+\end{enumerate}
+
 
 \newpage
-\section{Operadores ortogonales y unitarios, proyecciones ortogonales y teorema espectral} \label{Sec:16} 
+\section{Operadores ortogonales y unitarios***} \label{Sec:16} 
+
+\subsection{Operadores ortogonales y unitarios}
+
+
+
+\subsection{Ejercicios de repaso}
+
+\subsubsection{Operadores lineales ortogonales y unitarios}
+
+
+\subsubsection{Proyecciones ortogonales}
+
+
+
+
 
 \end{document}
-
-% OBJETIVOS DE ESTE EXAMEN:
-
-% Que vean que la representaciones de vectores y matrices en una base ordenada es una correspondencia biunívoca, pero que la base puede ser arbitraria.
-
-% Que entiendan profundamente por qué las representaciones de vectores y matrices cambian de distinta forma con los cambios de base, mientras que los escalares son invariantes.
-
-% Que entiendan la relación entre la invertibilidad de una transformación lineal con los conceptos de inyectividad y suprayectividad visto a través de la representación matricial (núcleo e imagen de la matriz, determinante de la matriz). (¡FALTA!)
-
-% Que vean cómo un conjunto de funciones sobre una estructura algebráica puede adquirir la misma estructura algebráica.
-
-% Que puedan interpretar geométricamente transformaciones representadas por matrices complejas. (¡FALTA!)
-
-% ¿Qué espacios vectoriales (reales o complejos) son tales que sus vectores no tienen una infinidad de representaciones? ¿Se puede decir lo mismo sobre el espacio vectorial de operadores lineales sobre esos espacios?
-
-% Que entiendan que algunas bases son mejores que otras para solucionar problemas. (¡FALTA!)
