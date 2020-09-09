@@ -12,6 +12,7 @@ snippet template "Basic template" b
 \usepackage{graphicx}
 \graphicspath{ {images/} }
 \usepackage{tcolorbox}
+\usepackage{enumitem}
 \setcounter{section}{-1}
 \usepackage{tabularx}
 \usepackage{multirow}
@@ -31,7 +32,7 @@ snippet template "Basic template" b
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{teorema}[2][Teorema]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\newenvironment{lema}[2][Lema]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
 
@@ -93,11 +94,6 @@ snippet item "Itemize" b
 	\item $0
 \end{itemize}
 endsnippet
-
-# snippet it "item" b
-# averiguar cómo ir al final de la línea y dar enter
-# \item
-# endsnippet
 
 snippet mk "Math" wA
 $${1}$`!p
@@ -164,6 +160,30 @@ $0
 endsnippet
 
 priority 10
+snippet "ket" "ket vector" rwA
+\ket{$1}$0
+endsnippet
+
+priority 100
+snippet "([a-zA-Z])ket" "ket vector postfix" rwA
+\ket{`!p snip.rv=match.group(1)`}
+endsnippet
+
+snippet "bra" "bra dual vector/functional" 
+\bra{$1}$0
+endsnippet
+
+priority 100
+snippet "([a-zA-Z])bra" "ket vector postfix" rwA
+\bra{`!p snip.rv=match.group(1)`}
+endsnippet
+
+priority 1000
+snippet "braket" "braket notation for scalar product" rwA
+\braket{$1|$2}$0
+endsnippet
+
+priority 10
 snippet "sqrt" "sqrt" rwA
 \sqrt{$1}$0
 endsnippet
@@ -206,7 +226,7 @@ snippet span "span" wi
 endsnippet
 
 snippet imp "implies" w
-\implies
+\implies $0
 endsnippet
 
 snippet LL "L(V,W)" iA
@@ -289,6 +309,10 @@ snippet set "set" w
 \\{$1\\} $0
 endsnippet
 
+snippet seq "subseteq" w
+\subseteq $0
+endsnippet
+
 snippet notin "not in" iA
 \notin
 endsnippet
@@ -342,7 +366,7 @@ snippet un "underline"
 endsnippet
 
 snippet ov "overline"
-\overline{$1}{$0}
+\overline{$1} $0
 endsnippet
 
 snippet fn "footnote"

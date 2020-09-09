@@ -43,10 +43,6 @@ set encoding=utf-8
 inoremap jf <Esc>
 inoremap fj <Esc>
 
-" Mapping ,, to < and .. to >
-inoremap -., <
-inoremap -,. >
-
 " Navigating with guides
 " inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
 " vnoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l
@@ -62,14 +58,13 @@ autocmd FileType tex inoremap up<Tab> <Esc>/usepackage<Enter>o\usepackage{}<Esc>
 " autocmd FileType tex inoremap em<Tab> \emph{}<Space><++><Esc>T{i
 " autocmd FileType tex inoremap un<Tab> \underline{}<Space><++><Esc>T{i
 " autocmd FileType tex inoremap ov<Tab> \overline{}<Space><++><Esc>T{i
-autocmd FileType tex inoremap it<Tab> <Esc>$o\item<Space>
 " autocmd FileType tex inoremap fn<Tab> \footnote{}<Space><++><Esc>T{i
 " autocmd FileType tex inoremap lab<Tab> \label{}<Space><++><Esc>T{i
 " autocmd FileType tex inoremap cap<Tab> \caption{}<Space><++><Esc>T{i
 " autocmd FileType tex inoremap ref<Tab> \ref{}<Space><++><Esc>T{i
 " autocmd FileType tex inoremap url<Tab> \url{}<Space><++><Esc>T{i
-autocmd FileType tex inoremap hl<Tab> <Esc>$o\hline<Enter>
-autocmd FileType tex inoremap cen<Tab> \centering<Enter>
+" autocmd FileType tex inoremap hl<Tab> <Esc>$o\hline<Enter>
+" autocmd FileType tex inoremap cen<Tab> \centering<Enter>
 " autocmd FileType tex inoremap hs<Tab> \hspace{}<Space><++><Esc>T{i
 " autocmd FileType tex inoremap vs<Tab> \vspace{}<Space><++><Esc>T{i
 " autocmd FileType tex inoremap -<Tab> \textemdash<Space>
@@ -77,15 +72,13 @@ autocmd FileType tex inoremap cen<Tab> \centering<Enter>
 " autocmd FileType tex inoremap tw<Tab> \textwidth 
 autocmd FileType tex inoremap def<Tab> \begin{tcolorbox}<Enter>\underline{Def.}<Space><Enter>\end{tcolorbox}<Esc>k$a
 autocmd FileType tex inoremap not<Tab> \begin{tcolorbox}<Enter>\underline{Notación:}<Enter><Enter>\centering<Enter>\begin{tabular}{cc}<Enter>\\<Enter>$$<Space>&<Space><++><Space>\\<Space>\\<Enter>$<++>$<Space>&<Space><++><Space>\\<Enter>\end{tabular}<Enter>\end{tcolorbox}<Esc>3k2T$i
-autocmd FileType tex inoremap row<Tab> <Esc>$a<Enter>$$<Space>&<Space><++><Space>\\<Space>\\<Esc>2T$i
+" autocmd FileType tex inoremap row<Tab> <Esc>$a<Enter>$$<Space>&<Space><++><Space>\\<Space>\\<Esc>2T$i
 
 " Document sections
 " autocmd FileType tex inoremap chap<Tab> \chapter{}<Enter><Enter><++><Esc>2kf}i
 " autocmd FileType tex inoremap sec<Tab> \section{}<Enter><Enter><++><Esc>2kf}i
-" autocmd FileType tex inoremap sub<Tab>
-\subsection{}<Enter><Enter><++><Esc>2kf}i
-" autocmd FileType tex inoremap ssub<Tab>
-\subsubsection{}<Enter><Enter><++><Esc>2kf}i
+" autocmd FileType tex inoremap sub<Tab> \subsection{}<Enter><Enter><++><Esc>2kf}i
+" autocmd FileType tex inoremap ssub<Tab> \subsubsection{}<Enter><Enter><++><Esc>2kf}i
 
 " Math mode
 " autocmd FileType tex inoremap $$ $$$$<Space><++><Esc>6hi
@@ -94,21 +87,19 @@ autocmd FileType tex inoremap row<Tab> <Esc>$a<Enter>$$<Space>&<Space><++><Space
 " autocmd FileType tex inoremap ddx<Tab> \frac{d}{dx}<Space><++><Esc>6h
 " autocmd FileType tex inoremap idx<Tab> \int<Space><Space>d<++><Space><++><Esc>10hi
 " autocmd FileType tex inoremap mbf<Tab> \mathbf{}<++><Esc>T{i
-autocmd FileType tex inoremap mbb<Tab> \mathbb{}<++><Esc>T{i
+" autocmd FileType tex inoremap mbb<Tab> \mathbb{}<++><Esc>T{i
 " autocmd FileType tex inoremap deg<Tab> ^\circ<Space>
 " autocmd FileType tex inoremap proj<Tab> P_{\mathbf{}}(\mathbf{<++>})<Space><++><Esc>2T{i
-"autocmd FileType tex inoremap scal<Tab> (,<++>)<++><Esc>T(i
-"autocmd FileType tex inoremap norm<Tab> ||\mathbf{}||<++><Esc>T{i
-"autocmd FileType tex inoremap sp<Tab> \langle<Space><Space>\rangle<Space><++><Esc>12hi
-"autocmd FileType tex inoremap imp<Tab> \implies<Space>
-autocmd FileType tex inoremap for<Tab> \hspace{3mm}\forall\hspace{1.5mm}<Space> 
-"autocmd FileType tex inoremap x<Tab> \times<Space>
-"autocmd FileType tex inoremap .<Tab> \cdot<Space>
-autocmd FileType tex inoremap tex<Tab> \hspace{1.5mm}\text{}\hspace{1.5mm}<Space><++><Esc>2T{i
-autocmd FileType tex inoremap teo<Tab>
-\begin{teorema}<Space><Enter><++><Enter><Enter>\begin{proof}<Enter><++><Enter>\end{proof}<Enter><++><Enter><Enter>\end{teorema}<Enter><Enter><++><Esc>4k04xk4xk8xk4x2k4xk$a
-autocmd FileType tex inoremap cor<Tab>
-\begin{corolario}<Space><Enter><++><Enter><Enter>\begin{proof}<Enter><++><Enter>\end{proof}<Enter><++><Enter><Enter>\end{corolario}<Enter><Enter><++><Esc>4k04xk4xk8xk4x2k4xk$a
+" autocmd FileType tex inoremap scal<Tab> (,<++>)<++><Esc>T(i
+" autocmd FileType tex inoremap norm<Tab> ||\mathbf{}||<++><Esc>T{i
+" autocmd FileType tex inoremap sp<Tab> \langle<Space><Space>\rangle<Space><++><Esc>12hi
+" autocmd FileType tex inoremap imp<Tab> \implies<Space>
+" autocmd FileType tex inoremap for<Tab> \hspace{3mm}\forall\hspace{1.5mm}<Space> 
+" autocmd FileType tex inoremap x<Tab> \times<Space>
+" autocmd FileType tex inoremap .<Tab> \cdot<Space>
+" autocmd FileType tex inoremap tex<Tab> \hspace{1.5mm}\text{}\hspace{1.5mm}<Space><++><Esc>2T{i
+autocmd FileType tex inoremap teo<Tab> \begin{teorema}<Space><Enter><++><Enter><Enter>\begin{proof}<Enter><++><Enter>\end{proof}<Enter><++><Enter><Enter>\end{teorema}<Enter><Enter><++><Esc>4k04xk4xk8xk4x2k4xk$a
+autocmd FileType tex inoremap cor<Tab> \begin{corolario}<Space><Enter><++><Enter><Enter>\begin{proof}<Enter><++><Enter>\end{proof}<Enter><++><Enter><Enter>\end{corolario}<Enter><Enter><++><Esc>4k04xk4xk8xk4x2k4xk$a
 
 
 " Lastly, to get all UTF-8 characters to appear correctly in vim, make sure
