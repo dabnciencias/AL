@@ -8,6 +8,7 @@ snippet template "Basic template" b
 \usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
 \usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
 \usepackage[hyphens]{url}
 \usepackage{graphicx}
 \graphicspath{ {images/} }
@@ -21,12 +22,21 @@ snippet template "Basic template" b
 \usepackage{tikz}
 \usetikzlibrary{cd}
 \usepackage{pgfplots}
+\usepackage{caption}
+\usepackage{subcaption}
 \usetikzlibrary{babel}
+
+\definecolor{NARANJA}{rgb}{1,0.467,0}
+\definecolor{VERDE}{rgb}{0.31,1,0}
+\definecolor{AZUL}{rgb}{0,0.53,1}
+\definecolor{ROJO}{rgb}{1,0,0}
+
+
 \hypersetup{
     colorlinks=true,
-	linkcolor=red,
-	filecolor=magtenta,
-	urlcolor=orange,
+	linkcolor=ROJO,
+	filecolor=magenta,
+	urlcolor=AZUL,
 }
 \newenvironment{theorem}[2][Theorem]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
@@ -46,6 +56,8 @@ snippet template "Basic template" b
 \newenvironment{corolario}[2][Corolario]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 \newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\pgfplotsset{compat=1.15}
 
 \begin{document}
 \title{$1}
@@ -81,6 +93,23 @@ snippet fig "Figure environment" b
 	\caption{${4:$3}}
 	\label{fig:${5:${3/\W+/-/g}}}
 \end{figure}
+endsnippet
+
+snippet grid "Tikz grid" b
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=1}]
+	\draw[thick,<->] ($1,0) -- ($2,0);
+	\draw[thick,<->] (0,$3) -- (0,$4);
+	\draw[step=1cm,gray,very thin,dashed] ($5,$7) grid ($6,$8);
+	\foreach \x in {$9}
+	    \draw (\x cm, 1pt) -- (\x cm, -1pt) node[anchor=north] {$\x$};
+	\foreach \x in {$10}
+	    \draw (\x cm, 1pt) -- (\x cm, -1pt);
+	\foreach \y in {$11}
+	    \draw (1pt, \y cm) -- (-1pt, \y cm) node[anchor=east] {$\y$};
+	\foreach \y in {$12}
+	    \draw (1pt, \y cm) -- (-1pt, \y cm);
+	$14
+\end{tikzpicture}
 endsnippet
 
 snippet enum "Enumerate" b
@@ -156,7 +185,6 @@ endsnippet
 
 snippet "dvec" "draw a vector" rwA
 \draw[$1] ($2) -- ($3);
-$0
 endsnippet
 
 priority 10
@@ -405,7 +433,7 @@ snippet vs "vertical space" iA
 \vspace{$1}
 endsnippet
 
-snippet -- "textemdash" iA
+snippet -- "textemdash" i
 \textemdash
 endsnippet
 

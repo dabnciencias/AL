@@ -1,0 +1,77 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3058, 2020-IV \\ Reposición del examen parcial 2 (tarea examen) \\ Fecha de entrega: jueves 17 de septiembre, 12:00 hrs.}
+\date{}
+\maketitle
+
+%\epigraph{``\textit{Education is not the filling of a bucket, but the lighting of a fire.}''}{\textemdash William Yeats, \\ poeta irlandés}
+
+\epigraph{``\textit{Taking responsibility for education \underline{is} education. Taking responsibility for learning \underline{is} learning.}''}{\textemdash Salman Khan, \\ fundador de Khan Academy}
+
+Número de cuenta:
+
+\vspace{5mm}
+
+\noindent Sea $d_i$ el $i$-ésimo dígito de tu número de cuenta. Sean los vectores $\mathbf{u},\mathbf{v}\in\mathbb{R}^3$ representados como $\mathbf{u}\dot{=}\begin{bmatrix} d_9 & d_6 & d_3 \end{bmatrix}^T,$ $\hspace{1.5mm} \mathbf{v}\dot{=}\begin{bmatrix} -d_7 & -d_4 & d_1 \end{bmatrix}^T$ en la base ordenada canónica de $\mathbb{R}^3$. 
+
+\vspace{5mm}
+\textbf{1.} Modifica a uno de los dos vectores de tal forma que el conjunto $\{\mathbf{u},\mathbf{v}\}$ sea ortogonal. Demuestra que $\langle \{\mathbf{u},\mathbf{v}\}  \rangle$ es isomorfo a $\mathbb{R}^2$ dando la transformación lineal apropiada, así como su inversa, demostrando que ambas son lineales y que son inversas entre sí. (2 ptos.)
+
+\vspace{5mm}
+\textbf{2.} Encuentra una base ordenada $\beta$ de $\mathbb{R}^3$ en la cual las representaciones de los vectores $\mathbf{u}$ y $\mathbf{v}$ son $3$-tuplas con sólo dos entradas no nulas. Conviértela en una base ortonormal ordenada $\beta'$. Luego, encuentra las matrices de cambio de base entre $\beta$ y $\beta'$. (2 ptos.)
+
+\vspace{5mm}
+\textbf{3.} Modifica las transformaciones lineales que obtuviste en el primer ejercicio de tal forma que tanto el dominio de la primera como el contradominio de la segunda sea $\mathbb{R}^3$, pero que sigan estableciendo un isomorfismo entre $\langle \{\mathbf{u},\mathbf{v}\}  \rangle$ y $\mathbb{R}^2$. Representa ambas transformaciones en forma matricial de dos formas diferentes: primero, utilizando la base ordenada $\beta$ que obtuviste al principio del segundo ejercicio y, después, la base ortonormal ordenada $\beta'$ que obtuviste al final del mismo ejercicio. (2 ptos.)
+
+\vspace{5mm}
+\textbf{4.} Sean $A_1$ y $A_1'$ las representaciones matriciales de la transformación lineal de $\mathbb{R}^3\to\mathbb{R}^2$ que obtuviste en el tercer ejercicio en las bases $\beta$ y $\beta'$, respectivamente. Además, sea $A_2$ la representación matricial en la base $\beta$ de la transformación inversa que obtuviste en el mismo ejercicio. Calcula la matriz resultante de los productos $A_1A_2$, $A_2A_1$, $A_1'A_2$ y $A_2A_1'$. ¿Cómo interpretas el resultado? (2 ptos.)
+
+\vspace{5mm}
+\textbf{5.} Sea $\{\mathbf{u},\mathbf{v}\}$ el conjunto ortogonal que obtuviste al principio del primer ejercicio. Demuestra que $\mathcal{L}(\langle \{\mathbf{u},\mathbf{v}\} \rangle, \langle \{\mathbf{u},\mathbf{v}\} \rangle )$ es isomorfo a $\mathcal{L}(\mathbb{R}^2,\mathbb{R}^2)$. ¿Se cumple lo mismo para cualesquiera dos vectores arbitrarios $\mathbf{u}, \mathbf{v}\in\mathbb{R}^3$? Argumenta tu respuesta. (2 ptos.)
+
+\end{document}

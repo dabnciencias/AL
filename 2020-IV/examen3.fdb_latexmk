@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1599505784 "examen3.tex" "examen3.pdf" "examen3" 1599505785
+["pdflatex"] 1600318182 "examen3.tex" "examen3.pdf" "examen3" 1600318183
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1591545468 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1591545468 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1591545468 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -255,11 +255,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1591545468 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1598380388 4747630 a8c651a607cc8d7ba338c628c48171ea ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1598380372 2514047 c4183761f407ccfc77c62b05b3b34ac8 ""
-  "examen3.aux" 1599505785 793 fe091d87f7a120f80bfb468c55dbe15d "pdflatex"
-  "examen3.out" 1599505785 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "examen3.tex" 1599523330 6802 235fc841ef7e4044c6c2db9c5bea21c9 ""
+  "examen3.aux" 1600318182 793 fe091d87f7a120f80bfb468c55dbe15d "pdflatex"
+  "examen3.out" 1600318182 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "examen3.tex" 1600318180 6794 ca6e42f70db67beeda14ec5ecaacfe53 ""
   (generated)
-  "examen3.pdf"
-  "examen3.log"
   "examen3.aux"
+  "examen3.pdf"
   "examen3.out"
+  "examen3.log"

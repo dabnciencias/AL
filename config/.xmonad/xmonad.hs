@@ -11,11 +11,15 @@ import XMonad
 import Data.Monoid
 import System.Exit
 import Graphics.X11.ExtraTypes.XF86
+import XMonad.ManageHook
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.ManageHelpers
+import XMonad.Util.EZConfig
 import XMonad.Actions.CycleWS
-import XMonad.Layout.NoBorders (smartBorders)
-import XMonad.Layout.Spacing (smartSpacing)
+import XMonad.Layout
+import XMonad.Layout.NoBorders (smartBorders, noBorders)
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -37,6 +41,9 @@ myClickJustFocuses = False
 
 myBorderWidth   = 3
 
+-- No borders in fullscreen
+myLayoutHook    = smartBorders $ Tall 1 (3/100) (1/2) ||| Mirror (Tall 1 (3/100) (1/2)) ||| noBorders Full 
+
 -- modMask lets you specify which modkey you want to use. The default
 -- is mod1Mask ("left alt").  You may also consider using mod3Mask
 -- ("right alt"), which does not conflict with emacs keybindings. The
@@ -57,8 +64,8 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myNormalBorderColor  = "#0088FF"
+myFocusedBorderColor = "#FF7700"
 
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
@@ -87,7 +94,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_j     ), windows W.focusDown)
 
     -- Move focus to previous window
-    , ((modm,               xK_k     ), windows W.focusDown)
+    , ((modm,               xK_k     ), windows W.focusUp)
 
     -- Move focus to master window
     , ((modm,               xK_m     ), windows W.focusMaster)
@@ -107,6 +114,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Toggle the status bar gap
     , ((modm,               xK_b     ), sendMessage ToggleStruts)
 
+    -- Launch lf
+    , ((modm,               xK_f    ), spawn "st -e lf")
+
     -- Launch Firefox
     , ((modm,               xK_w     ), spawn "firefox")
 
@@ -121,6 +131,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Launch Krita
     , ((modm,               xK_g     ), spawn "krita")
+
+    -- Screenshots
+    , ((modm,               xK_Print ), spawn "sleep 0.2; scrot -s ~/Pictures/Screenshot_%Y%m%d_%T.png")
 
     -- Next Workspace
     , ((modm,               xK_Up    ), nextWS)
@@ -156,7 +169,16 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 --      -- you may also bind events to the mouse scroll wheel (button4 and button5)
         ]
 -----------------------------------------------------------------------
+-- Window rules
 
+myManageHook = composeAll
+  [ (className =? "TelegramDesktop" <&&> title =? "Media viewer") --> doFloat 
+  , (className =? "TelegramDesktop" <&&> title =? " ") --> doFloat
+  , (className =? "Steam" <&&> title =? "Stephen's Sausage Roll") --> doFullFloat
+  , (className =? "Steam" <&&> title =? "Brawlhalla") --> doFullFloat
+  , (className =? "Steam" <&&> title =? "Pony Island") --> doFullFloat
+-- , (className =? "Mail" <&&> resource =? "messageWindow") --> doFloat
+  ]
 ------------------------------------------------------------------------
 ---- Command to launch the bar.
 myBar = "xmobar"
@@ -172,7 +194,7 @@ toggleStrutsKey XConfig {XMonad.modMask = modMask} = (modMask, xK_b)
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
-main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
+main = xmonad =<< statusBar myBar myPP toggleStrutsKey (ewmh defaults)
 
 -- A structure containing your configuration settings, overriding
 -- fields in the default config. Any you don't override, will
@@ -183,6 +205,7 @@ main = xmonad =<< statusBar myBar myPP toggleStrutsKey defaults
 defaults = def {
       -- simple stuff
         terminal            = myTerminal,
+        layoutHook          = myLayoutHook,
         focusFollowsMouse   = myFocusFollowsMouse,
         clickJustFocuses    = myClickJustFocuses,
         borderWidth         = myBorderWidth,
@@ -193,5 +216,8 @@ defaults = def {
 
       -- key bindings
         keys                = myKeys,
-        mouseBindings       = myMouseBindings
+        mouseBindings       = myMouseBindings,
+
+      -- hooks, layouts
+        manageHook          = myManageHook
     }
