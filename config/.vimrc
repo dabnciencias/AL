@@ -101,6 +101,17 @@ autocmd FileType tex inoremap not<Tab> \begin{tcolorbox}<Enter>\underline{Notaci
 autocmd FileType tex inoremap teo<Tab> \begin{teorema}<Space><Enter><++><Enter><Enter>\begin{proof}<Enter><++><Enter>\end{proof}<Enter><++><Enter><Enter>\end{teorema}<Enter><Enter><++><Esc>4k04xk4xk8xk4x2k4xk$a
 autocmd FileType tex inoremap cor<Tab> \begin{corolario}<Space><Enter><++><Enter><Enter>\begin{proof}<Enter><++><Enter>\end{proof}<Enter><++><Enter><Enter>\end{corolario}<Enter><Enter><++><Esc>4k04xk4xk8xk4x2k4xk$a
 
+" This makes vim turn paste mode on/off automatically when you paste
+let &t_SI .= "\<Esc>[?2004h"
+let &t_EI .= "\<Esc>[?2004l"
+
+inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+
+function! XTermPasteBegin()
+    set pastetoggle=<Esc>[201~
+    set paste
+    return ""
+endfunction
 
 " Lastly, to get all UTF-8 characters to appear correctly in vim, make sure
 " you have your locales defined as follows:

@@ -11,15 +11,17 @@ import XMonad
 import Data.Monoid
 import System.Exit
 import Graphics.X11.ExtraTypes.XF86
-import XMonad.ManageHook
+import XMonad.Actions.CycleWS
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Hooks.ManageHelpers
-import XMonad.Util.EZConfig
-import XMonad.Actions.CycleWS
+-- import XMonad.Hooks.WindowSwallowing
 import XMonad.Layout
+import XMonad.Layout.Fullscreen
 import XMonad.Layout.NoBorders (smartBorders, noBorders)
+import XMonad.ManageHook
+import XMonad.Util.EZConfig
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -85,7 +87,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_Escape), io (exitWith ExitSuccess))
 
     -- Restart XMonad
-    , ((modm,               xK_r     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm,               xK_r     ), spawn "zathura")
+
+    -- Restart XMonad
+    , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
 
     -- Rotate through available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
@@ -129,12 +134,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Launch Telegram
     , ((modm,               xK_i     ), spawn "telegram-desktop")
 
+    -- Launch Discord
+    , ((modm .|. shiftMask, xK_i     ), spawn "discord")
+
     -- Launch Krita
     , ((modm,               xK_g     ), spawn "krita")
 
-    -- Screenshots
-    , ((modm,               xK_Print ), spawn "sleep 0.2; scrot -s ~/Pictures/Screenshot_%Y%m%d_%T.png")
-
+    -- Screenshot a certain area and save to clipboard
+    , ((modm,               xK_Print ), spawn "sleep 0.2; scrot -s -f ~/Pictures/Screenshot_%Y%m%d_%T.png -e 'xclip -selection c -t image/png < $f'")
+    
     -- Next Workspace
     , ((modm,               xK_Up    ), nextWS)
 
@@ -177,6 +185,9 @@ myManageHook = composeAll
   , (className =? "Steam" <&&> title =? "Stephen's Sausage Roll") --> doFullFloat
   , (className =? "Steam" <&&> title =? "Brawlhalla") --> doFullFloat
   , (className =? "Steam" <&&> title =? "Pony Island") --> doFullFloat
+  , (className =? "zoom" <&&> title=? "Chat") --> doFloat
+  , className =? "mpv" --> doFullFloat
+  , (className =? "firefox" <&&> title =? "Picture-in-Picture") --> doFloat
 -- , (className =? "Mail" <&&> resource =? "messageWindow") --> doFloat
   ]
 ------------------------------------------------------------------------

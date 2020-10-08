@@ -2,7 +2,7 @@ snippet template "Basic template" b
 \documentclass[a4paper]{article}
 
 \usepackage[margin=1.5cm]{geometry}
-\usepackage{amsmath,amsthm,amssymb}
+\usepackage{amsmath,amsthm,amssymb,tabu}
 \usepackage[spanish,es-tabla]{babel}
 \decimalpoint
 \usepackage[T1]{fontenc}
@@ -86,6 +86,15 @@ snippet table "Table environment" b
 \end{table}
 endsnippet
 
+snippet tabu "Tabu (array) environment" b
+\begin{table}[$1]
+    \centering
+	$\begin{tabu}{$2}$3
+	$4 
+	\end{tabu}$
+\end{table}
+endsnippet	
+
 snippet fig "Figure environment" b
 \begin{figure}[${1:htpb}]
 	\centering
@@ -113,7 +122,7 @@ snippet grid "Tikz grid" b
 endsnippet
 
 snippet enum "Enumerate" b
-\begin{enumerate}
+\begin{enumerate}$1
 	\item $0
 \end{enumerate}
 endsnippet
@@ -136,16 +145,20 @@ endsnippet
 snippet dm "Math" wA
 \[
 $1
-.\] $0
+$2\] $0
+endsnippet
+
+snippet "inv" "inverse notation" rw
+^{-1}
 endsnippet
 
 priority 10
-snippet "bar" "bar" rwA
+snippet "bar" "bar" rw
 \overline{$1}$0
 endsnippet
 
 priority 100
-snippet "([a-zA-Z])bar" "bar postfix" riA
+snippet "([a-zA-Z])bar" "bar postfix" ri
 \overline{`!p snip.rv=match.group(1)`}
 endsnippet
 
@@ -169,6 +182,14 @@ snippet "([a-zA-Z])avec" "arrow vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
 endsnippet 
 
+snippet "Ker" "Kernel" rw
+\text{Ker}($1)$0
+endsnippet
+
+snippet "Im" "Image" rw
+\text{Im}($1)$0
+endsnippet
+
 priority 10
 snippet "bvec" "bold vector" rwA
 \mathbf{$1}$0
@@ -188,21 +209,21 @@ snippet "dvec" "draw a vector" rwA
 endsnippet
 
 priority 10
-snippet "ket" "ket vector" rwA
+snippet "ket" "ket vector" rw
 \ket{$1}$0
 endsnippet
 
 priority 100
-snippet "([a-zA-Z])ket" "ket vector postfix" rwA
+snippet "([a-zA-Z])ket" "ket vector postfix" rw
 \ket{`!p snip.rv=match.group(1)`}
 endsnippet
 
-snippet "bra" "bra dual vector/functional" 
+snippet "bra" "bra dual vector/functional" rw
 \bra{$1}$0
 endsnippet
 
 priority 100
-snippet "([a-zA-Z])bra" "ket vector postfix" rwA
+snippet "([a-zA-Z])bra" "ket vector postfix" rw
 \bra{`!p snip.rv=match.group(1)`}
 endsnippet
 
@@ -226,7 +247,7 @@ snippet "frac" "frac" rwA
 endsnippet
 
 snippet ddx "derivative" A
-\frac{d$1}{d$2} $0
+\frac{d$1}{d$2}$0
 endsnippet
 
 snippet idx "integral" A
@@ -242,11 +263,11 @@ snippet deg "degree symbol" w
 endsnippet
 
 snippet proj "projection onto" w
-P_{$1}($2) $0
+P_{$1}($2)$0
 endsnippet
 
 snippet scal "scalar product" w
-($1,$2) $0
+\langle $1 , $2 \rangle$0
 endsnippet
 
 snippet span "span" wi
@@ -258,75 +279,87 @@ snippet imp "implies" w
 endsnippet
 
 snippet LL "L(V,W)" iA
-\mathcal{L}($1,$2) $0
+\mathcal{L}($1,$2)$0
 endsnippet
 
 snippet dim "dimension"
-\text{dim}($1) $0
+\text{dim}($1)$0
 endsnippet
 
 snippet rango "rango"
-\text{rango}($1) $0
+\text{rango}($1)$0
 endsnippet
 
 snippet nulidad "nulidad"
-\text{nulidad}($1) $0
+\text{nulidad}($1)$0
 endsnippet
 
 snippet iff "iff" iA
-\iff 
+\iff $0
 endsnippet
 
 snippet eqv "equiv" iA
-\equivalent
+\equivalent $0
+endsnippet
+
+snippet simeq "similar or equal to" iA
+\simeq $0
 endsnippet
 
 snippet neq "not equal to" iA
 \neq $0
 endsnippet
 
+snippet subeq "subseteq" iA
+\subseteq $0
+endsnippet
+
+snippet leq "leq" iA
+\le $0
+endsnippet
+
+snippet geq "geq" iA
+\ge $0
+endsnippet
+
 snippet pmat "pmat" iA
-\begin{pmatrix} $1 \end{pmatrix} $0
+\begin{pmatrix} $1 \end{pmatrix}$0
 endsnippet
 
 snippet bmat "bmat" iA
-\begin{bmatrix} $1 \end{bmatrix} $0
+\begin{bmatrix} $1 \end{bmatrix}$0
 endsnippet
 
-snippet to "to" b
-\to
+snippet to "to" wi
+\to $0
+endsnippet
+
+snippet mto "maps to" wi
+\mapsto $0
 endsnippet
 
 snippet _ "subscript" b
 _{$1}$0
 endsnippet
 
-snippet leq "leq" iA
-\le 
-endsnippet
-
-snippet geq "geq" iA
-\ge 
-endsnippet
-
-snippet EE "geq" iA
-\exists 
+snippet EE "exists" iA
+\exists \ $0
 endsnippet
 
 snippet AA "forall" iA
-\forall 
+\forall \ $0
 endsnippet
 
 snippet node "node"
-node[$1] $2 {$3}
+node[$1] $2 {$3}$0
 endsnippet
 
 snippet x "times"
-\times 
+\times $0
 endsnippet
 	
 snippet . "cdot" w
-\cdot
+\cdot $0
 endsnippet
 
 snippet norm "norm" w
@@ -337,12 +370,8 @@ snippet set "set" w
 \\{$1\\} $0
 endsnippet
 
-snippet seq "subseteq" w
-\subseteq $0
-endsnippet
-
 snippet notin "not in" iA
-\notin
+\notin $0
 endsnippet
 
 snippet noin "no indent" iA
@@ -350,7 +379,7 @@ snippet noin "no indent" iA
 endsnippet
 
 snippet UU "cup" iA
-\cup 
+\cup $0
 endsnippet
 
 snippet tleft "left triangle" iA
@@ -362,7 +391,7 @@ snippet tright "right triangle" iA
 endsnippet
 
 snippet II "cap" iA
-\cap 
+\cap $0
 endsnippet
 
 snippet CC "complex" iA
@@ -382,19 +411,19 @@ snippet NN "natural" iA
 endsnippet
 
 snippet tbf "bold text" iA
-\textbf{$1} $0
+\textbf{$1}$0
 endsnippet
 
 snippet em "emphasis/italics"
-\emph{$1} $0
+\emph{$1}$0
 endsnippet
 
 snippet un "underline"
-\underline{$1} $0
+\underline{$1}$0
 endsnippet
 
 snippet ov "overline"
-\overline{$1} $0
+\overline{$1}$0
 endsnippet
 
 snippet fn "footnote"
@@ -413,7 +442,7 @@ snippet ref "reference"
 \ref{$1}$0
 endsnippet
 
-snippet htar "hypertarget" iA
+snippet htar "hypertarget" i
 \hypertarget{$1}{\textbf{$1}}$0
 endsnippet
 
@@ -426,7 +455,7 @@ snippet url "url"
 endsnippet
 
 snippet hs "horizontal space" iA
-\hspace{$1} $0
+\hspace{$1}$0
 endsnippet
 
 snippet vs "vertical space" iA
@@ -434,25 +463,25 @@ snippet vs "vertical space" iA
 endsnippet
 
 snippet -- "textemdash" i
-\textemdash
+\textemdash $0
 endsnippet
 
 snippet tw "textwidth"
-\textwidth
+\textwidth $0
 endsnippet
 
 snippet chap "chapter"
-\chapter{$1} \label{$2} $0
+\chapter{$1} \label{$2}$0
 endsnippet
 
 snippet sec "section"
-\section{$1} \label{$2} $0
+\section{$1} \label{$2}$0
 endsnippet
 
 snippet ssec "subsection"
-\subsection{$1} \label{$2} $0
+\subsection{$1} \label{$2}$0
 endsnippet
 
 snippet sssec "subsubsection"
-\subsubsection{$1} \label{$2} $0
+\subsubsection{$1} \label{$2}$0
 endsnippet
