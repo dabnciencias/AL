@@ -27,6 +27,9 @@ syntax on
 " Speed up scrolling
 set ttyfast
 
+" Use the system clipboard for copy and paste
+set clipboard=unnamedplus
+
 " Show line numbers and change to green
 set number
 highlight LineNr ctermfg=green
@@ -40,8 +43,12 @@ set expandtab
 set encoding=utf-8
 
 " Mapping jf and fj to Esc
-inoremap jf <Esc>
 inoremap fj <Esc>
+inoremap jf <Esc>
+inoremap fJ <Esc>
+inoremap jF <Esc>
+inoremap FJ <Esc>
+inoremap JF <Esc>
 
 " Navigating with guides
 " inoremap <Tab><Tab> <Esc>/<++><Enter>"_c4l

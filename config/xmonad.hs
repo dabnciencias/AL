@@ -62,7 +62,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
+myWorkspaces    = ["1","2","3","4","5","6","7","8","9","0"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -120,7 +120,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_b     ), sendMessage ToggleStruts)
 
     -- Launch lf
-    , ((modm,               xK_f    ), spawn "st -e lf")
+    , ((modm,               xK_f    ), spawn "st -e vifm")
 
     -- Launch Firefox
     , ((modm,               xK_w     ), spawn "firefox")
@@ -155,7 +155,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Move and switch to worskpace N
     [((m .|. modm, k), windows $ f i)
-        | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
+        | (i, k) <- zip (XMonad.workspaces conf) ([xK_1 .. xK_9] ++ [xK_0])
         , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
 
 ----------------------------------------------------------------------
@@ -180,16 +180,20 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- Window rules
 
 myManageHook = composeAll
-  [ (className =? "TelegramDesktop" <&&> title =? "Media viewer") --> doFloat 
-  , (className =? "TelegramDesktop" <&&> title =? " ") --> doFloat
-  , (className =? "Steam" <&&> title =? "Stephen's Sausage Roll") --> doFullFloat
-  , (className =? "Steam" <&&> title =? "Brawlhalla") --> doFullFloat
-  , (className =? "Steam" <&&> title =? "Pony Island") --> doFullFloat
-  , (className =? "zoom" <&&> title=? "Chat") --> doFloat
+  [ className =? "Thunderbird" --> doShift "0"
+  , className =? "discord" --> doShift "0"
+  , className =? "TelegramDesktop" --> doShift "0"
+  , title =? "Media viewer" --> doFloat 
+  , title =? " " --> doFloat
+  , className =? "Steam" <&&> title =? "Stephen's Sausage Roll" --> doFullFloat
+  , title =? "Brawlhalla" --> doFullFloat
+  , title =? "Pony Island" --> doFullFloat
+  , title =? "Manifold Garden" --> doFullFloat
+  , className =? "zoom" <&&> title=? "Chat" --> doFloat
   , className =? "mpv" --> doFullFloat
-  , (className =? "firefox" <&&> title =? "Picture-in-Picture") --> doFloat
--- , (className =? "Mail" <&&> resource =? "messageWindow") --> doFloat
+  , className =? "firefox" <&&> title =? "Picture-in-Picture" --> doFloat
   ]
+
 ------------------------------------------------------------------------
 ---- Command to launch the bar.
 myBar = "xmobar"

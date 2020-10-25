@@ -1,0 +1,102 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3003, 2021-I \\ Examen parcial 1 (tarea examen) \\ Fecha de entrega: sábado 17 de octubre, 15:00 hrs.}
+\date{}
+\maketitle
+
+\epigraph{Si no tienes disposición para aprender, nadie te puede ayudar \textemdash pero si realmente tienes la disposición, nada te puede detener.}{\textemdash Anónim@.}
+
+\vspace{5mm}
+\textbf{1.} Sean $m,n\in\mathbb{N}$, $K$ un campo y $M_{m\times n}(K)$ el conjunto de todas las matrices de $m$ renglones y $n$ columnas con entradas en $K$. Definiendo la suma de matrices y el producto de una matriz por un elemento del campo entrada por entrada, demuestren que:
+\begin{enumerate}[label=\alph*)]
+    \item $M_{m\times n}(K)$ forma un espacio vectorial sobre $K$;
+    \item la operación $\langle\cdot \ ,\cdot\rangle:M_{m\times n}(K)\times M_{m\times n}(K)\to K$ dada por $$\langle A,B\rangle = \sum_{i=1}^m \sum_{j=1}^n A_{ij}\overline{B_{ij}}$$ para toda $A,B\in M_{m\times n}(K)$ es un producto escalar en este espacio;
+    \item la operación $|| \ \cdot \ ||:M_{m\times n}(K)\to K$ dada por $$||A|| = \text{máx.}|A_{ij}|$$ para toda $A\in M_{m\times n}(K)$ es una norma en este espacio.
+\end{enumerate}
+
+Además, encuentren una base ortonormal para el espacio vectorial visto en a) con el producto escalar de b) y la norma del inciso c) y argumenten por qué dicha base es ortonormal.
+
+\vspace{5mm}
+\textbf{2.} Sea $(F,\mathbb{R})$ el espacio vectorial de todas las funciones reales de variable real y sea $L^2$ el conjunto de todas las funciones $f:\mathbb{R}\to\mathbb{R}$ tales que $$\int_{-\infty}^{\infty} f^2(x) \hspace{1mm} dx < \infty.$$ Demuestren que\footnote{Para los incisos a) y b) pueden asumir que si $f,g,h\in L^2$, entonces $\int_{-\infty}^{\infty} f^2(x)+g^2(x) \ dx = \int_{-\infty}^{\infty} f^2(x) \ dx + \int_{-\infty}^{\infty}g^2(x) \ dx $ y $\int_{-\infty}^{\infty}f(x)h(x) + f(x)g(x) \ dx = \int_{-\infty}^{\infty} f(x)h(x) \ dx + \int_{-\infty}^{\infty} f(x)g(x) \ dx,$ además de las propiedades de la integral que hayan visto en sus cursos de cálculo.}:
+\begin{enumerate}[label=\alph*)]
+    \item $(L^2,\mathbb{R})$ es un subespacio vectorial de $(F,\mathbb{R})$;
+    \item la operación $\langle\cdot \ ,\cdot\rangle:L^2\times L^2\to\mathbb{R}$ dada por $$\langle f,g\rangle = \int_{-\infty}^{\infty}f(x)g(x) \ dx$$ para toda $f,g\in L^2$ es un producto escalar en $(L^2,\mathbb{R})$.
+\end{enumerate}
+
+Además, contesten la siguiente pregunta: si las funciones de $L^2$ tuvieran imágenes en $\mathbb{C}$ en vez de $\mathbb{R}$, ¿cómo modificarían la operación $\langle\cdot, \cdot\rangle$ para que siguiera teniendo todas las propiedades de producto escalar?
+
+\newpage
+\textbf{3.} Sea $\mathbf{c}$ un vector no nulo del espacio vectorial complejo $\mathbb{C}$ y $\lambda\in\mathbb{C}$ un escalar del campo. Muestren que\footnote{Para este ejercicio, les sugiero revisar el apéndice C del Poole.}:
+\begin{enumerate}[label=\alph*)]
+    \item Si $\text{Im}(\lambda)=0$, entonces $\lambda\mathbf{c}$ corresponde a un reescalamiento de $\mathbf{c}$ por $|\lambda|$, con una inversión en el sentido si $\text{Re}(\lambda)<0$.
+    \item Si $\lambda=i$, entonces $\lambda\mathbf{c}$ corresponde al vector resultante de rotar a $\mathbf{c}$ por $\frac{\pi}{2}.$
+    \item Si $|\lambda|=1$, entonces $\lambda\mathbf{c}$ corresponde al vector resultante de rotar a $\mathbf{c}$ por $\arctan\big(\frac{\text{Im}(\lambda)}{\text{Re}(\lambda)}\big)$.
+    \item En general, $\lambda\mathbf{c}$ corresponde a un reescalamiento de $\mathbf{c}$ por $|\lambda|$ con una rotación por $\arctan\big(\frac{\text{Im}(\lambda)}{\text{Re}(\lambda)}\big)$ y una inversión en el sentido si $\text{Re}(\lambda)<0$.
+\end{enumerate}
+
+\vspace{1cm}
+\textbf{4.} Sea $(V,K)$ un espacio vectorial con producto escalar positivo definido. Decimos que una función $d(\cdot,\cdot):V\times V\to K$ es una \emph{función de distancia} o \emph{métrica} en $V$ si para todo $\mathbf{u},\mathbf{v},\mathbf{w}\in V:$ \[
+    d(\mathbf{u},\mathbf{v})=0 \iff \mathbf{u}=\mathbf{v}, \] \[ d(\mathbf{u},\mathbf{v})=d(\mathbf{v},\mathbf{u})
+    \] \[\text{y}\hspace{3mm} 
+d(\mathbf{u},\mathbf{w})\le d(\mathbf{u},\mathbf{v})+d(\mathbf{v},\mathbf{w})
+.\]
+
+\vspace{3mm}
+\noindent Demuestren que:
+\begin{enumerate}[label=\alph*)]
+    \item $d(\mathbf{u},\mathbf{v})=+\sqrt{\langle \mathbf{u},\mathbf{u}\rangle-\langle\mathbf{u},\mathbf{v}\rangle-\langle\mathbf{v},\mathbf{u}\rangle+\langle\mathbf{v},\mathbf{v}\rangle}$ para todo $\mathbf{u},\mathbf{v}\in V$ es una métrica en $V$.
+    \item Todo conjunto ortogonal de $V$ que no contenga al vector nulo es linealmente independiente.
+\end{enumerate}
+
+\vspace{1cm}
+\textbf{5.} Sea $P^3([-1,1])$ el espacio vectorial real de todos los polinomios reales de grado $3$ con dominio en $[-1,1]$, dotado de un producto escalar dado por $$\langle p,q\rangle = \int_{-1}^1 p(x)q(x)\hspace{0.5mm} dx.$$ \noindent Obten una base ortonormal para este espacio vectorial y expresa a un vector arbitrario $f(x)=ax^3+bx^2+cx+d\in P^3([-1,1])$ como combinación lineal de los elementos de la base que hayas obtenido.
+
+
+
+\end{document}
