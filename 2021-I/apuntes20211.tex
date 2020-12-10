@@ -405,7 +405,7 @@ En geometría analítica aprendimos que, con la ayuda de un sistema de coordenad
             \draw[violet,very thick,->] (0,0) -- (3,4) node[] at (3,4.2) {$\begin{pmatrix} 3 & 4 \end{pmatrix}$};
             \draw[] node[] at (4.2,4.2) {\textbf{b)}};
     \end{tikzpicture}
-        \caption{Interpretación geométrica de la suma vectorial en el espacio vectorial real $\protect\mathbb{R}^2$. En la figura $\textbf{a)}$ se observan los vectores $\protect\begin{pmatrix} 1 & 3 \protect\end{pmatrix}$ y $\protect\begin{pmatrix} 2 & 1 \protect\end{pmatrix}$, así como el vector resultante de la suma de los dos anteriores, $\protect\begin{pmatrix} 3 & 4 \protect\end{pmatrix}$. En la figura $\textbf{b)}$ observamos la llamada \emph{Ley del paralelogramo} para la suma de dos vectores.}
+        \caption{Interpretación geométrica de la suma vectorial en el espacio vectorial real $\protect\mathbb{R}^2$. En la subfigura $\textbf{a)}$ se observan los vectores $\protect\begin{pmatrix} 1 & 3 \protect\end{pmatrix}$ y $\protect\begin{pmatrix} 2 & 1 \protect\end{pmatrix}$, así como el vector resultante de la suma de los dos anteriores, $\protect\begin{pmatrix} 3 & 4 \protect\end{pmatrix}$. En la subfigura $\textbf{b)}$ observamos la llamada \emph{Ley del paralelogramo} para la suma de dos vectores.}
     \label{fig:Suma_vectorial}
 \end{figure}
 
@@ -445,7 +445,7 @@ En geometría analítica aprendimos que, con la ayuda de un sistema de coordenad
             \draw[AZUL,thin,dashed,->,opacity=0.7] (0,0) -- (1,3); 
             \draw[] node[] at (3.5,3.5) {\textbf{b)}};
     \end{tikzpicture}
-    \caption{Interpretación geométrica del producto de un vector por un escalar en el espacio vectorial real $\mathbb{R}^2$. Comparando las figuras $\textbf{a)}$ y $\textbf{b)}$ observamos que, en caso de que se multiplique a un vector de $\mathbb{R}^2$ por un escalar de $\mathbb{R}$, es posible que la longtitud del vector cambie y que su sentido se invierta, pero su dirección no cambia.}
+    \caption{Interpretación geométrica del producto de un vector por un escalar en el espacio vectorial real $\mathbb{R}^2$. Comparando las subfiguras $\textbf{a)}$ y $\textbf{b)}$ observamos que, en caso de que se multiplique a un vector de $\mathbb{R}^2$ por un escalar de $\mathbb{R}$, es posible que la longtitud del vector cambie y que su sentido se invierta, pero su dirección no cambia.}
     \label{fig:Producto_de_un_vector_por_un_escalar}
 \end{figure}
 
@@ -735,7 +735,7 @@ En particular, el producto escalar definido \underline{sobre un espacio vectoria
 \newpage
 \subsection{Norma} \label{Subsec:Norma}
 
-Otro tipo de operación que se puede definir sobre un espacio vectorial es la \emph{norma}, que toma un sólo vector del espacio y devuelve un escalar del campo. La norma, en general, dota a los vectores de un espacio de un cierto sentido de \emph{magnitud} mediante el cual se puede comparar a distintos vectores. Como veremos en esta sección, si un espacio vectorial tiene un producto escalar positivo definido (dotando al espacio de las nociones de proyecciones y ortogonalidad que ya vimos en la sec. \ref{Subsec:Interpretación_geométrica_del_producto_escalar}), entonces se puede definir una norma sobre el espacio a partir de dicho producto escalar; sin embargo, no es necesario que una norma provenga de un producto escalar, y es posible que existan normas (y, por tanto, ciertas nociones de magnitud) en espacios vectoriales \emph{sin} producto escalar.
+Otro tipo de operación que se puede definir sobre un espacio vectorial es la \emph{norma}, que toma un sólo vector del espacio y devuelve un escalar del campo. La norma, en general, dota a los vectores de un espacio de un cierto sentido de \emph{magnitud} mediante el cual se puede comparar a distintos vectores. Como veremos en esta sección, si un espacio vectorial tiene un producto escalar positivo definido (dotando al espacio de las nociones de proyecciones y ortogonalidad que ya vimos en la sec. \ref{Subsec:Interpretación geométrica del producto escalar}), entonces se puede definir una norma sobre el espacio a partir de dicho producto escalar; sin embargo, no es necesario que una norma provenga de un producto escalar, y es posible que existan normas (y, por tanto, ciertas nociones de magnitud) en espacios vectoriales \emph{sin} producto escalar.
 
 \subsubsection{Definición de norma} \label{Def:Norma}
 
@@ -803,7 +803,7 @@ Como mencionamos al inicio de esta sección, el proceso anterior de obtener una 
 \end{teorema}
 
 \newpage
-\subsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}\label{Subsec:Interpretación_geométrica_del_producto_escalar} 
+\subsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}\label{Subsec:Interpretación geométrica del producto escalar} 
 
 \subsubsection{Producto escalar y proyecciones} \label{Subsec:Producto_escalar_y_proyecciones}
 
@@ -811,7 +811,7 @@ Como quizás aprendiste en tus cursos de Geometría Analítica y/o Mecánica Vec
 
 $$\langle\mathbf{u},\mathbf{v}\rangle=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u}) \implies P_{\mathbf{v}}(\mathbf{u})=\frac{\langle\mathbf{u},\mathbf{v}\rangle}{||\mathbf{v}||}.$$ 
 
-\noindent Este es el escalar por el cual habría que multiplicar un vector de norma $1$ en la dirección y sentido de $\mathbf{v}$ para obtener el vector componente de $\mathbf{u}$ colineal a $\mathbf{v}$, también conocido como \emph{proyección vectorial}. Empleando esta notación, la proyección vectorial de $\mathbf{u}$ sobre $\mathbf{v}$ se puede escribir como $P_{\mathbf{v}}(\mathbf{u})\frac{\mathbf{v}}{||\mathbf{v}||} .$ En la figura \ref{fig:Proyecciones_y_ortogonalidad} se muestran ejemplos de proyecciones vectoriales entre vectores de $\mathbb{R}^2$.
+\noindent Este es el escalar por el cual habría que multiplicar un vector de norma $1$ en la dirección y sentido de $\mathbf{v}$ para obtener el vector componente de $\mathbf{u}$ colineal a $\mathbf{v}$, también conocido como \emph{proyección vectorial}. Empleando esta notación, la proyección vectorial de $\mathbf{u}$ sobre $\mathbf{v}$ se puede escribir como $P_{\mathbf{v}}(\mathbf{u})\frac{\mathbf{v}}{||\mathbf{v}||} .$ En la Figura \ref{fig:Proyecciones_y_ortogonalidad} se muestran ejemplos de proyecciones vectoriales entre vectores de $\mathbb{R}^2$.
 
 \begin{figure}[h!]
     \begin{subfigure}[b]{0.3\textwidth}
@@ -868,7 +868,7 @@ $$\langle\mathbf{u},\mathbf{v}\rangle=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u}) \
     \end{tikzpicture}
     \caption{}
     \end{subfigure}
-    \caption{Proyecciones vectoriales entre dos vectores $\mathbf{u}$ y $\mathbf{v}$ de $\mathbb{R}^2$. En la figura (a) tenemos la proyección vectorial del vector $\mathbf{v}$ sobre el vector $\mathbf{u}$, es decir, la componente de $\mathbf{v}$ en el eje en el cual se encuentra $\mathbf{u}$. En (b) se muestran los vectores de norma $1$ que tienen la misma dirección y sentido que $\mathbf{u}$ y $\mathbf{v}$, respectivamente. En (c) se muestra la proyeccíon vectorial de $\mathbf{u}$ sobre $\mathbf{v}$. Nótese en cada caso que la proyección vectorial se obtiene reescalando el vector sobre el que se proyecta para que tenga norma $1$ y después multiplicando dicho vector por la proyección escalar correspondiente.}
+    \caption{Proyecciones vectoriales entre dos vectores $\mathbf{u}$ y $\mathbf{v}$ de $\mathbb{R}^2$. En la subfigura (a) tenemos la proyección vectorial del vector $\mathbf{v}$ sobre el vector $\mathbf{u}$, es decir, la componente de $\mathbf{v}$ en el eje en el cual se encuentra $\mathbf{u}$. En (b) se muestran los vectores de norma $1$ que tienen la misma dirección y sentido que $\mathbf{u}$ y $\mathbf{v}$, respectivamente. En (c) se muestra la proyeccíon vectorial de $\mathbf{u}$ sobre $\mathbf{v}$. Nótese en cada caso que la proyección vectorial se obtiene reescalando el vector sobre el que se proyecta para que tenga norma $1$ y después multiplicando dicho vector por la proyección escalar correspondiente.}
     \label{fig:Proyecciones_y_ortogonalidad}
 \end{figure}
 
@@ -1044,7 +1044,7 @@ Nota: también se puede definir un \emph{triple producto vectorial} entre tres v
 \begin{enumerate}
 \item Sea $\mathbf{v}\in\mathbb{R}^2$ no-nulo. Prueba que el conjunto $\{\mathbf{u}\in\mathbb{R}^2\hspace{0.5mm} |\hspace{0.5mm} \langle\mathbf{u},\mathbf{v}\rangle =0\}$ es una recta que pasa por el origen y llévala a una expresión de la forma $ax+by=c.$ 
     \item Sean $\mathbf{v}=\begin{pmatrix} v_1 & v_2 \end{pmatrix}, \mathbf{u}=\begin{pmatrix}u_1 & u_2 \end{pmatrix}$ vectores del espacio real $\mathbb{R}^2.$ Deduce que $\mathbf{u}\cdot\mathbf{v}=u_1v_1+u_2v_2=||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos(\theta)$, donde $\theta$ es el ángulo mínimo entre ambos vectores en el plano cartesiano. (Nota: supon que ambos vectores son no nulos y encuentra al escalar $k\in\mathbb{R}$ tal que $\langle\mathbf{u},\mathbf{u}-k\mathbf{v}\rangle=0$. ¿Por qué es especial este escalar?) 
-    \item Define a los vectores $\mathbf{u}=\begin{pmatrix} a_1 & a_2 \end{pmatrix}, \mathbf{v}=\begin{pmatrix} a_3 & a_4\end{pmatrix}$ y $\mathbf{w}=\begin{pmatrix} a_5 & a_6\end{pmatrix}\in\mathbb{R}^2,$ donde $a_i$ corresponde al $i$-ésimo dígito de tu número de cuenta. Explica gométricamente el hecho de que $\langle\mathbf{u}+\mathbf{v},\mathbf{w}\rangle=\langle\mathbf{u},\mathbf{w}\rangle+\langle\mathbf{v},\mathbf{w}\rangle$, en términos de las proyecciones discutidas en la sección \ref{Subsec:Interpretación_geométrica_del_producto_escalar} (Nota: recuerda la Ley del paralelogramo). 
+    \item Define a los vectores $\mathbf{u}=\begin{pmatrix} a_1 & a_2 \end{pmatrix}, \mathbf{v}=\begin{pmatrix} a_3 & a_4\end{pmatrix}$ y $\mathbf{w}=\begin{pmatrix} a_5 & a_6\end{pmatrix}\in\mathbb{R}^2,$ donde $a_i$ corresponde al $i$-ésimo dígito de tu número de cuenta. Explica gométricamente el hecho de que $\langle\mathbf{u}+\mathbf{v},\mathbf{w}\rangle=\langle\mathbf{u},\mathbf{w}\rangle+\langle\mathbf{v},\mathbf{w}\rangle$, en términos de las proyecciones discutidas en la sección \ref{Subsec:Interpretación geométrica del producto escalar} (Nota: recuerda la Ley del paralelogramo). 
 \end{enumerate}
 
 \subsubsection{Producto vectorial (cruz)*}
@@ -1065,7 +1065,7 @@ Nota: también se puede definir un \emph{triple producto vectorial} entre tres v
     \textbf{Nota aclaratoria: \emph{Sobre nombres y traducciones...}}
 \end{center}
 
-\hspace{2.5mm}Como seguramente habrás notado al leer los libros recomendados en la sección \ref{Bibliografía}, al producto escalar en inglés se le conoce como \emph{inner product}, y a los espacios vectoriales dotados de un producto escalar se les conoce como \emph{inner product spaces}. En español, al producto escalar también se le conoce como \emph{producto interior}; sin embargo, existe otro tipo de producto diferente al producto escalar al cual en inglés, desafortunadamente, le llaman \emph{interior product}.
+\hspace{2.5mm}Como seguramente habrás notado al leer los libros recomendados, al producto escalar en inglés se le conoce como \emph{inner product}, y a los espacios vectoriales dotados de un producto escalar se les conoce como \emph{inner product spaces}. En español, al producto escalar también se le conoce como \emph{producto interior}; sin embargo, existe otro tipo de producto diferente al producto escalar al cual en inglés, desafortunadamente, le llaman \emph{interior product}.
 
 \vspace{5mm}
 \hspace{2.5mm}Esto significa que, en inglés, la convención es que \emph{scalar product} e \emph{interior product} sean operaciones diferentes mientras que, en español, la convención es que \emph{producto escalar} y \emph{producto interior} se refieran a la misma operación. Algunos textos en español utilizan \emph{producto interno} (en vez de producto interior) como sinónimo de \emph{producto escalar} para homologar los nombres con los utilizados en inglés pero, por ahora, las convenciones preponderantes en español e inglés no permiten una traducción directa.
@@ -1406,9 +1406,9 @@ Sea $L$ un conjunto linealmente independiente con $m$ elementos, donde $m<n$. En
 Sabiendo que un mismo espacio vectorial puede tener muchas bases diferentes \textemdash todas con el mismo número de elementos\textemdash \hspace{1mm}, en la siguiente sección nos enfocaremos a ver algunos tipos de bases que resultan ser útiles comunmente, y a entender cómo podemos construirlas y usarlas.
 
 \newpage
-\subsection{Ortogonalización y ortonormalización} \label{Subsec:Ortogonalización_y_ortonormalización}
+\subsection{Ortogonalización y ortonormalización} \label{Subsec:Ortogonalización y ortonormalización}
 
-Recordemos de la sección \ref{Subsec:Interpretación_geométrica_del_producto_escalar} que dos vectores $\mathbf{u}$ y $\mathbf{v}$ son ortogonales si $\langle\mathbf{u},\mathbf{v}\rangle=0$. Supongamos que este no es el caso, i.e., que $\langle\mathbf{u},\mathbf{v}\rangle\neq 0$\footnote{Aquí implícitamente estamos asumiendo que $\mathbf{u}$ y $\mathbf{v}$ son vectores no nulos ya que, por definición, el producto escalar \emph{distingue} al vector nulo (ver sec. \ref{Def:Producto_escalar}).}. Existe una manera de modificar cualquiera de los vectores de tal forma que se vuelva ortogonal al otro: simplemente definimos $\mathbf{u'}=\mathbf{u}-\langle\mathbf{u},\mathbf{v}\rangle\frac{\mathbf{v}}{||\mathbf{v}||^2}$ y comprobamos que $$\langle\mathbf{u'},\mathbf{v}\rangle=\big\langle\mathbf{u}-\langle\mathbf{u},\mathbf{v}\rangle\frac{\mathbf{v}}{||\mathbf{v}||^2},\mathbf{v}\big\rangle=\langle\mathbf{u},\mathbf{v}\rangle-\big\langle\frac{\langle\mathbf{u},\mathbf{v}\rangle}{||\mathbf{v}||^2}\mathbf{v},\mathbf{v}\big\rangle=\langle\mathbf{u},\mathbf{v}\rangle-\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{v},\mathbf{v}\rangle=\langle\mathbf{u},\mathbf{v}\rangle-\langle\mathbf{u},\mathbf{v}\rangle\cdot 1=0.$$ 
+Recordemos de la sección \ref{Subsec:Interpretación geométrica del producto escalar} que dos vectores $\mathbf{u}$ y $\mathbf{v}$ son ortogonales si $\langle\mathbf{u},\mathbf{v}\rangle=0$. Supongamos que este no es el caso, i.e., que $\langle\mathbf{u},\mathbf{v}\rangle\neq 0$\footnote{Aquí implícitamente estamos asumiendo que $\mathbf{u}$ y $\mathbf{v}$ son vectores no nulos ya que, por definición, el producto escalar \emph{distingue} al vector nulo (ver sec. \ref{Def:Producto_escalar}).}. Existe una manera de modificar cualquiera de los vectores de tal forma que se vuelva ortogonal al otro: simplemente definimos $\mathbf{u'}=\mathbf{u}-\langle\mathbf{u},\mathbf{v}\rangle\frac{\mathbf{v}}{||\mathbf{v}||^2}$ y comprobamos que $$\langle\mathbf{u'},\mathbf{v}\rangle=\big\langle\mathbf{u}-\langle\mathbf{u},\mathbf{v}\rangle\frac{\mathbf{v}}{||\mathbf{v}||^2},\mathbf{v}\big\rangle=\langle\mathbf{u},\mathbf{v}\rangle-\big\langle\frac{\langle\mathbf{u},\mathbf{v}\rangle}{||\mathbf{v}||^2}\mathbf{v},\mathbf{v}\big\rangle=\langle\mathbf{u},\mathbf{v}\rangle-\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{v},\mathbf{v}\rangle=\langle\mathbf{u},\mathbf{v}\rangle-\langle\mathbf{u},\mathbf{v}\rangle\cdot 1=0.$$ 
 
 A esto se le conoce como un proceso de \emph{ortogonalización}. Observemos que, si $\mathbf{v}$ es un vector unitario (i.e., si $||\mathbf{v}||=1$) entonces la definición de $\mathbf{u'}$ se reduce a $\mathbf{u'}=\mathbf{u}-\langle\mathbf{u},\mathbf{v}\rangle\mathbf{v}$, simplificando el proceso. Por razones que irán quedando más claras con la experiencia, a menudo es conveniente trabajar con bases de vectores que sean ortogonales entre sí y, en casos específicos, que además sean unitarios, por lo cual damos las siguientes definiciones..
 
@@ -1426,7 +1426,7 @@ A esto se le conoce como un proceso de \emph{ortogonalización}. Observemos que,
 
 Antes de ver cómo podemos construir bases ortogonales y ortonormales, el siguiente teorema y corolario nos ayudarán a comenzar a entender su utilidad.
 
-\begin{teorema} {4.3.1.1}
+\begin{teorema} {4.3.1.1} \label{Teo:4.3.1.1}
     Sea $V$ sobre $K$ un espacio vectorial con producto escalar y $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}$ un subconjunto ortogonal de $V$ con $\mathbf{v}_i\neq\mathbf{0}\hspace{3mm}\forall\hspace{1.5mm} 1\leq i\leq n.$ Si $\mathbf{u}\in \langle S \rangle \implies$ $$\mathbf{u} = \sum_{i=1}^n \frac{\langle\mathbf{u},\mathbf{v}_i\rangle}{||\mathbf{v}_i||^2}\mathbf{v}_i=\sum_{i=1}^n P_{\mathbf{v}_i}(\mathbf{u})\frac{\mathbf{v}_i}{||\mathbf{v}_i||}.$$
 
 \begin{proof}
@@ -1614,7 +1614,7 @@ Después de esta introducción, puedes continuar leyendo las págs. 273-274 del 
 \begin{enumerate}
     \item Encuentra la solución general a la ecuación $\dot{x}-x=0$ en todo el intervalo $\mathbb{R}$.
     \item Sea $C^{\infty}(\mathbb{R})$ el conjunto de todas las funciones reales de variable real con derivadas de cualquier orden y sea $\frac{d}{dt}:C^{\infty}(\mathbb{R})\to C^{\infty}(\mathbb{R})$ el operador lineal \emph{derivada}. Supongamos que $x(t)$ es un eigenvector de $\frac{d}{dt}$ con eigenvalor $\lambda,$ ¿entonces quién es $x(t)$?
-    \item Muestra que tanto la ecuación diferencial del ejemplo dado al inicio de la sección \ref{Subsec:Ecuaciones diferenciales (ordinarias) con condiciones iniciales} como su solución general son un caso particular del ejercicio anterior.
+    \item Muestra que tanto la ecuación diferencial del ejemplo dado al inicio de la sección \ref{Subsec:Ecuaciones diferenciales (ordinarias) con condiciones iniciales y sistemas lineales de ecuaciones diferenciales} como su solución general son un caso particular del ejercicio anterior.
 \end{enumerate}
 
 \subsubsection{Ecuaciones diferenciales (ordinarias) con condiciones iniciales}
@@ -1771,20 +1771,38 @@ Para demostrar la unicidad de $\ket{u}$ y $\ket{z}$, supongamos que existen $\ke
 \end{teorema}
 
 \newpage
-\subsection{Proyecciones ortogonales***}
+\subsection{Proyecciones ortogonales}
 
+En la sección \ref{Subsec:Interpretación geométrica del producto escalar} vimos que, en un espacio vectorial con producto escalar, podemos definir funciones de \emph{proyección vectorial} que toman un vector del espacio y devuelven la componente de ese vector a lo largo de un subespacio vectorial particular. Además, en el Teorema 4.3.1.1 (ver sec. \ref{Subsec:Ortogonalización y ortonormalización}) vimos cómo podemos descomponer un vector en sus componentes ortogonales de manera sencilla a partir de una base ortogonal u ortonormal. Ambos resultados reflejan la importancia que tienen los llamados \emph{operadores de proyección ortogonal} en este tipo de espacios vectoriales.
 
+\begin{tcolorbox}
+    \underline{Def.} Sea $V$ un espacio vectorial arbitrario. Decimos que un operador lineal $P:V\to V$ es un \emph{operador de proyección} si \[
+        P(P(\ket{v}))=P(\ket{v}) \hspace{3mm} \forall \ \ket{v}\in V.
+    \] Definiendo $P^2:=P\circ P$ podemos reescribir esta condición simplemente como $P^2=P$. En particular, si $V$ tiene producto escalar y $P$ es tal que \[
+        \text{Im}(P)^\perp=\text{Ker}(P)\hspace{3mm}\text{y}\hspace{3mm}\text{Ker}(P)^\perp=\text{Im}(P),
+    \] decimos que $P$ es un \emph{operador de proyección ortogonal}.
+\end{tcolorbox}
+
+Observemos que la condición $P^2=P$ para un operador de proyección $P$ en un espacio vectorial $V$ codifica algebráicamente la noción intuitiva de que, después de proyectar un vector arbitrario $\ket{v}$ en un subespacio de $V$ y obtener la componente de $\ket{v}$ en dicho subespacio, proyectar esa componente \emph{en el mismo subespacio} no le hará nada \textemdash ya que se encuentra totalmente dentro de ese subespacio.
+
+\vspace{3mm}
+Por otro lado, a pesar de que no sea fácil de ver directamente de la definición, cualquier operador de proyección divide a un espacio vectorial en dos subespacios vectoriales ``ajenos'' (excepto por el vector nulo, por supuesto) a través de su imagen (el subespacio sobre el cual proyectamos) y su núcleo (el conjunto de vectores que no tienen componentes en dicho subespacio). Dicho de otra forma, cualquier operador de proyección descompone al espacio vectorial sobre el que actúa como suma directa de su imagen y su núcleo (¿Se te ocurre por qué?). 
+
+\vspace{3mm}
+Para cualquier espacio vectorial $V$, el operador nulo y el operador identidad son ejemplos triviales de operadores de proyección. Si $V$ tiene producto escalar, entonces la función de proyección vectorial sobre $\ket{v}$ es un operador de proyección ortogonal para todo $\ket{v}\in V$ no nulo. Observemos que podemos escribir a este operador en términos de bras y kets simplemente como $\frac{\ket{v}\bra{v}}{\braket{v|v}}:V\to V$, de donde resulta fácil demostrar que efectivamente es un operador de proyección, ya que \[
+    \bigg( \frac{\ket{v}\bra{v}}{\braket{v|v}}\bigg)^2=\bigg(\frac{1}{\braket{v|v}}\ket{v}\bra{v}\bigg)^2=\frac{1}{\braket{v|v}^2}\big(\ket{v}\bra{v}\big)^2=\frac{1}{\braket{v|v}^2}\ket{v}\braket{v|v}\bra{v}=\frac{\braket{v|v}}{\braket{v|v}^2}\ket{v}\bra{v}=\frac{\ket{v}\bra{v}}{\braket{v|v}}.
+\] Además, si en particular $\ket{v}$ es un vector normal, la expresión se simplifica a $\ket{v}\bra{v}$, de donde se ve directamente que $(\ket{v}\bra{v})^2=\ket{v}\braket{v|v}\bra{v}=\ket{v}\bra{v}$. Por lo tanto, todo vector normal $\ket{v}$ en un espacio vectorial con producto escalar define un operador de proyección ortogonal dado por $\ket{v}\bra{v}$.
+
+\newpage
 \begin{tcolorbox}
 \begin{center}
     \textbf{Nota aclaratoria: \emph{Sobre bras, kets, y bra-kets...}}
 \end{center}
 
-%EXPLICAR LA DIFERENCIA SUTIL ENTRE UNIR UN BRA Y UN KET (APLICARLE UN FUNCIONAL A UN VECTOR) Y HACER EL PRODUCTO ESCALAR ENTRE DOS KETS (UTILIZANDO UN BRA-KET).
-
 \hspace{3mm} Como hemos visto en esta sección, en un espacio vectorial $(V,K)$ los \emph{kets} $\ket{x},\ket{y},\ket{z}$, etc. son simplemente vectores de $V$, mientras que los \emph{bras} $\bra{x},\bra{y},\bra{z}$, etc. son funcionales sobre $V$, es decir, transformaciones lineales que van de $V$ a $K$.
 
 \vspace{5mm}
-\hspace{3mm} A pesar de que exista la correspondencia entre kets $\alpha\ket{x}\in V$ y bras $\overline{\alpha}\bra{x}\in V^*$ descrita en la sección \ref{Subsec:Correspondencia_entre_bras_y_kets}, debemos remarcar una diferencia sutil pero importante entre la operación de aplicarle un funcional a un vector y la operación de obtener el producto escalar entre dos vectores antes de pasar a la siguiente sección.
+\hspace{3mm} A pesar de que exista la correspondencia entre kets $\alpha\ket{x}\in V$ y bras $\overline{\alpha}\bra{x}\in V^*$ descrita en la sección \ref{Subsec:Correspondencia entre bras y kets}, debemos remarcar una diferencia sutil pero importante entre la operación de aplicarle un funcional a un vector y la operación de obtener el producto escalar entre dos vectores antes de pasar a la siguiente sección.
 
 \vspace{5mm}
 \hspace{3mm} Si $\ket{x}\in V$ y $\bra{y}\in V^*$ entonces, como $\bra{y}:V\to K$, tenemos que $$\bra{y}(\ket{x}) = \braket{y|x},$$ donde $\bra{y}$ es el vector dual correspondiente al vector $\ket{y}$. La observación crucial es esta: del lado izquierdo de la ecuación estamos aplicándole el funcional $\bra{y}$ al vector $\ket{x}$, mientras que del lado derecho estamos obteniendo el producto escalar entre el vector $\ket{x}$ (en la entrada lineal) y el vector $\ket{y}$ (en la entrada antilineal)\footnote{Inclusive l@s más atrevid@s entre ustedes se podrían animar a agregar una equivalencia más a la ecuación anterior: $\braket{y|x}=(\bra{y})\ket{x}$; es decir, podrían entretener la idea de que $\ket{x}$ sea ahora un \emph{funcional} que actúa sobre los vectores duales $\bra{y}\in V^*$ por la derecha; esto está relacionado con el hecho de que, si $V$ es un espacio de dimensión finita, entonces $(V^*)^*$ es isomorfo a $V$ \textemdash aunque no lo demostraremos en este curso.}; ambas operaciones involucran objetos distintos \textemdash la primera se realiza entre un funcional ($\bra{y}$) y un ket ($\ket{x}$), mientras que la segunda se realiza entre dos kets ($\ket{x}$ y $\ket{y}$)\textemdash\hspace{1mm} y, sin embargo, dan el mismo escalar como resultado.
@@ -1804,7 +1822,7 @@ Para demostrar la unicidad de $\ket{u}$ y $\ket{z}$, supongamos que existen $\ke
 \subsubsection{Correspondencia entre bras y kets} \label{Ejer:Correspondencia_entre_bras_y_kets}
 \begin{enumerate}
     \item Sea $(V,K)$ un espacio vectorial con producto escalar. Demuestra que el conjunto de todos los bras correspondientes a los vectores de $V$ forma un subespacio vectorial de $V^*$.
-    \item Demuestra que el subespacio de $V^*$ obtenido en el ejercicio anterior es isomorfo a $V$. En otras palabras, demuestra que la correspondencia entre bras y kets dada en la sección \ref{Subsec:Correspondencia_entre_bras_y_kets} es un isomorfismo.
+    \item Demuestra que el subespacio de $V^*$ obtenido en el ejercicio anterior es isomorfo a $V$. En otras palabras, demuestra que la correspondencia entre bras y kets dada en la sección \ref{Subsec:Correspondencia entre bras y kets} es un isomorfismo.
 \end{enumerate}
 
 \subsubsection{Complemento ortogonal} \label{Ejer:Complemento_ortogonal}
@@ -1812,23 +1830,115 @@ Para demostrar la unicidad de $\ket{u}$ y $\ket{z}$, supongamos que existen $\ke
     \item Demuestra que para todo subespacio vectorial $W$ de un espacio vectorial $V$ de dimensión finita $n$ y con producto escalar, $V$ es igual a una suma directa de $W$ y $W^{\perp}.$ ¿Por qué es importante que $V$ tenga dimensión finita? (Nota: tendrás que demostrar las observaciones hechas al principio de la sec. \ref{Subsec:Complemento_ortogonal}.)
 \end{enumerate}
 
-\subsubsection{Proyecciones ortogonales***} \label{Ejer:Proyecciones_ortogonales}
+\subsubsection{Proyecciones ortogonales} \label{Ejer:Proyecciones_ortogonales}
 \begin{enumerate}
-    \item
+    \item Sea $V$ un espacio vectorial. Demuestra que un operador lineal $P:V\to V$ es un operador de proyección si y sólo si $V=\text{Ker}(P)\oplus\text{Im}(P)$.
+    \item Sea $V$ un espacio vectorial con producto escalar. Demuestra que un operador lineal $P:V\to V$ es un operador de proyección ortogonal si y sólo si $V=\text{Ker}(P)^\perp\oplus\text{Im}(P)^\perp$.
+    \item Sea $V$ un espacio vectorial de dimensión finta $n$ con producto escalar y sea $\{\ket{v_1},\ket{v_2},... \ ,\ket{v_k}\}$ un conjunto ortogonal de vectores de $V$ con $k\le n$. Demuestra que $\sum_{i=1}^k\frac{\ket{v_i}\bra{v_i}}{\braket{v_i|v_i}}:V\to V$ es un operador de proyección ortogonal.
 \end{enumerate}
 
 \newpage
 \section{Descomposición espectral y operadores adjuntos} \label{Sec:14} 
 
-\subsection{Descomposición espectral (introducción)***}
 
-Supongamos que tenemos un espacio vectorial $(V,K)$ de dimensión finita con producto escalar y un operador lineal diagonalizable $T:V\to V$ tal que sus eigenvectores forman una base \emph{ortogonal} de $V$; es decir, que se puede elegir a una base ortogonal de $V$ compuesta por eigenvectores de nuestro operador $T$. 
+Supongamos que tenemos un espacio vectorial $(V,K)$ de dimensión finita $n$ con producto escalar. Entonces, siguiendo del último ejercicio de la sección \ref{Sec:13}, tendríamos que si $\{\ket{b_1},\ket{b_2},... \ ,\ket{b_n}\}$ es una base ortogonal de $V$, entonces $\sum_{i=1}^n \frac{\ket{b_i}\bra{b_i}}{\braket{b_i|b_i}}:V\to V$ es un operador de proyección ortogonal\footnote{Este operador no depende de la base ortogonal elegida... ¿puedes adivinar de qué operador se trata?}. En particular, para cualquier base ortonormal $\{\ket{u_1},\ket{u_2},... \ ,\ket{u_n}\}$ de $V$ tenemos que $\sum_{i=1}^n\ket{u_i}\bra{u_i}$ es un operador de proyección ortogonal (equivalente al anterior, para cualquier base ortonormal arbitraria).
 
-Empezando nuestra búsqueda por hipótesis más precisas que deban cumplir operadores lineales sobre espacios vectoriales de dimensión finita con producto escalar para que les podamos aplicar la descomposición espectral, nuestra primera pista se encuentra en los operadores adjuntos, que definiremos y estudiaremos en la siguiente sección.
+\vspace{3mm}
+Ambos operadores anteriores no son más que el operador identidad en $V$, lo cual podemos ver en abstracto aplicándolos a un vector arbitrario $\ket{v}\in V$ o, de forma matricial, representándolos en las mismas bases que utilizamos para construirlos. A continuación, veremos cómo esta forma de entender al operador identidad (como suma de operadores de proyección más pequeños) en espacios vectoriales de dimensión finita con producto escalar nos ayuda a entender cómo actúan ciertos tipos de operadores lineales de forma geométrica. 
+
+\subsection{Descomposición espectral (introducción)} \label{Subsec:Descomposición espectral (introducción)}
+
+Sean $V$ un espacio vectorial de dimensión finita $n$ con producto escalar y $T:V\to V$ un operador lineal diagonalizable tal que sus eigenvectores $\ket{g_1},\ket{g_2},... \ ,\ket{g_n}$ forman una base\footnote{Recuerdemos que un operador $T:V\to V$ es diagonalizable si y sólo si se puede formar una base de $V$ compuesta de eigenvectores de $T$. Si $V$ es dimensión $n$, entonces cualquier base de $V$ tiene exactamente $n$ elementos, por lo que $T$ debe tener $n$ eigenvectores linealmente independientes; sin embargo, esto no necesariamente implica que $T$ tenga $n$ eigenvalores distintos, como hemos visto. Por lo tanto, si $T$ tiene eigenvalores $\lambda_1,\lambda_2,... \ ,\lambda_k$ con $k<n$, necesariamente habrá elementos distintos de la eigenbase que tengan el mismo eigenvalor y, en este caso, la correspondencia entre los subíndices de los $k$ eigenvalores distintos y los $n$ elementos de la eigenbase no será uno a uno, por lo que hay que tener cuidado y no dejarse llevar por la notación.} \emph{ortogonal} de $V$; es decir, que se puede elegir a una base ortogonal de $V$ compuesta por eigenvectores de $T$. Supongamos, adicionalmente, que normalizamos a cada uno de los vectores de la eigenbase y los redefinimos de tal forma que $\{\ket{g_1},\ket{g_2},... \ ,\ket{g_n}\}$ sea una base \emph{ortonormal} de $V$ compuesta por eigenvectores de $T$. En ese caso, tendríamos que \[
+    I_V = \sum_{i=1}^n \ket{g_i}\bra{g_i}.
+\] 
+
+\vspace{3mm}
+Sean $\lambda_1,\lambda_2,... \ ,\lambda_n$ los eigenvalores (no necesariamente todos distintos entre sí) de $T$ correspondientes a los eigenvectores normales $\ket{g_1},\ket{g_2},... \ ,\ket{g_n}$. Consideremos ahora al operador $T':=\sum_{i=1}^n \lambda_i \ket{g_i}\bra{g_i}$. En particular, observemos que para todo elemento $\ket{g_j}$ de la eigenbase tenemos que \[
+    T'(\ket{g_j})=\sum_{i=1}^n \lambda_i \ket{g_i}\bra{g_i}(\ket{g_j})=\sum_{i=1}^n \lambda_i \ket{g_i}\braket{g_i|g_j}=\sum_{i=1}^n \lambda_i \ket{g_i}\delta_{ij}=\lambda_j \ket{g_j},
+\] por lo que $T'$ tiene los mismos vectores y valores \emph{característicos} que $T$.  Ya que $T$ es diagonalizable y, por lo tanto, podemos formar una base de $V$ compuesta de sus eigenvectores (por ejemplo, $\{\ket{g_1},\ket{g_2},... \ ,\ket{g_n}$\}), se sigue que $T'=T$ y que, por ende, \[
+T = \sum_{i=1}^n \lambda_i \ket{g_i}\bra{g_i},
+\] donde $\{\ket{g_1},\ket{g_2},... \ ,\ket{g_n}\}$ es una base ortogonnal de $V$ compuesta de eigenvectores de $T$ normalizados y $\lambda_1,\lambda_2,... \ ,\lambda_n$ son los eigenvalores correspondientes (no necesariamente todos distintos entre sí). Esta expresión se conoce como la \emph{descomposición espectral} de $T$.
+
+\vspace{3mm}
+Observemos que la descomposición espectral de $T$ nos da información completa de cómo actúa $T$ en $V$ geométricamente: la expresión anterior nos dice que $T$ proyecta a un vector arbitrario $\ket{v}\in V$ en cada una de sus componentes a lo largo de los diferentes eigenespacios de $T$ (a través de las proyecciones ortogonales $\ket{g_i}\bra{g_i}$) \textemdash los cuales son ortogonales entre sí\textemdash \ , luego multiplica cada una de esas componentes por el eigenvalor correspondiente al eigenespacio en el que se encuentran, y luego reconstruye el vector resultante a partir de las componentes reescaladas\footnote{Aquí utilizamos la palabra ``reescalamiento'' como sinónimo de ''producto de un vector por un reescalar''; recordemos que, geométricamente, en general esta operación puede involucrar un reescalamiento y una rotación.}.
+
+\vspace{3mm}
+En otras palabras, hemos visto que si $T$ es un operador lineal sobre un espacio vectorial $V$ de dimensión finita con producto escalar y cumple que se pueda formar una base ortogonal u ortonormal de $V$ a partir de sus eigenvectores o, equivalentemente, que $$V=E_{\lambda_1}\oplus E_{\lambda_2}\oplus...\oplus E_{\lambda_k}\hspace{3mm}\text{y}\hspace{3mm}E_{\lambda_i}^\perp=\oplus_{j\neq i}E_{\lambda_j} \ \ \forall \ i\in \{1,2,... \ ,n\},$$ donde $\lambda_1, \lambda_2, ... \ , \lambda_k$ son los eigenvalores de $T$, entonces podemos entender a $T$ de una forma extremadamente sencilla: a través de proyecciones (en los eigenespacios de $T$, que son ortogonales entre sí) y reescalamientos (por los eigenvalores de $T$). Un ejemplo de esto se muestra en la Figura \ref{fig:8}.
+
+\begin{figure}[h!]
+    \centering
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=0.9}]
+    \draw[thick,<->] (-3,0) -- (3,0);
+    \draw[thick,<->] (0,-3) -- (0,3);
+    \draw[step=1cm,gray,very thin,dashed] (-3,-3) grid (3,3);
+    \foreach \x in {-2,-1,0,1,2}
+        \draw (\x cm, 1pt) -- (\x cm, -1pt);
+    \foreach \y in {-2,-1,0,1,2}
+        \draw (1pt, \y cm) -- (-1pt, \y cm);
+    \draw[AZUL,dotted,thin] (-3,-3) -- (3,3) node[] at (-1,-2) {$E_{\lambda_1}$};
+    \draw[ROJO,dotted,thin] (3,-3) -- (-3,3) node[] at (1,-2) {$E_{\lambda_2}$};
+    \draw[darkgray,->] (0,0) -- (0.5,2) node[] at (0.5,2.5) {$\ket{v}$};
+    \draw[AZUL,->] (0,0) -- (0.707,0.707) node[] at (1.3,0.5) {$\ket{g_1}$};
+    \draw[ROJO,->] (0,0) -- (-0.707,0.707) node[] at (-1.3,0.5) {$\ket{g_2}$};
+    \draw[] node[] at (2.8,2.8) {\textbf{a)}};
+\end{tikzpicture}
+\hspace{3mm}
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=0.9}]
+    \draw[thick,<->] (-3,0) -- (3,0);
+    \draw[thick,<->] (0,-3) -- (0,3);
+    \draw[step=1cm,gray,very thin,dashed] (-3,-3) grid (3,3);
+    \foreach \x in {-2,-1,0,1,2}
+        \draw (\x cm, 1pt) -- (\x cm, -1pt);
+    \foreach \y in {-2,-1,0,1,2}
+        \draw (1pt, \y cm) -- (-1pt, \y cm);
+        \draw[AZUL,->] (0,0) -- (1.25,1.25) node[] at (2,0.5) {$\ket{g_1}\braket{g_1|v}$};
+        \draw[ROJO,->] (0,0) -- (-0.75,0.75) node[] at (-2,0.5) {$\ket{g_2}\braket{g_2|v}$};
+        \draw[AZUL,dashed,very thin] (-0.75,0.75) -- (0.5,2);
+        \draw[ROJO,dashed,very thin] (1.25,1.25) -- (0.5,2);
+        \draw[darkgray,->] (0,0) -- (0.5,2) node[] at (0.5,2.5) {$\ket{v}$};
+    \draw[] node[] at (2.8,2.8) {\textbf{b)}};
+\end{tikzpicture}
+
+\vspace{5mm}
+
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=0.9}]
+    \draw[thick,<->] (-3,0) -- (3,0);
+    \draw[thick,<->] (0,-3) -- (0,3);
+    \draw[step=1cm,gray,very thin,dashed] (-3,-3) grid (3,3);
+    \foreach \x in {-2,-1,0,1,2}
+        \draw (\x cm, 1pt) -- (\x cm, -1pt);
+    \foreach \y in {-2,-1,0,1,2}
+        \draw (1pt, \y cm) -- (-1pt, \y cm);
+        \draw[AZUL,->] (0,0) -- (-1.25,-1.25) node[] at (-1.5,-1.55) {$\lambda_1\ket{g_1}\braket{g_1|v}$};
+        \draw[ROJO,->] (0,0) -- (-1.5,1.5) node[] at (-1.55,2) {$\lambda_2\ket{g_2}\braket{g_2|v}$};
+    \draw[] node[] at (2.8,2.8) {\textbf{c)}};
+\end{tikzpicture}
+\hspace{3mm}
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=0.9}]
+    \draw[thick,<->] (-3,0) -- (3,0);
+    \draw[thick,<->] (0,-3) -- (0,3);
+    \draw[step=1cm,gray,very thin,dashed] (-3,-3) grid (3,3);
+    \foreach \x in {-2,-1,0,1,2}
+        \draw (\x cm, 1pt) -- (\x cm, -1pt);
+    \foreach \y in {-2,-1,0,1,2}
+        \draw (1pt, \y cm) -- (-1pt, \y cm);
+        \draw[AZUL,->] (0,0) -- (-1.25,-1.25) node[] at (-1.5,-1.55) {$\lambda_1\ket{g_1}\braket{g_1|v}$};
+        \draw[ROJO,->] (0,0) -- (-1.5,1.5) node[] at (-1.55,2) {$\lambda_2\ket{g_2}\braket{g_2|v}$};
+        \draw[AZUL,dashed,thin] (-1.5,1.5) -- (-2.75,0.25);
+        \draw[ROJO,dashed,thin] (-1.25,-1.25) -- (-2.75,0.25);
+        \draw[magenta,->] (0,0) -- (-2.75,0.25) node[] at (-1.5,0.5) {$T(\ket{v})$};
+    \draw[] node[] at (2.8,2.8) {\textbf{c)}};
+\end{tikzpicture}
+\caption{Aplicación de un operador $T:\mathbb{R}^2\to \mathbb{R}^2$ a un vector $\ket{v}$ a través de descomposición espectral. En la subfigura \textbf{a)} se muestra a $\ket{v}$ y a los eigenvectores $\ket{g_1},\ket{g_2}$ de $T$, que forman una base ortonormal; los eigenespacios correspondientes se representan con líneas punteadas. En \textbf{b)} se muestran las proyecciones ortogonales de $\ket{v}$ en cada uno de los eigenespacios de $T$. En \textbf{c)} se muestran las componentes anteriores reescaladas por los eigenvalores correspondiente al eigenespacio en que se encuentran. Finalmente, en \textbf{d)} vemos que la suma de estas componentes reescaladas es igual a la imagen de $\ket{v}$ bajo el operador $T$.}
+    \label{fig:8}
+\end{figure}
+
+\vspace{3mm}
+Las condiciones descritas en el párrafo anterior en general no son fáciles de verificar, por lo que nos gustaría tener algún criterio equivalente que sea más sencillo de aplicar; de cierta manera, de eso se tratará el resto del curso. Empezando nuestra búsqueda por hipótesis más precisas que deban cumplir operadores lineales sobre espacios vectoriales de dimensión finita con producto escalar para que les podamos aplicar la descomposición espectral, nuestra primera pista se encuentra en los operadores adjuntos, que definiremos y estudiaremos en la siguiente sección.
 
 \subsection{Operadores adjuntos}
 
-Como vimos en la sección \ref{Subsec:Correspondencia_entre_bras_y_kets}, en cualquier espacio vectorial $(V,K)$ con producto escalar podemos tomar cualquier vector $\ket{y}\in V$ y definir un funcional $\textbf{g}:V\to K$ como \[
+Como vimos en la sección \ref{Subsec:Correspondencia entre bras y kets}, en cualquier espacio vectorial $(V,K)$ con producto escalar podemos tomar cualquier vector $\ket{y}\in V$ y definir un funcional $\textbf{g}:V\to K$ como \[
     \textbf{g}(\ket{x})=\braket{y|x}
 ,\] que podemos escribir simplemente como el bra $\bra{y}$.
 
@@ -1987,8 +2097,6 @@ Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:
 
 \subsubsection{Operadores lineales ortogonales y unitarios}
 
-
-\subsubsection{Proyecciones ortogonales}
 
 
 

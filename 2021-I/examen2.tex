@@ -1,0 +1,96 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3003, 2021-I \\ Examen parcial 2 (tarea examen) \\ Fecha de entrega: jueves 19 de noviembre, 14:00 hrs.}
+\date{}
+\maketitle
+
+\epigraph{``El auto-aprendizaje es una fuente continua de placer para mí; entré más conozco, más llenadora es mi vida y mejor aprecio mi propia existencia.''}{\textemdash Isaac Asimov, \\ escritor estadounidense}
+
+\vspace{3mm}
+\textbf{1.} Decimos que una relación $R$ en un conjunto $E$ es una \textit{relación de equivalencia} si cumple las siguientes tres propiedades:
+\begin{itemize}
+    \item $xRx$ para todo $x\in E$ (llamada ``reflexividad'');
+    \item si $xRy$, entonces $yRx$ (``simetría'');
+    \item si $xRy$ y $yRz$, entonces $xRz$ (``transitividad'').
+\end{itemize}
+
+\noindent Además, decimos que dos matrices $A,B\in M_{n\times n}(K)$ son \emph{similares} si existe una matriz invertible $Q\in M_{n\times n}(K)$ tal que $A=QBQ^{-1}$, donde $K$ es un campo arbitrario. Demuestren que:
+
+\begin{enumerate}[label=\alph*)]
+    \item las relaciones de \emph{isomorfismo entre espacios vectoriales} y \emph{similitud entre matrices} son relaciones de equivalencia.
+
+\hspace{-1cm} Sean $V$ y $W$ espacios vectoriales sobre $K$ de dimensiones finitas $n$ y $m$, respectivamente. Demuestren que:
+    \item $\text{dim}(\mathcal{L}(V,W))=mn$.
+    \item Las representaciones matriciales de un operador $T:V\to V$ en \textbf{una} base ordenada son matrices similares.
+\end{enumerate}
+
+\vspace{3mm}
+\textbf{2.} Sea $V$ un espacio vectorial. Decimos que un operador lineal $P:V\to V$ es un \emph{operador de proyección} si $P^2=P$. Demuestren que si $\text{dim}(V)=n$, entonces:
+
+\begin{enumerate}[label=\alph*)]
+    \item $\text{Im}(P)\oplus \text{Ker}(P)=V.$  
+    \item Si $\beta$ es una base ordenada arbitraria de $V$, entonces $[P]_\beta$ es similar a una matriz diagonal con entradas $0$ y $1$.
+\end{enumerate}
+
+\vspace{3mm}
+\textbf{3.} Sea $V$ un espacio vectorial de dimensión finita $n$ con producto escalar. Demuestren que si $T:V\to V$ es un operador lineal, entonces \[
+    ([T]_\gamma )_{ij}=\frac{\langle T(\mathbf{g}_i) , \mathbf{g}_j \rangle}{\langle \mathbf{g}_j , \mathbf{g}_j \rangle},
+\] donde $\gamma=(\mathbf{g}_1,\mathbf{g}_2,... \ ,\mathbf{g}_n)$ es una base ordenada ortogonal de $V$\footnote{Observen cómo esta demostración nos muestra lo fácil que es calcular representaciones matriciales de operadores lineales en espacios con producto escalar; en particular, noten cómo este cálculo se simplifica aún más si supongemos que $\gamma$ es una base ordenada ortonormal.}.
+
+\vspace{3mm}
+\textbf{4.} Sea $\mathbf{a}\in\mathbb{R}^3$ un vector no nulo, $\eta=(\mathbf{e}_1,\mathbf{e}_2,\mathbf{e}_3)$ la base canónica ordenada de $\mathbb{R}^3$ y $T:V\to V$ un operador lineal tal que \[
+    T(\mathbf{v})=\mathbf{v}-2\frac{\langle \mathbf{v} ,\mathbf{a} \rangle}{\langle \mathbf{a} ,\mathbf{a} \rangle}\mathbf{a} \ \ \ \forall \ \mathbf{v}\in\mathbb{R}^3.
+\] 
+\begin{enumerate}[label=\alph*)]
+    \item Calculen a $[T]_\eta$.
+\item Encuentren vectores $\mathbf{b}$ y $\mathbf{c}$ tales que $\gamma:=\{\mathbf{a}, \mathbf{b}, \mathbf{c}\}\subset \mathbb{R}^3$ sea un conjunto ortogonal. Luego, calculen a $[T]_\gamma$ y respondan: ¿cómo interpretan al operador $T$ geométricamente a partir de esta representación matricial?
+\item \textbf{Sin hacer cálculos}, respondan las siguientes preguntas: ¿cómo interpretarían geométricamente al operador $T$ si tuviera regla de correspondencia $\mathbf{v}\mapsto \mathbf{v}-2\frac{\langle \mathbf{v} , \mathbf{a} \rangle}{\langle \mathbf{a} , \mathbf{a} \rangle}\mathbf{a} - 2\frac{\langle \mathbf{v} , \mathbf{b} \rangle}{\langle \mathbf{b} , \mathbf{b} \rangle}\mathbf{b}$? ¿Y si fuera $\mathbf{v}\mapsto \mathbf{v}-2\frac{\langle \mathbf{v} , \mathbf{a} \rangle}{\langle \mathbf{a} , \mathbf{a} \rangle}\mathbf{a} - 2\frac{\langle \mathbf{v} , \mathbf{b} \rangle}{\langle \mathbf{b} , \mathbf{b} \rangle}\mathbf{b}-2\frac{\langle \mathbf{v} , \mathbf{c} \rangle}{\langle \mathbf{c} , \mathbf{c} \rangle}\mathbf{c}$?
+\end{enumerate}
+
+\end{document}
