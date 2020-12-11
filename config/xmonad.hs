@@ -87,10 +87,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_Escape), io (exitWith ExitSuccess))
 
     -- Restart XMonad
+    , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
+
+    -- Open Zathura 
     , ((modm,               xK_r     ), spawn "zathura")
 
-    -- Restart XMonad
-    , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
+    -- Open Xournal 
+    , ((modm,               xK_x     ), spawn "xournalpp")
 
     -- Rotate through available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
@@ -128,11 +131,23 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Launch Firefox Private Window
     , ((modm .|. shiftMask, xK_w     ), spawn "firefox --private-window")
     
+    -- Launch Reaper
+    , ((modm,               xK_d     ), spawn "reaper")
+
+    -- Launch qt-jack
+    , ((modm,               xK_a     ), spawn "qjackctl")
+
     -- Launch Thunderbird
     , ((modm,               xK_e     ), spawn "thunderbird")
 
+    -- Launch Stremio
+    , ((modm .|. shiftMask, xK_e     ), spawn "stremio")
+
     -- Launch Telegram
     , ((modm,               xK_i     ), spawn "telegram-desktop")
+
+    -- Launch Steam
+    , ((modm .|. shiftMask, xK_v     ), spawn "steam")
 
     -- Launch Discord
     , ((modm .|. shiftMask, xK_i     ), spawn "discord")
@@ -180,15 +195,17 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- Window rules
 
 myManageHook = composeAll
-  [ className =? "Thunderbird" --> doShift "0"
+  [ isFullscreen --> (doF W.focusDown <+> doFullFloat)
+  , className =? "Thunderbird" --> doShift "0"
   , className =? "discord" --> doShift "0"
   , className =? "TelegramDesktop" --> doShift "0"
+  , className =? "Transmission-gtk" --> doShift "0"
   , title =? "Media viewer" --> doFloat 
   , title =? " " --> doFloat
   , className =? "Steam" <&&> title =? "Stephen's Sausage Roll" --> doFullFloat
   , title =? "Brawlhalla" --> doFullFloat
   , title =? "Pony Island" --> doFullFloat
-  , title =? "Manifold Garden" --> doFullFloat
+  , title =? "Manifold Garden" --> doFloat
   , className =? "zoom" <&&> title=? "Chat" --> doFloat
   , className =? "mpv" --> doFullFloat
   , className =? "firefox" <&&> title =? "Picture-in-Picture" --> doFloat

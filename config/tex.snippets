@@ -376,11 +376,11 @@ snippet node "node"
 node[$1] $2 {$3}$0
 endsnippet
 
-snippet x "times"
+snippet XX "times" iA
 \times $0
 endsnippet
 	
-snippet . "cdot" i
+snippet .. "cdot" i
 \cdot $0
 endsnippet
 
@@ -448,7 +448,7 @@ snippet ov "overline"
 \overline{$1}$0
 endsnippet
 
-snippet fn "footnote"
+snippet fn "footnote" i
 \footnote{$1.}$0
 endsnippet
 
@@ -497,13 +497,13 @@ snippet chap "chapter"
 endsnippet
 
 snippet sec "section"
-\section{$1} \label{$2}$0
+\section{$1} \label{Sec: $1}$0
 endsnippet
 
 snippet ssec "subsection"
-\subsection{$1} \label{$2}$0
+\subsection{$1} \label{Ssec: $1}$0
 endsnippet
 
 snippet sssec "subsubsection"
-\subsubsection{$1} \label{$2}$0
+\subsubsection{$1} \label{Sssec: $1}$0
 endsnippet
