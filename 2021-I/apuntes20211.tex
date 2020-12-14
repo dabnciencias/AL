@@ -2005,9 +2005,9 @@ A continuación, demostraremos que en espacios vectoriales de dimensión finita 
 \begin{teorema} {14.3}
 Sea $(V,K)$ un espacio vectorial de dimensión finita $n$ con producto escalar, $\beta=\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ una base ortonormal de $V$ y $T:V\to V$ un operador lineal. Entonces $$[T^*]_\beta=\big([T]_\beta\big)^*,$$ donde $A^*$ se define mediante la relación $A^*_{ij}=\overline{A_{ji}}$ para toda $A\in M_{n\times n}(K)$.
 \begin{proof}
-Sean $A=[T]_\beta$ y $B=[T^*]_\beta$. Si partimos del sistema de ecuaciones que define a la representación matricial $A$ y hacemos producto escalar por la izquierda en ambos lados de cada una de las ecuaciones por un elemento $\ket{b_i}$ de la base y aplicamos ortonormalidad, obtenemos la relación $$A_{ij}=\braket{b_i,T(b_j)}.$$ 
+Sean $A=[T]_\beta$ y $B=[T^*]_\beta$. Si partimos del sistema de ecuaciones que define a la representación matricial $A$ y hacemos producto escalar por la izquierda en ambos lados de cada una de las ecuaciones por un elemento $\ket{b_i}$ de la base y aplicamos ortonormalidad, obtenemos la relación $$A_{ij}=\braket{b_i|T(b_j)}.$$ 
 
-Haciendo un procedimiento análogo con la representación matricial $B$, obtenemos que $$B_{ij}=\braket{b_i,T^*(b_j)},$$ de donde se sigue que $$B_{ij}=\overline{\braket{T^*(b_j),b_i}}=\overline{\braket{b_j|T(b_i)}}=\overline{A_{ji}},$$ lo cual implica que $B=A^*$, es decir, que $[T^*]_\beta=\big([T]_\beta\big)^*$.
+Haciendo un procedimiento análogo con la representación matricial $B$, obtenemos que $$B_{ij}=\braket{b_i|T^*(b_j)},$$ de donde se sigue que $$B_{ij}=\overline{\braket{T^*(b_j)|b_i}}=\overline{\braket{b_j|T(b_i)}}=\overline{A_{ji}},$$ lo cual implica que $B=A^*$, es decir, que $[T^*]_\beta=\big([T]_\beta\big)^*$.
 \end{proof}
 \end{teorema}
 
@@ -2019,9 +2019,19 @@ A la luz del Teorema 14.3, damos una nueva definición, que quizá ya esperes.
 \end{tcolorbox}
 \vspace{5mm}
 
-\noindent Recordando que para matrices cuadradas $A$ la matriz transpuesta $A^T$ se define mediante la relación $$A^T_{ij}=A_{ji},$$ podemos ver que la matriz adjunta $A^*$ se obtiene mediante la transposición de la matriz $A$ y la conjugación de sus entradas, sin importar el orden en que se realicen estas dos operaciones.
+\noindent Recordando que para matrices cuadradas $A$ la matriz transpuesta $A^T$ se define mediante la relación $$A^T_{ij}=A_{ji},$$ podemos ver que la matriz adjunta $A^*$ se obtiene mediante la transposición de la matriz $A$ y la conjugación de sus entradas, sin importar el orden en que se realicen estas dos operaciones. Si entendemos por $\overline{A}$ a la matriz que se obtiene al conjugar todas las entradas de $A$, podemos escribir esto simplemente como $A^*=\overline{A^T}=\overline{A}^T$.
 
 \subsection{Ejercicios de repaso}
+
+\subsubsection{Descomposición espectral (introducción)} \label{Ejer:Descomposición espectral (introducción)}
+
+\begin{enumerate}
+\item Sean $V$ un espacio vectorial de dimensión finita, $T:V\to V$ un operador lineal y $\{\lambda_1,\lambda_2,... \ ,\lambda_k\}$ el espectro de $T$. Demuestra que $T$ es diagonalizable si y sólo si $V=E_{\lambda_1}\oplus E_{\lambda_2}\oplus...\oplus E_{\lambda_k}$.
+\item Sean $V$ un espacio de dimensión finita con producto escalar, $T:V\to V$ un operador lineal y $\Lambda=\{\lambda_1,\lambda_2,... \ ,\lambda_k\}$ el espectro de $T$. Demuestra que $T$ es diagonalizable si y sólo si $V = E_{\lambda_i} \oplus (E_{\lambda_i})^\perp$ para toda $\lambda_i\in\Lambda$.
+\item Sean $V$ un espacio de dimensión finita $n$ con producto escalar, $T:V\to V$ un operador lineal, $\{\ket{g_1}, \ket{g_2}, ... \ ,\ket{g_n}\}$ un conjunto de eigenvectores normales de $T$ y $\Lambda=\{\lambda_1,\lambda_2,... \ ,\lambda_n\}$ un conjunto de eigenvalores de $T$ (no necesariamente todos distintos) tales que $T(\ket{g_i})=\lambda_i \ket{g_i} \ \forall \ i\in\{1,2,... \ ,n\}$. Demuestra que $T=\sum_{i=1}^n \lambda_i \ket{g_i}\bra{g_i}$ si y sólo si $I = \sum_{i=1}^n \ket{g_i}\bra{g_i}$.
+\end{enumerate}
+
+\subsubsection{Operadores adjuntos} \label{Ejer:Operadores adjuntos}
 \begin{enumerate}
     \item Sea $V$ un espacio vectorial de dimensión finita $n$ con producto escalar y $\beta=\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ una base ortonormal de $V$. Demuestra que si $T:V\to V$ es lineal, entonces $([T]_\beta)_{ij}=\braket{b_i|T(b_j)}.$
     \item Sea $K$ un campo y $A\in M_{n\times n}(K)$. Demuestra que
@@ -2047,7 +2057,44 @@ A la luz del Teorema 14.3, damos una nueva definición, que quizá ya esperes.
 \newpage
 \section{Operadores normales y autoadjuntos y teorema espectral} \label{Sec:15} 
 
-\subsection{Operadores normales y autoadjuntos***}
+\subsection{Operadores normales y autoadjuntos}
+
+Para determinar si un operador tiene una base ortogonal de eigenvectores y, por lo tanto, si se puede descomponer espectralmente, una herramienta muy útil es entender cómo se relaciona con su operador adjunto. En un primer acercamiento, podemos analizar cómo se relacionan los eigenvectores y eigenvalores de uno y otro.
+
+\begin{lema}\empty
+    Sea $T$ un operador lineal en un espacio vectorial de dimensión finita con producto escalar $V$. Si $T$ tiene al menos un eigenvector con eigenvalor $\lambda$, entonces $T^*$ tiene un eigenvector con eigenvalor $\overline{\lambda}$.
+
+    \begin{proof}
+        Sea $\ket{v}\in V$ un eigenvector de $T$ con eigenvalor $\lambda$. Entonces, por el ejercicio 3 de la sección \ref{Ejer:Operadores adjuntos}, para toda $\ket{u}\in V$ tenemos que \[
+            0=\braket{0|u}=\braket{(T-\lambda I_V)(v)|u}=\braket{v|(T-\lambda I_V)^*(u)}=\braket{v|(T^*-\overline{\lambda}I_V)(u)}.
+        \] Por ende, $\ket{v}\in V$ es un vector no nulo que es ortogonal a todos los vectores de $\text{Im}(T^*-\overline{\lambda}I_V)$. Esto implica que el operador lineal $T^*-\overline{\lambda}I_V$ no es suprayectivo y, por la fórmula de la dimensión, que tiene un núcleo no trivial. Por lo tanto, todo vector no nulo en $\text{Ker}(T^*-\lambda I_V)$ es un eigenvector de $T^*$ con eigenvalor $\overline{\lambda}$. El hecho de que el núcleo sea no trivial nos asegura que existe al menos un eigenvector de $T^*$ con eigenvalor $\overline{\lambda}$.
+    \end{proof}
+\end{lema}
+
+Para continuar con nuestra búsqueda, haremos una observación interesante apoyándonos en el isomorfismo de representación matricial de operadores lineales. Supongamos que $T$ es un operador lineal en un espacio vectorial de dimensión finita $V$ con producto escalar tal que $\gamma$ es una base ortonormal de $V$ compuesta por eigenvectores de $T$. Entonces, $[T]_\gamma$ es diagonal y, por el Teorema 14.3, se sigue que $$[T^*]_\gamma=([T]_\gamma)^*=\overline{([T]_\gamma^T)}=\overline{
+([T]_\gamma)},$$ por lo que $[T^*]$ también es diagonal. Ya que las matrices diagonales conmutan, se sigue que $[T]_\gamma[T^*]_\gamma=[T^*]_\gamma[T]_\gamma$. En particular, como este isomorfismo es compatible con la multiplicación de matrices y la composición de transformaciones lineales, concluimos que $TT^*=T^*T$.
+
+\begin{tcolorbox}
+    \underline{Def.} Sea $V$ un espacio vectorial con producto escalar. Decimos que un operador lineal $T:V\to V$ es \emph{normal} si $TT^*=T^*T$.
+
+    \vspace{3mm}
+    \underline{Def.} Sea $A\in M_{n\times n}(K)$ con $K=\mathbb{R}$ ó $K=\mathbb{C}$. Decimos que $A$ es una matriz \emph{normal}\footnote{Nótese que del Teorema 14.3 se sigue que, si $V$ es de dimensión finita, entonces $T$ es un operador normal si y sólo si $[T^*]$ es una matriz normal.} si $AA^*=A^*A$.
+\end{tcolorbox}
+
+Nótese del párrafo anterior que, bajo las condiciones que impusimos al operador lineal $T$, tenemos que $T$ y $T^*$ tienen los mismos eigenvectores \textemdash aunque no necesariamente con los mismos eigenvalores correspondientes\footnote{En particular, en este caso $T$ y $T^*$ son simultáneamente diagonalizables.}. Ahora veremos cómo se relacionan los eigenvalores bajo estas hipótesis.
+
+\begin{teorema} {14.4}
+    Sean $V$ un espacio vectorial de dimensión finita $n$ con producto escalar y $T$ un operador lineal normal en $V$. Entonces, para todo $\ket{v}\in V$ tal que $T(\ket{v})=\lambda \ket{v}$, tenemos que $T^*(\ket{v})=\overline{\lambda}\ket{(v)}$.
+
+\begin{proof}
+    Ya que $T$ es normal, tenemos que $TT^*=T^*T$. Sea $\ket{v}\in V$ tal que $T(\ket{v})=\lambda \ket{v}$. Entonces, se sigue que COMPLETAR
+\end{proof}
+\end{teorema}
+
+
+\vspace{3mm}
+Parece que ya estamos muy cerca de nuestra meta; sin embargo, observemos lo siguiente: si $T$ es un operador normal en un espacio vectorial $(V,K)$ de dimensión finita con producto escalar y $\ket{g_i},\ket{g_j}$ son eigenvectores de $T$ con eigenvalores $\lambda_i, \lambda_j$ tales que $\lambda_i\neq \lambda_j$, entonces por un lado tenemos que $$\braket{g_i|TT^*(g_j)}=\braket{T^*(g_i)|(T^*(g_j))}=\braket{\overline{\lambda_i}g_i|\overline{\lambda_j}g_j}=\lambda_i \overline{\lambda_j}\braket{g_i|g_j},$$ mientras que, por otro lado, $$\braket{g_i|TT^*(g_j)}=\braket{g_i|T^*T(g_j)}=\braket{T(g_i)|T(g_j)}=\braket{\lambda_i g_i|\lambda_jg_j}=\overline{\lambda_i}\lambda_j\braket{g_i|g_j}=\overline{(\lambda_i \overline{\lambda_j})}\braket{g_i|g_j}.$$ Por lo tanto, llegamos a la igualdad $$(\lambda_i \overline{\lambda_j} - \overline{(\lambda_i \overline{\lambda_j})})\braket{g_i|g_j}=0.$$ Observemos que si $K=\mathbb{C}$, entonces forzosamente $\ket{g_i}$ y $\ket{g_j}$ son ortogonales, de donde se sigue que $E_{\lambda_i}^\perp=\oplus_{j\neq i}E_{\lambda_j}$ para todo eigenvalor $\lambda_i$ de $T$ y, por ende, que $T$ se puede descomponer espectralmente.
+
 
 \subsection{Teorema espectral}
 
@@ -2076,7 +2123,7 @@ Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:
 
 \subsubsection{Operadores normales y autoadjuntos}
 \begin{enumerate}
-    \item
+    \item Demuestra que las matrices diagonales con entradas en un campo $K$ conmutan.
 \end{enumerate}
 
 \subsubsection{Teorema espectral}
