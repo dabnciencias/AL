@@ -13,7 +13,7 @@
 \graphicspath{ {images/} }
 \usepackage{tcolorbox}
 \usepackage{enumitem}
-\setcounter{section}{0}
+\setcounter{section}{-1}
 \usepackage{tabularx}
 \usepackage{multirow}
 \usepackage[pdftex,
@@ -39,12 +39,14 @@
 }
 \newcommand{\N}{\mathbb{N}}
 \newcommand{\Z}{\mathbb{Z}}
-\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{teorema}[2][Teorema]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{lema}[2][Lema]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries}]}{\end{trivlist}}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{exercise}[2][Exercise]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{problem}[2][Problem]{\begin{trivlist}
@@ -53,8 +55,6 @@
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
 \newenvironment{corollary}[2][Corollary]{\begin{trivlist}
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
-\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
-\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
 \newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
  
 \pgfplotsset{compat=1.15}
@@ -66,7 +66,6 @@
 \date{}
 \maketitle
 
-\iffalse
 \section{Introducción}
 
 La presente planeación del curso de Álgebra Lineal para la Licenciatura en Física Biomédica fue realizada tomando en cuenta el programa de la asignatura existente\footnote{El cual puede ser consultado en la página \url{http://www.fciencias.unam.mx/asignaturas/1330.pdf}.}, así como la retroalimentación del mismo por parte de estudiantes de la licenciatura.
@@ -77,47 +76,76 @@ Durante el curso, se sentarán bases teóricas sólidas de álgebra lineal para 
 
 \subsection{Metolodogía de enseñanza}
 
-Este curso está diseñado para desarrollar las habilidades autodidactas de cada estudiante, a la vez que se les da acompañamiento en los temas del curso mediante sesiones cortas de asesoría en línea. Desde el principio del curso, l@s estudiantes tendrán acceso a notas del curso, que incluyen ejercicios de repaso para reforzar los aprendizajes: esto permitirá que cada quien avance a su ritmo. En conjunto con el grupo, se establecerán horarios fijos para atender dudas de la materia de manera virtual.
+ Este curso está diseñado para que l@s estudiantes aprendan álgebra lineal de manera mayormente autodidacta, a la vez que se les da acompañamiento en los temas del curso mediante sesiones cortas de asesoría en línea en grupos reducidos. Por lo tanto, la mayor parte del curso se llevará a cabo a través de actividades asíncronas.
+
+ \vspace{3mm}
+  Como plataforma para llevar el curso, utilizaremos la aplicación de mensajería instantánea Telegram -misma por donde publicaremos avisos, recursos didácticos (especificados más abajo), exámenes, etc. y atenderemos dudas de nuestr@s estudiantes fuera de las sesiones de videollamada- y, para las sesiones síncronas (videollamadas), utilizaremos Google Meet.
+
+  \vspace{3mm}
+Al inicio de cada semana, les indicaremos cuáles son las lecturas que deben realizar y los ejercicios que deben contestar durante la misma. Además, a lo largo de la semana les enviaremos recursos didácticos que complementen sus lecturas. Los días viernes nos reuniremos por videollamada en el horario de clase para resolver dudas sobre los ejercicios dejados. Al final de cada semana, les indicaremos las lecturas y ejercicios que deben resolver para la siguiente. Además, nos reuniremos algunos días miércoles (en promedio, cada dos semanas) por videollamada en el horario de clase para dar una exposición breve de algunos temas del módulo y para que nos pregunten sus dudas acerca de ellos.
+
+\vspace{3mm}
+Durante todo el curso, se procurará la interacción y colaboración entre estudiantes durante el proceso de aprendizaje.
+
+\subsection{Temario del curso por semana}
+
+\textbf{Semana 1:}  Campos, espacios vectoriales, subespacios vectoriales.
+
+\vspace{3mm}
+\textbf{Semana 2:}  Producto escalar y norma, proyecciones y ortogonalidad.
+
+\vspace{3mm}
+\textbf{Semana 3:}  Combinaciones lineales, subespacio generado y conjunto generador, dependencia e independencia lineal.
+
+\vspace{3mm}
+\textbf{Semana 4:}  Bases y dimensión, ortogonalización y ortonormalización.
+
+\vspace{3mm}
+\textbf{Semana 5:}  Transformaciones lineales y sus representaciones matriciales.
+
+\vspace{3mm}
+\textbf{Semana 6:}  Composición de transformaciones lineales y multiplicación de matrices.
+
+\vspace{3mm}
+\textbf{Semana 7:}  Invertibilidad e isomorfismos.
+
+\vspace{3mm}
+\textbf{Semana 8:} Cambios de base.
+
+\vspace{3mm}
+\textbf{Semana 9:} El problema de la diagonalización, eigenvalores e eigenvectores, polinomio característico.
+
+\vspace{3mm}
+\textbf{Semana 10:} Diagonalizabilidad.
+
+\vspace{3mm}
+\textbf{Semana 11:} Sistemas lineales de ecuaciones diferenciales y aplicaciones en física y biología.
+
+\vspace{3mm}
+\textbf{Semana 12:} Repaso de diagonalizabilidad y diagonalización.
+
+\vspace{3mm}
+\textbf{Semana 13:} Funcionales y espacio dual, complemento ortogonal y proyecciones ortogonales.
+
+\vspace{3mm}
+\textbf{Semana 14:} Descomposición espectral (introducción) y operador adjunto.
+
+\vspace{3mm}
+\textbf{Semana 15:} Operadores normales, autoadjuntos y teorema espectral.
+
+\vspace{3mm}
+\textbf{Semana 16:} Operadores ortogonales y unitarios.
+
+\vspace{3mm}
+\textbf{Nota:} Debido al poco tiempo del que disponemos para el curso, \textbf{se asumirá que l@s estudiantes dominan los siguientes temas del} \href{https://web.fciencias.unam.mx/asignaturas/1130.pdf}{temario de Álgebra}: Matrices (definción y operaciones), matrices transpuestas, operaciones elementales y matrices elementales, rango de una matriz, matrices invertibles, cálculo de la inversa de una matriz invertible, determinante de una matriz cuadrada (definición y propiedades), cálculo de determinantes, soluciones de un sistema de ecuaciones lineales, sistemas de ecuaciones lineales homogéneos, espacio de soluciones de un sistema homogéneo, sistemas de ecuaciones lineales no homogéneos, criterios de existencia de soluciones y resolución de sistemas de ecuaciones lineales. Sin embargo, \textbf{no se asumirá conocimiento alguno del temario de Ecuaciones Diferenciales}.
 
 \subsection{Forma de evaluación}
 
-La evaluación se hará a través de 4 tareas-examen, que se realizarán cada segundo viernes del curso intersemestral. Los exámenes se entregarán en equipos pequeños -los cuales serán asignados por el profesor y cambiados cada dos semanas. La calificación obtenida por el equipo para un examen será la misma que será asignada a cada participante para ese examen. Al final del curso, quienes tengan un promedio reprobatorio en la materia deberán presentar un examen final, que sustituirá sus calificaciones anteriores. Las personas con promedio aprobatorio también podrán optar por hacer el examen final para subir calificación; en ese caso, su calificación en el final reemplazará las anteriores.
+ La evaluación se hará a través de 4 tareas-exámenes, que se realizarán cada cuarto viernes del curso. Las tareas-examen se realizarán y entregarán en equipos de pocas personas, que serán asignados por el profesor y cambiarán después de cada entrega; esto fomentará la amplia colaboración entre estudiantes, y permitirá que se le pueda brindar una atención más focalizada a cada equipo. Para asegurar que el trabajo sea colaborativo, en cada entrega se deberá indicar de forma clara las contribuciones que realizó cada miembro del equipo al trabajo entregado. La calificación que obtenga un equipo en una tarea-examen será la misma que se asigne a cada contribuyente para esa misma entrega. Quienes no contribuyan a su equipo en una entrega no tendrán derecho a la calificación correspondiente.
 
-\subsection{Temario del curso intersemestral por semana}
+Además de las cuatro tareas-examen, se evaluará un trabajo final obligatorio (que puede realizarse de forma individual o en parejas) en el cual realicen una investigación sobre aplicaciones de los temas vistos durante el curso y, en su caso, realicen una implementación numérica (i.e., un programa) acerca de la aplicación que investigaron. Este trabajo final se promediará con las cuatro tareas-examen para obtener la calificación final del curso.
 
-\textbf{Semana 1:} Campos, espacios vectoriales, subespacios vectoriales, producto escalar y norma, proyecciones y ortogonalidad.
-
-\vspace{3mm}
-
-\textbf{Semana 2:} Combinaciones lineales, subespacio generado y conjunto generador, dependencia e independencia lineal, bases y dimensión, ortogonalización y ortonormalización.
-
-\vspace{3mm}
-
-\textbf{Semana 3:} Transformaciones lineales, espacio de transformaciones lineales, núcleo e imagen de una transformación lineal, nulidad y rango, representación matricial de una transformación lineal.
-
-\vspace{3mm}
-
-\textbf{Semana 4:} Composición de transformaciones lineales y multiplicación de matrices, invertibilidad e isomorfismos, cambios de base, espacios duales.
-
-\vspace{3mm}
-
-\textbf{Semana 5:} El problema de la diagonalización, eigenvalores e eigenvectores, polinomio característico.
-
-\vspace{3mm}
-
-\textbf{Semana 6:} Diagonalizabilidad, subespacios invariantes y sumas directas.
-
-\vspace{3mm}
-
-\textbf{Semana 7:} Operadores lineales adjuntos, normales y autoadjuntos.
-
-\vspace{3mm}
-
-\textbf{Semana 8:} Operadores unitarios y ortogonales, proyecciones ortogonales y teorema espectral para operadores autoadjuntos.
-
-\vspace{3mm}
-
-\textbf{Nota:} Debido al poco tiempo del que disponemos para el curso intersemestral, se asumirá que l@s estudiantes dominan los siguientes temas del \href{https://web.fciencias.unam.mx/asignaturas/1130.pdf}{temario de Álgebra}: Matrices (definción y operaciones), matrices transpuestas, operaciones elementales y matrices elementales, rango de una matriz, matrices invertibles, cálculo de la inversa de una matriz invertible, determinante de una matriz cuadrada (definición y propiedades), cálculo de determinantes, soluciones  de  un  sistema de ecuaciones lineales, sistemas de ecuaciones lineales homogéneos, espacio  de soluciones de un sistema homogéneo, sistemas de ecuaciones lineales no homogéneos, criterios de existencia de soluciones y resolución de sistemas de ecuaciones lineales.
+Al final del curso, quienes tengan un promedio reprobatorio en la materia deberán presentar un examen final de forma individual, que sustituirá sus calificaciones anteriores. Las personas con promedio aprobatorio también podrán optar por hacer el examen final para subir calificación; en ese caso, su calificación en el final reemplazará las anteriores.
 
 \subsection{Bibliografía recomendada para el curso} \label{Bibliografía}
 
@@ -140,7 +168,6 @@ No sólo se aprende de libros; hay que aprovechar todo el contenido que ofrece e
 \end{itemize}
 
 Por supuesto, les invito a que busquen más recursos por su propia cuenta; de encontrarlos, les agradecería que me notificaran para revisarlos.
-\fi
 
 \newpage
 \textbf{Notación}
@@ -755,7 +782,7 @@ Otro tipo de operación que se puede definir sobre un espacio vectorial es la \e
 \vspace{3mm}
 \noindent A partir de la definición anterior podemos demostrar que la norma es positivo definida; es decir que, además de que el único vector con norma igual a $0$ es el vector nulo, todos los vectores no nulos tienen norma positiva.
 
-\begin{corolario} {}
+\begin{corolario} {2.2.1.1}
     Sea $V$ un espacio vectorial con una norma $||\cdot ||$, entonces $\hspace{1.5mm}\forall\hspace{1.5mm} \mathbf{v}\in V$ con $\mathbf{v}\neq\mathbf{0}$ se cumple que $||\mathbf{v}||>0.$
 
 \begin{proof}
@@ -1379,13 +1406,13 @@ En los teoremas anteriores demostramos que si $\text{dim}(V)=n$ entonces cualque
 
 \end{teorema}
 
-\begin{corolario}{4.2}
+\begin{corolario}{4.2.4}
     De los dos teoremas anteriores podemos concluir que si $W$ es un subespacio vectorial de $V$ y $\text{dim}(W)=\text{dim}(V)\implies W=V.$
 \end{corolario}
 
 Para terminar esta sección, veremos algunas formas en las cuales se pueden construir bases de un espacio vectorial de dimensión $n$ a partir de conjuntos linealmente independientes con menos de $n$ elementos, o de conjuntos linealmente dependientes que generan $V$ y tienen más de $n$ elementos.
 
-\begin{teorema} {4.2.4}
+\begin{teorema} {4.2.5}
     Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto finito linealmente dependiente que genera a $V$ puede reducirse hasta convertirse en una base de $V$.
 
 \begin{proof}
@@ -1394,7 +1421,7 @@ Para terminar esta sección, veremos algunas formas en las cuales se pueden cons
 
 \end{teorema}
 
-\begin{teorema} {4.2.5}
+\begin{teorema} {4.2.6}
 Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto linealmente independiente con menos de $n$ elementos no genera a $V$, pero puede extenderse hasta convertirse en una base de $V$.
 
 \begin{proof}
@@ -1443,14 +1470,14 @@ Habíamos visto con anterioridad que cualquier vector puede ser expresado como u
 
 \end{teorema}
 
-\begin{corolario} {4.3.1}
+\begin{corolario} {4.3.1.2}
 Sea $V$ sobre $K$ un espacio vectorial con producto interior y $S$ un subconjunto ortogonal con vectores no nulos, entonces $S$ es linealmente independiente.
 
 \begin{proof}
     Supongamos que $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}.$ Fijamos nuestra atención en la combinación lineal $\sum_{i=1}^n c_i\mathbf{v}_i=\mathbf{0}$, con $c_i\in K$. Aplicando el Teorema 4.3.1.1 con $\mathbf{u}=\mathbf{0}$ tenemos que $c_i=\frac{\langle\mathbf{0},\mathbf{v}_i\rangle}{||\mathbf{v}_i||^2}=0\hspace{3mm}\forall\hspace{1.5mm}  c_i\implies S$ es linealmente independiente.
 \end{proof}
 
-Observemos que este corolario es una genearlización del primer ejerrcicio de repaso de la sección 3. Además, este corolario y el teorema del cual se desprende nos dicen que los conjuntos ortogonales son buenos candidatos para bases, ya que son linealmente independientes y el cálculo de los coeficientes $c_i$ es sumamente sencillo. En particular, aplicando este corolario a los conjuntos ortogonales vemos que, si $V$ es un espacio vectorial de dimensión $n$, entonces cualquier conjunto ortogonal de $n$ vectores es una base de $V$ (ver teorema 4.2.3). 
+Observemos que este corolario es una genearlización del primer ejercicio de repaso de la sección 3. Además, este corolario y el teorema del cual se desprende nos dicen que los conjuntos ortogonales son buenos candidatos para bases, ya que son linealmente independientes y el cálculo de los coeficientes $c_i$ es sumamente sencillo. En particular, aplicando este corolario a los conjuntos ortogonales vemos que, si $V$ es un espacio vectorial de dimensión $n$, entonces cualquier conjunto ortogonal de $n$ vectores es una base de $V$ (ver teorema 4.2.3). 
 \end{corolario}
 
 Así como a partir de cualquier conjunto linealmente independiente de un espacio vectorial $V$ se puede construir una base para $V$ se puede, además, realizar un proceso de \emph{ortogonalización} u \emph{ortonormalización} de esa misma base. La demostración de este hecho\textemdash que también nos deletrea el proceso a seguir para lograrlo\textemdash \hspace{0.5mm} se conoce como el Teorema de Gram-Schmidt.
@@ -1637,7 +1664,7 @@ Para esta sección, seguiremos el libro \emph{Linear Algebra: A Modern Introduct
 
 \section{Funcionales y espacio dual, complemento ortogonal y proyecciones ortogonales} \label{Sec:13} 
 
-Durante este último módulo del curso, nuestro principal objeto de estudio serán los espacios vectoriales con productos escalares, así como los operadores lineales que actúan sobre dichos espacios. Descubriremos que, con ayuda del producto escalar, podemos llegar a tener una comprensión profundamente geométrica sobre cómo actúan ciertos operadores en estos espacios \textemdash más allá de una simple descripción algrebráica dada por reglas de correspondencia. Este resultado es uno de los más importantes de todo el curso, y se le conoce como el \emph{Teorema espectral}. Dado que haremos uso frecuente del producto escalar  $\langle\cdot ,\cdot\rangle$ \textemdash principalmente, a partir de la sección \ref{Subsec:Correspondencia entre bras y kets}\textemdash \ en lo que resta del curso utilizaremos la llamada \emph{notación de bra-ket}, también conocida como \emph{notación de Dirac}, por lo que se presenta a continuación.
+Durante este último módulo del curso, nuestro principal objeto de estudio serán los espacios vectoriales con productos escalares, así como los operadores lineales que actúan sobre dichos espacios. Descubriremos que, con ayuda del producto escalar, podemos llegar a tener una comprensión profundamente geométrica sobre cómo actúan ciertos operadores en estos espacios \textemdash más allá de una simple descripción algrebráica dada por reglas de correspondencia. Este resultado es uno de los más importantes de todo el curso, y se le conoce como el \emph{Teorema espectral}. Dado que haremos uso frecuente del producto escalar  $\langle\cdot ,\cdot\rangle$ \textemdash principalmente, a partir de la sección \ref{Subsec:Correspondencia entre bras y kets}\textemdash \ en lo que resta del curso utilizaremos la llamada \emph{notación bra-ket}, también conocida como \emph{notación de Dirac}, por lo que se presenta a continuación.
 
 \vspace{3mm}
 
@@ -1690,7 +1717,7 @@ Sea $(V,K)$ un espacio vectorial con producto escalar y $\ket{v}\in V$ un vector
 \newpage
 \subsection{Correspondencia entre bras y kets} \label{Subsec:Correspondencia entre bras y kets} 
 
-Sea $(V,K)$ un espacio vectorial arbitrario con producto escalar $\braket{\cdot|\cdot}:V\times V\to K$ donde, siguiendo la notación de bra-ket, la primera entrada es antilineal. Si elegimos a un vector arbitrario $\ket{v}\in V$ y lo fijamos en la entrada antilineal del producto escalar, podemos definir un funcional $\braket{v|\cdot}:V\to K$, el cual se puede escribir más sencillamente como $\bra{v}$. Ya que en notación de bra-ket a los vectores $\ket{u}$ se les llama \emph{kets} y a los productos escalares $\braket{y|x}$, \emph{bra-kets} (proveniente del inglés \emph{brackets}), a este tipo de funcionales $\bra{v}$ se les conoce como \emph{bras}.
+Sea $(V,K)$ un espacio vectorial arbitrario con producto escalar $\braket{\cdot|\cdot}:V\times V\to K$ donde, siguiendo la notación bra-ket, la primera entrada es antilineal. Si elegimos a un vector arbitrario $\ket{v}\in V$ y lo fijamos en la entrada antilineal del producto escalar, podemos definir un funcional $\braket{v|\cdot}:V\to K$, el cual se puede escribir más sencillamente como $\bra{v}$. Ya que en notación bra-ket a los vectores $\ket{u}$ se les llama \emph{kets} y a los productos escalares $\braket{y|x}$, \emph{bra-kets} (proveniente del inglés \emph{brackets}), a este tipo de funcionales $\bra{v}$ se les conoce como \emph{bras}.
 
 Dado que a partir de cualquier vector $\ket{v}\in V$ se puede definir un funcional $\bra{v}\in V^*$, existe una correspondencia natural entre \emph{bras} y \emph{kets}. Sin embargo, para entender bien esta correspondencia debemos observar un detalle crucial: si hacemos el producto de un ket $\ket{v}$ por un escalar $\alpha\in K$, obteniendo así el ket $\alpha\ket{v}$, entonces el bra correspondiente será $\overline{\alpha}\bra{v}$\footnote{En la notación que usábamos antes, esto se explica como que si tomamos al vector $\alpha\mathbf{v}$ y lo fijamos en la entrada antilineal del producto escalar, obtenemos el funcional $\langle\hspace{0.5mm}\cdot\hspace{0.5mm} , \alpha\mathbf{v}\rangle:V\to K$ que, como sabemos, es igual a $\overline{\alpha}\langle\hspace{0.5mm} \cdot\hspace{0.5mm} ,\mathbf{v}\rangle$.}. Es decir, la correspondencia entre bras (que son un tipo de vectores duales) y kets está dada por \[
     \alpha\ket{v} \leftrightarrow \overline{\alpha}\bra{v}
@@ -1720,7 +1747,7 @@ Más generalmente, si $\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ es una base de $V$
     \item Para cualquier subespacio vectorial $W\subseteq$ de V, $W\cap W^{\perp}=\{\ket{0}\}.$
 \end{itemize}
 
-\begin{lema}\empty
+\begin{lema} {13.3.1}
     Sea $V$ un espacio vectorial con producto esclar sobre un campo $K$, $W$ un subespacio vectorial de $V$ y $\beta=\{\ket{v_1}, \ket{v_2},..., \ket{v_k}\}$ una base de $W$, entonces $\ket{z}\in W^{\perp}$ si y sólo si $\braket{z|v_i}=0$ para toda $\ket{v_i}\in\beta.$
 
     \begin{proof}
@@ -1733,7 +1760,7 @@ Más generalmente, si $\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ es una base de $V$
 
 \end{lema}
 
-\begin{teorema} {13.1.1}
+\begin{teorema} {13.3.2}
     Sea $V$ un espacio vectorial con producto escalar y $W\subseteq V$ un subespacio vectorial de dimensión finita $k$, entonces para todo $\ket{y}\in V$ existen vectores únicos $\ket{u}\in W$ y $\ket{z}\in W^{\perp}$ tales que $\ket{y}=\ket{u}+\ket{z}.$ Además, si $\beta=\{\ket{v_1},\ket{v_2},...,\ket{v_k}\}$ es una base ortonormal de $W$, entonces $$\ket{u}=\sum_{i=1}^k \braket{v_i|y}\ket{v_i}.$$
     \begin{proof}
         Sea $\beta=\{\ket{v_1},\ket{v_2},...,\ket{v_k}\}$ una base ortonormal de $W$. Definimos \[
@@ -1752,7 +1779,7 @@ Para demostrar la unicidad de $\ket{u}$ y $\ket{z}$, supongamos que existen $\ke
     \end{proof}
 \end{teorema}
 
-\begin{teorema} {13.1.2}
+\begin{teorema} {13.3.3}
     Sea $S=\{\ket{v_1},\ket{v_2},...,\ket{v_k}\}$ un conjunto ortonormal de vectores de un espacio vectorial $V$ de dimensión finita $n$ con producto escalar. Entonces
     \begin{enumerate}[label=\alph*)]  
     \item $S$ se puede extender a una base ortonormal $\{\ket{v_1},\ket{v_2},...,\ket{v_k},\ket{v_{k+1}},...,\ket{v_n}\}$ de $V$.
@@ -1786,12 +1813,12 @@ En la sección \ref{Subsec:Interpretación geométrica del producto escalar} vim
 Observemos que la condición $P^2=P$ para un operador de proyección $P$ en un espacio vectorial $V$ codifica algebráicamente la noción intuitiva de que, después de proyectar un vector arbitrario $\ket{v}$ en un subespacio de $V$ y obtener la componente de $\ket{v}$ en dicho subespacio, proyectar esa componente \emph{en el mismo subespacio} no le hará nada \textemdash ya que se encuentra totalmente dentro de ese subespacio.
 
 \vspace{3mm}
-Por otro lado, a pesar de que no sea fácil de ver directamente de la definición, cualquier operador de proyección divide a un espacio vectorial en dos subespacios vectoriales ``ajenos'' (excepto por el vector nulo, por supuesto) a través de su imagen (el subespacio sobre el cual proyectamos) y su núcleo (el conjunto de vectores que no tienen componentes en dicho subespacio). Dicho de otra forma, cualquier operador de proyección descompone al espacio vectorial sobre el que actúa como suma directa de su imagen y su núcleo (¿Se te ocurre por qué?). 
+Por otro lado, a pesar de que no sea fácil de ver directamente de la definición, cualquier operador de proyección actuando sobre un espacio vectorial de dimensión finita lo divide en dos subespacios vectoriales ``ajenos'' (excepto por el vector nulo, por supuesto) a través de su imagen (el subespacio sobre el cual proyectamos) y su núcleo (el conjunto de vectores que no tienen componentes en dicho subespacio). Dicho de otra forma, cualquier operador de proyección actuando sobre un espacio vectorial de dimensión finita descompone al espacio como suma directa de su imagen y su núcleo (¿Se te ocurre por qué\footnote{Pista: demuestra que, si $V$ es un espacio vectorial de dimensión finita y $T:V\to V$ es un operador lineal, entonces $\text{Ker}(T)+\text{Im}(T)=V \iff \text{Ker}(T)\cap\text{Im}(T)=\{\ket{0}\}$.}?). 
 
 \vspace{3mm}
-Para cualquier espacio vectorial $V$, el operador nulo y el operador identidad son ejemplos triviales de operadores de proyección. Si $V$ tiene producto escalar, entonces la función de proyección vectorial sobre $\ket{v}$ es un operador de proyección ortogonal para todo $\ket{v}\in V$ no nulo. Observemos que podemos escribir a este operador en términos de bras y kets simplemente como $\frac{\ket{v}\bra{v}}{\braket{v|v}}:V\to V$, de donde resulta fácil demostrar que efectivamente es un operador de proyección, ya que \[
+Para cualquier espacio vectorial $V$, el operador nulo y el operador identidad son ejemplos triviales de operadores de proyección. Si $V$ tiene producto escalar, entonces la función de proyección vectorial sobre $\ket{v}$ es un operador de proyección ortogonal para todo $\ket{v}\in V$ no nulo; en términos más precisos, este operador proyecta sobre el subespacio $\langle \ket{v} \rangle$ de dimensión uno. Observemos que podemos escribir a este operador en términos de bras y kets simplemente como $\frac{\ket{v}\bra{v}}{\braket{v|v}}:V\to V$, de donde resulta fácil demostrar que efectivamente es un operador de proyección, ya que \[
     \bigg( \frac{\ket{v}\bra{v}}{\braket{v|v}}\bigg)^2=\bigg(\frac{1}{\braket{v|v}}\ket{v}\bra{v}\bigg)^2=\frac{1}{\braket{v|v}^2}\big(\ket{v}\bra{v}\big)^2=\frac{1}{\braket{v|v}^2}\ket{v}\braket{v|v}\bra{v}=\frac{\braket{v|v}}{\braket{v|v}^2}\ket{v}\bra{v}=\frac{\ket{v}\bra{v}}{\braket{v|v}}.
-\] Además, si en particular $\ket{v}$ es un vector normal, la expresión se simplifica a $\ket{v}\bra{v}$, de donde se ve directamente que $(\ket{v}\bra{v})^2=\ket{v}\braket{v|v}\bra{v}=\ket{v}\bra{v}$. Por lo tanto, todo vector normal $\ket{v}$ en un espacio vectorial con producto escalar define un operador de proyección ortogonal dado por $\ket{v}\bra{v}$.
+\] Además, si en particular $\ket{v}$ es un vector normal, la expresión se simplifica a $\ket{v}\bra{v}$, de donde se ve directamente que $(\ket{v}\bra{v})^2=\ket{v}\braket{v|v}\bra{v}=\ket{v}\bra{v}$. Por lo tanto, todo vector normal $\ket{v}$ en un espacio vectorial con producto escalar define un operador de proyección ortogonal, dado por $\ket{v}\bra{v}$, y dicho operador proyecta a los vectores de todo el espacio sobre el subespacio generado por $\ket{v}$.
 
 \newpage
 \begin{tcolorbox}
@@ -1816,7 +1843,11 @@ Para cualquier espacio vectorial $V$, el operador nulo y el operador identidad s
 
 \subsubsection{Funcionales y espacio dual} \label{Ejer:Funcionales_y_espacio_dual}
 \begin{enumerate}
-    \item
+    \item Demuestra que si $V$ es un espacio vectorial de dimensión finita, entonces $\text{dim}(V^*)=\text{dim}(V)$.
+    \item Consideremos el espacio de funciones reales de variable real continuas definidas en el intervalo $[0,2\pi]$, que denotaremos como $C([0,2\pi],\mathbb{R})$. Sean \[
+            F_{1,n}(f):=\int_0^{2\pi} \sin(nx)f(x) \ dx, \hspace{3mm} F_{2,n}(f):=\int_0^{2\pi} \cos(nx)f(x) \ dx \hspace{5mm} \forall \ f\in C([0,2\pi],\mathbb{R}), n\in\mathbb{N}.
+        \] Demuestra que $F_{1,n}$ y $F_{2,n}$ son funcionales de $C([0,2\pi],\mathbb{R})$ para todo $n\ge 0$. Los valores de estos funcionales para una función $g$ en particular se conocen como los \emph{n-ésimos coeficientes de Fourier}\footnote{Estos coeficientes están relacionados con una rama de las matemáticas llamada \emph{Análisis de Fourier}, la cual tiene diversas aplicaciones en la solución de ecuaciones diferenciales parciales, muchas de las cuales son utilizadas para modelar procesos físicos (como la ecuación de calor o la ecuación de onda) o biológicos.} de la función $g$.
+    \item Calcula los primeros 3 coeficientes de Fourier para las funciones $\sin(x)$, $f(x)=x$ y $g(x)=x^2$.
 \end{enumerate}
 
 \subsubsection{Correspondencia entre bras y kets} \label{Ejer:Correspondencia_entre_bras_y_kets}
@@ -1875,11 +1906,12 @@ En otras palabras, hemos visto que si $T$ es un operador lineal sobre un espacio
         \draw (\x cm, 1pt) -- (\x cm, -1pt);
     \foreach \y in {-2,-1,0,1,2}
         \draw (1pt, \y cm) -- (-1pt, \y cm);
-    \draw[AZUL,dotted,thin] (-3,-3) -- (3,3) node[] at (-1,-2) {$E_{\lambda_1}$};
-    \draw[ROJO,dotted,thin] (3,-3) -- (-3,3) node[] at (1,-2) {$E_{\lambda_2}$};
+    \draw[AZUL,dotted,thin] (-3,-3) -- (3,3) node[] at (-1.5,-2) {$E_{\lambda_1}$};
+    \draw[ROJO,dotted,thin] (3,-3) -- (-3,3) node[] at (1.5,-2) {$E_{\lambda_2}$};
     \draw[darkgray,->] (0,0) -- (0.5,2) node[] at (0.5,2.5) {$\ket{v}$};
-    \draw[AZUL,->] (0,0) -- (0.707,0.707) node[] at (1.3,0.5) {$\ket{g_1}$};
-    \draw[ROJO,->] (0,0) -- (-0.707,0.707) node[] at (-1.3,0.5) {$\ket{g_2}$};
+    \draw[AZUL,->] (0,0) -- (-0.707,-0.707) node[] at (-1.2,-0.7) {$\ket{g_1}$};
+    \draw[ROJO,->] (0,0) -- (0.707,-0.707) node[] at (1.2,-0.7) {$\ket{g_2}$};
+    \draw[magenta,->] (0,0) -- (-2.75,0.25) node[] at (-1.5,0.5) {$T(\ket{v})$};
     \draw[] node[] at (2.8,2.8) {\textbf{a)}};
 \end{tikzpicture}
 \hspace{3mm}
@@ -1927,9 +1959,9 @@ En otras palabras, hemos visto que si $T$ es un operador lineal sobre un espacio
         \draw[AZUL,dashed,thin] (-1.5,1.5) -- (-2.75,0.25);
         \draw[ROJO,dashed,thin] (-1.25,-1.25) -- (-2.75,0.25);
         \draw[magenta,->] (0,0) -- (-2.75,0.25) node[] at (-1.5,0.5) {$T(\ket{v})$};
-    \draw[] node[] at (2.8,2.8) {\textbf{c)}};
+    \draw[] node[] at (2.8,2.8) {\textbf{d)}};
 \end{tikzpicture}
-\caption{Aplicación de un operador $T:\mathbb{R}^2\to \mathbb{R}^2$ a un vector $\ket{v}$ a través de descomposición espectral. En la subfigura \textbf{a)} se muestra a $\ket{v}$ y a los eigenvectores $\ket{g_1},\ket{g_2}$ de $T$, que forman una base ortonormal; los eigenespacios correspondientes se representan con líneas punteadas. En \textbf{b)} se muestran las proyecciones ortogonales de $\ket{v}$ en cada uno de los eigenespacios de $T$. En \textbf{c)} se muestran las componentes anteriores reescaladas por los eigenvalores correspondiente al eigenespacio en que se encuentran. Finalmente, en \textbf{d)} vemos que la suma de estas componentes reescaladas es igual a la imagen de $\ket{v}$ bajo el operador $T$.}
+\caption{Aplicación de un operador $T:\mathbb{R}^2\to \mathbb{R}^2$ a un vector $\ket{v}$ mediante descomposición espectral. En la subfigura \textbf{a)} se muestra a $\ket{v}$ y a su imagen $T(\ket{v})$, junto con los eigenvectores $\ket{g_1}$ y $\ket{g_2}$ de $T$, que forman una base ortonormal; los eigenespacios correspondientes se representan con líneas punteadas. En \textbf{b)} se muestran las proyecciones ortogonales de $\ket{v}$ en cada eigenespacio de $T$. En \textbf{c)} se muestran las componentes anteriores reescaladas por los eigenvalores correspondientes al eigenespacio en que se encuentran. Finalmente, en \textbf{d)} vemos que la suma de estas componentes reescaladas es igual a $T(\ket{v})$.}
     \label{fig:8}
 \end{figure}
 
@@ -1945,7 +1977,7 @@ Como vimos en la sección \ref{Subsec:Correspondencia entre bras y kets}, en cua
 Lo interesante de este tipo de funcionales es que, en espacios vectoriales de dimensión finita, todas las transformaciones lineales de $V$ a $K$ son de esta forma; es decir, podemos hacer una identificación entre las transformaciones lineales $\textbf{g}\in\mathcal{L}(V,K)$ y los bras $\bra{y}$, como demostraremos a continuación.
 
 \begin{teorema} {14.1}
-    Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y sea $\textbf{g}:V\to K$ una transformación lineal. Entonces existe un único $\bra{y}\in V^*$ tal que $\textbf{g}(\ket{x})=\braket{y|x}$ para todo $\ket{x}\in V$.
+    Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y sea $\textbf{g}:V\to K$ un funcional. Entonces existe un único $\bra{y}\in V^*$ tal que $\textbf{g}(\ket{x})=\braket{y|x}$ para todo $\ket{x}\in V$.
 
     \begin{proof}
         Sea $\beta=\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ una base ortonormal de $V$ y sea \[
@@ -1972,6 +2004,8 @@ Antes de continuar, recordamos la siguiente definición.
 \begin{tcolorbox}
     \underline{Def.} Decimos que una transformación lineal es un \emph{operador lineal} cuando su dominio y contradominio son el mismo espacio vectorial. Por lo tanto, si decimos que $T$ es un operador lineal \textemdash o, simplemente, operador\textemdash \ sobre $V$, nos referimos a una transformación lineal $T:V\to V$.
 \end{tcolorbox}
+
+\vspace{3mm}
 
 \begin{teorema}{14.2}
     Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y sea $T:V\to V$ un operador lineal. Entonces existe una única función $T^*:V\to V$ tal que $\braket{y|T(x)}=\braket{T^*(y)|x}$ para toda $\ket{x},\ket{y}\in V$. Además, $T^*$ es lineal.
@@ -2027,7 +2061,7 @@ A la luz del Teorema 14.3, damos una nueva definición, que quizá ya esperes.
 
 \begin{enumerate}
 \item Sean $V$ un espacio vectorial de dimensión finita, $T:V\to V$ un operador lineal y $\{\lambda_1,\lambda_2,... \ ,\lambda_k\}$ el espectro de $T$. Demuestra que $T$ es diagonalizable si y sólo si $V=E_{\lambda_1}\oplus E_{\lambda_2}\oplus...\oplus E_{\lambda_k}$.
-\item Sean $V$ un espacio de dimensión finita con producto escalar, $T:V\to V$ un operador lineal y $\Lambda=\{\lambda_1,\lambda_2,... \ ,\lambda_k\}$ el espectro de $T$. Demuestra que $T$ es diagonalizable si y sólo si $V = E_{\lambda_i} \oplus (E_{\lambda_i})^\perp$ para toda $\lambda_i\in\Lambda$.
+\item Sean $V$ un espacio de dimensión finita con producto escalar, $T:V\to V$ un operador lineal y $\Lambda=\{\lambda_1,\lambda_2,... \ ,\lambda_k\}$ el espectro de $T$. Demuestra que $T$ se puede descomponer espectralmente si y sólo si $V = E_{\lambda_i} \oplus (E_{\lambda_i})^\perp$ para toda $\lambda_i\in\Lambda$.
 \item Sean $V$ un espacio de dimensión finita $n$ con producto escalar, $T:V\to V$ un operador lineal, $\{\ket{g_1}, \ket{g_2}, ... \ ,\ket{g_n}\}$ un conjunto de eigenvectores normales de $T$ y $\Lambda=\{\lambda_1,\lambda_2,... \ ,\lambda_n\}$ un conjunto de eigenvalores de $T$ (no necesariamente todos distintos) tales que $T(\ket{g_i})=\lambda_i \ket{g_i} \ \forall \ i\in\{1,2,... \ ,n\}$. Demuestra que $T=\sum_{i=1}^n \lambda_i \ket{g_i}\bra{g_i}$ si y sólo si $I = \sum_{i=1}^n \ket{g_i}\bra{g_i}$.
 \end{enumerate}
 
@@ -2057,12 +2091,12 @@ A la luz del Teorema 14.3, damos una nueva definición, que quizá ya esperes.
 \newpage
 \section{Operadores normales y autoadjuntos y teorema espectral} \label{Sec:15} 
 
-\subsection{Operadores normales y autoadjuntos}
+\subsection{Operadores normales} \label{Subsec:Operadores normales}
 
-Para determinar si un operador tiene una base ortogonal de eigenvectores y, por lo tanto, si se puede descomponer espectralmente, una herramienta muy útil es entender cómo se relaciona con su operador adjunto. En un primer acercamiento, podemos analizar cómo se relacionan los eigenvectores y eigenvalores de uno y otro.
+Para determinar si un operador tiene una base ortogonal de eigenvectores y, por lo tanto, si se puede descomponer espectralmente, una herramienta muy útil es entender cómo se relaciona con su operador adjunto. En un primer acercamiento, podemos analizar cómo se relacionan los eigenvalores de uno y otro en el caso de operadores lineales en  espacios vectoriales de dimensión finita.
 
-\begin{lema}\empty
-    Sea $T$ un operador lineal en un espacio vectorial de dimensión finita con producto escalar $V$. Si $T$ tiene al menos un eigenvector con eigenvalor $\lambda$, entonces $T^*$ tiene un eigenvector con eigenvalor $\overline{\lambda}$.
+\begin{lema} {15.1.1} \label{Lema: 15.1.1}
+    Sea $T$ un operador lineal en un espacio vectorial $V$ de dimensión finita con producto escalar. Si $T$ tiene un eigenvector con eigenvalor $\lambda$, entonces $T^*$ tiene un eigenvector con eigenvalor $\overline{\lambda}$.
 
     \begin{proof}
         Sea $\ket{v}\in V$ un eigenvector de $T$ con eigenvalor $\lambda$. Entonces, por el ejercicio 3 de la sección \ref{Ejer:Operadores adjuntos}, para toda $\ket{u}\in V$ tenemos que \[
@@ -2071,36 +2105,135 @@ Para determinar si un operador tiene una base ortogonal de eigenvectores y, por 
     \end{proof}
 \end{lema}
 
+El lema anterior nos dice que para cualquier operador $T$ con espectro $\Lambda$ y operador adjunto $T^*$, el espectro de $T^*$ se compondrá de los complejos conjugados de los elementos de $\Lambda$; regresaremos a él más adelante.
+
+\vspace{3mm}
 Para continuar con nuestra búsqueda, haremos una observación interesante apoyándonos en el isomorfismo de representación matricial de operadores lineales. Supongamos que $T$ es un operador lineal en un espacio vectorial de dimensión finita $V$ con producto escalar tal que $\gamma$ es una base ortonormal de $V$ compuesta por eigenvectores de $T$. Entonces, $[T]_\gamma$ es diagonal y, por el Teorema 14.3, se sigue que $$[T^*]_\gamma=([T]_\gamma)^*=\overline{([T]_\gamma^T)}=\overline{
-([T]_\gamma)},$$ por lo que $[T^*]$ también es diagonal. Ya que las matrices diagonales conmutan, se sigue que $[T]_\gamma[T^*]_\gamma=[T^*]_\gamma[T]_\gamma$. En particular, como este isomorfismo es compatible con la multiplicación de matrices y la composición de transformaciones lineales, concluimos que $TT^*=T^*T$.
+([T]_\gamma)},$$ por lo que $[T^*]$ también es diagonal. Ya que las matrices diagonales conmutan, se sigue que $[T]_\gamma[T^*]_\gamma=[T^*]_\gamma[T]_\gamma$. En particular, como este isomorfismo es compatible con la multiplicación de matrices y la composición de transformaciones lineales, tenemos que $[TT^*]_\gamma=[T^*T]_\gamma$, de donde se sigue que $TT^*=T^*T$. Es decir que, si la matriz $[T]_\gamma$ es diagonal, donde $\gamma$ es una base ortonormal de un espacio vectorial $V$ de dimensión finita, entonces $TT^*=T^*T$, lo nos lleva a las siguientes definiciones.
 
 \begin{tcolorbox}
-    \underline{Def.} Sea $V$ un espacio vectorial con producto escalar. Decimos que un operador lineal $T:V\to V$ es \emph{normal} si $TT^*=T^*T$.
+    \underline{Def.} Sea $V$ un espacio vectorial con producto escalar. Decimos que un operador lineal $T:V\to V$ es \emph{normal} si $TT^*=T^*T$, suponiendo que $T^*$ exista.
 
     \vspace{3mm}
-    \underline{Def.} Sea $A\in M_{n\times n}(K)$ con $K=\mathbb{R}$ ó $K=\mathbb{C}$. Decimos que $A$ es una matriz \emph{normal}\footnote{Nótese que del Teorema 14.3 se sigue que, si $V$ es de dimensión finita, entonces $T$ es un operador normal si y sólo si $[T^*]$ es una matriz normal.} si $AA^*=A^*A$.
+    \underline{Def.} Sea $A\in M_{n\times n}(K)$ con $K=\mathbb{R}$ ó $K=\mathbb{C}$. Decimos que $A$ es una matriz \emph{normal} si $AA^*=A^*A$.
 \end{tcolorbox}
 
-Nótese del párrafo anterior que, bajo las condiciones que impusimos al operador lineal $T$, tenemos que $T$ y $T^*$ tienen los mismos eigenvectores \textemdash aunque no necesariamente con los mismos eigenvalores correspondientes\footnote{En particular, en este caso $T$ y $T^*$ son simultáneamente diagonalizables.}. Ahora veremos cómo se relacionan los eigenvalores bajo estas hipótesis.
+Con estas nuevas definiciones, podemos ver directamente del Teorema 14.3 que $[T]_\gamma$ es normal si y sólo si $T$ es normal, donde $\gamma$ es una base \emph{ortonormal} de un espacio vectorial $V$ de dimensión finita sobre el que actúa $T$. Más aún, del mismo teorema se sigue que, si dicha base ortonormal $\gamma$ \emph{diagonaliza} a $T$, entonces también diagonaliza a $T^*$, como observamos anteriormente. Es decir que, en este caso, $T$ y $T^*$ son simultáneamente diagonalizables. En particular, esto implica que ambos operadores tienen los mismos eigenvectores \textemdash aunque no necesariamente con los mismos eigenvalores correspondientes, como hemos visto en el Lema Lema: 15.1.1 A continuación, veremos varias propiedades que caracterizan a los operadores normales, incluyendo la forma en que se relacionan sus eigenvalores con los de su operador adjunto.
 
-\begin{teorema} {14.4}
-    Sean $V$ un espacio vectorial de dimensión finita $n$ con producto escalar y $T$ un operador lineal normal en $V$. Entonces, para todo $\ket{v}\in V$ tal que $T(\ket{v})=\lambda \ket{v}$, tenemos que $T^*(\ket{v})=\overline{\lambda}\ket{(v)}$.
+\begin{teorema} {15.1.2}
+    Sean $(V,K)$ un espacio vectorial con producto escalar y $T$ un operador normal en $V$. Entonces $T$ verifica las siguientes propiedades:
+
+\begin{enumerate}[label=(\alph*)]
+    \item $||T(\ket{x})||=||T^*(\ket{x})||$;
+    \item $T-cI$ es un operador normal para todo $c\in K$;
+    \item para todo $\ket{v}\in V$ tal que $T(\ket{v})=\lambda \ket{v}$, tenemos que $T^*(\ket{v})=\overline{\lambda}\ket{v}$;
+    \item Si $\lambda_1$ y $\lambda_2$ son eigenvalores distintos de $T$ con eigenvectores correspondientes $\ket{g_1}$ y $\ket{g_2}$, respectivamente, entonces $\ket{g_1}$ y $\ket{g_2}$ son ortogonales.
+\end{enumerate}
 
 \begin{proof}
-    Ya que $T$ es normal, tenemos que $TT^*=T^*T$. Sea $\ket{v}\in V$ tal que $T(\ket{v})=\lambda \ket{v}$. Entonces, se sigue que COMPLETAR
+    Consultar en el Friedberg y reescribir en notación de Dirac (ejercicio).
+
+    \iffalse
+
+
+    (a)
+
+    \vspace{3mm}
+    (b)
+
+    \vspace{3mm}
+    (c) 
+
+    \vspace{3mm}
+    (d)
+
+
+    \fi
+
+
 \end{proof}
 \end{teorema}
 
+\vspace{3mm}
+Después de demostrar el Lema 15.1.1, vimos que si $V$ es un espacio vectorial de dimensión finita y $T:V\to V$ es un operador lineal con una base ortonormal $\gamma$ de $V$ tal que $[T]_\gamma$ es \emph{diagonal} (i.e., una base ortonormal de $V$ compuesta por eigenvectores de $T$), entonces $T$ es normal. Se puede demostrar que ambas condiciones son equivalentes, es decir, que existe una base ortonormal de $V$ compuesta por eigenvectores de $T$ si y sólo si $T$ es un operador normal; la implicación contraria se deja como ejercicio. Por ende, tenemos que para operadores lineales $T$ que actúan en un espacio vectorial $V$ de dimensión finita, las siguientes condiciones son equivalentes:
+
+\begin{itemize}
+    \item $T$ es un operador normal (es decir, conmuta con su operador adjunto).
+    \item $[T]_\gamma$ es normal para toda base ortonormal $\gamma$ de $V$. 
+    \item Existe una base ortonormal $\gamma$ de $V$ compuesta por eigenvectores de $T$.
+    \item Existe una base ortonormal $\gamma$ de $V$ que diagonaliza a $T$.
+\end{itemize}
+
+En particular, las últimas dos propiedades junto con el inciso (a) del Teorema 14.4 nos dan una pista de por qué a este tipo de operadores se les llama \emph{normales}.
 
 \vspace{3mm}
-Parece que ya estamos muy cerca de nuestra meta; sin embargo, observemos lo siguiente: si $T$ es un operador normal en un espacio vectorial $(V,K)$ de dimensión finita con producto escalar y $\ket{g_i},\ket{g_j}$ son eigenvectores de $T$ con eigenvalores $\lambda_i, \lambda_j$ tales que $\lambda_i\neq \lambda_j$, entonces por un lado tenemos que $$\braket{g_i|TT^*(g_j)}=\braket{T^*(g_i)|(T^*(g_j))}=\braket{\overline{\lambda_i}g_i|\overline{\lambda_j}g_j}=\lambda_i \overline{\lambda_j}\braket{g_i|g_j},$$ mientras que, por otro lado, $$\braket{g_i|TT^*(g_j)}=\braket{g_i|T^*T(g_j)}=\braket{T(g_i)|T(g_j)}=\braket{\lambda_i g_i|\lambda_jg_j}=\overline{\lambda_i}\lambda_j\braket{g_i|g_j}=\overline{(\lambda_i \overline{\lambda_j})}\braket{g_i|g_j}.$$ Por lo tanto, llegamos a la igualdad $$(\lambda_i \overline{\lambda_j} - \overline{(\lambda_i \overline{\lambda_j})})\braket{g_i|g_j}=0.$$ Observemos que si $K=\mathbb{C}$, entonces forzosamente $\ket{g_i}$ y $\ket{g_j}$ son ortogonales, de donde se sigue que $E_{\lambda_i}^\perp=\oplus_{j\neq i}E_{\lambda_j}$ para todo eigenvalor $\lambda_i$ de $T$ y, por ende, que $T$ se puede descomponer espectralmente.
+Parece que estamos muy cerca de nuestra meta de encontrar condiciones que aseguren cuándo podemos descomponer espectralmente a un operador lineal; sin embargo, observemos lo siguiente: sean $T$ un operador normal en un espacio vectorial $(V,K)$ de dimensión finita con producto escalar y $\ket{g_i},\ket{g_j}$ eigenvectores de $T$ con eigenvalores respectivos $\lambda_i, \lambda_j$ tales que $\lambda_i\neq \lambda_j$. Entonces, tenemos que 
+$$\braket{g_i|TT^*(g_j)}=\braket{T^*(g_i)|(T^*(g_j))}=\braket{\overline{\lambda_i}g_i|\overline{\lambda_j}g_j}=\lambda_i \overline{\lambda_j}\braket{g_i|g_j},$$ 
+mientras que, por otro lado, 
+$$\braket{g_i|TT^*(g_j)}=\braket{g_i|T^*T(g_j)}=\braket{T(g_i)|T(g_j)}=\braket{\lambda_i g_i|\lambda_jg_j}=\overline{\lambda_i}\lambda_j\braket{g_i|g_j}=\overline{(\lambda_i \overline{\lambda_j})}\braket{g_i|g_j}.$$
+Por lo tanto, llegamos a la igualdad
+$$\big( \ \lambda_i \overline{\lambda_j} - \overline{(\lambda_i \overline{\lambda_j})} \ \big)\braket{g_i|g_j}=0.$$
+
+Notemos que, si $K=\mathbb{C}$, entonces forzosamente $\ket{g_i}$ y $\ket{g_j}$ son ortogonales, de donde se sigue que $E_{\lambda_i}^\perp=\oplus_{j\neq i}E_{\lambda_j}$ para todo eigenvalor $\lambda_i$ de $T$ \textemdash y, por ende, que $T$ se puede descomponer espectralmente, de acuerdo al ejercicio 2 de la sección \ref{Ejer:Descomposición espectral (introducción)}. Sin embargo, si $K=\mathbb{R}$, entonces $\lambda_i \overline{\lambda_j} = \overline{(\lambda_i \overline{\lambda_j})}$ trivialmente, por lo que la igualdad del párrafo anterior siempre se cumple, sin que necesariamente $\braket{g_i|g_j}=0$. Por lo tanto, en un espacio vectorial de dimensión finita y con producto escalar, la condición de que $T$ sea normal es suficiente para que se pueda descomponer espectralmente \emph{siempre y cuando el espacio sea complejo} mientras que, si el espacio es real, \emph{esta condición no es suficiente}. Esto nos lleva a estudiar un tipo particular de operadores normales, que veremos a continuación.
+
+\subsection{Operadores autoadjuntos} \label{Subsec:Operadores autoadjuntos}
+
+Como demostraremos más adelante, la condición suficiente para que un operador lineal que actúa en un espacio vectorial \emph{real} de dimensión finita y con producto escalar se pueda descomponer espectralmente es que sea \emph{igual} a su operador adjunto. Por ende, damos las siguientes definiciones.
+
+\begin{tcolorbox}
+    \underline{Def.} Sea $V$ un espacio vectorial con producto escalar. Decimos que un operador lineal $T:V\to V$ es \emph{autoadjunto} o \emph{hermitiano}\footnote{Generalmente, el término \emph{autoadjunto} es el predominante en matemáticas, mientras que el término \emph{hermitiano} es preferido en física. A pesar de eso, son equivalentes, y en estas notas utilizaremos ambos términos de manera intercambiable.} si $T=T^*$, suponiendo que $T^*$ exista.
+
+    \vspace{3mm}
+    \underline{Def.} Sea $A\in M_{n\times n}(K)$ con $K=\mathbb{R}$ ó $K=\mathbb{C}$. Decimos que $A$ es una matriz \emph{autoadjunta} o \emph{hermitiana} si $A=A^*$.
+\end{tcolorbox}
+
+Nótese que, para el caso de matrices cuadradas con entradas reales, la condición de que una matriz sea autoadjunta se reduce a $A=A^T$, es decir, que sea simétrica. Además, por un desarrollo similar al de la sección \ref{Subsec:Operadores normales}, podemos ver que $T$ es un operador hermitiano si y sólo si $[T]_\gamma$ es una matriz hermitiana, con $\gamma$ una base ortonormal arbitraria de $V$.
+
+\begin{lema} {15.2.1}
+    Sea $T$ un operador autoadjunto en un espacio vectorial de dimensión finita con producto escalar $V$. Entonces:
+    \begin{enumerate}[label=(\alph*)]
+        \item Todos los eigenvalores de $T$ son reales.
+        \item Si $V$ es un espacio vectorial real, entonces el polinomio característico de $T$ es separable.
+    \end{enumerate}
+
+    \begin{proof}
+        (a) Sean $\lambda$ un eigenvalor de $T$ y $\ket{v}$ un eigenvector correspondiente a $\lambda$. Entonces, por el Teorema 15.1.2.(c), tenemos que \[
+            \lambda \ket{v} = T(\ket{v}) = T^*(\ket{v}) = \overline{\lambda} \ket{v} \implies \lambda = \overline{\lambda},
+        \] de donde se sigue que $\lambda\in\mathbb{R}$. Por lo tanto, todos los eigenvalores del operador autoadjunto $T$ son reales.
+
+        \vspace{3mm}
+        (b) Consultar en el Friedberg y reescribir en notación de Dirac.
+    \end{proof}
+\end{lema}
+
+Con el lema anterior en mente, podemos ver el siguiente resultado.
+
+\begin{teorema} {15.2.2}
+    Sean $V$ un espacio vectorial real de dimensión finita $n$ con producto escalar y $T:V\to V$ un operador lineal. Entonces, $T$ es autoadjunto si y sólo si existe una base ortonormal $\gamma$ de $V$ compuesta por eigenvectores de $T$.
+
+    \begin{proof}
+    $(\Rightarrow)$ Ejercicio. (Pista: utiliza el lema anterior.).
+
+        \vspace{3mm}
+        $(\Leftarrow)$ Supongamos que existe una base ortonormal $\gamma=\{\ket{g_1}, \ket{g_2}, ... \ ,\ket{g_n}\}$ de $V$ compuesta por eigenvectores de $T$. Sea $\Lambda=\{\lambda_1,\lambda_2, ... \ ,\lambda_n\}$ el espectro de $T$ tal que $T(\ket{g_i})=\lambda_i \ket{g_i} \ \forall \ i\in\{1,2,... \ ,n\}$. 
+
+        \vspace{3mm}
+        Ya que $V$ es un espacio vectorial real, entonces $\overline{\lambda}_i = \lambda_i \ \ \forall \ \lambda_i\in\Lambda$. Ahora, observemos que \[
+            \forall \ i\in \{1,2,... \ ,n\}, \ \ \braket{g_i|T(g_i)} = \braket{g_i|\lambda_i g_i} = \bra{g_i}(\lambda_i \ket{g_i}) = (\bra{g_i}\lambda_i)\ket{g_i} = \braket{\overline{\lambda}_i g_i|g_i} = \braket{\lambda_i g_i | g_i} = \braket{T(g_i)|g_i}
+        \] \[
+        \text{y}, \ \forall \ j\neq i, \ \ \braket{g_j|T(g_i)} = \braket{g_j|\lambda_i g_i} = \lambda_i \braket{g_j|g_i} = \lambda_j \braket{g_j|g_i} = \braket{\overline{\lambda}_j g_j|g_i} = \braket{\lambda_j g_j|g_i} = \braket{T(g_j)|g_i}.
+    \] Por lo tanto, el operador lineal $T$ es tal que $\braket{g_j|g_i} = \braket{g_j|g_i}$ para cualesquiera elementos $\ket{g_i}, \ket{g_j}$ de la base $\gamma$ de $V$, de donde se sigue que \[
+    \braket{y|T(x)}=\braket{T(y)|x} \ \ \forall \ \ket{x},\ket{y}\in V.
+\] Como $V$ es de dimensión finita, por el Teorema 14.2 se sigue que $T:V\to V$ es el único operador con esta propiedad. Por ende, concluimos que $T$ es autoadjunto.
+    \end{proof}
+\end{teorema}
 
 
 \subsection{Teorema espectral}
 
-Concluida nuestra búsqueda por hipótesis precisas necesarias para llevar a cabo la descomposición espectral, enunciamos a continuación un teorema que recopila y sintetiza muchos resultados que hemos demostrado a lo largo de este último módulo y que utiliza una inmensa cantidad de conceptos que hemos aprendido durante todo el curso. La demostración de este teorema se deja como ejercicio.
+Concluida nuestra búsqueda por las hipótesis precisas bajo las cuales podemos llevar a cabo la descomposición espectral, enunciamos a continuación un teorema que recopila y sintetiza muchos resultados que hemos demostrado a lo largo de este módulo, y que utiliza una inmensa cantidad de conceptos que hemos aprendido durante todo el curso. La demostración de este teorema se deja como ejercicio.
 
-\begin{teorema} {15.algo (Teorema espectral)}
+\begin{teorema} {15.3.1 (Teorema espectral)}
 Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:V\to V$ un operador lineal con eigenvalores distintos $\lambda_1,\lambda_2,...,\lambda_k$. Supongamos que $T$ es normal si $K=\mathbb{C}$ y que $T$ es autoadjunto si $K=\mathbb{R}$. Sea $W_i$ el eigenespacio de $T$ correspondiente al eigenvalor $\lambda_i$, con $1\leq i\leq k$, y sea $T_i$ la proyección ortogonal de $V$ sobre $W_i$. Entonces, se cumple que:
 \begin{enumerate}[label=\alph*)]
     \item $V = W_1 \oplus W_2 \oplus ... \oplus W_k$;
@@ -2110,20 +2243,30 @@ Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:
     \item $T = \lambda_1 T_1 + \lambda_2 T_2 + ... + \lambda_k T_k$.
 \end{enumerate}
 
-%\begin{proof}
+\begin{proof}
+    
+    Ejercicio.
+
 %\begin{enumerate}[label=\alph*)]
  %   \item Por los teoremas 6.16 y 6.17 sabemos que $T$ es diagonalizable. Entonces, para cada eigenespacio $W_i$ podemos elegir una base ordenada $\beta_i$ tal que la unión $\beta_1\cup\beta_2\cup...\cup\beta_k$ sea una base ordenada de $V$; en otras palabras, $W_1+W_2+...+W_k=V$. Por otra parte, ya que, por definición de eigenespacios, $W_i\cap W_j=\{\mathbf{0}\}$ si $i\neq j$, tenemos que $$V = W_1 \oplus W_2 \oplus ... \oplus W_k.$$
     %\item 
 %\end{enumerate}
-%\end{proof}
+\end{proof}
 
 \end{teorema}
 
 \subsection{Ejercicios de repaso}
 
-\subsubsection{Operadores normales y autoadjuntos}
+\subsubsection{Operadores normales}
 \begin{enumerate}
-    \item Demuestra que las matrices diagonales con entradas en un campo $K$ conmutan.
+    \item Demuestra que cualesquiera dos matrices diagonales con entradas en un campo $K$ conmutan y que, por lo tanto, los operadores lineales que representan dichas matrices también deben conmutar.
+    \item Demuestra el Teorema 15.1.2.
+\end{enumerate}
+
+\subsubsection{Operadores autoadjuntos} \label{Sssec: Operadores autoadjuntos}
+\begin{enumerate}
+    \item Completa la demostración del Lema 15.2.1.
+    \item Completa la demostración del Teorema 15.2.2.
 \end{enumerate}
 
 \subsubsection{Teorema espectral}
@@ -2131,6 +2274,12 @@ Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:
 \begin{enumerate}
     \item Demuestra el teorema espectral.
 \end{enumerate}
+
+\newpage
+\centering
+Ya casi termina nuestro viaje... ;-;
+
+\iffalse
 
 
 \newpage
@@ -2146,7 +2295,6 @@ Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:
 
 
 
-
-
+\fi
 
 \end{document}

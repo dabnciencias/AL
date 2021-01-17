@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1607808798 "apuntes20211.tex" "apuntes20211.pdf" "apuntes20211" 1607808800
+["pdflatex"] 1610860303 "apuntes20211.tex" "apuntes20211.pdf" "apuntes20211" 1610860312
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1607249373 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1607249373 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1607249373 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -21,6 +21,7 @@
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr10.tfm" 1607249373 12056 7e13df7fe4cbce21b072ba7c4f4deb6e ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr12.tfm" 1607249373 12092 7b1546e2d096cfd5dcbd4049b0b1ec2e ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr17.tfm" 1607249373 12156 ca1ae6a3c8564e89597f1f993fba1608 ""
+  "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr5.tfm" 1607249373 12020 46464c854bf317de2a7a0bbe4a1160ca ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr6.tfm" 1607249373 12048 c1068d0f4772be9b0ec447692e1d6d82 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr7.tfm" 1607249373 12064 09aa3eeac96bf141d673bb1b0385ce55 ""
   "/usr/share/texmf-dist/fonts/tfm/public/lm/ec-lmr8.tfm" 1607249373 12064 a35db870f0b76c338d749c56dc030ef5 ""
@@ -270,13 +271,13 @@
   "/usr/share/texmf-dist/tex/latex/url/url.sty" 1607249373 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texmf-dist/tex/latex/xcolor/xcolor.sty" 1607249373 55589 34128738f682d033422ca125f82e5d62 ""
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1607249373 33301 a3134070eacafb10b1f371612ce2650d ""
-  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1607543065 4905560 e67924595f5bf8ecf79c2804cb9bbc27 ""
-  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1607543039 2635864 a4867a0767b2afef4a4cbb92fcd4f0f2 ""
-  "apuntes20211.aux" 1607808800 36661 bb4301c534eaee798a6040fdf25d09e8 "pdflatex"
-  "apuntes20211.out" 1607808800 10367 57acf87a59b87a154a5b5925422a8820 "pdflatex"
-  "apuntes20211.tex" 1607808796 242790 c68f35eb1f6274fa1831687fe1774527 ""
+  "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1609900054 5013534 fd35bdaa60a6f086a27ce99b94bb8742 ""
+  "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1609900007 2635854 f31de550ae5dbbb2b853fe0d2dbdf1ca ""
+  "apuntes20211.aux" 1610860311 37536 f89ee1f75e8ed0b526d6aa45731a1333 "pdflatex"
+  "apuntes20211.out" 1610860311 10611 67a76fdbc23d3a94b26f1643333a5293 "pdflatex"
+  "apuntes20211.tex" 1610860294 255186 7dee47a4cada79842bde514cdc6b9c60 ""
   (generated)
   "apuntes20211.pdf"
-  "apuntes20211.out"
   "apuntes20211.log"
   "apuntes20211.aux"
+  "apuntes20211.out"
