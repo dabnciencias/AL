@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1610860303 "apuntes20211.tex" "apuntes20211.pdf" "apuntes20211" 1610860312
+["pdflatex"] 1611424713 "apuntes20211.tex" "apuntes20211.pdf" "apuntes20211" 1611424721
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-ec.enc" 1607249373 2375 baa924870cfb487815765f9094cf3728 ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathex.enc" 1607249373 3486 c7eadf5dcc57b3b2d11736679f6636ba ""
   "/usr/share/texmf-dist/fonts/enc/dvips/lm/lm-mathit.enc" 1607249373 2405 5dcf2c1b967ee25cc46c58cd52244aed ""
@@ -273,11 +273,11 @@
   "/usr/share/texmf-dist/web2c/texmf.cnf" 1607249373 33301 a3134070eacafb10b1f371612ce2650d ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1609900054 5013534 fd35bdaa60a6f086a27ce99b94bb8742 ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1609900007 2635854 f31de550ae5dbbb2b853fe0d2dbdf1ca ""
-  "apuntes20211.aux" 1610860311 37536 f89ee1f75e8ed0b526d6aa45731a1333 "pdflatex"
-  "apuntes20211.out" 1610860311 10611 67a76fdbc23d3a94b26f1643333a5293 "pdflatex"
-  "apuntes20211.tex" 1610860294 255186 7dee47a4cada79842bde514cdc6b9c60 ""
+  "apuntes20211.aux" 1611424720 38039 ccfc240adcde0f69e7dfe494ee23e3ed "pdflatex"
+  "apuntes20211.out" 1611424720 10862 77aecaaf9539e8ea72301b0e51fbab7d "pdflatex"
+  "apuntes20211.tex" 1611424712 265080 d9b2a9d5cd76a524c1df5d8670d3b365 ""
   (generated)
-  "apuntes20211.pdf"
-  "apuntes20211.log"
   "apuntes20211.aux"
+  "apuntes20211.log"
   "apuntes20211.out"
+  "apuntes20211.pdf"

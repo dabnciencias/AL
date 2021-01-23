@@ -2088,10 +2088,12 @@ A la luz del Teorema 14.3, damos una nueva definición, que quizá ya esperes.
         \end{enumerate}
 \end{enumerate}
 
+Una vez que hayas resuelto los ejercicios anteriores, observa de qué formas el álgebra de los operadores (que tienen operadores adjuntos) y las matrices cuadradas (que siempre tienen matrices adjuntas) junto con la operación de ``sacar el adjunto'' es similar al álgebra de los números complejos con la operación de \emph{conjugar}. Luego, observa de qué formas difieren, ¿a qué se deberán estas diferencias?
+
 \newpage
 \section{Operadores normales y autoadjuntos y teorema espectral} \label{Sec:15} 
 
-\subsection{Operadores normales} \label{Subsec:Operadores normales}
+\subsection{Operadores normales} \label{Ssec:Operadores normales}
 
 Para determinar si un operador tiene una base ortogonal de eigenvectores y, por lo tanto, si se puede descomponer espectralmente, una herramienta muy útil es entender cómo se relaciona con su operador adjunto. En un primer acercamiento, podemos analizar cómo se relacionan los eigenvalores de uno y otro en el caso de operadores lineales en  espacios vectoriales de dimensión finita.
 
@@ -2187,7 +2189,7 @@ Como demostraremos más adelante, la condición suficiente para que un operador 
     \underline{Def.} Sea $A\in M_{n\times n}(K)$ con $K=\mathbb{R}$ ó $K=\mathbb{C}$. Decimos que $A$ es una matriz \emph{autoadjunta} o \emph{hermitiana} si $A=A^*$.
 \end{tcolorbox}
 
-Nótese que, para el caso de matrices cuadradas con entradas reales, la condición de que una matriz sea autoadjunta se reduce a $A=A^T$, es decir, que sea simétrica. Además, por un desarrollo similar al de la sección \ref{Subsec:Operadores normales}, podemos ver que $T$ es un operador hermitiano si y sólo si $[T]_\gamma$ es una matriz hermitiana, con $\gamma$ una base ortonormal arbitraria de $V$.
+Nótese que, para el caso de matrices cuadradas con entradas reales, la condición de que una matriz sea autoadjunta se reduce a $A=A^T$, es decir, que sea simétrica. Además, por un desarrollo similar al de la sección \ref{Ssec:Operadores normales}, podemos ver que $T$ es un operador hermitiano si y sólo si $[T]_\gamma$ es una matriz hermitiana, con $\gamma$ una base ortonormal arbitraria de $V$.
 
 \begin{lema} {15.2.1}
     Sea $T$ un operador autoadjunto en un espacio vectorial de dimensión finita con producto escalar $V$. Entonces:
@@ -2276,25 +2278,104 @@ Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:
 \end{enumerate}
 
 \newpage
-\centering
-Ya casi termina nuestro viaje... ;-;
+\begin{tcolorbox}
+    \begin{center}
+    \textbf{Sobre la descomposición espectral de matrices...}
+    \end{center}
 
-\iffalse
+\hspace{2.5mm} A estas alturas del curso, nos encontramos en una excelente posición para volver a hacer énfasis en un punto de fundamental importancia en el álgebra lineal que muchas veces es pasado por alto: a simple vista, \emph{las matrices no cuentan toda la historia}\footnote{Esto es similar a cómo, en primera instancia, las $n$-tuplas que podemos utilizar para representar vectores abstractos \textemdash a través de isomorfismos\textemdash \ tampoco nos cuentan la historia completa.}.
 
+\vspace{3mm}
+\hspace{2.5mm} Pensemos un momento en la teoría de descomposición espectral: para encontrar a un operador que se pueda descomponer espectralmente \textemdash es decir, que proyecte vectores del dominio sobre eigenespacios ortogonales, reescale cada componente por el eigenvalor correspondiente al eigenespacio en que se encuentra, y construya a partir de estas proyecciones ortogonales reescaladas a los vectores imagen\textemdash \ requerimos poder formar una base ortonormal del espacio a partir de eigenvectores del operador.
+
+\vspace{3mm}
+\hspace{2.5mm} Supongamos que tenemos un operador que cumple las características deseadas y actúa sobre un espacio vectorial de dimensión finita\footnote{Aquí ya está implícito que el espacio en cuestión debe tener producto escalar. ¿Por qué?}. ¿Cómo se ve la representación matricial de nuestro operador en su base de eigenvectores? Pues, resulta que es una matriz diagonal, como cualquier otra... 
+
+\vspace{3mm}
+\hspace{2.5mm} ¿Cómo puede ser? ¡Esto debe ser mentira! En efecto, lo es: realmente no es como \emph{cualquier} matriz diagonal arbitraria, ya que la nuestra, en el fondo, \emph{está representada en una base ortonormal} del espacio\textemdash \ pero eso no se ve a simple vista.
+
+\vspace{3mm}
+\hspace{2.5mm} En realidad, el punto sobre el que hago énfasis es el de las \emph{representaciones}. Dado el poder que tienen las herramientas de cambio de representación en el álgebra lineal (permitiéndonos diagonalizar matrices, por ejemplo), cuando veamos $n$-tuplas y matrices, sería erróneo de nuestra parte siempre asumir que se encuentran en una base ortonormal \textemdash como suele manejarse implícitamente cuando trabajamos en espacios euclideanos. En cambio, al ver $n$-tuplas o matrices, debemos saber que lo que estamos viendo son apenas \emph{representaciones} de vectores y que, ya que dichas representaciones dependen totalmente de la base elegida (o \emph{las bases elegidas}, en el caso de las matrices, las cuales representan transformaciones lineales que, como sabemos, son vectores), el tener presentes las características de la(s) base(s) en la(s) que se esté representando pueden darnos información crucial acerca de los vectores representados; ¡no lo olviden!
+\end{tcolorbox}
 
 \newpage
-\section{Operadores ortogonales y unitarios***} \label{Sec:16} 
+\section{Operadores unitarios y ortogonales} \label{Sec:16} 
 
-\subsection{Operadores ortogonales y unitarios}
+A lo largo del curso, hemos estudiado funciones que preservan la estructura algebráica del espacio subyaciente, empezando por las transformaciones lineales \textemdash que preservan las operaciones esenciales de los espacios vectoriales (suma vectorial y producto de un vector por un escalar)\textemdash \ y los isomorfismos \textemdash que, al ser transformaciones lineales \emph{invertibles}, preservan la estructura de todo el espacio vectorial, estableciendo una correspondencia biunívoca entre dos espacios vectoriales que, en \emph{esencia}, son lo mismo. Para cerrar el curso, dado que durante el último módulo nos hemos enfocado en espacios vectoriales con producto escalar, estudiaremos operadores lineales que preservan el producto escalar. Como veremos, en espacios vectoriales de dimensión finita, esto es equivalente a que dichos operadores preserven la norma inducida por el producto escalar. Además, veremos que algunos operadores de este tipo pueden descomponerse espectralmente\footnote{¿Cómo imaginas que serán sus espsectros? Pista: cambia dependiendo de si el campo es real o complejo.}, aplicando lo aprendido en la sección anterior.
 
+\begin{tcolorbox}
+\underline{Def.} Sea $T$ un operador lineal sobre un espacio vectorial $(V,K)$ de dimensión finita con producto escalar. Si $T$ es tal que \[
+    ||T(\ket{v})|| = ||\ket{v}|| \ \ \ \forall \ \ket{v}v\in V,
+\] entonces diremos que $T$ es un operador \emph{unitario} si $K=\mathbb{C}$ o un operador \emph{ortogonal} si $K=\mathbb{R}$\footnote{Para el caso de dimensión infinita, $T$ debe de preservar la norma \emph{y ser invertible} para que se lo considere \emph{unitario} si $K=\mathbb{C}$ u \emph{ortogonal} si $K=\mathbb{R}$; si sólamente preserva la norma, caso se le conoce como una \emph{isometría}. Claramente, esto indica que los operadores unitarios u ortogonales en espacios de dimensión finita son invertibles.}.
+\end{tcolorbox}
 
+En $\mathbb{R}^3$ (y, más generalmente, en $\mathbb{R}^n$), las rotaciones alrededor de y las reflexiones con respecto a cualquier eje que pase por el origen son ejemplos de operadores ortogonales\footnote{¿Recuerdas haber visto un operador de este tipo en tu segundo examen?}. En el espacio vectorial complejo $\mathbb{C}$ (más generalmente, $\mathbb{C}^n$), cualquier operador que reescale por un número complejo de norma (valor absoluto) uno \textemdash o, en otras palabras, por un número complejo \emph{unitario}\textemdash \ es un ejemplo de un operador unitario\footnote{¡Recuerda tu primer examen!}.
+
+\vspace{3mm}
+A continuación, demostraremos un lema que nos ayudará a encontrar una serie de criterios equivalentes a la definición anterior de un operador unitario u ortogonal. Las demostraciones del lema y del teorema posterior quedan como ejercicio.
+
+\begin{lema} {16.1}
+    Sea $U$ un operador autoadjunto en un espacio vectorial $V$ de dimensión finita con producto escalar. Entonces, si $\braket{v|U(v)}=0 \ \ \forall \ \ket{v}\in V$, entonces $U=T_0$, la transformación nula. 
+\end{lema}
+
+\begin{proof}
+    Ejercicio.
+\end{proof}
+
+\begin{teorema} {16.2}
+    Sea $T$ un operador lineal en un espacio vectorial de dimensión finita con producto escalar. Entonces, la siguientes afirmaciones son equivalentes.
+
+    \begin{enumerate}[label=(\alph*)]
+        \item $||T(\ket{v})|| = || \ket{v} || \ \ \forall \ \ket{v}\in V$.
+        \item $\braket{T(v)|T(v)} = \braket{v|v} \ \ \forall \ \ket{v}\in V$.
+        \item $TT^*=T^*T=I_V$.
+        \item $\braket{T(u)|T(v)} = \braket{u|v} \ \ \forall \ \ket{u},\ket{v}\in V$.
+        \item Si $\beta$ es una base ortonormal de $V$, entonces $T(\beta)$ también lo es.
+        \item Existe una base ortonormal $\beta$ de $V$ tal que $T(\beta)$ también es una base ortonormal de $V$.
+    \end{enumerate}
+\end{teorema}
+
+\begin{proof}
+    Ejercicio.
+\end{proof}
+
+Observemos de la primera igualdad del inciso (c) que todo operador unitario u ortogonal es normal y, por ende, los operadores unitarios pueden descomponerse espectralmente; además, a partir de este inciso, podemos hacer una analogía entre los operadores unitarios/ortogonales en un espacio vectorial con producto escalar y los elementos $z\in \mathbb{C}$ tales que $z \overline{z} = \overline{z} z = 1$.
+
+\vspace{3mm}
+Por otro lado, ya que la norma inducida por el producto escalar es escalable de forma absoluta, entonces se sigue que todos los eigenvalores de un operador unitario/ortogonal tienen valor absoluto 1 directamente de la definición. Es decir, sus eigenvalores son precisamente aquellos escalares $\lambda\in\mathbb{C}$ ó $\lambda\in\mathbb{R}$ tales que $\lambda \overline{\lambda} = \overline{\lambda} \lambda = 1$. Finalmente, aplicamos el Teorema Espectral a los operadores unitarios y ortogonales en los siguientes corolarios.
+
+\begin{corolario} {16.3}
+    Sean $T:V\to V$ un operador unitario sobre un espacio vectorial complejo de dimensión finita $n$ con producto escalar y $\Lambda=\{\lambda_1,\lambda_2,... , \lambda_k\}$ el espectro de $T$. Entonces, tenemos que $T = \lambda_1 T_1 + \lambda_2 T_2 + ... + \lambda_k T_k,$ con $T_i$ el operador de proyección ortogonal sobre el eigenespacio $E_{\lambda_i}$, y $\Lambda\subset\{z\in \mathbb{C} \mid z \overline{z}= \overline{z}z = 1\}$.
+
+    \begin{proof}
+        Ejercicio.
+    \end{proof}
+       
+\end{corolario}
+
+\begin{corolario} {16.4}
+    Sean $T:V\to V$ un operador ortogonal sobre un espacio vectorial real de dimensión finita $n$ con producto escalar y $\Lambda=\{\lambda_1,\lambda_2,... , \lambda_k\}$ el espectro de $T$. Entonces, si $T$ es autoadjunto, tenemos que $T = \lambda_1 T_1 + \lambda_2 T_2 + ... + \lambda_k T_k,$ con $T_i$ el operador de proyección ortogonal sobre el eigenespacio $E_{\lambda_i}$, y $\Lambda\subseteq\{\pm 1\}$.
+
+    \begin{proof}
+        Ejercicio.
+    \end{proof}
+       
+\end{corolario}
 
 \subsection{Ejercicios de repaso}
 
 \subsubsection{Operadores lineales ortogonales y unitarios}
 
+\begin{enumerate}
+    \item Sean $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:V\to V$ un operador lineal tal que $T$ es unitario si $K=\mathbb{C}$ y $T$ es ortogonal si $K=\mathbb{R}$. Demuestra que $T$ es invertible.
+    \item Da un ejemplo de un operador ortogonal $T:\mathbb{R}^2\to \mathbb{R}^2$ que no tenga eigenvectores y que, por lo tanto, no se pueda formar una base ortogonal de $\mathbb{R}^2$ compuesta por eigenvectores de $T$. Esto ilustra la importante diferencia entre operadores ortogonales y autoadjuntos.
+    \item Da un ejemplo de un operador normal $U:\mathbb{C}\to \mathbb{C}$ que no sea unitario.
+    \item Demuestra el Lema 16.1.
+    \item Demuestra el Teorema 16.2.
+    \item Demuestra el Corolario 16.3.
+    \item Demuestra el Corolario 16.4.
+\end{enumerate}
 
 
-\fi
 
 \end{document}
