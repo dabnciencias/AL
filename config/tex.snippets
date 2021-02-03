@@ -127,6 +127,12 @@ snippet enum "Enumerate" b
 \end{enumerate}
 endsnippet
 
+snippet alph "Enumerate" b
+\begin{enumerate}[label=$1\alph*$2]
+	\item $0
+\end{enumerate}
+endsnippet
+
 snippet item "Itemize" b
 \begin{itemize}
 	\item $0
@@ -190,6 +196,10 @@ snippet "([a-zA-Z])avec" "arrow vector postfix" riA
 \vec{`!p snip.rv=match.group(1)`}
 endsnippet 
 
+snippet "txt" "Text in math mode" iA
+ \ \text{$1}$2 \ $0
+endsnippet
+
 snippet "Ker" "Kernel" rw
 \text{Ker}($1)$0
 endsnippet
@@ -204,10 +214,6 @@ endsnippet
 
 snippet "Inn" "Internal permutations" rw
 \text{Inn}_$1($2)$0
-endsnippet
-
-snippet Sub "Subgroups"
-\text{Sub}($1)$0
 endsnippet
 
 priority 10
@@ -401,19 +407,19 @@ snippet noin "no indent" iA
 endsnippet
 
 snippet UU "cup" iA
-\cup $0
+\cup$0
 endsnippet
 
 snippet tleft "left triangle" iA
-\triangleleft $0
+\trianglelefteq $0
 endsnippet
 
 snippet tright "right triangle" iA
-\triangleright $0
+\trianglerighteq $0
 endsnippet
 
 snippet II "cap" iA
-\cap $0
+\cap$0
 endsnippet
 
 snippet CC "complex" iA
@@ -422,6 +428,10 @@ endsnippet
 
 snippet RR "real" iA
 \mathbb{R}
+endsnippet
+
+snippet QQ "integer" iA
+\mathbb{Q}
 endsnippet
 
 snippet ZZ "integer" iA
@@ -507,3 +517,13 @@ endsnippet
 snippet sssec "subsubsection"
 \subsubsection{$1} \label{Sssec: $1}$0
 endsnippet
+
+snippet vphi "varphi" iA
+\varphi$0
+endsnippet
+
+snippet veps "vareps" iA
+\varepsilon$0
+endsnippet
+
+

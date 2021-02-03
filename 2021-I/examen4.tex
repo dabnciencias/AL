@@ -1,0 +1,96 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3003, 2021-I \\ Examen parcial 5 (tarea examen) \\ Fecha de entrega: domingo 31 de enero, 23:59 hrs.}
+\date{}
+\maketitle
+
+\epigraph{``\textit{Taking responsability for education \underline{is} education.} \\ \textit{Taking responsability for learning \underline{is} learning.''}}{\textemdash Salman Khan, \\ fundador de Khan Academy}
+
+\vspace{5mm}
+\textbf{1.} Sea $V$ un espacio vectorial complejo de dimensión finita $n$ con producto escalar y sean $\alpha=\{\ket{a_1},\ket{a_2},... \ ,\ket{a_n}\}$ y $\beta=\{\ket{b_1},\ket{b_2},... \ ,\ket{b_n}\}$ bases ortonormales de $V$. Supongamos que $T:V\to V$ es un operador lineal tal que \[
+    \bra{u}\big(T\ket{v}\big) = \big(\bra{u}T\big)\ket{v}=\bra{u}T\ket{v} \ \ \ \forall \ \ket{u},\ket{v}\in V.
+\] Demuestren que:
+
+\begin{enumerate}[label=(\alph*)]
+    \item $I_V = \sum_{i=1}^n \ket{a_i}\bra{a_i} = \sum_{i=1}^n \ket{b_i}\bra{b_i}\footnote{Si consideráramos que $V$ fuese un espacio vectorial con producto escalar de dimensión \emph{infinita}, con $\alpha$ y $\beta$ bases ortonormales de $V$, ¿cómo crees que se vería el operador identidad en este espacio, intuitivamente?}.$ (0.5 ptos.)
+    \item Todos los eigenvalores de $T$ son reales y los eigenvectores de $T$ correspondientes a eigenvalores distintos son ortogonales entre sí; en particular, $T$ tiene un espectro no vacío. (1 pto.)
+    \item Las entradas de la matriz $A:=[T]_\alpha$ están dadas por $A_{ij}=\bra{a_i}T\ket{a_j}$ y, en particular, $A$ es una matriz simétrica. (0.5 ptos.)
+    \item Las entradas de la matriz $B:=[T]_\alpha^\beta$ están dadas por $B_{ij}=\bra{b_i}T\ket{a_j}$. (1 pto.)
+\end{enumerate}
+
+
+\vspace{5mm}
+\textbf{2.} Sea $d_j$ el $j$-ésimo dígito del número resultante de sumar los números de cuenta de l@s integrantes del equipo. Consideren a las matrices $D_1,D_2\in M_{n\times n}(K)$ dadas por \[
+    D_1 := \begin{pmatrix} d_1 & d_2 & d_3 \\ d_2 & d_4 & d_5 \\ d_3 & d_5 & d_6 \end{pmatrix}; \ \ \ D_2:= D_1 + i \begin{pmatrix} 0 & d_7 & -d_8 \\ -d_7 & 0 & d_9 \\ d_8 & -d_9 & 0 \end{pmatrix}.
+\]
+
+\begin{enumerate}[label=(\alph*)]
+    \item Determinen si $D_1$ y $D_2$ son diagonalizables y calculen sus espectros. ¿Cómo se verían las matrices diagonales asociadas a $D_1$ y $D_2$, en caso de que sean diagonalizables? (1 pto.)
+    \item Determinen si $D_1$ y $D_2$ se pueden descomponer espectralmente para $K=\mathbb{R}$. (1 pto.)
+    \item Determinen si $D_1$ y $D_2$ se pueden descomponer espectralmente para $K=\mathbb{C}$. (1 pto.)
+\end{enumerate}
+
+\vspace{5mm}
+\textbf{3.} Decimos que una matriz cuadrada $A$ es \emph{unitaria} si $A A^*=A^*A=I$, u \emph{ortogonal} si $A A^T = A^T A = I$. Sean $V$ un espacio vectorial de dimensión finita $n$ con producto escalar. Demuestren que:
+
+\begin{enumerate}[label=(\alph*)]
+    \item Un operador lineal $T$ es unitario si y sólo si $[T]_\alpha$ es una matriz unitaria para alguna base ortonormal $\alpha$ de $V$. (1.5 ptos.)
+    \item Un operador lineal $T$ es ortogonal si y sólo si $[T]_\beta$ es una matriz ortogonal para alguna base ortonormal $\beta$ de $V$. (1.5 ptos.)
+\end{enumerate}
+
+\newpage
+\textbf{4.} Determinen si las siguientes matrices representan operadores diagonalizables, normales, autoadjuntos, unitarios, ortogonales, operadores que se pueden descomponer espectralmente, alguna combinación de las anteriores, o ninguna de las anteriores. Justifiquen su respuesta.
+
+\begin{enumerate}[label=(\alph*)]
+    \item $\begin{pmatrix} 0 & -i \\ i & 0 \end{pmatrix}.$ (1 pto.)
+    \item $\begin{pmatrix} cos(\theta) & 0 & sen(\theta) \\ 0 & 1 & 0 \\ -sen(\theta) & 0 & cos(\theta) \end{pmatrix}$ para $\theta\in[0,2\pi)$. (1 pto.)
+    \item $\begin{pmatrix} 0 & 1 & 0 \\ a & 0 & 1 \\ 0 & 1 & 0 \end{pmatrix}$ para $a\in \mathbb{R}$. (1 pto.)
+\end{enumerate}
+
+\end{document}
