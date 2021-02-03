@@ -1,2 +1,2 @@
 # AL
-En este repositorio se subirán los apuntes del curso de Álgebra Lineal de la Facultad de Ciencias (UNAM).
+Repositorio de mi curso de Álgebra Lineal en la Facultad de Ciencias (UNAM).
