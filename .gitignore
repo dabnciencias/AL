@@ -5,5 +5,6 @@
 *.log
 *.out
 *.synctex.gz
+*.xopp~
 Libro
 Libro/*
