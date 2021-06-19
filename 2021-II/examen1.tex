@@ -1,0 +1,125 @@
+\documentclass[a4paper]{article}
+
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\setcounter{section}{-1}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{epigraph}
+\usetikzlibrary{babel}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=red,
+    filecolor=magtenta,
+    urlcolor=orange,
+}
+\newenvironment{theorem}[2][Theorem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{teorema}[2][Teorema]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{lemma}[2][Lemma]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{exercise}[2][Exercise]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{problem}[2][Problem]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{question}[2][Question]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corollary}[2][Corollary]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
+\newenvironment{corolario}[2][Corolario]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{solution}{\begin{proof}[Solution]}{\end{proof}}
+
+\begin{document}
+\title{Álgebra Lineal \\ Grupo 3070, 2021-II \\ Examen parcial 1 \\ (tarea examen)}
+\date{}
+\maketitle
+
+\epigraph{``\textit{Sorprenderse, extrañarse, es comenzar a entender.}''}{\textemdash José Ortega y Gasset, \\ filósofo español}
+
+\vspace{2cm}
+\textbf{1.} Sea $\vec{v}$ un vector no nulo del espacio vectorial complejo $\mathbb{C}$. ¿Cómo puedes interpretar geométricamente en el plano complejo el producto del vector $\vec{v}$ por el escalar $\frac{1}{i}$? Argumenta y da un ejemplo concreto. \\
+
+\textbf{2.} Sea $V$ un espacio vectorial con subespacios $W_1$ y $W_2$. Recordemos que $V$ es una \emph{suma directa} de $W_1$ y $W_2$ (denotado como $V = W_1 \oplus W_2$) si $V=W_1+W_2$ y $W_1\cap W_2=\{\vec{0}\}$. Demuestra que $V = W_1 \oplus W_2$ si, y sólo si, todo vector $\vec{v}\in V$ puede ser expresado de manera única como $\vec{v} = \vec{w}_1 + \vec{w}_2$, con $\vec{w}_i\in W_i$ para $i\in\{1,2\}$. ¿Cómo generalizarías este resultado para un número finito $n$ de subespacios (i.e., $V = \oplus_{i=1}^n W_i$)? Escribe el enunciado general sin demostrarlo. \\
+
+\textbf{3.} Demuestra o da un contraejemplo de la siguiente afirmación: un conjunto de vectores $L$ es linealmente independiente si, y sólo si, cualquier subconjunto finito de $L$ es linealmente independiente. \\
+
+\textbf{4.} Sea $(V,K)$ un espacio vectorial con producto escalar $\langle \cdot , \cdot \rangle:V\times V\to K$. Demuestra que todo subconjunto ortogonal finito de $V$ es linealmente independiente si, y sólo si, no contiene al vector nulo. \\
+
+\textbf{5.} Sea $P^2([-1,1])$ el espacio vectorial real de todos los polinomios reales de grado $2$ con dominio en $[-1,1]$. Demuestra que $\langle \cdot , \cdot \rangle:P^2([-1,1])\times P^2([-1,1])\to\mathbb{R}$, dado por
+\[
+\langle p , q \rangle = \int_{-1}^1 p(x)q(x) \ dx
+\] 
+es un producto escalar positivo definido. Luego, obten una base para este espacio vectorial. Finalmente, expresa a un vector arbitrario $v\in P^2([-1,1])$ con regla de correspondencia $v(x)=ax^2 + bx + c$ como combinación lineal de los vectores que hayas obtenido (i.e., encuentra los coeficientes). \\
+
+\textbf{6.} Sea
+\[
+I:=\bigg\{f:\mathbb{R}\to\mathbb{R} \ \bigg| \ \int_{-\infty}^\infty f(x) \ dx \ \text{existe}\bigg\}. 
+\]
+Demuestra que $I$ es un espacio vectorial real\footnote{Recuerda las propiedades lineales de la integral vistas en tu curso de cálculo integral de una variable.}. \\
+
+\textbf{7.} Sea
+\[
+    R^1(\mathbb{R}):=\bigg\{f:\mathbb{R}\to\mathbb{R} \ \bigg| \ \int_{-\infty}^\infty |f(x)| \ dx < \infty \bigg\}.
+\] Demuestra que $R^1(\mathbb{R})$ es un subespacio vectorial \emph{normado} de $I$, con norma\footnote{Recuerda las propiedades del valor absoluto vistas en tu curso de cálculo integral de una variable.} $||\cdot||_1$ dada por 
+\[
+    ||f||_1 := \int_{-\infty}^\infty |f(x)| \ dx \quad \text{para toda} \ f\in R^1(\mathbb{R}).
+\] 
+
+\newpage
+\textbf{8.} Sean
+\[
+    R^2(\mathbb{R}):= \bigg\{f:\mathbb{R}\to\mathbb{R} \ \bigg| \ \bigg( \int_{-\infty}^\infty |f(x)|^2 \ dx \bigg)^{\frac{1}{2}} < \infty \bigg\}
+\]
+y
+\[
+    ||f||_2:=\bigg(\int_{-\infty}^\infty |f(x)|^2 \ dx\bigg)^\frac{1}{2} \quad \text{para toda} \quad f\in R^2(\mathbb{R}).
+\]
+Utilizando la desigualdad\footnote{Este es un caso particular de la llamada \emph{Desigualdad de Young}, y se sigue de que $\frac{1}{2}+\frac{1}{2}=1$. Pueden utilizarla sin demostrarla; \href{https://en.wikipedia.org/wiki/Young\%27s\_inequality\_for\_products\#Elementary\_case}{aquí} pueden encontrar una demostración sencilla para este caso. Una versión un poco más general nos dice que, si $p,q>1$ son tales que $\frac{1}{p} + \frac{1}{q} = 1$, entonces $ab\le \frac{a^p}{p} + \frac{b^q}{q}$ para todo $a,b\ge 0$. Con esta desigualdad, definiendo a $R^p(\mathbb{R})$ y $R^q(\mathbb{R})$ de la manera obvia, se puede demostrar que, si $f\in R^p(\mathbb{R})$ y $g\in R^q(\mathbb{R})$, entonces $||fg||_1\le ||f||_p \ ||g||_q$; en particular, se sigue que $fg\in R^1(\mathbb{R})$.}
+\[
+ab\le \frac{a^2}{2} + \frac{b^2}{2},
+\]
+válida para todo $a,b\ge0$, demuestra que para toda $f,g\in R^2(\mathbb{R})$ tenemos que\footnote{Este es un caso particular de la \href{https://en.wikipedia.org/wiki/Hölder's_inequality}{Desigualdad de Hölder}.}
+\begin{equation}\label{eq:3.1}
+||fg||_1 \le ||f||_2 \ ||g||_2   
+\end{equation}
+y que, en particular, $fg\in R^1(\mathbb{R})$. Luego, utiliza la desigualdad (\ref{eq:3.1}) para demostrar que, para toda $f,g\in R^2(\mathbb{R})$,
+\begin{equation}\label{eq:3.2}
+    ||f+g||_2\le ||f||_2 + ||g||_2.
+\end{equation}
+Finalmente, utiliza la desigualdad (\ref{eq:3.2})\footnote{Esta desigualdad es un caso particular de la \href{https://en.wikipedia.org/wiki/Minkowski_inequality}{Desigualdad de Minkowsky}.} para demostrar que $R^2(\mathbb{R})$ es un espacio vectorial normado con norma $||\cdot||_2$, la cual es inducida por el producto escalar $\langle \cdot , \cdot \rangle$ en $R^2(\mathbb{R})$, dado por
+\[
+    \langle f , g \rangle := \int_{-\infty}^\infty f(x)g(x) \ dx \quad \text{para toda} \ f,g\in R^2(\mathbb{R}).
+\] \\
+
+\textbf{Nota:} Es posible generalizar los últimos tres ejercicios para funciones \emph{complejas} de varias variables reales para demostrar que, para toda $n\in\mathbb{Z}^+$, el conjunto
+\[
+    L^2(\mathbb{R}^n) := \bigg\{ f:\mathbb{R}^n\to \mathbb{C} \ \bigg| \ \bigg( \int_{\mathbb{R}^n} |f|^2 \ d\vec{x} \bigg)^{\frac{1}{2}} < \infty \bigg\}
+\] 
+\textemdash donde $\int_{\mathbb{R}^n} f \ d\vec{x}$ denota un tipo de integral en $\mathbb{R}^n$ más general que la de Riemann llamada \emph{integral de Lebesgue}\textemdash \ forma un espacio vectorial complejo \emph{normado} con norma $||\cdot||_2$, dada por 
+\[
+    ||f||_2:=\bigg(\int_{\mathbb{R}^n} |f|^2 \ d\vec{x}\bigg)^\frac{1}{2} \quad \text{para toda} \quad f\in L^2(\mathbb{R}^n).
+\] 
+Adicionalmente, se puede demostrar que la norma $||\cdot||_2$ es inducida por el producto escalar $\langle \cdot , \cdot \rangle$ en $L^2(\mathbb{R}^n)$, dado por
+\[
+    \langle f , g \rangle = \int_{\mathbb{R}^n} f \bar{g} \ d\vec{x} \quad \text{para toda} \quad f,g\in L^2(\mathbb{R}^n)
+\] 
+y, en particular, que $L^2(\mathbb{R}^n)$ es un espacio vectorial con producto escalar. \\
+
+\noindent Más aún, es posible demostrar que estos espacios vectoriales $L^2(\mathbb{R}^n)$ pertenecen a un tipo de espacios de dimensión infinita para los cuales existen bases ortogonales y ortonormales. Esto rebasa los contenidos de nuestro curso, pero verán cosas relacionadas en su curso de \href{https://web.fciencias.unam.mx/asignaturas/1531.pdf}{Matemáticas Avanzadas}. Este tipo de espacios vectoriales con producto escalar \textbf{son de suma importancia en Mecánica Cuántica}.
+
+\end{document}
