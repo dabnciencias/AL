@@ -1,4 +1,6 @@
 *.sc
+*.csv
+*.xls
 *.aux
 *.fdb_latexmk
 *.fls
@@ -6,5 +8,7 @@
 *.out
 *.synctex.gz
 *.xopp~
-Libro
-Libro/*
+Libros
+Libros/*
+2022-I/examen*
+dot+cross.pdf

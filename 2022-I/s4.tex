@@ -1,0 +1,186 @@
+\documentclass[apuntes]{subfiles}
+
+\begin{document}
+
+\section{Bases y dimensión} \label{Sec:Bases y dimensión}
+
+\subsection{Bases}
+
+Como hemos visto en secciones anteriores, cualquier vector de un espacio vectorial se puede expresar como combinación lineal de otros vectores de ese mismo espacio\footnote{De lo contrario, se violarían las propiedades de cerradura vistas en la sec. \ref{Def:Espacio_vectorial}.}. Cuando trabajamos en un espacio vectorial $V$, resulta conveniente tener un conjunto de vectores $B\subset V$ con el cual se pueda expresar a \emph{cualquier vector del espacio vectorial} $V$ de forma \emph{única} \textemdash lo cual se logra, precisamente, a través de una combinación lineal única de los vectores del conjunto $B$. Tomando en cuenta el Teorema 3.3.3.1 (sec. \ref{Teo:Dependencia_e_independencia_lineal}), vemos que los conjuntos linealmente independientes son buenos candidatos para lograr que las expresiones mediante combinaciones lineales sean \emph{únicas}, por lo cual pediremos que $B$ sea linealmente independiente; además, ya que queremos ser capaces de expresar a \emph{cualquier} vector arbitrario de $V$ como combinación lineal \emph{única} de los vectores de $B$, sería necesario que el conjunto linealmente independiente $B$ generara a \emph{todos} los vectores de $V$. A cualquier conjunto que cumpla ambas propiedades se le conoce como una \emph{base} para el espacio vectorial en cuestión.
+
+\subsubsection{Definición de base} \label{Def:Base}
+
+\begin{tcolorbox}
+
+    \underline{Def.} Una base de un espacio vectorial $V$ es un conjunto de vectores linealmente independientes que generan a todo el espacio vectorial $V$. En lenguaje matemático, $$B\subset V \hspace{1.5mm}\text{es una base de}\hspace{1.5mm} V \iff B\hspace{1.5mm}\text{es}\hspace{1.5mm} l.i.  \hspace{1.5mm}\text{y}\hspace{1.5mm} \langle B \rangle=V.$$
+
+\end{tcolorbox}
+
+Nótese por la definición que, ya que muchos conjuntos de vectores distintos pueden ser linealmente independientes y generar a un mismo espacio vectorial, un espacio vectorial puede tener muchas bases distintas. Esto implica que cualquier vector arbitrario de un espacio vectorial puede ser expresado a través de diferentes combinaciones lineales (correspondientes a distintas bases del espacio, y únicas para cada base). Dicho de otra forma, dado un espacio vectorial con más de una base, cualquier vector de ese espacio puede ser \emph{representado en las distintas bases} de ese espacio\footnote{El tema de las \emph{representaciones} es de gran interés en algunas ramas de las matemáticas y sus aplicaciones son de suma importancia en varias áreas de la física. En este curso, lo veremos sobre todo en las secciones de representación matricial de una transformación lineal, representación de una matriz en distintas bases y representaciones de un operador lineal en distintos espacios vectoriales.}.
+
+\subsubsection{Ejemplos de bases} \label{Ejem:Bases}
+
+El conjunto $\{1\}$ es una base para el espacio vectorial complejo $\mathbb{C}.$ De hecho, si cambiamos a $1$ en el conjunto anterior por cualquier número complejo no nulo, también tendremos una base para el espacio complejo $\mathbb{C}$ (¿a qué propiedades se debe esto?). 
+\vspace{3mm}
+
+Los conjuntos $\{\begin{pmatrix} 2 & 0 \end{pmatrix}, \begin{pmatrix} 0, & -3 \end{pmatrix}\}, \{\begin{pmatrix} 3 & 3 \end{pmatrix}, \begin{pmatrix} -3 & 3 \end{pmatrix}\}$ y $\{\begin{pmatrix} 1 & 0 \end{pmatrix},\begin{pmatrix} 0 & 1 \end{pmatrix}\}$ son bases de $\mathbb{R}^2$.
+\vspace{3mm}
+
+Cualquier conjunto de la forma $\{c_n x^n\hspace{0.5mm}|\hspace{0.5mm}n\in\mathbb{N}\cup\{0\}, c_n\in \mathbb{R}\}$ es una base del espacio vectorial de las funciones polinomiales de grado $n$.
+
+\subsubsection{Teorema de reemplazamiento} \label{Subsubsec:Teo_de_reemplazamiento}
+
+A continuación, veremos un importante teorema que nos ayudará a construir bases más adelante.
+
+\begin{teorema} {4.1.1}
+    Sea $V$ un espacio vectorial generado por un conjunto $G$ con $n$ vectores, y sea $L$ un subconjunto linealmente independiente de $V$ con $m$ vectores. Entonces $m\le n$ y existe un subconjunto $H\subseteq G$ que contiene $n-m$ vectores tal que $L\cup H$ genera a $V$.
+
+    \begin{proof}
+        Esta demostración se hará por inducción.
+
+    \vspace{3mm} 
+    \textbf{Base inductiva}
+    Sea $m=0$, entonces $L=\emptyset$. Si tomamos $H=G$ obtenemos el resultado deseado.
+
+    \vspace{3mm} 
+    \textbf{Hipótesis de inducción}
+    Supongamos que la hipótesis del teorema se cumple para $L=\{\mathbf{v}_1,...,\mathbf{v}_m\}$ con $m>0$.
+
+    \vspace{3mm} 
+    \textbf{Paso inductivo}
+    Ahora debemos demostrar que, bajo la hipótesis de inducción (donde el teorema se cumple para alguna $m>0$), el teorema se debe cumplir para $m+1$.\vspace{3mm}
+    
+     Sea $L=\{\mathbf{v}_1,...,\mathbf{v}_{m+1}\}$ un subconjunto linealmente independiente de $V$. Por el Teorema 3.3.3.2, el conjunto $\{\mathbf{v}_1,...,\mathbf{v}_m\}$ es l.i., por lo cual podemos aplicar la hipótesis de inducción y concluir que $m\le n$ y que existe un subconjunto $\{\mathbf{u}_1,...,\mathbf{u}_{n-m}\}\subset G$ tal que $\{\mathbf{v}_1,...,\mathbf{v}_m\}\cup\{\mathbf{u}_1,...,\mathbf{u}_{n-m}\}$ genera a $V$. Por lo tanto, existen escalares $a_1,...,a_m,b_1,...,b_{n-m}$ tales que \[
+        a_1\mathbf{v}_1+...+a_m\mathbf{v}_m+b_1\mathbf{u}_1+...+b_{n-m}\mathbf{u}_{n-m}=\mathbf{v}_{m+1}.
+    .\] 
+
+    Observemos que, ya que $L$ es linealmente independiente, $n-m>0\implies n>m\implies n\ge m+1$. Además, alguna $b_i$ debe ser distinta de cero, por lo cual podemos despejarla (de lo contrario, estaríamos contradiciendo la hipótesis de inducción, que nos asegura que $\{\mathbf{v}_1,...,\mathbf{v}_m\}$ es l.i.). Suponiendo, por ejemplo, que $b_1\neq 0$, tenemos que \[
+        \mathbf{u}_1=\frac{-a_1}{b_1}\mathbf{v}_1+...+\frac{-a_m}{b_1}\mathbf{v}_m+\frac{-b_2}{b_1}\mathbf{u}_2+...+\frac{-b_{n-m}}{b_1}\mathbf{u}_{n-m}
+    .\] 
+
+    Por lo cual $\mathbf{u}_1$ puede ser expresado como combinación lineal de los vectores $\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_2,...,\mathbf{u}_{n-m}.$ Sea $H=\{\mathbf{u}_2,...,\mathbf{u}_{n-m}\}$, entonces $L\cup H=\{\mathbf{v}_1,...,\mathbf{v}_{m+1},\mathbf{u}_2,...,\mathbf{u}_{n-m}\}$ y trivialmente tenemos que $\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_2,...,\mathbf{u}_{n-m}\in\langle L\cup H\rangle$ \textemdash lo cual también implica que $\mathbf{u}_1\in\langle L\cup H\rangle$. Por lo tanto, tenemos que $\{\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_1,...,\mathbf{u}_{n-m}\}\subseteq\langle L\cup H\rangle.$
+
+    Recordando que por hipótesis de inducción $\{\mathbf{v}_1,...,\mathbf{v}_m,\mathbf{u}_1,...,\mathbf{u}_{n-m}\}$ genera a $V$, entonces el hecho de que esté contenido en $L\cup H$ implica necesariamente que $\langle L\cup H\rangle=V.$ Finalmente, ya que $H$ es un subconjunto de $G$ con $(n-m)-1=n-(m+1)$ vectores, el teorema se cumple para $m+1$, terminando así nuestra demostración.
+
+    \end{proof}
+\end{teorema}
+
+El teorema anterior se conoce como el teorema de \emph{reemplazamiento} ya que, partiendo de un conjunto linealmente independiente $L$ y otro conjunto $H$ que juntos cumplen $\langle L\cup H \rangle=V$ (sin que $L\cup H$ sea necesariamente l.i.), lo que estamos haciendo con cada paso consecutivo de la inducción es reemplazar a los vectores de $H$ por vectores que podemos añadir a $L$ tal que este conjunto siga siendo linealmente independiente y se siga cumpliendo que la unión de ambos genere a $V$. De esta forma, $L$ es un conjunto linealmente independiente que va creciendo y que cada vez necesita a menos vectores de $H$ para poder, a través de la unión generar a $V$. ¿Qué pasará cuando $L$ sea un conjunto linealmente independiente que no necesita a ningún vector de $H$ para generar a $V$\footnote{Recuerda para qué dijimos que nos serviría este teorema.}?. 
+
+\newpage
+\subsection{Dimensión} \label{Subsec:Dimensión}
+
+Como quizá notaste en los ejemplos de la sección anterior, pareciera que todas las bases de un mismo espacio vectorial tienen el mismo número de elementos. A continuación, demostraremos este hecho.
+
+\begin{teorema} {4.2.1} 
+
+    Sean $B=\{\mathbf{b}_1,\mathbf{b}_2, ..., \mathbf{b}_n\}$ y $B'=\{\mathbf{b'}_1,\mathbf{b'}_2, ..., \mathbf{b'}_{n'}\}$ bases de $V$, entonces $n=n'$.
+
+\begin{proof}
+
+    Supongamos que $n'>n$. Ya que $B'\subset V$ y $\langle B \rangle =V\implies B'\subset\langle B \rangle,$ por lo cual podemos expresar cualquier vector de $B'$ como combinación lineal de los de $B$. Entonces, 
+
+    $$\mathbf{b'}_1=c_{11}\mathbf{b}_1+c_{12}\mathbf{b}_2+...+c_{1n}\mathbf{b}_{n},$$
+
+    $$...$$
+
+    $$\mathbf{b'}_{n'}=c_{n'1}\mathbf{b}_1+c_{n'2}\mathbf{b}_2+...+c_{n'n}\mathbf{b}_n,$$ \noindent donde $c_{ij}\in K$.
+
+    Sea $\mathbf{z}\in V$ un vector arbitrario. Como $B'$ es base de $V\implies \mathbf{z}=d_1\mathbf{b'}_1+d_2\mathbf{b'}_2+...+d_{n'}\mathbf{b}_{n'}$. Sustituyendo con las ecuaciones obtenemos que $$\mathbf{z}=d_1(c_{11}\mathbf{b}_1+...+c_{1n}\mathbf{b}_n)+...+d_{n'}(c_{n'1}\mathbf{b}_1+...+c_{n'n}\mathbf{b}_n)=(d_1 c_{11}+...+d_{n'} c_{n'1})\mathbf{b}_1+...+(d_1 c_{1n}+...+d_{n'} c_{n'n})\mathbf{b}_n.$$ \noindent En particular, si $\mathbf{z}=\mathbf{0}$, ya que por hipótesis $B$ es linealmente independiente, obtenemos
+
+    $$d_1 c_{11}+...+d_{n'}c_{n'1}=0,$$
+
+
+    $$...$$ 
+
+    $$d_1 c_{1n}+...+d_{n'} c_{n'n}=0.$$
+
+    Sin embargo, ya que al inicio de la demostración supusimos que $n'>n$, entonces el sistema de ecuaciones anterior tiene más incógnitas que ecuaciones y, por ende, una solución no trivial para $(d_1, d_2, ..., d_{n'})$. Esto contradice el hecho de que $B$ sea una linealmente independiente, por lo cual tampoco podría ser una base. Análogamente, si $n>n'$ se llega a una contradicción similar. Por lo tanto, por tricotomía concluimos que, si $B$ y $B'$ son bases, $n=n'$.
+\end{proof}
+
+\end{teorema}
+
+El hecho de que todas las bases de un mismo espacio vectorial tengan el mismo número de elementos motiva la siguiente definición.
+
+\begin{tcolorbox}
+
+    \underline{Def.} La \emph{dimensión} de un espacio vectorial $V$ es igual al número de elementos (i.e., la cardinalidad) de cualquiera de sus bases. Si cualquier base de $V$ tiene un número finito $n$ de elementos, decimos que $V$ es un \emph{espacio de dimensión finita} y escribimos esto como $\text{dim}(V)=n$; de lo contrario decimos que $V$ es un espacio de dimensión \emph{infinita}\footnote{En el resto de estas notas, supondremos que los espacios vectoriales mencionados tienen dimensión finita, a menos que se indique lo contrario.}.
+
+\end{tcolorbox}
+
+Observemos que esta definición \emph{algebráica} de dimensión difiere de las definiciones geométricas y físicas usuales de dimensión. Por ejemplo, a pesar de que el espacio vectorial complejo $\mathbb{C}$ se represente en el plano cartesiano \textemdash el cual tiene dimensión geométrica $2$\textemdash\hspace{0.5mm}, este espacio vectorial es de dimensión (algebráica) $1$, como vimos en los ejemplos de la sección \ref{Ejem:Bases}. Otra observación es que la dimensión de un espacio vectorial no sólo depende del conjunto vectorial, sino también del campo sobre el cual se define (por ejemplo, el espacio vectorial $\mathbb{C}$ sobre $\mathbb{R}$ no puede tener dimensión $1$: ¿podrías demostrarlo?).
+
+\begin{teorema} {4.2.2}
+    Sea $V$ un espacio vectorial de dimensión finita y $W$ un subespacio de $V$, entonces W tiene dimensión finita y $\text{dim}(W)\le \text{dim}(V).$ 
+
+\begin{proof}
+
+    Sea $\text{dim}(V)=n.$ Si $W=\{\mathbf{0}\} \implies \text{dim}(W)=0\le n.$ Consideremos ahora que $W$ contiene a un vector no nulo $\mathbf{x}_1$, entonces el conjunto $\{\mathbf{x}_1\}$ es linealmente independiente. Supongamos que seguimos agregando más vectores $\mathbf{x}_2,...,\mathbf{x}_k$ de $W$ al conjunto $\{\mathbf{x}_1\} $ de tal forma que $\{\mathbf{x}_1,\mathbf{x}_2,...,\mathbf{x}_k\}$ sea linealmente independiente. Ya que $\text{dim}(V)=n,$ entonces cualquier base de $V$ tiene $n$ elementos. Esto implica que ningún subconjunto de $V$ linealmente independiente puede tener más de $n$ elementos, por lo cual el proceso anterior debe detenerse para algún $k\le n.$ De acuerdo al Teorema 3.3.3.3, este conjunto genera a $W$, por lo cual forma una base de $W$, de donde concluimos que $\text{dim}(W)=k\le n.$
+
+\end{proof}
+
+\end{teorema}
+
+En los teoremas anteriores demostramos que si $\text{dim}(V)=n$ entonces cualquer base de $V$ tiene precisamente $n$ elementos, y que cualquier subespacio vectorial tiene dimensión finita. Resulta, además, que en este caso cualquier conjunto de $n$ vectores linealmente independientes de $V$ es también una base para $V$\textemdash es decir, que también genera a todo el espacio $V$, como veremos en el siguiente teorema. 
+
+\begin{teorema} {4.2.3}
+
+    Sea $V$ un espacio vectorial. Si $\text{dim}(V)=n$ entonces cualquier conjunto de $n$ vectores linealmente independientes de $V$ es una base de $V$.
+
+\begin{proof}
+
+    Esta prueba se hará por contradicción. 
+
+    Sea $V$ un espacio vectorial con $\text{dim}(V)=n, \hspace{1.5mm} n\in\mathbb{N}$ y $B=\{\mathbf{b}_1, ..., \mathbf{b}_n\}\subset V$ un conjunto de $n$ vectores de $V$ que son linealmente independientes entre sí.
+
+    Supongamos que $\langle B \rangle \neq V$, es decir, que $\exists\hspace{1.5mm} \mathbf{b}_{n+1}\in V$ tal que éste no puede ser expresado como combinación lineal de los vectores de $B$. Por definición, entonces dicho vector es linealmente independiente de los vectores de $B$. Por lo tanto, podemos definir al conjunto $B'\equiv\{\mathbf{b}_1, ...,\mathbf{b}_n, \mathbf{b}_{n+1}\}$, que tiene $n+1$ elementos linealmente independientes entre sí. Supongamos que, ahora sí, $\langle B' \rangle = V$; en ese caso, por definición, $B'$ sería una base de $V$. Sin embargo, ya que $\text{dim}(V)=n$, por lo demostrado en el Teorema 4.2.1 hemos llegado a una contradicción, ya que cualquier base de $V$ debe tener exactamente $n$ elementos.
+    
+    Ya que la suposición $\langle B \rangle \neq V$ fue la que nos llevó a esta contradicción, tenemos que $\langle B \rangle = V$, por lo cual $B$ \textemdash un conjunto arbitrario de $n$ elementos linealmente independientes de $V$\textemdash \hspace{1mm} \emph{es} una base de $V$.
+
+\end{proof}
+
+\end{teorema}
+
+\begin{corolario}{4.2.4}
+    De los dos teoremas anteriores podemos concluir que si $W$ es un subespacio vectorial de $V$ y $\text{dim}(W)=\text{dim}(V)\implies W=V.$
+\end{corolario}
+
+Para terminar esta sección, veremos algunas formas en las cuales se pueden construir bases de un espacio vectorial de dimensión $n$ a partir de conjuntos linealmente independientes con menos de $n$ elementos, o de conjuntos linealmente dependientes que generan $V$ y tienen más de $n$ elementos.
+
+\begin{teorema} {4.2.5}
+    Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto finito linealmente dependiente que genera a $V$ puede reducirse hasta convertirse en una base de $V$.
+
+\begin{proof}
+    Sea $D$ un conjunto finito linealmente dependiente tal que $\langle D \rangle =V$. Ya que $D$ es linealmente dependiente, entonces existe un vector $\mathbf{v}$ que puede ser expresado como combinación lineal de los demás por lo cual, definiendo $D'=D\setminus\{\mathbf{v}\}$ tenemos que $\mathbf{v}\in\langle D' \rangle$, donde claramente $D'$ también es finito. Por el Teorema 3.2.1 de la sección \ref{Subsec:Espacio_generado_y_conjunto_generador} sabemos que $\langle D' \rangle =\langle D \rangle =V$. Si el conjunto generador $D'$ no es linealmente independiente, podemos seguir retirando vectores de la misma forma sin afectar su espacio generado hasta obtener un conjunto linealmente independiente que genera a $V$, es decir, una base para $V$.
+\end{proof}
+
+\end{teorema}
+
+\begin{teorema} {4.2.6}
+Sea $V$ un espacio vectorial de dimensión $n$, entonces cualquier conjunto linealmente independiente con menos de $n$ elementos no genera a $V$, pero puede extenderse hasta convertirse en una base de $V$.
+
+\begin{proof}
+Sea $L$ un conjunto linealmente independiente con $m$ elementos, donde $m<n$. Entonces $L$ no genera a $V$ ya que, de lo contrario, sería una base de $V$ y tendríamos dos bases de $V$ con diferente cardinalidad, lo cual contradice al Teorema 4.2.1. Sea $S$ un conjunto generador de $V$. Ya que $L$ no genera a $V$, debe haber algún vector en $\mathbf{v}\in S$ tal que $\mathbf{v}\notin \langle L \rangle$. Definimos ahora al conjunto $L'=L\cup \{\mathbf{v}\}$ el cual, por el Teorema 3.3.3.3 de la sección \ref{Teo:Dependencia_e_independencia_lineal}, es linealmente independiente. Si $L'$ no genera a $V$, podemos repetir el proceso hasta llegar a un conjunto linealmente independiente que genera a $V$, i.e., una base para $V$.
+\end{proof}
+
+\end{teorema}
+
+Sabiendo que un mismo espacio vectorial puede tener muchas bases diferentes \textemdash todas con el mismo número de elementos\textemdash \hspace{1mm}, en la siguiente sección nos enfocaremos a ver algunos tipos de bases que resultan ser útiles comunmente, y a entender cómo podemos construirlas y usarlas.
+
+\subsection{Ejercicios de repaso}
+
+\subsubsection{Bases}
+\begin{enumerate}
+    \item Sea $K$ un campo arbitrario. En el ejercicio $1.5.2.4$ de la sección \ref{Ejer:Espacios_vectoriales} demostraste que $K\times K\times ...\times K=K^n, n\in\mathbb{N}$ era un espacio vectorial sobre $K$. Sea $\mathbf{e}_1=\begin{pmatrix} 1 & 0 & 0 & 0 & ... & 0 \end{pmatrix}, \mathbf{e}_2=\begin{pmatrix} 0 & 1 & 0 & 0 & ... & 0 \end{pmatrix}, ..., \mathbf{e}_n = \begin{pmatrix} 0 & 0 & 0 & 0 & ... & 1 \end{pmatrix}$. Demuestra que $\{\mathbf{e}_1, \mathbf{e}_2, ..., \mathbf{e}_n\}$ es una base para $K^n$ sobre $K$. En particular, demuestra que es una base ortonormal. A esta base se le conoce como la \emph{base canónica} del espacio vectorial $K^n$ sobre $K$.  
+    \item Sea $d_i$ el $i$-ésimo dígito de tu número de cuenta. Considera el conjunto $\{\begin{pmatrix} d_1&d_2&d_3 \end{pmatrix}, \begin{pmatrix} d_4&d_5&d_6 \end{pmatrix},\\ \begin{pmatrix} d_7&d_8&d_9 \end{pmatrix}\}$. ¿Forma una base para $\mathbb{R}^3$? Si sí lo es, demuéstralo. Si no, demuestra por qué no es base de $\mathbb{R}^3$ y realiza las modificaciones necesarias para obtener una base. 
+    \item Sea $B$ la base que obtuviste en el ejercicio anterior. Expresa a los vectores $\begin{pmatrix} d_9&d_8&d_7 \end{pmatrix} , \begin{pmatrix} d_6&d_5&d_4 \end{pmatrix} , \\ \begin{pmatrix} d_3&d_2&d_1 \end{pmatrix} \in \mathbb{R}^3$ como combinaciones lineales de los vectores de $B$. 
+\end{enumerate}
+
+\subsubsection{Dimensión}
+\begin{enumerate}
+    \item Sea $V$ un espacio vectorial de dimensión $n$ y $D$ un conjunto linealmente dependiente tal que $\langle D \rangle =V$. Demuestra que $D$ tiene más de $n$ elementos. 
+    \item Demuestra que cualquier base del espacio vectorial $\mathbb{C}$ sobre $\mathbb{R}$ debe tener más de un elemento y que, por lo tanto, $\text{dim}((\mathbb{C},\mathbb{C}))\neq \text{dim}((\mathbb{C},\mathbb{R})).$ 
+    \item Da un ejemplo distinto a $\mathbb{C}$ en donde la dimensión (algebráica) de un espacio vectorial no corresponda con la dimensión (geométrica) de su representación geométrica. Además, da un ejemplo distinto al del ejercicio anterior en donde la dimensión de un espacio vectorial cambie según el campo sobre el cual está definido. 
+\end{enumerate}
+
+\end{document}

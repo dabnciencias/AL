@@ -1,0 +1,87 @@
+\documentclass[apuntes]{subfiles}
+
+\begin{document}
+
+\section{Subespacios vectoriales} \label{Subsec:Subespacios_vectoriales}
+
+En ciertas formas \emph{específicas}, las cuales iremos detallando, los subespacios vectoriales son a los espacios vectoriales lo que los subconjuntos a los conjuntos. Por ejemplo: así como cualquier subconjunto es, en sí mismo, un conjunto, cualquier subespacio vectorial es, en sí mismo, un espacio vectorial.
+
+\subsubsection{Definición de subespacio vectorial} \label{Def:Subespacio_vectorial}
+
+\begin{tcolorbox}
+\underline{Def.} Sea un conjunto $V$ sobre un campo $K$ un espacio vectorial. Un \textit{subespacio vectorial} de $V$ es un subconjunto $W\subset V$ sobre el campo $K$ con las operaciones de suma vectorial y producto de un vector por un escalar que cumple las propiedades siguientes:
+
+\begin{center}
+\begin{tabular}{lr}
+    $\forall\hspace{1.5mm} \mathbf{w},\mathbf{x}\in W \hspace{3mm}\exists \hspace{1.5mm} \mathbf{w}+\mathbf{x}\in W$ & Cerradura de la adición \\ \\ \multirow{2}{0.4\textwidth}{$\forall\hspace{1.5mm} \mathbf{w}\in W, a\in K \hspace{3mm}\exists \hspace{1.5mm} a\mathbf{w}\in W$} & \multirow{2}{0.28\textwidth}{Cerradura del producto de un vector por un escalar} \\ \\ \\
+    $\exists \hspace{1.5mm} \mathbf{0}\in W$ t.q. $\mathbf{w}+\mathbf{0}=\mathbf{w}\hspace{3mm}\forall\hspace{1.5mm} \mathbf{w} \in W$ & Elemento identidad de la adición (neutro aditivo). \\ \\
+\end{tabular}
+\end{center}
+
+\hspace{2.5mm} En este caso, a $W$ se le conoce como un \textit{subespacio vectorial} de $V$ (nuevamente, simplificando la notación); sin embargo, $W$ también es, en sí mismo, un espacio vectorial.
+
+\end{tcolorbox}{}
+
+Observemos que:
+
+\begin{itemize}
+    \item Ya que cualquier subespacio vectorial es un espacio vectorial, entonces cualquier subespacio vectorial puede tener subespacios vectoriales subsecuentes\footnote{Esto es más o menos similar al hecho de que cualquier subconjunto puede tener subconjuntos subsecuentes.}.
+    \item La definición de subespacio vectorial sólo incluye tres propiedades. Esto nos indica que, ya que $W$ es subconjunto de $V$ y ambos espacios vectoriales están definidos sobre el mismo campo $K$, si $W$ cumple explícitamente las tres propiedades mencionadas, las demás propiedades de un espacio vectorial se siguen trivialmente.
+    \item Para todo espacio vectorial $V$, $V$ y $\{\mathbf{0}\}$ son subespacios vectoriales de $V$\footnote{Aquí se sobreentiende que los conjuntos $V$ y $\{\mathbf{0}\}$ están definidos como espacios vectoriales sobre el mismo campo $K$ y que $\{\mathbf{0}\}$ representa al espacio vectorial que sólo tiene al vector nulo de $V$ como vector.}.
+\end{itemize}{}
+
+\subsubsection{Ejemplos de subespacios vectoriales}
+
+El conjunto de todos los pares ordenados $\{\begin{pmatrix} x_1&x_2\end{pmatrix}\mathop |\mathop x_1,x_2\in\mathbb{R}\mathop\land\mathop x_1=x_2\}$ es un subespacio vectorial en el espacio vectorial real $\mathbb{R}^2$ (o $\mathbb{R}\times \mathbb{R}$).
+
+\vspace{3mm}
+
+El conjunto $\mathbb{R}$ sobre el campo $\mathbb{R}$ es un subespacio vectorial del conjunto $\mathbb{C}$ sobre el mismo campo $\mathbb{R}$.
+
+\vspace{3mm}
+
+Sean $j,k\in\mathbb{N}$ t.q. $j<k$. El conjunto de polinomios de grado $j$ es un subespacio vectorial\footnote{De aquí en adelante, asumiremos que cualquier espacio vectorial $V$ está definido por un conjunto vectorial $V$ sobre el campo $\mathbb{R}$ (espacio vectorial real), a menos que se indique lo contrario.} del espacio vectorial formado por el conjunto de polinomios de grado $k$.
+
+\vspace{3mm}
+
+El conjunto de todas las funciones reales de clase $C^{\infty}$ es un subespacio vectorial del espacio vectorial formado por el conjunto de todas las funciones reales de clase $C^n$ (con $n\in\mathbb{N}$).
+
+\vspace{3mm}
+
+\subsubsection{Algunos teoremas de subespacios vectoriales} \label{Teo:Subespacios_vectoriales}
+
+\begin{teorema} {1.4.3.1} Cualquier intersección de dos subespacios vectoriales de $V$ es un subespacio vectorial de $V$.
+
+\begin{proof}
+    Sea $V$ sobre $K$ un espacio vectorial y sea $C$ una colección de subespacios vectoriales de $V$ (definidos sobre el mismo campo $K$). Sea $W$ la intersección de los conjuntos vectoriales de $C$. Entonces, ya que cada subespacio vectorial en $C$ contiene al neutro aditivo de $V$, $\mathbf{0}\in W$. Además, sea $a\in K$ y sean $\mathbf{u},\mathbf{v}\in W$, entonces $\mathbf{u},\mathbf{v}$ están en todos los subespacios de la colección $C$, cada uno de los cuales es cerrado por la adición vectorial y por el producto de un vector por un escalar, de donde se sigue que $a\mathbf{u}, a\mathbf{v}$ y $\mathbf{u}+\mathbf{v}$ están en todos los subespacios, por lo cual también están en $W$. Por lo tanto, por la definición de la sección \ref{Def:Subespacio_vectorial}, $W$ es un subespacio vectorial de $V$.
+\end{proof}
+\end{teorema}
+
+\begin{teorema} {1.4.3.2} Sea $Z$ un subespacio vectorial de $W$ y sea $W$, a su vez, subespacio vectorial de $V$. Entonces $Z$ es un subespacio vectorial de $V$.
+\end{teorema}
+
+\noindent La demostración del Teorema 1.4.3.2 se deja como ejercicio. Este último teorema nos muestra otra analogía válida entre subconjuntos y subespacios vectoriales, ya que si $A \subset B$ y $B\subset C \implies A\subset C$.
+
+\subsubsection{Suma y suma directa de espacios vectoriales}
+
+\begin{tcolorbox}
+\underline{Def.} Sean $S_1$ y $S_2$ subespacios de un espacio vectorial $V$. Definimos a la \emph{suma de los subespacios vectoriales} $S_1$ y $S_2$ como el espacio vectorial definido por $S_1+S_2=\{\mathbf{x}+\mathbf{y}\mathop|\mathop \mathbf{x}\in S_1, \mathbf{y}\in S_2\}$\footnote{Aquí se sobreentiende que $S_1, S_2$ y $S_1+S_2$ están definidos sobre el mismo campo.}.
+
+\vspace{3mm}
+
+\underline{Def.} Si, además, se cumple que $S_1+S_2=V$ y $S_1 \cap S_2 = \{\mathbf{0}\}$, decimos que el espacio vectorial $V$ es la \emph{suma directa} de $S_1$ y $S_2$, lo cual denotamos como $S_1\oplus S_2=V$.
+\end{tcolorbox}
+
+La operación de suma entre subespacios vectoriales en realidad es una suma entre sus \emph{conjuntos vectoriales} \textemdash así como la intersección de dos espacios vectoriales es en realidad una intersección de los conjuntos vectoriales\textemdash; el conjunto resultante de la suma forma un espacio vectorial sobre el mismo campo que define a los subespacios. Observemos que la definición de suma vectorial pide que $S_1$ y $S_2$ sean \emph{subespacios} de un espacio vectorial $V$, y no sólo espacios vectoriales arbitrarios: esto asegura que su suma $S_1+S_2$ también sea un espacio vectorial.
+
+Por otro lado, una suma directa de la forma $V_1\oplus V_2\oplus...\oplus V_n=W$ nos da la sensación de que, en cierto sentido, el espacio vectorial $W$ se puede \emph{descomponer} en sus subespacios $V_1, V_2,...,V_n$, dado que el único elemento común entre cualesquiera de estos dos subespacios es el neutro aditivo (vector nulo).
+
+\vspace{3mm}
+
+Para dar un ejemplo: sea $C$ el espacio vectorial de todas las funciones constantes $f(x) = c$ con $c\in\mathbb{R}$, y sea $D$ el de todas las funciones de la forma $f(x) = d x$ para algún $d\in\mathbb{R}$. Sea $P^n$ el espacio vectorial de todos los polinomios de grado $n$, es decir, de todas las funciones con regla de correspondencia $f(x) = c_0 x^1 + c_1 x^1 + ... + c_n x^n$ con $c_i\in\mathbb{R}$, entonces $C\oplus D = P^1$ (de hecho, nótese que $P^0=C$ por lo cual pudimos haber escrito $P^0\oplus D=P^1$ de manera equivalente).
+
+\vspace{3mm}
+
+Volveremos a esta idea de \emph{descomponer un espacio vectorial como una suma directa de sus subespacios vectoriales} más adelante en el curso. Antes de eso, debemos ver otro tipo de operación de los espacios vectoriales, la cual se realiza entre dos vectores y da como resultado un escalar.
+
+\end{document}

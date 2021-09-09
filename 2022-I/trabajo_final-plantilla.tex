@@ -1,0 +1,84 @@
+\documentclass[letterpaper,12pt]{article}
+\usepackage{tabularx}
+\usepackage{amsmath}  
+\usepackage{amssymb} 
+\usepackage{amsthm}
+\usepackage{graphicx}
+\usepackage[margin=1in,letterpaper]{geometry}
+\usepackage{cite}
+\usepackage[final]{hyperref}
+\hypersetup{
+	colorlinks=true,       % falso: links encuadrados; true: links de color
+	linkcolor=blue,        % color de los links (del artículo)
+	citecolor=blue,        % color de los links (de la bibliografía)
+}
+%++++++++++++++++++++++++++++++++++++++++
+
+% Pueden ignorar todo lo que está arriba de la línea. Sólo importamos paquetes para que sea fácil editar texto matemático. 
+
+\begin{document}
+
+\title{Plantilla} % Aquí va el título de su trabajo
+\author{Javier De Loera} % Aquí su(s) nombre(s)
+\date{\today} % Esto automáticamente agregará la fecha del día en que compilen su documento.
+
+\maketitle
+
+\begin{abstract}
+Un pequeño resumen de lo que se tratará en el documento. ¿Qué se discutirá? ¿Qué resultado sobresale o es el principal? Un ejemplo (como guía solamente): En este artículo hablaremos sobre las nociones de Álgebra Lineal que motivan la teoría de representaciones de grupos finitos; discutiremos su origen, algunos ejemplos donde la representación es inmensamente útil, dos teoremas imprescindibles y, finalmente, una representación aplicada al movimiento de un robot.
+\end{abstract}
+
+
+\section{Introducción}
+
+Aquí hay que motivar brevemente la elección del tema que escogieron. ¿Por qué es relevante/de interés o vale la pena estudiarlo, y para quién? De igual forma, deben incluir lo que es conocido como un "literature review": citar textos donde aparezca y haya sido discutido el problema elegido, y de donde se tomarán las ideas principales. Aquí podrían citar al Poole, por ejemplo, y dar instancias históricas del problema elegido.
+
+
+\section{Preliminares}
+
+Aquí deben hacer un repaso breve de la teoría básica necesaria para desarrollar el texto, por ejemplo, recordando definiciones o teoremas útiles\footnote{La palabra \emph{recordando} implica que en esta sección sólo deberán presentar cosas que ya hayamos visto en el curso.}. Sean prudentes: no es necesario definir lo que es una matriz, un vector, etc. Pero, por ejemplo, si usaran la definición del determinante de una matriz $A$ dada por 
+\[
+    det(A) = \sum_{\sigma \in S_n} (sgn(\sigma)\prod{a_{i,\sigma_i}}),
+\]
+sería bueno esclarecer (brevemente) quién es $S_n$. En ese caso, podrían poner algo como: ``Recordemos que el determinante de una matriz $A$ de $n\times n$ se define de la siguiente forma, donde $S_n$ es el grupo de las permutaciones del conjunto $\{1, 2, \dots, n\}$, y $[A]_{i,j} := a_{i,j}$ \cite{Poole}". 
+\section{Resultados (texto principal)}
+
+Esta es la parte principal del texto. Aquí deberán desarrollar el tema elegido, citando los teoremas que usarán y, si es lo que quieren hacer, demostrarlos. Este es el espacio para que expongan el cuerpo de su artículo.
+
+\section{Conclusiones}
+
+Un breve resumen de lo discutido. No es estrictamente necesario, en especial para este tipo de trabajos, pero podrían simplemente incluir una breve reafirmación de la utilidad o importancia del tema elegido, así como de su esencia. 
+
+
+\section{Trabajo a futuro}
+
+Normalmente un artículo termina con preguntas que quedaron abiertas durante el trabajo de investigación y propone futuras direcciones para seguir desarrollando el tema. En este caso, valdría la pena que hablen de otras aplicaciones alrededor de la misma técnica que eligieron, o hacer referencia a algún tema relacionado que les gustaría explorar.
+
+\begin{thebibliography}{100}
+
+\bibitem{Poole}
+Aquí hay que poner la cita del texto de Poole, con la información de su edición, editorial, año de publicación, etcétera. Si hacen referencia a algún artículo publicado, también deberán poner la cita en esta sección.
+
+\bibitem{Citas}
+Para citar un artículo científico o libro, deberán seguir el mismo formato que se presenta a continuación para cada tipo de texto. Después de cada formato, ponemos un ejemplo correspondiente.
+
+\bibitem{ApellidoAutorPrincipalArtículo}
+Inicial(es)1. Apellido1, Inicial(es)2. Apellido2, ... y Inicial(es)$n$. Apellido$n$, ``Título del artículo", Título. Abreviado. Revista.\footnote{Los títulos abreviados de la revista los pueden encontrar aquí: \url{https://www.library.caltech.edu/journal-title-abbreviations}.}, \textbf{Volumen} (número), páginainicial-páginafinal (año).
+
+\bibitem{Welsh} D. J. A. Welsh y C. Merino, ``The Potts model and the Tutte polynomial", J. Math. Phys., \textbf{41}, 1127-1152 (2000).
+
+\bibitem{ApellidoAutorPrincipalLibro}
+Inicial(es)1. Apellido1, Inicial(es)2. Apellido2, ... y Inicial(es)n. Apellidon, \textit{Título del libro} (Casa editorial, lugar de impresión, año), Vol., Cap., Sec., p. páginainicial-páginafinal.
+
+\bibitem{Friedberg}
+S. H. Friedberg, A. J. Insel y L. E. Spence, \textit{Linear Algebra} (Pearson, EUA, 2002), cap. 5, sec. 2, p. 273-274.
+
+
+\end{thebibliography}
+
+%NOTA: La edición de este texto es sólo una sugerencia. En general pueden no incluir los títulos de las secciones si así lo prefieren, pero la estructura de su texto sí debe respetar lo más posible la que presento aquí. Hay muchísima documentación para editar TeX, pero una herramienta relativamente útil es https://detexify.kirelabs.org/classify.html , donde pueden dibujar símbolos partículares y obtener su código asociado instantánemanente.   ¡Mucho éxito!
+
+
+
+\end{document}
+ 
