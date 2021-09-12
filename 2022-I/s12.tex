@@ -4,11 +4,11 @@
 
 \section{Producto escalar (punto), norma, interpretación geométrica del producto escalar: proyecciones y ortogonalidad, producto vectorial (cruz)* y triple producto escalar*} \label{Sec:2}
 
-\subsection{Producto escalar} \label{Subsec:Producto_escalar}
+\subsection*{Producto escalar} \label{Subsec:Producto_escalar}
 
 Algunos espacios vectoriales están dotados de una operación entre vectores que da como resultado un escalar conocida como \emph{producto escalar}. En estos espacios, dicha operación tiene una gran riqueza geométrica, la cual nos permite tener nociones como ortogonalidad y magnitud \textemdash y generalizarlas a espacios vectoriales más abstractos, como veremos a lo largo de esta sección\footnote{En el último módulo del curso regresaremos a este tipo de espacios para descubrir más secretos del producto escalar.}.
 
-\subsubsection{Definición de producto escalar (punto)} \label{Def:Producto_escalar}
+\subsubsection*{Definición de producto escalar (punto)} \label{Def:Producto_escalar}
 
 \begin{tcolorbox}
 \underline{Def.} Sea $V$ sobre $K$ un espacio vectorial, con $\mathbf{u},\mathbf{v},\mathbf{w}\in V$ y $a\in K$. El \textit{producto escalar} $\langle\cdot\mathop ,\cdot\rangle:V\times V\rightarrow K$ le asocia a cualquier par ordenado de vectores en $V$ un escalar en $K$, y cumple las tres propiedades siguientes:
@@ -43,7 +43,7 @@ A partir de la definición, observemos lo siguiente:
 \end{itemize}
 
 
-\subsubsection{Ejemplos de producto escalar en espacios vectoriales} \label{Ejem:Producto_escalar}
+\subsubsection*{Ejemplos de producto escalar en espacios vectoriales} \label{Ejem:Producto_escalar}
 
 En $\mathbb{R}^2$ el producto escalar se define como $\begin{pmatrix}u_1\\u_2\end{pmatrix}\cdot\begin{pmatrix}v_1\\v_2\end{pmatrix} \equiv u_1v_1+u_2v_2$, donde hemos utilizado la notación de punto, ya que los vectores son 2-tuplas. En general, en el espacio vectorial real $\mathbb{R}^n$ el producto escalar se define como
 
@@ -70,7 +70,7 @@ Observemos que, como muestra el último ejemplo, se puede definir un producto es
 Para ver más ejemplos de productos escalares pueden revisar \emph{Linear Algebra} de Friedberg (págs. 330-331), \textit{Linear Algebra: A Modern Introduction} de Poole\footnote{Ten en cuenta que algunos libros introducen el producto escalar (al cual pueden llamar producto punto) únicamente con espacios vectoriales reales, y lo generalizan a espacios vectoriales complejos en secciones posteriores.} (págs. 531-534), etc.
 
 
-\subsubsection{Propiedades del producto escalar} \label{Prop:Producto_escalar}
+\subsubsection*{Propiedades del producto escalar} \label{Prop:Producto_escalar}
 
 Como resumen, a partir de la definición dada en la sección \ref{Def:Producto_escalar}, podemos ver que las principales propiedades del producto escalar son:
 
@@ -85,11 +85,11 @@ Como resumen, a partir de la definición dada en la sección \ref{Def:Producto_e
 En particular, el producto escalar definido \underline{sobre un espacio vectorial real} es una operación lineal en ambas entradas (o \emph{bilineal}), es decir, que $$\langle a_1\mathbf{u_1}+...+a_n\mathbf{u_n},\mathbf{v}\rangle=a_1\langle\mathbf{u_1},\mathbf{v}\rangle+...+a_n\langle\mathbf{u_n},\mathbf{v}\rangle\hspace{1mm}$$ \noindent y $$\langle\mathbf{u},b_1\mathbf{v_1}+...+b_n\mathbf{v_n}\rangle=b_1\langle\mathbf{u},\mathbf{v_1}\rangle+...+b_n\langle\mathbf{u},\mathbf{v_n}\rangle.$$
 
 \newpage
-\subsection{Norma} \label{Subsec:Norma}
+\subsection*{Norma} \label{Subsec:Norma}
 
 Otro tipo de operación que se puede definir sobre un espacio vectorial es la \emph{norma}, que toma un sólo vector del espacio y devuelve un escalar del campo. La norma, en general, dota a los vectores de un espacio de un cierto sentido de \emph{magnitud} mediante el cual se puede comparar a distintos vectores. Como veremos en esta sección, si un espacio vectorial tiene un producto escalar positivo definido (dotando al espacio de las nociones de proyecciones y ortogonalidad que ya vimos en la sec. \ref{Subsec:Interpretación geométrica del producto escalar}), entonces se puede definir una norma sobre el espacio a partir de dicho producto escalar; sin embargo, no es necesario que una norma provenga de un producto escalar, y es posible que existan normas (y, por tanto, ciertas nociones de magnitud) en espacios vectoriales \emph{sin} producto escalar.
 
-\subsubsection{Definición de norma} \label{Def:Norma}
+\subsubsection*{Definición de norma} \label{Def:Norma}
 
 \begin{tcolorbox}
 \underline{Def.} Una \textit{norma} es una operación $||\cdot||:V\rightarrow K$ que toma sólo un vector y devuelve un escalar, y que cumple las siguientes propiedades:
@@ -107,7 +107,7 @@ Otro tipo de operación que se puede definir sobre un espacio vectorial es la \e
 \vspace{3mm}
 \noindent A partir de la definición anterior podemos demostrar que la norma es positivo definida; es decir que, además de que el único vector con norma igual a $0$ es el vector nulo, todos los vectores no nulos tienen norma positiva.
 
-\begin{corolario} {2.2.1.1}
+\begin{coro} {2.2.1.1}
     Sea $V$ un espacio vectorial con una norma $||\cdot ||$, entonces $\hspace{1.5mm}\forall\hspace{1.5mm} \mathbf{v}\in V$ con $\mathbf{v}\neq\mathbf{0}$ se cumple que $||\mathbf{v}||>0.$
 
 \begin{proof}
@@ -119,9 +119,9 @@ Otro tipo de operación que se puede definir sobre un espacio vectorial es la \e
 
 \end{proof}
 
-\end{corolario}
+\end{coro}
 
-\subsubsection{Ejemplos de norma}
+\subsubsection*{Ejemplos de norma}
 
 Tanto en el espacio vectorial real $\mathbb{R}$ como en el espacio vectorial complejo $\mathbb{C}$ se puede definir una norma como $$||x|| = |x|$$
 
@@ -138,11 +138,11 @@ Para los vectores que son $n-$tuplas, la norma más comunmente utilizada se defi
 
 También, en un espacio vectorial real de funciones reales con integral finita en el intervalo $[a,b]$, podemos definir una norma a partir del producto escalar como $$||f|| = +\sqrt{\langle f,f\rangle} = +\sqrt{\int_a^b f(x)f(x) dx},$$ \noindent siguiendo el último ejemplo de la sección \ref{Ejem:Producto_escalar}. Es fácil demostrar que esta definición cumple con las propiedades de norma (ver sec. \ref{Def:Norma}; se siguen de las propiedades de la integral vistas en Cálculo II). 
 
-\subsubsection{Desigualdad de Cauchy-Schwarz} \label{Teo:Cauchy-Schwarz} 
+\subsubsection*{Desigualdad de Cauchy-Schwarz} \label{Teo:Cauchy-Schwarz} 
 
 Como mencionamos al inicio de esta sección, el proceso anterior de obtener una norma a partir de un producto escalar se puede generalizar para cualquier espacio vectorial con un producto escalar positivo definido, sin importar si dichos espacios vectoriales son reales o complejos. En estos casos, se dice que la norma es \emph{inducida} por un producto escalar positivo definido. Las normas de este tipo serán las más recurrentes durante este curso. El primer paso necesario para demostrar este resultado general es la llamada \emph{desigualdad de Cauchy-Schwarz}, que enunciamos a continuación como teorema. El resto de la demostración se encuentra en los ejercicios de repaso al final de esta sección (ver sec. \ref{Ejer:Norma}).
 
-\begin{teorema} {2.2.3.1} 
+\begin{teo} {2.2.3.1} 
 
     Sea $\langle.\hspace{0.5mm},.\rangle:V\times V\rightarrow K$ un producto escalar positivo definido y sea $||\cdot ||:V\rightarrow K$ una función definida tal que $||\cdot||=+\sqrt{\langle\cdot,\cdot\rangle}$\footnote{Con la ayuda de este teorema, se puede demostrar que esta función $||\cdot ||$ cumple con todas las propiedades de una norma, dadas en la sección \ref{Def:Norma}. Ésta es la llamada \emph{norma euclideana generalizada}.}, entonces para todo $\mathbf{u},\mathbf{v}\in V$ se cumple que $|\langle\mathbf{u},\mathbf{v}\rangle|\leq ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||$.
 
@@ -152,12 +152,12 @@ Como mencionamos al inicio de esta sección, el proceso anterior de obtener una 
     Sabemos que para cualquier $a\in K$ se cumple que $$0\leq ||\mathbf{u}-a\mathbf{v}||^2 = \langle\mathbf{u}-a\mathbf{v},\mathbf{u}-a\mathbf{v}\rangle= \langle\mathbf{u},\mathbf{u}-a\mathbf{v}\rangle-a\langle\mathbf{v},\mathbf{u}-a\mathbf{v}\rangle=$$ $$\langle\mathbf{u},\mathbf{u}\rangle-\overline{a}\langle\mathbf{u},\mathbf{v}\rangle-a(\langle\mathbf{v},\mathbf{u}\rangle-\overline{a}\langle\mathbf{v},\mathbf{v})\rangle=\langle\mathbf{u},\mathbf{u}\rangle-\overline{a}\langle\mathbf{u},\mathbf{v}\rangle-a\langle\mathbf{v},\mathbf{u}\rangle+a\overline{a}\langle\mathbf{v},\mathbf{v}\rangle.$$ \noindent En particular, tomando $a=\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}$ y sustituyendo en la desigualdad anterior, obtenemos que $$0\leq\langle\mathbf{u},\mathbf{u}\rangle-\frac{\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{u},\mathbf{v}\rangle-\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{v},\mathbf{u}\rangle+\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\frac{\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{v},\mathbf{v}\rangle=$$ $$\langle\mathbf{u},\mathbf{u}\rangle-2\frac{\langle\mathbf{u},\mathbf{v}\rangle\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}+\frac{\langle\mathbf{u},\mathbf{v}\rangle\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}=||\mathbf{u}||^2-\frac{|\langle\mathbf{u},\mathbf{v}\rangle|^2}{||\mathbf{v}||^2}\implies$$ $$0\leq ||\mathbf{u}||^2-\frac{|\langle\mathbf{u},\mathbf{v}\rangle|^2}{||\mathbf{v}||^2}\implies \frac{|\langle\mathbf{u},\mathbf{v}\rangle|^2}{||\mathbf{v}||^2}\leq ||\mathbf{u}||^2\implies|\langle\mathbf{u},\mathbf{v}\rangle|^2\leq ||\mathbf{u}||^2\hspace{0.5mm}||\mathbf{v}||^2\implies|\langle\mathbf{u},\mathbf{v}\rangle|\leq ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||.$$
 
 \end{proof}
-\end{teorema}
+\end{teo}
 
 \newpage
-\subsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}\label{Subsec:Interpretación geométrica del producto escalar} 
+\subsection*{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}\label{Subsec:Interpretación geométrica del producto escalar} 
 
-\subsubsection{Producto escalar y proyecciones} \label{Subsec:Producto_escalar_y_proyecciones}
+\subsubsection*{Producto escalar y proyecciones} \label{Subsec:Producto_escalar_y_proyecciones}
 
 Como quizás aprendiste en tus cursos de Geometría Analítica y/o Mecánica Vectorial, el producto escalar entre vectores de $\mathbb{R}^2$ tiene una definición geométrica dada por $$\langle\mathbf{u},\mathbf{v}\rangle\equiv ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos{\theta}=||\mathbf{v}||\hspace{0.5mm} ||\mathbf{u}||\cos{\theta},$$ \noindent donde $\theta$ es el ángulo positivo más chico entre $\mathbf{u}$ y $\mathbf{v}$; esta definición es equivalente a la algebráica dada al principio de la sección \ref{Ejem:Producto_escalar}. El producto $||\mathbf{u}||\cos{\theta}$ es igual a la \emph{proyección escalar} del vector $\mathbf{u}$ sobre el vector $\mathbf{v}$. Si escribimos dicha proyección escalar como $P_{\mathbf{v}}(\mathbf{u})$, tenemos que
 
@@ -241,7 +241,7 @@ Sin embargo, al generalizar esta operación a cualquier tipo de espacios vectori
  
 \end{tcolorbox}
 
-\subsubsection{Ortogonalidad}
+\subsubsection*{Ortogonalidad}
 
 Por otro lado, ya que $\cos(\frac{\pi}{2})=0$, podemos ver directamente que, si dos vectores en $\mathbb{R}^2$ son perpendiculares entre sí en el plano, su producto escalar será cero. Esto significaría que la proyección de cualquiera de estos vectores sobre el otro sería nula \textemdash lo cual, en el plano cartesiano, es sinónimo de que los vectores sean perpendiculares\textemdash \hspace{0.5mm}; más generalmente, a esta propiedad se le conoce como \emph{ortogonalidad}, y siempre se asocia con un producto escalar nulo por razones que veremos más adelante.
 
@@ -257,7 +257,7 @@ Por otro lado, ya que $\cos(\frac{\pi}{2})=0$, podemos ver directamente que, si 
 
 Por ejemplo, en $\mathbb{R}^3, \begin{pmatrix} 2 & 3 & 1 \end{pmatrix}\perp\begin{pmatrix} -4 & 2 & 2 \end{pmatrix}$, ó $\begin{pmatrix} 2 & 3 & 1 \end{pmatrix}\perp\begin{pmatrix} -8 & 4 & 4 \end{pmatrix}$; además, el subconjunto $\{\begin{pmatrix} 5  & 0 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 7 & 0 \end{pmatrix}, \begin{pmatrix} 0 & 0 & -4 \end{pmatrix}\}$ es ortogonal. En cambio, en el espacio de funciones polinomiales reales $P^2$ restringido al intervalo $[-1,1]$, donde definimos el producto escalar como $\langle f,g\rangle\equiv \int_{-1}^{1}f(x)g(x)\hspace{1mm} dx$, el conjunto $\{1,x,\frac{1}{2}(3x^2-1)\}$ es ortogonal (¿podrás comprobarlo?).
 
-\subsubsection{Vectores unitarios}
+\subsubsection*{Vectores unitarios}
 
 Nótese por la definición dada en \ref{Def:Vectores_ortogonales_y_subconjunto_ortogonal} y las propiedades del producto escalar que, si dos vectores son ortogonales, entonces reescalar cualquiera de ellos no afecta a su ortogonalidad. Además, notemos que la definición geométrica del producto escalar para vectores en $\mathbb{R}^2$ se simplifica cuando la norma de los vectores es uno. De hecho, como veremos más adelante, este tipo de vectores en general pueden simplificar muchas expresiones de operaciones realizadas en espacios vectoriales, por lo cual les damos un nombre especial.
 
@@ -296,11 +296,11 @@ Observemos que podemos utilizar la notación usual de vector unitario para reesc
     P_{\mathbf{v}}(\mathbf{u}) \ \hat{\mathbf{v}}
 ,\] \noindent donde $P_{\mathbf{v}}(\mathbf{u})$ es la proyección \emph{escalar}  de $\mathbf{u}$ sobre $\mathbf{v}$.
 
-\subsection{Producto vectorial (cruz)*} 
+\subsection*{Producto vectorial (cruz)*} 
 
 El producto vectorial es una operación de gran utilidad, principalmente en algunas ramas de la física clásica (en las cuales se trabaja con vectores en $\mathbb{R}^3$), y tiene una interpretación geométrica bastante rica, por lo cual se menciona brevemente en estas notas. En esta sección también se mencionan por primera vez los temas de matrices, determinantes y vectores canónicos, los cuales asumo que ya debes conocer, aunque más adelante en el curso los repasaremos.
 
-\subsubsection{Definición del producto vectorial (cruz)} \label{Def:Producto_vectorial}
+\subsubsection*{Definición del producto vectorial (cruz)} \label{Def:Producto_vectorial}
 
 En $\mathbb{R}^3$ se puede definir una operación entre dos vectores que da como resultado un tercer vector, el cual es ortogonal a los dos anteriores. A esta operación se le conoce como \emph{producto vectorial}.
 
@@ -321,7 +321,7 @@ $$\mathbf{r}\times\mathbf{s} = \text{det} \begin{vmatrix} \mathbf{i}&\mathbf{j}&
 
 Geométricamente, si nombramos como $\theta$ el menor ángulo de separación positivo entre dos vectores $\mathbf{r}$ y $\mathbf{s}\in\mathbb{R}^3$, entonces podemos hacer la definición equivalente $\mathbf{r}\times\mathbf{s}=||\mathbf{r}|| \hspace{0.5mm}  ||\mathbf{s}||\sin\theta$. En este caso, la magnitud del vector resultante de hacer el producto vectorial $\mathbf{r}\times\mathbf{s}$ se interpreta como la magnitud del área del paralelogramo formado por los vectores $\mathbf{r}$ y $\mathbf{s}$. De aquí se sigue que el producto vectorial de dos vectores ortogonales sea igual al producto de sus normas, mientras que el producto cruz de dos vectores colineales sea $0$ (en particular, el producto cruz de cualquier vector consigo mismo es igual a $0$). Además, de ambas definiciones (algebráica y geométrica) se sigue que el producto vectorial de cualquier vector en $\mathbb{R}^3$ con el vector nulo ($\mathbf{0}$) sea $\mathbf{0}$.
 
-\subsubsection{Propiedades del producto vectorial (cruz)} \label{Prop:Producto_vectorial}
+\subsubsection*{Propiedades del producto vectorial (cruz)} \label{Prop:Producto_vectorial}
 
 Las siguientes propiedades son fáciles de demostrar para cualesquiera $\mathbf{r},\mathbf{s},\mathbf{t}\in\mathbb{R}^3$ a partir de la definición de la sección \ref{Def:Producto_vectorial} (¡inténtalo!):
 
@@ -337,11 +337,11 @@ Las siguientes propiedades son fáciles de demostrar para cualesquiera $\mathbf{
 
 
 
-\subsection{Triple producto escalar*}
+\subsection*{Triple producto escalar*}
 
 Al unir el producto escalar con el producto vectorial, se obtiene una operación llamada \emph{triple producto escalar} entre tres vectores, que da como resultado un escalar. La magnitud del triple producto escalar se interpreta geométricamente como la magnitud del volumen del paralelepípedo formado por los tres vectores.
 
-\subsubsection{Definición de triple producto escalar}
+\subsubsection*{Definición de triple producto escalar}
 \begin{tcolorbox}
 \underline{Def.} El \emph{triple producto escalar} entre tres vectores $\mathbf{r},\mathbf{s},\mathbf{t}\in\mathbb{R}^3$ se define como
 
@@ -360,7 +360,7 @@ $$\mathbf{r}\cdot\mathbf{s}\times\mathbf{t} = \begin{vmatrix} r_1&r_2&r_3 \\ s_1
 
 
 
-\subsubsection{Propiedades del triple producto escalar} \label{Prop:Triple_producto_escalar}
+\subsubsection*{Propiedades del triple producto escalar} \label{Prop:Triple_producto_escalar}
 
 \begin{center}
 \begin{tabular}{lr}
@@ -372,9 +372,9 @@ $$\mathbf{r}\cdot\mathbf{s}\times\mathbf{t} = \begin{vmatrix} r_1&r_2&r_3 \\ s_1
 
 Nota: también se puede definir un \emph{triple producto vectorial} entre tres vectores que da como resultado un vector como $\mathbf{r}\times\mathbf{s}\times\mathbf{t}$. Éste es de gran utilidad para hacer demostraciones de algunas identidades de cálculo vectorial en $\mathbb{R}^3$.
 
-\subsection{Ejercicios de repaso}
+\subsection*{Ejercicios de repaso}
 
-\subsubsection{Producto escalar} \label{Ejer:Producto_escalar} 
+\subsubsection*{Producto escalar} \label{Ejer:Producto_escalar} 
 
 \begin{enumerate}
     \item Sean las funciones $f(x)=\frac{x}{40.5}, g(x)=\frac{x^2}{243}$ y $h(x)=\frac{1}{9}$ definidas con dominio $[0,9]$. Calcula el producto escalar entre estas funciones (sin contar productos escalares de la forma $\langle f , f \rangle$) utilizando la definición vista en la sección \ref{Ejem:Producto_escalar}.
@@ -383,7 +383,7 @@ Nota: también se puede definir un \emph{triple producto vectorial} entre tres v
     \item Sea $\mathbb{C}^2$ un espacio vectorial complejo con $\mathbf{q},\mathbf{r}\in\mathbb{C}^2$. Explica cuál(es) de las propiedades de la sección \ref{Prop:Producto_escalar} no se cumpliría(n) si definiéramos el producto escalar en este espacio vectorial ingenuamente como $\mathbf{q}\cdot\mathbf{r}=\sum_{i=1}^n q_ir_i$  con $n=2$ (nótese que esta misma definición de producto escalar nos generaría problemas al intentar usarla para definir una norma en este espacio). 
 \end{enumerate}
 
-\subsubsection{Norma} \label{Ejer:Norma}
+\subsubsection*{Norma} \label{Ejer:Norma}
 
 \begin{enumerate}
     \item Calcula la norma de las funciones dadas en el primer ejercicio de la sección \ref{Ejer:Producto_escalar}. (Nota: utiliza la norma inducida por ese mismo producto escalar.) 
@@ -392,21 +392,21 @@ Nota: también se puede definir un \emph{triple producto vectorial} entre tres v
     \item Demuestra la desigualdad del triángulo $||\mathbf{a}+\mathbf{b}|| \leq ||\mathbf{a}||+||\mathbf{b}||$ para cualesquiera dos vectores en un espacio $V$ con producto escalar positivo definido donde la norma $||\mathbf{a}||\equiv+\sqrt{(\mathbf{a},\mathbf{a})}\hspace{3mm}\forall\hspace{1.5mm} \mathbf{a}\in V$ (pista: usa la desigualdad de Cauchy-Schwarz)\footnote{Con esto habrás demostrado que a partir de cualquier producto escalar positivo definido $(\mathbf{a},\mathbf{b})$ se puede definir una norma como $||\mathbf{a}|| = +\sqrt{(\mathbf{a},\mathbf{a})}.$}. Argumenta e ilustra su interpretación geométrica para dos vectores cualesquiera de $\mathbb{R}^2$. 
 \end{enumerate}
 
-\subsubsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}
+\subsubsection*{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}
 \begin{enumerate}
 \item Sea $\mathbf{v}\in\mathbb{R}^2$ no-nulo. Prueba que el conjunto $\{\mathbf{u}\in\mathbb{R}^2\hspace{0.5mm} |\hspace{0.5mm} \langle\mathbf{u},\mathbf{v}\rangle =0\}$ es una recta que pasa por el origen y llévala a una expresión de la forma $ax+by=c.$ 
     \item Sean $\mathbf{v}=\begin{pmatrix} v_1 & v_2 \end{pmatrix}, \mathbf{u}=\begin{pmatrix}u_1 & u_2 \end{pmatrix}$ vectores del espacio real $\mathbb{R}^2.$ Deduce que $\mathbf{u}\cdot\mathbf{v}=u_1v_1+u_2v_2=||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos(\theta)$, donde $\theta$ es el ángulo mínimo entre ambos vectores en el plano cartesiano. (Nota: supon que ambos vectores son no nulos y encuentra al escalar $k\in\mathbb{R}$ tal que $\langle\mathbf{u},\mathbf{u}-k\mathbf{v}\rangle=0$. ¿Por qué es especial este escalar?) 
     \item Define a los vectores $\mathbf{u}=\begin{pmatrix} a_1 & a_2 \end{pmatrix}, \mathbf{v}=\begin{pmatrix} a_3 & a_4\end{pmatrix}$ y $\mathbf{w}=\begin{pmatrix} a_5 & a_6\end{pmatrix}\in\mathbb{R}^2,$ donde $a_i$ corresponde al $i$-ésimo dígito de tu número de cuenta. Explica gométricamente el hecho de que $\langle\mathbf{u}+\mathbf{v},\mathbf{w}\rangle=\langle\mathbf{u},\mathbf{w}\rangle+\langle\mathbf{v},\mathbf{w}\rangle$, en términos de las proyecciones discutidas en la sección \ref{Subsec:Interpretación geométrica del producto escalar} (Nota: recuerda la Ley del paralelogramo). 
 \end{enumerate}
 
-\subsubsection{Producto vectorial (cruz)*}
+\subsubsection*{Producto vectorial (cruz)*}
 
 \begin{enumerate}
     \item Demuestra las propiedades del producto vectorial de la sección \ref{Prop:Producto_vectorial}. Además, da una interpretación geométrica para la primera, tercera y cuarta propiedad enlistadas. (Nota: si quieres hacer estas demostraciones utilizando una notación condensada, te recomiendo investigar acerca del símbolo de Levi-Civita el cual, junto con la delta de Kronecker, facilitan la escritura de muchas demostraciones de cálculo vectorial, entre otras áreas de las matemáticas.) 
 %    \item Da una definición de un producto cruz entre vectores de $\mathbb{C}^3$ tal que se mantengan las propiedades vistas en la sección \ref{Prop:Producto_vectorial}.
 \end{enumerate}
 
-\subsubsection{Triple producto escalar*}
+\subsubsection*{Triple producto escalar*}
 
 \begin{enumerate}
     \item Demuestra las propiedades del triple producto escalar de la sección \ref{Prop:Triple_producto_escalar}. 
@@ -438,13 +438,13 @@ Nota: también se puede definir un \emph{triple producto vectorial} entre tres v
 
 \end{tcolorbox}
 
-\subsection{Ortogonalización y ortonormalización} \label{Subsec:Ortogonalización y ortonormalización}
+\subsection*{Ortogonalización y ortonormalización} \label{Subsec:Ortogonalización y ortonormalización}
 
 Recordemos de la sección \ref{Subsec:Interpretación geométrica del producto escalar} que dos vectores $\mathbf{u}$ y $\mathbf{v}$ son ortogonales si $\langle\mathbf{u},\mathbf{v}\rangle=0$. Supongamos que este no es el caso, i.e., que $\langle\mathbf{u},\mathbf{v}\rangle\neq 0$\footnote{Aquí implícitamente estamos asumiendo que $\mathbf{u}$ y $\mathbf{v}$ son vectores no nulos ya que, por definición, el producto escalar \emph{distingue} al vector nulo (ver sec. \ref{Def:Producto_escalar}).}. Existe una manera de modificar cualquiera de los vectores de tal forma que se vuelva ortogonal al otro: simplemente definimos $\mathbf{u'}=\mathbf{u}-\langle\mathbf{u},\mathbf{v}\rangle\frac{\mathbf{v}}{||\mathbf{v}||^2}$ y comprobamos que $$\langle\mathbf{u'},\mathbf{v}\rangle=\big\langle\mathbf{u}-\langle\mathbf{u},\mathbf{v}\rangle\frac{\mathbf{v}}{||\mathbf{v}||^2},\mathbf{v}\big\rangle=\langle\mathbf{u},\mathbf{v}\rangle-\big\langle\frac{\langle\mathbf{u},\mathbf{v}\rangle}{||\mathbf{v}||^2}\mathbf{v},\mathbf{v}\big\rangle=\langle\mathbf{u},\mathbf{v}\rangle-\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{v},\mathbf{v}\rangle=\langle\mathbf{u},\mathbf{v}\rangle-\langle\mathbf{u},\mathbf{v}\rangle\cdot 1=0.$$ 
 
 A esto se le conoce como un proceso de \emph{ortogonalización}. Observemos que, si $\mathbf{v}$ es un vector unitario (i.e., si $||\mathbf{v}||=1$) entonces la definición de $\mathbf{u'}$ se reduce a $\mathbf{u'}=\mathbf{u}-\langle\mathbf{u},\mathbf{v}\rangle\mathbf{v}$, simplificando el proceso. Por razones que irán quedando más claras con la experiencia, a menudo es conveniente trabajar con bases de vectores que sean ortogonales entre sí y, en casos específicos, que además sean unitarios, por lo cual damos las siguientes definiciones..
 
-\subsubsection{Definiciones}
+\subsubsection*{Definiciones}
 
 \begin{tcolorbox}
 
@@ -458,7 +458,7 @@ A esto se le conoce como un proceso de \emph{ortogonalización}. Observemos que,
 
 Antes de ver cómo podemos construir bases ortogonales y ortonormales, el siguiente teorema y corolario nos ayudarán a comenzar a entender su utilidad.
 
-\begin{teorema} {4.3.1.1} \label{Teo:4.3.1.1}
+\begin{teo} {4.3.1.1} \label{Teo:4.3.1.1}
     Sea $V$ sobre $K$ un espacio vectorial con producto escalar y $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}$ un subconjunto ortogonal de $V$ con $\mathbf{v}_i\neq\mathbf{0}\hspace{3mm}\forall\hspace{1.5mm} 1\leq i\leq n.$ Si $\mathbf{u}\in \langle S \rangle \implies$ $$\mathbf{u} = \sum_{i=1}^n \frac{\langle\mathbf{u},\mathbf{v}_i\rangle}{||\mathbf{v}_i||^2}\mathbf{v}_i=\sum_{i=1}^n P_{\mathbf{v}_i}(\mathbf{u})\frac{\mathbf{v}_i}{||\mathbf{v}_i||}.$$
 
 \begin{proof}
@@ -473,9 +473,9 @@ Habíamos visto con anterioridad que cualquier vector puede ser expresado como u
         \mathbf{u} = \sum_{i=1}^n \langle\mathbf{u},\mathbf{v}_i\rangle\mathbf{v}_i
     .\] \noindent Por lo tanto, si aplicamos el Teorema 4.3.1.1 a una base ortonormal $N$, los coeficientes mencionados en el párrafo anterior son simplemente el producto escalar del vector $\mathbf{u}$ con cada vector de la base ortonormal.
 
-\end{teorema}
+\end{teo}
 
-\begin{corolario} {4.3.1.2}
+\begin{coro} {4.3.1.2}
 Sea $V$ sobre $K$ un espacio vectorial con producto interior y $S$ un subconjunto ortogonal con vectores no nulos, entonces $S$ es linealmente independiente.
 
 \begin{proof}
@@ -483,13 +483,13 @@ Sea $V$ sobre $K$ un espacio vectorial con producto interior y $S$ un subconjunt
 \end{proof}
 
 Observemos que este corolario es una genearlización del primer ejercicio de repaso de la sección 3. Además, este corolario y el teorema del cual se desprende nos dicen que los conjuntos ortogonales son buenos candidatos para bases, ya que son linealmente independientes y el cálculo de los coeficientes $c_i$ es sumamente sencillo. En particular, aplicando este corolario a los conjuntos ortogonales vemos que, si $V$ es un espacio vectorial de dimensión $n$, entonces cualquier conjunto ortogonal de $n$ vectores es una base de $V$ (ver teorema 4.2.3). 
-\end{corolario}
+\end{coro}
 
 Así como a partir de cualquier conjunto linealmente independiente de un espacio vectorial $V$ se puede construir una base para $V$ se puede, además, realizar un proceso de \emph{ortogonalización} u \emph{ortonormalización} de esa misma base. La demostración de este hecho\textemdash que también nos deletrea el proceso a seguir para lograrlo\textemdash \hspace{0.5mm} se conoce como el Teorema de Gram-Schmidt.
 
-\subsubsection{Teorema de Gram-Schmidt} \label{Teo:Gram-Schmidt}
+\subsubsection*{Teorema de Gram-Schmidt} \label{Teo:Gram-Schmidt}
 
-\begin{teorema} {4.3.2.1 (Gram-Schmidt)}
+\begin{teo} {4.3.2.1 (Gram-Schmidt)}
     Sea $V$ sobre $K$ un espacio vectorial y $S=\{\mathbf{u}_1, ..., \mathbf{u}_n\}$ un subconjunto linealmente independiente de $V$. Si definimos al conjunto $S'=\{\mathbf{v}_1, ..., \mathbf{v}_n\}$ de tal forma que $\mathbf{v}_1=\mathbf{u}_1$ y $$\mathbf{v}_k=\mathbf{u}_k-\sum_{j=1}^{k-1}\frac{\langle\mathbf{u}_k,\mathbf{v}_j\rangle}{||\mathbf{v}_j||^2} \mathbf{v}_j=\mathbf{u}_k-\sum_{j=1}^{k-1} P_{\mathbf{v}_j}(\mathbf{u}_k) \frac{\mathbf{v}_j}{||\mathbf{v}_j||},\hspace{3mm 2\leq k\leq n},$$ entonces $S'$ es un subconjunto ortogonal de $V$ tal que $\langle S' \rangle = \langle S \rangle.$
 
 \begin{proof}
@@ -518,11 +518,11 @@ Finalmente, por construcción $S'_k\subseteq \langle S_k \rangle$, lo cual tambi
 
     Además, observemos que se podría modificar ligeramente el procedimiento seguido en el teorema anterior definiendo al primer vector de la nueva base como un vector unitario. Es más, supongamos que definimos un nuevo conjunto generador $N$ con $\mathbf{n}_1=\frac{\mathbf{b}_1}{||\mathbf{b}_1||}$ y después, cada vez que obtenemos un nuevo vector ortogonal a los anteriores siguiendo el proceso del Teorema 4.3.2.1, lo normalizamos antes de añadirlo a $N$: en este caso, el conjunto generador resultante será una base \emph{ortonormal} de $V$. Es decir, podríamos hacer un Teorema de Gram-Scmidt \emph{modificado} de tal forma que a partir de cualquier subconjunto linealmente independiente podamos generar un subconjunto ortonormal que genere al mismo subespacio que el anterior. Aplicado a bases, estaríamos asegurando que a partir de cualquier base $B$ de un espacio vectorial $V$, se puede construir una base ortonormal para $V$, además de detallar el proceso mediante el cual se contstruye dicha base ortonormal.  
 
-\end{teorema}
+\end{teo}
 
-%\subsubsection{Ejemplos de ortogonalización y ortonormalización} 
+%\subsubsection*{Ejemplos de ortogonalización y ortonormalización} 
 
-\subsubsection{Ortogonalización y ortonormalización}
+\subsubsection*{Ortogonalización y ortonormalización}
 \begin{enumerate}
     \item Sea $B$ la base que obtuviste del ejercicio 4.4.1.2. Aplica el Teorema de Gram-Schmidt y construye una base ortogonal de $\mathbb{R}^3$ a partir de $B$. 
     \item Aplica el Teorema de Gram-Schmidt \emph{modificado} y construye una base ortonormal a partir de $B$. 

@@ -6,7 +6,7 @@
 
 En ciertas formas \emph{específicas}, las cuales iremos detallando, los subespacios vectoriales son a los espacios vectoriales lo que los subconjuntos a los conjuntos. Por ejemplo: así como cualquier subconjunto es, en sí mismo, un conjunto, cualquier subespacio vectorial es, en sí mismo, un espacio vectorial.
 
-\subsubsection{Definición de subespacio vectorial} \label{Def:Subespacio_vectorial}
+\subsubsection*{Definición de subespacio vectorial} \label{Def:Subespacio_vectorial}
 
 \begin{tcolorbox}
 \underline{Def.} Sea un conjunto $V$ sobre un campo $K$ un espacio vectorial. Un \textit{subespacio vectorial} de $V$ es un subconjunto $W\subset V$ sobre el campo $K$ con las operaciones de suma vectorial y producto de un vector por un escalar que cumple las propiedades siguientes:
@@ -30,7 +30,7 @@ Observemos que:
     \item Para todo espacio vectorial $V$, $V$ y $\{\mathbf{0}\}$ son subespacios vectoriales de $V$\footnote{Aquí se sobreentiende que los conjuntos $V$ y $\{\mathbf{0}\}$ están definidos como espacios vectoriales sobre el mismo campo $K$ y que $\{\mathbf{0}\}$ representa al espacio vectorial que sólo tiene al vector nulo de $V$ como vector.}.
 \end{itemize}{}
 
-\subsubsection{Ejemplos de subespacios vectoriales}
+\subsubsection*{Ejemplos de subespacios vectoriales}
 
 El conjunto de todos los pares ordenados $\{\begin{pmatrix} x_1&x_2\end{pmatrix}\mathop |\mathop x_1,x_2\in\mathbb{R}\mathop\land\mathop x_1=x_2\}$ es un subespacio vectorial en el espacio vectorial real $\mathbb{R}^2$ (o $\mathbb{R}\times \mathbb{R}$).
 
@@ -48,21 +48,21 @@ El conjunto de todas las funciones reales de clase $C^{\infty}$ es un subespacio
 
 \vspace{3mm}
 
-\subsubsection{Algunos teoremas de subespacios vectoriales} \label{Teo:Subespacios_vectoriales}
+\subsubsection*{Algunos teoremas de subespacios vectoriales} \label{Teo:Subespacios_vectoriales}
 
-\begin{teorema} {1.4.3.1} Cualquier intersección de dos subespacios vectoriales de $V$ es un subespacio vectorial de $V$.
+\begin{teo}\label{teo-2.1} Cualquier intersección de dos subespacios vectoriales de $V$ es un subespacio vectorial de $V$.
 
 \begin{proof}
     Sea $V$ sobre $K$ un espacio vectorial y sea $C$ una colección de subespacios vectoriales de $V$ (definidos sobre el mismo campo $K$). Sea $W$ la intersección de los conjuntos vectoriales de $C$. Entonces, ya que cada subespacio vectorial en $C$ contiene al neutro aditivo de $V$, $\mathbf{0}\in W$. Además, sea $a\in K$ y sean $\mathbf{u},\mathbf{v}\in W$, entonces $\mathbf{u},\mathbf{v}$ están en todos los subespacios de la colección $C$, cada uno de los cuales es cerrado por la adición vectorial y por el producto de un vector por un escalar, de donde se sigue que $a\mathbf{u}, a\mathbf{v}$ y $\mathbf{u}+\mathbf{v}$ están en todos los subespacios, por lo cual también están en $W$. Por lo tanto, por la definición de la sección \ref{Def:Subespacio_vectorial}, $W$ es un subespacio vectorial de $V$.
 \end{proof}
-\end{teorema}
+\end{teo}
 
-\begin{teorema} {1.4.3.2} Sea $Z$ un subespacio vectorial de $W$ y sea $W$, a su vez, subespacio vectorial de $V$. Entonces $Z$ es un subespacio vectorial de $V$.
-\end{teorema}
+\begin{teo}\label{teo-2.2} Sea $Z$ un subespacio vectorial de $W$ y sea $W$, a su vez, subespacio vectorial de $V$. Entonces $Z$ es un subespacio vectorial de $V$.
+\end{teo}
 
-\noindent La demostración del Teorema 1.4.3.2 se deja como ejercicio. Este último teorema nos muestra otra analogía válida entre subconjuntos y subespacios vectoriales, ya que si $A \subset B$ y $B\subset C \implies A\subset C$.
+\noindent La demostración de este teorema se deja como ejercicio. Este último teorema nos muestra otra analogía válida entre subconjuntos y subespacios vectoriales, ya que si $A \subset B$ y $B\subset C \implies A\subset C$.
 
-\subsubsection{Suma y suma directa de espacios vectoriales}
+\subsubsection*{Suma y suma directa de espacios vectoriales}
 
 \begin{tcolorbox}
 \underline{Def.} Sean $S_1$ y $S_2$ subespacios de un espacio vectorial $V$. Definimos a la \emph{suma de los subespacios vectoriales} $S_1$ y $S_2$ como el espacio vectorial definido por $S_1+S_2=\{\mathbf{x}+\mathbf{y}\mathop|\mathop \mathbf{x}\in S_1, \mathbf{y}\in S_2\}$\footnote{Aquí se sobreentiende que $S_1, S_2$ y $S_1+S_2$ están definidos sobre el mismo campo.}.

@@ -4,7 +4,7 @@
 
 \section{Combinaciones lineales, subespacio generado y conjunto generador, dependencia e independencia lineal} \label{Sec:3}
 
-\subsection{Combinaciones lineales} \label{Subsec:Combinaciones_lineales}
+\subsection*{Combinaciones lineales} \label{Subsec:Combinaciones_lineales}
 
 Como vimos en la sección \ref{Def:Espacio_vectorial}, las dos operaciones \emph{necesarias} para definir un espacio vectorial son la suma vectorial (realizada entre elementos del conjunto vectorial) y el producto de un vector por un escalar (realizada entre un elemento del conjunto vectorial y un elemento del campo), ambas dando como resultado un vector en el mismo espacio. La operación más general que podemos realizar a partir de dichas operaciones se define a continuación.
 
@@ -19,7 +19,7 @@ Así, vemos que en un espacio vectorial $V$ arbitrario es posible expresar cualq
 Siguiendo la discusión de la sección \ref{Subsec:Interpretación_geométrica_de_las_operaciones_de_los_espacios_vectoriales}, donde se plantearon por separado las interpretaciones geométricas de las operaciones de suma entre vectores y producto de un vector por un escalar, podemos pensar que, si combinamos ambas operaciones, la operación resultante se puede interpretar como una combinación de flechas rectas reescaladas (y/o rotadas, si el espacio vectorial es complejo y el escalar tiene una parte imaginaria no nula), cada una con su propia longitud, dirección y sentido, a las cuales aplicamos la Ley del paralelogramo para obtener una nueva flecha (o línea) como resultado. Precisamente por ello es que a está operación general se le conoce como \emph{combinación lineal}.
 
 \newpage
-\subsection{Subspacio generado y conjunto generador} \label{Subsec:Espacio_generado_y_conjunto_generador}
+\subsection*{Subspacio generado y conjunto generador} \label{Subsec:Espacio_generado_y_conjunto_generador}
 
 Sea $V$ sobre $K$ un espacio vectorial y $\mathbf{v}_1, \mathbf{v}_2, ... , \mathbf{v}_n\in V$ vectores. Si tomamos un conjunto de estos vectores, digamos, $G=\{\mathbf{v}_1, \mathbf{v}_2\}$, podemos también definir el conjunto de todos los vectores que se pueden generar a través de combinaciones lineales de los vectores de $G$ como $\{a\mathbf{v}_1+b\mathbf{v}_2\hspace{0.5mm}|\hspace{0.5mm}a,b\in K\}$. Este nuevo conjunto cumple con todas las propiedades de un espacio vectorial, y este hecho es generalizable a cualquier conjunto $G$ con un número finito de elementos, lo cual motiva la definición siguiente. 
 
@@ -33,7 +33,7 @@ Para dar algunos ejemplos, si elegimos cualquier vector $\mathbf{v}\in\mathbb{R}
 
 A continuación, veremos un teorema que será de gran importancia en las secciones posteriores.
 
-\begin{teorema} {3.2.1} 
+\begin{teo} {3.2.1} 
 Sea $V$ un espacio vectorial, $S\subset V$ un conjunto de vectores de $V$ y $\mathbf{v}\in V$ un vector arbitrario. Si $S'=S\cup\{\mathbf{v}\}$, entonces $\langle S \rangle = \langle S' \rangle \iff v\in\langle S \rangle.$
 
 \begin{proof}
@@ -42,14 +42,14 @@ Ya que $\mathbf{v}\in S'$ entonces trivialmente se cumple que $\mathbf{v}\in\lan
         
     Este teorema nos dice que agregar un vector a un conjunto generador no necesariamente cambiará el subespacio generado por ese conjunto generador. Para que este cambio realmente suceda, el vector añadido debe ser en algún sentido \emph{ajeno} a los del conjunto generador original. En la siguiente sección, veremos algunas definiciones necesarias para precisar esta idea.
 
-\end{teorema}
+\end{teo}
 
 \newpage
-\subsection{Dependencia e independencia lineal} \label{Subsec:Dependencia_e_independencia_lineal}
+\subsection*{Dependencia e independencia lineal} \label{Subsec:Dependencia_e_independencia_lineal}
 
 Como se vio en la sección \ref{Subsec:Combinaciones_lineales}, un vector puede ser expresado como diferentes combinaciones lineales de otros vectores del mismo espacio. En particular, el vector nulo $\mathbf{0}$ de cualquier espacio vectorial $V$ puede ser obtenido a través de la \emph{combinación lineal trivial} de cualesquiera $n$ vectores del espacio: sólo basta con que todos los coeficientes sean cero, i.e. $$0\mathbf{v}_1+0\mathbf{v}_2+...+0\mathbf{v}_n=\mathbf{0}, \hspace{3mm}\forall\hspace{1.5mm}\mathbf{v}_1 \mathbf{v}_2, ...,\mathbf{v}_n \in V.$$ Sin embargo, también pueden existir combinaciones lineales entre $n$ vectores de un espacio vectorial $V$ que den como resultado $\mathbf{0}$ pero sean no triviales (es decir, tengan coeficientes distintos de cero), e.g., en $\mathbb{R}^2, 7\begin{pmatrix} 1 & 1 \end{pmatrix}+5\begin{pmatrix} -1 & 1 \end{pmatrix}+2\begin{pmatrix} -1 & -6 \end{pmatrix}=\begin{pmatrix} 0 & 0 \end{pmatrix}=\mathbf{0}$. Una consecuencia de este hecho es que podamos despejar a cualquiera de los vectores y expresarlo como combinación lineal de los demás; por ejemplo, $\begin{pmatrix} 1 & 1 \end{pmatrix}=-\frac{5}{7}\begin{pmatrix} -1 & 1 \end{pmatrix}-\frac{2}{7}\begin{pmatrix} -1 & -6 \end{pmatrix}$, ó $\begin{pmatrix} -1 & -6 \end{pmatrix} = -\frac{7}{2}\begin{pmatrix} 1 & 1 \end{pmatrix}-\frac{5}{2}\begin{pmatrix} -1 & 1 \end{pmatrix},$ etc. Este importante hecho motiva la siguiente definición.
 
-\subsubsection{Definición de dependencia e independencia lineal} \label{Def:Dependencia_e_independencia_lineal}
+\subsubsection*{Definición de dependencia e independencia lineal} \label{Def:Dependencia_e_independencia_lineal}
 
 \begin{tcolorbox}
 
@@ -67,13 +67,13 @@ Por ejemplo, en $\mathbb{R}^2$ los vectores $\mathbf{u}_1=\begin{pmatrix} 1 & 5 
 
 Para ver más ejemplos de conjuntos de vectores linealmente dependientes e independientes pueden consultar, e.g., el Friedberg (págs. 36-38), el Lang introductorio (págs. 104-109), etc. 
 
-\subsubsection{Interpretación geométrica de la dependencia e independencia lineal}
+\subsubsection*{Interpretación geométrica de la dependencia e independencia lineal}
 
 Como ya mencionamos, si un vector $\mathbf{v}_n\in V$ es linealmente \emph{dependiente} de otros vectores $\mathbf{v}_1, \mathbf{v}_2, ..., \textbf{v}_m\in V$, entonces puede ser expresado como combinación lineal de esos vectores. Geométricamente, en los espacios vectoriales reales $\mathbb{R}^2$ y $\mathbb{R}^3$ esto quiere decir que es posible reescalar y combinar (mediante la Ley del paralelogramo) las flechas de los vectores $\mathbf{v}_1, \mathbf{v}_2, ..., \mathbf{v}_m$ y obtener, como resultado final, a $\mathbf{v}_n$. Adicionalmente, en el espacio vectorial complejo $\mathbb{C}$, también se podrían estar rotando los vectores $\mathbf{v}_1, \mathbf{v}_2, ..., \mathbf{v}_m$ \textemdash además de reescalarlos y combinarlos\textemdash \hspace{0.5mm} para formar, finalmente, a $\mathbf{v}_n$. Si son linealmente \emph{independientes}, entonces lo anterior no es posible.
 
-\subsubsection{Algunos teoremas sobre dependencia e independencia lineal} \label{Teo:Dependencia_e_independencia_lineal} 
+\subsubsection*{Algunos teoremas sobre dependencia e independencia lineal} \label{Teo:Dependencia_e_independencia_lineal} 
 
-\begin{teorema} {3.3.3.1} 
+\begin{teo} {3.3.3.1} 
 
     Sea $V$ un espacio vectorial y $\mathbf{v_1}, \mathbf{v_2}, ..., \mathbf{v}_n$ vectores linealmente independientes de $V$. Sean $c_1, c_2, ..., c_n\in K$ y $d_1, d_2, ..., d_n\in K$ tales que $$c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_n\mathbf{v}_n=d_1\mathbf{v}_1+d_2\mathbf{v}_2+...+d_n\mathbf{v}_n,$$ entonces se tiene que $c_i=d_1\hspace{3mm}\forall\hspace{1.5mm}i\in\{1,2, ..., n\}$.
 
@@ -85,9 +85,9 @@ Como ya mencionamos, si un vector $\mathbf{v}_n\in V$ es linealmente \emph{depen
 
     Este teorema significa que si un vector es resultado de una combinación lineal de vectores linealmente independientes, entonces esa combinación lineal es \emph{la única} que da como resultado a ese vector. Es decir, que si $\mathbf{u}=c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_n\mathbf{v}_n$ y $\{\mathbf{v}_1,\mathbf{v}_2, ...,\mathbf{v}_n\}\hspace{1.5mm}\text{es}\hspace{1.5mm} l.i.$ entonces no existe otra combinación de escalaras y vectores $c_i \mathbf{v}_i$ tal que la suma de todos ellos dé $\mathbf{u}$.
 
-\end{teorema}
+\end{teo}
 
-\begin{teorema} {3.3.3.2} 
+\begin{teo} {3.3.3.2} 
 
     Sea $V$ un espacio vectorial y $S_1,S_2$ subespacios tales que $S_1\subseteq S_2\subseteq V$. Si $S_2$ es linealmente independiente, entonces $S_1$ también es linealmente independiente.
 
@@ -99,9 +99,9 @@ Como ya mencionamos, si un vector $\mathbf{v}_n\in V$ es linealmente \emph{depen
 
 Este teorema nos dice que si removemos un vector de un conjunto linealmente independiente, el conjunto resultante también es linealmente independiente.
 
-\end{teorema}
+\end{teo}
 
-\begin{teorema} {3.3.3.3}
+\begin{teo} {3.3.3.3}
 
 Sea $V$ un espacio vectorial sobre un campo $K$ y $L\subset V$ un conjunto con $n$ elementos linealmente independientes entre sí. Entonces, para cualquier $\mathbf{v}\in V$, el conjunto $L'\equiv L\cup \{\mathbf{v}\}$ es $l.i. \iff \mathbf{v}\notin \langle L \rangle$.
 
@@ -115,19 +115,19 @@ Por otro lado, supongamos que $L'$ es linealmente dependiente. Entonces, existe 
 \end{proof}
 
     La demostración de este teorema básicamente nos dice que si tenemos un conjunto linealmente independiente y agregamos a un vector de su subespacio generado a este conjunto, entonces se vuelve linealmente dependiente. En contraposición, concluimos que en cualquier conjunto linealmente dependiente existe una especie de \emph{redundancia} entre sus elementos, ya que se puede remover a cualquiera de ellos sin alterar el subespacio generado por este conjunto. En cambio, remover un vector de un conjunto linealmente independiente \emph{sí} altera el subespacio generado por ese conjunto.
-\end{teorema}
+\end{teo}
 
 
-\subsection{Ejercicios de repaso}
+\subsection*{Ejercicios de repaso}
 
-\subsubsection{Combinaciones lineales}
+\subsubsection*{Combinaciones lineales}
 
 \begin{enumerate}
     \item Demuestra que si tenemos tres vectores $\mathbf{u}, \mathbf{v}$ y $\mathbf{w}$ no nulos y ortogonales entre sí, entonces no puede haber una combinación lineal de dos de ellos que dé como resultado el tercero (Nota: repasa la definición de ortogonalidad y las propiedades del producto escalar vistas en la sec. \ref{Sec:2}.) 
     \item Da un ejemplo de la demostración anterior en $\mathbb{R}^3$, e interpreta este resultado geométricamente (Nota: recuerda la relación entre el producto escalar y las proyecciones.) 
 \end{enumerate}
 
-\subsubsection{Subespacio generado y conjunto generador}
+\subsubsection*{Subespacio generado y conjunto generador}
 
 \begin{enumerate}
     \item Sea $a\in\mathbb{R}$ un vector arbitrario del espacio vectorial real $\mathbb{R}$. Demuestra que este espacio vectorial sólo tiene subespacios vectoriales triviales. ¿Quiénes son los valores $a\in\mathbb{R}$ que generan a estos subespacios, en cada caso? 
@@ -136,7 +136,7 @@ Por otro lado, supongamos que $L'$ es linealmente dependiente. Entonces, existe 
     \item Sea $F=\{x^0,x^1,x^2,...,x^n\}$ con $n\in\mathbb{N}$ un conjunto de funciones reales de una variable real. ¿Quién es, entonces, $\langle F \rangle$? 
 \end{enumerate}
 
-\subsubsection{Dependencia e independencia lineal}
+\subsubsection*{Dependencia e independencia lineal}
 
 \begin{enumerate}
     \item Sea $n_i$ el $i$-ésimo dígito de tu número de cuenta. Determina si los vectores $\begin{pmatrix} n_1 + i(n_2) \end{pmatrix}$ y $\begin{pmatrix} n_3 + i(n_4) \end{pmatrix} \in \mathbb{C}$ son linealmente dependientes o independientes y muéstralo gráficamente en el plano complejo. 
