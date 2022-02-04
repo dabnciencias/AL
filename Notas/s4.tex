@@ -1,0 +1,337 @@
+\documentclass[apuntes]{subfiles}
+
+\begin{document}
+
+\section{Nociones básicas de transformaciones lineales} \label{Sec: Nociones básicas de transformaciones lineales}
+
+Las estructuras algebráicas no sólo se pueden estudiar a través de sus \emph{elementos}, sino también a través de \emph{funciones} entre ellas. En particular, un tipo de funciones muy útiles para estudiar estructuras algebráicas son aquellas que preservan la estructura en cuestión. En el caso particular de los espacios vectoriales, una función que preserva este tipo de estructura tiene espacios vectoriales como dominio y contradominio y es compatible con las operaciones de suma vectorial y producto de un vector por un escalar; a este tipo de funciones se les conoce como transformaciones lineales. Una definición más operativa es la siguiente.
+
+\subsection*{Transformaciones lineales} \label{Ssec: Definición de transformación lineal}
+
+\begin{tcolorbox}
+\underline{Def.} Sean $K$ un campo, $S$ un subcampo de $K$\footnote{En particular, podemos tomar $S=K$.} y $(V,S), (W,K)$ espacios vectoriales. Entonces, decimos que una función $T:V\to W$ es una \emph{transformación lineal} si para todo $a\in S, \ \vec{u},\vec{v}\in V$, se tiene que
+\[
+T(\vec{u}+\vec{v}) = T(\vec{u})+T(\vec{v}) \quad \& \quad T(a\vec{v}) = aT(\vec{v}).
+\]
+Informalmente, decimos que una transformación lineal $T$ \emph{abre sumas} y \emph{saca escalares}.
+\end{tcolorbox}
+
+\begin{ejer}\label{ejer-16}
+    Demuestra que las transformaciones lineales mandan al vector nulo de su dominio al vector nulo de su contradominio. Es decir, si $T:V\to W$ es una transformación lineal y los vectores nulos de $V$ y $W$ son $\vec{0}_V$ y $\vec{0}_W$, respectivamente, entonces $T(\vec{0}_V) = \vec{0}_W$.
+\end{ejer}
+
+Una forma equivalente y más compacta de definir a las transformacines lineales está dada por la siguiente caracterización.
+
+\begin{ejer}[Caracterización de transformaciones lineales]\label{ejer:17}
+Sean $(V,S)$ y $(W,K)$ espacios vectoriales, con $S$ un subcampo de $K$. Demuestra que $T:V\to W$ es una transformación lineal si, y sólo si, para todo $a\in S, \ \vec{u},\vec{v}\in V$, se tiene que $T(\vec{u}+a\vec{v}) = T(\vec{u})+aT(\vec{v})$.
+\end{ejer}
+
+\subsubsection*{Ejemplos de transformaciones lineales}
+
+La función $T:\mathbb{R}^2\to \mathbb{R}^2$ dada por $T(x,y)=(x,-y)$ es una transformación lineal, pues para todo $a\in\mathbb{R}, \ (x,y), (x',y')\in\mathbb{R}^2$, tenemos que
+\begin{align*}
+    T(x,y) + aT(x',y') &= (x,-y) + a(x',-y') \\
+                       &= (x,-y) + (ax',-ay') \\
+                       &= (x+ax', -y-ay') \\
+                       &= (x+ax', -(y+ay')) \\
+                       &= T(x+ax', y+ay') \\
+                       &= T((x,y)+(ax',ay')) \\
+                       &= T((x,y)+a(x',y')),
+\end{align*}
+por lo que $T((x,y)+a(x'y')) = T(x,y) + aT(x',y')$. Podemos interpretar geométricamente a esta transformación como una reflexión en el plano cartesiano a lo largo del eje vertical. De manera análoga, se puede demostrar que la reflexión con respecto al eje horizontal y al origen y, más generalmente, que las reflexiones en $\mathbb{R}^n$ son transformaciones lineales. %Podemos interpretar geométricamente a esta transformación como una reflexión en el plano cartesiano a lo largo del eje vertical, como se muestra en el ejemplo de la Figura \ref{fig:?}, junto con la interpretación de que esta transformación sea lineal. De manera análoga se puede demostrar que la reflexión con respecto al eje horizontal y al origen y, más generalmente, que las reflexiones en $\mathbb{R}^n$ son transformaciones lineales. \\
+
+%FIGURA DE INTERPRETACIÓN DE TRANSFORMACIÓN LINELAL A TRAVÉS DE UN EJEMPLO
+
+Siguiendo del ejemplo anterior en $\mathbb{R}^2$, observemos que podemos considerar a una función que haga algo ``semejante'' en el espacio vectorial complejo $\mathbb{C}$: la función de conjugación compleja $\overline{a+ib} = a-ib$. Sin embargo, en este caso, esta función no preserva la estructura del espacio $\mathbb{C}$. ¿Por qué?
+
+\begin{ejer}\label{ejer:18}
+Demuestra que la función de conjugación compleja $\overline{\cdot}:\mathbb{C}\to\mathbb{C}$ abre sumas pero no es una transformación lineal.
+\end{ejer}
+
+Sea $C^{\infty}(\mathbb{R},\mathbb{R})$ el espacio de funciones reales de variable real continuas con todas sus derivadas continuas. Entonces la derivada $\frac{d}{dx}:C^{\infty}(\mathbb{R},\mathbb{R})\to C^{\infty}(\mathbb{R},\mathbb{R})$ es una transformación lineal. Si consideramos el subespacio compuesto por todas las funciones integrables, entonces la integral $\int_{-\infty}^{\infty} \ dx$ es una transformación lineal en este subespacio. \\
+
+Para cualquier espacio vectorial $V$, la función identidad $\text{Id}_{V}:V\to V$ es una transformación lineal. \\
+
+Todas las transformaciones lineales anteriores van de un espacio vectorial en sí mismo. A este tipo de transformaciones lineales les damos un nombre especial.
+
+\begin{tcolorbox}
+\underline{Def.} Sea $V$ un espacio vectorial. Decimos que una transformación lineal $T:V\to V$ es un \emph{operador lineal}.
+\end{tcolorbox}
+
+\noindent Nos enfocaremos en el estudio de operadores lineales en la última parte del curso. Ahora, veamos ejemplos de transformaciones lineales que no son operadores lineales. \\
+
+Para cualesquiera espacios vectoriales $V$ y $W$, la transformación nula $T_0:V\to W, T_0(\vec{u})=\vec{0}_W$ para todo $\vec{u}\in V$ es una transformación lineal. \\
+
+Las rotaciones en $\mathbb{R}^2, \mathbb{R}^3$ son transformaciones lineales\footnote{Puedes convencerte de esto haciendo un simple dibujo.}. \\
+
+La función $T:\mathbb{R}^2\to \mathbb{R}^3$ dada por $T(x,y) = (x,y,0)$ es una transformación lineal. Similarmente, la función $U:\mathbb{R}^3\to\mathbb{R}^2$ dada por $U(x,y,z) = (x,y)$ es una transformacióm lineal. No es difícil mostrar que $T$ es inyectiva y $U$ es suprayectiva. Diremos que $T$ es una \emph{inclusión} de $\mathbb{R}^2$ en $\mathbb{R}^3$, y que $U$ es una \emph{proyección} de $\mathbb{R}^3$ sobre $\mathbb{R}^2$.
+
+Sea $C^n(\mathbb{R},\mathbb{R})$ el espacio de funciones reales de variable real con $n$ derivadas continuas. Entonces $\frac{d}{dx}:C^n(\mathbb{R},\mathbb{R})\to C^{n-1}(\mathbb{R},\mathbb{R})$ es una transformación lineal.
+
+\subsubsection*{Núcleo e imagen de una transformación lineal}
+
+Podemos estudiar espacios vectoriales a través de transformaciones lineales entre ellos y, a la vez, podemos estudiar transformaciones lineales a través de algunos conjuntos que se definen a partir de ellas.
+
+\begin{tcolorbox}
+    \underline{Def.} Sean $V,W$ espacios vectoriales y $T:V\to W$ una transformación lineal. Entonces definimos el \emph{núcleo} de $T$ como
+    \[
+        \text{Ker}(T) := \{\vec{v}\in V \mid T(\vec{v})=\vec{0}_W\}
+    \] 
+    y la \emph{imagen} de $T$ como\footnote{Observemos que esto es simplemente la definición usual de la imagen de una función.}
+    \[
+        \text{Im}(T) := \{\vec{w}\in W \mid \exists \ \vec{v}\in V \text{ tal que } T(\vec{v}) = \vec{w}\}.
+    \] 
+\end{tcolorbox}
+
+\begin{obs}
+
+    Sea $T:V\to W$ una transformación lineal.
+
+    \begin{enumerate}[label=(\arabic*)]
+    
+        \item Por definición, $\text{Ker}(T)\subseteq V$ y, por el Ejercicio \ref{ejer-16}, $\vec{0}_V\in \text{Ker}(T)$, lo cual es una de las condiciones de la caracterización de subespacios vectoriales vista en la Proposición \ref{prop: Caracterización de subespacios vectoriales}.
+
+            \begin{ejer}\label{ejer-19}
+                Demuestra que $\text{Ker}(T)$ es un subespacio vectorial de $V$.
+            \end{ejer}
+
+            En particular, si $V$ tiene dimensión finita, del Teorema \ref{teo: Dimensión de subespacios de un espacio de dimensión finita} se sigue que $\text{Ker}(T)$ también tiene dimensión finita. 
+
+        \item Similarmente, por definición, $\text{Im}(T)\subseteq W$ y, por el Ejercicio \ref{ejer-16}, $\vec{0}_W\in\text{Im}(T)$.
+
+            \begin{ejer}\label{ejer-20}
+                Demuestra que $\text{Im}(T)$ es un subespacio vectorial de $W$.
+            \end{ejer}
+
+            En particular, si $W$ tiene dimensión finita, del Teorema \ref{teo: Dimensión de subespacios de un espacio de dimensión finita} se sigue que $\text{Im}(T)$ también tiene dimensión finita. 
+    \end{enumerate}
+\end{obs}
+
+Las dimensiones de los núcleos e imágenes de transformaciones lineales nos dan información útil sobre ellas, por lo que se les da un nombre especial.
+
+\begin{tcolorbox}
+    \underline{Def.} Sea $T:V\to W$ una transformación lineal. Entonces, definimos la \emph{nulidad} de $T$ como
+    \[
+        \text{nulidad}(T) := \text{dim}(\text{Ker}(T))
+    \] 
+    y el \emph{rango} de $T$ como
+    \[
+        \text{rango}(T) := \text{dim}(\text{Im}(T)).
+    \] 
+\end{tcolorbox}
+
+\noindent Algunos ejemplos de esto están dados por los siguientes resultados.
+
+\begin{prop}\label{prop: Caracterización de transformaciones lineales inyectivas}[Caracterización de transformaciones lineales inyectivas]
+    Sean $V,W$ espacios vectoriales y $T:V\to W$ una transformación lineal. Entonces $T$ es una función inyectiva si, y sólo si, $\text{nulidad}(T)=0$.
+\end{prop}
+
+\begin{proof}\leavevmode
+
+    $(\Rightarrow)$ Supongamos que $T$ es una función inyectiva. Entonces, para cualesquiera $\vec{u},\vec{v}\in V$, $T(\vec{u})=T(\vec{v})$ implica que $\vec{u}=\vec{v}$. Por el Ejercicio \ref{ejer-16}, sabemos que $T(\vec{0}_V)=\vec{0}_W$. Dado que $T(\vec{v})=\vec{0}_W$ para todo $\vec{v}\in\text{Ker}(T)$, se sigue que $\text{Ker}(T)=\{\vec{0}_V\}$. Como por definición $\varnothing$ es una base de $\{\vec{0}_V\}$, se sigue que $\text{nulidad}(T)=0$. \\
+
+    ($\Leftarrow$) Supongamos que $\text{nulidad}(T)=0$. Entonces, $\text{dim}(\text{Ker}(T))=0$, es decir, $\text{Ker}(T)=\{\vec{0}_V\}$. Luego, para cualesquiera $\vec{u},\vec{v}\in V$, tenemos que
+    \begin{align*}
+        T(\vec{u}) = T(\vec{v}) &\implies  T(\vec{u}) - T(\vec{v}) = \vec{0}_W \\
+                                &\implies  T(\vec{u}-\vec{v}) = \vec{0}_W \tag{$T$ es lineal} \\
+                                &\implies  \vec{u} - \vec{v} \in \text{Ker}(T) \\
+                                &\implies  \vec{u} - \vec{v} = \vec{0}_V \tag{por hipótesis} \\
+                                &\implies \vec{u} = \vec{v}.
+    \end{align*}
+    Por lo tanto, se sigue que $T$ es una función inyectiva.
+\end{proof}
+
+\begin{prop}[Caracterización de transformaciones lineales suprayectivas con contradominios de dimensión finita]\label{prop: Caracterización de transformaciones lineales suprayectivas con contradominios de dimensión finita}
+    Sean $V,W$ espacios vectoriales con $\text{dim}(W) = n$ finita y $T:V\to W$ una transformación lineal. Entonces $T$ es una función suprayectiva si, y sólo si, $\text{rango}(T)=n$.
+\end{prop}
+
+\begin{proof}\leavevmode
+
+    $(\Rightarrow)$ Supongamos que $T$ es una función suprayectiva. Entonces, $\text{Im}(T)=W$, por lo que
+    \begin{align*}
+        \text{rango}(T) &= \text{dim}(\text{Im}(T)) \\
+                        &= \text{dim}(W) \\
+                        &= n.
+    \end{align*}
+
+    $(\Leftarrow)$ Se sigue del Corolario \ref{coro: Subespacio igual a espacio de dimensión finita si sus dimensiones son iguales}.
+\end{proof}
+
+
+El siguiente resultado nos dice cómo encontrar un conjunto generador de la imagen de una transformación lineal que tiene como dominio a un espacio vectorial de dimensión finita a partir de una base de su dominio. Aplicando el Teorema \ref{teo: Conversión de conjunto generador en base para espacios de dimensión finita} a dicho conjunto generador podemos obtener una base de la imagen, por lo que este resultado nos servirá para calcular el rango de transformaciones lineales de este tipo.
+
+\begin{teo}\label{teo: conjunto generador de la imagen de una transformación lineal con dominio de dimensión finita a partir de una base de su dominio}
+    Sean $V, W$ espacios vectoriales y $T:V\to W$ una transformación lineal, con $V$ un espacio de dimensión finita $n$ y $B=\{\vec{b}_1,\vec{b}_2,...,\vec{b}_n\}\subseteq V$ una base de $V$. Entonces, tenemos que
+    \[
+        \langle\{T(\vec{b}_1),T(\vec{b}_2),...,T(\vec{b}_n)\}\rangle = \text{Im}(T),
+    \] 
+    es decir, el conjunto $T(B) := \{T(\vec{b}_1),T(\vec{b}_2),...,T(\vec{b}_n)\}$ es un conjunto generador de $\text{Im}(T)$.
+\end{teo}
+
+\begin{proof}
+    Como $B\subseteq V$, por definición de imagen tenemos que $T(B)\subseteq W$. Puesto que, por el Ejercicio \ref{ejer-20}, $\text{Im}(T)$ es un subespacio vectorial de $W$, entonces de la Proposición \ref{prop: Caracterización de subespacios vectoriales} se sigue que $\text{Im}(T)$ es un conjunto cerrado por combinaciones lineales. Por ende, $\langle T(B) \rangle \subseteq \text{Im}(T)$. \\
+
+    Por otro lado, sea $\vec{w}\in\text{Im}(T)$. Entonces, existe $\vec{v}\in V$ tal que $T(\vec{v}) = \vec{w}$. Dado que $B$ es una base de $V$, entonces existen coeficientes $c_i\in K$ para $i\in\{1,2,...,n\}$ tales que
+    \[
+    \vec{v} = \sum_{i=1}^n c_i \vec{b}_i.
+    \] 
+    Ya que $T$ es lineal, se sigue que
+    \begin{align*}
+        \vec{w} &= T(\vec{v}) \\
+                &= T\bigg( \sum_{i=1}^n c_i \vec{b}_i \bigg) \\
+                &= \sum_{i=1}^n T ( c_i \vec{b}_i ) \\
+                &= \sum_{i=1}^n c_i T(\vec{b}_i).
+    \end{align*}
+    Por ende, $\text{Im}(T)\subseteq \langle T(B) \rangle$. Por lo tanto, concluimos que $\langle T(B) \rangle = \text{Im}(T)$.
+\end{proof}
+
+\begin{coro}
+    Si $T:V\to W$ es una transformación lineal y $V$ es de dimensión finita, entonces $\text{Im}(T)$ es un subespacio vectorial de $W$ de dimensión finita.
+\end{coro}
+
+\begin{proof}
+    Se sigue del Ejercicio \ref{ejer-20} y de los Teoremas \ref{teo: conjunto generador de la imagen de una transformación lineal con dominio de dimensión finita a partir de una base de su dominio} y \ref{teo: Conversión de conjunto generador en base para espacios de dimensión finita}.
+\end{proof}
+
+Uno de los resultados más importantes para transformaciones lineales entre espacios vectoriales de dimensión finita es el siguiente.
+
+\begin{teo}[Fórmula de la dimensión]\label{teo: Fórmula de la dimensión}
+    Sean $V,W$ espacios vectoriales de dimensión finita y $T:V\to W$ una transformación lineal. Entonces,
+    \[
+        \text{dim}(V) = \text{rango}(T) + \text{nulidad}(T).
+    \] 
+\end{teo}
+
+\begin{proof}
+
+    Sea $\text{dim}(V)=n$. Por el Ejercicio \ref{ejer-19} y el Teorema \ref{teo: Dimensión de subespacios de un espacio de dimensión finita}, sabemos que $\text{Ker}(T)$ es un subespacio vectorial de $V$ de dimensión finita menor o igual a $n$. Sean $\text{nulidad}(T)=\text{dim}(\text{Ker}(T))=k$ y $N=\{\vec{b}_1,\vec{b}_2,...,\vec{b}_k\}$ una base de $\text{Ker}(T)$. Como $k\le n$, por el Teorema \ref{teo: Conversión de conjunto linealmente independiente en base para espacios de dimensión finita} sabemos que $N$ puede extenderse hasta convertirse en una base $B=\{\vec{b}_1,\vec{b}_2,...,\vec{b}_k, \vec{b}_{k+1}, ..., \vec{b}_n\}$ de $V$. Demostraremos que $T(B\setminus N):=\{T(\vec{b}_{k+1}),T(\vec{b}_{k+2}),...,T(\vec{b}_n)\}$ es una base de $\text{Im}(T)$. \\
+
+    Observemos que, dado que $V$ es de dimensión finita y $B$ es una base de $V$, por el Teorema \ref{teo: conjunto generador de la imagen de una transformación lineal con dominio de dimensión finita a partir de una base de su dominio}, tenemos que
+    \begin{align*}
+        \text{Im}(T) &= \langle T(B) \rangle \\
+                     &= \langle \{T(\vec{b}_1),T(\vec{b}_2), ...,T(\vec{b}_k), T(\vec{b}_{k+1}), ..., T(\vec{b}_n)\} \rangle \\
+                     &= \langle \{\vec{0}_W,\vec{0}_W, ...,\vec{0}_W, T(\vec{b}_{k+1}), ..., T(\vec{b}_n)\} \rangle \tag{$N\subseteq \text{Ker}(T)$} \\
+                     &= \langle \{T(\vec{b}_k), T(\vec{b}_{k+1}), ..., T(\vec{b}_n)\} \rangle \\
+                     &= \langle T(B\setminus N) \rangle,
+    \end{align*}
+    por lo que $T(B\setminus N)$ genera a $\text{Im}(T)$. Ahora, supongamos que existen coeficientes $c_{k+1},c_{k+2},...,c_n\in K$ tales que 
+    \[
+        \sum_{i=k+1}^n c_i T(\vec{b}_i) = \vec{0}_W.
+    \] 
+    Entonces, por linealidad de $T$, se sigue que
+    \[
+        T \bigg( \sum_{i=k+1}^n c_i \vec{b}_i \bigg) = \vec{0}_W,
+    \] 
+    por lo que $\sum_{i=k+1}^n c_i \vec{b}_i \in \text{Ker}(T)$. Como $N$ es una base de $\text{Ker}(T)$, deben existir coeficientes $c_1,c_2,...,c_k\in K$ tales que
+    \[
+        \sum_{i=1}^k c_i \vec{b}_i = \sum_{j=k+1}^n c_j \vec{b}_j,
+    \] 
+    lo que implica que
+    \[
+        \sum_{i=1}^k c_i \vec{b}_i \ - \sum_{j=k+1}^n c_j \vec{b}_j = \sum_{i=1}^k c_i \vec{b}_i + \sum_{j=k+1}^n (-c_j) \vec{b}_j = \vec{0}_W.
+    \] 
+    Dado que $B$ es una base de $V$, tenemos que $c_i=0$ para todo $i\in\{1,2,...,n\}$. En particular, $c_i=0$ para todo $i\in\{k+1,k+2,...,n\}$, de donde se sigue que $T(B\setminus N)$ es linealmente independiente. Por lo tanto, $T(B\setminus N)$ es una base de $\text{Im}(T)$. Por ende,
+    \begin{align*}
+        \text{rango}(T) &= \text{dim}(\text{Im}(T)) \\
+                        &= |B\setminus N| \\
+                        &= n-k,
+    \end{align*}
+    de donde concluimos que
+    \[
+        \text{dim}(V) = \text{rango}(T) + \text{nulidad}(T).
+    \] 
+\end{proof}
+
+Con la ayuda de la fórmula de la dimensión, podemos obtener una caracterización para saber cuándo una transformación lineal entre espacios vectoriales de la misma dimensión es biyectiva, lo cual será de suma importancia más adelante.
+
+\begin{teo}[Caracterización de transformaciones lineales biyectivas]
+    Sean $V,W$ espacios vectoriales de la misma dimensión finita $n$ y $T:V\to W$ una transformación lineal. Entonces, las siguientes condiciones son equivalentes.
+
+    \begin{enumerate}[label=(\alph*)]
+    
+        \item $T$ es inyectiva.
+
+        \item $T$ es suprayectiva.
+
+        \item $T$ es biyectiva.
+    \end{enumerate}
+\end{teo}
+
+\begin{proof}\leavevmode
+
+    En esta demostración, utilizaremos las Proposiciones \ref{prop: Caracterización de transformaciones lineales inyectivas} y \ref{prop: Caracterización de transformaciones lineales suprayectivas con contradominios de dimensión finita}, así como el Teorema \ref{teo: Fórmula de la dimensión} (Fórmula de la dimensión). \\
+
+    $(a)\Rightarrow(b)$ Supongamos que $T$ es inyectiva. Entonces, $\text{nulidad}(T)=0$. Luego, por la fórmula de la dimensión, tenemos que $\text{rango}(T)=n$, de donde se sigue que $T$ es suprayectiva. \\
+
+    $(b)\Rightarrow(c)$ Supongamos que $T$ es suprayectiva. Entonces, $\text{rango}(T)=n$. Luego, por la fórmula de la dimensión, tenemos que $\text{nulidad}(T)=0$, de donde se sigue que $T$ es inyectiva. Como $T$ es inyectiva y suprayectiva, entonces biyectiva. \\
+
+    $(c)\Rightarrow(a)$ Se sigue de la definición de función biyectiva.
+\end{proof}
+
+\subsection*{Interacciones entre transformaciones lineales} \label{Ssec: Interacciones entre transformaciones lineales}
+
+\subsubsection*{Suma y reescalamiento de transformaciones lineales} \label{Sssec: Suma y reescalamiento de transformaciones lineales}
+
+\begin{tcolorbox}
+\underline{Def.} Sean $(V,S), (W,K)$ espacios vectoriales, con $S$ un subcampo de $K$. Definimos el conjunto de transformaciones lineales de $V$ a $W$ como
+\[
+    \mathcal{L}(V,W) := \{T:V\to W \mid T(\vec{u}+a \vec{v}) = T(\vec{u}) + aT(\vec{v}) \ \forall \ \vec{u},\vec{v}\in V, a\in K\}.
+\] 
+\noindent Sean $T_1,T_2\in\mathcal{L}(V,W)$ y $a\in K$. Definimos la \emph{suma de transformaciones lineales} $T_1$ y $T_2$ a través de su regla de correspondencia como
+\[
+    (T_1+T_2)(\vec{u}) = T_1(\vec{u}) + T_2(\vec{u}) \quad \forall \ \vec{u}\in V;
+\]
+análogamente, definimos el \emph{producto de la transformación lineal} (o \emph{reescalamiento de}) $T_1$ \emph{por el escalar} $a$ como
+\[
+    (aT_1)(\vec{u}) = a\big( T(\vec{u}) \big) \quad \forall \ \vec{u}\in V.
+\] 
+\end{tcolorbox}
+
+\begin{obs}
+
+    Como podrás sospechar a partir de las definiciones anteriores, el conjunto de transformaciones lineales entre dos espacios vectoriales tiene una estructura que debería resultarles familiar.
+    
+\begin{ejer}
+    Sean $(V,S), (W,K)$ espacios vectoriales, con $S$ un subcampo de $K$. Demuestra que $\mathcal{L}(V,W)$, con las operaciones de suma de transformaciones lineales y producto de una transformación lineal por un escalar, forma un espacio vecorial sobre el campo $K$.
+\end{ejer}
+
+\noindent Por ende, dado que por definición las transformaciones lineales son compatibles con las operaciones esenciales de los espacios vectoriales (i.e., preservan la estructura de espacio vectorial) y que sus contradominios tienen la estructura de espacio vectorial, ¡el conjunto de todas las transformaciones lineales de un espacio a otro \emph{hereda} la estructura de espacio vectorial!
+\end{obs}
+
+\subsubsection*{Composición de transformaciones lineales} \label{Sssec: Composición de transformaciones lineales}
+
+\begin{tcolorbox}
+    \underline{Def.} Sean $T:V\to W$ y $U:W\to Z$ transformaciones lineales. Definimos la \emph{composición de transformaciones lineales} $U\circ T:V\to Z$ a través de su regla de correspondencia como
+    \[
+        (U\circ T)(\vec{u}) = U(T(\vec{u})) \quad \forall \ \vec{u}\in V.
+    \] 
+    La expresión de la composición $U\circ T$ se puede leer como ``$U$ \emph{después de} $T$'' para recordar cuál de las funciones se debe aplicar primero.
+\end{tcolorbox}
+
+\begin{obs}\leavevmode
+
+    \begin{enumerate}[label=(\arabic*)]
+    
+        \item La composición de transformaciones lineales, siempre que tenga sentido\footnote{Esto es, siempre que el contradominio de la que se aplica primero sea un subespacio vectorial del dominio de la que se aplica después.}, es una transformación lineal:
+\begin{ejer}
+    Sean $V,W,Z$ espacios vectoriales y $T\in\mathcal{L}(V,W), U\in\mathcal{L}(W,Z)$. Demuestra que $U\circ T\in\mathcal{L}(V,Z)$.
+\end{ejer}
+\noindent Sin embargo, la operación de composición de transformaciones lineales se distingue de la de suma dado que, en general, la transformación resultante de aplicar la operación de composición tiene un dominio y/o contradominio \emph{distinto} al de las transformaciones originales.
+
+        \item En el caso particular en que todos los dominios y contradominios de las transformaciones lineales que se componen son el mismo espacio vectorial $V$, entonces el resultado de la composición es un operador lineal en $V$. Es decir, la operación de composición de transformaciones lineales en $\mathcal{L}(V,V)$ es cerrada; equivalentemente, \emph{la composición de operadores lineales sobre un mismo espacio vectorial es una operación binaria}.
+    \end{enumerate}
+\end{obs}
+
+\begin{ejer}
+    Sean $(V,K)$ y $(W,K)$ espacios vectoriales y $T:V\to W$ una transformación lineal. Supongamos que existe $T^{-1}:W\to V$. Demuestra que $T^{-1}$ es una transformación lineal.
+\end{ejer}
+
+\begin{tcolorbox}
+    \underline{Def.} Sea $T:V\to W$ una transformación lineal. Si $T$ es invertible\footnote{Equivalentemente, podemos pedir que $T$ sea inyectiva.}, decimos que es un \emph{isomorfismo de espacios vectoriales}, o simplemente un \emph{isomorfismo}.
+\end{tcolorbox}
+
+%La función inversa de una transformación lineal, si existe, es también una transformación lineal.
+
+%Isomorfismos.
+
+\end{document}
