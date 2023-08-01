@@ -107,7 +107,7 @@ Otro tipo de operación que se puede definir sobre un espacio vectorial es la \e
 \vspace{3mm}
 \noindent A partir de la definición anterior podemos demostrar que la norma es positivo definida; es decir que, además de que el único vector con norma igual a $0$ es el vector nulo, todos los vectores no nulos tienen norma positiva.
 
-\begin{coro} {2.2.1.1}
+\begin{Coro} {2.2.1.1}
     Sea $V$ un espacio vectorial con una norma $||\cdot ||$, entonces $\hspace{1.5mm}\forall\hspace{1.5mm} \mathbf{v}\in V$ con $\mathbf{v}\neq\mathbf{0}$ se cumple que $||\mathbf{v}||>0.$
 
 \begin{proof}
@@ -119,7 +119,7 @@ Otro tipo de operación que se puede definir sobre un espacio vectorial es la \e
 
 \end{proof}
 
-\end{coro}
+\end{Coro}
 
 \subsubsection*{Ejemplos de norma}
 
@@ -142,7 +142,7 @@ También, en un espacio vectorial real de funciones reales con integral finita e
 
 Como mencionamos al inicio de esta sección, el proceso anterior de obtener una norma a partir de un producto escalar se puede generalizar para cualquier espacio vectorial con un producto escalar positivo definido, sin importar si dichos espacios vectoriales son reales o complejos. En estos casos, se dice que la norma es \emph{inducida} por un producto escalar positivo definido. Las normas de este tipo serán las más recurrentes durante este curso. El primer paso necesario para demostrar este resultado general es la llamada \emph{desigualdad de Cauchy-Schwarz}, que enunciamos a continuación como teorema. El resto de la demostración se encuentra en los ejercicios de repaso al final de esta sección (ver sec. \ref{Ejer:Norma}).
 
-\begin{teo} {2.2.3.1} 
+\begin{Teo} {2.2.3.1} 
 
     Sea $\langle.\hspace{0.5mm},.\rangle:V\times V\rightarrow K$ un producto escalar positivo definido y sea $||\cdot ||:V\rightarrow K$ una función definida tal que $||\cdot||=+\sqrt{\langle\cdot,\cdot\rangle}$\footnote{Con la ayuda de este teorema, se puede demostrar que esta función $||\cdot ||$ cumple con todas las propiedades de una norma, dadas en la sección \ref{Def:Norma}. Ésta es la llamada \emph{norma euclideana generalizada}.}, entonces para todo $\mathbf{u},\mathbf{v}\in V$ se cumple que $|\langle\mathbf{u},\mathbf{v}\rangle|\leq ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||$.
 
@@ -152,7 +152,7 @@ Como mencionamos al inicio de esta sección, el proceso anterior de obtener una 
     Sabemos que para cualquier $a\in K$ se cumple que $$0\leq ||\mathbf{u}-a\mathbf{v}||^2 = \langle\mathbf{u}-a\mathbf{v},\mathbf{u}-a\mathbf{v}\rangle= \langle\mathbf{u},\mathbf{u}-a\mathbf{v}\rangle-a\langle\mathbf{v},\mathbf{u}-a\mathbf{v}\rangle=$$ $$\langle\mathbf{u},\mathbf{u}\rangle-\overline{a}\langle\mathbf{u},\mathbf{v}\rangle-a(\langle\mathbf{v},\mathbf{u}\rangle-\overline{a}\langle\mathbf{v},\mathbf{v})\rangle=\langle\mathbf{u},\mathbf{u}\rangle-\overline{a}\langle\mathbf{u},\mathbf{v}\rangle-a\langle\mathbf{v},\mathbf{u}\rangle+a\overline{a}\langle\mathbf{v},\mathbf{v}\rangle.$$ \noindent En particular, tomando $a=\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}$ y sustituyendo en la desigualdad anterior, obtenemos que $$0\leq\langle\mathbf{u},\mathbf{u}\rangle-\frac{\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{u},\mathbf{v}\rangle-\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{v},\mathbf{u}\rangle+\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\frac{\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{v},\mathbf{v}\rangle=$$ $$\langle\mathbf{u},\mathbf{u}\rangle-2\frac{\langle\mathbf{u},\mathbf{v}\rangle\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}+\frac{\langle\mathbf{u},\mathbf{v}\rangle\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}=||\mathbf{u}||^2-\frac{|\langle\mathbf{u},\mathbf{v}\rangle|^2}{||\mathbf{v}||^2}\implies$$ $$0\leq ||\mathbf{u}||^2-\frac{|\langle\mathbf{u},\mathbf{v}\rangle|^2}{||\mathbf{v}||^2}\implies \frac{|\langle\mathbf{u},\mathbf{v}\rangle|^2}{||\mathbf{v}||^2}\leq ||\mathbf{u}||^2\implies|\langle\mathbf{u},\mathbf{v}\rangle|^2\leq ||\mathbf{u}||^2\hspace{0.5mm}||\mathbf{v}||^2\implies|\langle\mathbf{u},\mathbf{v}\rangle|\leq ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||.$$
 
 \end{proof}
-\end{teo}
+\end{Teo}
 
 \newpage
 \subsection*{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}\label{Subsec:Interpretación geométrica del producto escalar} 
@@ -458,7 +458,7 @@ A esto se le conoce como un proceso de \emph{ortogonalización}. Observemos que,
 
 Antes de ver cómo podemos construir bases ortogonales y ortonormales, el siguiente teorema y corolario nos ayudarán a comenzar a entender su utilidad.
 
-\begin{teo} {4.3.1.1} \label{Teo:4.3.1.1}
+\begin{Teo} {4.3.1.1} \label{Teo:4.3.1.1}
     Sea $V$ sobre $K$ un espacio vectorial con producto escalar y $S=\{\mathbf{v}_1, ..., \mathbf{v}_n\}$ un subconjunto ortogonal de $V$ con $\mathbf{v}_i\neq\mathbf{0}\hspace{3mm}\forall\hspace{1.5mm} 1\leq i\leq n.$ Si $\mathbf{u}\in \langle S \rangle \implies$ $$\mathbf{u} = \sum_{i=1}^n \frac{\langle\mathbf{u},\mathbf{v}_i\rangle}{||\mathbf{v}_i||^2}\mathbf{v}_i=\sum_{i=1}^n P_{\mathbf{v}_i}(\mathbf{u})\frac{\mathbf{v}_i}{||\mathbf{v}_i||}.$$
 
 \begin{proof}
@@ -473,9 +473,9 @@ Habíamos visto con anterioridad que cualquier vector puede ser expresado como u
         \mathbf{u} = \sum_{i=1}^n \langle\mathbf{u},\mathbf{v}_i\rangle\mathbf{v}_i
     .\] \noindent Por lo tanto, si aplicamos el Teorema 4.3.1.1 a una base ortonormal $N$, los coeficientes mencionados en el párrafo anterior son simplemente el producto escalar del vector $\mathbf{u}$ con cada vector de la base ortonormal.
 
-\end{teo}
+\end{Teo}
 
-\begin{coro} {4.3.1.2}
+\begin{Coro} {4.3.1.2}
 Sea $V$ sobre $K$ un espacio vectorial con producto interior y $S$ un subconjunto ortogonal con vectores no nulos, entonces $S$ es linealmente independiente.
 
 \begin{proof}
@@ -483,13 +483,13 @@ Sea $V$ sobre $K$ un espacio vectorial con producto interior y $S$ un subconjunt
 \end{proof}
 
 Observemos que este corolario es una genearlización del primer ejercicio de repaso de la sección 3. Además, este corolario y el teorema del cual se desprende nos dicen que los conjuntos ortogonales son buenos candidatos para bases, ya que son linealmente independientes y el cálculo de los coeficientes $c_i$ es sumamente sencillo. En particular, aplicando este corolario a los conjuntos ortogonales vemos que, si $V$ es un espacio vectorial de dimensión $n$, entonces cualquier conjunto ortogonal de $n$ vectores es una base de $V$ (ver teorema 4.2.3). 
-\end{coro}
+\end{Coro}
 
 Así como a partir de cualquier conjunto linealmente independiente de un espacio vectorial $V$ se puede construir una base para $V$ se puede, además, realizar un proceso de \emph{ortogonalización} u \emph{ortonormalización} de esa misma base. La demostración de este hecho\textemdash que también nos deletrea el proceso a seguir para lograrlo\textemdash \hspace{0.5mm} se conoce como el Teorema de Gram-Schmidt.
 
 \subsubsection*{Teorema de Gram-Schmidt} \label{Teo:Gram-Schmidt}
 
-\begin{teo} {4.3.2.1 (Gram-Schmidt)}
+\begin{Teo} {4.3.2.1 (Gram-Schmidt)}
     Sea $V$ sobre $K$ un espacio vectorial y $S=\{\mathbf{u}_1, ..., \mathbf{u}_n\}$ un subconjunto linealmente independiente de $V$. Si definimos al conjunto $S'=\{\mathbf{v}_1, ..., \mathbf{v}_n\}$ de tal forma que $\mathbf{v}_1=\mathbf{u}_1$ y $$\mathbf{v}_k=\mathbf{u}_k-\sum_{j=1}^{k-1}\frac{\langle\mathbf{u}_k,\mathbf{v}_j\rangle}{||\mathbf{v}_j||^2} \mathbf{v}_j=\mathbf{u}_k-\sum_{j=1}^{k-1} P_{\mathbf{v}_j}(\mathbf{u}_k) \frac{\mathbf{v}_j}{||\mathbf{v}_j||},\hspace{3mm 2\leq k\leq n},$$ entonces $S'$ es un subconjunto ortogonal de $V$ tal que $\langle S' \rangle = \langle S \rangle.$
 
 \begin{proof}
@@ -518,7 +518,7 @@ Finalmente, por construcción $S'_k\subseteq \langle S_k \rangle$, lo cual tambi
 
     Además, observemos que se podría modificar ligeramente el procedimiento seguido en el teorema anterior definiendo al primer vector de la nueva base como un vector unitario. Es más, supongamos que definimos un nuevo conjunto generador $N$ con $\mathbf{n}_1=\frac{\mathbf{b}_1}{||\mathbf{b}_1||}$ y después, cada vez que obtenemos un nuevo vector ortogonal a los anteriores siguiendo el proceso del Teorema 4.3.2.1, lo normalizamos antes de añadirlo a $N$: en este caso, el conjunto generador resultante será una base \emph{ortonormal} de $V$. Es decir, podríamos hacer un Teorema de Gram-Scmidt \emph{modificado} de tal forma que a partir de cualquier subconjunto linealmente independiente podamos generar un subconjunto ortonormal que genere al mismo subespacio que el anterior. Aplicado a bases, estaríamos asegurando que a partir de cualquier base $B$ de un espacio vectorial $V$, se puede construir una base ortonormal para $V$, además de detallar el proceso mediante el cual se contstruye dicha base ortonormal.  
 
-\end{teo}
+\end{Teo}
 
 %\subsubsection*{Ejemplos de ortogonalización y ortonormalización} 
 

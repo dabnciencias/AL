@@ -4,7 +4,7 @@
 
 \section{Nociones básicas de transformaciones lineales} \label{Sec: Nociones básicas de transformaciones lineales}
 
-Las estructuras algebráicas no sólo se pueden estudiar a través de sus \emph{elementos}, sino también a través de \emph{funciones} entre ellas. En particular, un tipo de funciones muy útiles para estudiar estructuras algebráicas son aquellas que preservan la estructura en cuestión. En el caso particular de los espacios vectoriales, una función que preserva este tipo de estructura tiene espacios vectoriales como dominio y contradominio y es compatible con las operaciones de suma vectorial y producto de un vector por un escalar; a este tipo de funciones se les conoce como transformaciones lineales. Una definición más operativa es la siguiente.
+Las estructuras algebraicas no sólo se pueden estudiar a través de sus \emph{elementos}, sino también a través de \emph{funciones} entre ellas. En particular, un tipo de funciones muy útiles para estudiar estructuras algebraicas son aquellas que preservan la estructura en cuestión. En el caso particular de los espacios vectoriales, una función que preserva este tipo de estructura tiene espacios vectoriales como dominio y contradominio y es compatible con las operaciones de suma vectorial y producto de un vector por un escalar; a este tipo de funciones se les conoce como transformaciones lineales. Una definición más operativa es la siguiente.
 
 \subsection*{Transformaciones lineales} \label{Ssec: Definición de transformación lineal}
 
@@ -83,7 +83,7 @@ Podemos estudiar espacios vectoriales a través de transformaciones lineales ent
     \] 
 \end{tcolorbox}
 
-\begin{obs}
+\begin{Obs}
 
     Sea $T:V\to W$ una transformación lineal.
 
@@ -105,7 +105,7 @@ Podemos estudiar espacios vectoriales a través de transformaciones lineales ent
 
             En particular, si $W$ tiene dimensión finita, del Teorema \ref{teo: Dimensión de subespacios de un espacio de dimensión finita} se sigue que $\text{Im}(T)$ también tiene dimensión finita. 
     \end{enumerate}
-\end{obs}
+\end{Obs}
 
 Las dimensiones de los núcleos e imágenes de transformaciones lineales nos dan información útil sobre ellas, por lo que se les da un nombre especial.
 
@@ -122,9 +122,9 @@ Las dimensiones de los núcleos e imágenes de transformaciones lineales nos dan
 
 \noindent Algunos ejemplos de esto están dados por los siguientes resultados.
 
-\begin{prop}\label{prop: Caracterización de transformaciones lineales inyectivas}[Caracterización de transformaciones lineales inyectivas]
+\begin{Prop}\label{prop: Caracterización de transformaciones lineales inyectivas}[Caracterización de transformaciones lineales inyectivas]
     Sean $V,W$ espacios vectoriales y $T:V\to W$ una transformación lineal. Entonces $T$ es una función inyectiva si, y sólo si, $\text{nulidad}(T)=0$.
-\end{prop}
+\end{Prop}
 
 \begin{proof}\leavevmode
 
@@ -141,9 +141,9 @@ Las dimensiones de los núcleos e imágenes de transformaciones lineales nos dan
     Por lo tanto, se sigue que $T$ es una función inyectiva.
 \end{proof}
 
-\begin{prop}[Caracterización de transformaciones lineales suprayectivas con contradominios de dimensión finita]\label{prop: Caracterización de transformaciones lineales suprayectivas con contradominios de dimensión finita}
+\begin{Prop}[Caracterización de transformaciones lineales suprayectivas con contradominios de dimensión finita]\label{prop: Caracterización de transformaciones lineales suprayectivas con contradominios de dimensión finita}
     Sean $V,W$ espacios vectoriales con $\text{dim}(W) = n$ finita y $T:V\to W$ una transformación lineal. Entonces $T$ es una función suprayectiva si, y sólo si, $\text{rango}(T)=n$.
-\end{prop}
+\end{Prop}
 
 \begin{proof}\leavevmode
 
@@ -160,13 +160,13 @@ Las dimensiones de los núcleos e imágenes de transformaciones lineales nos dan
 
 El siguiente resultado nos dice cómo encontrar un conjunto generador de la imagen de una transformación lineal que tiene como dominio a un espacio vectorial de dimensión finita a partir de una base de su dominio. Aplicando el Teorema \ref{teo: Conversión de conjunto generador en base para espacios de dimensión finita} a dicho conjunto generador podemos obtener una base de la imagen, por lo que este resultado nos servirá para calcular el rango de transformaciones lineales de este tipo.
 
-\begin{teo}\label{teo: conjunto generador de la imagen de una transformación lineal con dominio de dimensión finita a partir de una base de su dominio}
+\begin{Teo}\label{teo: conjunto generador de la imagen de una transformación lineal con dominio de dimensión finita a partir de una base de su dominio}
     Sean $V, W$ espacios vectoriales y $T:V\to W$ una transformación lineal, con $V$ un espacio de dimensión finita $n$ y $B=\{\vec{b}_1,\vec{b}_2,...,\vec{b}_n\}\subseteq V$ una base de $V$. Entonces, tenemos que
     \[
         \langle\{T(\vec{b}_1),T(\vec{b}_2),...,T(\vec{b}_n)\}\rangle = \text{Im}(T),
     \] 
     es decir, el conjunto $T(B) := \{T(\vec{b}_1),T(\vec{b}_2),...,T(\vec{b}_n)\}$ es un conjunto generador de $\text{Im}(T)$.
-\end{teo}
+\end{Teo}
 
 \begin{proof}
     Como $B\subseteq V$, por definición de imagen tenemos que $T(B)\subseteq W$. Puesto que, por el Ejercicio \ref{ejer-20}, $\text{Im}(T)$ es un subespacio vectorial de $W$, entonces de la Proposición \ref{prop: Caracterización de subespacios vectoriales} se sigue que $\text{Im}(T)$ es un conjunto cerrado por combinaciones lineales. Por ende, $\langle T(B) \rangle \subseteq \text{Im}(T)$. \\
@@ -185,9 +185,9 @@ El siguiente resultado nos dice cómo encontrar un conjunto generador de la imag
     Por ende, $\text{Im}(T)\subseteq \langle T(B) \rangle$. Por lo tanto, concluimos que $\langle T(B) \rangle = \text{Im}(T)$.
 \end{proof}
 
-\begin{coro}
+\begin{Coro}
     Si $T:V\to W$ es una transformación lineal y $V$ es de dimensión finita, entonces $\text{Im}(T)$ es un subespacio vectorial de $W$ de dimensión finita.
-\end{coro}
+\end{Coro}
 
 \begin{proof}
     Se sigue del Ejercicio \ref{ejer-20} y de los Teoremas \ref{teo: conjunto generador de la imagen de una transformación lineal con dominio de dimensión finita a partir de una base de su dominio} y \ref{teo: Conversión de conjunto generador en base para espacios de dimensión finita}.
@@ -195,12 +195,12 @@ El siguiente resultado nos dice cómo encontrar un conjunto generador de la imag
 
 Uno de los resultados más importantes para transformaciones lineales entre espacios vectoriales de dimensión finita es el siguiente.
 
-\begin{teo}[Fórmula de la dimensión]\label{teo: Fórmula de la dimensión}
+\begin{Teo}[Fórmula de la dimensión]\label{teo: Fórmula de la dimensión}
     Sean $V,W$ espacios vectoriales de dimensión finita y $T:V\to W$ una transformación lineal. Entonces,
     \[
         \text{dim}(V) = \text{rango}(T) + \text{nulidad}(T).
     \] 
-\end{teo}
+\end{Teo}
 
 \begin{proof}
 
@@ -244,7 +244,7 @@ Uno de los resultados más importantes para transformaciones lineales entre espa
 
 Con la ayuda de la fórmula de la dimensión, podemos obtener una caracterización para saber cuándo una transformación lineal entre espacios vectoriales de la misma dimensión es biyectiva, lo cual será de suma importancia más adelante.
 
-\begin{teo}[Caracterización de transformaciones lineales biyectivas]
+\begin{Teo}[Caracterización de transformaciones lineales biyectivas]
     Sean $V,W$ espacios vectoriales de la misma dimensión finita $n$ y $T:V\to W$ una transformación lineal. Entonces, las siguientes condiciones son equivalentes.
 
     \begin{enumerate}[label=(\alph*)]
@@ -255,7 +255,7 @@ Con la ayuda de la fórmula de la dimensión, podemos obtener una caracterizaci�
 
         \item $T$ es biyectiva.
     \end{enumerate}
-\end{teo}
+\end{Teo}
 
 \begin{proof}\leavevmode
 
@@ -287,7 +287,7 @@ análogamente, definimos el \emph{producto de la transformación lineal} (o \emp
 \] 
 \end{tcolorbox}
 
-\begin{obs}
+\begin{Obs}
 
     Como podrás sospechar a partir de las definiciones anteriores, el conjunto de transformaciones lineales entre dos espacios vectoriales tiene una estructura que debería resultarles familiar.
     
@@ -296,7 +296,7 @@ análogamente, definimos el \emph{producto de la transformación lineal} (o \emp
 \end{ejer}
 
 \noindent Por ende, dado que por definición las transformaciones lineales son compatibles con las operaciones esenciales de los espacios vectoriales (i.e., preservan la estructura de espacio vectorial) y que sus contradominios tienen la estructura de espacio vectorial, ¡el conjunto de todas las transformaciones lineales de un espacio a otro \emph{hereda} la estructura de espacio vectorial!
-\end{obs}
+\end{Obs}
 
 \subsubsection*{Composición de transformaciones lineales} \label{Sssec: Composición de transformaciones lineales}
 
@@ -308,7 +308,7 @@ análogamente, definimos el \emph{producto de la transformación lineal} (o \emp
     La expresión de la composición $U\circ T$ se puede leer como ``$U$ \emph{después de} $T$'' para recordar cuál de las funciones se debe aplicar primero.
 \end{tcolorbox}
 
-\begin{obs}\leavevmode
+\begin{Obs}\leavevmode
 
     \begin{enumerate}[label=(\arabic*)]
     
@@ -320,7 +320,7 @@ análogamente, definimos el \emph{producto de la transformación lineal} (o \emp
 
         \item En el caso particular en que todos los dominios y contradominios de las transformaciones lineales que se componen son el mismo espacio vectorial $V$, entonces el resultado de la composición es un operador lineal en $V$. Es decir, la operación de composición de transformaciones lineales en $\mathcal{L}(V,V)$ es cerrada; equivalentemente, \emph{la composición de operadores lineales sobre un mismo espacio vectorial es una operación binaria}.
     \end{enumerate}
-\end{obs}
+\end{Obs}
 
 \begin{ejer}
     Sean $(V,K)$ y $(W,K)$ espacios vectoriales y $T:V\to W$ una transformación lineal. Supongamos que existe $T^{-1}:W\to V$. Demuestra que $T^{-1}$ es una transformación lineal.

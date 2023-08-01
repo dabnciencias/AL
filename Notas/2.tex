@@ -12,15 +12,15 @@ Anteriormente, vimos que es posible tomar a un subconjunto de un campo de tal ma
     \underline{Def.} Sea $(V,K)$ un espacio vectorial. Si $S$ es un subcampo de $K$ y $W\subseteq V$ es tal que las operaciones de suma vectorial y producto de un vector por un escalar en $(V,K)$ restringidas a $W\times W$ y $S\times W$, respectivamente, forman un espacio vectorial, entonces decimos que $(W,S)$ es un \emph{subespacio vectorial} de $(V,K)$.
 \end{tcolorbox}
 
-\begin{obs}\label{obs:1.8}
+\begin{Obs}\label{obs:1.8}
 %    Si $S$ es un subcampo de $K$, entonces $(S,S)$ y $(K,S)$ son subespacios vectoriales de $(K,K)$. En efecto, esto se sigue de los Ejercicios \ref{ejer-4} y \ref{ejer-5}. En particular, de los ejemplos de esos ejercicios se sigue que $(\mathbb{R},\mathbb{R})$ y $(\mathbb{C},\mathbb{R})$ son subespacios vectoriales de $(\mathbb{C},\mathbb{C})$.
 
     Si $S$ es un subcampo de $K$, entonces $(S,S)$ es un subespacio vectorial de $(K,K)$. En efecto: Esto se sigue del Ejercicio \ref{ejer-4}. En particular, de los ejemplos de ese ejercicio se sigue que $(\mathbb{R},\mathbb{R})$ es un subespacio vectorial de $(\mathbb{C},\mathbb{C})$.
-\end{obs}
+\end{Obs}
 
 Si $(V,K)$ es un espacio vectorial y $W\subseteq V$, podemos preguntarnos: ¿Qué condiciones necesita cumplir el subconjunto $W$ para que forme un subespacio vectorial sobre $K$ de $(V,K)$? La respuesta está dada por el siguiente resultado, que nos da una caracterización muy útil de los subespacios vectoriales.
 
-\begin{prop}[Caracterización de subespacios vectoriales]\label{prop: Caracterización de subespacios vectoriales}
+\begin{Prop}[Caracterización de subespacios vectoriales]\label{prop: Caracterización de subespacios vectoriales}
     
     Sean $(V,K)$ un espacio vectorial y $W\subseteq V$. Entonces las condiciones siguientes equivalen a que $(W,K)$ sea un subespacio vectorial de $(V,K)$:
 
@@ -32,7 +32,7 @@ Si $(V,K)$ es un espacio vectorial y $W\subseteq V$, podemos preguntarnos: ¿Qu�
 
         \item $W$ contiene al vector nulo de $V$.
     \end{enumerate}
-\end{prop}
+\end{Prop}
 
 \begin{proof}\leavevmode
     
@@ -41,19 +41,19 @@ Si $(V,K)$ es un espacio vectorial y $W\subseteq V$, podemos preguntarnos: ¿Qu�
     Por otro lado, supongamos que $W$ cumple (a), (b) y (c). Puesto que $(V,K)$ es un espacio vectorial y $W\subseteq V$, entonces de (a) y (b) se sigue directamente que la suma vectorial en $V$ restringida a $W$ es asociativa y conmutativa, el producto de un vector por un escalar restringido a $K\times W$ es compatible con el producto entre escalares, existe un elemento identidad del producto de un vector por un escalar $1\in K$, y que el producto de un vector por un escalar restringido a $W$ y $K$ se distribuye con respecto a la suma vectorial y con respecto a la suma escalar. En particular, por la existencia de inversos aditivos en el campo $K$, la existencia del elemento $1\in K$ y la distributividad del producto de un vector por un escalar con respecto a la suma escalar, se sigue que existen inversos aditivos para todos los elementos de $W$. Finalmente, por (c), existe un neutro aditivo en $W$. Por lo tanto, $W$ es tal que las operaciones de suma vectorial y producto de un vector por un escalar restringidas a $W\times W$ y $K\times W$ forman un espacio vectorial, de donde se sigue que $(W,K)$ es un subespacio vectorial de $(V,K)$.
 \end{proof}
 
-\begin{obs} \label{obs: Simplificación de la caracterización de subespacios vectoriales}
+\begin{Obs} \label{obs: Simplificación de la caracterización de subespacios vectoriales}
     Las condiciones (a) y (b) de la Proposición \ref{prop: Caracterización de subespacios vectoriales} son equivalentes a decir que, si $\mathbf{u},\mathbf{v}\in W$ y $a\in K$, entonces $\mathbf{u}+a\mathbf{v}\in W$.
-\end{obs}
+\end{Obs}
 
-\begin{coro}\label{coro:2.3}
+\begin{Coro}\label{coro:2.3}
     Sean $(V,K)$ un espacio vectorial, $W\subseteq V$ y $S$ es un subcampo de $K$. Entonces, las condiciones de la Proposición \ref{prop: Caracterización de subespacios vectoriales} \textemdash restringiendo el producto de un vector por un escalar a $S\times W$\textemdash \ son equivalentes a que $(W,S)$ sea un subespacio vectorial de $(V,K)$.
-\end{coro}
+\end{Coro}
 
 \begin{proof}
     Es totalmente análoga a la de demostración de la Proposición \ref{prop: Caracterización de subespacios vectoriales}.
 \end{proof}
 
-\begin{obs}\label{obs:2.4}\leavevmode
+\begin{Obs}\label{obs:2.4}\leavevmode
     \begin{enumerate}[label=(\arabic*)]
 
         \item Como todo subespacio vectorial es, en particular, un espacio vectorial, entonces cualquier subespacio vectorial puede tener subespacios vectoriales subsecuentes, todos con el mismo vector nulo.
@@ -61,7 +61,7 @@ Si $(V,K)$ es un espacio vectorial y $W\subseteq V$, podemos preguntarnos: ¿Qu�
         \item Para todo espacio vectorial $V$, $V$ y $\{\mathbf{0}\}$ son trivialmente subespacios vectoriales de $V$.
     \end{enumerate}
    
-\end{obs}
+\end{Obs}
 
 \subsubsection*{Ejemplos de subespacios vectoriales}
 
@@ -75,18 +75,18 @@ Si $n\in\mathbb{N}$, entonces el conjunto de todas las funciones reales de clase
 
 A continuación, presentamos algunas operaciones que podemos realizar entre subespacios vectoriales de un cierto espacio vectorial para obtener nuevos subespacios de dicho espacio. En realidad, estas operaciones se realizarán entre los \emph{conjuntos vectoriales} de dichos subespacios, resultando en un conjunto de vectores que forma un subespacio vectorial sobre el mismo campo que el espacio vectorial original.
 
-\begin{teo}\label{teo: Intersección de dos subespacios vectoriales} Sea $V$ un espacio vectorial. Entonces, cualquier intersección de dos subespacios vectoriales de $V$ es un subespacio vectorial de $V$.
+\begin{Teo}\label{teo: Intersección de dos subespacios vectoriales} Sea $V$ un espacio vectorial. Entonces, cualquier intersección de dos subespacios vectoriales de $V$ es un subespacio vectorial de $V$.
 
 \begin{proof}
     Sea $V$ sobre $K$ un espacio vectorial y sean $W_1,W_2$ subespacios vectoriales de $V$. Por la Proposición \ref{prop: Caracterización de subespacios vectoriales}, cada subespacio vectorial de $V$ contiene al neutro aditivo de $V$, por lo que $\mathbf{0}\in W_1\cap W_2$. \\ 
 
     Sean $\mathbf{u},\mathbf{v}\in W_1\cap W_2$ y $a\in K$. Por la Observación \ref{obs: Simplificación de la caracterización de subespacios vectoriales}, cada subespacio contiene a $\mathbf{u}+a\mathbf{v}$, por lo que $\mathbf{u}+a\mathbf{v}\in W_1\cap W_2$. De lo anterior, concluimos que $W_1\cap W_2$ es un subespacio vectorial de $V$.
 \end{proof}
-\end{teo}
+\end{Teo}
 
-\begin{coro}\label{coro: Intersección finita de subespacios vectoriales}
+\begin{Coro}\label{coro: Intersección finita de subespacios vectoriales}
     Cualquier intersección finita de subespacios vectoriales de un espacio vectorial $V$ es un subespacio vectorial de $V$.
-\end{coro}
+\end{Coro}
 
 \begin{proof}
     Se sigue del Teorema \ref{teo: Intersección de dos subespacios vectoriales} y de que la intersección de conjuntos es una operación asociativa.
@@ -119,7 +119,7 @@ Ahora, veremos más formas de obtener subespacios vectoriales a partir de un esp
     En este caso, decimos que los escalares $c_i$ son los \emph{coeficientes} de la combinación lineal $\sum_{i=1}^n c_i\mathbf{v}_i$.
 \end{tcolorbox}
 
-\begin{obs}\label{obs: Combinaciones lineales}\leavevmode
+\begin{Obs}\label{obs: Combinaciones lineales}\leavevmode
     \begin{enumerate}[label=(\arabic*)]
     
         \item Dadas las propiedades de cerradura de las operaciones esenciales de los espacios vectoriales, cualquier combinación lineal de vectores de un espacio vectorial $V$ resultará en un vector de $V$.
@@ -128,7 +128,7 @@ Ahora, veremos más formas de obtener subespacios vectoriales a partir de un esp
 
         \item Siguiendo las interpretaciones geométricas de las operaciones de suma entre vectores y producto de un vector por un escalar vistas anteriormente, podemos interpretar a esta operación generalizada como la combinación de flechas (o líneas) reescaladas y posiblemente rotadas, si el espacio vectorial es complejo y el escalar tiene una parte imaginaria no nula, a las cuales aplicamos la Ley del paralelogramo para obtener una nueva flecha (o línea) como resultado. Precisamente por esta razón es que a esta operación general se le conoce como \emph{combinación lineal}.
     \end{enumerate}
-\end{obs}
+\end{Obs}
 
 \begin{ejer}\label{ejer-9}
     Sea $(V,K)$ un espacio vectorial y $L=\{\mathbf{v}_1,\mathbf{v}_2,...,\mathbf{v}_n\}\subseteq V$ un conjunto finito de vectores de $V$. Demuestra que el conjunto de todas las combinaciones lineales de $L$
@@ -148,9 +148,9 @@ En vista del Ejercicio \ref{ejer-9}, damos la siguiente definición.
     A $L$ se le conoce como el \emph{conjunto generador}. Por completez, definimos $\langle \emptyset \rangle = \{\mathbf{0}\}$.
 \end{tcolorbox}
 
-\begin{obs}\label{obs: Notación de subespacios generados}
+\begin{Obs}\label{obs: Notación de subespacios generados}
     A menudo denotaremos al subespacio generado por un conjunto de vectores $\{\mathbf{v}_1,\mathbf{v}_2,...,\mathbf{v}_n\}$ simplemente como $\langle\mathbf{v}_1,\mathbf{v}_2,...,\mathbf{v}_n\rangle$ en vez de $\langle\{\mathbf{v}_1,\mathbf{v}_2,...,\mathbf{v}_n\}\rangle$, cuando esto no lleve a una confusión.
-\end{obs}
+\end{Obs}
 
 En un espacio vectorial arbitrario es posible expresar a cualquiera de sus vectores como combinación lineal de otros vectores del mismo espacio. Por ejemplo, en $\mathbb{R}^2$ el vector $$\begin{pmatrix} 1 & 5 \end{pmatrix} = \begin{pmatrix} 1 & 0 \end{pmatrix} + 5\begin{pmatrix} 0 & 1 \end{pmatrix} = 2\begin{pmatrix} 1 & 1.5 \end{pmatrix} + (-0.5)\begin{pmatrix} 2 & -4 \end{pmatrix} $$ $$ = (-4)\begin{pmatrix} 0.5 & -3 \end{pmatrix} + 3\begin{pmatrix} 1 & 1 \end{pmatrix} + (-5)\begin{pmatrix} 0 & 2 \end{pmatrix} = ...$$ \noindent Observamos que, en cada caso, el valor de los coeficientes $c_i\in\mathbb{R}$ depende de los vectores $\mathbf{v}_i\in\mathbb{R}^2$ con los cuales se realiza la combinación lineal. Para dar otro ejemplo, en $P^2$, si definimos los vectores $f(x) = 7x^2 - 5x + 2, g(x) = x^2, h(x) = 9x, i(x)=7, j(x)=x^2 + x + 1$, podemos verificar que $$f(x) = 7g(x)-\frac{5}{9}h(x)+\frac{2}{7}i(x)=7j(x)-\frac{4}{3}h(x)+\frac{1}{7}i(x)=3j(x)+4g(x)+-\frac{8}{9}h(x)-\frac{1}{7}i(x)=...$$
 
@@ -158,7 +158,7 @@ Para dar algunos ejemplos, si elegimos cualquier vector $\mathbf{v}\in\mathbb{R}
 
 A continuación, veremos un teorema que será de gran importancia en las secciones posteriores.
 
-\begin{teo}\label{teo: Agregar un elemento de un subespcio generado al conjunto generador deja al subespacio generado invariante}
+\begin{Teo}\label{teo: Agregar un elemento de un subespcio generado al conjunto generador deja al subespacio generado invariante}
     Sea $V$ un espacio vectorial, $S\subseteq V$ un conjunto finito de vectores de $V$ y $\mathbf{v}\in V$ un vector arbitrario. Si $S'=S\cup\{\mathbf{v}\}$, entonces $\langle S \rangle = \langle S' \rangle \iff \mathbf{v}\in\langle S \rangle.$
 
 \begin{proof}
@@ -166,5 +166,5 @@ Ya que $\mathbf{v}\in S'$ entonces trivialmente se cumple que $\mathbf{v}\in\lan
 \end{proof}
         
     Este teorema nos dice que agregar un vector a un conjunto generador no necesariamente cambiará el subespacio generado por ese conjunto generador. Para que este cambio realmente suceda, el vector añadido debe ser en algún sentido \emph{ajeno} a los del conjunto generador original. En la siguiente sección, veremos algunas definiciones necesarias para precisar esta idea.
-\end{teo}
+\end{Teo}
 

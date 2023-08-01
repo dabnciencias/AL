@@ -2,13 +2,13 @@
 
 \begin{document}
 
-\section{Estructuras algebráicas, campos y espacios vectoriales} \label{Sec: Estructuras algebráicas, campos y espacios vectoriales}
+\section{Estructuras algebraicas, campos y espacios vectoriales} \label{Sec: Estructuras algebráicas, campos y espacios vectoriales}
 
-El álgebra lineal se puede definir como el estudio de los espacios vectoriales. En esta sección definiremos qué son, así como algunas nociones básicas que guiarán nuestro estudio de este tipo de estructuras algebráicas durante el curso. Antes, discutiremos brevemente qué constituye una estructura algebráica y repasaremos la definición de la estructura de campo \textemdash necesaria para definir la de espacio vectorial.
+El álgebra lineal se puede definir como el estudio de los espacios vectoriales. En esta sección definiremos qué son, así como algunas nociones básicas que guiarán nuestro estudio de este tipo de estructuras algebraicas durante el curso. Antes, discutiremos brevemente qué constituye una estructura algebráica y repasaremos la definición de la estructura de campo \textemdash necesaria para definir la de espacio vectorial.
 
-\subsection*{Estructuras algebráicas} \label{Subsec: Estructuras algebráicas}
+\subsection*{Estructuras algebraicas} \label{Subsec: Estructuras algebráicas}
 
-¿Qué es el álgebra, y qué es lo que estudia? A menudo en los primeros cursos de álgebra esta cuestión no queda clara. El hecho de que esta área de las matemáticas tenga una historia de evolución que comenzó hace miles de años y continúa hasta hoy en día complica aún más la situación. A pesar de no ser la visión más general que existe, en este curso tomaremos por respuesta que el álgebra es el estudio de estructuras algebráicas.
+¿Qué es el álgebra, y qué es lo que estudia? A menudo en los primeros cursos de álgebra esta cuestión no queda clara. El hecho de que esta área de las matemáticas tenga una historia de evolución que comenzó hace miles de años y continúa hasta hoy en día complica aún más la situación. A pesar de no ser la visión más general que existe, en este curso tomaremos por respuesta que el álgebra es el estudio de estructuras algebraicas.
 
 \subsubsection*{Definición de estructura algebráica y propiedades de sus operaciones} \label{Sssec: Definición de estructura algebráica y propiedades de sus operaciones}
 
@@ -51,12 +51,12 @@ Antes de definir una estructura algebráica, recordaremos una definición import
     \end{itemize}
 \end{tcolorbox}
     
-\begin{obs}\label{obs:1.1}
+\begin{Obs}\label{obs:1.1}
     
 Por definición, la relación de ``ser inverso bajo una operación'' es simétrica. Es decir, $a$ es inverso de $b$ bajo la operación $\star$ si, y sólo si, $b$ es inverso de $a$ bajo $\star$. Más aún, por definición, el elemento identidad de una operación, si existe, siempre es su propio inverso bajo esa operación. Frecuentemente diremos simplemente \emph{identidad} o \emph{neutro} para referirnos al elemento identidad de una operación; así mismo, utilizaremos sólo la palabra \emph{estructura} para referirnos a una estructura algebráica. 
-\end{obs}
+\end{Obs}
 
-\subsubsection*{Ejemplos de estructuras algebráicas} \label{Sssec: Ejemplos de estructuras algebráicas}
+\subsubsection*{Ejemplos de estructuras algebraicas} \label{Sssec: Ejemplos de estructuras algebráicas}
 
 Para cualquier conjunto arbitrario $A$, su conjunto potencia $\mathscr{P}(A)$ junto con las operaciones de unión e intersección de conjuntos ($\cup$ y $\cap$, respectivamente) y la relación ``contención'' ($\subseteq$) forma una estructura algebráica, que podemos escribir explícitamente como $(\mathscr{P}(A),\cup,\cap,\subseteq$). Observemos que ambas operaciones son binarias, asociativas y conmutativas, como seguramente viste en tu curso de Álgebra.
 
@@ -70,11 +70,11 @@ El conjunto de los números naturales ($\mathbb{N}$) junto con la operación de 
     Consideremos la estructura algebráica $(\mathbb{N},+,\le)$, donde $0\in\mathbb{N}$. Demuestra que $\{0\}$ es el único subconjunto finito $\mathbb{N}$ cerrado bajo la suma.
 \end{ejer}
 
-El conjunto de los números enteros junto con las operaciones de suma y multiplicación forma una estructura algebráica $(\mathbb{Z},+,\cdot)$. Similarmente, los conjuntos de los números racionales y los reales con las mismas operaciones \textemdash entre números racionales y reales, respectivamente\textemdash \ forman las estructuras $(\mathbb{Q},+,\cdot)$ y $(\mathbb{R},+,\cdot)$. Claramente, estas tres estructuras son distintas, pues los conjuntos que los forman son distintos. Sin embargo, $(\mathbb{Q},+,\cdot)$ y $(\mathbb{R},+,\cdot)$ forman el mismo \emph{tipo} de estructura algebráica puesto que, como veremos más adelante, sus operaciones cumplen las mismas propiedades. Estudiaremos este tipo de estructura, conocida como \emph{campo}, en la sección \ref{Ssec: Campos} como un primer paso hacia la definición de otro tipo de estructura conocida como \emph{espacio vectorial}, que definiremos en \ref{Ssec: Espacios vectoriales}. Además, veremos que no se necesitan relaciones para definir a estos tipos de estructuras. Por lo tanto, de ahora en adelante asumiremos que nuestras estructuras algebráicas no tienen relaciones. \\
+El conjunto de los números enteros junto con las operaciones de suma y multiplicación forma una estructura algebráica $(\mathbb{Z},+,\cdot)$. Similarmente, los conjuntos de los números racionales y los reales con las mismas operaciones \textemdash entre números racionales y reales, respectivamente\textemdash \ forman las estructuras $(\mathbb{Q},+,\cdot)$ y $(\mathbb{R},+,\cdot)$. Claramente, estas tres estructuras son distintas, pues los conjuntos que los forman son distintos. Sin embargo, $(\mathbb{Q},+,\cdot)$ y $(\mathbb{R},+,\cdot)$ forman el mismo \emph{tipo} de estructura algebráica puesto que, como veremos más adelante, sus operaciones cumplen las mismas propiedades. Estudiaremos este tipo de estructura, conocida como \emph{campo}, en la sección \ref{Ssec: Campos} como un primer paso hacia la definición de otro tipo de estructura conocida como \emph{espacio vectorial}, que definiremos en \ref{Ssec: Espacios vectoriales}. Además, veremos que no se necesitan relaciones para definir a estos tipos de estructuras. Por lo tanto, de ahora en adelante asumiremos que nuestras estructuras algebraicas no tienen relaciones. \\
 
-Antes de definir estos tipos de estructuras algebráicas, veremos algunas nociones generales de estructuras que usaremos tanto en campos como en espacios vectoriales.
+Antes de definir estos tipos de estructuras algebraicas, veremos algunas nociones generales de estructuras que usaremos tanto en campos como en espacios vectoriales.
     
-\begin{prop}\label{prop:1.2}
+\begin{Prop}\label{prop:1.2}
     Sean $(A,\star)$ una estructura algebráica con una operación binaria y $e\in A$ un elemento identidad de $\star$. Entonces
 
     \begin{enumerate}[label=(\alph*)]
@@ -84,7 +84,7 @@ Antes de definir estos tipos de estructuras algebráicas, veremos algunas nocion
 
         \item si la operación $\star$ es asociativa y todos los elementos de $A$ tienen inversos bajo $\star$ entonces, para cualesquiera $a,b,c\in A$, se tiene que $a\star c=b\star c$ si, y sólo si, $a=b$. (Ley de Cancelación)
     \end{enumerate}
-\end{prop}
+\end{Prop}
     
 \begin{proof}\leavevmode
     
@@ -115,17 +115,17 @@ Antes de definir estos tipos de estructuras algebráicas, veremos algunas nocion
 
 %\subsubsection*{Funciones que preservan estructura} \label{Sssec: Funciones que preservan estructura} %Creo que esto es de poca utilidad, pues las transformaciones lineales son un tipo de funciones que preservan estructura tan específicas que resulta muy complicado ver el tema de manera más general pero tal que aplique a espacios vectoriales
 
-%Las estructuras no sólo se pueden estudiar a través de las interacciones de sus operaciones con \emph{elementos}, sino también a través de sus interacciones con \emph{funciones}. Sin embargo, trabajar con funciones \emph{arbitarias} para estudiar estructuras puede ser de poca utilidad. Un tipo de funciones muy útiles para estudiar la relación entre dos estructuras algebráicas son aquellas que \textbf{presevan su estructura}.
+%Las estructuras no sólo se pueden estudiar a través de las interacciones de sus operaciones con \emph{elementos}, sino también a través de sus interacciones con \emph{funciones}. Sin embargo, trabajar con funciones \emph{arbitarias} para estudiar estructuras puede ser de poca utilidad. Un tipo de funciones muy útiles para estudiar la relación entre dos estructuras algebraicas son aquellas que \textbf{presevan su estructura}.
 
 %\begin{tcolorbox}
     
-%    \underline{Def.} Sean $(A,\star)$ y $(B,\diamondsuit)$ estructuras algebráicas tales que los contradominios de $\star$ y $\diamondsuit$ son $A$ y $B$, respectivamente. Decimos que una función $f:A\to B$ es \emph{compatible con las operaciones} $\star$ \emph{y} $\diamondsuit$ si, para todo $x,y\in A$, se cumple que
+%    \underline{Def.} Sean $(A,\star)$ y $(B,\diamondsuit)$ estructuras algebraicas tales que los contradominios de $\star$ y $\diamondsuit$ son $A$ y $B$, respectivamente. Decimos que una función $f:A\to B$ es \emph{compatible con las operaciones} $\star$ \emph{y} $\diamondsuit$ si, para todo $x,y\in A$, se cumple que
 %    \[
 %        f(x\star y) = f(x)\diamondsuit f(y).
 %    \]
 %    \noindent En este caso, también decimos que la función $f$ \emph{preserva la estructura} de $(A,\star)$ y $(B,\diamondsuit)$. \\
 %
-%    En caso de que tengamos estructuras algebráicas con dos operaciones $(A,\star,\ast)$ y $(B,\diamondsuit,\spadesuit)$, diremos que una función $f:A\to B$ \emph{preserva su estructura} si es compatible con los pares de operaciones $(\star,\diamondsuit)$ y $(\ast,\spadesuit)$, i.e., si, para todo $x,y\in A$, se cumple que
+%    En caso de que tengamos estructuras algebraicas con dos operaciones $(A,\star,\ast)$ y $(B,\diamondsuit,\spadesuit)$, diremos que una función $f:A\to B$ \emph{preserva su estructura} si es compatible con los pares de operaciones $(\star,\diamondsuit)$ y $(\ast,\spadesuit)$, i.e., si, para todo $x,y\in A$, se cumple que
 %    \begin{align*}
 %        f(x\star y) &= f(x)\diamondsuit f(y) \\
 %                    & \ \& \\
@@ -150,7 +150,7 @@ Es probable que hayas visto este tipo de estructura explícitamente en tu curso 
     \\
     $\forall \ a,b,c\in K \quad \ a+(b+c)=(a+b)+c \ \ \& \ \ a\cdot (b\cdot c)=(a\cdot b)\cdot c$ & Asociatividad \\ \\
     $\forall \ a,b\in K \quad \quad \quad \quad \quad \quad \quad a+b=b+a \ \ \& \ \ a\cdot b = b\cdot a$ & Conmutatividad \\ \\
-    $\exists \ 0,1\in K$ t.q., $\forall \ a\in K$, \ \ \quad $a+0=a \quad \& \quad 1\cdot a=a$ & Identidades (neutros)\footnote{Por el inciso (a) de la Proposición \ref{prop:1.2}, sabemos que los elementos identidad de operaciones binarias en estructuras algebráicas son únicos. Por convención, se suele denotar al neutro aditivo de un campo como $0$ y al neutro multiplicativo, como $1$. Además, como en este caso las operaciones son conmutativas, podemos escribir esta propiedad de manera más sucinta.} \\ \\
+    $\exists \ 0,1\in K$ t.q., $\forall \ a\in K$, \ \ \quad $a+0=a \quad \& \quad 1\cdot a=a$ & Identidades (neutros)\footnote{Por el inciso (a) de la Proposición \ref{prop:1.2}, sabemos que los elementos identidad de operaciones binarias en estructuras algebraicas son únicos. Por convención, se suele denotar al neutro aditivo de un campo como $0$ y al neutro multiplicativo, como $1$. Además, como en este caso las operaciones son conmutativas, podemos escribir esta propiedad de manera más sucinta.} \\ \\
     $\forall \ a\in K \quad \quad \quad \quad \quad \quad \quad \quad \exists \ -a\in K$ \quad t.q. \quad $a + (-a) = 0$ & Inversos aditivos\footnote{Por el inciso (c) de la Proposición \ref{prop:1.2}, sabemos que los inversos, si existen, son únicos. Por convención, si $a$ es elemento de un campo, su inverso aditivo suele denotarse por $-a$.} \\ \\
     $\forall \ a\neq0\in K \hspace{2.55cm} \exists \ \ a^{-1}\in K$ \quad t.q. \quad $a\cdot a^{-1}= 1$ & Inversos multiplicativos\footnote{Por convención, si $a$ es un elemento de un campo distinto del neutro aditivo, su inverso multiplicativo suele denotarse por $a^{-1}$ o $\frac{1}{a}$.} \\ \\
     $\forall \ a,b,c\in K \hspace{3.45cm}a\cdot (b+c) = a\cdot b+a\cdot c$ & Distributividad\footnote{Observemos que podemos escribir esta propiedad de forma resumida, pues $+$ y $\cdot$ son operaciones conmutativas.}.\\ \\
@@ -158,7 +158,7 @@ Es probable que hayas visto este tipo de estructura explícitamente en tu curso 
 \end{center}
 \end{tcolorbox}
 
-\begin{obs}\label{obs:1.3}
+\begin{Obs}\label{obs:1.3}
 
  En otras palabras, una estructura algebráica $(K,+,\cdot)$ es un campo si:
  \begin{enumerate}[label=(\alph*)]
@@ -170,7 +170,7 @@ Es probable que hayas visto este tipo de estructura explícitamente en tu curso 
 \end{enumerate}
 
 \noindent Nótese la asimetría en la propiedad de existencia de inversos aditivos en ambas operaciones: el neutro aditivo \textbf{no} requiere tener inverso multiplicativo, mientras que \textbf{todos} los elementos deben tener inversos aditivos. Frecuentemente escribiremos sólamente $K$ para referirnos al campo $(K,+,\cdot)$ y escribiremos la multiplicación implícitamente, omitiendo el símbolo ``$\cdot$''.
-\end{obs}
+\end{Obs}
 
 %Notación na y a^n por asociatividad de la suma y multiplicación en un campo e inducción.
 
@@ -237,16 +237,16 @@ Apoyándonos en las operaciones del campo real, podemos definir la suma y multip
     \underline{Def.} Sea $(K,+,\cdot)$ un campo. Si $S\subseteq K$ es tal que las operaciones de suma y multiplicación en $K$ restringidas al dominio $S\times S$ forman un campo, decimos que $(S,+,\cdot)$ es un \emph{subcampo} de $(K,+,\cdot)$.
 \end{tcolorbox}
 
-\begin{obs}\label{obs:1.4}
+\begin{Obs}\label{obs:1.4}
     \begin{enumerate}[label=(\arabic*)]\leavevmode
     
         \item Todo campo $K$ es trivialmente un subcampo de sí mismo.
 
         \item Si hacemos una identificación entre el conjunto de los números reales y los números complejos de la forma $a+i0\in\mathbb{C}, a\in\mathbb{R}$, entonces podemos considerar a $(\mathbb{R},+,\cdot)$ como un subcampo de $(\mathbb{C},+,\cdot)$. En efecto, si restringimos las operaciones de suma y multiplicación en el campo complejo al conjunto $\{z\in\mathbb{C}\mid z = a+i0, a\in\mathbb{R}\}$, entonces estas operaciones son idénticas a las operaciones de suma y multiplicación en el campo real.
     \end{enumerate}
-\end{obs}
+\end{Obs}
 
-Prácticamente todas las operaciones que realizamos cotidianamente como calcular fechas, dar cambio, aproximar áreas, repartir comida, etc., toman lugar en un campo. Es decir, las ideas intuitivas que nos formamos durante la educación básica de que la suma siempre debe ser conmutativa y asociativa \textemdash al igual que la multiplicación\textemdash, que existe la resta y la división, que el $0$ y el $1$ son números \emph{especiales} en cierto sentido y que siempre se cumple la propiedad de distributividad, son un \emph{hecho} para cualquier estructura de campo. Sin embargo, estas mismas ideas intuitivas \emph{no siempre se cumplen en otros tipos de estructuras algebráicas} \textemdash algunas de las cuales veremos más adelante\textemdash, \ ¡así que no te confíes!
+Prácticamente todas las operaciones que realizamos cotidianamente como calcular fechas, dar cambio, aproximar áreas, repartir comida, etc., toman lugar en un campo. Es decir, las ideas intuitivas que nos formamos durante la educación básica de que la suma siempre debe ser conmutativa y asociativa \textemdash al igual que la multiplicación\textemdash, que existe la resta y la división, que el $0$ y el $1$ son números \emph{especiales} en cierto sentido y que siempre se cumple la propiedad de distributividad, son un \emph{hecho} para cualquier estructura de campo. Sin embargo, estas mismas ideas intuitivas \emph{no siempre se cumplen en otros tipos de estructuras algebraicas} \textemdash algunas de las cuales veremos más adelante\textemdash, \ ¡así que no te confíes!
 
 \newpage
 \subsection*{Espacios vectoriales} \label{Ssec: Espacios vectoriales}
@@ -276,7 +276,7 @@ A los elementos $a,b \in K$ del campo utilizado para definir el espacio vectoria
 
 \end{tcolorbox}
 
-\begin{obs}\label{obs:1.5}\leavevmode
+\begin{Obs}\label{obs:1.5}\leavevmode
  \begin{enumerate}[label=(\arabic*)]
 
     \item La definición matemática de \emph{vectores} como \emph{elementos cualesquiera de un conjunto V que, junto con un campo $K$ y las operaciones $+:V\times V\to V$ (suma vectorial) y $\ \cdot:K\times V\to V$ (producto de un vector por un escalar), cumplen las propiedades de un espacio vectorial} es muy distinta a la definición de vector como \emph{elemento con magnitud, dirección y sentido (y, más precisamente, que además es invariante bajo rotaciones propias e impropias)} utilizada en algunas áreas de la física, siendo la primera definición más general.
@@ -285,18 +285,18 @@ A los elementos $a,b \in K$ del campo utilizado para definir el espacio vectoria
 
     \item Así como la definición de \emph{campo} incluye un conjunto $K$ con dos operaciones (suma y producto) entre sus elementos que cumplen propiedades específicas, la definición de \emph{espacio vectorial} incluye un conjunto $V$ y un campo $K$ con dos operaciones (suma vectorial y producto de un vector por un escalar) entre sus elementos que cumplen propiedades específicas.
 \end{enumerate}
-\end{obs}
+\end{Obs}
 
 \noindent Denotaremos a un espacio vectorial formado por un conjunto de vectores $V$ y un campo $K$ como $(V,K)$, o simplemente $V$ cuando sea claro sobre qué campo está definido. Más adelante veremos otras operaciones en espacios vectoriales que se pueden definir entre vectores y escalares; sin embargo, la suma vectorial y el producto de un vector por un escalar son las únicas necesarias para \emph{definir} a los espacios vectoriales, por lo que nos referiremos a ellas como las operaciones \emph{esenciales} de los espacios vectoriales.
 
-\begin{coro}[Ley de Cancelación para espacios vectoriales]\label{coro:1.6}
+\begin{Coro}[Ley de Cancelación para espacios vectoriales]\label{coro:1.6}
 Sean $V$ un espacio vectorial y $\mathbf{x},\mathbf{y},\mathbf{z}\in V$ tales que $\mathbf{x}+\mathbf{z}=\mathbf{y}+\mathbf{z}$. Entonces, $\mathbf{x}=\mathbf{y}$.
 
 \begin{proof}
 
     Se sigue la Ley de Cancelación (inciso (c) de la Proposición \ref{prop:1.2}) ya que, por definición de espacio vectorial, la suma vectorial es asociativa y todos los elementos de $V$ tienen elementos inversos bajo esta operación. Más aún, dado que la suma vectorial es conmutativa, se sigue que $\mathbf{x}+\mathbf{z} = \mathbf{z}+\mathbf{y}$ implica que $\mathbf{x}=\mathbf{y}$.
 \end{proof}
-\end{coro}
+\end{Coro}
 
 Para complementar la discusión al respecto de qué es un vector y apreciar cómo funcionan las operaciones de los espacios vectoriales (suma vectorial y producto de un vector por un escalar) de manera visual, sugiero ver el siguiente video: \url{https://www.youtube.com/watch?v=fNk_zzaMoSs}.
 
@@ -328,10 +328,10 @@ y una operación $\cdot:\mathbb{R}\times \mathbb{R}^2\to \mathbb{R}^2$ como
 \] 
 Se puede verificar que, con estas operaciones, $\mathbb{R}^2$ forma un espacio vectorial sobre el campo real, en el cual el neutro aditivo es $(0,0)\in\mathbb{R}^2$ y el inverso aditivo de $(x_1,x_2)\in\mathbb{R}^2$ es $(-x_1,-x_2)\in\mathbb{R}^2$. Esto se debe a que definimos las nuevas operaciones ``entrada por entrada'', por lo que la demostración de que $(\mathbb{R}^2,\mathbb{R})$ es un espacio vectorial es análoga a la del Ejercicio \ref{ejer-4}. Más aún, para cualquier entero positivo $n$ podemos definir operaciones $+:\mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}^n$ y $\cdot:\mathbb{R}\times \mathbb{R}^n\to \mathbb{R}^n$ de manera análoga a las anteriores, obteniendo así un espacio vectorial $(\mathbb{R}^n,\mathbb{R})$. Por ende, tenemos el siguiente corolario del Ejercicio \ref{ejer-4}.
 
-\begin{coro}\label{coro:1.7}
+\begin{Coro}\label{coro:1.7}
     
     Sean $K$ un campo y $n$ un entero positivo. Entonces $(K^n,K)$ es un espacio vectorial, definiendo las operaciones de suma vectorial y producto de un vector por un escalar entrada por entrada.
-\end{coro}
+\end{Coro}
 
 \noindent Por el Corolario \ref{coro:1.7}, se sigue que $(\mathbb{C}^n,\mathbb{C})$ es un espacio vectorial para cualquier entero positivo $n$. Ahora, veamos otros ejemplos de espacios vectoriales. \\
 
@@ -347,7 +347,7 @@ Para futura referencia, dejamos la siguiente definición.
 
 Para ver más ejemplos de espacios vectoriales pueden consultar, por ejemplo, \emph{Linear Algebra} de Friedberg (págs. 8-11.) o \emph{Linear Algebra: A Modern Introduction} de Poole (págs. 430-432), entre otros. \\
 
-\begin{teo}\label{teo:1.8}
+\begin{Teo}\label{teo:1.8}
     Sea ($V$,$K$) un espacio vectorial arbitrario con $\mathbf{v}\in V$ y $a\in K$. Entonces, tenemos que:
     \begin{enumerate}[label=(\alph*)]
 
@@ -357,7 +357,7 @@ Para ver más ejemplos de espacios vectoriales pueden consultar, por ejemplo, \e
 
         \item $(-a)\mathbf{v}=-(a\mathbf{v})=a(-\mathbf{v})$.
     \end{enumerate}
-\end{teo}
+\end{Teo}
 
 \begin{proof}\leavevmode
     \begin{enumerate}[label=(\alph*)]

@@ -1,0 +1,59 @@
+\usepackage[margin=1.5cm]{geometry} 
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage[spanish,es-tabla]{babel}
+\decimalpoint
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[dvipsnames]{xcolor}
+\usepackage[hyphens]{url}
+\usepackage{graphicx}
+\graphicspath{ {images/} }
+\usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage[pdftex,
+            pdfauthor={Diego Alberto Barceló Nieves},
+            pdftitle={Notas de Álgebra Lineal}]{hyperref}
+\usepackage{braket}
+\usepackage{tikz}
+\usetikzlibrary{babel}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.15}
+\usepackage{caption}
+\usepackage{mathrsfs}
+\usepackage{subcaption}
+\usepackage{subfiles}
+\usepackage{mdframed}
+
+\definecolor{NARANJA}{rgb}{1,0.467,0}
+\definecolor{VERDE}{rgb}{0.31,1,0}
+\definecolor{AZUL}{rgb}{0,0.53,1}
+\definecolor{ROJO}{rgb}{1,0,0}
+\definecolor{db}{rgb}{0.85,0.4,0}
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=ROJO,
+    filecolor=magenta,      
+    urlcolor=AZUL,
+}
+
+\numberwithin{section}{chapter}
+\numberwithin{equation}{section}
+\newtheoremstyle{dotlessB}{}{}{}{}{\bfseries}{}{ }{}
+\theoremstyle{dotlessB} % Def, Nota, Lema, Proposición, Teorema, Corolario, Ejemplo: alph; Observación, Ejemplo: arabic
+\newtheorem{Def}{Definición}[section]
+\newtheorem*{Nota}{Nota}
+\newtheorem{Obs}[Def]{Observación}[section]
+\newtheorem{Lema}[Def]{Lema}
+\newtheorem{Prop}[Def]{Proposición}
+\newtheorem{Teo}[Def]{Teorema}
+\newtheorem{Coro}[Def]{Corolario}
+\newtheorem{Ejem}[Def]{Ejemplo}
+
+\newtheoremstyle{dotlessO}{}{}{\color{db}}{}{\color{db}\bfseries}{.}{ }{}
+\theoremstyle{dotlessO}
+\newtheorem{Ejer}{Ejercicio}
