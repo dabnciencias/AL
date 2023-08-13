@@ -1,5 +1,4 @@
-\documentclass[apuntes]{subfiles}
-
+\documentclass[notasLineal]{subfiles}
 \begin{document}
 
 \section{Nociones básicas de transformaciones lineales} \label{Sec: Nociones básicas de transformaciones lineales}
@@ -11,20 +10,20 @@ Las estructuras algebraicas no sólo se pueden estudiar a través de sus \emph{e
 \begin{tcolorbox}
 \underline{Def.} Sean $K$ un campo, $S$ un subcampo de $K$\footnote{En particular, podemos tomar $S=K$.} y $(V,S), (W,K)$ espacios vectoriales. Entonces, decimos que una función $T:V\to W$ es una \emph{transformación lineal} si para todo $a\in S, \ \vec{u},\vec{v}\in V$, se tiene que
 \[
-T(\vec{u}+\vec{v}) = T(\vec{u})+T(\vec{v}) \quad \& \quad T(a\vec{v}) = aT(\vec{v}).
+T(\vec{u}+\vec{v}) = T(\vec{u})+T(\vec{v}) \quad \land \quad T(a\vec{v}) = aT(\vec{v}).
 \]
 Informalmente, decimos que una transformación lineal $T$ \emph{abre sumas} y \emph{saca escalares}.
 \end{tcolorbox}
 
-\begin{ejer}\label{ejer-16}
+\begin{Ejer}\label{ejer-16}
     Demuestra que las transformaciones lineales mandan al vector nulo de su dominio al vector nulo de su contradominio. Es decir, si $T:V\to W$ es una transformación lineal y los vectores nulos de $V$ y $W$ son $\vec{0}_V$ y $\vec{0}_W$, respectivamente, entonces $T(\vec{0}_V) = \vec{0}_W$.
-\end{ejer}
+\end{Ejer}
 
 Una forma equivalente y más compacta de definir a las transformacines lineales está dada por la siguiente caracterización.
 
-\begin{ejer}[Caracterización de transformaciones lineales]\label{ejer:17}
+\begin{Ejer}[Caracterización de transformaciones lineales]\label{ejer:17}
 Sean $(V,S)$ y $(W,K)$ espacios vectoriales, con $S$ un subcampo de $K$. Demuestra que $T:V\to W$ es una transformación lineal si, y sólo si, para todo $a\in S, \ \vec{u},\vec{v}\in V$, se tiene que $T(\vec{u}+a\vec{v}) = T(\vec{u})+aT(\vec{v})$.
-\end{ejer}
+\end{Ejer}
 
 \subsubsection*{Ejemplos de transformaciones lineales}
 
@@ -44,9 +43,9 @@ por lo que $T((x,y)+a(x'y')) = T(x,y) + aT(x',y')$. Podemos interpretar geométr
 
 Siguiendo del ejemplo anterior en $\mathbb{R}^2$, observemos que podemos considerar a una función que haga algo ``semejante'' en el espacio vectorial complejo $\mathbb{C}$: la función de conjugación compleja $\overline{a+ib} = a-ib$. Sin embargo, en este caso, esta función no preserva la estructura del espacio $\mathbb{C}$. ¿Por qué?
 
-\begin{ejer}\label{ejer:18}
+\begin{Ejer}\label{ejer:18}
 Demuestra que la función de conjugación compleja $\overline{\cdot}:\mathbb{C}\to\mathbb{C}$ abre sumas pero no es una transformación lineal.
-\end{ejer}
+\end{Ejer}
 
 Sea $C^{\infty}(\mathbb{R},\mathbb{R})$ el espacio de funciones reales de variable real continuas con todas sus derivadas continuas. Entonces la derivada $\frac{d}{dx}:C^{\infty}(\mathbb{R},\mathbb{R})\to C^{\infty}(\mathbb{R},\mathbb{R})$ es una transformación lineal. Si consideramos el subespacio compuesto por todas las funciones integrables, entonces la integral $\int_{-\infty}^{\infty} \ dx$ es una transformación lineal en este subespacio. \\
 
@@ -91,17 +90,17 @@ Podemos estudiar espacios vectoriales a través de transformaciones lineales ent
     
         \item Por definición, $\text{Ker}(T)\subseteq V$ y, por el Ejercicio \ref{ejer-16}, $\vec{0}_V\in \text{Ker}(T)$, lo cual es una de las condiciones de la caracterización de subespacios vectoriales vista en la Proposición \ref{prop: Caracterización de subespacios vectoriales}.
 
-            \begin{ejer}\label{ejer-19}
+            \begin{Ejer}\label{ejer-19}
                 Demuestra que $\text{Ker}(T)$ es un subespacio vectorial de $V$.
-            \end{ejer}
+            \end{Ejer}
 
             En particular, si $V$ tiene dimensión finita, del Teorema \ref{teo: Dimensión de subespacios de un espacio de dimensión finita} se sigue que $\text{Ker}(T)$ también tiene dimensión finita. 
 
         \item Similarmente, por definición, $\text{Im}(T)\subseteq W$ y, por el Ejercicio \ref{ejer-16}, $\vec{0}_W\in\text{Im}(T)$.
 
-            \begin{ejer}\label{ejer-20}
+            \begin{Ejer}\label{ejer-20}
                 Demuestra que $\text{Im}(T)$ es un subespacio vectorial de $W$.
-            \end{ejer}
+            \end{Ejer}
 
             En particular, si $W$ tiene dimensión finita, del Teorema \ref{teo: Dimensión de subespacios de un espacio de dimensión finita} se sigue que $\text{Im}(T)$ también tiene dimensión finita. 
     \end{enumerate}
@@ -291,9 +290,9 @@ análogamente, definimos el \emph{producto de la transformación lineal} (o \emp
 
     Como podrás sospechar a partir de las definiciones anteriores, el conjunto de transformaciones lineales entre dos espacios vectoriales tiene una estructura que debería resultarles familiar.
     
-\begin{ejer}
+\begin{Ejer}
     Sean $(V,S), (W,K)$ espacios vectoriales, con $S$ un subcampo de $K$. Demuestra que $\mathcal{L}(V,W)$, con las operaciones de suma de transformaciones lineales y producto de una transformación lineal por un escalar, forma un espacio vecorial sobre el campo $K$.
-\end{ejer}
+\end{Ejer}
 
 \noindent Por ende, dado que por definición las transformaciones lineales son compatibles con las operaciones esenciales de los espacios vectoriales (i.e., preservan la estructura de espacio vectorial) y que sus contradominios tienen la estructura de espacio vectorial, ¡el conjunto de todas las transformaciones lineales de un espacio a otro \emph{hereda} la estructura de espacio vectorial!
 \end{Obs}
@@ -313,18 +312,18 @@ análogamente, definimos el \emph{producto de la transformación lineal} (o \emp
     \begin{enumerate}[label=(\arabic*)]
     
         \item La composición de transformaciones lineales, siempre que tenga sentido\footnote{Esto es, siempre que el contradominio de la que se aplica primero sea un subespacio vectorial del dominio de la que se aplica después.}, es una transformación lineal:
-\begin{ejer}
+\begin{Ejer}
     Sean $V,W,Z$ espacios vectoriales y $T\in\mathcal{L}(V,W), U\in\mathcal{L}(W,Z)$. Demuestra que $U\circ T\in\mathcal{L}(V,Z)$.
-\end{ejer}
+\end{Ejer}
 \noindent Sin embargo, la operación de composición de transformaciones lineales se distingue de la de suma dado que, en general, la transformación resultante de aplicar la operación de composición tiene un dominio y/o contradominio \emph{distinto} al de las transformaciones originales.
 
         \item En el caso particular en que todos los dominios y contradominios de las transformaciones lineales que se componen son el mismo espacio vectorial $V$, entonces el resultado de la composición es un operador lineal en $V$. Es decir, la operación de composición de transformaciones lineales en $\mathcal{L}(V,V)$ es cerrada; equivalentemente, \emph{la composición de operadores lineales sobre un mismo espacio vectorial es una operación binaria}.
     \end{enumerate}
 \end{Obs}
 
-\begin{ejer}
+\begin{Ejer}
     Sean $(V,K)$ y $(W,K)$ espacios vectoriales y $T:V\to W$ una transformación lineal. Supongamos que existe $T^{-1}:W\to V$. Demuestra que $T^{-1}$ es una transformación lineal.
-\end{ejer}
+\end{Ejer}
 
 \begin{tcolorbox}
     \underline{Def.} Sea $T:V\to W$ una transformación lineal. Si $T$ es invertible\footnote{Equivalentemente, podemos pedir que $T$ sea inyectiva.}, decimos que es un \emph{isomorfismo de espacios vectoriales}, o simplemente un \emph{isomorfismo}.

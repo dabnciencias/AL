@@ -1,0 +1,81 @@
+\documentclass[notasLineal]{subfiles}
+\begin{document}
+
+\section{Operadores unitarios y ortogonales}\label{Sec: Operadores unitarios y ortogonales}
+
+A lo largo del curso, hemos estudiado funciones que preservan la estructura algebráica del espacio subyaciente, empezando por las transformaciones lineales \textemdash que preservan las operaciones esenciales de los espacios vectoriales (suma vectorial y producto de un vector por un escalar)\textemdash \ y los isomorfismos \textemdash que, al ser transformaciones lineales \emph{invertibles}, preservan la estructura de todo el espacio vectorial, estableciendo una correspondencia biunívoca entre dos espacios vectoriales que, en \emph{esencia}, son lo mismo. Para cerrar el curso, dado que durante el último módulo nos hemos enfocado en espacios vectoriales con producto escalar, estudiaremos operadores lineales invertibles que preservan el producto escalar. Como veremos, en espacios vectoriales de dimensión finita, esto es equivalente a que dichos operadores preserven la norma inducida por el producto escalar. Además, veremos que algunos operadores de este tipo pueden descomponerse espectralmente\footnote{¿Cómo imaginas que serán sus espsectros? Pista: cambia dependiendo de si el campo es real o complejo.}, aplicando lo aprendido en la sección anterior.
+
+\begin{tcolorbox}
+\underline{Def.} Sea $T$ un operador lineal sobre un espacio vectorial $(V,K)$ de dimensión finita con producto escalar. Si $T$ es tal que \[
+    ||T(\ket{v})|| = ||\ket{v}|| \ \ \ \forall \ \ket{v}\in V,
+\] entonces diremos que $T$ es un operador \emph{unitario} si $K=\mathbb{C}$ o un operador \emph{ortogonal} si $K=\mathbb{R}$\footnote{Para el caso de dimensión infinita, $T$ debe de preservar la norma \emph{y ser invertible} para que se lo considere \emph{unitario} si $K=\mathbb{C}$ u \emph{ortogonal} si $K=\mathbb{R}$; si sólamente preserva la norma, se le conoce como una \emph{isometría}. Claramente, esto indica que los operadores unitarios u ortogonales en espacios de dimensión finita son invertibles.}.
+\end{tcolorbox}
+
+En $\mathbb{R}^3$ (y, más generalmente, en $\mathbb{R}^n$), las rotaciones alrededor de y las reflexiones con respecto a cualquier eje que pase por el origen son ejemplos de operadores ortogonales\footnote{¿Recuerdas haber visto un operador de este tipo en tu segundo examen?}. En el espacio vectorial complejo $\mathbb{C}$ (más generalmente, $\mathbb{C}^n$), cualquier operador que reescale por un número complejo de norma (valor absoluto) uno \textemdash o, en otras palabras, por un número complejo \emph{unitario}\textemdash \ es un ejemplo de un operador unitario\footnote{¡Recuerda tu primer examen!}.
+
+\vspace{3mm}
+A continuación, demostraremos un lema que nos ayudará a encontrar una serie de criterios equivalentes a la definición anterior de un operador unitario u ortogonal. Las demostraciones del lema y del teorema posterior quedan como ejercicio.
+
+\begin{Lema} {16.1}
+    Sea $U$ un operador autoadjunto en un espacio vectorial $V$ de dimensión finita con producto escalar. Entonces, si $\braket{v|U(v)}=0 \ \ \forall \ \ket{v}\in V$, entonces $U=T_0$, la transformación nula. 
+\end{Lema}
+
+\begin{proof}
+    Ejercicio.
+\end{proof}
+
+\begin{Teo} {16.2}
+    Sea $T$ un operador lineal en un espacio vectorial de dimensión finita con producto escalar. Entonces, la siguientes afirmaciones son equivalentes.
+
+    \begin{enumerate}[label=(\alph*)]
+        \item $||T(\ket{v})|| = || \ket{v} || \ \ \forall \ \ket{v}\in V$.
+        \item $\braket{T(v)|T(v)} = \braket{v|v} \ \ \forall \ \ket{v}\in V$.
+        \item $TT^*=T^*T=I_V$.
+        \item $\braket{T(u)|T(v)} = \braket{u|v} \ \ \forall \ \ket{u},\ket{v}\in V$.
+        \item Si $\beta$ es una base ortonormal de $V$, entonces $T(\beta)$ también lo es.
+        \item Existe una base ortonormal $\beta$ de $V$ tal que $T(\beta)$ también es una base ortonormal de $V$.
+    \end{enumerate}
+\end{Teo}
+
+\begin{proof}
+    Ejercicio.
+\end{proof}
+
+Observemos de la primera igualdad del inciso (c) que todo operador unitario u ortogonal es normal y, por ende, los operadores unitarios pueden descomponerse espectralmente; además, a partir de este inciso, podemos hacer una analogía entre los operadores unitarios/ortogonales en un espacio vectorial con producto escalar y los elementos $z\in \mathbb{C}$ tales que $z \overline{z} = \overline{z} z = 1$.
+
+\vspace{3mm}
+Por otro lado, ya que la norma inducida por el producto escalar es escalable de forma absoluta, entonces se sigue que todos los eigenvalores de un operador unitario/ortogonal tienen valor absoluto 1 directamente de la definición. Es decir, sus eigenvalores son precisamente aquellos escalares $\lambda\in\mathbb{C}$ ó $\lambda\in\mathbb{R}$ tales que $\lambda \overline{\lambda} = \overline{\lambda} \lambda = 1$. Finalmente, aplicamos el Teorema Espectral a los operadores unitarios y ortogonales en los siguientes corolarios.
+
+\begin{Coro} {16.3}
+    Sean $T:V\to V$ un operador unitario sobre un espacio vectorial complejo de dimensión finita $n$ con producto escalar y $\Lambda=\{\lambda_1,\lambda_2,... , \lambda_k\}$ el espectro de $T$. Entonces, tenemos que $T = \lambda_1 T_1 + \lambda_2 T_2 + ... + \lambda_k T_k,$ con $T_i$ el operador de proyección ortogonal sobre el eigenespacio $E_{\lambda_i}$, y $\Lambda\subset\{z\in \mathbb{C} \mid z \overline{z}= \overline{z}z = 1\}$.
+
+    \begin{proof}
+        Ejercicio.
+    \end{proof}
+       
+\end{Coro}
+
+\begin{Coro} {16.4}
+    Sean $T:V\to V$ un operador ortogonal sobre un espacio vectorial real de dimensión finita $n$ con producto escalar y $\Lambda=\{\lambda_1,\lambda_2,... , \lambda_k\}$ el espectro de $T$. Entonces, si $T$ es autoadjunto, tenemos que $T = \lambda_1 T_1 + \lambda_2 T_2 + ... + \lambda_k T_k,$ con $T_i$ el operador de proyección ortogonal sobre el eigenespacio $E_{\lambda_i}$, y $\Lambda\subseteq\{\pm 1\}$.
+
+    \begin{proof}
+        Ejercicio.
+    \end{proof}
+       
+\end{Coro}
+
+\subsection*{Ejercicios de repaso}
+
+\subsubsection*{Operadores lineales ortogonales y unitarios}
+
+\begin{enumerate}
+    \item Sean $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:V\to V$ un operador lineal tal que $T$ es unitario si $K=\mathbb{C}$ y $T$ es ortogonal si $K=\mathbb{R}$. Demuestra que $T$ es invertible.
+    \item Da un ejemplo de un operador ortogonal $T:\mathbb{R}^2\to \mathbb{R}^2$ que no tenga eigenvectores y que, por lo tanto, no se pueda formar una base ortogonal de $\mathbb{R}^2$ compuesta por eigenvectores de $T$. Esto ilustra la importante diferencia entre operadores ortogonales y autoadjuntos.
+    \item Da un ejemplo de un operador normal $U:\mathbb{C}\to \mathbb{C}$ que no sea unitario.
+    \item Demuestra el Lema 16.1.
+    \item Demuestra el Teorema 16.2.
+    \item Demuestra el Corolario 16.3.
+    \item Demuestra el Corolario 16.4.
+\end{enumerate}
+
+\end{document}

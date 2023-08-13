@@ -1,12 +1,11 @@
-\documentclass[apuntes]{subfiles}
-
+\documentclass[notasLineal]{subfiles}
 \begin{document}
 
 \section{Subespacios vectoriales, combinaciones lineales, conjunto generador y subespacio generado} \label{Sec: Subespacios vectoriales, combinaciones lineales, conjunto generador y subespacio generado}
 
 Anteriormente, vimos que es posible tomar a un subconjunto de un campo de tal manera que las operaciones del campo, restringidas al subconjunto, formen un campo, y llamamos a esto un \emph{subcampo}. Resulta que podemos hacer algo similar con espacios vectoriales, definiendo el concepto de \emph{subespacio vectorial}. Más aún, podemos dar condiciones explícitas para que un subconjunto del conjunto vectorial de un espacio forme un subespacio vectorial de dicho espacio.
 
-\subsubsection*{Definición de subespacio vectorial} \label{Def:Subespacio_vectorial}
+\subsubsection*{Definición de subespacio vectorial} \label{Def: Subespacio vectorial}
 
 \begin{tcolorbox}
     \underline{Def.} Sea $(V,K)$ un espacio vectorial. Si $S$ es un subcampo de $K$ y $W\subseteq V$ es tal que las operaciones de suma vectorial y producto de un vector por un escalar en $(V,K)$ restringidas a $W\times W$ y $S\times W$, respectivamente, forman un espacio vectorial, entonces decimos que $(W,S)$ es un \emph{subespacio vectorial} de $(V,K)$.
@@ -92,9 +91,9 @@ A continuación, presentamos algunas operaciones que podemos realizar entre sube
     Se sigue del Teorema \ref{teo: Intersección de dos subespacios vectoriales} y de que la intersección de conjuntos es una operación asociativa.
 \end{proof}
 
-\begin{ejer}\label{ejer: La relación de ser subespacio vectorial es transitiva}
+\begin{Ejer}\label{ejer: La relación de ser subespacio vectorial es transitiva}
     Sea $Z$ un subespacio vectorial de $W$ y sea $W$, a su vez, subespacio vectorial de $V$. Demuestra que $Z$ es un subespacio vectorial de $V$.
-\end{ejer}
+\end{Ejer}
 
 \begin{tcolorbox}
     \underline{Def.} Sean $S_1$ y $S_2$ subespacios de un espacio vectorial $V$. Definimos a la \emph{suma de los subespacios vectoriales} $S_1$ y $S_2$ como
@@ -103,9 +102,9 @@ A continuación, presentamos algunas operaciones que podemos realizar entre sube
     \] 
 \end{tcolorbox}
 
-\begin{ejer}\label{ejer: La suma de subespacios vectoriales es un subespacio vectorial}
+\begin{Ejer}\label{ejer: La suma de subespacios vectoriales es un subespacio vectorial}
     Demuestra que cualquier suma finita de subespacios vectoriales de un espacio vectorial $V$ es un subespacio vectorial de $V$.
-\end{ejer}
+\end{Ejer}
 
 \subsubsection*{Combinaciones lineales, conjunto generador y subespacio generado} \label{Sssec: Combinaciones lineales, conjunto generador y subespacio generado}
 
@@ -130,13 +129,13 @@ Ahora, veremos más formas de obtener subespacios vectoriales a partir de un esp
     \end{enumerate}
 \end{Obs}
 
-\begin{ejer}\label{ejer-9}
+\begin{Ejer}\label{ejer-9}
     Sea $(V,K)$ un espacio vectorial y $L=\{\mathbf{v}_1,\mathbf{v}_2,...,\mathbf{v}_n\}\subseteq V$ un conjunto finito de vectores de $V$. Demuestra que el conjunto de todas las combinaciones lineales de $L$
     \[
     \{c_1\mathbf{v}_1+c_2\mathbf{v}_2+...+c_n\mathbf{v}_n \mid c_i\in K\}
     \] 
     es un subespacio vectorial de $V$.
-\end{ejer}
+\end{Ejer}
 
 En vista del Ejercicio \ref{ejer-9}, damos la siguiente definición.
 

@@ -1,5 +1,4 @@
-\documentclass[apuntes]{subfiles}
-
+\documentclass[notasLineal]{subfiles}
 \begin{document}
 
 \section{Dependencia e independencia lineal, bases y dimensión} \label{Sec: Dependencia e independencia lineal, bases y dimensión}
@@ -29,9 +28,9 @@ Para ver más ejemplos de conjuntos de vectores linealmente dependientes e indep
 
 Como ya mencionamos, si un vector $\mathbf{v}_n\in V$ es linealmente \emph{dependiente} de otros vectores $\mathbf{v}_1, \mathbf{v}_2, ..., \textbf{v}_m\in V$, entonces puede ser expresado como combinación lineal de esos vectores. Geométricamente, en los espacios vectoriales reales $\mathbb{R}^2$ y $\mathbb{R}^3$ esto quiere decir que es posible reescalar y combinar (mediante la Ley del paralelogramo) las flechas de los vectores $\mathbf{v}_1, \mathbf{v}_2, ..., \mathbf{v}_m$ y obtener, como resultado final, a $\mathbf{v}_n$. Adicionalmente, en el espacio vectorial complejo $\mathbb{C}$, también se podrían estar rotando los vectores $\mathbf{v}_1, \mathbf{v}_2, ..., \mathbf{v}_m$ \textemdash además de reescalarlos y combinarlos\textemdash \hspace{0.5mm} para formar, finalmente, a $\mathbf{v}_n$. Si son linealmente \emph{independientes}, entonces lo anterior no es posible.
 
-\begin{ejer}
+\begin{Ejer}
     Sea $n_i$ el $i$-ésimo dígito de tu número de cuenta. Determina si los vectores complejos $\begin{pmatrix} n_1 + i(n_2) \end{pmatrix}$ y $\begin{pmatrix} n_3 + i(n_4) \end{pmatrix}$ son linealmente dependientes o independientes en $(\mathbb{C},\mathbb{C})$ y muéstralo gráficamente en el plano complejo. Luego, repite el mismo ejercicio para los vectores reales $\begin{pmatrix} n_1 & n_4 & n_7 \end{pmatrix}, \begin{pmatrix} n_2 & n_5 & n_8 \end{pmatrix}$ y $\begin{pmatrix} n_3 & n_6 & n_9 \end{pmatrix}\in\mathbb{R}^3.$ ¿Cuáles son los conjuntos linealmente independientes más grandes que puedes formar usando a estos vectores? 
-\end{ejer}
+\end{Ejer}
 
 \subsubsection*{Algunos teoremas sobre dependencia e independencia lineal} \label{Teo:Dependencia_e_independencia_lineal} 
 
@@ -63,9 +62,9 @@ Este teorema nos dice que si removemos vectores de un conjunto linealmente indep
 
 \end{Teo}
 
-\begin{ejer}
+\begin{Ejer}
     Sean $V$ un espacio vectorial y $S_1,S_2$ subconjuntos de $V$ tales que $S_1\subseteq S_2\subseteq V$. Demuestra que, si $S_1$ es linealmente dependiente, entonces $S_2$ es linealmente dependiente. 
-\end{ejer}
+\end{Ejer}
 
 \begin{Teo}\label{teo: Agregar un elemento que no está en un subespacio generado a un conjunto generador linealmente independiente equivale a que el conjunto siga siendo linealmente independiente}
 
@@ -137,12 +136,12 @@ A continuación, veremos un importante teorema que nos ayudará a construir base
 
 El teorema anterior se conoce como el teorema de \emph{reemplazamiento} ya que, partiendo de un conjunto linealmente independiente $L$ y otro conjunto $H$ que juntos cumplen $\langle L\cup H \rangle=V$ (sin que $L\cup H$ sea necesariamente l.i.), lo que estamos haciendo con cada paso consecutivo de la inducción es reemplazar a los vectores de $H$ por vectores que podemos añadir a $L$ tal que este conjunto siga siendo linealmente independiente y se siga cumpliendo que la unión de ambos genere a $V$. De esta forma, $L$ es un conjunto linealmente independiente que va creciendo y que cada vez necesita a menos vectores de $H$ para poder, a través de la unión generar a $V$. ¿Qué pasará cuando $L$ sea un conjunto linealmente independiente que no necesita a ningún vector de $H$ para generar a $V$\footnote{Recuerda para qué dijimos que nos serviría este teorema.}?. 
 
-\begin{ejer}
+\begin{Ejer}
     Considera al espacio vectorial $\mathbb{R}^n$ para distintos valores de $n$ y responde: ¿A partir de qué cardinalidad cualquier conjunto de vectores de $\mathbb{R}^n$ es necesariamente linelmente dependiente?
-\end{ejer}
+\end{Ejer}
 
 \newpage
-\subsection*{Dimensión} \label{Subsec:Dimensión}
+\subsection*{Dimensión} \label{Ssec: Dimensión}
 
 Como quizá notaste en los ejemplos de la sección anterior, pareciera que todas las bases de un mismo espacio vectorial tienen el mismo número de elementos. A continuación, demostraremos este hecho.
 
@@ -181,15 +180,15 @@ El hecho de que todas las bases de un mismo espacio vectorial tengan el mismo n�
 
 \end{tcolorbox}
 
-\begin{ejer}
+\begin{Ejer}
     Sean $K$ un campo arbitrario y $\mathbf{e}_1=\begin{pmatrix} 1 & 0 & 0 & 0 & ... & 0 \end{pmatrix}, \mathbf{e}_2=\begin{pmatrix} 0 & 1 & 0 & 0 & ... & 0 \end{pmatrix}, ..., \mathbf{e}_n = \begin{pmatrix} 0 & 0 & 0 & 0 & ... & 1 \end{pmatrix}$. Demuestra que $\{\mathbf{e}_1, \mathbf{e}_2, ..., \mathbf{e}_n\}$ es una base para $(K^n,K)$ y que, por lo tanto, $\text{dim}(K^n,K)=n$.
-\end{ejer}
+\end{Ejer}
 
-Observemos que esta definición \emph{algebráica} de dimensión difiere de las definiciones geométricas y físicas usuales de dimensión. Por ejemplo, a pesar de que el espacio vectorial complejo $\mathbb{C}$ se represente en el plano cartesiano \textemdash el cual tiene dimensión geométrica $2$\textemdash\hspace{0.5mm}, este espacio vectorial es de dimensión (algebráica) $1$, como vimos en los ejemplos de la sección \ref{Ejem:Bases}. Otra observación es que la dimensión de un espacio vectorial no sólo depende del conjunto vectorial, sino también del campo sobre el cual se define, como en el siguiente ejercicio.
+Observemos que esta definición \emph{algebraica} de dimensión difiere de las definiciones geométricas y físicas usuales de dimensión. Por ejemplo, a pesar de que el espacio vectorial complejo $\mathbb{C}$ se represente en el plano cartesiano \textemdash el cual tiene dimensión geométrica $2$\textemdash\hspace{0.5mm}, este espacio vectorial es de dimensión (algebraica) $1$, como vimos en los ejemplos de la sección \ref{Ejem:Bases}. Otra observación es que la dimensión de un espacio vectorial no sólo depende del conjunto vectorial, sino también del campo sobre el cual se define, como en el siguiente ejercicio.
 
-\begin{ejer}
+\begin{Ejer}
     Demuestra que $\text{dim}(\mathbb{C},\mathbb{C})=1$ pero $\text{dim}(\mathbb{C},\mathbb{R})=2$.
-\end{ejer}
+\end{Ejer}
 
 \begin{Teo}\label{teo: Dimensión de subespacios de un espacio de dimensión finita}
     Sea $V$ un espacio vectorial de dimensión finita y $W$ un subespacio de $V$, entonces W tiene dimensión finita y $\text{dim}(W)\le \text{dim}(V).$ 
@@ -229,9 +228,9 @@ En los teoremas anteriores demostramos que si $\text{dim}(V)=n$ entonces cualque
     Se sigue del Teorema \ref{teo: Conjunto linealmente independiente con cardinalidad igual a la dimensión finita del espacio es una base}.
 \end{proof}
 
-\begin{ejer}
+\begin{Ejer}
     Sea $V$ un espacio vectorial de dimensión $n$ y $D$ un conjunto linealmente dependiente tal que $\langle D \rangle =V$. Demuestra que $D$ tiene más de $n$ elementos. 
-\end{ejer}
+\end{Ejer}
 
 Para terminar esta sección, veremos algunas formas en las cuales se pueden construir bases de un espacio vectorial de dimensión $n$ a partir de conjuntos linealmente independientes con menos de $n$ elementos, o de conjuntos linealmente dependientes que generan $V$ y tienen más de $n$ elementos.
 

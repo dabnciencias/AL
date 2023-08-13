@@ -1,0 +1,3 @@
+\babel@toc {nil}{}\relax 
+\contentsline {chapter}{\numberline {1}Nociones básicas de álgebra lineal}{5}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Estructuras algebraicas, campos y espacios vectoriales}{5}{section.1.1}%

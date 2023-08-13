@@ -1,81 +1,112 @@
-\documentclass[apuntes]{subfiles}
-
+\documentclass[notasLineal]{subfiles}
 \begin{document}
 
-\section{Estructuras algebraicas, campos y espacios vectoriales} \label{Sec: Estructuras algebráicas, campos y espacios vectoriales}
+\section{Estructuras algebraicas, campos y espacios vectoriales} \label{Sec: Estructuras algebraicas, campos y espacios vectoriales}
 
-El álgebra lineal se puede definir como el estudio de los espacios vectoriales. En esta sección definiremos qué son, así como algunas nociones básicas que guiarán nuestro estudio de este tipo de estructuras algebraicas durante el curso. Antes, discutiremos brevemente qué constituye una estructura algebráica y repasaremos la definición de la estructura de campo \textemdash necesaria para definir la de espacio vectorial.
+El álgebra lineal se puede definir como el estudio de los espacios vectoriales. En esta sección definiremos qué son, así como algunas nociones básicas que guiarán nuestro estudio de este tipo de estructuras algebraicas durante el curso. Antes, discutiremos brevemente qué constituye una estructura algebraica y repasaremos la definición de la estructura de campo \textemdash necesaria para definir la de espacio vectorial.
 
-\subsection*{Estructuras algebraicas} \label{Subsec: Estructuras algebráicas}
+\subsection*{Estructuras algebraicas} \label{Ssec: Estructuras algebraicas}
 
-¿Qué es el álgebra, y qué es lo que estudia? A menudo en los primeros cursos de álgebra esta cuestión no queda clara. El hecho de que esta área de las matemáticas tenga una historia de evolución que comenzó hace miles de años y continúa hasta hoy en día complica aún más la situación. A pesar de no ser la visión más general que existe, en este curso tomaremos por respuesta que el álgebra es el estudio de estructuras algebraicas.
+¿Qué es el álgebra, y qué es lo que estudia? A menudo en los primeros cursos de álgebra esta cuestión no queda clara. El hecho de que esta área de las matemáticas tenga una historia de evolución que comenzó hace miles de años y continúa hasta hoy en día complica aún más la situación. A pesar de no ser la visión más general que existe, en este curso tomaremos por respuesta que el álgebra es el estudio de estructuras algebraicas. \\
 
-\subsubsection*{Definición de estructura algebráica y propiedades de sus operaciones} \label{Sssec: Definición de estructura algebráica y propiedades de sus operaciones}
+Antes de definir una estructura algebraica, debemos recordar la siguiente
 
-Antes de definir una estructura algebráica, recordaremos una definición importante.
-
-\begin{tcolorbox}\label{Def: Par ordenado}
-    \underline{Def.} Un \emph{par ordenado} de elementos de dos conjuntos $A$ y $B$ es un par de elementos $(a,b)$, con $a\in A$ y $b\in B$, en donde el orden de los elementos importa. Dos pares ordenados $(a,b), (a',b')$ son iguales si, y sólo si, tienen los mismos elementos en el mismo orden; matemáticamente
+\begin{tcolorbox}
+    \begin{Def}\label{Def: Par ordenado, producto cartesiano}
+    Un \textbf{par ordenado} de elementos de dos conjuntos $A$ y $B$ es un par de elementos $(a,b)$, con $a\in A$ y $b\in B$, en donde el orden de los elementos importa; esto es, dos pares ordenados $(a,b), (a',b')$ son iguales si, y sólo si, tienen los mismos elementos en el mismo orden. Podemos reescribir esta condición utilizando símbolos matemáticos como
     \[
     (a,b)=(a',b')\iff a=a' \ \land \ b'=b'.
     \]
-    El conjunto de pares ordenados de elementos de dos conjuntos $A$ y $B$ es el producto cartesiano
+    El \textbf{producto cartesiano} de $A$ y $B$ es el conjunto de pares ordenados
     \[
     A\times B:= \{(a,b) \mid a\in A, b\in B\}.
     \] 
 
-    En particular, el conjunto $A\times A$ de pares ordenados de elementos de $A$ se denota por $A^2$. Inductivamente, para todo $n\ge 2$ podemos definir el conjunto de \emph{$n$-tuplas} de elementos de $A$ como $A^n:= A^{n-1}\times A$, el cual identificamos con el conjunto
+    En particular, el conjunto $A\times A$ de pares ordenados de elementos de $A$ se denota por $A^2$. Recursivamente, para toda $n\ge 2$ definimos el conjunto $A^n:= A^{n-1}\times A$. Para simplificar la notación, identificaremos a $A^n$ con el \textbf{conjunto de $n$-tuplas} de elementos de $A$
     \[
-        \{(a_1,a_2,...,a_n) \mid a_1,a_2,...,a_n\in A\}
+        A^n \simeq \{(a_1,a_2,...,a_n) \mid a_1,a_2,...,a_n\in A\}.
     \] 
-    para simplificar la notación.
-        
+    \end{Def}
 \end{tcolorbox}
-
 
 \begin{tcolorbox}[breakable]
-    \underline{Def.} Una \emph{estructura algebráica} es un conjunto no vacío $A$ con (al menos) una operación en $A$ y una colección (posiblemente vacía) de relaciones en $A$. Denotamos a una estructura algebráica formada por un conjunto $A$, operaciones $\star,\ast$ y una relación $\sim$, como $(A,\star,\ast,\sim)$. Decimos que $\star$ es una operación \emph{binaria} si toma pares ordenados de elementos de $A$ y devuelve elementos de $A$, i.e., si su dominio es $A\times A$ y su contradominio es $A$, lo que denotamos como $\star:A\times A\to A$. Si $\star$ es una operación binaria, decimos que:
+    \begin{Def}\label{Def: Estructura algebraica y operación binaria}\leavevmode
+        \begin{enumerate}[label=(\alph*)]
+        
+            \item Una \textbf{estructura algebraica} es un conjunto $A\neq\varnothing$ con (al menos) una operación en $A$ y una colección (posiblemente vacía) de relaciones en $A$. Denotamos a una estructura algebraica formada por un conjunto $A$, operaciones $\star,\ast$ y una relación $\sim$, como $(A,\star,\ast,\sim)$. 
 
-    \begin{itemize}
-        \item $\star$ es \emph{asociativa} si, para cualesquiera $a,b,c\in A$, se tiene que $$(a\star b)\star c = a\star(b\star c);$$
+            \item Una \textbf{operación binaria} en un conjunto $A\neq \varnothing$ es una función que toma pares ordenados de $A$ y produce un elemento de $A$ como resultado, i.e., $\star:A\times A\to A$.
 
-        \item $\star$ es \emph{conmutativa} si, para cualesquiera $a,b\in A$, se tiene que $$a\star b = b\star a;$$
+            \item Decimos que una operación binaria $\star:A\times A\to A$:
 
-        \item $\star$ tiene un elemento \emph{identidad} (o \emph{neutro}) si existe $e\in A$ tal que, para todo $a\in A$, $$e\star a = a = a\star e;$$
+                \begin{itemize}
 
-        \item $b\in A$ es el elemento \emph{inverso} de $a\in A$ (\emph{bajo} $\star$) si $\star$ tiene un elemento identidad $e\in A$ y $$a\star b = e = b\star a;$$
+                    \item[(c1)] es \textbf{asociativa} si, para cualesquiera $a,b,c\in A$, se tiene que \begin{equation}\label{eq: Asociatividad} (a\star b)\star c = a\star(b\star c);\end{equation}
 
-        \item $B\subseteq A$ es \emph{cerrado bajo la operación binaria} $\star$ si la restricción de $\star$ a $B\times B$ es binaria, i.e., si para cualesquiera $x,y\in B$, $$x\star y\in B;$$
+                    \item[(c2)] tiene un elemento \textbf{identidad} (o \textbf{neutro}) si existe $e\in A$ tal que, para todo $a\in A$, $$e\star a = a = a\star e;$$
 
-        \item $\star$ se \emph{distribuye con respecto a} $\ast$ si $\ast$ también es binaria y, para cualesquiera $a,b,c\in A$, $$a\star(b\ast c) = (a\star b)\ast(a\star c) \quad \& \quad (b\ast c)\star a = (b\star a)\ast(c\star a).$$
-    \end{itemize}
+                    \item[(c3)] tiene \textbf{elementos inversos} si existe un elemento identidad $e\in A$ y, para cualquier $a\in A$, existe $b\in A$ tal que $$ab=e=ba;$
+
+                    \item[(c4)] es \textbf{conmutativa} si, para cualesquiera $a,b\in A$, se tiene que $$a\star b = b\star a;$$
+                \end{itemize}
+
+            \item Sean $\star:A\times A\to A$ una operación binaria y $\varnothing\neq B\subseteq A$. Decimos que $B$ es \textbf{cerrado bajo la operación binaria} $\star$ si, para cualesquiera $x,y\in B$, $$\hspace{12mm}x\star y\in B;\footnote{Equivalentemente, $\varnothing\neq B\subseteq A$ es \textbf{cerrado bajo la operación binaria} $\star:A\times A\to A$ si la imagen de la restricción $\star\mid_{B\times B}$ está contenida en $B$.}$$
+
+            \item Sean $A\neq \varnothing$ y $\star:A\times A\to A, \ast:A\times A\to A$ operaciones binarias en $A$. Decimos que $\star$ se \textbf{distribuye con respecto a} $\ast$ si, para cualesquiera $a,b,c\in A$, $$a\star(b\ast c) = (a\star b)\ast(a\star c).$$
+        \end{enumerate}
+    \end{Def}
 \end{tcolorbox}
     
-\begin{Obs}\label{obs:1.1}
+\begin{Obs}\label{Obs: Inverso}
     
-Por definición, la relación de ``ser inverso bajo una operación'' es simétrica. Es decir, $a$ es inverso de $b$ bajo la operación $\star$ si, y sólo si, $b$ es inverso de $a$ bajo $\star$. Más aún, por definición, el elemento identidad de una operación, si existe, siempre es su propio inverso bajo esa operación. Frecuentemente diremos simplemente \emph{identidad} o \emph{neutro} para referirnos al elemento identidad de una operación; así mismo, utilizaremos sólo la palabra \emph{estructura} para referirnos a una estructura algebráica. 
+Por definición, la relación de ``ser inverso bajo una operación binaria'' es simétrica. Es decir, $a$ es inverso de $b$ bajo la operación $\star$ si, y sólo si, $b$ es inverso de $a$ bajo $\star$. Más aún, por definición, el elemento identidad de una operación, si existe, siempre es su propio inverso bajo esa operación. Frecuentemente diremos simplemente \textbf{identidad} o \textbf{neutro} para referirnos al elemento identidad de una operación, así como \textbf{estructura} para referirnos a una estructura algebraica. 
 \end{Obs}
 
-\subsubsection*{Ejemplos de estructuras algebraicas} \label{Sssec: Ejemplos de estructuras algebráicas}
+\begin{Ejem}\label{Ejem: Estructura algebraica}
+    Para cualquier conjunto arbitrario $A$, su conjunto potencia $\mathscr{P}(A)$ junto con las operaciones de unión e intersección de conjuntos ($\cup$ y $\cap$, respectivamente) y la relación  de contención ($\subseteq$) forma una estructura algebraica, que podemos escribir explícitamente como $(\mathscr{P}(A),\cup,\cap,\subseteq$). Observemos que ambas operaciones son binarias, asociativas y conmutativas, como seguramente viste en tu curso de Álgebra.
+\end{Ejem}
 
-Para cualquier conjunto arbitrario $A$, su conjunto potencia $\mathscr{P}(A)$ junto con las operaciones de unión e intersección de conjuntos ($\cup$ y $\cap$, respectivamente) y la relación ``contención'' ($\subseteq$) forma una estructura algebráica, que podemos escribir explícitamente como $(\mathscr{P}(A),\cup,\cap,\subseteq$). Observemos que ambas operaciones son binarias, asociativas y conmutativas, como seguramente viste en tu curso de Álgebra.
+\begin{Ejer}\label{ejercicio-1}
+    Consideremos la estructura algebraica $(\mathscr{P}(A),\cup,\cap,\subseteq)$, donde $A$ es un conjunto arbitrario. ¿Quiénes son los elementos neutros de $\cup$ y $\cap$? Demuéstralo.
+\end{Ejer}
 
-\begin{ejer}\label{ejercicio-1}
-    Consideremos la estructura algebráica $(\mathscr{P}(A),\cup,\cap,\subseteq)$, donde $A$ es un conjunto arbitrario. ¿Quiénes son los elementos neutros de $\cup$ y $\cap$? Demuéstralo.
-\end{ejer}
+El conjunto de los números naturales ($\mathbb{N}$) junto con la operación de suma ($+$) y la relación ``menor o igual que'' ($\le$) forma una estructura algebraica $(\mathbb{N},+,\le)$. Observemos que, en este caso, $+$ es una operación binaria, asociativa y conmutativa. Si incluimos al número $0$ en el conjunto $\mathbb{N}$, entonces $0$ es el elemento identidad de la suma, y es el único elemento de $\mathbb{N}$ que tiene inverso (¿Por qué?).
 
-El conjunto de los números naturales ($\mathbb{N}$) junto con la operación de suma ($+$) y la relación ``menor o igual que'' ($\le$) forma una estructura algebráica $(\mathbb{N},+,\le)$. Observemos que, en este caso, $+$ es una operación binaria, asociativa y conmutativa. Si incluimos al número $0$ en el conjunto $\mathbb{N}$, entonces $0$ es el elemento identidad de la suma, y es el único elemento de $\mathbb{N}$ que tiene inverso (¿Por qué?).
+\begin{Ejer}\label{ejercicio-2}
+    Consideremos la estructura algebraica $(\mathbb{N},+,\le)$, donde $0\in\mathbb{N}$. Demuestra que $\{0\}$ es el único subconjunto finito $\mathbb{N}$ cerrado bajo la suma.
+\end{Ejer}
 
-\begin{ejer}\label{ejercicio-2}
-    Consideremos la estructura algebráica $(\mathbb{N},+,\le)$, donde $0\in\mathbb{N}$. Demuestra que $\{0\}$ es el único subconjunto finito $\mathbb{N}$ cerrado bajo la suma.
-\end{ejer}
+El conjunto de los números enteros junto con las operaciones de suma y multiplicación forma una estructura algebraica $(\mathbb{Z},+,\cdot)$. Similarmente, los conjuntos de los números racionales y los reales con las mismas operaciones \textemdash entre números racionales y reales, respectivamente\textemdash \ forman las estructuras $(\mathbb{Q},+,\cdot)$ y $(\mathbb{R},+,\cdot)$. Claramente, estas tres estructuras son distintas, pues los conjuntos que los forman son distintos. Sin embargo, $(\mathbb{Q},+,\cdot)$ y $(\mathbb{R},+,\cdot)$ forman el mismo \emph{tipo} de estructura algebraica puesto que, como veremos más adelante, sus operaciones cumplen las mismas propiedades. Estudiaremos este tipo de estructura, conocida como \emph{campo}, en la siguiente sección, como un primer paso hacia la definición de otro tipo de estructura conocida como \emph{espacio vectorial} que definiremos más adelante. Además, veremos que no se necesitan relaciones para definir a estos tipos de estructuras. Por lo tanto, de ahora en adelante asumiremos que nuestras estructuras algebraicas no tienen relaciones. \\
 
-El conjunto de los números enteros junto con las operaciones de suma y multiplicación forma una estructura algebráica $(\mathbb{Z},+,\cdot)$. Similarmente, los conjuntos de los números racionales y los reales con las mismas operaciones \textemdash entre números racionales y reales, respectivamente\textemdash \ forman las estructuras $(\mathbb{Q},+,\cdot)$ y $(\mathbb{R},+,\cdot)$. Claramente, estas tres estructuras son distintas, pues los conjuntos que los forman son distintos. Sin embargo, $(\mathbb{Q},+,\cdot)$ y $(\mathbb{R},+,\cdot)$ forman el mismo \emph{tipo} de estructura algebráica puesto que, como veremos más adelante, sus operaciones cumplen las mismas propiedades. Estudiaremos este tipo de estructura, conocida como \emph{campo}, en la sección \ref{Ssec: Campos} como un primer paso hacia la definición de otro tipo de estructura conocida como \emph{espacio vectorial}, que definiremos en \ref{Ssec: Espacios vectoriales}. Además, veremos que no se necesitan relaciones para definir a estos tipos de estructuras. Por lo tanto, de ahora en adelante asumiremos que nuestras estructuras algebraicas no tienen relaciones. \\
-
-Antes de definir estos tipos de estructuras algebraicas, veremos algunas nociones generales de estructuras que usaremos tanto en campos como en espacios vectoriales.
+Antes de definir estos tipos de estructuras algebraicas, veremos algunas nociones generales de estructuras que nos serán de utilidad tanto al estudiar campos como espacios vectoriales.
     
-\begin{Prop}\label{prop:1.2}
-    Sean $(A,\star)$ una estructura algebráica con una operación binaria y $e\in A$ un elemento identidad de $\star$. Entonces
+\begin{Prop}[]\label{Prop: Operación binaria asociativa}
+    Sea $\star:A\times A\to A$ una operación binaria asociativa. Entonces, las expresiones finitas de la forma $$a_1\star a_2\star\dots\star a_{n-1}\star a_n$$ con $a_1,a_2,\dots,a_n\in A$, están bien definidas; es decir, son libres de ambigüedad.
+\end{Prop}
+
+\begin{proof}
+    Demostraremos esto por inducción. Nuestra base inductiva será el caso $n=3$ pues, dado que $\star$ es asociativa, se sigue directamente de la ec. (\ref{eq: Asociatividad}). \\
+
+    Sean $n\ge 3$ y supongamos que, para cualesquiera $a_1,a_2,\dots,a_n\in A$, la expresión
+    \begin{equation}\label{eq: Hipótesis de inducción}
+        a_1\star a_2\star\dots\star a_{n-1}\star a_n
+    \end{equation} está bien definida. Esta será nuestra hipótesis de inducción. \\
+
+    Ahora, consideremos dos expresiones $e$ y $f$ formadas por elementos $a_1,a_2,\dots,a_n,a_{n+1}\in A$. Sin pérdida de generalidad, podemos suponer que
+    \begin{align*}
+        e &= (a_1\star\dots\star a_i)\star(a_{i+1}\star\dots\star a_{n+1}), \\
+        f &= (a_1\star\dots\star a_j)\star(a_{j+1}\star\dots\star a_{n+1}),
+    \end{align*}
+    con $i\le j\le n$, donde, por hipótesis de inducción, las expresiones entre paréntesis están bien definidas. Si $i=j$, se sigue directamente que $e=f$, por lo que supondremos que $i<j$. Entonces, nuevamente por la hipótesis de inducción, tenemos que
+    \begin{align*}
+        e &= (a_1\star\dots\star a_i)\star\big((a_{i+1}\star\dots a_j)\star(a_{j+1}\star\dots\star a_{n+1})\big), \\
+        f &= \big((a_1\star\dots\star a_i)\star(a_{i+1}\star\dots a_j)\big)\star(a_{j+1}\star\dots\star a_{n+1}).
+    \end{align*}
+    Luego, por la asociatividad de $\star$, concluimos que $e=f$.
+\end{proof}
+
+\begin{Prop}\label{Prop: Operación binaria con identidad}
+    Sean $(A,\star)$ una estructura algebraica con una operación binaria y un elemento identidad $e\in A$ de $\star$. Entonces
 
     \begin{enumerate}[label=(\alph*)]
         \item $e$ es único;
@@ -128,152 +159,175 @@ Antes de definir estos tipos de estructuras algebraicas, veremos algunas nocione
 %    En caso de que tengamos estructuras algebraicas con dos operaciones $(A,\star,\ast)$ y $(B,\diamondsuit,\spadesuit)$, diremos que una función $f:A\to B$ \emph{preserva su estructura} si es compatible con los pares de operaciones $(\star,\diamondsuit)$ y $(\ast,\spadesuit)$, i.e., si, para todo $x,y\in A$, se cumple que
 %    \begin{align*}
 %        f(x\star y) &= f(x)\diamondsuit f(y) \\
-%                    & \ \& \\
+%                    & \ \land \\
 %        f(x\ast y) &= f(x)\spadesuit f(y).
 %    \end{align*}
 %\end{tcolorbox}
 
-\newpage
 \subsection*{Campos} \label{Ssec: Campos}
 
-Un campo es un tipo de estructura algebráica que formaliza varias de las nociones intuitivas que adquirimos durante nuestra educación básica sobre la aritmética en los números reales; esto es, que la suma y la multiplicación son operaciones binarias, asociativas y conmutativas, que la multiplicación se distribuye con respecto a la suma, y que el $0$ y el $1$ son números ``especiales'' en cierto sentido, el cual precisaremos más adelante. \\
+Un campo es un tipo de estructura algebraica que formaliza varias de las nociones intuitivas que adquirimos durante nuestra educación básica sobre la aritmética en los números reales; esto es, que la suma y la multiplicación son operaciones binarias, asociativas y conmutativas, que la multiplicación se distribuye con respecto a la suma, y que el $0$ y el $1$ son números ``especiales'' en cierto sentido, el cual precisaremos más adelante. \\
 
-Es probable que hayas visto este tipo de estructura explícitamente en tu curso de Álgebra y/o implícitamente en tu curso de Cálculo I (a través de los \emph{axiomas de campo} \textemdash o \emph{de cuerpo}\footnote{En francés, este tipo de estructura es llamado \emph{corps}, cuya traducción directa al español es ``cuerpo''.}\textemdash \ \emph{para los números reales}); sin embargo, a continuación mencionaremos su definición y estudiaremos los dos ejemplos de campos que más utilizaremos durante este curso (el campo real y el complejo).
-
-\subsubsection*{Definición de campo} \label{Sssec: Definición de campo}
+Es probable que hayas visto este tipo de estructura explícitamente en tu curso de Álgebra y/o implícitamente en tu curso de Cálculo I (a través de los \emph{axiomas de campo} \textemdash o \emph{de cuerpo}\textemdash \ \emph{para los números reales}); sin embargo, a continuación mencionaremos su definición y estudiaremos los dos ejemplos de campos que más utilizaremos durante este curso: el campo real y el complejo.
 
 \begin{tcolorbox}[breakable]
-    \underline{Def.} Un \emph{campo} es un conjunto, que suele denotarse por $K$, con dos operaciones binarias llamadas \emph{suma} y \emph{multiplicación}, denotadas por $+$ y $\cdot$, respectivamente, tales que cumplen las siguientes propiedades, conocidas como los \emph{axiomas de campo} o \emph{de cuerpo}:
+    \begin{Def}\label{Def: Campo}
+        Un \textbf{campo} es un conjunto, que suele denotarse por $K$, con dos operaciones binarias llamadas \textbf{suma} y \textbf{multiplicación}, denotadas por $+$ y $\cdot$, respectivamente, tales que cumplen las siguientes propiedades, conocidas como los \emph{axiomas de campo} o \emph{de cuerpo}:
 
-\begin{center}
-\begin{tabular}{lr}
-    \\
-    $\forall \ a,b,c\in K \quad \ a+(b+c)=(a+b)+c \ \ \& \ \ a\cdot (b\cdot c)=(a\cdot b)\cdot c$ & Asociatividad \\ \\
-    $\forall \ a,b\in K \quad \quad \quad \quad \quad \quad \quad a+b=b+a \ \ \& \ \ a\cdot b = b\cdot a$ & Conmutatividad \\ \\
-    $\exists \ 0,1\in K$ t.q., $\forall \ a\in K$, \ \ \quad $a+0=a \quad \& \quad 1\cdot a=a$ & Identidades (neutros)\footnote{Por el inciso (a) de la Proposición \ref{prop:1.2}, sabemos que los elementos identidad de operaciones binarias en estructuras algebraicas son únicos. Por convención, se suele denotar al neutro aditivo de un campo como $0$ y al neutro multiplicativo, como $1$. Además, como en este caso las operaciones son conmutativas, podemos escribir esta propiedad de manera más sucinta.} \\ \\
-    $\forall \ a\in K \quad \quad \quad \quad \quad \quad \quad \quad \exists \ -a\in K$ \quad t.q. \quad $a + (-a) = 0$ & Inversos aditivos\footnote{Por el inciso (c) de la Proposición \ref{prop:1.2}, sabemos que los inversos, si existen, son únicos. Por convención, si $a$ es elemento de un campo, su inverso aditivo suele denotarse por $-a$.} \\ \\
-    $\forall \ a\neq0\in K \hspace{2.55cm} \exists \ \ a^{-1}\in K$ \quad t.q. \quad $a\cdot a^{-1}= 1$ & Inversos multiplicativos\footnote{Por convención, si $a$ es un elemento de un campo distinto del neutro aditivo, su inverso multiplicativo suele denotarse por $a^{-1}$ o $\frac{1}{a}$.} \\ \\
-    $\forall \ a,b,c\in K \hspace{3.45cm}a\cdot (b+c) = a\cdot b+a\cdot c$ & Distributividad\footnote{Observemos que podemos escribir esta propiedad de forma resumida, pues $+$ y $\cdot$ son operaciones conmutativas.}.\\ \\
-\end{tabular}
-\end{center}
+        \begin{center}
+            \begin{tabular}{lcr}
+                \\
+                $\forall \ a,b,c\in K, \quad \quad \quad \quad \hspace{1mm} \ a+(b+c)=(a+b)+c \ \ \land \ \ a\cdot (b\cdot c)=(a\cdot b)\cdot c$ &\hspace{5mm} Asociatividad \\ \\
+                $\exists \ 0,1\in K$ t.q., $\forall \ a\in K$, \ \ \quad $a+0=a=0+a \quad \land \quad 1\cdot a=a=a\cdot1$ &\hspace{10mm} Identidades\footnote{Por el inciso (a) de la Proposición \ref{prop:1.2}, sabemos que los elementos identidad de operaciones binarias en estructuras algebraicas son únicos. Por convención, se suele denotar al neutro aditivo de un campo como $0$ y al neutro multiplicativo, como $1$.} \\ \\
+                $\forall \ a,b\in K, \quad \quad \quad \quad \quad \quad \quad \quad \quad \quad \ a+b=b+a \ \ \land \ \ a\cdot b = b\cdot a$ & Conmutatividad \\ \\
+                $\forall \ a\in K, \ \exists -a\in K$ t.q. \quad \quad \quad \quad \quad \quad \quad \quad \quad $a + (-a) = 0$ & Inversos aditivos\footnote{Por el inciso (c) de la Proposición \ref{prop:1.2}, sabemos que los inversos, si existen, son únicos. Por convención, si $a$ es elemento de un campo, su inverso aditivo suele denotarse por $-a$.} \\ \\
+                $\forall \ a\neq0\in K, \ \exists \ a^{-1}\in K$ t.q. \hspace{2.55cm} \quad $a\cdot a^{-1}= 1$ &\hspace{-11mm}Inversos multiplicativos\footnote{Por convención, si $a$ es un elemento de un campo distinto del neutro aditivo, su inverso multiplicativo suele denotarse por $a^{-1}$ ó $\frac{1}{a}$.} \\ \\
+                $\forall \ a,b,c\in K, \hspace{4.95cm}a\cdot (b+c) = a\cdot b+a\cdot c$ & Distributividad. \\ \\
+            \end{tabular}
+        \end{center}
+    \end{Def}
 \end{tcolorbox}
 
 \begin{Obs}\label{obs:1.3}
 
- En otras palabras, una estructura algebráica $(K,+,\cdot)$ es un campo si:
- \begin{enumerate}[label=(\alph*)]
-    \item $+$ es una operación binaria, asociativa, conmutativa, con un elemento identidad y con inversos aditivos para \textbf{todos sus elementos};
+ Resumiendo, una estructura algebraica $(K,+,\cdot)$ es un campo si:
+   \begin{itemize}
+        \item $+$ es una operación binaria, asociativa, conmutativa, con un elemento identidad y con inversos aditivos para \textbf{todos sus elementos};
 
-    \item $\cdot$ es una operación binaria, asociativa, conmutativa, con un elemento identidad y con inversos multiplicativos para \textbf{todos sus elementos excepto el neutro aditivo};
+        \item $\cdot$ es una operación binaria, asociativa, conmutativa, con un elemento identidad y con inversos multiplicativos para \textbf{todos sus elementos excepto el neutro aditivo};
 
-    \item $\cdot$ se distribuye con respecto a $+$.
-\end{enumerate}
+        \item $\cdot$ se distribuye con respecto a $+$.
+    \end{itemize}
 
-\noindent Nótese la asimetría en la propiedad de existencia de inversos aditivos en ambas operaciones: el neutro aditivo \textbf{no} requiere tener inverso multiplicativo, mientras que \textbf{todos} los elementos deben tener inversos aditivos. Frecuentemente escribiremos sólamente $K$ para referirnos al campo $(K,+,\cdot)$ y escribiremos la multiplicación implícitamente, omitiendo el símbolo ``$\cdot$''.
+\noindent Nótese la asimetría en la propiedad de existencia de inversos aditivos en ambas operaciones: el neutro aditivo \emph{no} requiere tener inverso multiplicativo, mientras que \emph{todos} los elementos deben tener inversos aditivos.
 \end{Obs}
 
-%Notación na y a^n por asociatividad de la suma y multiplicación en un campo e inducción.
+\begin{Ejem}[El campo real]\label{Ejem: Campo real}
 
-\subsubsection*{Ejemplos de campos} \label{Sssec: Ejemplos de campos}
+    El conjunto de los números reales $\mathbb{R}$ junto con las operaciones de suma y multiplicación (que aprendimos desde la educación básica) cumplen todas las propiedades enlistadas en la Definición \ref{Def: Campo}, por lo que forman un campo $(\mathbb{R},+,\cdot)$, conocido como el \textbf{campo real}. Este campo puede ser representado geométricamente con la recta real, como en la Figura \ref{fig: Campo real}. \\
 
-\textbf{El campo real} \\
+    \begin{figure}[h!]
+        \centering
+        \begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=1}]
+            \draw[thick,-] (-5,0) -- (5,0);
+            \foreach \x in {-3,-2,-1,0,1,2,3}
+                \draw (\x cm,3pt) -- (\x cm,-3pt) node[anchor=north] {$\x$};
+            \draw (-4 cm,3pt) -- (-4 cm,-3pt) node[anchor=north] {$\cdot\cdot\cdot$};
+            \draw (4 cm,3pt) -- (4 cm,-3pt) node[anchor=north] {$\cdot\cdot\cdot$};
+            \filldraw[black] (0,0) circle (2pt);
+            \draw node[] at (-5,0) {$\big($};
+            \draw node[] at (5,0) {$\big)$};
+            \draw node[] at (-5.75,0) {$-\infty$};
+            \draw node[] at (5.5,0) {$\infty$};
+        \end{tikzpicture}
+        \caption{Representación del campo real con la recta real.} 
+        \label{fig: Campo real}
+    \end{figure}
+\end{Ejem}
 
-El conjunto de los números reales $\mathbb{R}$ junto con las operaciones de suma y multiplicación (que aprendimos desde la educación básica) cumplen todas las propiedades enlistadas en la sección \ref{Sssec: Definición de campo}, por lo que forman un campo $(\mathbb{R},+,\cdot)$, conocido como el \emph{campo real}. Este campo puede ser representado geométricamente con la recta real, como en la Figura \ref{fig: Campo real}. \\
-
-\begin{figure}[h!]
-    \centering
-    \begin{tikzpicture}[thick,scale=0.8, every node/.style={scale=1}]
-        \draw[thick,-] (-5,0) -- (5,0);
-        \foreach \x in {-3,-2,-1,0,1,2,3}
-            \draw (\x cm,3pt) -- (\x cm,-3pt) node[anchor=north] {$\x$};
-        \draw (-4 cm,3pt) -- (-4 cm,-3pt) node[anchor=north] {$\cdot\cdot\cdot$};
-        \draw (4 cm,3pt) -- (4 cm,-3pt) node[anchor=north] {$\cdot\cdot\cdot$};
-        \filldraw[black] (0,0) circle (2pt);
-        \draw node[] at (-5,0) {$\big($};
-        \draw node[] at (5,0) {$\big)$};
-        \draw node[] at (-5.5,0) {$\infty$};
-        \draw node[] at (5.5,0) {$\infty$};
-    \end{tikzpicture}
-    \caption{Representación del campo real con la recta real.} 
-    \label{fig: Campo real}
-\end{figure}
-
-
-\textbf{El campo complejo}
+Para ver el ejemplo del campo complejo, necesitamos primero la siguiente
 
 \begin{tcolorbox}[breakable]
+    \begin{Def}\label{Def: C}
     
-    \underline{Def.} El conjunto de los números complejos se define como
-\[
-\mathbb{C} := \{a+ib\mid a,b\in\mathbb{R}\}, \quad i := +\sqrt{-1}.
-\]
-\noindent Sea $z=a+ib$ un número complejo. Decimos que $a$ es su \emph{parte real} y que $b$ es su \emph{parte imaginaria}. A los números complejos con parte real nula, i.e., aquellos de la forma $0+ib, b\in\mathbb{R}$, se les conoce como números \emph{imaginarios}\footnote{Gauss prefería llamarles números \emph{laterales}, ya que creía que era un nombre más intuitivo, y que llamarles \emph{imaginarios} les dotaba de una opacidad misteriosa e innecesaria. Sugiero ver este video introductorio (o la serie completa, llamada \emph{Imaginary Numbers Are Real}) para perderles el miedo a los números imaginarios: \url{https://www.youtube.com/watch?v=T647CGsuOVU}.}. El \emph{complejo conjugado} de un número complejo de $z=a+ib$ es
-\[
-\overline{z} = a-ib,
-\]
-y el valor absoluto o \emph{módulo} de un número complejo $z$ es
-\[
-|z| = +\sqrt{z \overline{z}}.
-\]
+        El \textbf{conjunto de los números complejos} se define como
+        \[
+        \mathbb{C} := \{a+ib\mid a,b\in\mathbb{R}\}, \quad i := +\sqrt{-1}.
+        \]
+        \noindent Sea $z=a+ib$ un número complejo. Decimos que $a$ es su \textbf{parte real} y que $b$ es su \textbf{parte imaginaria}. A los números complejos con parte real nula, i.e., aquellos de la forma $0+ib, b\in\mathbb{R}$, se les conoce como números \textbf{imaginarios}\footnote{Gauss prefería llamarles números \emph{laterales}, ya que creía que era un nombre más intuitivo, y que llamarles ``imaginarios'' les dotaba de una opacidad misteriosa e innecesaria. Sugiero ver este video introductorio (o la serie completa, llamada \emph{Imaginary Numbers Are Real}) para perderles el miedo a los números imaginarios: \url{https://www.youtube.com/watch?v=T647CGsuOVU}.}. El \textbf{conjugado} de un número complejo de $z=a+ib$ es
+        \[
+        \overline{z} = a-ib,
+        \]
+        y su \textbf{valor absoluto} o \textbf{módulo} es
+        \[
+        |z| = +\sqrt{z \overline{z}}.
+        \]
+    \end{Def}
 \end{tcolorbox}    
 
-Apoyándonos en las operaciones del campo real, podemos definir la suma y multiplicación entre números complejos como\footnote{Nótese que la definición de multiplicación es igual al desarrollo de $(a+ib)(c+id)$ como producto de binomios.}.
+\begin{Ejem}[El campo complejo]\label{Ejem: Campo complejo}
+Apoyándonos en las operaciones del campo real, podemos definir la suma y multiplicación entre números complejos como\footnote{Nótese que la definición de multiplicación es igual al desarrollo de $(a+ib)(c+id)$ como producto de binomios.} sigue
 \begin{align*}
     (a+ib)+(q+ir) &:=(a+q) + i(b+r), \\
     (a+ib)(q+ir)  &:= (aq-br) + i(ar+bq).
 \end{align*}
  Así mismo, apoyándonos en el campo real, podemos comprobar que el conjunto $\mathbb{C}$ junto con estas dos operaciones forma un campo. 
+\end{Ejem}
 
-\begin{ejer}\label{ejercicio-3}
+\begin{Ejer}\label{ejercicio-3}
     Prueba que $\mathbb{C}$, con las operaciones de suma y multiplicación definidas anteriormente, forma un campo.
-\end{ejer}
+\end{Ejer}
 
-% Geometría del campo complejo. Incluir en la descripción de la figura la nota al pie sobre los números \emph{laterales}\footnote{El mismísimo Gauss hubiera preferido este segundo nombre, ya que creía que era mucho más intuitivo, y que llamarlos \emph{imaginarios} les dotaba de una opacidad misteriosa e innecesaria. Sugiero ver este video introductorio (o la serie completa, llamada Imaginary Numbers Are Real) para perderles el miedo: \url{https://www.youtube.com/watch?v=T647CGsuOVU}.}
+% Geometría del campo complejo.
+
+\begin{Nota}\label{Nota: Campo}
+
+    Sea $(K,+,\cdot)$ un campo.
+
+    \begin{enumerate}[label=(\alph*)]
+    
+        \item Frecuentemente denotaremos a un campo simplemente por su conjunto subyacente (e.g. el campo $K$) y escribiremos la multiplicación implícitamente, omitiendo el símbolo ``$\cdot$''.
+            
+        \item Por la Proposición \ref{Prop: Operación binaria asociativa} tenemos que, para cualquier $a\in K$ y $n\ge 1$, las expresiones recursivas
+            \begin{align*}
+                1a &:= a, \\
+                na &:= a + (n-1)a, \\ \\
+                a^1&:= a, \\
+                a^n &:= a(a^{n-1}),
+            \end{align*}
+            están bien definidas, pues la suma y la multiplicación en un campo son operaciones binarias asociativas.
+    \end{enumerate}
+\end{Nota}
+
+\begin{Ejer}[]\label{Ejer: Notación multiplicativa e inversos}
+    Sean $K$ un campo y $0\neq a\in K$. Demuestra que, para cualquier $n\ge 1$, $$(a^{-1})^n = (a^n)^{-1}.$$
+\end{Ejer}
 
 \subsubsection*{Subcampos} \label{Sssec: Subcampos}
 
-\begin{tcolorbox}\label{Def: subcampo}
-    
-    \underline{Def.} Sea $(K,+,\cdot)$ un campo. Si $S\subseteq K$ es tal que las operaciones de suma y multiplicación en $K$ restringidas al dominio $S\times S$ forman un campo, decimos que $(S,+,\cdot)$ es un \emph{subcampo} de $(K,+,\cdot)$.
+\begin{tcolorbox}
+    \begin{Def}\label{Def: Subcampo}
+        Sea $(K,+,\cdot)$ un campo. Si $S\subseteq K$ es tal que las operaciones de suma y multiplicación en $K$ restringidas al dominio $S\times S$ forman un campo, decimos que $(S,+,\cdot)$ es un \emph{subcampo} de $(K,+,\cdot)$.
+    \end{Def}
 \end{tcolorbox}
 
-\begin{Obs}\label{obs:1.4}
+\begin{Obs}\label{Obs: Subcampo}
     \begin{enumerate}[label=(\arabic*)]\leavevmode
     
         \item Todo campo $K$ es trivialmente un subcampo de sí mismo.
 
-        \item Si hacemos una identificación entre el conjunto de los números reales y los números complejos de la forma $a+i0\in\mathbb{C}, a\in\mathbb{R}$, entonces podemos considerar a $(\mathbb{R},+,\cdot)$ como un subcampo de $(\mathbb{C},+,\cdot)$. En efecto, si restringimos las operaciones de suma y multiplicación en el campo complejo al conjunto $\{z\in\mathbb{C}\mid z = a+i0, a\in\mathbb{R}\}$, entonces estas operaciones son idénticas a las operaciones de suma y multiplicación en el campo real.
+        \item Si hacemos una identificación entre el conjunto de los números reales y los números complejos de la forma $a+i0\in\mathbb{C}, a\in\mathbb{R}$, entonces podemos considerar a $(\mathbb{R},+,\cdot)$ como un subcampo de $(\mathbb{C},+,\cdot)$.
+
+            En efecto: Si restringimos las operaciones de suma y multiplicación en el campo complejo al conjunto $\{z\in\mathbb{C}\mid z = a+i0, a\in\mathbb{R}\}$, entonces estas operaciones son idénticas a las operaciones de suma y multiplicación en el campo real.
     \end{enumerate}
 \end{Obs}
 
-Prácticamente todas las operaciones que realizamos cotidianamente como calcular fechas, dar cambio, aproximar áreas, repartir comida, etc., toman lugar en un campo. Es decir, las ideas intuitivas que nos formamos durante la educación básica de que la suma siempre debe ser conmutativa y asociativa \textemdash al igual que la multiplicación\textemdash, que existe la resta y la división, que el $0$ y el $1$ son números \emph{especiales} en cierto sentido y que siempre se cumple la propiedad de distributividad, son un \emph{hecho} para cualquier estructura de campo. Sin embargo, estas mismas ideas intuitivas \emph{no siempre se cumplen en otros tipos de estructuras algebraicas} \textemdash algunas de las cuales veremos más adelante\textemdash, \ ¡así que no te confíes!
+Prácticamente todas las operaciones que realizamos cotidianamente como calcular fechas, dar cambio, aproximar áreas, repartir comida, etc., toman lugar en un campo. Es decir, las ideas intuitivas que nos formamos durante la educación básica de que la suma siempre debe ser conmutativa y asociativa \textemdash al igual que la multiplicación\textemdash, que existe la resta y la división, que el $0$ y el $1$ son números ``especiales'' en cierto sentido y que siempre se cumple la propiedad de distributividad, son un \emph{hecho} para cualquier estructura de campo. Sin embargo, estas mismas ideas intuitivas \emph{no siempre se cumplen en otros tipos de estructuras algebraicas} \textemdash algunas de las cuales veremos más adelante\textemdash, \ ¡así que no te confíes!
 
-\newpage
 \subsection*{Espacios vectoriales} \label{Ssec: Espacios vectoriales}
 
 El conjunto de soluciones de ciertos tipos de problemas que aparecen frecuentemente en varias áreas de las matemáticas, la física, la computación y la biomedicina tienen estructura de espacio vectorial, por lo que el conocimiento de la teoría de los espacios vectoriales \textemdash es decir, del álgebra lineal\textemdash \ se puede traducir en aplicaciones directas en dichas áreas. 
 
-\subsubsection*{Definición de espacio vectorial} \label{Sssec: Definición de espacio vectorial}
-
 \begin{tcolorbox}[breakable]
-\underline{Def.} Un \emph{espacio vectorial} sobre un \hyperlink{Sssec: Definición de campo}{campo} $K$ es un conjunto $V$ con dos operaciones (llamadas \emph{adición} o \emph{suma vectorial} y \emph{producto de un vector por un escalar}) que satisfacen las siguientes propiedades, conocidas como los \emph{axiomas de los espacios vectoriales}:
-
-\begin{center}
-\begin{tabular}{lr}
-    $\forall\hspace{1.5mm} \mathbf{u},\mathbf{v}\in V \hspace{3mm}\exists \hspace{1.5mm} \mathbf{u}+\mathbf{v}\in V$ & Cerradura de la adición \\ \\ \multirow{2}{0.4\textwidth}{$\forall\hspace{1.5mm} \mathbf{v}\in V, a\in K \hspace{3mm}\exists \hspace{1.5mm} a\mathbf{v}\in V$} & \multirow{2}{0.28\textwidth}{Cerradura del producto de un vector por un escalar} \\ \\ \\
-    $\forall\hspace{1.5mm} \mathbf{u},\mathbf{v},\mathbf{w}\in V\hspace{3mm}\mathbf{u}+(\mathbf{v}+\mathbf{w})=(\mathbf{u}+\mathbf{v})+\mathbf{w}$  & Asociatividad de la adición\\ \\
-    $\forall\hspace{1.5mm} \mathbf{u},\mathbf{v}\in V\hspace{3mm}\mathbf{u}+\mathbf{v}=\mathbf{v}+\mathbf{u}$ & Conmutatividad de la adición \\ \\
-    $\exists \hspace{1.5mm} \mathbf{0}\in V$ t.q. $\mathbf{v}+\mathbf{0}=\mathbf{v}\hspace{3mm}\forall\hspace{1.5mm} \mathbf{v} \in V$ & Elemento identidad de la adición (neutro aditivo) \\ \\
-    $\forall\hspace{1.5mm}\mathbf{v}\in V \hspace{3mm}\exists\hspace{1.5mm} -\mathbf{v}\in V$ t.q. $\mathbf{v}+(-\mathbf{v})=\mathbf{0}$ & Elemento inverso de la adición (inverso aditivo) \\ \\
-    \multirow{2}{0.35\textwidth}{$a(b\mathbf{v})=(ab)\mathbf{v}\hspace{3mm}\forall a,b\in K, \mathbf{v}\in V$} & \multirow{2}{0.47\textwidth}{Compatibilidad del producto de un vector por un escalar con el producto entre escalares} \\ \\ \\
-    \multirow{2}{0.4\textwidth}{$\exists\hspace{1.5mm}1\in K$ \hspace{1.5mm} t.q. $\hspace{1.5mm}1\mathbf{v}=\mathbf{v}\hspace{3mm}\forall\hspace{1.5mm} \mathbf{v}\in V$} & \multirow{2}{0.35\textwidth}{Elemento identidad del producto de un vector por un escalar} \\ \\ \\
-    \multirow{2}{0.4\textwidth}{$a(\mathbf{v}+\mathbf{w})=a\mathbf{v}+a\mathbf{w}\hspace{3mm}\forall\hspace{1.5mm} \mathbf{v},\mathbf{w}\in V, a\in K$} & \multirow{2}{0.47\textwidth}{Distributividad del producto de un vector por un escalar con respecto a la adición vectorial}  \\ \\ \\
-    \multirow{2}{0.4\textwidth}{$(a+b)\mathbf{v}=a\mathbf{v}+b\mathbf{v}\hspace{3mm}\forall\hspace{1.5mm} a,b\in K, \mathbf{v}\in V$} & \multirow{2}{0.47\textwidth}{Distributividad del producto de un vector por un escalar con respecto a la suma escalar.} \\ \\
-\end{tabular}
-\end{center}
-
-A los elementos $a,b \in K$ del campo utilizado para definir el espacio vectorial se les llama \emph{escalares}, a los elementos $\mathbf{u},\mathbf{v},\mathbf{w}\in V$ que cumplen todas las propiedades anteriores se les llama \emph{vectores}, y el conjunto $V$ es llamado \emph{conjunto vectorial}.
-
+    \begin{Def}\label{Def: Espacio vectorial}
+        Un \textbf{espacio vectorial} sobre un \hyperlink{Sssec: Definición de campo}{campo} $K$ es un conjunto $V$ con dos operaciones llamadas \textbf{adición} o \textbf{suma vectorial} y \textbf{producto de un vector por un escalar} que satisfacen las siguientes propiedades, conocidas como los \emph{axiomas de los espacios vectoriales}:
+        
+        \begin{center}
+        \begin{tabular}{lr}
+            $\forall\hspace{1.5mm} \vec{u},\vec{v}\in V \hspace{3mm}\exists \hspace{1.5mm} \vec{u}+\vec{v}\in V$ & Cerradura de la adición \\ \\ \multirow{2}{0.4\textwidth}{$\forall\hspace{1.5mm} \vec{v}\in V, a\in K \hspace{3mm}\exists \hspace{1.5mm} a\vec{v}\in V$} & \multirow{2}{0.28\textwidth}{Cerradura del producto de un vector por un escalar} \\ \\ \\
+            $\forall\hspace{1.5mm} \vec{u},\vec{v},\vec{w}\in V\hspace{3mm}\vec{u}+(\vec{v}+\vec{w})=(\vec{u}+\vec{v})+\vec{w}$  & Asociatividad de la adición\\ \\
+            $\forall\hspace{1.5mm} \vec{u},\vec{v}\in V\hspace{3mm}\vec{u}+\vec{v}=\vec{v}+\vec{u}$ & Conmutatividad de la adición \\ \\
+            $\exists \hspace{1.5mm} \vec{0}\in V$ t.q. $\vec{v}+\vec{0}=\vec{v}\hspace{3mm}\forall\hspace{1.5mm} \vec{v} \in V$ & Elemento identidad de la adición (neutro aditivo) \\ \\
+            $\forall\hspace{1.5mm}\vec{v}\in V \hspace{3mm}\exists\hspace{1.5mm} -\vec{v}\in V$ t.q. $\vec{v}+(-\vec{v})=\vec{0}$ & Elemento inverso de la adición (inverso aditivo) \\ \\
+            \multirow{2}{0.35\textwidth}{$a(b\vec{v})=(ab)\vec{v}\hspace{3mm}\forall a,b\in K, \vec{v}\in V$} & \multirow{2}{0.47\textwidth}{Compatibilidad del producto de un vector por un escalar con el producto entre escalares} \\ \\ \\
+            \multirow{2}{0.4\textwidth}{$\exists\hspace{1.5mm}1\in K$ \hspace{1.5mm} t.q. $\hspace{1.5mm}1\vec{v}=\vec{v}\hspace{3mm}\forall\hspace{1.5mm} \vec{v}\in V$} & \multirow{2}{0.35\textwidth}{Elemento identidad del producto de un vector por un escalar} \\ \\ \\
+            \multirow{2}{0.4\textwidth}{$a(\vec{v}+\vec{w})=a\vec{v}+a\vec{w}\hspace{3mm}\forall\hspace{1.5mm} \vec{v},\vec{w}\in V, a\in K$} & \multirow{2}{0.47\textwidth}{Distributividad del producto de un vector por un escalar con respecto a la adición vectorial}  \\ \\ \\
+            \multirow{2}{0.4\textwidth}{$(a+b)\vec{v}=a\vec{v}+b\vec{v}\hspace{3mm}\forall\hspace{1.5mm} a,b\in K, \vec{v}\in V$} & \multirow{2}{0.47\textwidth}{Distributividad del producto de un vector por un escalar con respecto a la suma escalar.} \\ \\
+        \end{tabular}
+        \end{center}
+        
+        A los elementos $a,b \in K$ del campo utilizado para definir el espacio vectorial se les llama \textbf{escalares}, a los elementos $\vec{u},\vec{v},\vec{w}\in V$ que cumplen todas las propiedades anteriores se les llama \textbf{vectores}, y el conjunto $V$ es llamado \textbf{conjunto vectorial}.
+    \end{Def}
 \end{tcolorbox}
 
 \begin{Obs}\label{obs:1.5}\leavevmode
@@ -283,117 +337,133 @@ A los elementos $a,b \in K$ del campo utilizado para definir el espacio vectoria
 
     \item La definición de \emph{espacio vectorial} incluye dos operaciones \emph{nuevas} (con respecto a las operaciones de campo) con una importante diferencia entre ellas: una es sólamente entre los elementos del conjunto $V$ (suma vectorial) y, la otra, entre los elementos del conjunto $V$ y el campo $K$ (producto de un vector por un escalar). Sin embargo, \emph{ambas dan como resultado un vector en $V$}.
 
-    \item Así como la definición de \emph{campo} incluye un conjunto $K$ con dos operaciones (suma y producto) entre sus elementos que cumplen propiedades específicas, la definición de \emph{espacio vectorial} incluye un conjunto $V$ y un campo $K$ con dos operaciones (suma vectorial y producto de un vector por un escalar) entre sus elementos que cumplen propiedades específicas.
+    \item Así como la definición de \emph{campo} incluye un conjunto $K$ con dos operaciones (suma y producto) entre sus elementos que cumplen propiedades específicas, la definición de \emph{espacio vectorial} incluye un conjunto $V$ \emph{y un campo} $K$ con dos operaciones (suma vectorial y producto de un vector por un escalar) entre sus elementos que cumplen propiedades específicas.
 \end{enumerate}
 \end{Obs}
 
-\noindent Denotaremos a un espacio vectorial formado por un conjunto de vectores $V$ y un campo $K$ como $(V,K)$, o simplemente $V$ cuando sea claro sobre qué campo está definido. Más adelante veremos otras operaciones en espacios vectoriales que se pueden definir entre vectores y escalares; sin embargo, la suma vectorial y el producto de un vector por un escalar son las únicas necesarias para \emph{definir} a los espacios vectoriales, por lo que nos referiremos a ellas como las operaciones \emph{esenciales} de los espacios vectoriales.
+\begin{Nota}\label{Nota: Espacio vectorial}
+    Denotaremos a un espacio vectorial formado por un conjunto de vectores $V$ y un campo $K$ como $(V,K)$, o simplemente $V$ cuando sea claro sobre qué campo está definido. 
+\end{Nota}
 
-\begin{Coro}[Ley de Cancelación para espacios vectoriales]\label{coro:1.6}
-Sean $V$ un espacio vectorial y $\mathbf{x},\mathbf{y},\mathbf{z}\in V$ tales que $\mathbf{x}+\mathbf{z}=\mathbf{y}+\mathbf{z}$. Entonces, $\mathbf{x}=\mathbf{y}$.
+Los ejemplos de espacios vectoriales más sencillos \textemdash y, a menudo, más útiles\textemdash \ se siguen de una muy importante relación existente entre las definiciones de \href{Def: Campo}{campo} y \href{Def: Espacio vectorial}{espacio vectorial} .
 
-\begin{proof}
-
-    Se sigue la Ley de Cancelación (inciso (c) de la Proposición \ref{prop:1.2}) ya que, por definición de espacio vectorial, la suma vectorial es asociativa y todos los elementos de $V$ tienen elementos inversos bajo esta operación. Más aún, dado que la suma vectorial es conmutativa, se sigue que $\mathbf{x}+\mathbf{z} = \mathbf{z}+\mathbf{y}$ implica que $\mathbf{x}=\mathbf{y}$.
-\end{proof}
-\end{Coro}
-
-Para complementar la discusión al respecto de qué es un vector y apreciar cómo funcionan las operaciones de los espacios vectoriales (suma vectorial y producto de un vector por un escalar) de manera visual, sugiero ver el siguiente video: \url{https://www.youtube.com/watch?v=fNk_zzaMoSs}.
-
-\subsubsection*{Ejemplos de espacios vectoriales} \label{Ejem:Espacios_vectoriales}
-
-Los ejemplos de espacios vectoriales más sencillos \textemdash y, a menudo, más útiles\textemdash \ se siguen de una muy importante relación existente entre las definiciones de campo y espacio vectorial.
-
-\begin{ejer}\label{ejer-4}
-    
+\begin{Ejer}\label{ejer-4}
     Sea $(K,+,\cdot)$ un campo. Demuestra que $(K,K)$ forma un espacio vectorial, con las operaciones de suma vectorial y producto de un vector por un escalar dadas por la suma y la multiplicación en el campo, respectivamente.
-\end{ejer}
+\end{Ejer}
 
-Por el Ejercicio \ref{ejer-4} tenemos que cualquier campo forma un espacio vectorial sobre sí mismo. En particular, $(\mathbb{R},\mathbb{R})$ y $(\mathbb{C},\mathbb{C})$ son espacios vectoriales. \\ % Este resultado se puede generalizar como sigue.
+\begin{Ejem}[Espacios vectoriales]\label{Ejem: Espacios vectoriales}\leavevmode
+    
+    \begin{enumerate}[label=(\arabic*)]
+    
+        \item Por el Ejercicio \ref{ejer-4} tenemos que cualquier campo forma un espacio vectorial sobre sí mismo. En particular, $(\mathbb{R},\mathbb{R})$ y $(\mathbb{C},\mathbb{C})$ son espacios vectoriales. \\ % Este resultado se puede generalizar como sigue.
 
-%\begin{ejer}\label{ejer-5}
-%    
-%    Sea $(S,+,\cdot)$ un subcampo de $(K,+,\cdot)$. Demuestra que $(K,S)$ forma un espacio vectorial.
-%\end{ejer}
+        \item Consideremos el conjunto $\mathbb{R}^2$. Aprovechando las operaciones de suma y multiplicación en el campo real, podemos definir una operación $+:\mathbb{R}^2\times\mathbb{R}^2\to \mathbb{R}^2$ como
+            \[
+                (x_1, x_2) + (y_1,y_2) := (x_1+y_1,x_2+y_2)
+            \] 
+            y una operación $\cdot:\mathbb{R}\times \mathbb{R}^2\to \mathbb{R}^2$ como
+            \[
+                a(x_1,x_2) := (ax_1,ax_2).
+            \] 
+            Se puede verificar que, con estas operaciones, $\mathbb{R}^2$ forma un espacio vectorial sobre el campo real, en el cual el neutro aditivo es $(0,0)\in\mathbb{R}^2$ y el inverso aditivo de $(x_1,x_2)\in\mathbb{R}^2$ es $(-x_1,-x_2)\in\mathbb{R}^2$. Esto se debe a que definimos las nuevas operaciones ``entrada por entrada'', por lo que la demostración de que $(\mathbb{R}^2,\mathbb{R})$ es un espacio vectorial realmente es análoga a la del Ejercicio \ref{ejer-4}. 
+    \end{enumerate}
+\end{Ejem}
 
-%Por el Ejercicio \ref{ejer-5} tenemos que un campo forma un espacio vectorial sobre cualquiera de sus subcampos. En particular, $(\mathbb{C},\mathbb{R})$ es un espacio vectorial. \\
-
-Consideremos el conjunto $\mathbb{R}^2$. Aprovechando las operaciones de suma y multiplicación en el campo real, podemos definir una operación $+:\mathbb{R}^2\times\mathbb{R}^2\to \mathbb{R}^2$ como
-\[
-    (x_1, x_2) + (y_1,y_2) := (x_1+y_1,x_2+y_2)
-\] 
-y una operación $\cdot:\mathbb{R}\times \mathbb{R}^2\to \mathbb{R}^2$ como
-\[
-    a(x_1,x_2) := (ax_1,ax_2).
-\] 
-Se puede verificar que, con estas operaciones, $\mathbb{R}^2$ forma un espacio vectorial sobre el campo real, en el cual el neutro aditivo es $(0,0)\in\mathbb{R}^2$ y el inverso aditivo de $(x_1,x_2)\in\mathbb{R}^2$ es $(-x_1,-x_2)\in\mathbb{R}^2$. Esto se debe a que definimos las nuevas operaciones ``entrada por entrada'', por lo que la demostración de que $(\mathbb{R}^2,\mathbb{R})$ es un espacio vectorial es análoga a la del Ejercicio \ref{ejer-4}. Más aún, para cualquier entero positivo $n$ podemos definir operaciones $+:\mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}^n$ y $\cdot:\mathbb{R}\times \mathbb{R}^n\to \mathbb{R}^n$ de manera análoga a las anteriores, obteniendo así un espacio vectorial $(\mathbb{R}^n,\mathbb{R})$. Por ende, tenemos el siguiente corolario del Ejercicio \ref{ejer-4}.
+Del inciso (2) del Ejemplo \ref{Ejem: Espacios vectoriales} notamos que, para cualquier entero positivo $n$, podemos definir operaciones $+:\mathbb{R}^n\times \mathbb{R}^n\to \mathbb{R}^n$ y $\cdot:\mathbb{R}\times \mathbb{R}^n\to \mathbb{R}^n$ de forma análoga a las anteriores, obteniendo así un espacio vectorial $(\mathbb{R}^n,\mathbb{R})$. Resumimos esto como el siguiente
 
 \begin{Coro}\label{coro:1.7}
-    
     Sean $K$ un campo y $n$ un entero positivo. Entonces $(K^n,K)$ es un espacio vectorial, definiendo las operaciones de suma vectorial y producto de un vector por un escalar entrada por entrada.
 \end{Coro}
 
-\noindent Por el Corolario \ref{coro:1.7}, se sigue que $(\mathbb{C}^n,\mathbb{C})$ es un espacio vectorial para cualquier entero positivo $n$. Ahora, veamos otros ejemplos de espacios vectoriales. \\
+\begin{Ejem}[Más espacios vectoriales]\label{Ejem: Más espacios vectoriales}\leavevmode
+    \begin{enumerate}[label=(\arabic*)]
+    
+        \item Por el Corolario \ref{coro:1.7}, se sigue que $(\mathbb{C}^n,\mathbb{C})$ es un espacio vectorial para cualquier $n\ge 1$.
 
-El conjunto de todas las funciones polinomiales de una variable real de grado $n$ (i.e., con regla de correspondencia de la forma $f(x) = c_1 x^1 + c_2 x^2 + ... + c_n x^n, \hspace{1.5mm} c_i \in \mathbb{R}, \hspace{1.5mm} i \in \{1,2,...,n\}$) y con un mismo dominio $\mathcal{D}$ forma un espacio vectorial sobre el campo real. Aquí, las definiciones de suma vectorial y de producto de un vector por un escalar se siguen naturalmente de la definición de la suma de funciones $(f+g)(x):= f(x)+g(x)$ y del producto de una función arbitraria $f(x)$ por una función constante $a$, respectivamente, vistas en cálculo \textemdash las cuales aplican para las intersecciones de los dominios. El elemento identidad de la suma vectorial (neutro aditivo) es la función constante cero $f(x)=0\hspace{2.5mm} \forall\hspace{0.5mm}x\in\mathcal{D}$ y el inverso aditivo de una función $g(x)$ es $-g(x)$. Observemos que, en este caso, los \emph{vectores} de nuestro espacio vectorial \emph{son funciones} (en particular, en este ejemplo, son funciones polinomiales). \\
+        \item El conjunto $P^n$ de todas las funciones polinomiales reales de una variable real de grado $n$, i.e., con regla de correspondencia de la forma $$f(x) = c_1 x^1 + c_2 x^2 + ... + c_n x^n, \hspace{1.5mm} c_i \in \mathbb{R}, \hspace{1.5mm} i \in \{1,2,...,n\}$$ y con un mismo dominio $\mathcal{D}$ forma un espacio vectorial sobre el campo real. Aquí, las definiciones de suma vectorial y de producto de un vector por un escalar se siguen naturalmente de la definición de la suma de funciones $(f+g)(x):= f(x)+g(x)$ y del producto de una función arbitraria $f(x)$ por una función constante $a$, respectivamente, vistas en Cálculo \textemdash las cuales aplican para las intersecciones de los dominios. El elemento identidad de la suma vectorial (neutro aditivo) en este espacio es la función constante cero $f(x)=0\hspace{2.5mm} \forall\hspace{0.5mm}x\in\mathcal{D}$ y el inverso aditivo de una función $g(x)$ es $-g(x)$. Observemos que, en este caso, los \emph{vectores} de nuestro espacio vectorial \emph{son funciones} (en particular, en este ejemplo, funciones polinomiales).
 
-El conjunto de todas las funciones de una variable real derivables y con derivada continua (i.e., funciones de clase $C^1$) sobre el campo real forma un espacio vectorial\footnote{En general, el conjunto de funciones de clase $C^n$ sobre el campo $\mathbb{R}$ forma un espacio vectorial; aunque, estrictamente hablando, $C^1$ y $C^n$ son \emph{clases} y no conjuntos, en este curso ignoraremos este tecnicismo.}. Esto probablemente lo viste de manera implícita en tu curso de cálculo diferencial de una variable, cuando viste los teoremas de derivadas de una suma/multiplicación/división de funciones (también conocido como \emph{álgebra de derivadas}) para funciones de este tipo. Las operaciones en este espacio vectorial, así como los elementos identidad (neutros) e inversos, se definen de la misma forma que en el ejemplo de las funciones polinomiales. \\
+        \item El conjunto de todas las funciones de una variable real derivables y con derivada continua (i.e., funciones de clase $C^1$) sobre el campo real forma un espacio vectorial\footnote{En general, el conjunto de funciones de clase $C^n$ sobre el campo $\mathbb{R}$ forma un espacio vectorial. A pesar de que, estrictamente hablando, $C^1$ y $C^n$ son \emph{clases} y no conjuntos, en este curso ignoraremos este tecnicismo.}. Esto probablemente lo viste de manera implícita en tu curso de cálculo diferencial de una variable, cuando viste los teoremas de derivadas de una suma/multiplicación/división de funciones (también conocido como \emph{álgebra de derivadas}) para funciones de este tipo. Las operaciones en este espacio vectorial, así como los elementos identidad (neutros) e inversos, se definen de la misma forma que en el ejemplo de las funciones polinomiales.
+    \end{enumerate}
+\end{Ejem}
+
+\begin{Ejer}\label{Ejer: Espacio vectorial de campo sobre subcampo}
+    Sea $(S,+,\cdot)$ un subcampo de $(K,+,\cdot)$. Demuestra que $(K,S)$ forma un espacio vectorial. En particular, se sigue que $(\mathbb{C},\mathbb{R})$ es un espacio vectorial.
+\end{Ejer}
 
 Para futura referencia, dejamos la siguiente definición.
 
 \begin{tcolorbox}
-    \underline{Def.} Un \emph{espacio vectorial real (complejo)} es aquel definido sobre el campo real (complejo) o, equivalentemente, aquel donde los escalares son números reales (complejos).
+    \begin{Def}\label{Def: Espacio vectorial real y complejo}
+        Un \textbf{espacio vectorial real (complejo)} es aquel definido sobre el campo real (complejo) o, equivalentemente, aquel donde los escalares son los números reales (complejos).
+    \end{Def}
 \end{tcolorbox}{}
 
-Para ver más ejemplos de espacios vectoriales pueden consultar, por ejemplo, \emph{Linear Algebra} de Friedberg (págs. 8-11.) o \emph{Linear Algebra: A Modern Introduction} de Poole (págs. 430-432), entre otros. \\
+Para ver más ejemplos de espacios vectoriales puedes consultar, por ejemplo, \emph{Linear Algebra} de Friedberg (págs. 8-11.) o \emph{Linear Algebra: A Modern Introduction} de Poole (págs. 430-432), entre otros. Ahora, veamos algunas propiedades de los espacios vectoriales.
+
+\begin{Lema}[Ley de Cancelación para espacios vectoriales]\label{Lema: Ley de Cancelación}
+Sean $V$ un espacio vectorial y $\vec{x},\vec{y},\vec{z}\in V$ tales que
+\begin{align*}
+    \vec{x}+\vec{z}&=\vec{y}+\vec{z} \\
+                   &\hspace{1.75mm}\text{ó} \\
+    \vec{z}+\vec{x}&=\vec{z}+\vec{y}.
+\end{align*}Entonces, $\vec{x}=\vec{y}$.
+\end{Lema}
+
+\begin{proof}
+    Se sigue la Ley de Cancelación (inciso (c) de la Proposición \ref{Prop: Operación binaria con identidad}) ya que, por definición de espacio vectorial, la suma vectorial es asociativa y todos los elementos de $V$ tienen elementos inversos bajo esta operación.
+\end{proof}
 
 \begin{Teo}\label{teo:1.8}
-    Sea ($V$,$K$) un espacio vectorial arbitrario con $\mathbf{v}\in V$ y $a\in K$. Entonces, tenemos que:
+    Sea ($V$,$K$) un espacio vectorial arbitrario con $\vec{v}\in V$ y $a\in K$. Entonces, tenemos que:
     \begin{enumerate}[label=(\alph*)]
 
-        \item $0\mathbf{v}=\mathbf{0}$;
+        \item $0\vec{v}=\vec{0}$;
 
-        \item $a\mathbf{0}=\mathbf{0}$;
+        \item $a\vec{0}=\vec{0}$;
 
-        \item $(-a)\mathbf{v}=-(a\mathbf{v})=a(-\mathbf{v})$.
+        \item $(-a)\vec{v}=-(a\vec{v})=a(-\vec{v})$.
     \end{enumerate}
 \end{Teo}
 
 \begin{proof}\leavevmode
     \begin{enumerate}[label=(\alph*)]
 
-        \item Por la propiedad de cerradura del producto de un vector por un escalar, sabemos que $0\mathbf{v}\in V$. Ahora, observemos que
+        \item Por la propiedad de cerradura del producto de un vector por un escalar, sabemos que $0\vec{v}\in V$. Ahora, observemos que
             \begin{align*}
-                0\mathbf{v}+0\mathbf{v}&=(0+0)\mathbf{v} \tag{distributividad} \\
-                                       &=0\mathbf{v} \\
-                                       &=0\mathbf{v}+\mathbf{0} \tag{neutro aditivo},
+                0\vec{v}+0\vec{v}&=(0+0)\vec{v} \tag{distributividad} \\
+                                       &=0\vec{v} \\
+                                       &=0\vec{v}+\vec{0} \tag{neutro aditivo},
             \end{align*}
-            donde la primera igualdad se sigue de la distributividad de la suma de escalares con respecto al producto de un vector por un escalar. Por ende, tenemos que $0\mathbf{v}+0\mathbf{v} =0\mathbf{v}+\mathbf{0}$. Luego, de la Ley de Cancelación para espacios vectoriales (Corolario \ref{coro:1.6}) se sigue que $0\mathbf{v}=\mathbf{0}$.
+            donde la primera igualdad se sigue de la distributividad de la suma de escalares con respecto al producto de un vector por un escalar. Por ende, tenemos que $0\vec{v}+0\vec{v} =0\vec{v}+\vec{0}$. Luego, de la Ley de Cancelación para espacios vectoriales (Lema \ref{Lema: Ley de Cancelación}) se sigue que $0\vec{v}=\vec{0}$.
 
         \item Observemos que
             \begin{align*}
-                a\mathbf{0}+a\mathbf{0}&=a(\mathbf{0}+\mathbf{0}) \\
-                                       &=a\mathbf{0}\\
-                                       &=a\mathbf{0}+\mathbf{0},
+                a\vec{0}+a\vec{0}&=a(\vec{0}+\vec{0}) \\
+                                       &=a\vec{0}\\
+                                       &=a\vec{0}+\vec{0},
             \end{align*}
-            donde la primera igualdad se sigue de la distributividad de la suma vectorial con respecto al producto de un vector por un escalar. Por ende, tenemos que $a\mathbf{0}+a0\mathbf{}=a\mathbf{0}+\mathbf{0}$. Luego, de la Ley de Cancelación para espacios vectoriales (Corolario \ref{coro:1.6}) se sigue que $a\mathbf{0}=\mathbf{0}$.
+            donde la primera igualdad se sigue de la distributividad de la suma vectorial con respecto al producto de un vector por un escalar. Por ende, tenemos que $a\vec{0}+a0\mathbf{}=a\vec{0}+\vec{0}$. Luego, de la Ley de Cancelación para espacios vectoriales (Lema \ref{Lema: Ley de Cancelación}) se sigue que $a\vec{0}=\vec{0}$.
 
         \item Observemos que
             \begin{align*}
-                \mathbf{0} &= 0\mathbf{v} \\
-                           &= (a+(-a)) \mathbf{v} \\
-                           &= a\mathbf{v} + (-a)\mathbf{v},
+                \vec{0} &= 0\vec{v} \\
+                           &= (a+(-a)) \vec{v} \\
+                           &= a\vec{v} + (-a)\vec{v},
             \end{align*}
-            donde se utilizó el inciso (a), la propiedad de existencia de inversos aditivos en un campo y la distributividad de la suma de escalares con respecto al producto de un vector por un escalar. De la ecuación $a\mathbf{v} + (-a)\mathbf{v} = \mathbf{0}$ y la conmutatividad de la suma vectorial se sigue que $(-a)\mathbf{v} = -(a\mathbf{v})$. Análogamente, tenemos que
+            donde se utilizó el inciso (a), la propiedad de existencia de inversos aditivos en un campo y la distributividad de la suma de escalares con respecto al producto de un vector por un escalar. De la ecuación $a\vec{v} + (-a)\vec{v} = \vec{0}$ y la conmutatividad de la suma vectorial se sigue que $(-a)\vec{v} = -(a\vec{v})$. Análogamente, tenemos que
             \begin{align*}
-                \mathbf{0} &= a\mathbf{0} \\
-                           &= a(\mathbf{v} + (-\mathbf{v})) \\
-                           &= a\mathbf{v} + a(-\mathbf{v}),
+                \vec{0} &= a\vec{0} \\
+                           &= a(\vec{v} + (-\vec{v})) \\
+                           &= a\vec{v} + a(-\vec{v}),
             \end{align*}
-            donde se utilizó el inciso (b), la propiedad de existencia de inversos aditivos en un espacio vectorial y la distributividad de el producto de un vector por un escalar con respecto a la suma vectorial. De la ecuación $a\mathbf{v}+a(-\mathbf{v}) = \mathbf{0}$ y la conmutatividad de la suma vectorial se sigue que $a(-\mathbf{v}) = -(a\mathbf{v})$. Por ende, $(-a)\mathbf{v} = -(a\mathbf{v}) = a(-\mathbf{v})$..
+            donde se utilizó el inciso (b), la propiedad de existencia de inversos aditivos en un espacio vectorial y la distributividad de el producto de un vector por un escalar con respecto a la suma vectorial. De la ecuación $a\vec{v}+a(-\vec{v}) = \vec{0}$ y la conmutatividad de la suma vectorial se sigue que $a(-\vec{v}) = -(a\vec{v})$. Por ende, $(-a)\vec{v} = -(a\vec{v}) = a(-\vec{v})$..
 
     \end{enumerate}
 \end{proof}
+
+Para complementar la discusión al respecto de qué es un vector y apreciar cómo funcionan las operaciones de los espacios vectoriales (suma vectorial y producto de un vector por un escalar) de manera visual, sugiero ver el siguiente video: \url{https://www.youtube.com/watch?v=fNk_zzaMoSs}. \\
+
+Más adelante veremos otras operaciones en espacios vectoriales que se pueden definir entre vectores y escalares; sin embargo, la suma vectorial y el producto de un vector por un escalar son las únicas necesarias para \emph{definir} a los espacios vectoriales, por lo que nos referiremos a ellas como las operaciones \emph{esenciales} de los espacios vectoriales.
 
 \subsubsection*{Interpretación geométrica de las operaciones esenciales de los espacios vectoriales} \label{Sssec:Interpretación geométrica de las operaciones de los espacios vectoriales}
 
@@ -465,11 +535,11 @@ Recordemos que, en este espacio, la suma vectorial se define como $(a,b)+(c,d)=(
     \label{fig:Suma_vectorial}
 \end{figure}
 
-    Observemos que, visualmente, esto corresponde a trazar uno de los vectores en el plano cartesiano y luego trazar el otro colocando la cola en la punta del vector anterior, como si ése fuese su origen. Nótese que no importa cuál vector trazamos primero y cuál después, lo cual concuerda con la conmutatividad de la suma vectorial (esta misma interpretación geométrica es válida para la suma de tres o más vectores de $\mathbb{R}^2$: basta irlos sumando de dos en dos vectores); a esto se le conoce como la \emph{Ley del paralelogramo}. Es decir, la suma de dos vectores $\mathbf{u},\mathbf{v}\in\mathbb{R}^2$ es igual a la diagonal principal del paralelogramo formado por las flechas que los representan. %En particular, $\forall \ \mathbf{v} \in \mathbb{R}^2$, $\mathbf{0}+\mathbf{v}=\mathbf{v}$, lo cual concuerda con el hecho de que el vector $\mathbf{v}$ corresponda a una flecha con cola en el origen.
+    Observemos que, visualmente, esto corresponde a trazar uno de los vectores en el plano cartesiano y luego trazar el otro colocando la cola en la punta del vector anterior, como si ése fuese su origen. Nótese que no importa cuál vector trazamos primero y cuál después, lo cual concuerda con la conmutatividad de la suma vectorial (esta misma interpretación geométrica es válida para la suma de tres o más vectores de $\mathbb{R}^2$: basta irlos sumando de dos en dos vectores); a esto se le conoce como la \emph{Ley del paralelogramo}. Es decir, la suma de dos vectores $\vec{u},\vec{v}\in\mathbb{R}^2$ es igual a la diagonal principal del paralelogramo formado por las flechas que los representan. %En particular, $\forall \ \vec{v} \in \mathbb{R}^2$, $\vec{0}+\vec{v}=\vec{v}$, lo cual concuerda con el hecho de que el vector $\vec{v}$ corresponda a una flecha con cola en el origen.
 
-\begin{ejer}
-    Muestra intuitivamente que si transportamos a la \emph{otra} diagonal del paralelogramo hasta el origen (lo cual se puede hacer de dos maneras distintas), obtenemos a las representaciones de los vectores $\mathbf{u}-\mathbf{v}$ y $\mathbf{v}-\mathbf{u}$. 
-\end{ejer}
+\begin{Ejer}
+    Muestra intuitivamente que si transportamos a la \emph{otra} diagonal del paralelogramo hasta el origen (lo cual se puede hacer de dos maneras distintas), obtenemos a las representaciones de los vectores $\vec{u}-\vec{v}$ y $\vec{v}-\vec{u}$. 
+\end{Ejer}
 
 \textbf{Producto de un vector por un escalar} \\
 
@@ -508,15 +578,15 @@ Ahora, recordemos que en este espacio el producto de un vector por un escalar se
 \end{figure}
 
 
-Como podemos observar, el primer producto redujo la longitud del vector sin cambiar su sentido, mientras que el segundo producto aumentó la longitud del vector, a la vez que invirtió su sentido; sin embargo, en ambos casos, el producto de un vector por un escalar no cambió la \emph{dirección} de los vectores\textemdash es decir, los mantuvo en la misma \emph{línea}. En general, si el escalar $c\in\mathbb{R}$ que multiplica al vector tiene $|c|>1$, lo \emph{alarga}; si tiene $|c|<1$, lo acorta; finalmente, si tiene $|c|=1$, no cambia su longitud. Por este cambio de longitud es que al producto de un vector por un escalar también se le conoce por el nombre \emph{reescalamiento}. Además, si $c>0$, el vector mantiene su misma dirección y sentido (sigue en la misma línea y apunta hacia el mismo lado) mientras que, si $c<0$, el vector conserva su dirección pero se invierte su sentido (sigue en la misma línea pero apunta hacia el lado opuesto); si $c=0$ entonces el vector automáticamente se convierte en el vector nulo $(0,0)$, como se demostró algebráicamente en el inciso (a) del Teorema \ref{teo:1.8}. Para visualizar las operaciones de adición vectorial y producto de un vector por un escalar de forma interactiva, recomiendo la sección \textbf{Vector Algebra and Geometry} de \url{https://textbooks.math.gatech.edu/ila/vectors.html}, así como la ilustración interactiva \url{http://immersivemath.com/ila/ch02_vectors/ch02.html#fig_vec_scaling}. \\
+Como podemos observar, el primer producto redujo la longitud del vector sin cambiar su sentido, mientras que el segundo producto aumentó la longitud del vector, a la vez que invirtió su sentido; sin embargo, en ambos casos, el producto de un vector por un escalar no cambió la \emph{dirección} de los vectores\textemdash es decir, los mantuvo en la misma \emph{línea}. En general, si el escalar $c\in\mathbb{R}$ que multiplica al vector tiene $|c|>1$, lo \emph{alarga}; si tiene $|c|<1$, lo acorta; finalmente, si tiene $|c|=1$, no cambia su longitud. Por este cambio de longitud es que al producto de un vector por un escalar también se le conoce por el nombre \emph{reescalamiento}. Además, si $c>0$, el vector mantiene su misma dirección y sentido (sigue en la misma línea y apunta hacia el mismo lado) mientras que, si $c<0$, el vector conserva su dirección pero se invierte su sentido (sigue en la misma línea pero apunta hacia el lado opuesto); si $c=0$ entonces el vector automáticamente se convierte en el vector nulo $(0,0)$, como se demostró algebraicamente en el inciso (a) del Teorema \ref{teo:1.8}. Para visualizar las operaciones de adición vectorial y producto de un vector por un escalar de forma interactiva, recomiendo la sección \textbf{Vector Algebra and Geometry} de \url{https://textbooks.math.gatech.edu/ila/vectors.html}, así como la ilustración interactiva \url{http://immersivemath.com/ila/ch02_vectors/ch02.html#fig_vec_scaling}. \\
 
     Así, en general, si combinamos las operaciones de suma vectorial y producto de un vector por un escalar, visualmente lo que estaremos haciendo será \emph{combinar líneas} con diferentes longitudes, direcciones y sentidos en el plano cartesiano. \\
 
-Nota: El vector nulo $\mathbf{0}=(0,0)$ (también llamado \emph{vector origen}) no tiene longitud, ya que es el único donde la cola y la punta de su flecha coinciden. Además, tampoco tiene dirección ni sentido\footnote{Alternativamente, se dice que tiene \emph{todas las direcciones} y \emph{todos los sentidos simultáneamente}: en la práctica, ambas interpretaciones son equivalentes, pero la primera puede ser más fácil de asimilar.}. Si asumimos que este vector no tiene longitud, dirección ni sentido, entonces queda claro por qué cualquier reescalamiento de este vector no lo modifica, como se demostró en el inciso (b) del Teorema \ref{teo:1.8}.
+Nota: El vector nulo $\vec{0}=(0,0)$ (también llamado \emph{vector origen}) no tiene longitud, ya que es el único donde la cola y la punta de su flecha coinciden. Además, tampoco tiene dirección ni sentido\footnote{Alternativamente, se dice que tiene \emph{todas las direcciones} y \emph{todos los sentidos simultáneamente}: en la práctica, ambas interpretaciones son equivalentes, pero la primera puede ser más fácil de asimilar.}. Si asumimos que este vector no tiene longitud, dirección ni sentido, entonces queda claro por qué cualquier reescalamiento de este vector no lo modifica, como se demostró en el inciso (b) del Teorema \ref{teo:1.8}.
 
-\begin{ejer}
+\begin{Ejer}
     Interpreta geométricamente las operaciones esenciales del espacio vectorial $\mathbb{R}^3$.
-\end{ejer}
+\end{Ejer}
 
 \subsubsection*{En el espacio vectorial complejo \texorpdfstring{$\mathbb{C}$}{TEXT}}
 

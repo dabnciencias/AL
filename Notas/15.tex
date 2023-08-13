@@ -1,0 +1,71 @@
+\documentclass[notasLineal]{subfiles}
+\begin{document}
+
+\section{Teorema espectral}\label{Sec: Teorema espectral}
+
+Concluida nuestra búsqueda por las hipótesis precisas bajo las cuales podemos llevar a cabo la descomposición espectral, enunciamos a continuación un teorema que recopila y sintetiza muchos resultados que hemos demostrado a lo largo de este módulo, y que utiliza una inmensa cantidad de conceptos que hemos aprendido durante todo el curso. La demostración de este teorema se deja como ejercicio.
+
+\begin{Teo} {15.3.1 (Teorema espectral)}
+Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y $T:V\to V$ un operador lineal con eigenvalores distintos $\lambda_1,\lambda_2,...,\lambda_k$. Supongamos que $T$ es normal si $K=\mathbb{C}$ y que $T$ es autoadjunto si $K=\mathbb{R}$. Sea $W_i$ el eigenespacio de $T$ correspondiente al eigenvalor $\lambda_i$, con $1\leq i\leq k$, y sea $T_i$ la proyección ortogonal de $V$ sobre $W_i$. Entonces, se cumple que:
+\begin{enumerate}[label=\alph*)]
+    \item $V = W_1 \oplus W_2 \oplus ... \oplus W_k$;
+    \item si $W_i'=\oplus_{j\neq i}W_j$, entonces $W_i^\perp=W_i'$;
+    \item $T_i T_j = \delta_{ij}T_i$ para $1\leq i,j\leq k$;
+    \item $I = T_1+T_2+...+T_k$;
+    \item $T = \lambda_1 T_1 + \lambda_2 T_2 + ... + \lambda_k T_k$.
+\end{enumerate}
+
+\begin{proof}
+    
+    Ejercicio.
+
+%\begin{enumerate}[label=\alph*)]
+ %   \item Por los teoremas 6.16 y 6.17 sabemos que $T$ es diagonalizable. Entonces, para cada eigenespacio $W_i$ podemos elegir una base ordenada $\beta_i$ tal que la unión $\beta_1\cup\beta_2\cup...\cup\beta_k$ sea una base ordenada de $V$; en otras palabras, $W_1+W_2+...+W_k=V$. Por otra parte, ya que, por definición de eigenespacios, $W_i\cap W_j=\{\mathbf{0}\}$ si $i\neq j$, tenemos que $$V = W_1 \oplus W_2 \oplus ... \oplus W_k.$$
+    %\item 
+%\end{enumerate}
+\end{proof}
+
+\end{Teo}
+
+\subsection*{Ejercicios de repaso}
+
+\subsubsection*{Operadores normales}
+\begin{enumerate}
+    \item Demuestra que cualesquiera dos matrices diagonales con entradas en un campo $K$ conmutan y que, por lo tanto, los operadores lineales que representan dichas matrices también deben conmutar.
+    \item Demuestra el Teorema 15.1.2.
+\end{enumerate}
+
+\subsubsection*{Operadores autoadjuntos} \label{Sssec: Operadores autoadjuntos}
+\begin{enumerate}
+    \item Completa la demostración del Lema 15.2.1.
+    \item Completa la demostración del Teorema 15.2.2.
+\end{enumerate}
+
+\subsubsection*{Teorema espectral}
+
+\begin{enumerate}
+    \item Demuestra el teorema espectral.
+\end{enumerate}
+
+\newpage
+\begin{tcolorbox}
+    \begin{center}
+    \textbf{Sobre la descomposición espectral de matrices...}
+    \end{center}
+
+\hspace{2.5mm} A estas alturas del curso, nos encontramos en una excelente posición para volver a hacer énfasis en un punto de fundamental importancia en el álgebra lineal que muchas veces es pasado por alto: a simple vista, \emph{las matrices no cuentan toda la historia}\footnote{Esto es similar a cómo, en primera instancia, las $n$-tuplas que podemos utilizar para representar vectores abstractos \textemdash a través de isomorfismos\textemdash \ tampoco nos cuentan la historia completa.}.
+
+\vspace{3mm}
+\hspace{2.5mm} Pensemos un momento en la teoría de descomposición espectral: para encontrar a un operador que se pueda descomponer espectralmente \textemdash es decir, que proyecte vectores del dominio sobre eigenespacios ortogonales, reescale cada componente por el eigenvalor correspondiente al eigenespacio en que se encuentra, y construya a partir de estas proyecciones ortogonales reescaladas a los vectores imagen\textemdash \ requerimos poder formar una base ortonormal del espacio a partir de eigenvectores del operador.
+
+\vspace{3mm}
+\hspace{2.5mm} Supongamos que tenemos un operador que cumple las características deseadas y actúa sobre un espacio vectorial de dimensión finita\footnote{Aquí ya está implícito que el espacio en cuestión debe tener producto escalar. ¿Por qué?}. ¿Cómo se ve la representación matricial de nuestro operador en su base de eigenvectores? Pues, resulta que es una matriz diagonal, como cualquier otra... 
+
+\vspace{3mm}
+\hspace{2.5mm} ¿Cómo puede ser? ¡Esto debe ser mentira! En efecto, lo es: realmente no es como \emph{cualquier} matriz diagonal arbitraria, ya que la nuestra, en el fondo, \emph{está representada en una base ortonormal} del espacio\textemdash \ pero eso no se ve a simple vista.
+
+\vspace{3mm}
+\hspace{2.5mm} En realidad, el punto sobre el que hago énfasis es el de las \emph{representaciones}. Dado el poder que tienen las herramientas de cambio de representación en el álgebra lineal (permitiéndonos diagonalizar matrices, por ejemplo), cuando veamos $n$-tuplas y matrices, sería erróneo de nuestra parte siempre asumir que se encuentran en una base ortonormal \textemdash como suele manejarse implícitamente cuando trabajamos en espacios euclideanos. En cambio, al ver $n$-tuplas o matrices, debemos saber que lo que estamos viendo son apenas \emph{representaciones} de vectores y que, ya que dichas representaciones dependen totalmente de la base elegida (o \emph{las bases elegidas}, en el caso de las matrices, las cuales representan transformaciones lineales que, como sabemos, son vectores), el tener presentes las características de la(s) base(s) en la(s) que se esté representando pueden darnos información crucial acerca de los vectores representados; ¡no lo olviden!
+\end{tcolorbox}
+
+\end{document}

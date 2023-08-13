@@ -2,8 +2,8 @@
 \usepackage{amsmath,amsthm,amssymb}
 \usepackage[spanish,es-tabla]{babel}
 \decimalpoint
-\usepackage[T1]{fontenc}
 \usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[dvipsnames]{xcolor}
 \usepackage[hyphens]{url}
@@ -16,7 +16,7 @@
 \usepackage{multirow}
 \usepackage[pdftex,
             pdfauthor={Diego Alberto Barceló Nieves},
-            pdftitle={Notas de Álgebra Lineal}]{hyperref}
+            pdftitle={Notas de álgebra lineal}]{hyperref}
 \usepackage{braket}
 \usepackage{tikz}
 \usetikzlibrary{babel}
@@ -36,7 +36,8 @@
 
 \hypersetup{
     colorlinks=true,
-    linkcolor=ROJO,
+    citecolor=NARANJA,
+    linkcolor=AZUL,
     filecolor=magenta,      
     urlcolor=AZUL,
 }
@@ -47,13 +48,16 @@
 \theoremstyle{dotlessB} % Def, Nota, Lema, Proposición, Teorema, Corolario, Ejemplo: alph; Observación, Ejemplo: arabic
 \newtheorem{Def}{Definición}[section]
 \newtheorem*{Nota}{Nota}
-\newtheorem{Obs}[Def]{Observación}[section]
+\newtheorem{Obs}[Def]{Observación}
 \newtheorem{Lema}[Def]{Lema}
 \newtheorem{Prop}[Def]{Proposición}
 \newtheorem{Teo}[Def]{Teorema}
 \newtheorem{Coro}[Def]{Corolario}
 \newtheorem{Ejem}[Def]{Ejemplo}
-
+\AtBeginDocument{\renewcommand\proofname{Demostración}}
+\AtBeginDocument{\renewcommand\chaptername{Capítulo}}
+\AtBeginDocument{\renewcommand\contentsname{Contenido}}
+\AtBeginDocument{\renewcommand\figurename{Figura}}
 \newtheoremstyle{dotlessO}{}{}{\color{db}}{}{\color{db}\bfseries}{.}{ }{}
 \theoremstyle{dotlessO}
 \newtheorem{Ejer}{Ejercicio}

@@ -1,0 +1,210 @@
+\documentclass[notasLineal]{subfiles}
+\begin{document}
+
+\section{Funcionales y espacio dual, complemento ortogonal y proyecciones ortogonales} \label{Sec:13} 
+
+Durante este último módulo del curso, nuestro principal objeto de estudio serán los espacios vectoriales con productos escalares, así como los operadores lineales que actúan sobre dichos espacios. Descubriremos que, con ayuda del producto escalar, podemos llegar a tener una comprensión profundamente geométrica sobre cómo actúan ciertos operadores en estos espacios \textemdash más allá de una simple descripción algrebráica dada por reglas de correspondencia. Este resultado es uno de los más importantes de todo el curso, y se le conoce como el \emph{Teorema espectral}. Dado que haremos uso frecuente del producto escalar  $\langle\cdot ,\cdot\rangle$ \textemdash principalmente, a partir de la sección \ref{Subsec:Correspondencia entre bras y kets}\textemdash \ en lo que resta del curso utilizaremos la llamada \emph{notación bra-ket}, también conocida como \emph{notación de Dirac}, por lo que se presenta a continuación.
+
+\vspace{3mm}
+
+\textbf{Notación de bra-ket (o de Dirac) para espacios vectoriales con producto escalar:}
+\begin{tcolorbox}
+    \centering
+    \begin{tabular}{cc}
+        \\
+        $\ket{v}$ & vector o \emph{ket}  \\ \\
+        $\braket{u|v}$ & producto escalar o \emph{bra-ket}  \\ \\
+        $\bra{u}$ & vector dual (funcional) o \emph{bra} \\ \\
+    \end{tabular}
+\end{tcolorbox}
+
+\noindent Los vectores duales (también conocidos como \emph{funcionales} serán definidos formalmente más adelante, con ayuda de esta notación. Una diferencia muy importante con respecto a la notación utilizada anteriormente es que en esta nueva notación, por razones que veremos más adelante, la entrada \emph{derecha} del producto escalar será lineal, mientras que la entrada \emph{izquierda} será antilineal. Es decir, que si $\ket{u},\ket{v}\in V$ y $\alpha\in K$, donde $(V,K)$ es un espacio vectorial, entonces en general \[
+    \bra{u}\big (\ket{\alpha v}\big ) = \bra{u}\big(\alpha\ket{v}\big) = \alpha\braket{u|v}
+\] \noindent y \[
+\big (\bra{\alpha u}\big ) \ket{v} = \big( \overline{\alpha}\bra{u}\big)\ket{v}  = \overline{\alpha}\braket{u|v}.
+\] De las ecuaciones anteriores podemos hacer las identificaciones $\ket{\alpha v}=\alpha\ket{v}$ y $\bra{\alpha u}= \overline{\alpha}\bra{u}$, las cuales utilizaremos ampliamente durante este módulo. 
+
+Con esta notación podemos, por ejemplo, reescribir algunos resultados que ya conocemos sobre bases ortonormales de una manera mucho más sencilla, como se muestra a continuación\footnote{Asegúrate de entender bien esta notación y a qué resultados nos referimos antes de continuar leyendo el resto de las notas.}: sea $V$ un espacio vectorial de dimensión finita $n$ con base ortonormal $\beta=\{\ket{v_1},\ket{v_2},...,\ket{v_n}\},$ entonces para todo $\ket{v}\in V$ \[\ P_{\ket{v_i}}(\ket{v})=\braket{v_i|v},\] \[\ket{v}=\sum_{i=1}^n \braket{v_i|v}\ket{v_i},
+\] \noindent y para todo operador lineal $T:V\to V$ tenemos que si \[A=[T]_{\beta} \implies A_{ij}=\braket{T(v_j)|v_i}
+.\] 
+
+\newpage
+\subsection*{Funcionales y espacio dual} \label{Subsec:Funcionales_y_espacio_dual} 
+
+Como hemos visto anteriormente, si $K$ es un campo y $V$ y $W$ son dos espacios vectoriales sobre $K$, entonces $\mathcal{L}(V,W)$ \textemdash el conjunto de todas las transformaciones lineales de $V$ a $W$\textemdash\hspace{0.5mm} es un espacio vectorial sobre $K$. En particular, como vimos a inicios del curso, $(K,K)$ también es un espacio vectorial, por lo cual podemos fijar nuestra atención en el espacio vectorial $\mathcal{L}(V,K)$. En esta sección veremos el importante papel que juega este espacio vectorial; principalmente, nos enfocaremos en los espacios vectoriales con producto escalar.
+
+\vspace{3mm}
+\begin{tcolorbox}
+    \underline{Def.} Sea $(V,K)$ un espacio vectorial. Decimos que $\textbf{f}$ es un \emph{funcional lineal}, o simplemente un \emph{funcional}, si $\textbf{f}\in\mathcal{L}(V,K)$.
+
+\vspace{3mm}
+    \underline{Def.} Al espacio vectorial $\mathcal{L}(V,K)$ lo llamamos el \emph{espacio dual} de $V$, denotado por $V^*$. Por ello, a sus elementos también se les conoce como \emph{vectores duales}. 
+\end{tcolorbox}
+
+\vspace{3mm}
+\textbf{Ejemplos de funcionales} \label{Ejem:Funcionales}
+
+\vspace{3mm}
+Sea $V$ un espacio vectorial de dimensión finita, $\beta=(\mathbf{b}_1,\mathbf{b}_2,...,\mathbf{b}_n)$ una base ordenada de $V$ y $[\hspace{0.5mm} \cdot\hspace{0.5mm}]_\beta$ el \emph{mapeo de coordenadas en la representación de la base ordenada} $\beta$ dado por $$[\mathbf{v}]_\beta=\begin{pmatrix} c_1&c_2&...&c_n \end{pmatrix}$$ para todo $\mathbf{v}\in V$, donde los coeficientes $c_i$ son tales que $\mathbf{v}=c_i \mathbf{b}_i$ en notación de Einstein. Si definimos a $\textbf{f}_i(\mathbf{v})=c_i$ para toda $1\le i\le n$, entonces $\textbf{f}_i$ es un funcional sobre $V$ conocido como la \emph{función de la i-ésima coordenada en la representación de la base ordenada} $\beta$. 
+
+\vspace{3mm}
+En los espacios vectoriales de matrices cuadradas $M_{n\times n}(K)$, donde $K$ es un campo, la traza $tr(\cdot):M_{n\times n}\to K$ y el determinante $det(\cdot):M_{n\times n}\to K$ son funcionales.
+
+\vspace{3mm}
+Sea $(V,K)$ un espacio vectorial con producto escalar y $\ket{v}\in V$ un vector arbitrario, entonces la proyección escalar sobre $\ket{v}$ dada (en notación de Dirac) por $$P_{\ket{{v}}}(\ket{u}) = \frac{\braket{v|u}}{||\ket{v}||}$$ para todo $\ket{u}\in V$ es un funcional sobre $V$. 
+
+\newpage
+\subsection*{Correspondencia entre bras y kets} \label{Subsec:Correspondencia entre bras y kets} 
+
+Sea $(V,K)$ un espacio vectorial arbitrario con producto escalar $\braket{\cdot|\cdot}:V\times V\to K$ donde, siguiendo la notación bra-ket, la primera entrada es antilineal. Si elegimos a un vector arbitrario $\ket{v}\in V$ y lo fijamos en la entrada antilineal del producto escalar, podemos definir un funcional $\braket{v|\cdot}:V\to K$, el cual se puede escribir más sencillamente como $\bra{v}$. Ya que en notación bra-ket a los vectores $\ket{u}$ se les llama \emph{kets} y a los productos escalares $\braket{y|x}$, \emph{bra-kets} (proveniente del inglés \emph{brackets}), a este tipo de funcionales $\bra{v}$ se les conoce como \emph{bras}.
+
+Dado que a partir de cualquier vector $\ket{v}\in V$ se puede definir un funcional $\bra{v}\in V^*$, existe una correspondencia natural entre \emph{bras} y \emph{kets}. Sin embargo, para entender bien esta correspondencia debemos observar un detalle crucial: si hacemos el producto de un ket $\ket{v}$ por un escalar $\alpha\in K$, obteniendo así el ket $\alpha\ket{v}$, entonces el bra correspondiente será $\overline{\alpha}\bra{v}$\footnote{En la notación que usábamos antes, esto se explica como que si tomamos al vector $\alpha\mathbf{v}$ y lo fijamos en la entrada antilineal del producto escalar, obtenemos el funcional $\langle\hspace{0.5mm}\cdot\hspace{0.5mm} , \alpha\mathbf{v}\rangle:V\to K$ que, como sabemos, es igual a $\overline{\alpha}\langle\hspace{0.5mm} \cdot\hspace{0.5mm} ,\mathbf{v}\rangle$.}. Es decir, la correspondencia entre bras (que son un tipo de vectores duales) y kets está dada por \[
+    \alpha\ket{v} \leftrightarrow \overline{\alpha}\bra{v}
+.\] 
+
+De esta manera, si queremos hacer el producto escalar de un vector arbitrario $\alpha_1 \ket{u}$ con otro vector $\alpha_2 \ket{v}$, podemos simplemente unir el ket $\alpha_1 \ket{u}$ con el bra correspondiente al otro vector, que sería $\overline{\alpha_2}\ket{v}$, obteniendo \[
+    \big(\overline{\alpha_2}\bra{v}\big)\big(\alpha_1\ket{u}\big) = \overline{\alpha_2}\alpha_1\braket{v|u}
+.\] Una ventaja de esta notación es que \textemdash siempre y cuando recordemos bien la correspondencia entre bras y kets mostrada en el párrafo anterior\textemdash\hspace{0.5mm} ya no tenemos que preocuparnos por cómo sacar escalares del producto escalar.
+
+Más generalmente, si $\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ es una base de $V$, entonces la correspondencia entre bras de $V^*$ y kets de $V$ puede expresarse como \[
+    \sum_{i=1}^n c_i \ket{b_i} \leftrightarrow \sum_{i=1}^n \overline{c_i}\bra{b_i}
+.\]    
+
+\newpage
+\subsection*{Complemento ortogonal} \label{Subsec:Complemento_ortogonal} 
+
+\begin{tcolorbox}
+    \underline{Def.} Sea $V$ un espacio vectorial con producto escalar y $W\subseteq V$ un subespacio vectorial de $V$. Definimos al \emph{complemento ortogonal} de $W$ como \[
+        W^{\perp}=\{\ket{x}\in V\mid \braket{x|w}=0\hspace{2mm}\forall\hspace{0.5mm} \ket{w}\in W\} 
+    .\] 
+\end{tcolorbox}
+
+\noindent De la definición anterior podemos hacer varias observaciones:
+\begin{itemize}
+    \item Ya que para cualquier espacio vectorial $V$ con producto escalar el vector nulo es ortogonal a todos los vectores del espacio, tenemos que $\{\ket{0}\}^{\perp}=V$ y $V^{\perp}=\{\ket{0}\}.$
+    \item Por la observación anterior de la ortogonalidad del vector nulo y las propiedades lineales del producto escalar, para todo subespacio vectorial $W\subseteq V$, $W^{\perp}$ también es un subespacio vectorial de $V$.
+    \item Para cualquier subespacio vectorial $W\subseteq$ de V, $W\cap W^{\perp}=\{\ket{0}\}.$
+\end{itemize}
+
+\begin{Lema} {13.3.1}
+    Sea $V$ un espacio vectorial con producto esclar sobre un campo $K$, $W$ un subespacio vectorial de $V$ y $\beta=\{\ket{v_1}, \ket{v_2},..., \ket{v_k}\}$ una base de $W$, entonces $\ket{z}\in W^{\perp}$ si y sólo si $\braket{z|v_i}=0$ para toda $\ket{v_i}\in\beta.$
+
+    \begin{proof}
+        Sea $\ket{w}\in W$ un vector arbitrario. Como $\beta$ es base de $W$, existen coeficientes $c_i\in K$ tales que \[
+            \ket{w}=\sum_{i=1}^k c_i\ket{v_i}
+        .\] \noindent Sea $\ket{z}\in W^{\perp}$, entonces tenemos que $\braket{z|w}=0,$ pero esto ocurre si y sólo si \[
+        \bra{z}\big(\sum_{i=1}^k c_i\ket{v_i}\big)\iff \sum_{i=1}^k c_i \braket{z|v_i}=0\iff \braket{z|v_i}=0
+    \] \noindent para todo $\ket{v_i}\in\beta$, ya que los coeficientes $c_i$ son arbitrarios. 
+    \end{proof}
+
+\end{Lema}
+
+\begin{Teo} {13.3.2}
+    Sea $V$ un espacio vectorial con producto escalar y $W\subseteq V$ un subespacio vectorial de dimensión finita $k$, entonces para todo $\ket{y}\in V$ existen vectores únicos $\ket{u}\in W$ y $\ket{z}\in W^{\perp}$ tales que $\ket{y}=\ket{u}+\ket{z}.$ Además, si $\beta=\{\ket{v_1},\ket{v_2},...,\ket{v_k}\}$ es una base ortonormal de $W$, entonces $$\ket{u}=\sum_{i=1}^k \braket{v_i|y}\ket{v_i}.$$
+    \begin{proof}
+        Sea $\beta=\{\ket{v_1},\ket{v_2},...,\ket{v_k}\}$ una base ortonormal de $W$. Definimos \[
+            \ket{u}=\sum_{i=1}^k\braket{v_i|y}\ket{v_i}\hspace{3mm}\text{y}\hspace{3mm}\ket{z}=\ket{y}-\ket{u}
+        .\] \noindent Claramente $\ket{u}\in W$ y $\ket{y}=\ket{u}+\ket{z}.$ Además, observemos que \[
+        \braket{z|u}=\big(\bra{y}-\bra{u}\big)\ket{u}=\braket{y|u}-\braket{u|u}=\bra{y}\bigg(\sum_{i=1}^k\braket{v_i|y}\ket{v_i}\bigg)-\bigg(\sum_{i=1}^k\braket{y|v_j}\bra{v_i}\bigg)\bigg(\sum_{j=1}^k \braket{v_j|y}\ket{v_j}\bigg)\] \[
+    = \sum_{i=1}^k\braket{v_i|y}\braket{y|v_i}-\sum_{i=1}^k\sum_{j=1}^k\braket{y|v_i}\braket{v_j|y}\braket{v_i|v_j}=\sum_{i=1}^k\braket{v_i|y}\braket{y|v_i}-\sum_{i=1}^k\sum_{j=1}^k\braket{y|v_i}\braket{v_j|y}\delta_{ij}\] \[=\sum_{i=1}^k\braket{v_i|y}\braket{y|v_i}-\sum_{i=1}^k\braket{y|v_i}\braket{v_i|y}=0
+,\] \noindent por lo que $\ket{z}\in W^{\perp}$. 
+
+\vspace{3mm}
+Para demostrar la unicidad de $\ket{u}$ y $\ket{z}$, supongamos que existen $\ket{u'}\in W$ y $\ket{z'}\in W^{\perp}$ tales que $\ket{y}=\ket{u'}+\ket{z'}$. Entonces, tenemos que \[
+    \ket{y}=\ket{u'}+\ket{z'}=\ket{u}+\ket{z}\implies \ket{u}-\ket{u'}=\ket{z}-\ket{z'}
+.\] \noindent Ya que el vector del lado izquierdo de la última ecuación es un elemento de $W$ y el del lado derecho, de $W^{\perp}$, tenemos que \[
+\ket{u}-\ket{u'}=\ket{z}-\ket{z'}\in W\cap W^{\perp} \implies \ket{u}-\ket{u'}=\ket{0}=\ket{z}-\ket{z'}\implies \ket{u'}=\ket{u}\hspace{3mm} \text{y}\hspace{3mm} \ket{z'}=\ket{z}
+.\] 
+    \end{proof}
+\end{Teo}
+
+\begin{Teo} {13.3.3}
+    Sea $S=\{\ket{v_1},\ket{v_2},...,\ket{v_k}\}$ un conjunto ortonormal de vectores de un espacio vectorial $V$ de dimensión finita $n$ con producto escalar. Entonces
+    \begin{enumerate}[label=\alph*)]  
+    \item $S$ se puede extender a una base ortonormal $\{\ket{v_1},\ket{v_2},...,\ket{v_k},\ket{v_{k+1}},...,\ket{v_n}\}$ de $V$.
+    \item Usando la notación anterior, si $W=\langle S \rangle$, entonces $S_1=\{\ket{v_{k+1}},...,\ket{v_n}\}$ es base ortonormal de $W^{\perp}$. 
+    \item Para cualquier subespacio $W \subseteq V, \text{dim}(V) = \text{dim}(W) + \text{dim}(W^{\perp}).$
+    \end{enumerate}
+    \begin{proof}
+        \begin{enumerate}[label=\alph*)]
+            \item Por el Teorema de reemplazamiento (ver sec. \ref{Subsubsec:Teo_de_reemplazamiento}), sabemos que podemos extender a $S$ para formar una base $S'=\{\ket{v_1},\ket{v_2},...,\ket{v_k},\ket{w_{k+1}},...,\ket{w_n}\}$ de $V$. Aplicando el Teorema de Gram-Schmidt, podemos obtener una base $\{\ket{v_1},\ket{v_2},...,\ket{v_k},\ket{v_{k+1}},...,\ket{v_n}\}$ de $V$.
+            \item Observemos que, por la construcción de la base $\{\ket{v_1},\ket{v_2},...,\ket{v_k},\ket{v_{k+1}},...,\ket{v_n}\}$ de $V$, $\langle S_1 \rangle \subseteq W^{\perp}$ y $S_1$ es un conjunto linalmente independiente. Por último, observemos que para cualquier $\ket{v}\in V$, $$\ket{v}=\sum_{i=1}^n \braket{v_i|v}\ket{v_i}.$$ \noindent En particular, para todo $\ket{v}\in W^\perp$ tenemos que $\braket{v_i|v}=0$ para $1\le i\le k$. En este caso, \[
+                \ket{v}=\sum_{i=k+1}^n\braket{v_i|v}\ket{v_i}=\sum_{i=k+1}^n c_i\ket{v_i}\implies \ket{v}\in \langle S_1 \rangle \implies W^\perp \subseteq \langle S_1 \rangle .\] \noindent Por otro lado, como $S_1 \subseteq W^\perp$ tenemos que $\langle S_1 \rangle \subseteq W^\perp$, por lo que $\langle S_1 \rangle = W^\perp.$ Por lo tanto, $S_1$ es base ortonormal de $W^\perp$. 
+            \item Sea $W$ un subespacio vectorial de $V$. Como $V$ es de dimensión finita, entonces $W$ también lo es. Por ende, $W$ tiene una base ortonormal $\{\ket{v_1},\ket{v_2},...,\ket{v_k}\}.$ Por los incisos a) y b), tenemos que \[
+                    \text{dim}(V) = n = k + (n-k) = \text{dim}(W) + \text{dim}(W^\perp).\]  
+        \end{enumerate}
+    \end{proof}
+\end{Teo}
+
+\newpage
+\subsection*{Proyecciones ortogonales}
+
+En la sección \ref{Subsec:Interpretación geométrica del producto escalar} vimos que, en un espacio vectorial con producto escalar, podemos definir funciones de \emph{proyección vectorial} que toman un vector del espacio y devuelven la componente de ese vector a lo largo de un subespacio vectorial particular. Además, en el Teorema 4.3.1.1 (ver sec. \ref{Subsec:Ortogonalización y ortonormalización}) vimos cómo podemos descomponer un vector en sus componentes ortogonales de manera sencilla a partir de una base ortogonal u ortonormal. Ambos resultados reflejan la importancia que tienen los llamados \emph{operadores de proyección ortogonal} en este tipo de espacios vectoriales.
+
+\begin{tcolorbox}
+    \underline{Def.} Sea $V$ un espacio vectorial arbitrario. Decimos que un operador lineal $P:V\to V$ es un \emph{operador de proyección} si \[
+        P(P(\ket{v}))=P(\ket{v}) \hspace{3mm} \forall \ \ket{v}\in V.
+    \] Definiendo $P^2:=P\circ P$ podemos reescribir esta condición simplemente como $P^2=P$. En particular, si $V$ tiene producto escalar y $P$ es tal que \[
+        \text{Im}(P)^\perp=\text{Ker}(P)\hspace{3mm}\text{y}\hspace{3mm}\text{Ker}(P)^\perp=\text{Im}(P),
+    \] decimos que $P$ es un \emph{operador de proyección ortogonal}.
+\end{tcolorbox}
+
+Observemos que la condición $P^2=P$ para un operador de proyección $P$ en un espacio vectorial $V$ codifica algebráicamente la noción intuitiva de que, después de proyectar un vector arbitrario $\ket{v}$ en un subespacio de $V$ y obtener la componente de $\ket{v}$ en dicho subespacio, proyectar esa componente \emph{en el mismo subespacio} no le hará nada \textemdash ya que se encuentra totalmente dentro de ese subespacio.
+
+\vspace{3mm}
+Por otro lado, a pesar de que no sea fácil de ver directamente de la definición, cualquier operador de proyección actuando sobre un espacio vectorial de dimensión finita lo divide en dos subespacios vectoriales ``ajenos'' (excepto por el vector nulo, por supuesto) a través de su imagen (el subespacio sobre el cual proyectamos) y su núcleo (el conjunto de vectores que no tienen componentes en dicho subespacio). Dicho de otra forma, cualquier operador de proyección actuando sobre un espacio vectorial de dimensión finita descompone al espacio como suma directa de su imagen y su núcleo (¿Se te ocurre por qué\footnote{Pista: demuestra que, si $V$ es un espacio vectorial de dimensión finita y $T:V\to V$ es un operador lineal, entonces $\text{Ker}(T)+\text{Im}(T)=V \iff \text{Ker}(T)\cap\text{Im}(T)=\{\ket{0}\}$.}?). 
+
+\vspace{3mm}
+Para cualquier espacio vectorial $V$, el operador nulo y el operador identidad son ejemplos triviales de operadores de proyección. Si $V$ tiene producto escalar, entonces la función de proyección vectorial sobre $\ket{v}$ es un operador de proyección ortogonal para todo $\ket{v}\in V$ no nulo; en términos más precisos, este operador proyecta sobre el subespacio $\langle \ket{v} \rangle$ de dimensión uno. Observemos que podemos escribir a este operador en términos de bras y kets simplemente como $\frac{\ket{v}\bra{v}}{\braket{v|v}}:V\to V$, de donde resulta fácil demostrar que efectivamente es un operador de proyección, ya que \[
+    \bigg( \frac{\ket{v}\bra{v}}{\braket{v|v}}\bigg)^2=\bigg(\frac{1}{\braket{v|v}}\ket{v}\bra{v}\bigg)^2=\frac{1}{\braket{v|v}^2}\big(\ket{v}\bra{v}\big)^2=\frac{1}{\braket{v|v}^2}\ket{v}\braket{v|v}\bra{v}=\frac{\braket{v|v}}{\braket{v|v}^2}\ket{v}\bra{v}=\frac{\ket{v}\bra{v}}{\braket{v|v}}.
+\] Además, si en particular $\ket{v}$ es un vector normal, la expresión se simplifica a $\ket{v}\bra{v}$, de donde se ve directamente que $(\ket{v}\bra{v})^2=\ket{v}\braket{v|v}\bra{v}=\ket{v}\bra{v}$. Por lo tanto, todo vector normal $\ket{v}$ en un espacio vectorial con producto escalar define un operador de proyección ortogonal, dado por $\ket{v}\bra{v}$, y dicho operador proyecta a los vectores de todo el espacio sobre el subespacio generado por $\ket{v}$.
+
+\newpage
+\begin{tcolorbox}
+\begin{center}
+    \textbf{Nota aclaratoria: \emph{Sobre bras, kets, y bra-kets...}}
+\end{center}
+
+\hspace{3mm} Como hemos visto en esta sección, en un espacio vectorial $(V,K)$ los \emph{kets} $\ket{x},\ket{y},\ket{z}$, etc. son simplemente vectores de $V$, mientras que los \emph{bras} $\bra{x},\bra{y},\bra{z}$, etc. son funcionales sobre $V$, es decir, transformaciones lineales que van de $V$ a $K$.
+
+\vspace{5mm}
+\hspace{3mm} A pesar de que exista la correspondencia entre kets $\alpha\ket{x}\in V$ y bras $\overline{\alpha}\bra{x}\in V^*$ descrita en la sección \ref{Subsec:Correspondencia entre bras y kets}, debemos remarcar una diferencia sutil pero importante entre la operación de aplicarle un funcional a un vector y la operación de obtener el producto escalar entre dos vectores antes de pasar a la siguiente sección.
+
+\vspace{5mm}
+\hspace{3mm} Si $\ket{x}\in V$ y $\bra{y}\in V^*$ entonces, como $\bra{y}:V\to K$, tenemos que $$\bra{y}(\ket{x}) = \braket{y|x},$$ donde $\bra{y}$ es el vector dual correspondiente al vector $\ket{y}$. La observación crucial es esta: del lado izquierdo de la ecuación estamos aplicándole el funcional $\bra{y}$ al vector $\ket{x}$, mientras que del lado derecho estamos obteniendo el producto escalar entre el vector $\ket{x}$ (en la entrada lineal) y el vector $\ket{y}$ (en la entrada antilineal)\footnote{Inclusive l@s más atrevid@s entre ustedes se podrían animar a agregar una equivalencia más a la ecuación anterior: $\braket{y|x}=(\bra{y})\ket{x}$; es decir, podrían entretener la idea de que $\ket{x}$ sea ahora un \emph{funcional} que actúa sobre los vectores duales $\bra{y}\in V^*$ por la derecha; esto está relacionado con el hecho de que, si $V$ es un espacio de dimensión finita, entonces $(V^*)^*$ es isomorfo a $V$ \textemdash aunque no lo demostraremos en este curso.}; ambas operaciones involucran objetos distintos \textemdash la primera se realiza entre un funcional ($\bra{y}$) y un ket ($\ket{x}$), mientras que la segunda se realiza entre dos kets ($\ket{x}$ y $\ket{y}$)\textemdash\hspace{1mm} y, sin embargo, dan el mismo escalar como resultado.
+
+\vspace{5mm}
+
+\end{tcolorbox}
+
+
+\subsection*{Ejercicios de repaso} \label{}
+
+\subsubsection*{Funcionales y espacio dual} \label{Ejer:Funcionales_y_espacio_dual}
+\begin{enumerate}
+    \item Demuestra que si $V$ es un espacio vectorial de dimensión finita, entonces $\text{dim}(V^*)=\text{dim}(V)$.
+    \item Consideremos el espacio de funciones reales de variable real continuas definidas en el intervalo $[0,2\pi]$, que denotaremos como $C([0,2\pi],\mathbb{R})$. Sean \[
+            F_{1,n}(f):=\int_0^{2\pi} \sin(nx)f(x) \ dx, \hspace{3mm} F_{2,n}(f):=\int_0^{2\pi} \cos(nx)f(x) \ dx \hspace{5mm} \forall \ f\in C([0,2\pi],\mathbb{R}), n\in\mathbb{N}.
+        \] Demuestra que $F_{1,n}$ y $F_{2,n}$ son funcionales de $C([0,2\pi],\mathbb{R})$ para todo $n\ge 0$. Los valores de estos funcionales para una función $g$ en particular se conocen como los \emph{n-ésimos coeficientes de Fourier}\footnote{Estos coeficientes están relacionados con una rama de las matemáticas llamada \emph{Análisis de Fourier}, la cual tiene diversas aplicaciones en la solución de ecuaciones diferenciales parciales, muchas de las cuales son utilizadas para modelar procesos físicos (como la ecuación de calor o la ecuación de onda) o biológicos.} de la función $g$.
+    \item Calcula los primeros 3 coeficientes de Fourier para las funciones $\sin(x)$, $f(x)=x$ y $g(x)=x^2$.
+\end{enumerate}
+
+\subsubsection*{Correspondencia entre bras y kets} \label{Ejer:Correspondencia_entre_bras_y_kets}
+\begin{enumerate}
+    \item Sea $(V,K)$ un espacio vectorial con producto escalar. Demuestra que el conjunto de todos los bras correspondientes a los vectores de $V$ forma un subespacio vectorial de $V^*$.
+    \item Demuestra que el subespacio de $V^*$ obtenido en el ejercicio anterior es isomorfo a $V$. En otras palabras, demuestra que la correspondencia entre bras y kets dada en la sección \ref{Subsec:Correspondencia entre bras y kets} es un isomorfismo.
+\end{enumerate}
+
+\subsubsection*{Complemento ortogonal} \label{Ejer:Complemento_ortogonal}
+\begin{enumerate}
+    \item Demuestra que para todo subespacio vectorial $W$ de un espacio vectorial $V$ de dimensión finita $n$ y con producto escalar, $V$ es igual a una suma directa de $W$ y $W^{\perp}.$ ¿Por qué es importante que $V$ tenga dimensión finita? (Nota: tendrás que demostrar las observaciones hechas al principio de la sec. \ref{Subsec:Complemento_ortogonal}.)
+\end{enumerate}
+
+\subsubsection*{Proyecciones ortogonales} \label{Ejer:Proyecciones_ortogonales}
+\begin{enumerate}
+    \item Sea $V$ un espacio vectorial. Demuestra que un operador lineal $P:V\to V$ es un operador de proyección si y sólo si $V=\text{Ker}(P)\oplus\text{Im}(P)$.
+    \item Sea $V$ un espacio vectorial con producto escalar. Demuestra que un operador lineal $P:V\to V$ es un operador de proyección ortogonal si y sólo si $V=\text{Ker}(P)^\perp\oplus\text{Im}(P)^\perp$.
+    \item Sea $V$ un espacio vectorial de dimensión finta $n$ con producto escalar y sea $\{\ket{v_1},\ket{v_2},... \ ,\ket{v_k}\}$ un conjunto ortogonal de vectores de $V$ con $k\le n$. Demuestra que $\sum_{i=1}^k\frac{\ket{v_i}\bra{v_i}}{\braket{v_i|v_i}}:V\to V$ es un operador de proyección ortogonal.
+\end{enumerate}
+
+\end{document}

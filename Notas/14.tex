@@ -1,0 +1,223 @@
+\documentclass[notasLineal]{subfiles}
+\begin{document}
+
+\section{Operadores adjuntos, normales y autoadjuntos}\label{Sec: Operadores adjuntos, normales y autoadjuntos}
+
+Supongamos que tenemos un espacio vectorial $(V,K)$ de dimensión finita $n$ con producto escalar. Entonces, siguiendo del último ejercicio de la sección \ref{Sec:13}, tendríamos que si $\{\ket{b_1},\ket{b_2},... \ ,\ket{b_n}\}$ es una base ortogonal de $V$, entonces $\sum_{i=1}^n \frac{\ket{b_i}\bra{b_i}}{\braket{b_i|b_i}}:V\to V$ es un operador de proyección ortogonal\footnote{Este operador no depende de la base ortogonal elegida... ¿puedes adivinar de qué operador se trata?}. En particular, para cualquier base ortonormal $\{\ket{u_1},\ket{u_2},... \ ,\ket{u_n}\}$ de $V$ tenemos que $\sum_{i=1}^n\ket{u_i}\bra{u_i}$ es un operador de proyección ortogonal (equivalente al anterior, para cualquier base ortonormal arbitraria).
+
+\vspace{3mm}
+Ambos operadores anteriores no son más que el operador identidad en $V$, lo cual podemos ver en abstracto aplicándolos a un vector arbitrario $\ket{v}\in V$ o, de forma matricial, representándolos en las mismas bases que utilizamos para construirlos. A continuación, veremos cómo esta forma de entender al operador identidad (como suma de operadores de proyección más pequeños) en espacios vectoriales de dimensión finita con producto escalar nos ayuda a entender cómo actúan ciertos tipos de operadores lineales de forma geométrica. 
+
+\subsection*{Descomposición espectral (introducción)} \label{Subsec:Descomposición espectral (introducción)}
+
+Sean $V$ un espacio vectorial de dimensión finita $n$ con producto escalar y $T:V\to V$ un operador lineal diagonalizable tal que sus eigenvectores $\ket{g_1},\ket{g_2},... \ ,\ket{g_n}$ forman una base\footnote{Recuerdemos que un operador $T:V\to V$ es diagonalizable si y sólo si se puede formar una base de $V$ compuesta de eigenvectores de $T$. Si $V$ es dimensión $n$, entonces cualquier base de $V$ tiene exactamente $n$ elementos, por lo que $T$ debe tener $n$ eigenvectores linealmente independientes; sin embargo, esto no necesariamente implica que $T$ tenga $n$ eigenvalores distintos, como hemos visto. Por lo tanto, si $T$ tiene eigenvalores $\lambda_1,\lambda_2,... \ ,\lambda_k$ con $k<n$, necesariamente habrá elementos distintos de la eigenbase que tengan el mismo eigenvalor y, en este caso, la correspondencia entre los subíndices de los $k$ eigenvalores distintos y los $n$ elementos de la eigenbase no será uno a uno, por lo que hay que tener cuidado y no dejarse llevar por la notación.} \emph{ortogonal} de $V$; es decir, que se puede elegir a una base ortogonal de $V$ compuesta por eigenvectores de $T$. Supongamos, adicionalmente, que normalizamos a cada uno de los vectores de la eigenbase y los redefinimos de tal forma que $\{\ket{g_1},\ket{g_2},... \ ,\ket{g_n}\}$ sea una base \emph{ortonormal} de $V$ compuesta por eigenvectores de $T$. En ese caso, tendríamos que \[
+    I_V = \sum_{i=1}^n \ket{g_i}\bra{g_i}.
+\] 
+
+\vspace{3mm}
+Sean $\lambda_1,\lambda_2,... \ ,\lambda_n$ los eigenvalores (no necesariamente todos distintos entre sí) de $T$ correspondientes a los eigenvectores normales $\ket{g_1},\ket{g_2},... \ ,\ket{g_n}$. Consideremos ahora al operador $T':=\sum_{i=1}^n \lambda_i \ket{g_i}\bra{g_i}$. En particular, observemos que para todo elemento $\ket{g_j}$ de la eigenbase tenemos que \[
+    T'(\ket{g_j})=\sum_{i=1}^n \lambda_i \ket{g_i}\bra{g_i}(\ket{g_j})=\sum_{i=1}^n \lambda_i \ket{g_i}\braket{g_i|g_j}=\sum_{i=1}^n \lambda_i \ket{g_i}\delta_{ij}=\lambda_j \ket{g_j},
+\] por lo que $T'$ tiene los mismos vectores y valores \emph{característicos} que $T$.  Ya que $T$ es diagonalizable y, por lo tanto, podemos formar una base de $V$ compuesta de sus eigenvectores (por ejemplo, $\{\ket{g_1},\ket{g_2},... \ ,\ket{g_n}$\}), se sigue que $T'=T$ y que, por ende, \[
+T = \sum_{i=1}^n \lambda_i \ket{g_i}\bra{g_i},
+\] donde $\{\ket{g_1},\ket{g_2},... \ ,\ket{g_n}\}$ es una base ortogonnal de $V$ compuesta de eigenvectores de $T$ normalizados y $\lambda_1,\lambda_2,... \ ,\lambda_n$ son los eigenvalores correspondientes (no necesariamente todos distintos entre sí). Esta expresión se conoce como la \emph{descomposición espectral} de $T$.
+
+\vspace{3mm}
+Observemos que la descomposición espectral de $T$ nos da información completa de cómo actúa $T$ en $V$ geométricamente: la expresión anterior nos dice que $T$ proyecta a un vector arbitrario $\ket{v}\in V$ en cada una de sus componentes a lo largo de los diferentes eigenespacios de $T$ (a través de las proyecciones ortogonales $\ket{g_i}\bra{g_i}$) \textemdash los cuales son ortogonales entre sí\textemdash \ , luego multiplica cada una de esas componentes por el eigenvalor correspondiente al eigenespacio en el que se encuentran, y luego reconstruye el vector resultante a partir de las componentes reescaladas\footnote{Aquí utilizamos la palabra ``reescalamiento'' como sinónimo de ''producto de un vector por un reescalar''; recordemos que, geométricamente, en general esta operación puede involucrar un reescalamiento y una rotación.}.
+
+\vspace{3mm}
+En otras palabras, hemos visto que si $T$ es un operador lineal sobre un espacio vectorial $V$ de dimensión finita con producto escalar y cumple que se pueda formar una base ortogonal u ortonormal de $V$ a partir de sus eigenvectores o, equivalentemente, que $$V=E_{\lambda_1}\oplus E_{\lambda_2}\oplus...\oplus E_{\lambda_k}\hspace{3mm}\text{y}\hspace{3mm}E_{\lambda_i}^\perp=\oplus_{j\neq i}E_{\lambda_j} \ \ \forall \ i\in \{1,2,... \ ,n\},$$ donde $\lambda_1, \lambda_2, ... \ , \lambda_k$ son los eigenvalores de $T$, entonces podemos entender a $T$ de una forma extremadamente sencilla: a través de proyecciones (en los eigenespacios de $T$, que son ortogonales entre sí) y reescalamientos (por los eigenvalores de $T$). Un ejemplo de esto se muestra en la Figura \ref{fig:8}.
+
+\begin{figure}[h!]
+    \centering
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=0.9}]
+    \draw[thick,<->] (-3,0) -- (3,0);
+    \draw[thick,<->] (0,-3) -- (0,3);
+    \draw[step=1cm,gray,very thin,dashed] (-3,-3) grid (3,3);
+    \foreach \x in {-2,-1,0,1,2}
+        \draw (\x cm, 1pt) -- (\x cm, -1pt);
+    \foreach \y in {-2,-1,0,1,2}
+        \draw (1pt, \y cm) -- (-1pt, \y cm);
+    \draw[AZUL,dotted,thin] (-3,-3) -- (3,3) node[] at (-1.5,-2) {$E_{\lambda_1}$};
+    \draw[ROJO,dotted,thin] (3,-3) -- (-3,3) node[] at (1.5,-2) {$E_{\lambda_2}$};
+    \draw[darkgray,->] (0,0) -- (0.5,2) node[] at (0.5,2.5) {$\ket{v}$};
+    \draw[AZUL,->] (0,0) -- (-0.707,-0.707) node[] at (-1.2,-0.7) {$\ket{g_1}$};
+    \draw[ROJO,->] (0,0) -- (0.707,-0.707) node[] at (1.2,-0.7) {$\ket{g_2}$};
+    \draw[magenta,->] (0,0) -- (-2.75,0.25) node[] at (-1.5,0.5) {$T(\ket{v})$};
+    \draw[] node[] at (2.8,2.8) {\textbf{a)}};
+\end{tikzpicture}
+\hspace{3mm}
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=0.9}]
+    \draw[thick,<->] (-3,0) -- (3,0);
+    \draw[thick,<->] (0,-3) -- (0,3);
+    \draw[step=1cm,gray,very thin,dashed] (-3,-3) grid (3,3);
+    \foreach \x in {-2,-1,0,1,2}
+        \draw (\x cm, 1pt) -- (\x cm, -1pt);
+    \foreach \y in {-2,-1,0,1,2}
+        \draw (1pt, \y cm) -- (-1pt, \y cm);
+        \draw[AZUL,->] (0,0) -- (1.25,1.25) node[] at (2,0.5) {$\ket{g_1}\braket{g_1|v}$};
+        \draw[ROJO,->] (0,0) -- (-0.75,0.75) node[] at (-2,0.5) {$\ket{g_2}\braket{g_2|v}$};
+        \draw[AZUL,dashed,very thin] (-0.75,0.75) -- (0.5,2);
+        \draw[ROJO,dashed,very thin] (1.25,1.25) -- (0.5,2);
+        \draw[darkgray,->] (0,0) -- (0.5,2) node[] at (0.5,2.5) {$\ket{v}$};
+    \draw[] node[] at (2.8,2.8) {\textbf{b)}};
+\end{tikzpicture}
+
+\vspace{5mm}
+
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=0.9}]
+    \draw[thick,<->] (-3,0) -- (3,0);
+    \draw[thick,<->] (0,-3) -- (0,3);
+    \draw[step=1cm,gray,very thin,dashed] (-3,-3) grid (3,3);
+    \foreach \x in {-2,-1,0,1,2}
+        \draw (\x cm, 1pt) -- (\x cm, -1pt);
+    \foreach \y in {-2,-1,0,1,2}
+        \draw (1pt, \y cm) -- (-1pt, \y cm);
+        \draw[AZUL,->] (0,0) -- (-1.25,-1.25) node[] at (-1.5,-1.55) {$\lambda_1\ket{g_1}\braket{g_1|v}$};
+        \draw[ROJO,->] (0,0) -- (-1.5,1.5) node[] at (-1.55,2) {$\lambda_2\ket{g_2}\braket{g_2|v}$};
+    \draw[] node[] at (2.8,2.8) {\textbf{c)}};
+\end{tikzpicture}
+\hspace{3mm}
+\begin{tikzpicture}[thick,scale=1, every node/.style={scale=0.9}]
+    \draw[thick,<->] (-3,0) -- (3,0);
+    \draw[thick,<->] (0,-3) -- (0,3);
+    \draw[step=1cm,gray,very thin,dashed] (-3,-3) grid (3,3);
+    \foreach \x in {-2,-1,0,1,2}
+        \draw (\x cm, 1pt) -- (\x cm, -1pt);
+    \foreach \y in {-2,-1,0,1,2}
+        \draw (1pt, \y cm) -- (-1pt, \y cm);
+        \draw[AZUL,->] (0,0) -- (-1.25,-1.25) node[] at (-1.5,-1.55) {$\lambda_1\ket{g_1}\braket{g_1|v}$};
+        \draw[ROJO,->] (0,0) -- (-1.5,1.5) node[] at (-1.55,2) {$\lambda_2\ket{g_2}\braket{g_2|v}$};
+        \draw[AZUL,dashed,thin] (-1.5,1.5) -- (-2.75,0.25);
+        \draw[ROJO,dashed,thin] (-1.25,-1.25) -- (-2.75,0.25);
+        \draw[magenta,->] (0,0) -- (-2.75,0.25) node[] at (-1.5,0.5) {$T(\ket{v})$};
+    \draw[] node[] at (2.8,2.8) {\textbf{d)}};
+\end{tikzpicture}
+\caption{Aplicación de un operador $T:\mathbb{R}^2\to \mathbb{R}^2$ a un vector $\ket{v}$ mediante descomposición espectral. En la subfigura \textbf{a)} se muestra a $\ket{v}$ y a su imagen $T(\ket{v})$, junto con los eigenvectores $\ket{g_1}$ y $\ket{g_2}$ de $T$, que forman una base ortonormal; los eigenespacios correspondientes se representan con líneas punteadas. En \textbf{b)} se muestran las proyecciones ortogonales de $\ket{v}$ en cada eigenespacio de $T$. En \textbf{c)} se muestran las componentes anteriores reescaladas por los eigenvalores correspondientes al eigenespacio en que se encuentran. Finalmente, en \textbf{d)} vemos que la suma de estas componentes reescaladas es igual a $T(\ket{v})$.}
+    \label{fig:8}
+\end{figure}
+
+\vspace{3mm}
+Las condiciones descritas en el párrafo anterior en general no son fáciles de verificar, por lo que nos gustaría tener algún criterio equivalente que sea más sencillo de aplicar; de cierta manera, de eso se tratará el resto del curso. Empezando nuestra búsqueda por hipótesis más precisas que deban cumplir operadores lineales sobre espacios vectoriales de dimensión finita con producto escalar para que les podamos aplicar la descomposición espectral, nuestra primera pista se encuentra en los operadores adjuntos, que definiremos y estudiaremos en la siguiente sección.
+
+\subsection*{Operadores adjuntos}
+
+Como vimos en la sección \ref{Subsec:Correspondencia entre bras y kets}, en cualquier espacio vectorial $(V,K)$ con producto escalar podemos tomar cualquier vector $\ket{y}\in V$ y definir un funcional $\textbf{g}:V\to K$ como \[
+    \textbf{g}(\ket{x})=\braket{y|x}
+,\] que podemos escribir simplemente como el bra $\bra{y}$.
+
+Lo interesante de este tipo de funcionales es que, en espacios vectoriales de dimensión finita, todas las transformaciones lineales de $V$ a $K$ son de esta forma; es decir, podemos hacer una identificación entre las transformaciones lineales $\textbf{g}\in\mathcal{L}(V,K)$ y los bras $\bra{y}$, como demostraremos a continuación.
+
+\begin{Teo} {14.1}
+    Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y sea $\textbf{g}:V\to K$ un funcional. Entonces existe un único $\bra{y}\in V^*$ tal que $\textbf{g}(\ket{x})=\braket{y|x}$ para todo $\ket{x}\in V$.
+
+    \begin{proof}
+        Sea $\beta=\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ una base ortonormal de $V$ y sea \[
+            \ket{y}=\sum_{i=1}^n \overline{\textbf{g}(\ket{b_i})}\ket{b_i} 
+            .\] Entonces el vector dual correspondiente a $\ket{y}\in V$ es el bra $\bra{y}\in V^*$ dado por \[
+            \bra{y}=\sum_{i=1}^n\textbf{g}(\ket{b_i})\bra{b_i}
+        .\]  
+
+        Por otro lado, definamos a $\textbf{h}:V\to K$ como $\textbf{h} (\ket{x})=\braket{y|x}$ para todo $\ket{x}\in V$. Claramente, $\textbf{h}$ es una transformación lineal. Observemos que para todos los elementos de la base $\beta$, sus imágenes bajo $\textbf{g}$ y $\textbf{h}$ coinciden; es decir, para todo $1\leq j\leq n$ tenemos que \[
+            \textbf{h}(\ket{b_j})=\braket{y|b_j}=\bigg(\sum_{i=1}^n \textbf{g}(\ket{b_i})\bra{b_i}\bigg)\ket{b_j}=\sum_{i=1}^n \textbf{g}(\ket{b_i}) \braket{b_i|b_j}=\sum_{i=1}^n \textbf{g}(\ket{b_i})\delta_{ij}=\textbf{g}(\ket{b_j})
+        .\] 
+
+        Dado que $\textbf{g}$ y $\textbf{h}$ coinciden para todos los elementos de la base y son transformaciones lineales, entonces coinciden para todos los vectores $\ket{v}\in V$. Por ende, $\textbf{g}=\textbf{h}$. 
+
+        Para demostrar la unicidad de $\bra{y}$, supongamos que $\textbf{g}(\ket{x})=\braket{y'|x}$ para todo $\ket{x}\in V$. Entonces tenemos que $$\braket{y|x}=\braket{y'|x} \implies \braket{y|x}-\braket{y'|x}=0 \implies \big(\bra{y}-\bra{y'}\big)\ket{x}=0$$ para todo $\ket{x}\in V$, pero esto se cumple si y sólo si $$\bra{y}-\bra{y'}=\bra{0}\implies \bra{y}=\bra{y'}.$$
+
+    \end{proof}
+\end{Teo}
+
+Antes de continuar, recordamos la siguiente definición.
+
+\hspace{5mm} 
+\begin{tcolorbox}
+    \underline{Def.} Decimos que una transformación lineal es un \emph{operador lineal} cuando su dominio y contradominio son el mismo espacio vectorial. Por lo tanto, si decimos que $T$ es un operador lineal \textemdash o, simplemente, operador\textemdash \ sobre $V$, nos referimos a una transformación lineal $T:V\to V$.
+\end{tcolorbox}
+
+\vspace{3mm}
+
+\begin{Teo}{14.2}
+    Sea $(V,K)$ un espacio vectorial de dimensión finita con producto escalar y sea $T:V\to V$ un operador lineal. Entonces existe una única función $T^*:V\to V$ tal que $\braket{y|T(x)}=\braket{T^*(y)|x}$ para toda $\ket{x},\ket{y}\in V$. Además, $T^*$ es lineal.
+    
+    \begin{proof}
+        Sea $\ket{y}\in V$. Definimos a $\textbf{g}:V\to K$ como $\textbf{g}(\ket{x})=\braket{y|T(x)}$ para todo $\ket{x}\in V.$ Primero, verificamos que $\textbf{g}$ es lineal: sean $\ket{x_1},\ket{x_2}\in V$ y $c\in K$, entonces $$\textbf{g}(c\ket{x_1}+\ket{x_2})=\braket{y|T(cx_1+x_2)}=\braket{y|cT(x_1)+T(x_2)}=\braket{y|cT(x_1)}+\braket{y|T(x_2)}$$ $$=c\braket{y|T(x_1)}+\braket{y|T(x_2)}=c\textbf{g}(\ket{x_1})+\textbf{g}(\ket{x_2}),$$ por lo que $T$ es lineal.
+        
+        Luego, aplicamos el Teorema 14.1 para obtener un vector único $\ket{y'}\in V$ tal que $\textbf{g}(\ket{x})=\braket{y'|x}$ para todo $\ket{x}\in V.$ Observemos que, por definición de $\textbf{g}$, $\braket{y|T(x)}=\braket{y'|x}$ para todo $\ket{x}\in V$. Definiendo a $T^*:V\to V$ como $T^*(\ket{y})=\ket{y'}$ tenemos que $\braket{y|T(x)}=\braket{T^*(y)|x}$, como se deseaba. Ahora, debemos demostrar que $T^*$ es lineal: sean $\ket{y_1},\ket{y_2}\in V$ y $c\in K$, entonces para todo $\ket{x}\in V$ se cumple que $$\braket{T^*(cy_1+y_2)|x}=\braket{cy_1+y_2|T(x)}=\overline{c}\braket{y_1|T(x)}+\braket{y_2|T(x)}$$ $$=\overline{c}\braket{T^*(y_1)|x}+\braket{T^*(y_2)|x}=\braket{cT^*(y_1)+T^*(y_2)|x}$$ $$\implies\braket{T^*(cy_1+y_2)|x}-\braket{cT^*(y_1)+T(y_2)|x}=0$$ $$\implies \braket{T^*(cy_1+y_2)-(cT^*(y_1)+T^*(y_2))|x}=0.$$ Como esto vale para todo $\ket{x}\in V$, entonces esto implica que $$ \ket{T^*(cy_1+y_2)-(cT^*(y_1)+T(y_2))}=\ket{0}$$ $$\implies T^*(\ket{cy_1+y_2})=cT^*(\ket{y_1})+T^*(\ket{y_2}).$$
+        
+        Finalmente, para ver que $T^*$ es única: sea $U:V\to V$ un operador lineal tal que $\braket{y|T(x)}=\braket{U(y)|x}$ para todo $\ket{x},\ket{y}\in V$, entonces $\braket{T^*(y)|x}=\braket{U(y)|x}$ para todo $\ket{x},\ket{y}\in V$, por lo que $U=T^*$.
+    \end{proof}
+\end{Teo}
+
+Como veremos dentro de poco, el operador $T^*$ descrito en el Teorema 14.2 es de gran importancia en los espacios vectoriales con producto escalar, por lo cual le damos un nombre especial.
+
+\hspace{0.5mm}
+\begin{tcolorbox} \label{Def:Operador_adjunto}
+\underline{Def.} Sea $V$ un espacio vectorial de dimensión finita y $T^*:V\to V$ el operador lineal único que para todo $\ket{x},\ket{y}\in V$ satisface la relación $$\braket{y|T(x)}=\braket{T^*(y)|x},$$ donde $T:V\to V$ es un operador lineal. Entonces, decimos que $T^*$ es el \emph{operador adjunto} de $T$.
+
+\vspace{5mm}
+\hspace{3mm} En el caso en que $V$ sea un espacio vectorial de dimensión infinita y para un operador lineal $T:V\to V$ exista otro operador lineal $T^*:V\to V$ tal que la relación anterior se cumpla, entonces nuevamente diremos que $T^*$ es el operador adjunto de $T$ \textemdash sin embargo, en este tipo de espacios vectoriales la existencia de $T^*$ no está asegurada para todo operador lineal $T$.
+\end{tcolorbox}
+\vspace{5mm}
+
+Ya que varios de los teoremas que demostraremos a continuación aplican tanto para espacios vectoriales de dimensión finita como aquellos de dimensión infinita, de ahora en adelante, cuando hagamos referencia a un operador adjunto en un espacio vectorial de dimensión infinita, asumiremos implícitamente su existencia.
+
+A continuación, demostraremos que en espacios vectoriales de dimensión finita podemos obtener la representación matricial de un operador adjunto a partir de la representación matricial del operador original de una forma muy sencilla, siempre y cuando utilicemos una base ortonormal para representar ambas matrices.
+
+% PODRÍA METER A_ij=<b_i,T(b_j)> con beta una base ortonormal como un Teorema anterior al actual Teorema 14.3
+
+\begin{Teo} {14.3}
+Sea $(V,K)$ un espacio vectorial de dimensión finita $n$ con producto escalar, $\beta=\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ una base ortonormal de $V$ y $T:V\to V$ un operador lineal. Entonces $$[T^*]_\beta=\big([T]_\beta\big)^*,$$ donde $A^*$ se define mediante la relación $A^*_{ij}=\overline{A_{ji}}$ para toda $A\in M_{n\times n}(K)$.
+\begin{proof}
+Sean $A=[T]_\beta$ y $B=[T^*]_\beta$. Si partimos del sistema de ecuaciones que define a la representación matricial $A$ y hacemos producto escalar por la izquierda en ambos lados de cada una de las ecuaciones por un elemento $\ket{b_i}$ de la base y aplicamos ortonormalidad, obtenemos la relación $$A_{ij}=\braket{b_i|T(b_j)}.$$ 
+
+Haciendo un procedimiento análogo con la representación matricial $B$, obtenemos que $$B_{ij}=\braket{b_i|T^*(b_j)},$$ de donde se sigue que $$B_{ij}=\overline{\braket{T^*(b_j)|b_i}}=\overline{\braket{b_j|T(b_i)}}=\overline{A_{ji}},$$ lo cual implica que $B=A^*$, es decir, que $[T^*]_\beta=\big([T]_\beta\big)^*$.
+\end{proof}
+\end{Teo}
+
+A la luz del Teorema 14.3, damos una nueva definición, que quizá ya esperes.
+
+\vspace{5mm}
+\begin{tcolorbox}
+\underline{Def.} Sea $K$ un campo y $A\in M_{n\times n}(K)$. Decimos que $A^*\in M_{n\times n}(K)$, definida a través de la relación $$A^*_{ij}=\overline{A_{ji}},$$ es la \emph{matriz adjunta} de $A$.
+\end{tcolorbox}
+\vspace{5mm}
+
+\noindent Recordando que para matrices cuadradas $A$ la matriz transpuesta $A^T$ se define mediante la relación $$A^T_{ij}=A_{ji},$$ podemos ver que la matriz adjunta $A^*$ se obtiene mediante la transposición de la matriz $A$ y la conjugación de sus entradas, sin importar el orden en que se realicen estas dos operaciones. Si entendemos por $\overline{A}$ a la matriz que se obtiene al conjugar todas las entradas de $A$, podemos escribir esto simplemente como $A^*=\overline{A^T}=\overline{A}^T$.
+
+\subsection*{Ejercicios de repaso}
+
+\subsubsection*{Descomposición espectral (introducción)} \label{Ejer:Descomposición espectral (introducción)}
+
+\begin{enumerate}
+\item Sean $V$ un espacio vectorial de dimensión finita, $T:V\to V$ un operador lineal y $\{\lambda_1,\lambda_2,... \ ,\lambda_k\}$ el espectro de $T$. Demuestra que $T$ es diagonalizable si y sólo si $V=E_{\lambda_1}\oplus E_{\lambda_2}\oplus...\oplus E_{\lambda_k}$.
+\item Sean $V$ un espacio de dimensión finita con producto escalar, $T:V\to V$ un operador lineal y $\Lambda=\{\lambda_1,\lambda_2,... \ ,\lambda_k\}$ el espectro de $T$. Demuestra que $T$ se puede descomponer espectralmente si y sólo si $V = E_{\lambda_i} \oplus (E_{\lambda_i})^\perp$ para toda $\lambda_i\in\Lambda$.
+\item Sean $V$ un espacio de dimensión finita $n$ con producto escalar, $T:V\to V$ un operador lineal, $\{\ket{g_1}, \ket{g_2}, ... \ ,\ket{g_n}\}$ un conjunto de eigenvectores normales de $T$ y $\Lambda=\{\lambda_1,\lambda_2,... \ ,\lambda_n\}$ un conjunto de eigenvalores de $T$ (no necesariamente todos distintos) tales que $T(\ket{g_i})=\lambda_i \ket{g_i} \ \forall \ i\in\{1,2,... \ ,n\}$. Demuestra que $T=\sum_{i=1}^n \lambda_i \ket{g_i}\bra{g_i}$ si y sólo si $I = \sum_{i=1}^n \ket{g_i}\bra{g_i}$.
+\end{enumerate}
+
+\subsubsection*{Operadores adjuntos} \label{Ejer:Operadores adjuntos}
+\begin{enumerate}
+    \item Sea $V$ un espacio vectorial de dimensión finita $n$ con producto escalar y $\beta=\{\ket{b_1},\ket{b_2},...,\ket{b_n}\}$ una base ortonormal de $V$. Demuestra que si $T:V\to V$ es lineal, entonces $([T]_\beta)_{ij}=\braket{b_i|T(b_j)}.$
+    \item Sea $K$ un campo y $A\in M_{n\times n}(K)$. Demuestra que
+    $A^*=\overline{A^T}=(\overline{A})^T$ y, por lo tanto, que $\text{det}(A^*)=\overline{\text{det}(A)}$.
+    \item Sea $(V,K)$ un espacio vectorial con producto escalar y sean $T$ y $U$ operadores lineales sobre $V$ para los cuales existen operadores adjuntos $T^*$ y $U^*$, respectivamente. Demuestra las siguientes propiedades:
+        \begin{enumerate}[label=\alph*)]
+            \item $(T+U)^*=T^*+U^*$;
+            \item $(cT)^*=\overline{c}T^*$ para todo $c\in K$;
+            \item $(TU)^*=U^*T^*$;
+            \item $(T^*)^*=T$;
+            \item $I^*=I$.
+        \end{enumerate}
+    \item Sea $K$ un campo y sean $A,B\in M_{n\times n}(K)$. Demuestra las siguientes propiedades:
+        \begin{enumerate}[label=\alph*)]
+            \item $(A+B)^*=A^*+B^*$;
+            \item $(cA)^*=\overline{c}A^*$ para todo $c\in K$;
+            \item $(AB)^*=B^*A^*$;
+            \item $(A^*)^*=A$;
+            \item $I^*=I$.
+        \end{enumerate}
+\end{enumerate}
+
+Una vez que hayas resuelto los ejercicios anteriores, observa de qué formas el álgebra de los operadores (que tienen operadores adjuntos) y las matrices cuadradas (que siempre tienen matrices adjuntas) junto con la operación de ``sacar el adjunto'' es similar al álgebra de los números complejos con la operación de \emph{conjugar}. Luego, observa de qué formas difieren, ¿a qué se deberán estas diferencias?
+
+\end{document}

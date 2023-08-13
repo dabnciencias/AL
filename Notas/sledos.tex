@@ -1,0 +1,110 @@
+\documentclass[notasLineal]{subfiles}
+\begin{document}
+
+\section{Introducción a sistemas lineales de ecuaciones diferenciales} \label{Sec: Sistemas lineales de ecuaciones diferenciales ordinarias} 
+
+Esta pequeña sección de las notas tiene como finalidad introducir algunos de los conceptos que utilizaremos durante la segunda mitad del tercer módulo del curso, para el cual seguiremos principalmente el libro \emph{Linear Algebra: A Modern Introduction} de Poole (págs. 340-348).
+
+\subsection*{Sistemas lineales de ecuaciones algebraicas}
+
+Cuando hablamos de un \emph{sistema de ecuaciones}, generalmente nos referimos a un grupo de ecuaciones que deben cumplirse simultáneamente, por ejemplo, $$x_1 + x_2 = 1,$$ $$x_1 - x_2 = 5.$$ Para este sistema de ecuaciones, decimos que tenemos dos \emph{incógnitas}, $x_1$ y $x_2$, que queremos encontrar.
+
+\vspace{3mm}
+Como sabemos, podemos formar sistemas con más ecuaciones y/o incógnitas. En general, podemos expresar un sistema de $m$ ecuaciones y $n$ incógnitas como $$f_1(x_1,x_2,...,x_n)=0$$ $$f_2(x_1,x_2,...,x_n)=0$$ $$...$$ $$f_m(x_1,x_2,...,x_n)=0,$$ donde $f_j$, con $1\leq j\leq m$, es una función arbitraria de las incógnitas $x_i$, donde $1\leq i\leq n$. Decimos que tenemos una \emph{solución} al sistema cuando encontramos los valores de las incógnitas $x_i$ para los cuales todas las ecuaciones se verifican simultáneamente. Si reordenamos las ecuaciones del sistema que aparece al inicio de esta sección, podemos ver que en ese caso $f_1(x_1,x_2)=x_1+x_2-1$ y $f_2(x_1,x_2)=x_1-x_2-5$, y que la solución al sistema es $x_1=3, x_2=-2$. Observemos que $m=2$ y $n=2$ en este caso; precisamente por esto decimos que es un sistema de dos ecuaciones con dos incógnitas.
+
+\vspace{3mm}
+Por lo regular, trabajamos con sistemas de ecuaciones en donde las funciones $f_j$ son \emph{polinomios} en las variables $x_i$; a este tipo de ecuaciones se les llama \emph{algebraicas} y, por lo tanto, en esos casos decimos que tenemos un \emph{sistema de ecuaciones algebraicas}, como el ejemplo del inicio de esta sección.
+
+\vspace{3mm}
+Cuando en una ecuación algebráica las incógnitas no aparecen elevadas a una potencia mayor a uno, decimos que la ecuación es \emph{lineal}. Análogamente, cuando en un sistema de ecuaciones algebraicas las incógnitas no aparecen elevadas a una potencia mayor a uno \textemdash o, equivalentemente, cuando todos los polinomios $f_j$ son de grado uno\textemdash\hspace{1mm} tenemos un sistema de ecuaciones algebraicas lineales; generalmente, en estos casos decimos que tenemos un \emph{sistema lineal de ecuaciones algebráicas}.
+
+\vspace{3mm}
+Lo que caracteriza a los sistemas de ecuaciones algebraicas (de los cuales los sistemas lineales de ecuaciones algebraicas son un caso particular) es que sus soluciones pueden ser números enteros, racionales, irracionales o hasta complejos, pero siempre son números; es decir, las \emph{incógnitas} de este tipo de sistemas de ecuaciones \textemdash y, por tanto, sus soluciones\textemdash\hspace{1mm} son \emph{números}. Esta es la principal diferencia entre este tipo de sistemas y los sistemas de ecuaciones \emph{diferenciales}, que veremos más adelante. Antes de eso, tenemos que entender la diferencia entre las ecuaciones algebráicas y las ecuaciones diferenciales, lo cual haremos en la siguiente sección.
+
+\newpage
+\subsection*{Introducción a ecuaciones diferenciales (ordinarias)} \label{Subsec:Introducción a ecuaciones diferenciales ordinarias}
+
+A diferencia de una ecuación algebráica, en una ecuación \emph{diferencial} la incógnita de la ecuación \textemdash y, por lo tanto, su solución\textemdash es una \emph{función}. Por ejemplo, la ecuación $$\dot{x} + x = 0,$$ donde $\dot{x}$ representa la derivada de la función $x$ con respecto a alguna variable independiente \textemdash usualmente llamada $t$, aunque esto es sólo una etiqueta\footnote{Con \emph{etiqueta} nos referimos a que, de haber postulado que la función $x$ dependía de una variable independiente $s$, entonces la solución a la ecuación diferencial sería $x(s)=e^{-s},$ lo cual no cambia en absoluto el sentido de la ecuación ni de su solución. A este tipo de variables ``etiqueta'' acostumbramos llamarles \emph{variables mudas}.}\textemdash, tiene como solución a la función $x(t)=e^{-t}$, y dicha solución es válida para todo $t\in\mathbb{R}$ ya que en todo este intervalo se verifica que\footnote{Observemos que pudimos haber planteado esta ecuación diferencial de manera equivalente como $\dot{x}=-x$, y la solución sería la misma, ya que $\frac{d}{dt}e^{-t}=-e^{-t}$ para todo $t\in\mathbb{R}$.} $$\frac{d }{dt}e^{-t} + e^{-t} = \bigg(\frac{d}{d(-t)}e^{-t}\bigg)\bigg(\frac{d }{dt}(-t)\bigg) + e^{-t} = \big(e^{-t}\big)\big(-1\big)+e^{-t} = -e^{-t}+e^{-t}= 0.$$
+
+\vspace{3mm}
+En general, las incógnitas de las ecuaciones diferenciales pueden ser funciones de más de una variable, y en la ecuación pueden aparecer dos o más de sus derivadas parciales; a este tipo de ecuaciones diferenciales les llamamos ecuaciones diferenciales \emph{parciales}. En cambio, cuando nuestra función incógnita depende de una sola variable, decimos que tenemos una ecuación diferencial \emph{ordinaria}; éstas últimas son con las cuales trabajaremos. A continuación, formalizamos algunas definiciones que utilizaremos.
+
+\vspace{3mm}
+\begin{tcolorbox}
+\underline{Def.} Una \emph{ecuación diferencial ordinaria} es una relación entre una función incógnita $x(t)$, sus derivadas, y una variable independiente $t$. En general, podemos expresar una ecuación diferencial ordinaria como $$f\big(t,x(t),\dot{x}(t),\ddot{x}(t),...\hspace{0.5mm},x^{(n)}(t)\big)=0,$$ donde $f$ es una función arbitraria y $x^{(n)}(t)$ denota la $n$-ésima derivada de la función incógnita $x$ con respecto a su variable independiente $t$. Decimos que una función $x(t)$ es una \emph{solución} a la ecuación diferencial anterior en un intervalo $I$ si tanto $x(t)$ como sus derivadas cumplen dicha ecuación para todo $t\in I$.
+\end{tcolorbox}
+
+\vspace{2mm}
+Podemos clasificar algunos tipos de ecuaciones diferenciales ordinarias, como sigue\footnote{Observen la analogía con la forma en que clasificamos ecuaciones algebraicas (polinomiales), pero también las diferencias. Las definiciones presentadas serán relevantes para nuestros fines.}:
+
+\vspace{3mm}
+\begin{tcolorbox}
+\underline{Def.} Decimos que una ecuación diferencial ordinaria es:
+\begin{itemize}
+    \item \emph{de orden} $n$ si la derivada de mayor grado que aparece en la ecuación es de orden $n$;
+    \item \emph{lineal} si se puede escribir de la forma $$a_n(t)x^{(n)}(t)+a_{n-1}(t)x^{(n-1)}(t)+...+a_1(t)\dot{x}(t)+a_0(t)x(t)+b(t)=0$$ para funciones $a_1(t),a_2(t),...\hspace{0.5mm},a_n(t),b(t)$ dadas (que pueden, en particular, ser constantes)\footnote{En particular, si $b(t)$ es la constante cero, decimos que la ecuación es lineal \textit{homogénea}.};
+    \item \emph{autónoma} si en la ecuación no aparece la variable independiente $t$.
+\end{itemize}
+\end{tcolorbox}
+
+\newpage
+\subsection*{Ecuaciones diferenciales (ordinarias) con condiciones inciales y sistemas lineales de ecuaciones diferenciales} \label{Subsec:Ecuaciones diferenciales (ordinarias) con condiciones iniciales y sistemas lineales de ecuaciones diferenciales}
+
+Con regularidad, nos encontramos con ecuaciones diferenciales que tienen más de una solución, e inclusive pueden tener una infinidad de ellas. Por ejemplo, regresando a la ecuación $$\dot{x} + x = 0,$$ podemos verificar que la función $x(t)=C e^{-t}$ es una solución en todo el intervalo $\mathbb{R}$ para cualquier $C\in\mathbb{R}$. Decimos entonces que $x(t)=Ce^{-t}$ es una \emph{solución general} a la ecuación diferencial anterior\footnote{Por dar otro ejemplo, podemos decir que la ecuación $\ddot{x}+x=0$ tiene como solución general a $x(t)=A\sin(t)+B\cos(t)$ en todo el intervalo $\mathbb{R}$ para cualesquiera valores $A,B\in\mathbb{R}$ (¡compruébalo!).}. En esta solución general, el valor $C$ representa un \emph{grado de libertad} de la solución, el cual puede removerse agregando una \emph{restricción} a la ecuación diferencial, la cual viene en forma de una \emph{condición inicial}.
+
+\vspace{3mm}
+Supongamos que nos piden resolver la ecuación diferencial anterior bajo la condición de que al evaluar la función en $t=0$ obtenemos un cierto valor $C_0\in\mathbb{R}$. Es decir que la solución $x(t)$, además de cumplir la ecuación diferencial, debe cumplir que $x(t)|_{t=0}=C_0.$ Partiendo de nuestra solución general, resolvemos ahora la última ecuación mostrada como sigue $$x(t)|_{t=0}=C_0\implies C e^{-t}|_{t=0}=C_0\implies C e^{0}=C_0\implies C(1)=C_0\implies C=C_0.$$ Por lo tanto, la solución a la ecuación diferencial $\dot{x}+x=0$ con condición inicial $x(0)=C_0$, donde $C_0\in\mathbb{R}$ es un valor determinado, es $x(t)=C_0 e^{-t}$. Ya que en este caso $x(t)$ sigue cumpliendo la ecuación diferencial original pero ya no tiene grados de libertad, decimos que es una \emph{solución particular} a la ecuación diferencial $\dot{x}+x=0$ sujeta a la \emph{condición inicial} $x(0)=C_0,$ con $C_0\in\mathbb{R}$.
+
+\vspace{3mm}
+\begin{tcolorbox}
+\underline{Def.} Decimos que una función $x(t)$ es una \emph{solución particular} a una ecuación diferencial ordinaria de grado uno si, además de cumplir con dicha ecuación, cumple con la \emph{condición inicial} $$x(t_0)=C_0,$$ donde $C_0$ es un valor fijo.
+\end{tcolorbox}
+
+De forma análoga a como podemos formar sistemas de ecuaciones a partir de ecuaciones algebraicas, también podemos formarlos a partir de ecuaciones diferenciales. Por ejemplo, el sistema de ecuaciones diferenciales $$\dot{x_1} - x_2 = 0,$$ $$x_1 + \dot{x_2} = 0,$$ tiene como solución general a $x_1(t)=A\sin(t), x_2(t)=A\cos(t)$, válida en todo el intervalo $\mathbb{R}$ para cualquier $A\in\mathbb{R}$. Observemos que, en este sistema, ninguna de las incógnitas apareció elevada a una potencia mayor a uno. Por lo tanto, este sistema es un ejemplo de un \emph{sistema lineal de ecuaciones diferenciales ordinarias}.
+
+\vspace{3mm}
+\begin{tcolorbox}
+\underline{Def.} Decimos que un sistema de ecuaciones diferenciales es un \emph{sistema lineal de ecuaciones diferenciales ordinarias} si todas las ecuaciones diferenciales ordinarias del sistema son lineales en todas sus incógnitas. Usualmente, se les abrevia como \emph{sistemas lineales de ecuaciones diferenciales}.
+\end{tcolorbox}
+\vspace{3mm}
+
+Después de esta introducción, puedes continuar leyendo las págs. 273-274 del libro \emph{Linear Algebra} de Friedberg y 340-342 del libro \emph{Linear Algebra: A Modern Introduction} de Poole para ver cómo podemos aplicar herramientas de álgebra lineal (en particular, diagonalización) para resolver este tipo de sistemas. Si deseas repasar el material presente antes de continuar, te sugiero resolver los ejercicios al final de esta sección. Después, deberás resolver los ejercicios $59, 61$ y $63$ de la sección 4.6 del Poole.
+
+\subsection*{Ejercicios de repaso}
+
+\subsubsection*{Sistemas lineales de ecuaciones algebraicas}
+\begin{enumerate}
+    \item Realiza un cuadro comparativo con las definiciones de sistema de ecuaciones, sistema de ecuaciones algebraicas y sistema lineal de ecuaciones algebraicas. 
+    \item Escribe o argumenta por qué no puedes escribir un ejemplo de:
+        \begin{enumerate}[label=\alph*)]
+        \item una ecuación \emph{trascendental} (i.e., no algebráica);
+        \item un sistema no lineal de ecuaciones algebraicas;
+        \item un sistema lineal de ecuaciones no algebraicas.
+    \end{enumerate}
+    \item Demuestra que en una ecuación lineal homogénea con más de una incógnita el conjunto de soluciones forma un espacio vectorial. Después, generaliza el resultado para demostrar que en un sistema lineal de ecuaciones algebraicas homogéneas con menos ecuaciones que incógnitas el conjunto de soluciones forma un espacio vectorial.
+\end{enumerate}
+
+\subsubsection*{Introducción a ecuaciones diferenciales (ordinarias)}
+\begin{enumerate}
+    \item Encuentra la solución general a la ecuación $\dot{x}-x=0$ en todo el intervalo $\mathbb{R}$.
+    \item Sea $C^{\infty}(\mathbb{R})$ el conjunto de todas las funciones reales de variable real con derivadas de cualquier orden y sea $\frac{d}{dt}:C^{\infty}(\mathbb{R})\to C^{\infty}(\mathbb{R})$ el operador lineal \emph{derivada}. Supongamos que $x(t)$ es un eigenvector de $\frac{d}{dt}$ con eigenvalor $\lambda,$ ¿entonces quién es $x(t)$?
+    \item Muestra que tanto la ecuación diferencial del ejemplo dado al inicio de la sección \ref{Subsec:Ecuaciones diferenciales (ordinarias) con condiciones iniciales y sistemas lineales de ecuaciones diferenciales} como su solución general son un caso particular del ejercicio anterior.
+\end{enumerate}
+
+\subsubsection*{Ecuaciones diferenciales (ordinarias) con condiciones iniciales}
+\begin{enumerate}
+    \item Encuentra la solución particular a la ecuación $\dot{x}+x=0$ con la condición inicial $x(0)=5$.
+    \item Encuentra la solución particular a la ecuación $\dot{x}+x=0$ con la condición inicial $x(1)=5$.
+    \item Muestra que cualquier solución particular (es decir, sin grados de libertad) de la ecuación $\ddot{x}=g$ debe tener dos condiciones iniciales: una para la función $x(t)$ y otra para $\dot{x}(t)$. ¿De qué ecuación se trata?
+\end{enumerate}
+
+\subsubsection*{Sistemas lineales de ecuaciones diferenciales (ordinarias)}
+\begin{enumerate}
+    \item Di si el siguiente sistema de ecuaciones diferenciales ordinarias es lineal, autónomo, ambos o ninguno, y explica por qué: $$\dot{x_1}+3x_2 = 0,$$ $$\dot{x_2} - x_3 = 0,$$ $$x_1-6\dot{x_3} = 0.$$
+\end{enumerate}
+
+\newpage
+\section{Modelación con sistemas lineales de ecuaciones diferenciales} \label{Sec:Modelación con sistemas lineales de ecuaciones diferenciales} 
+Para esta sección, seguiremos el libro \emph{Linear Algebra: A Modern Introduction} de Poole, págs. 342-348. Deberás realizar los ejercicios 65, 66, 67, 69, 71, 73 y 75 de la sección 4.6 del Poole, así como el ejercicio 15 de la sección 5.2 del Friedberg.
+
+\end{document}

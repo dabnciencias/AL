@@ -1,6 +1,9 @@
-\section{Producto escalar (punto), norma, interpretación geométrica del producto escalar: proyecciones y ortogonalidad, producto vectorial (cruz)* y triple producto escalar*} \label{Sec:2}
+\documentclass[notasLineal]{subfile}
+\begin{document}
 
-\subsection{Producto escalar (punto)} \label{Subsec:Producto_escalar}
+\section{Producto escalar, bases ortogonales y proyecciones vectoriales}\label{Sec: Producto escalar, bases ortogonales y proyecciones vectoriales}
+
+\subsection*{Producto escalar (punto)} \label{Ssec:Producto_escalar}
 
 Algunos espacios vectoriales están dotados de una operación entre vectores que da como resultado un escalar conocida como \emph{producto escalar}. En estos espacios, dicha operación tiene una gran riqueza geométrica, la cual nos permite tener nociones como ortogonalidad y magnitud \textemdash y generalizarlas a espacios vectoriales más abstractos, como veremos a lo largo de esta sección\footnote{En el último módulo del curso regresaremos a este tipo de espacios para descubrir más secretos del producto escalar.}.
 
@@ -35,7 +38,7 @@ A partir de la definición, observemos lo siguiente:
     \item Las primeras dos propiedades juntas nos dicen que $\langle\mathbf{u}+a\mathbf{w},\mathbf{v}\rangle = \langle\mathbf{u},\mathbf{v}\rangle+a\langle\mathbf{w},\mathbf{v}\rangle$. Para referirnos a esta propiedad específica en lenguaje matemático, decimos que el producto escalar es una operación \textit{lineal\footnote{Como debes sospechar, el concepto de operación \emph{lineal} es fundamental para el álgebra \emph{lineal}, y lo veremos con más detalle en las secciones de transformaciones y operadores lineales.} en la primera entrada}.
     \item La tercera propiedad nos dice que, si el campo es real, el producto escalar es una operación conmutativa, es decir, que si $K=\mathbb{R}\implies\langle\mathbf{u},\mathbf{v}\rangle=\langle\mathbf{v},\mathbf{u}\rangle$. En cambio, si el campo es complejo, en general, el producto escalar es no conmutativo.
     \item Las primeras tres propiedades juntas nos dicen que, si el espacio vectorial está definido sobre un campo complejo, entonces $\langle\mathbf{u},\mathbf{v}+a\mathbf{w}\rangle = \langle\mathbf{u},\mathbf{v}\rangle+\overline{a}\langle\mathbf{u},\mathbf{w}\rangle$, donde $\overline{a}$ denota el complejo conjugado del escalar complejo $a$. Esto nos dice que, si el campo es complejo, el producto escalar es una operación \textit{antilineal\footnote{Este concepto también se verá con mayor detenimiento más adelante.} en la segunda entrada}. En cambio, si el campo es real, entonces el producto escalar es lineal en ambas entradas.
-    \item Para un producto escalar positivo definido, el único vector que puede tener como resultado el escalar $0$ al hacer producto escalar consigo mismo es el vector nulo $\mathbf{0}$ (el neutro aditivo que vimos en las secciones \ref{Def:Espacio_vectorial} y \ref{Def:Subespacio_vectorial}).
+    \item Para un producto escalar positivo definido, el único vector que puede tener como resultado el escalar $0$ al hacer producto escalar consigo mismo es el vector nulo $\mathbf{0}$ (el neutro aditivo que vimos en las secciones \ref{Def: Espacio vectorial} y \ref{Def: Subespacio vectorial}).
 \end{itemize}
 
 
@@ -81,9 +84,9 @@ Como resumen, a partir de la definición dada en la sección \ref{Def:Producto_e
 En particular, el producto escalar definido \underline{sobre un espacio vectorial real} es una operación lineal en ambas entradas (o \emph{bilineal}), es decir, que $$\langle a_1\mathbf{u_1}+...+a_n\mathbf{u_n},\mathbf{v}\rangle=a_1\langle\mathbf{u_1},\mathbf{v}\rangle+...+a_n\langle\mathbf{u_n},\mathbf{v}\rangle\hspace{1mm}$$ \noindent y $$\langle\mathbf{u},b_1\mathbf{v_1}+...+b_n\mathbf{v_n}\rangle=b_1\langle\mathbf{u},\mathbf{v_1}\rangle+...+b_n\langle\mathbf{u},\mathbf{v_n}\rangle.$$
 
 \newpage
-\subsection{Norma} \label{Subsec:Norma}
+\subsection*{Norma} \label{Ssec:Norma}
 
-Otro tipo de operación que se puede definir sobre un espacio vectorial es la \emph{norma}, que toma un sólo vector del espacio y devuelve un escalar del campo. La norma, en general, dota a los vectores de un espacio de un cierto sentido de \emph{magnitud} mediante el cual se puede comparar a distintos vectores. Como veremos en esta sección, si un espacio vectorial tiene un producto escalar positivo definido (dotando al espacio de las nociones de proyecciones y ortogonalidad que ya vimos en la sec. \ref{Subsec:Interpretación geométrica del producto escalar}), entonces se puede definir una norma sobre el espacio a partir de dicho producto escalar; sin embargo, no es necesario que una norma provenga de un producto escalar, y es posible que existan normas (y, por tanto, ciertas nociones de magnitud) en espacios vectoriales \emph{sin} producto escalar.
+Otro tipo de operación que se puede definir sobre un espacio vectorial es la \emph{norma}, que toma un sólo vector del espacio y devuelve un escalar del campo. La norma, en general, dota a los vectores de un espacio de un cierto sentido de \emph{magnitud} mediante el cual se puede comparar a distintos vectores. Como veremos en esta sección, si un espacio vectorial tiene un producto escalar positivo definido (dotando al espacio de las nociones de proyecciones y ortogonalidad que ya vimos en la sec. \ref{Ssec:Interpretación geométrica del producto escalar}), entonces se puede definir una norma sobre el espacio a partir de dicho producto escalar; sin embargo, no es necesario que una norma provenga de un producto escalar, y es posible que existan normas (y, por tanto, ciertas nociones de magnitud) en espacios vectoriales \emph{sin} producto escalar.
 
 \subsubsection{Definición de norma} \label{Def:Norma}
 
@@ -103,7 +106,7 @@ Otro tipo de operación que se puede definir sobre un espacio vectorial es la \e
 \vspace{3mm}
 \noindent A partir de la definición anterior podemos demostrar que la norma es positivo definida; es decir que, además de que el único vector con norma igual a $0$ es el vector nulo, todos los vectores no nulos tienen norma positiva.
 
-\begin{corolario} {2.2.1.1}
+\begin{Coro} {2.2.1.1}
     Sea $V$ un espacio vectorial con una norma $||\cdot ||$, entonces $\hspace{1.5mm}\forall\hspace{1.5mm} \mathbf{v}\in V$ con $\mathbf{v}\neq\mathbf{0}$ se cumple que $||\mathbf{v}||>0.$
 
 \begin{proof}
@@ -115,7 +118,7 @@ Otro tipo de operación que se puede definir sobre un espacio vectorial es la \e
 
 \end{proof}
 
-\end{corolario}
+\end{Coro}
 
 \subsubsection{Ejemplos de norma}
 
@@ -128,7 +131,7 @@ R}; \hspace{3mm} |c| = +\sqrt{c\hspace{0.5mm}\overline{c}}\hspace{3mm}\forall\hs
 
 \vspace{3mm}
 
-Para los vectores que son $n-$tuplas, la norma más comunmente utilizada se define como $$||\mathbf{u}|| = +\sqrt{\langle\mathbf{u},\mathbf{u}\rangle} = +\sqrt{\mathbf{u}\cdot\mathbf{u}},$$ \noindent de acuerdo a las definiciones de productos escalares para $n-$tuplas dadas en la sección \ref{Ejem:Producto_escalar}. Esta norma se interpreta geométricamente como la longitud de la flecha que tiene cola en el origen del espacio vectorial y punta en la coordenada dada por las entradas del vector $\mathbf{u}$, lo cual es equivalente a la distancia euclideana entre estos dos puntos. Por ende, a esta norma se le conoce como \emph{norma euclideana}\footnote{Observemos que la norma del valor absoluto es simplemente un caso particular de la norma euclideana para los espacios vectoriales $\mathbb{R}$ y $\mathbb{C}$, tanto en su definición algebráica como en su interpretación geométrica.}. En particular, a los espacios vectoriales reales $\mathbb{R}^n$ con esta norma se les conoce como \emph{espacios vectoriales euclideanos} (o \emph{euclídeos})\footnote{Estos son los espacios vectoriales básicos que se utilizan en geometría analítica y cálculo diferencial e integral con funciones de una o más variables reales.}. Cuando la norma está asociada geométricamente a la longitud de la flecha que representa un vector, también se dice que está relacionada con la \emph{magnitud} de ese vector.
+Para los vectores que son $n-$tuplas, la norma más comunmente utilizada se define como $$||\mathbf{u}|| = +\sqrt{\langle\mathbf{u},\mathbf{u}\rangle} = +\sqrt{\mathbf{u}\cdot\mathbf{u}},$$ \noindent de acuerdo a las definiciones de productos escalares para $n-$tuplas dadas en la sección \ref{Ejem:Producto_escalar}. Esta norma se interpreta geométricamente como la longitud de la flecha que tiene cola en el origen del espacio vectorial y punta en la coordenada dada por las entradas del vector $\mathbf{u}$, lo cual es equivalente a la distancia euclideana entre estos dos puntos. Por ende, a esta norma se le conoce como \emph{norma euclideana}\footnote{Observemos que la norma del valor absoluto es simplemente un caso particular de la norma euclideana para los espacios vectoriales $\mathbb{R}$ y $\mathbb{C}$, tanto en su definición algebraica como en su interpretación geométrica.}. En particular, a los espacios vectoriales reales $\mathbb{R}^n$ con esta norma se les conoce como \emph{espacios vectoriales euclideanos} (o \emph{euclídeos})\footnote{Estos son los espacios vectoriales básicos que se utilizan en geometría analítica y cálculo diferencial e integral con funciones de una o más variables reales.}. Cuando la norma está asociada geométricamente a la longitud de la flecha que representa un vector, también se dice que está relacionada con la \emph{magnitud} de ese vector.
 
 \vspace{3mm}
 
@@ -138,7 +141,7 @@ También, en un espacio vectorial real de funciones reales con integral finita e
 
 Como mencionamos al inicio de esta sección, el proceso anterior de obtener una norma a partir de un producto escalar se puede generalizar para cualquier espacio vectorial con un producto escalar positivo definido, sin importar si dichos espacios vectoriales son reales o complejos. En estos casos, se dice que la norma es \emph{inducida} por un producto escalar positivo definido. Las normas de este tipo serán las más recurrentes durante este curso. El primer paso necesario para demostrar este resultado general es la llamada \emph{desigualdad de Cauchy-Schwarz}, que enunciamos a continuación como teorema. El resto de la demostración se encuentra en los ejercicios de repaso al final de esta sección (ver sec. \ref{Ejer:Norma}).
 
-\begin{teorema} {2.2.3.1} 
+\begin{Teo} {2.2.3.1} 
 
     Sea $\langle.\hspace{0.5mm},.\rangle:V\times V\rightarrow K$ un producto escalar positivo definido y sea $||\cdot ||:V\rightarrow K$ una función definida tal que $||\cdot||=+\sqrt{\langle\cdot,\cdot\rangle}$\footnote{Con la ayuda de este teorema, se puede demostrar que esta función $||\cdot ||$ cumple con todas las propiedades de una norma, dadas en la sección \ref{Def:Norma}. Ésta es la llamada \emph{norma euclideana generalizada}.}, entonces para todo $\mathbf{u},\mathbf{v}\in V$ se cumple que $|\langle\mathbf{u},\mathbf{v}\rangle|\leq ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||$.
 
@@ -148,14 +151,14 @@ Como mencionamos al inicio de esta sección, el proceso anterior de obtener una 
     Sabemos que para cualquier $a\in K$ se cumple que $$0\leq ||\mathbf{u}-a\mathbf{v}||^2 = \langle\mathbf{u}-a\mathbf{v},\mathbf{u}-a\mathbf{v}\rangle= \langle\mathbf{u},\mathbf{u}-a\mathbf{v}\rangle-a\langle\mathbf{v},\mathbf{u}-a\mathbf{v}\rangle=$$ $$\langle\mathbf{u},\mathbf{u}\rangle-\overline{a}\langle\mathbf{u},\mathbf{v}\rangle-a(\langle\mathbf{v},\mathbf{u}\rangle-\overline{a}\langle\mathbf{v},\mathbf{v})\rangle=\langle\mathbf{u},\mathbf{u}\rangle-\overline{a}\langle\mathbf{u},\mathbf{v}\rangle-a\langle\mathbf{v},\mathbf{u}\rangle+a\overline{a}\langle\mathbf{v},\mathbf{v}\rangle.$$ \noindent En particular, tomando $a=\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}$ y sustituyendo en la desigualdad anterior, obtenemos que $$0\leq\langle\mathbf{u},\mathbf{u}\rangle-\frac{\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{u},\mathbf{v}\rangle-\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{v},\mathbf{u}\rangle+\frac{\langle\mathbf{u},\mathbf{v}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\frac{\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}\langle\mathbf{v},\mathbf{v}\rangle=$$ $$\langle\mathbf{u},\mathbf{u}\rangle-2\frac{\langle\mathbf{u},\mathbf{v}\rangle\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}+\frac{\langle\mathbf{u},\mathbf{v}\rangle\langle\mathbf{v},\mathbf{u}\rangle}{\langle\mathbf{v},\mathbf{v}\rangle}=||\mathbf{u}||^2-\frac{|\langle\mathbf{u},\mathbf{v}\rangle|^2}{||\mathbf{v}||^2}\implies$$ $$0\leq ||\mathbf{u}||^2-\frac{|\langle\mathbf{u},\mathbf{v}\rangle|^2}{||\mathbf{v}||^2}\implies \frac{|\langle\mathbf{u},\mathbf{v}\rangle|^2}{||\mathbf{v}||^2}\leq ||\mathbf{u}||^2\implies|\langle\mathbf{u},\mathbf{v}\rangle|^2\leq ||\mathbf{u}||^2\hspace{0.5mm}||\mathbf{v}||^2\implies|\langle\mathbf{u},\mathbf{v}\rangle|\leq ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||.$$
 
 \end{proof}
-\end{teorema}
+\end{Teo}
 
 \newpage
-\subsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}\label{Subsec:Interpretación geométrica del producto escalar} 
+\subsection*{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}\label{Ssec:Interpretación geométrica del producto escalar} 
 
-\subsubsection{Producto escalar y proyecciones} \label{Subsec:Producto_escalar_y_proyecciones}
+\subsubsection{Producto escalar y proyecciones} \label{Ssec:Producto_escalar_y_proyecciones}
 
-Como quizás aprendiste en tus cursos de Geometría Analítica y/o Mecánica Vectorial, el producto escalar entre vectores de $\mathbb{R}^2$ tiene una definición geométrica dada por $$\langle\mathbf{u},\mathbf{v}\rangle\equiv ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos{\theta}=||\mathbf{v}||\hspace{0.5mm} ||\mathbf{u}||\cos{\theta},$$ \noindent donde $\theta$ es el ángulo positivo más chico entre $\mathbf{u}$ y $\mathbf{v}$; esta definición es equivalente a la algebráica dada al principio de la sección \ref{Ejem:Producto_escalar}. El producto $||\mathbf{u}||\cos{\theta}$ es igual a la \emph{proyección escalar} del vector $\mathbf{u}$ sobre el vector $\mathbf{v}$. Si escribimos dicha proyección escalar como $P_{\mathbf{v}}(\mathbf{u})$, tenemos que
+Como quizás aprendiste en tus cursos de Geometría Analítica y/o Mecánica Vectorial, el producto escalar entre vectores de $\mathbb{R}^2$ tiene una definición geométrica dada por $$\langle\mathbf{u},\mathbf{v}\rangle\equiv ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos{\theta}=||\mathbf{v}||\hspace{0.5mm} ||\mathbf{u}||\cos{\theta},$$ \noindent donde $\theta$ es el ángulo positivo más chico entre $\mathbf{u}$ y $\mathbf{v}$; esta definición es equivalente a la algebraica dada al principio de la sección \ref{Ejem:Producto_escalar}. El producto $||\mathbf{u}||\cos{\theta}$ es igual a la \emph{proyección escalar} del vector $\mathbf{u}$ sobre el vector $\mathbf{v}$. Si escribimos dicha proyección escalar como $P_{\mathbf{v}}(\mathbf{u})$, tenemos que
 
 $$\langle\mathbf{u},\mathbf{v}\rangle=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u}) \implies P_{\mathbf{v}}(\mathbf{u})=\frac{\langle\mathbf{u},\mathbf{v}\rangle}{||\mathbf{v}||}.$$ 
 
@@ -222,7 +225,7 @@ $$\langle\mathbf{u},\mathbf{v}\rangle=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u}) \
 
 Observemos que, ya que tanto $\cos\theta$ como las normas $||\mathbf{u}||$ y $||\mathbf{v}||$ son números reales, entonces $$\langle\mathbf{u},\mathbf{v}\rangle=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u})=||\mathbf{v}||\hspace{0.5mm}||\mathbf{u}||\cos\theta = ||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos\theta=||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=\langle\mathbf{v},\mathbf{u}\rangle.$$\noindent Esto no es más que la propiedad conmutativa del producto escalar en un espacio vectorial real \textemdash visto desde un punto de vista geométrico.
 
-Ahora imaginemos que tenemos dos vectores $\mathbf{u},\mathbf{v}\in\mathbb{R}^2$ de la misma magnitud (i.e., $||\mathbf{u}||=||\mathbf{v}||$) trazados en el plano cartesiano. En este caso, la bisectriz del ángulo que los separa traza un eje de simetría. Si trazamos la proyección de cada uno de los vectores sobre el otro, veremos de forma más intuitiva que $$||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u}),$$ con lo cual reafirmamos que el producto escalar conmuta. Supongamos ahora que reescalamos alguno de los vectores, digamos $\mathbf{u}$, al doble de su longitud \textemdash efectivamente duplicando así su norma\textemdash\hspace{0.5mm}, y llamamos a este nuevo vector $\mathbf{u}'$. Entonces, algebráicamente vemos que $$\langle\mathbf{u}',\mathbf{v}\rangle=||\mathbf{u'}||\hspace{0.5mm}||\mathbf{v}||\cos\theta=||2\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos\theta=2||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos{\theta}=2||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v}).$$ \noindent Geométricamente, podemos ver esto como que $\langle\mathbf{u}',\mathbf{v}\rangle=(2||\mathbf{u}||)P_{\mathbf{u}}(\mathbf{v})$ o, equivalentemente, que $\langle\mathbf{u}',\mathbf{v}\rangle=||\mathbf{u}||(2P_{\mathbf{u}}(\mathbf{v}))\footnote{Este mismo argumento se expone de forma animada en el siguiente video: \url{https://www.youtube.com/watch?v=LyGKycYT2v0&list=PL_w8oSr1JpVCZ5pKXHKz6PkjGCbPbSBYv&index=11&t=255s}.}.$ Observemos que la elección del vector reescalado fue arbitraria \textemdash de haber reescalado $\mathbf{v}$ por $2$ en vez de $\mathbf{u}$, hubiéramos obtenido el mismo resultado. La discusión anterior es simplemente la interpretación geométrica del hecho de que $\langle2\mathbf{u},\mathbf{v}\rangle=2\langle\mathbf{u},\mathbf{v}\rangle=\langle\mathbf{u},2\mathbf{v}\rangle$ en espacios vectoriales reales.
+Ahora imaginemos que tenemos dos vectores $\mathbf{u},\mathbf{v}\in\mathbb{R}^2$ de la misma magnitud (i.e., $||\mathbf{u}||=||\mathbf{v}||$) trazados en el plano cartesiano. En este caso, la bisectriz del ángulo que los separa traza un eje de simetría. Si trazamos la proyección de cada uno de los vectores sobre el otro, veremos de forma más intuitiva que $$||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v})=||\mathbf{v}||P_{\mathbf{v}}(\mathbf{u}),$$ con lo cual reafirmamos que el producto escalar conmuta. Supongamos ahora que reescalamos alguno de los vectores, digamos $\mathbf{u}$, al doble de su longitud \textemdash efectivamente duplicando así su norma\textemdash\hspace{0.5mm}, y llamamos a este nuevo vector $\mathbf{u}'$. Entonces, algebraicamente vemos que $$\langle\mathbf{u}',\mathbf{v}\rangle=||\mathbf{u'}||\hspace{0.5mm}||\mathbf{v}||\cos\theta=||2\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos\theta=2||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos{\theta}=2||\mathbf{u}||P_{\mathbf{u}}(\mathbf{v}).$$ \noindent Geométricamente, podemos ver esto como que $\langle\mathbf{u}',\mathbf{v}\rangle=(2||\mathbf{u}||)P_{\mathbf{u}}(\mathbf{v})$ o, equivalentemente, que $\langle\mathbf{u}',\mathbf{v}\rangle=||\mathbf{u}||(2P_{\mathbf{u}}(\mathbf{v}))\footnote{Este mismo argumento se expone de forma animada en el siguiente video: \url{https://www.youtube.com/watch?v=LyGKycYT2v0&list=PL_w8oSr1JpVCZ5pKXHKz6PkjGCbPbSBYv&index=11&t=255s}.}.$ Observemos que la elección del vector reescalado fue arbitraria \textemdash de haber reescalado $\mathbf{v}$ por $2$ en vez de $\mathbf{u}$, hubiéramos obtenido el mismo resultado. La discusión anterior es simplemente la interpretación geométrica del hecho de que $\langle2\mathbf{u},\mathbf{v}\rangle=2\langle\mathbf{u},\mathbf{v}\rangle=\langle\mathbf{u},2\mathbf{v}\rangle$ en espacios vectoriales reales.
 
 Similarmente, la interpretación geométrica del hecho de que $\langle\mathbf{u}+\mathbf{v},\mathbf{w}\rangle=\langle\mathbf{u},\mathbf{w}\rangle+\langle\mathbf{v},\mathbf{w}\rangle$ ó $\langle\mathbf{w},\mathbf{u}+\mathbf{v}\rangle=\langle\mathbf{w},\mathbf{u}\rangle+\langle\mathbf{w},\mathbf{v}\rangle$ se puede ver directamente de la Ley del paralelogramo. 
 
@@ -292,7 +295,7 @@ Observemos que podemos utilizar la notación usual de vector unitario para reesc
     P_{\mathbf{v}}(\mathbf{u}) \ \hat{\mathbf{v}}
 ,\] \noindent donde $P_{\mathbf{v}}(\mathbf{u})$ es la proyección \emph{escalar}  de $\mathbf{u}$ sobre $\mathbf{v}$.
 
-\subsection{Producto vectorial (cruz)*} 
+\subsection*{Producto vectorial (cruz)*} 
 
 El producto vectorial es una operación de gran utilidad, principalmente en algunas ramas de la física clásica (en las cuales se trabaja con vectores en $\mathbb{R}^3$), y tiene una interpretación geométrica bastante rica, por lo cual se menciona brevemente en estas notas. En esta sección también se mencionan por primera vez los temas de matrices, determinantes y vectores canónicos, los cuales asumo que ya debes conocer, aunque más adelante en el curso los repasaremos.
 
@@ -315,7 +318,7 @@ $$\mathbf{r}\times\mathbf{s} = \text{det} \begin{vmatrix} \mathbf{i}&\mathbf{j}&
 
 \noindent donde $\mathbf{i},\mathbf{j}$ y $\mathbf{k}$ son los vectores canónicos de $\mathbb{R}^3$ $(1,0,0)$, $(0,1,0)$ y $(0,0,1)$, respectivamente.
 
-Geométricamente, si nombramos como $\theta$ el menor ángulo de separación positivo entre dos vectores $\mathbf{r}$ y $\mathbf{s}\in\mathbb{R}^3$, entonces podemos hacer la definición equivalente $\mathbf{r}\times\mathbf{s}=||\mathbf{r}|| \hspace{0.5mm}  ||\mathbf{s}||\sin\theta$. En este caso, la magnitud del vector resultante de hacer el producto vectorial $\mathbf{r}\times\mathbf{s}$ se interpreta como la magnitud del área del paralelogramo formado por los vectores $\mathbf{r}$ y $\mathbf{s}$. De aquí se sigue que el producto vectorial de dos vectores ortogonales sea igual al producto de sus normas, mientras que el producto cruz de dos vectores colineales sea $0$ (en particular, el producto cruz de cualquier vector consigo mismo es igual a $0$). Además, de ambas definiciones (algebráica y geométrica) se sigue que el producto vectorial de cualquier vector en $\mathbb{R}^3$ con el vector nulo ($\mathbf{0}$) sea $\mathbf{0}$.
+Geométricamente, si nombramos como $\theta$ el menor ángulo de separación positivo entre dos vectores $\mathbf{r}$ y $\mathbf{s}\in\mathbb{R}^3$, entonces podemos hacer la definición equivalente $\mathbf{r}\times\mathbf{s}=||\mathbf{r}|| \hspace{0.5mm}  ||\mathbf{s}||\sin\theta$. En este caso, la magnitud del vector resultante de hacer el producto vectorial $\mathbf{r}\times\mathbf{s}$ se interpreta como la magnitud del área del paralelogramo formado por los vectores $\mathbf{r}$ y $\mathbf{s}$. De aquí se sigue que el producto vectorial de dos vectores ortogonales sea igual al producto de sus normas, mientras que el producto cruz de dos vectores colineales sea $0$ (en particular, el producto cruz de cualquier vector consigo mismo es igual a $0$). Además, de ambas definiciones (algebraica y geométrica) se sigue que el producto vectorial de cualquier vector en $\mathbb{R}^3$ con el vector nulo ($\mathbf{0}$) sea $\mathbf{0}$.
 
 \subsubsection{Propiedades del producto vectorial (cruz)} \label{Prop:Producto_vectorial}
 
@@ -333,7 +336,7 @@ Las siguientes propiedades son fáciles de demostrar para cualesquiera $\mathbf{
 
 
 
-\subsection{Triple producto escalar*}
+\subsection*{Triple producto escalar*}
 
 Al unir el producto escalar con el producto vectorial, se obtiene una operación llamada \emph{triple producto escalar} entre tres vectores, que da como resultado un escalar. La magnitud del triple producto escalar se interpreta geométricamente como la magnitud del volumen del paralelepípedo formado por los tres vectores.
 
@@ -348,7 +351,7 @@ $$\mathbf{r}\cdot\mathbf{s}\times\mathbf{t} \equiv r_1(s_2t_3-s_3t_2) + r_2(s_3t
 
 Recordemos que el producto escalar se realiza entre dos vectores y da como resultado un escalar, mientras que el producto vectorial se realiza entre dos vectores pero da como resultado un vector. Por lo tanto, no hay ambigüedad en la expresión $\mathbf{r}\cdot\mathbf{s}\times\mathbf{t}$, ya que la única forma lógica de juntar estas dos operaciones es realizando primero el producto vectorial y después el producto escalar; por ende, escribir esta operación como $\mathbf{r}\cdot(\mathbf{s}\times\mathbf{t})$ sería redundante.
 
-Al igual que el producto vectorial, el triple producto escalar también puede ser visto algebráicamente como el determinante de una matriz:
+Al igual que el producto vectorial, el triple producto escalar también puede ser visto algebraicamente como el determinante de una matriz:
 
 $$\mathbf{r}\cdot\mathbf{s}\times\mathbf{t} = \begin{vmatrix} r_1&r_2&r_3 \\ s_1&s_2&s_3 \\ t_1&t_2&t_3 \end{vmatrix}.$$
 
@@ -368,7 +371,7 @@ $$\mathbf{r}\cdot\mathbf{s}\times\mathbf{t} = \begin{vmatrix} r_1&r_2&r_3 \\ s_1
 
 Nota: también se puede definir un \emph{triple producto vectorial} entre tres vectores que da como resultado un vector como $\mathbf{r}\times\mathbf{s}\times\mathbf{t}$. Éste es de gran utilidad para hacer demostraciones de algunas identidades de cálculo vectorial en $\mathbb{R}^3$.
 
-\subsection{Ejercicios de repaso}
+\subsection*{Ejercicios de repaso}
 
 \subsubsection{Producto escalar} \label{Ejer:Producto_escalar} 
 
@@ -379,61 +382,4 @@ Nota: también se puede definir un \emph{triple producto vectorial} entre tres v
     \item Sea $\mathbb{C}^2$ un espacio vectorial complejo con $\mathbf{q},\mathbf{r}\in\mathbb{C}^2$. Explica cuál(es) de las propiedades de la sección \ref{Prop:Producto_escalar} no se cumpliría(n) si definiéramos el producto escalar en este espacio vectorial ingenuamente como $\mathbf{q}\cdot\mathbf{r}=\sum_{i=1}^n q_ir_i$  con $n=2$ (nótese que esta misma definición de producto escalar nos generaría problemas al intentar usarla para definir una norma en este espacio). 
 \end{enumerate}
 
-\subsubsection{Norma} \label{Ejer:Norma}
-
-\begin{enumerate}
-    \item Calcula la norma de las funciones dadas en el primer ejercicio de la sección \ref{Ejer:Producto_escalar}. (Nota: utiliza la norma inducida por ese mismo producto escalar.) 
-    \item ¿El conjunto $\{(x_1,x_2,...,x_n)\mathop|\mathop x_i\in\mathbb{R} \land ||(x_1,x_2,...,x_n)||\leq1\}$ con las operaciones entre $n$-tuplas vistas en la sección \ref{Ejem:Espacios_vectoriales} puede formar un espacio vectorial sobre el campo real? Argumenta. 
-    \item Argumenta e ilustra la interpretación geométrica de la desigualdad de Cauchy-Schwarz para dos vectores cualesquiera de $\mathbb{R}^2$ (Nota: ver sec. \ref{Teo:Cauchy-Schwarz}). 
-    \item Demuestra la desigualdad del triángulo $||\mathbf{a}+\mathbf{b}|| \leq ||\mathbf{a}||+||\mathbf{b}||$ para cualesquiera dos vectores en un espacio $V$ con producto escalar positivo definido donde la norma $||\mathbf{a}||\equiv+\sqrt{(\mathbf{a},\mathbf{a})}\hspace{3mm}\forall\hspace{1.5mm} \mathbf{a}\in V$ (pista: usa la desigualdad de Cauchy-Schwarz)\footnote{Con esto habrás demostrado que a partir de cualquier producto escalar positivo definido $(\mathbf{a},\mathbf{b})$ se puede definir una norma como $||\mathbf{a}|| = +\sqrt{(\mathbf{a},\mathbf{a})}.$}. Argumenta e ilustra su interpretación geométrica para dos vectores cualesquiera de $\mathbb{R}^2$. 
-\end{enumerate}
-
-\subsubsection{Interpretación geométrica del producto escalar: proyecciones y ortogonalidad}
-\begin{enumerate}
-\item Sea $\mathbf{v}\in\mathbb{R}^2$ no-nulo. Prueba que el conjunto $\{\mathbf{u}\in\mathbb{R}^2\hspace{0.5mm} |\hspace{0.5mm} \langle\mathbf{u},\mathbf{v}\rangle =0\}$ es una recta que pasa por el origen y llévala a una expresión de la forma $ax+by=c.$ 
-    \item Sean $\mathbf{v}=\begin{pmatrix} v_1 & v_2 \end{pmatrix}, \mathbf{u}=\begin{pmatrix}u_1 & u_2 \end{pmatrix}$ vectores del espacio real $\mathbb{R}^2.$ Deduce que $\mathbf{u}\cdot\mathbf{v}=u_1v_1+u_2v_2=||\mathbf{u}||\hspace{0.5mm}||\mathbf{v}||\cos(\theta)$, donde $\theta$ es el ángulo mínimo entre ambos vectores en el plano cartesiano. (Nota: supon que ambos vectores son no nulos y encuentra al escalar $k\in\mathbb{R}$ tal que $\langle\mathbf{u},\mathbf{u}-k\mathbf{v}\rangle=0$. ¿Por qué es especial este escalar?) 
-    \item Define a los vectores $\mathbf{u}=\begin{pmatrix} a_1 & a_2 \end{pmatrix}, \mathbf{v}=\begin{pmatrix} a_3 & a_4\end{pmatrix}$ y $\mathbf{w}=\begin{pmatrix} a_5 & a_6\end{pmatrix}\in\mathbb{R}^2,$ donde $a_i$ corresponde al $i$-ésimo dígito de tu número de cuenta. Explica gométricamente el hecho de que $\langle\mathbf{u}+\mathbf{v},\mathbf{w}\rangle=\langle\mathbf{u},\mathbf{w}\rangle+\langle\mathbf{v},\mathbf{w}\rangle$, en términos de las proyecciones discutidas en la sección \ref{Subsec:Interpretación geométrica del producto escalar} (Nota: recuerda la Ley del paralelogramo). 
-\end{enumerate}
-
-\subsubsection{Producto vectorial (cruz)*}
-
-\begin{enumerate}
-    \item Demuestra las propiedades del producto vectorial de la sección \ref{Prop:Producto_vectorial}. Además, da una interpretación geométrica para la primera, tercera y cuarta propiedad enlistadas. (Nota: si quieres hacer estas demostraciones utilizando una notación condensada, te recomiendo investigar acerca del símbolo de Levi-Civita el cual, junto con la delta de Kronecker, facilitan la escritura de muchas demostraciones de cálculo vectorial, entre otras áreas de las matemáticas.) 
-%    \item Da una definición de un producto cruz entre vectores de $\mathbb{C}^3$ tal que se mantengan las propiedades vistas en la sección \ref{Prop:Producto_vectorial}.
-\end{enumerate}
-
-\subsubsection{Triple producto escalar*}
-
-\begin{enumerate}
-    \item Demuestra las propiedades del triple producto escalar de la sección \ref{Prop:Triple_producto_escalar}. 
-\end{enumerate}{}
-
-\begin{tcolorbox}
-\begin{center}
-    \textbf{Nota aclaratoria: \emph{Sobre nombres y traducciones...}}
-\end{center}
-
-\hspace{2.5mm}Como seguramente habrás notado al leer los libros recomendados, al producto escalar en inglés se le conoce como \emph{inner product}, y a los espacios vectoriales dotados de un producto escalar se les conoce como \emph{inner product spaces}. En español, al producto escalar también se le conoce como \emph{producto interior}; sin embargo, existe otro tipo de producto diferente al producto escalar al cual en inglés, desafortunadamente, le llaman \emph{interior product}.
-
-\vspace{5mm}
-\hspace{2.5mm}Esto significa que, en inglés, la convención es que \emph{scalar product} e \emph{interior product} sean operaciones diferentes mientras que, en español, la convención es que \emph{producto escalar} y \emph{producto interior} se refieran a la misma operación. Algunos textos en español utilizan \emph{producto interno} (en vez de producto interior) como sinónimo de \emph{producto escalar} para homologar los nombres con los utilizados en inglés pero, por ahora, las convenciones preponderantes en español e inglés no permiten una traducción directa.
-
-\vspace{5mm}
-\hspace{2.5mm}Por lo anterior, en estas notas decidí usar únicamente el nombre de \emph{producto escalar} para la operación entre dos vectores que da como resultado un escalar (la cual acostumbramos llamar \emph{producto punto} cuando esos vectores son $n$-tuplas), pero es importante que sepan que esta operación es equivalente al \emph{\underline{inner} product} de los textos en inglés.
-
-\vspace{5mm}
-\hspace{2.5mm} Para empeorar la situación, algunos textos en inglés se refieren a la operación de producto de un vector por un escalar como \emph{scalar multiplication} \textemdash por lo cual algunos textos en español pueden referirse a esta operación como \emph{multiplicación escalar} o, inclusive, \emph{producto escalar}\textemdash \hspace{0.5mm} mientras que otros textos utilizan el término \emph{scalar multiplication} para referirse a la multiplicación entre dos elementos del campo (escalares) que da como resultado otro elemento del campo (escalar). Por lo tanto, debemos recordar que el significado de estos términos depende del contexto en que se utilicen. 
-
-\vspace{5mm}
-\hspace{2.5mm} Finalmente, remarcamos que en la convención de este texto: 
-    \begin{itemize}
-        \item Los términos \emph{producto de un vector por un escalar} y \emph{reescalamiento} se emplean para referirnos a la operación realizada entre un vector del conjunto vectorial y un escalar del campo que da como resultado otro vector;
-        \item el término \emph{producto escalar} se reserva para la operación realizada entre dos vectores que da como resultado un escalar;
-        \item el término \emph{producto entre escalares} se utiliza para referirnos a la multiplicación entre dos escalares del campo que da como resultado otro escalar del campo.
-    \end{itemize}
-
-
-
-
-
-\end{tcolorbox}
+\end{document}
