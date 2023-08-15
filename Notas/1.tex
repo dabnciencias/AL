@@ -444,7 +444,7 @@ Sean $V$ un espacio vectorial y $\vec{x},\vec{y},\vec{z}\in V$ tales que
             \end{align*}
             donde la primera igualdad se sigue de la distributividad de la suma vectorial con respecto al producto de un vector por un escalar. Por ende, tenemos que $a\vec{0}+a0\mathbf{}=a\vec{0}+\vec{0}$. Luego, de la Ley de Cancelación para espacios vectoriales (Lema \ref{Lema: Ley de Cancelación}) se sigue que $a\vec{0}=\vec{0}$.
 
-        \item Observemos que
+        \item Notemos que
             \begin{align*}
                 \vec{0} &= 0\vec{v} \\
                            &= (a+(-a)) \vec{v} \\
@@ -467,12 +467,12 @@ Más adelante veremos otras operaciones en espacios vectoriales que se pueden de
 
 \subsubsection*{Interpretación geométrica de las operaciones esenciales de los espacios vectoriales} \label{Sssec:Interpretación geométrica de las operaciones de los espacios vectoriales}
 
-Como se mencionó en una nota al final de la sección \ref{Ejem:Espacios_vectoriales} \hspace{1.5mm}\textemdash de la cual retomaremos muchas ideas a continuación\textemdash, podemos desarrollar nuestra intuición sobre muchos temas del álgebra lineal trabajando en espacios vectoriales \emph{visualizables}, para luego extenderla a espacios vectoriales más generales. Por ende, ahora haremos hincapié en la interpretacción geométrica de las operaciones de suma vectorial y producto de un vector por un escalar en el espacio vectorial real $\mathbb{R}^2$, así como en el espacio vectorial complejo $\mathbb{C}$.
+Podemos desarrollar nuestra intuición sobre muchos temas de álgebra lineal trabajando en espacios vectoriales \emph{visualizables}, para luego extenderla a espacios vectoriales más generales. Por ende, ahora haremos hincapié en la interpretacción geométrica de las operaciones de suma vectorial y producto de un vector por un escalar en el espacio vectorial real $\mathbb{R}^2$, así como en el espacio vectorial complejo $\mathbb{C}$.
 
 
 \subsubsection*{El espacio vectorial real \texorpdfstring{$\mathbb{R}^2$}{TEXT}} \label{Sssec: El espacio vectorial real R^2}
 
-En geometría analítica aprendimos que, con la ayuda de un sistema de coordenadas, podemos formar una correspondencia uno a uno (o \emph{biunívoca}) entre pares ordenados $(a,b)$ con entradas reales\footnote{Es decir, con $a,b\in\mathbb{R}$.} y puntos del plano cartesiano $\mathbb{R}\times\mathbb{R}$. En particular, si tomamos el sistema de coordenadas cartesianas, entonces a cualquier par ordenado de entradas reales $(a,b)$ le corresponde un punto en el plano cartesiano $\mathbb{R}\times\mathbb{R}$ con coordenadas cartesianas $(a,b)$, y vice versa. En álgebra lineal, es preferible considerar a cada vector $(a,b)\in\mathbb{R}^2$ en una correspondencia biunívoca con la flecha en el plano cartesiano que tiene cola en el origen y punta en la coordenada cartesiana correspondiente al punto $(a,b)$, como se muestra en la Figura \ref{fig:Correspondencias_del_plano_cartesiano}. \\
+En geometría analítica aprendimos que, con la ayuda de un sistema de coordenadas, podemos formar una correspondencia uno a uno (o \emph{biunívoca}) entre pares ordenados $(a,b)$ con entradas reales\footnote{Es decir, con $a,b\in\mathbb{R}$.} y puntos del plano cartesiano $\mathbb{R}\times\mathbb{R}$. En particular, si tomamos el sistema de coordenadas cartesianas, entonces a cualquier par ordenado de entradas reales $(a,b)$ le corresponde un único punto en el plano cartesiano $\mathbb{R}\times\mathbb{R}$ con coordenadas cartesianas $(a,b)$, y vice versa. En álgebra lineal, es preferible considerar a cada vector $(a,b)\in\mathbb{R}^2$ en una correspondencia biunívoca con la flecha en el plano cartesiano que tiene cola en el origen y punta en la coordenada cartesiana correspondiente al punto $(a,b)$, como se muestra en la Figura \ref{fig:Correspondencias_del_plano_cartesiano}. \\
 
 \begin{figure}[h!]
     \centering
@@ -498,7 +498,7 @@ En geometría analítica aprendimos que, con la ayuda de un sistema de coordenad
 
 \textbf{Suma vectorial} \\
 
-Recordemos que, en este espacio, la suma vectorial se define como $(a,b)+(c,d)=(a+c,b+d)$, i.e., entrada por entrada. Podemos calcular, por ejemplo, la suma $(2,1)+(1,3) = (3,4)$. Los tres vectores mencionados se muestran en la Figura \ref{fig:Suma_vectorial}.
+Recordemos que, en este espacio, la suma vectorial se define como $(a,b)+(c,d)=(a+c,b+d)$, i.e., entrada por entrada. Podemos calcular, por ejemplo, la suma $(2,1)+(1,3) = (3,4)$. Los tres vectores mencionados se muestran en la Figura \ref{fig:Suma_vectorial}. \\
 
 \begin{figure}[h!]
     \centering
@@ -513,7 +513,7 @@ Recordemos que, en este espacio, la suma vectorial se define como $(a,b)+(c,d)=(
         
             \draw[ROJO,very thick,->] (0,0) -- (2,1) node[] at (2.05,0.5){$(2,1)$};
             \draw[AZUL,very thick,->] (0,0) -- (1,3) node[] at (0.55,3) {$(1,3)$};
-            \draw[violet,very thick,->] (0,0) -- (3,4) node[] at (3,4.2) {$(3,4)$};
+            \draw[MAGENTA,very thick,->] (0,0) -- (3,4) node[] at (3,4.2) {$(3,4)$};
             \draw[] node[] at (4.2,4.2) {\textbf{a)}};
             \draw[black,thick,->]  (5,2) -- (5.5,2);
     \end{tikzpicture} \hspace{0.5cm} \begin{tikzpicture}[thick,scale=1.6, every node/.style={scale=1}]
@@ -528,7 +528,7 @@ Recordemos que, en este espacio, la suma vectorial se define como $(a,b)+(c,d)=(
             \draw[AZUL,dashed,->] (2,1) -- (3,4);
             \draw[AZUL,very thick,->] (0,0) -- (1,3) node[] at (0.55,3) {$(1,3)$};
             \draw[ROJO,dashed,->] (1,3) -- (3,4);
-            \draw[violet,very thick,->] (0,0) -- (3,4) node[] at (3,4.2) {$(3,4)$};
+            \draw[MAGENTA,very thick,->] (0,0) -- (3,4) node[] at (3,4.2) {$(3,4)$};
             \draw[] node[] at (4.2,4.2) {\textbf{b)}};
     \end{tikzpicture}
     \caption{Interpretación geométrica de la suma vectorial en el espacio vectorial real $\protect\mathbb{R}^2$. En la subfigura $\textbf{a)}$ se observan los vectores $(1,3)$ y $(2,1)$, así como el vector resultante de la suma de los dos anteriores, $(3,4)$. En la subfigura $\textbf{b)}$ observamos la llamada \emph{Ley del paralelogramo} para la suma de dos vectores.}
@@ -573,7 +573,7 @@ Ahora, recordemos que en este espacio el producto de un vector por un escalar se
             \draw[AZUL,thin,dashed,->,opacity=0.7] (0,0) -- (1,3); 
             \draw[] node[] at (3.5,3.5) {\textbf{b)}};
     \end{tikzpicture}
-    \caption{Interpretación geométrica del producto de un vector por un escalar en el espacio vectorial real $\mathbb{R}^2$. Comparando las subfiguras $\textbf{a)}$ y $\textbf{b)}$ observamos que, en caso de que se multiplique a un vector de $\mathbb{R}^2$ por un escalar de $\mathbb{R}$, es posible que la longtitud del vector cambie y que su sentido se invierta, pero su dirección no cambia.}
+    \caption{Interpretación geométrica del producto de un vector por un escalar en el espacio vectorial real $\mathbb{R}^2$. Comparando las subfiguras $\textbf{a)}$ y $\textbf{b)}$ observamos que, en caso que se multiplique a un vector de $\mathbb{R}^2$ por un escalar de $\mathbb{R}$, es posible que la longtitud del vector cambie y que su sentido se invierta, pero su dirección no cambia.}
     \label{fig:Producto_de_un_vector_por_un_escalar}
 \end{figure}
 
@@ -582,13 +582,13 @@ Como podemos observar, el primer producto redujo la longitud del vector sin camb
 
     Así, en general, si combinamos las operaciones de suma vectorial y producto de un vector por un escalar, visualmente lo que estaremos haciendo será \emph{combinar líneas} con diferentes longitudes, direcciones y sentidos en el plano cartesiano. \\
 
-Nota: El vector nulo $\vec{0}=(0,0)$ (también llamado \emph{vector origen}) no tiene longitud, ya que es el único donde la cola y la punta de su flecha coinciden. Además, tampoco tiene dirección ni sentido\footnote{Alternativamente, se dice que tiene \emph{todas las direcciones} y \emph{todos los sentidos simultáneamente}: en la práctica, ambas interpretaciones son equivalentes, pero la primera puede ser más fácil de asimilar.}. Si asumimos que este vector no tiene longitud, dirección ni sentido, entonces queda claro por qué cualquier reescalamiento de este vector no lo modifica, como se demostró en el inciso (b) del Teorema \ref{teo:1.8}.
+Nota: El vector nulo $\vec{0}=(0,0)$ (también llamado \emph{vector origen}) no tiene longitud, ya que es el único donde la cola y la punta de su flecha coinciden. Además, tampoco tiene dirección ni sentido\footnote{Alternativamente, se dice que tiene \emph{todas las direcciones} y \emph{todos los sentidos simultáneamente}; en la práctica, ambas interpretaciones son equivalentes, pero la primera puede ser más fácil de asimilar.}. Si asumimos que este vector no tiene longitud, dirección ni sentido, entonces queda claro por qué cualquier reescalamiento de este vector no lo modifica, como se demostró en el inciso (b) del Teorema \ref{teo:1.8}.
 
 \begin{Ejer}
     Interpreta geométricamente las operaciones esenciales del espacio vectorial $\mathbb{R}^3$.
 \end{Ejer}
 
-\subsubsection*{En el espacio vectorial complejo \texorpdfstring{$\mathbb{C}$}{TEXT}}
+\subsubsection*{El espacio vectorial complejo \texorpdfstring{$\mathbb{C}$}{TEXT}}
 
 Como hemos visto, el plano cartesiano nos sirve para representar vectores con dos entradas reales. De manera similar, el \emph{plano complejo} \textemdash con un eje de números \emph{reales} (por convención, el horizontal) y otro eje perpendicular a él de números \emph{imaginarios}\footnote{Los números imaginarios son aquellos números complejos con la parte real igual a cero, i.e. $0+ib=ib\in\mathbb{C}$, donde $b$ es un número real. En otras palabras, son el resultado de multiplicar el número imaginario $i$ por cualquier número real.}\textemdash\hspace{0.5mm} nos sirve para representar vectores con una entrada compleja. Así, cada vector de una entrada compleja $\begin{pmatrix}a+ib\end{pmatrix}$ con $a,b\in\mathbb{R}$ tiene una correspondencia uno a uno con una flecha con cola en el origen del plano y flecha en la coordenada $(a,b)$ del plano complejo, la cual corresponde a, desde el origen, moverse $a$ unidades sobre el eje real y $b$ unidades sobre el eje imaginario. \\
 
@@ -611,7 +611,7 @@ De la definición de suma vectorial $\begin{pmatrix}a+ib\end{pmatrix}+\begin{pma
             \draw[ROJO,thin,dashed,->] (1,2) -- (4,4) node[] at (2.4,3.8) {$\begin{pmatrix} 3 + 2i \end{pmatrix}$};
             \draw[ROJO,very thick,->] (0,0) -- (3,2) node[] at (3.1,1.2) {$\begin{pmatrix} 3 + 2i \end{pmatrix}$};
             \draw[AZUL,thin,dashed,->] (3,2) -- (4,4) node[] at (4.2,2.6) {$\begin{pmatrix} 1 + 2i \end{pmatrix}$};
-        \draw[violet,very thick,->] (0,0) -- (4,4) node[anchor=south west] {$\begin{pmatrix} 4 + 4i \end{pmatrix}$};
+        \draw[MAGENTA,very thick,->] (0,0) -- (4,4) node[anchor=south west] {$\begin{pmatrix} 4 + 4i \end{pmatrix}$};
     \end{tikzpicture}
     \caption{Interpretación geométrica de la suma vectorial en el espacio vectorial complejo $\mathbb{C}$. Observamos que, al igual que en el caso del espacio vectorial real $\mathbb{R}^2$, se cumple la \emph{Ley del paralelogramo}.}
     \label{fig:Suma_vectorial_compleja}
